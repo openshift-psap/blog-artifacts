@@ -5,8 +5,6 @@ metadata:
 spec:
   containers:
     - name: cluster-entitled-build
-#      image: registry.access.redhat.com/rhel8 
       image: registry.access.redhat.com/ubi8:latest 
-#      command: [ "/bin/sh", "-c", "dnf search kernel-devel --showduplicates" ]
-      command: [ "/bin/sh", "-c", "sleep infinity" ]
+      command: [ "/bin/sh", "-c", "dnf search kernel-devel --showduplicates" ]
   restartPolicy: Never
