@@ -31,4 +31,3 @@ spec:
     to:
       kind: ImageStreamTag
       name: entitled-buildconfig:latest
-
