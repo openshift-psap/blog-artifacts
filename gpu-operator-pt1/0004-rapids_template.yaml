@@ -1,0 +1,88 @@
+---
+apiVersion: v1
+kind: Template
+labels:
+  template: rapids-template
+message: "A RAPIDS pod has been created.\n\n"
+metadata:
+  annotations:
+    description: Template for RAPIDS
+    iconClass: icon-shadowman
+    openshift.io/display-name: RAPIDS
+    openshift.io/documentation-url: https://ngc.nvidia.com/registry
+    tags: NVIDIA,machine-learning
+  name: rapids
+objects:
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: rapids${INSTANCE}
+  spec:
+    selector:
+      app: rapids${INSTANCE}
+    ports:
+    - name: http
+      protocol: TCP
+      port: 8888
+      targetPort: 8888
+    - name: prometheus
+      port: 8787
+      targetPort: 8787
+    sessionAffinity: None
+    type: ClusterIP
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    name: rapids${INSTANCE}
+  spec:
+    host: ''
+    to:
+      name: rapids${INSTANCE}
+    port:
+      targetPort: 8888
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: rapids${INSTANCE}
+    labels:
+      app: rapids${INSTANCE}
+  spec:
+    restartPolicy: OnFailure
+    imagePUllPolicy: Always
+    containers:
+    - capabilities: {}
+      name: rapids
+      image: quay.io/zvonkok/rapids-demo:v2
+      env: 
+      ports:
+      - containerPort: 8888
+        name: http
+      - containerPort: 8787
+        name: prometheus
+      volumeMounts:
+      - mountPath: "/dev/shm"
+        name: dshm
+      - mountPath: "/rapids/notebooks/shared"
+        name: shared
+      resources:
+        requests:
+          nvidia.com/gpu: "${NUM_GPUS}"
+        limits:
+          nvidia.com/gpu: "${NUM_GPUS}"
+    volumes:
+    - name: dshm
+      empytDir:
+        medium: Memory
+    - name: shared
+      persistentVolumeClaim:
+        claimName: rapids-cephfs-pvc
+parameters:
+- description: How many GPUs to use
+  displayName: Number of GPUs
+  name: NUM_GPUS
+  value: '1'
+- description: Give a numeric ID to deployed RAPIDs instance
+  displayName: Rapid instance number
+  name: INSTANCE
+  value: '1'
+

@@ -1,0 +1,126 @@
+$ oc describe node/ip-10-0-170-127.ec2.internal
+Name:               ip-10-0-170-127.ec2.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=p3.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    feature.node.kubernetes.io/cpu-cpuid.ADX=true
+                    feature.node.kubernetes.io/cpu-cpuid.AESNI=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX2=true
+                    feature.node.kubernetes.io/cpu-cpuid.FMA3=true
+                    feature.node.kubernetes.io/cpu-cpuid.HLE=true
+                    feature.node.kubernetes.io/cpu-cpuid.RTM=true
+                    feature.node.kubernetes.io/cpu-hardware_multithreading=true
+                    feature.node.kubernetes.io/cpu-pstate.turbo=true
+                    feature.node.kubernetes.io/kernel-selinux.enabled=true
+                    feature.node.kubernetes.io/kernel-version.full=4.18.0-147.5.1.el8_1.x86_64
+                    feature.node.kubernetes.io/kernel-version.major=4
+                    feature.node.kubernetes.io/kernel-version.minor=18
+                    feature.node.kubernetes.io/kernel-version.revision=0
+                    feature.node.kubernetes.io/pci-1013.present=true
+                    feature.node.kubernetes.io/pci-10de.present=true
+                    feature.node.kubernetes.io/pci-1d0f.present=true
+                    feature.node.kubernetes.io/storage-nonrotationaldisk=true
+                    feature.node.kubernetes.io/system-os_release.ID=rhcos
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID=4.3
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID.major=4
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID.minor=3
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-170-127
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        csi.volume.kubernetes.io/nodeid: {"openshift-storage.rbd.csi.ceph.com":"ip-10-0-170-127.ec2.internal"}
+                    machine.openshift.io/machine: openshift-machine-api/sj-022820-01-h4vrj-worker-us-east-1c-mrr2t
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-34bce839a8fbddb32f29fb21d5474099
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-34bce839a8fbddb32f29fb21d5474099
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    nfd.node.kubernetes.io/feature-labels:
+                      cpu-cpuid.ADX,cpu-cpuid.AESNI,cpu-cpuid.AVX,cpu-cpuid.AVX2,cpu-cpuid.FMA3,cpu-cpuid.HLE,cpu-cpuid.RTM,cpu-hardware_multithreading,cpu-psta...
+                    nfd.node.kubernetes.io/worker.version: v0.4.0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 28 Feb 2020 10:00:05 -0500
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 28 Feb 2020 16:40:34 -0500   Fri, 28 Feb 2020 10:42:20 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 28 Feb 2020 16:40:34 -0500   Fri, 28 Feb 2020 10:42:20 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 28 Feb 2020 16:40:34 -0500   Fri, 28 Feb 2020 10:42:20 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 28 Feb 2020 16:40:34 -0500   Fri, 28 Feb 2020 10:42:30 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.170.127
+  Hostname:     ip-10-0-170-127.ec2.internal
+  InternalDNS:  ip-10-0-170-127.ec2.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125277164Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      62867992Ki
+  nvidia.com/gpu:              1
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115455434152
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      62253592Ki
+  nvidia.com/gpu:              1
+  pods:                        250
+System Info:
+  Machine ID:                             2ca04c0a35b84ed1a83bb0af81900a60
+  System UUID:                            ec21363e-d93a-af4e-0ed8-33e7cdb1fb5f
+  Boot ID:                                3c9e11c6-3161-4f0f-87ab-8d85b3dca485
+  Kernel Version:                         4.18.0-147.5.1.el8_1.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 43.81.202002170853.0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.16.3-22.dev.rhaos4.3.git11c04e3.el8
+  Kubelet Version:                        v1.16.2
+  Kube-Proxy Version:                     v1.16.2
+ProviderID:                               aws:///us-east-1c/i-0c0c8a83dcd5c6ae2
+Non-terminated Pods:                      (24 in total)
+  Namespace                               Name                                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                               ----                                        ------------  ----------  ---------------  -------------  ---
+  gpu-operator-resources                  nvidia-container-toolkit-daemonset-m9g65    0 (0%)        0 (0%)      0 (0%)           0 (0%)         5h15m
+  gpu-operator-resources                  nvidia-dcgm-exporter-jcnsh                  0 (0%)        0 (0%)      0 (0%)           0 (0%)         5h4m
+  gpu-operator-resources                  nvidia-device-plugin-daemonset-gr9kt        0 (0%)        0 (0%)      0 (0%)           0 (0%)         5h9m
+  gpu-operator-resources                  nvidia-driver-daemonset-w9zkl               0 (0%)        0 (0%)      0 (0%)           0 (0%)         5h15m
+  openshift-cluster-node-tuning-operator  tuned-kpv9l                                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         6h41m
+  openshift-dns                           dns-default-5qqtp                           110m (1%)     0 (0%)      70Mi (0%)        512Mi (0%)     6h40m
+  openshift-image-registry                node-ca-wd47n                               10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         6h40m
+  openshift-ingress                       router-default-5b558464cf-4lvhn             100m (1%)     0 (0%)      256Mi (0%)       0 (0%)         5h58m
+  openshift-machine-config-operator       machine-config-daemon-x2skk                 40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         6h40m
+  openshift-marketplace                   certified-operators-8696db7c59-tkc6v        10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         5h58m
+  openshift-marketplace                   community-operators-8b9687f4f-qgk7c         10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         5h58m
+  openshift-marketplace                   redhat-operators-5f7dd887bf-mf5rs           10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         8m49s
+  openshift-monitoring                    alertmanager-main-0                         100m (1%)     100m (1%)   225Mi (0%)       25Mi (0%)      5h58m
+  openshift-monitoring                    grafana-59c6cf7596-548p9                    100m (1%)     0 (0%)      100Mi (0%)       0 (0%)         5h58m
+  openshift-monitoring                    node-exporter-kh5l8                         10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         6h41m
+  openshift-monitoring                    prometheus-adapter-5c754b9d75-ktgk9         10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         5h58m
+  openshift-monitoring                    prometheus-k8s-0                            430m (5%)     200m (2%)   1134Mi (1%)      50Mi (0%)      5h58m
+  openshift-multus                        multus-kzkz2                                10m (0%)      0 (0%)      150Mi (0%)       0 (0%)         6h41m
+  openshift-nfd                           nfd-worker-fwznt                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         6h30m
+  openshift-sdn                           ovs-7lctz                                   200m (2%)     0 (0%)      400Mi (0%)       0 (0%)         6h41m
+  openshift-sdn                           sdn-mcjkn                                   100m (1%)     0 (0%)      200Mi (0%)       0 (0%)         6h41m
+  openshift-storage                       csi-cephfsplugin-x62jw                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         36m
+  openshift-storage                       csi-rbdplugin-zr5p6                         0 (0%)        0 (0%)      0 (0%)           0 (0%)         36m
+  rapids                                  rapids                                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests     Limits
+  --------                    --------     ------
+  cpu                         1260m (16%)  300m (4%)
+  memory                      3035Mi (4%)  587Mi (0%)
+  ephemeral-storage           0 (0%)       0 (0%)
+  attachable-volumes-aws-ebs  0            0
+  nvidia.com/gpu              1            1
+Events:                       <none>

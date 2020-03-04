@@ -1,0 +1,17 @@
+$ oc get all -n gpu-operator-resources
+NAME                                           READY   STATUS      RESTARTS   AGE
+pod/nvidia-container-toolkit-daemonset-m9g65   1/1     Running     0          31m
+pod/nvidia-dcgm-exporter-jcnsh                 2/2     Running     0          20m
+pod/nvidia-device-plugin-daemonset-gr9kt       1/1     Running     0          25m
+pod/nvidia-device-plugin-validation            0/1     Completed   0          24m
+pod/nvidia-driver-daemonset-w9zkl              1/1     Running     0          31m
+pod/nvidia-driver-validation                   0/1     Completed   0          31m
+
+NAME                           TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE
+service/nvidia-dcgm-exporter   ClusterIP   172.30.4.44   <none>        9400/TCP   20m
+
+NAME                                                DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                                                                                                                 AGE
+daemonset.apps/nvidia-container-toolkit-daemonset   1         1         1       1            1           feature.node.kubernetes.io/pci-10de.present=true                                                                              31m
+daemonset.apps/nvidia-dcgm-exporter                 1         1         1       1            1           feature.node.kubernetes.io/pci-10de.present=true                                                                              20m
+daemonset.apps/nvidia-device-plugin-daemonset       1         1         1       1            1           feature.node.kubernetes.io/pci-10de.present=true                                                                              25m
+daemonset.apps/nvidia-driver-daemonset              1         1         1       1            1           feature.node.kubernetes.io/kernel-version.full=4.18.0-147.5.1.el8_1.x86_64,feature.node.kubernetes.io/pci-10de.present=true   31m

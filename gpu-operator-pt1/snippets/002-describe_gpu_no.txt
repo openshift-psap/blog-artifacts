@@ -1,0 +1,85 @@
+$ oc describe node/ip-10-0-170-127.ec2.internal
+Name:               ip-10-0-170-127.ec2.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=p3.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-170-127
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        machine.openshift.io/machine: openshift-machine-api/sj-022820-01-h4vrj-worker-us-east-1c-mrr2t
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-39f1adf0e197d2281eafeef28b381d9d
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-39f1adf0e197d2281eafeef28b381d9d
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 28 Feb 2020 10:00:05 -0500
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 28 Feb 2020 10:05:36 -0500   Fri, 28 Feb 2020 10:00:05 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 28 Feb 2020 10:05:36 -0500   Fri, 28 Feb 2020 10:00:05 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 28 Feb 2020 10:05:36 -0500   Fri, 28 Feb 2020 10:00:05 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 28 Feb 2020 10:05:36 -0500   Fri, 28 Feb 2020 10:00:36 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.170.127
+  Hostname:     ip-10-0-170-127.ec2.internal
+  InternalDNS:  ip-10-0-170-127.ec2.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125277164Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      62867992Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115455434152
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      62253592Ki
+  pods:                        250
+System Info:
+  Machine ID:                             2ca04c0a35b84ed1a83bb0af81900a60
+  System UUID:                            ec21363e-d93a-af4e-0ed8-33e7cdb1fb5f
+  Boot ID:                                12447c51-d4e5-4551-adaf-d7b83b6dbb54
+  Kernel Version:                         4.18.0-147.5.1.el8_1.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 43.81.202002170853.0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.16.3-22.dev.rhaos4.3.git11c04e3.el8
+  Kubelet Version:                        v1.16.2
+  Kube-Proxy Version:                     v1.16.2
+ProviderID:                               aws:///us-east-1c/i-0c0c8a83dcd5c6ae2
+Non-terminated Pods:                      (8 in total)
+  Namespace                               Name                           CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                               ----                           ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-node-tuning-operator  tuned-kpv9l                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         6m22s
+  openshift-dns                           dns-default-5qqtp              110m (1%)     0 (0%)      70Mi (0%)        512Mi (0%)     5m52s
+  openshift-image-registry                node-ca-wd47n                  10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         5m52s
+  openshift-machine-config-operator       machine-config-daemon-x2skk    40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         5m52s
+  openshift-monitoring                    node-exporter-kh5l8            10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         6m22s
+  openshift-multus                        multus-kzkz2                   10m (0%)      0 (0%)      150Mi (0%)       0 (0%)         6m22s
+  openshift-sdn                           ovs-7lctz                      200m (2%)     0 (0%)      400Mi (0%)       0 (0%)         6m22s
+  openshift-sdn                           sdn-mcjkn                      100m (1%)     0 (0%)      200Mi (0%)       0 (0%)         6m22s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests     Limits
+  --------                    --------     ------
+  cpu                         490m (6%)    0 (0%)
+  memory                      1000Mi (1%)  512Mi (0%)
+  ephemeral-storage           0 (0%)       0 (0%)
+  attachable-volumes-aws-ebs  0            0
+Events:
+  Type    Reason                   Age                    From                                   Message
+  ----    ------                   ----                   ----                                   -------
+  Normal  NodeHasSufficientMemory  6m23s (x8 over 6m35s)  kubelet, ip-10-0-170-127.ec2.internal  Node ip-10-0-170-127.ec2.internal status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    6m23s (x8 over 6m35s)  kubelet, ip-10-0-170-127.ec2.internal  Node ip-10-0-170-127.ec2.internal status is now: NodeHasNoDiskPressure

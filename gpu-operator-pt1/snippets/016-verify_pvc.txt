@@ -1,0 +1,3 @@
+$ oc get pvc -n rapids
+NAME                STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                    AGE
+rapids-cephfs-pvc   Bound    pvc-a6ba1c38-6498-4b55-9565-d274fb8b003e   25Gi       RWX            example-storagecluster-cephfs   33s

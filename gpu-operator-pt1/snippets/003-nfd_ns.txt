@@ -1,0 +1,22 @@
+$ oc get all -n openshift-nfd
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/nfd-master-hpqww               1/1     Running   0          10m
+pod/nfd-master-kb8wm               1/1     Running   0          10m
+pod/nfd-master-mlsr4               1/1     Running   0          10m
+pod/nfd-operator-775b746bb-dzgj5   1/1     Running   0          10m
+pod/nfd-worker-4dg27               1/1     Running   0          10m
+pod/nfd-worker-5w7zs               1/1     Running   0          10m
+pod/nfd-worker-fwznt               1/1     Running   2          10m
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)     AGE
+service/nfd-master   ClusterIP   172.30.161.51   <none>        12000/TCP   10m
+
+NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                     AGE
+daemonset.apps/nfd-master   3         3         3       3            3           node-role.kubernetes.io/master=   10m
+daemonset.apps/nfd-worker   3         3         3       3            3           node-role.kubernetes.io/worker=   10m
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nfd-operator   1/1     1            1           10m
+
+NAME                                     DESIRED   CURRENT   READY   AGE
+replicaset.apps/nfd-operator-775b746bb   1         1         1       10m

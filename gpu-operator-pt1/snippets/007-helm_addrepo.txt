@@ -1,0 +1,2 @@
+$ helm repo add nvidia https://nvidia.github.io/gpu-operator
+"nvidia" has been added to your repositories
