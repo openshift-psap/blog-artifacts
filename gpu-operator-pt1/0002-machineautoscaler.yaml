@@ -1,0 +1,13 @@
+apiVersion: "autoscaling.openshift.io/v1beta1"
+kind: "MachineAutoscaler"
+metadata:
+  name: "sj-022820-01-h4vrj-worker-us-east-1c" 
+  namespace: "openshift-machine-api"
+spec:
+  minReplicas: 1 
+  maxReplicas: 6 
+  scaleTargetRef: 
+    apiVersion: machine.openshift.io/v1beta1
+    kind: MachineSet 
+    name: sj-022820-01-h4vrj-worker-us-east-1c
+

@@ -1,0 +1,117 @@
+Name:               ip-10-0-167-0.ec2.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=p3.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1c
+                    feature.node.kubernetes.io/cpu-cpuid.ADX=true
+                    feature.node.kubernetes.io/cpu-cpuid.AESNI=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX2=true
+                    feature.node.kubernetes.io/cpu-cpuid.FMA3=true
+                    feature.node.kubernetes.io/cpu-cpuid.HLE=true
+                    feature.node.kubernetes.io/cpu-cpuid.RTM=true
+                    feature.node.kubernetes.io/cpu-hardware_multithreading=true
+                    feature.node.kubernetes.io/cpu-pstate.turbo=true
+                    feature.node.kubernetes.io/kernel-selinux.enabled=true
+                    feature.node.kubernetes.io/kernel-version.full=4.18.0-147.5.1.el8_1.x86_64
+                    feature.node.kubernetes.io/kernel-version.major=4
+                    feature.node.kubernetes.io/kernel-version.minor=18
+                    feature.node.kubernetes.io/kernel-version.revision=0
+                    feature.node.kubernetes.io/pci-1013.present=true
+                    feature.node.kubernetes.io/pci-10de.present=true
+                    feature.node.kubernetes.io/pci-1d0f.present=true
+                    feature.node.kubernetes.io/storage-nonrotationaldisk=true
+                    feature.node.kubernetes.io/system-os_release.ID=rhcos
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID=4.3
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID.major=4
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID.minor=3
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-167-0
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        csi.volume.kubernetes.io/nodeid: {"openshift-storage.cephfs.csi.ceph.com":"ip-10-0-167-0.ec2.internal"}
+                    machine.openshift.io/machine: openshift-machine-api/sj-022820-01-h4vrj-worker-us-east-1c-mf6qr
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-34bce839a8fbddb32f29fb21d5474099
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-34bce839a8fbddb32f29fb21d5474099
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    nfd.node.kubernetes.io/feature-labels:
+                      cpu-cpuid.ADX,cpu-cpuid.AESNI,cpu-cpuid.AVX,cpu-cpuid.AVX2,cpu-cpuid.FMA3,cpu-cpuid.HLE,cpu-cpuid.RTM,cpu-hardware_multithreading,cpu-psta...
+                    nfd.node.kubernetes.io/worker.version: v0.4.0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 28 Feb 2020 16:54:13 -0500
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 28 Feb 2020 17:02:34 -0500   Fri, 28 Feb 2020 16:54:13 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 28 Feb 2020 17:02:34 -0500   Fri, 28 Feb 2020 16:54:13 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 28 Feb 2020 17:02:34 -0500   Fri, 28 Feb 2020 16:54:13 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 28 Feb 2020 17:02:34 -0500   Fri, 28 Feb 2020 16:54:53 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.167.0
+  Hostname:     ip-10-0-167-0.ec2.internal
+  InternalDNS:  ip-10-0-167-0.ec2.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125277164Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      62867992Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115455434152
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      62253592Ki
+  pods:                        250
+System Info:
+  Machine ID:                             bd5efa11600a4542aea6c6d4b1a2b63a
+  System UUID:                            ec2c08e0-475d-5e99-c579-777a5b5b4cbc
+  Boot ID:                                be93559c-a194-4663-9009-83020196bfc1
+  Kernel Version:                         4.18.0-147.5.1.el8_1.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 43.81.202002170853.0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.16.3-22.dev.rhaos4.3.git11c04e3.el8
+  Kubelet Version:                        v1.16.2
+  Kube-Proxy Version:                     v1.16.2
+ProviderID:                               aws:///us-east-1c/i-07898b66bcb3324b9
+Non-terminated Pods:                      (15 in total)
+  Namespace                               Name                                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                               ----                                        ------------  ----------  ---------------  -------------  ---
+  gpu-operator-resources                  nvidia-container-toolkit-daemonset-hlv5c    0 (0%)        0 (0%)      0 (0%)           0 (0%)         7m57s
+  gpu-operator-resources                  nvidia-dcgm-exporter-hrj7d                  0 (0%)        0 (0%)      0 (0%)           0 (0%)         7m57s
+  gpu-operator-resources                  nvidia-device-plugin-daemonset-t2kkb        0 (0%)        0 (0%)      0 (0%)           0 (0%)         7m57s
+  gpu-operator-resources                  nvidia-driver-daemonset-dvptl               0 (0%)        0 (0%)      0 (0%)           0 (0%)         7m57s
+  openshift-cluster-node-tuning-operator  tuned-749n8                                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         8m37s
+  openshift-dns                           dns-default-bc8v5                           110m (1%)     0 (0%)      70Mi (0%)        512Mi (0%)     7m57s
+  openshift-image-registry                node-ca-gk8cf                               10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         7m57s
+  openshift-machine-config-operator       machine-config-daemon-86wvq                 40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         7m57s
+  openshift-monitoring                    node-exporter-zl6f8                         10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         8m37s
+  openshift-multus                        multus-xmmr4                                10m (0%)      0 (0%)      150Mi (0%)       0 (0%)         8m37s
+  openshift-nfd                           nfd-worker-55f24                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         8m37s
+  openshift-sdn                           ovs-vr6q4                                   200m (2%)     0 (0%)      400Mi (0%)       0 (0%)         8m37s
+  openshift-sdn                           sdn-jlzqr                                   100m (1%)     0 (0%)      200Mi (0%)       0 (0%)         8m37s
+  openshift-storage                       csi-cephfsplugin-l8vgl                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         7m57s
+  openshift-storage                       csi-rbdplugin-6btnq                         0 (0%)        0 (0%)      0 (0%)           0 (0%)         7m57s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests     Limits
+  --------                    --------     ------
+  cpu                         490m (6%)    0 (0%)
+  memory                      1000Mi (1%)  512Mi (0%)
+  ephemeral-storage           0 (0%)       0 (0%)
+  attachable-volumes-aws-ebs  0            0
+Events:
+  Type    Reason                   Age                    From                                 Message
+  ----    ------                   ----                   ----                                 -------
+  Normal  NodeHasSufficientMemory  8m37s (x8 over 8m49s)  kubelet, ip-10-0-167-0.ec2.internal  Node ip-10-0-167-0.ec2.internal status is now: NodeHasSufficientMemory
+  Normal  NodeHasSufficientPID     8m37s (x8 over 8m49s)  kubelet, ip-10-0-167-0.ec2.internal  Node ip-10-0-167-0.ec2.internal status is now: NodeHasSufficientPID

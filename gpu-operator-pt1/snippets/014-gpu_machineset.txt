@@ -1,0 +1,74 @@
+$ oc get machineset sj-022820-01-h4vrj-worker-us-east-1c -n openshift-machine-api -o yaml
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  creationTimestamp: "2020-02-28T14:21:26Z"
+  generation: 3
+  labels:
+    machine.openshift.io/cluster-api-cluster: sj-022820-01-h4vrj
+  name: sj-022820-01-h4vrj-worker-us-east-1c
+  namespace: openshift-machine-api
+  resourceVersion: "35316"
+  selfLink: /apis/machine.openshift.io/v1beta1/namespaces/openshift-machine-api/machinesets/sj-022820-01-h4vrj-worker-us-east-1c
+  uid: 6f9e132a-232c-442a-b666-67c1ea0d42e0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: sj-022820-01-h4vrj
+      machine.openshift.io/cluster-api-machineset: sj-022820-01-h4vrj-worker-us-east-1c
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        machine.openshift.io/cluster-api-cluster: sj-022820-01-h4vrj
+        machine.openshift.io/cluster-api-machine-role: worker
+        machine.openshift.io/cluster-api-machine-type: worker
+        machine.openshift.io/cluster-api-machineset: sj-022820-01-h4vrj-worker-us-east-1c
+    spec:
+      metadata:
+        creationTimestamp: null
+      providerSpec:
+        value:
+          ami:
+            id: ami-06f85a7940faa3217
+          apiVersion: awsproviderconfig.openshift.io/v1beta1
+          blockDevices:
+          - ebs:
+              iops: 0
+              volumeSize: 120
+              volumeType: gp2
+          credentialsSecret:
+            name: aws-cloud-credentials
+          deviceIndex: 0
+          iamInstanceProfile:
+            id: sj-022820-01-h4vrj-worker-profile
+          instanceType: p3.2xlarge
+          kind: AWSMachineProviderConfig
+          metadata:
+            creationTimestamp: null
+          placement:
+            availabilityZone: us-east-1c
+            region: us-east-1
+          publicIp: null
+          securityGroups:
+          - filters:
+            - name: tag:Name
+              values:
+              - sj-022820-01-h4vrj-worker-sg
+          subnet:
+            filters:
+            - name: tag:Name
+              values:
+              - sj-022820-01-h4vrj-private-us-east-1c
+          tags:
+          - name: kubernetes.io/cluster/sj-022820-01-h4vrj
+            value: owned
+          userDataSecret:
+            name: worker-user-data
+status:
+  availableReplicas: 1
+  fullyLabeledReplicas: 1
+  observedGeneration: 3
+  readyReplicas: 1
+  replicas: 1

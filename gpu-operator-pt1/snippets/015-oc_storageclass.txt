@@ -1,0 +1,6 @@
+$ oc get sc
+NAME                              PROVISIONER                             AGE
+example-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      63m
+example-storagecluster-cephfs     openshift-storage.cephfs.csi.ceph.com   63m
+gp2 (default)                     kubernetes.io/aws-ebs                   6h46m
+openshift-storage.noobaa.io       openshift-storage.noobaa.io/obc         5m46s

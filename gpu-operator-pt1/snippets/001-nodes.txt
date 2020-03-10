@@ -1,0 +1,8 @@
+$ oc get no
+NAME                           STATUS   ROLES    AGE     VERSION
+ip-10-0-130-177.ec2.internal   Ready    worker   33m     v1.16.2
+ip-10-0-132-41.ec2.internal    Ready    master   42m     v1.16.2
+ip-10-0-156-85.ec2.internal    Ready    worker   33m     v1.16.2
+ip-10-0-157-132.ec2.internal   Ready    master   42m     v1.16.2
+ip-10-0-170-127.ec2.internal   Ready    worker   4m15s   v1.16.2
+ip-10-0-174-93.ec2.internal    Ready    master   42m     v1.16.2
