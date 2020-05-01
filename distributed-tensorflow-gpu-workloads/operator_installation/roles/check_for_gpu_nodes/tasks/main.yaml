@@ -1,0 +1,11 @@
+---
+
+# If using AWS
+- name: If using AWS, get node info for AWS nodes
+  include_tasks: aws.yaml
+  when: aws_check == 'yes'
+
+# If not using AWS, check cannot be done (right now), so let the play continue
+- debug:
+    msg: 'Non-AWS cluster checks are not supported by this playbook at this time. Continuing...'
+  when: aws_check == 'no'

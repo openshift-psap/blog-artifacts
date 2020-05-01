@@ -1,0 +1,2 @@
+[webserver]
+localhost ansible_host=localhost

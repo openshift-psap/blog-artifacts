@@ -1,0 +1,14 @@
+---
+g3_nodes:
+  g3s_xlarge: 'g3s.xlarge'
+  g3_4xlarge: 'g3.4xlarge'
+  g3_8xlarge: 'g3.8xlarge'
+  g3_16xlarge: 'g3.16xlarge'
+
+p3_nodes:
+  p3_2xlarge: 'p3.2xlarge'
+  p3_8xlarge: 'p3.8xlarge'
+  p3_16xlarge: 'p3.16xlarge'
+  p3dn_24xlarge: 'p3dn.24xlarge'
+
+unknown: 'unknown'

@@ -1,0 +1,27 @@
+---
+
+- name: Check for 'kubectl'
+  command: 'which kubectl'
+  register: kubectl_cli
+  ignore_errors: yes
+
+- name: If kubectl does not exist, check for 'oc'
+  command: 'which oc'
+  register: oc_cli
+  ignore_errors: yes
+
+- block:
+  - name: End play if user does not have oc or kubectl in PATH
+    debug:
+      msg: 'Could not find kubectl or oc CLI tools. Please update your PATH env variable or install kubectl/oc'
+
+  - meta: end_play
+  when: kubectl_cli.stdout == '' and oc_cli.stdout == ''
+
+- debug:
+    msg: 'Successfully found kubectl'
+  when: kubectl_cli.stdout != ''
+
+- debug:
+    msg: 'Successfully found oc'
+  when: oc_cli.stdout != ''

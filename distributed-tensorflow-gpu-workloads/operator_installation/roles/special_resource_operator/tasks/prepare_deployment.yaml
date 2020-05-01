@@ -1,0 +1,17 @@
+---
+
+# Install golang on RHEL 7 so we can build SRO
+- name: Install golang on RHEL 7 if using RHEL 7
+  yum:
+    name: golang
+    state: latest
+  when: rhel_ver == '7'
+  become: yes
+
+# If using RHEL 8, then install golang with dnf
+- name: Install golang on RHEL 8 if using RHEL 8
+  dnf:
+    name: golang
+    state: latest
+  when: rhel_ver == '8'
+  become: yes

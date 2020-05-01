@@ -1,0 +1,66 @@
+---
+
+- hosts: localhost
+  connection: local
+
+  vars:
+
+    # Which version/release of OpenShift? Include major version and major
+    # release, no minor releases.
+    openshift_release: '{{ oc_release | default("4.3") }}'
+
+    # Are we using AWS or not?
+    aws_check: '{{ use_aws | default("yes") }}'
+
+    # Force reinstallation of all operators, CRDs, etc.?
+    reinstall: '{{ force_reinstall | default("no") }}'
+
+    # Mode. Either set to install or uninstall. REQUIRED.
+    user_mode: '{{ mode }}'
+
+    # Set task timeout (in seconds). Default: 2 mins
+    timeout_value_sec: '{{ task_timeout | default("120") }}'
+
+    # Set RHEL version. Default is RHEL 8. Set to RHEL 7 if using RHEL 7
+    rhel_ver: '{{ rhel_version | default("8") }}'
+
+    # Set golang vars
+    GOROOT: '{{ goroot | default("/usr/lib/golang") }}'
+    GOPATH: '{{ gopath | default("${HOME}/go") }}'
+    GOPROXY: '{{ goproxy | default("https://proxy.golang.org") }}'
+
+    # Install NFD, SRO, Kubeflow, or all?
+    install_nfd_operator: '{{ install_nfd | default("yes") }}'
+    install_sr_operator: '{{ install_sro | default("yes") }}'
+    install_kf_operator: '{{ install_kubeflow | default("yes") }}'
+
+    # Uninstall NFD, SRO, Kubeflow, or all?
+    uninstall_nfd_operator: '{{ uninstall_nfd | default("yes") }}'
+    uninstall_sr_operator: '{{ uninstall_sro | default("yes") }}'
+    uninstall_kf_operator: '{{ uninstall_kubeflow | default("yes") }}'
+
+
+  roles:
+
+    # Check for NVIDIA (CUDA-capable) GPU nodes
+    - role: check_for_gpu_nodes
+      when: install_sr_operator == 'yes' and user_mode == 'install'
+
+    # Install/Uninstall the Node Feature Discovery operator, CRDs, and CRs
+    - role: node_feature_discovery
+      when: >
+        (user_mode == 'install' and install_nfd_operator == 'yes') or
+        (user_mode == 'uninstall' and uninstall_nfd_operator == 'yes')
+
+    # Install/Uninstall the Special Resource operator, CRDs, and CRs
+    - role: special_resource_operator
+      when: >
+        (user_mode == 'install' and install_sr_operator == 'yes') or
+        (user_mode == 'uninstall' and uninstall_sr_operator == 'yes') or
+        (user_mode == 'uninstall' and uninstall_nfd_operator == 'yes')
+
+    # Install/Uninstall Kubeflow
+    - role: kubeflow
+      when: >
+        (user_mode == 'install' and install_kf_operator == 'yes') or
+        (user_mode == 'uninstall' and uninstall_kf_operator == 'yes')
