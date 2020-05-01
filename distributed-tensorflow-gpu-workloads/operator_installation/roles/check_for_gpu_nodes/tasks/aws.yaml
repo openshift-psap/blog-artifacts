@@ -17,10 +17,23 @@
       {%- endfor %}
       {{ res }}
 
+- set_fact:
+    g4_dict_values: |
+      {% set res = [] -%}
+      {% for key in g4_nodes.keys() -%}
+        {% set ignored = res.extend([g4_nodes[key]]) -%}
+      {%- endfor %}
+      {{ res }}
+
 - name: The following g3 nodes will be checked
   debug:
     msg: '{{ item }}'
   with_items: '{{ g3_dict_values }}'
+
+- name: The following g4 nodes will be checked
+  debug:
+    msg: '{{ item }}'
+  with_items: '{{ g4_dict_values }}'
 
 - name: The following p3 nodes will be checked
   debug:
@@ -51,6 +64,14 @@
   with_dict: '{{ g3_nodes }}'
   register: aws_g3_instances
 
+# The 'vars' folder has a YAML file with a list of the supported g4 AWS instance types as well
+- name: Now check if any of the instance types match a g4 GPU instance type
+  shell: |
+    result=$(echo {{ aws_running_instances.stdout }} | grep '{{ item.value }}')
+    if [[ -z ${result} ]]; then echo 'null'; else echo '{{ item.key }}'; fi
+  with_dict: '{{ g4_nodes }}'
+  register: aws_g4_instances
+
 # The 'vars' folder has a YAML file with a list of the supported p3 AWS instance types as well
 - name: Now check if any of the instance types match a p3 GPU instance type
   shell: |
@@ -65,6 +86,12 @@
     aws_g3_dict: '{{ aws_g3_dict|default({}) | combine({item.stdout: item.stdout}) }}'
   with_items: '{{ aws_g3_instances.results }}'
 
+# Do the same as above, but for g4 instances
+- name: Create dictionary of matching g4 instances
+  set_fact:
+    aws_g4_dict: '{{ aws_g4_dict|default({}) | combine({item.stdout: item.stdout}) }}'
+  with_items: '{{ aws_g4_instances.results }}'
+
 # Do the same as above, but for p3 instances
 - name: Create dictionary of matching p3 instances
   set_fact:
@@ -76,6 +103,12 @@
   debug:
     msg: 'Found g3 instances'
   when: aws_g3_dict | intersect(g3_nodes)
+  
+# Let the user know if there are any g4 instances in the cluster
+- name: Verifying that g4 instances exist on the cluster
+  debug:
+    msg: 'Found g4 instances'
+  when: aws_g4_dict | intersect(g4_nodes)
   
 # Let the user know if there are any p3 instances in the cluster
 - name: Verifying that p3 instances exist on the cluster
@@ -90,7 +123,7 @@
       msg: 'No GPU instances were found. Aborting.'
 
   - meta: end_play
-  when: not (aws_g3_dict | intersect(g3_nodes)) and not (aws_p3_dict | intersect(p3_nodes))
+  when: not (aws_g3_dict | intersect(g3_nodes)) and not (aws_g4_dict | intersect(g4_nodes)) and not (aws_p3_dict | intersect(p3_nodes))
 
 # If GPU instances were found, then let the user know
 - debug:
