@@ -14,6 +14,8 @@ When running this playbook, users are required to input the user mode, which is 
 
 Before you begin an install of one or more operators, make sure you know which version of OpenShift you are running. (e.g., 4.3, 4.4, etc.). Note that these playbooks only support OpenShift 4.x!
 
+If you are using AWS, the playbook will run checks on your nodes to see if you have at least one GPU-enabled instance available. If no GPU nodes are available and you are installing more than just NFD and Kubeflow, the install will fail.
+
 #### If None of the Operators are Already Deployed to your Cluster
 
 If you don't have any of the three operators already installed to your cluster, you can simply run
@@ -23,6 +25,14 @@ $ ansible-playbook -i hosts play.yaml --extra-vars="{ mode: 'install', oc_releas
 ```
 
 ...except replace the `oc_release` variable with the major release of OpenShift you're using. This is important!
+
+If you are not using OpenShift on AWS, please pass in the `use_aws` extra var and set it equal to `no`. e.g.,
+
+```bash
+$ ansible-playbook -i hosts play.yaml --extra-vars="{ mode: 'install', oc_release: '4.3', use_aws: 'no' }"
+```
+
+This extra var will disable AWS-specific checks for GPU-enabled instances.
 
 #### If you Already have Some Operators Installed
 
@@ -39,10 +49,11 @@ For example, if you already have NFD installed to your cluster, you can run:
 $ ansible-playbook -i hosts play.yaml --extra-vars="{ mode: 'install', oc_release: '4.3', install_nfd: 'no', install_sro: 'yes', install_kubeflow: 'yes' }"
 ```
 
+You can also set `use_aws` equal to `no` in this situation, too.
+
 #### Force Reinstall
 
-If you want to force a reinstall of one or more operators (i.e., remove the operator and reinstall it), use the `force_reinstall` extra var. You can combine the `force_reinstall` with the three extra vars described above (`install_nfd`, `install_sro`, and `install_kubeflow`).
-
+If you want to force a reinstall of one or more operators (i.e., remove the operator and reinstall it), use the `force_reinstall` extra var. You can combine the `force_reinstall` with the three extra vars described above (`install_nfd`, `install_sro`, and `install_kubeflow`). Again, you can set AWS checks on or off via `use_aws`.
 
 ### Uninstalling
 
