@@ -2,22 +2,25 @@
 
 ### Requirements
 
-You must have already downloaded the NCCL and cuDNN tarballs to this directory. NCCL can be downloaded from NVIDIA's site after signing in and visiting [this page](https://developer.nvidia.com/nccl). Similarly, you can download cuDNN from NVIDIA's site after logging in. You can find cuDNN downloads [on this page](https://developer.nvidia.com/cudnn).
+#### NCCL and cuDNN
 
-You will also need to log into `registry.redhat.io` with your credentials in order to pull the ubi8 image.
+You must have already downloaded the NCCL and cuDNN tarballs to this directory. The NCCL OS agnostic installer can be downloaded from NVIDIA's developer site after signing in and visiting [this page](https://developer.nvidia.com/nccl). Similarly, you can download cuDNN from NVIDIA's site after logging in. You can find cuDNN downloads [on this page](https://developer.nvidia.com/cudnn). You do **not** need to untar the tarballs. Leave them as is in this directory.
 
-Finally, you will need to have a `cuda.repo` file that can be pulled into the image. Your file will look something like this:
+Before you continue, **make sure that you update the environment variables in the Dockerfile to work with the versions of NCCL and cuDNN you downloaded.**
 
+#### Pulling from registry.redhat.io 
+
+In addition to the above, you will also need to log into `registry.redhat.io` with your credentials in order to pull the ubi8 image. To login with podman,
+
+```bash
+$ podman login
 ```
-[CUDA]
-name=CUDA
-baseurl=<url-to-cuda-rhel8-repo>
-enabled=1
-gpgcheck=0
-```
 
-GPG checking is optional and you will be able to find more information about the `.repo` file [on this page](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=RHEL&target_version=8&target_type=rpmnetwork).
+#### Creating a cuda.repo File
 
+Finally, you will need to have a `cuda.repo` file that can be pulled into the image. A sample template is provided in this particular directory with the name `cuda.repo.template`. You will be able to find more information about the `.repo` file [on this page](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=RHEL&target_version=8&target_type=rpmnetwork).
+
+\*\*Note that GPG checking is *optional*. You can find GPG key info in the url above.
 
 ### Testing the Image you Built Outside of OpenShift
 
