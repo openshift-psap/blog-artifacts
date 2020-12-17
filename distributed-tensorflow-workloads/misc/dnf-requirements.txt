@@ -1,0 +1,7 @@
+gcc
+gcc-c++
+git
+python3-devel
+python3-pip
+unzip
+wget

@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tf-record-builder-job
+  namespace: distributed-tf
+  labels:
+    app: tf-record-builder-job
+    name: tf-record-builder-job
+spec:
+  template:
+    metadata:
+      labels:
+        app: tf-record-builder-job
+        name: tf-record-builder-job
+    spec:
+      containers:
+        - name: tf-record-builder
+          image: quay.io/cep235/coco:latest
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /mnt/tensorflow-files
+              name: tensorflow-files-pv
+              readOnly: false
+          command: ["/bin/bash", "build_TFRecords.sh"]
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: my-quay-key
+      volumes:
+        - name: tensorflow-files-pv
+          persistentVolumeClaim:
+            claimName: tensorflow-files-pvc
+      backoffLimit: 1

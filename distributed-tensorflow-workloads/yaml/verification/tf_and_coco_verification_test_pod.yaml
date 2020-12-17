@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tf-and-coco-verification-pod
+  labels:
+    name: tf-and-coco-verification-pod
+spec:
+  containers:
+    - name: tf-and-coco-verification
+      image: registry.redhat.io/ubi8:latest
+      imagePullPolicy: Always
+      restartPolicy: Never
+      securityContext:
+        privileged: true
+      volumeMounts:
+        - mountPath: /mnt/tensorflow-files
+          name: tensorflow-files-pv
+          readOnly: false
+      command: ["/bin/bash", "-c", "tail -f /dev/null"]
+  volumes:
+    - name: tensorflow-files-pv
+      persistentVolumeClaim:
+        claimName: tensorflow-files-pvc

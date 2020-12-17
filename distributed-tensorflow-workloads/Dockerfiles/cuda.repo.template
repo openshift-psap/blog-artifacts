@@ -1,5 +1,5 @@
-[CUDA]
-name=CUDA
+[cuda]
+name=cuda
 baseurl=<url-to-cuda-rhel8-repo>
 enabled=1
 gpgcheck=0

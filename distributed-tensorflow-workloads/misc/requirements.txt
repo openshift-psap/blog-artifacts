@@ -1,0 +1,7 @@
+contextlib2
+cython
+numpy
+pillow
+pycocotools==2.0.0
+tensorflow-object-detection-api
+

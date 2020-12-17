@@ -1,0 +1,5 @@
+[nvidia-ml]
+name=nvidia-ml
+baseurl=<url-to-nvidia-ml-rhel8-repo>
+enabled=1
+gpgcheck=0

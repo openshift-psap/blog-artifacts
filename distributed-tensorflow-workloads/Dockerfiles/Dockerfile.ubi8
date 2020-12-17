@@ -3,7 +3,13 @@ MAINTAINER Courtney Pacheco <cpacheco@redhat.com>
 
 # Set CUDA version to use
 ENV CUDA_MAJOR_VERSION=10
-ENV CUDA_MAJOR_RELEASE=1
+ENV CUDA_MAJOR_RELEASE=2
+
+# cudNN version
+ENV CUDNN_VERSION=8.0.4.30
+
+# NCCL version
+ENV NCCL_VERSION=2.5.6-2
 
 # For TensorFlow, set the versions of required packages, as well as the arch and Python version
 ENV BAZEL_VERSION=3.1.0
@@ -15,18 +21,18 @@ ENV PYTHON_VERSION=36
 # Copy the CUDA repo file
 COPY cuda.repo /etc/yum.repos.d/cuda.repo
 
-# Copy cuDNN
-ARG CUDNN_TARBALL=cudnn-${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE}-linux-x64-v8*.tgz
-COPY ${CUDNN_TARBALL} /tmp
-
-# Copy NCCL
-ARG NCCL_TARBALL=nccl*${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE}*.txz
-COPY ${NCCL_TARBALL} /usr/local
+# Copy the CUDA ML repo
+COPY nvidia-ml.repo /etc/yum.repos.d/nvidia-ml.repo
 
 # Install EPEL, python3-devel, python3-pip, gcc, git, patch, and wget
 RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
     dnf -y install gcc \
+                   gcc-c++ \
                    git \
+                   glibc \
+                   glibc-devel \
+                   glibc-static \
+                   java-devel \
                    patch \
                    python3-devel \
                    python3-pip \
@@ -35,31 +41,39 @@ RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.n
     dnf clean all && \
     rm -rf /var/cache/dnf*
 
-# Install CUDA and TensorFlow related packages
-RUN dnf -y install cuda-libraries-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   dkms \
-                   nvidia-kmod && \
+# Install CUDA and TensorFlow related packages, then symlink as appropriate
+RUN dnf install -y cuda-cudart-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cufft-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cufft-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cupti-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-curand-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-curand-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cusolver-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cusolver-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cusparse-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-cusparse-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-compat-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-misc-headers*${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   cuda-nvcc-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   libcublas-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   libcublas-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                   libcudnn8-devel-${CUDNN_VERSION}-1.cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                   libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                   libnccl-devel-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                   libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} && \
+    ln -s cuda-${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} /usr/local/cuda && \
     dnf clean all && \
     rm -rf /var/cache/dnf*
 
-# Install cuDNN
-RUN cd /tmp && \
-    tar xvf cudnn-${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE}-linux-x64-v8*.tgz && \
-    cp cuda/lib64/* /usr/local/cuda/lib64 && \
-    cp cuda/include/* /usr/local/cuda/include && \
-    rm -rf cuda && \
-    rm -rf cudnn-${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE}-linux-x64-v8*.tgz
-
-# Install NCCL
-RUN cd /usr/local && \
-    tar xvf nccl*.txz && \
-    rm -rf nccl*.txz && \
-    mv nccl* nccl
-
 # Install TensorFlow 2.x requried packages with pip3
 RUN pip3 install numpy==${NUMPY_VERSION} && \
-    pip3 install absl-py astor gast keras keras_preprocessing protobuf wheel
+    pip3 install absl-py \
+                 astor \
+                 gast \
+                 keras \
+                 keras_preprocessing \
+                 protobuf \
+                 wheel
 
 # Install Bazel
 RUN cd /tmp && \
@@ -89,11 +103,11 @@ ENV PYTHON_LIB_PATH=/usr/lib/python3.6
 
 #For CUDA 10.1, cublas_api.h is actually in the CUDA 10.2 directory
 ENV TF_CUDA_PATHS='/usr/local/cuda,/usr/include,/usr/lib64,/usr/local/cuda-10.2/targets/x86_64-linux/include,/usr/local/cuda-10.2/targets/x86_64-linux/lib,/usr/local/nccl'
-ENV TF_CUDA_VERSION=10.1
+ENV TF_CUDA_VERSION=10.2
 ENV TF_CUDNN_VERSION=8
 ENV TF_CUDA_COMPUTE_CAPABILITIES='3.5,7.0'
 ENV TF_CUDA_CLANG=0
-ENV TF_NCCL_VERSION=''
+ENV TF_NCCL_VERSION=2
 
 # Clone git repo for TensorFlow and configure the build
 RUN cd /opt && \
@@ -110,21 +124,14 @@ RUN cd /opt/tensorflow && \
 # Install the TensorFlow pip3 package
 RUN pip3 install /tmp/tensorflow_pkg/tensorflow-${TF_VERSION}-cp${PYTHON_VERSION}-cp${PYTHON_VERSION}m-linux_${ARCH}.whl
 
-# Acquire benchmarks and install benchmark packages
-RUN pip3 install tf-slim tensorflow_model_optimization && \
-    pip3 install tensorflow-datasets==3.0.0 && \
-    pip3 install gin-config==0.1.1 && \
-    cd /opt && \
-    git clone https://github.com/tensorflow/models
-
-ENV PYTHONPATH=/opt/models
-WORKDIR /opt/models/official/vision/image_classification
-
-# Set environment vars
-ENV MODEL_DIR=/opt/models
-ENV DATA_DIR=/opt/models/official/vision/image_classification
+# Ideally, we should be using the "--layers=false" argument with podman/docker. Thus, adding a new "layer" 
+# (via the below "RUN" argument) to delete unwanted folders will decrease the image's final size
+RUN rm -rf /tmp/* && \
+    rm -rf /opt/tensorflow && \
+    rm -f /etc/yum.repos.d/nvidia-ml.repo && \
+    rm -f /etc/yum.repos.d/cuda.repo
 
 # nvidia-container-runtime
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-ENV NVIDIA_REQUIRE_CUDA "cuda>=10.1 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441"
+ENV NVIDIA_REQUIRE_CUDA "cuda>=10.2 brand=tesla,driver>=396,driver<397 brand=tesla,driver>=410,driver<411 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441"
