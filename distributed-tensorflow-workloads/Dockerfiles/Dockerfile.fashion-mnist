@@ -1,0 +1,12 @@
+FROM quay.io/openshift-psap/tensorflow-gpu:ubi8-tf2.3.0
+MAINTAINER Courtney Pacheco <cpacheco@redhat.com>
+
+# Set workspace related vars
+ENV SCRIPTS_DIR /opt/setup/scripts
+
+# Create the directories to setup the workspace
+RUN mkdir -p ${SCRIPTS_DIR}
+WORKDIR ${SCRIPTS_DIR}
+
+# Pull scripts in so that we can run the Fashion MNIST benchmark
+COPY scripts/tensorflow_setup ${SCRIPTS_DIR}
