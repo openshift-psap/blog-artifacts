@@ -2,19 +2,19 @@ FROM registry.redhat.io/ubi8/ubi:latest
 MAINTAINER Courtney Pacheco <cpacheco@redhat.com>
 
 # Set CUDA version to use
-ENV CUDA_MAJOR_VERSION=10
-ENV CUDA_MAJOR_RELEASE=2
+ENV CUDA_MAJOR_VERSION=11
+ENV CUDA_MAJOR_RELEASE=0
 
 # cudNN version
-ENV CUDNN_VERSION=8.0.4.30
+ENV CUDNN_VERSION=8.0.5.39
 
 # NCCL version
-ENV NCCL_VERSION=2.5.6-2
+ENV NCCL_VERSION=2.8.3-1
 
 # For TensorFlow, set the versions of required packages, as well as the arch and Python version
 ENV BAZEL_VERSION=3.1.0
 ENV NUMPY_VERSION=1.18.5
-ENV TF_VERSION=2.3.0
+ENV TF_VERSION=2.4.0
 ENV ARCH=x86_64
 ENV PYTHON_VERSION=36
 
@@ -42,28 +42,53 @@ RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.n
     rm -rf /var/cache/dnf*
 
 # Install CUDA and TensorFlow related packages, then symlink as appropriate
-RUN dnf install -y cuda-cudart-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cufft-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cufft-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cupti-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-curand-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-curand-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cusolver-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cusolver-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cusparse-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-cusparse-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-compat-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-misc-headers*${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   cuda-nvcc-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   libcublas-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   libcublas-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
-                   libcudnn8-devel-${CUDNN_VERSION}-1.cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
-                   libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
-                   libnccl-devel-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
-                   libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} && \
-    ln -s cuda-${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} /usr/local/cuda && \
-    dnf clean all && \
-    rm -rf /var/cache/dnf*
+RUN if [[ ${CUDA_MAJOR_VERSION} < 11 ]]; then \
+        dnf install -y cuda-cudart-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cufft-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cufft-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cupti-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-curand-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-curand-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cusolver-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cusolver-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cusparse-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cusparse-dev-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-compat-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-misc-headers*${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-nvcc-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcublas-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcublas-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcudnn8-devel-${CUDNN_VERSION}-1.cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                       libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                       libnccl-devel-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                       libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} && \
+        dnf clean all && \
+        rm -rf /var/cache/dnf*; \
+    else \
+        dnf install -y cuda-cudart-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-cupti-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-libraries-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcufft-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcufft-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcurand-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcurand-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcusolver-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcusolver-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcusparse-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcusparse-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-compat-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       cuda-nvcc-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcublas-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcublas-devel-${CUDA_MAJOR_VERSION}-${CUDA_MAJOR_RELEASE} \
+                       libcudnn8-devel-${CUDNN_VERSION}-1.cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                       libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                       libnccl-devel-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} \
+                       libnccl-${NCCL_VERSION}+cuda${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} && \
+        dnf clean all && \
+        rm -rf /var/cache/dnf*; \
+    fi
+
+RUN ln -s cuda-${CUDA_MAJOR_VERSION}.${CUDA_MAJOR_RELEASE} /usr/local/cuda
 
 # Install TensorFlow 2.x requried packages with pip3
 RUN pip3 install numpy==${NUMPY_VERSION} && \
@@ -101,13 +126,14 @@ ENV TF_SET_ANDROID_WORKSPACE=0
 ENV PYTHON_BIN_PATH=/usr/bin/python
 ENV PYTHON_LIB_PATH=/usr/lib/python3.6
 
-#For CUDA 10.1, cublas_api.h is actually in the CUDA 10.2 directory
+#For CUDA 10.1, cublas_api.h is actually in the CUDA 10.2 directory. Otherwise, no need to change.
 ENV TF_CUDA_PATHS='/usr/local/cuda,/usr/include,/usr/lib64,/usr/local/cuda-10.2/targets/x86_64-linux/include,/usr/local/cuda-10.2/targets/x86_64-linux/lib,/usr/local/nccl'
-ENV TF_CUDA_VERSION=10.2
+ENV TF_CUDA_VERSION=11.0
 ENV TF_CUDNN_VERSION=8
 ENV TF_CUDA_COMPUTE_CAPABILITIES='3.5,7.0'
 ENV TF_CUDA_CLANG=0
 ENV TF_NCCL_VERSION=2
+ENV TMP=/tmp
 
 # Clone git repo for TensorFlow and configure the build
 RUN cd /opt && \
@@ -134,4 +160,4 @@ RUN rm -rf /tmp/* && \
 # nvidia-container-runtime
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-ENV NVIDIA_REQUIRE_CUDA "cuda>=10.2 brand=tesla,driver>=396,driver<397 brand=tesla,driver>=410,driver<411 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441"
+ENV NVIDIA_REQUIRE_CUDA "cuda>=11.0 brand=tesla,driver>=396,driver<397 brand=tesla,driver>=410,driver<411 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441"
