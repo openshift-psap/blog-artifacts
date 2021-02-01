@@ -1,0 +1,30 @@
+apiVersion: kubeflow.org/v1
+kind: TFJob
+metadata:
+  generateName: tfjob-multi-
+  namespace: distributed-tf
+spec:
+  cleanPodPolicy: Running
+  tfReplicaSpecs:
+    Worker:
+      replicas: 2
+      restartPolicy: Never
+      template:
+        metadata:
+          annotations:
+          sidecar.istio.io/inject: "false"
+        spec:
+          containers:
+          - name: tensorflow
+            image: "quay.io/cep235/tensorflow-mnist:700-steps"
+            command: ["python3", "/home/mnist/src/main.py"] 
+            imagePullPolicy: Always
+            env:
+              - name: LD_LIBRARY_PATH
+                value: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/nccl/lib:/usr/local/cuda/lib:/usr/local/cuda-10.1/compat
+              - name: TF_FORCE_GPU_ALLOW_GROWTH
+                value: "true"
+          imagePullSecrets:
+            - name: "my-quay-key"
+          nodeSelector:
+            beta.kubernetes.io/instance-type: "g4dn.xlarge"
