@@ -16,13 +16,13 @@ spec:
         spec:
           containers:
           - name: tensorflow
-            image: "YOUR-IMAGE-HERE"
-            command: ["python3", "/home/fashion_mnist.py", "100", "10", "32", "2"] 
+            image: "quay.io/cep235/tensorflow-fashion-mnist:latest"
+            command: ["python3", "/opt/setup/scripts/fashion_mnist.py", "100", "10", "32", "2"] 
             imagePullPolicy: Always
             env:
               - name: LD_LIBRARY_PATH
                 value: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/nccl/lib:/usr/local/cuda/lib:/usr/local/cuda-10.1/compat
           imagePullSecrets:
-            - name: "YOUR-PULL-SECRET"
+            - name: "my-quay-key"
           nodeSelector:
-            beta.kubernetes.io/instance-type: "YOUR-INSTANCE-TYPE"
+            beta.kubernetes.io/instance-type: "g4dn.xlarge"

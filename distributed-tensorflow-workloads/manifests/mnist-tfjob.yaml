@@ -7,7 +7,7 @@ spec:
   cleanPodPolicy: Running
   tfReplicaSpecs:
     Worker:
-      replicas: 2
+      replicas: 3
       restartPolicy: Never
       template:
         metadata:
@@ -16,15 +16,15 @@ spec:
         spec:
           containers:
           - name: tensorflow
-            image: "YOUR-IMAGE-HERE"
+            image: "quay.io/cep235/tensorflow-mnist:700-steps"
             command: ["python3", "/home/mnist/src/main.py"] 
             imagePullPolicy: Always
             env:
               - name: LD_LIBRARY_PATH
-                value: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/nccl/lib:/usr/local/cuda/lib:/usr/local/cuda-10.1/compat #Edit this with your CUDA paths
+                value: /usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/nccl/lib:/usr/local/cuda/lib:/usr/local/cuda-10.1/compat
               - name: TF_FORCE_GPU_ALLOW_GROWTH
                 value: "true"
           imagePullSecrets:
-            - name: "YOUR-PULL-SECRET-HERE"
+            - name: "cep235-cpacheco-openshift-pull-secret"
           nodeSelector:
-            beta.kubernetes.io/instance-type: "g4dn.xlarge" #Edit this to match your instances
+            beta.kubernetes.io/instance-type: "g4dn.xlarge"
