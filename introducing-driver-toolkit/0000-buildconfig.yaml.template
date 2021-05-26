@@ -1,0 +1,69 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: simple-kmod-driver-container
+  name: simple-kmod-driver-container
+  namespace: simple-kmod-demo
+spec: {}
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: simple-kmod-driver-build
+  name: simple-kmod-driver-build
+  namespace: simple-kmod-demo
+spec:
+  nodeSelector:
+    node-role.kubernetes.io/worker: ""
+  runPolicy: "Serial"
+  triggers:
+    - type: "ConfigChange"
+    - type: "ImageChange"
+  source:
+    git:
+      ref: "master"
+      uri: "https://github.com/openshift-psap/kvc-simple-kmod.git"
+    type: Git
+    dockerfile: |
+      FROM DRIVER_TOOLKIT_IMAGE
+      
+      WORKDIR /build/
+      
+      RUN yum -y install git
+      
+      # Expecting kmod software version as an input to the build
+      ARG KMODVER
+      
+      # Grab the software from upstream
+      RUN git clone https://github.com/openshift-psap/simple-kmod.git
+      WORKDIR simple-kmod
+      
+      # Prep and build the module
+      RUN yum install -y make sudo
+      RUN make buildprep KVER=$(rpm -q --qf "%{VERSION}-%{RELEASE}.%{ARCH}"  kernel-core) KMODVER=${KMODVER}
+      RUN make all       KVER=$(rpm -q --qf "%{VERSION}-%{RELEASE}.%{ARCH}"  kernel-core) KMODVER=${KMODVER}
+      RUN make install   KVER=$(rpm -q --qf "%{VERSION}-%{RELEASE}.%{ARCH}"  kernel-core) KMODVER=${KMODVER}
+      
+      # Add the helper tools
+      WORKDIR /root/kvc-simple-kmod
+      ADD Makefile .
+      ADD simple-kmod-lib.sh .
+      ADD simple-kmod-wrapper.sh .
+      ADD simple-kmod.conf .
+      RUN mkdir -p /usr/lib/kvc/
+      RUN mkdir -p /etc/kvc/
+      RUN make install
+      
+      RUN systemctl enable kmods-via-containers@simple-kmod
+  strategy:
+    dockerStrategy:
+      buildArgs:
+        - name: KMODVER
+          value: DEMO
+  output:
+    to:
+      kind: ImageStreamTag
+      name: simple-kmod-driver-container:demo
+
