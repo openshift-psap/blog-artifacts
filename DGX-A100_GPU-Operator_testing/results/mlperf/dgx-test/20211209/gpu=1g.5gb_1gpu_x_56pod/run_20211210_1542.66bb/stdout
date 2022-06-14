@@ -1,0 +1,6 @@
+2021-12-10 09:51:05.944241
+Saving artifacts files into /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=1g.5gb_1gpu_x_56pod/run_20211210_1542.66bb
+Deleting the old Job, if any ...
+- run-ssd
+Deleting the old job Pods, if any ...
+Deleting 1 Pods: run-ssd--1-qxspp

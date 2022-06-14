@@ -1,0 +1,10 @@
+node_name=dgxa100
+flavor=20211209
+benchmark=maskrcnn
+cores=8
+run=1
+execution_mode=run
+gpu_type=full
+gpu_count=4
+pod_count=1
+

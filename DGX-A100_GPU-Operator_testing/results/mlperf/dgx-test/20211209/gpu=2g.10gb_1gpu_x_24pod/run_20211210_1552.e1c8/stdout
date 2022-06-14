@@ -1,0 +1,216 @@
+2021-12-10 10:32:14.941155
+Saving artifacts files into /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8
+Deleting the old Job, if any ...
+- run-ssd
+Deleting the old job Pods, if any ...
+Deleting 1 Pods: run-ssd--1-vvbmm
+Done with the Pods.
+Apply mixed MIG strategy ...
+Node dgxa100 already labeled with MIG label 'all-2g.10gb', nothing to do.
+Deleting the old ConfigMap, if any ...
+Existed.
+Creating the new ConfigMap ...
+Including my_run_and_time.sh ...
+Saving the ConfigMap in /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8 ...
+Waiting for MIG reconfiguration of the node ...
+MIG Manager state is success, good.
+MIG strategy is mixed, good.
+MIG label is all-2g.10gb, good.
+24 nvidia.com/mig-2g.10gb, good.
+Launching 24 Pods ...
+Running 24 Pods in parallel
+Requesting 1 nvidia.com/mig-2g.10gb per Pod
+Creating the new 'nvidia.com/mig-2g.10gb' Job ...
+
+Job 'nvidia.com/mig-2g.10gb' for GPU: 1 x 2g.10gb x 24 Pods created!
+=====
+Thanos: Preparing  ...
+Thanos: Checking if user-monitoring is enabled ...
+Thanos: Fetching the monitoring secret token ...
+Thanos: Fetching the route URL ...
+-----
+2021-12-10 10:32:25.223613
+Waiting for run-ssd to complete its execution ...
+
+run-ssd - Not started (active=0, succeeded=0, failed=0)
+[2Krun-ssd--1-29cpq --> Pending
+[2Krun-ssd--1-2qvjx --> Pending
+[2Krun-ssd--1-477tc --> Pending
+[2Krun-ssd--1-5tmkm --> Pending
+[2Krun-ssd--1-7pvt2 --> Pending
+[2Krun-ssd--1-8dgvk --> Pending
+[2Krun-ssd--1-9lzhc --> Pending
+[2Krun-ssd--1-c4889 --> Pending
+[2Krun-ssd--1-djc94 --> Pending
+[2Krun-ssd--1-dmtgp --> Pending
+[2Krun-ssd--1-ft6fc --> Pending
+[2Krun-ssd--1-hhm9h --> Pending
+[2Krun-ssd--1-jbrwk --> Pending
+[2Krun-ssd--1-lh68c --> Pending
+[2Krun-ssd--1-mzbpq --> Pending
+[2Krun-ssd--1-n6g64 --> Pending
+[2Krun-ssd--1-pkxwz --> Pending
+[2Krun-ssd--1-tfhdx --> Pending
+[2Krun-ssd--1-tph8l --> Pending
+[2Krun-ssd--1-wt7dd --> Pending
+[2Krun-ssd--1-x7m56 --> Pending
+[2Krun-ssd--1-x9kjn --> Pending
+[2Krun-ssd--1-z4n6j --> Pending
+[2Krun-ssd--1-zjbkz --> Pending
+x
+run-ssd - Active (active=24, succeeded=0, failed=0)
+xx[2KThanos: start time: 1639150360.871
+[2Krun-ssd--1-29cpq --> Running
+[2Krun-ssd--1-2qvjx --> Running
+[2Krun-ssd--1-5tmkm --> Running
+[2Krun-ssd--1-7pvt2 --> Running
+[2Krun-ssd--1-9lzhc --> Running
+[2Krun-ssd--1-c4889 --> Running
+[2Krun-ssd--1-djc94 --> Running
+[2Krun-ssd--1-dmtgp --> Running
+[2Krun-ssd--1-ft6fc --> Running
+[2Krun-ssd--1-hhm9h --> Running
+[2Krun-ssd--1-mzbpq --> Running
+[2Krun-ssd--1-pkxwz --> Running
+[2Krun-ssd--1-tfhdx --> Running
+[2Krun-ssd--1-wt7dd --> Running
+[2Krun-ssd--1-x7m56 --> Running
+[2Krun-ssd--1-x9kjn --> Running
+[2Krun-ssd--1-z4n6j --> Running
+[2Krun-ssd--1-zjbkz --> Running
+x[2Krun-ssd--1-477tc --> Running
+[2Krun-ssd--1-8dgvk --> Running
+[2Krun-ssd--1-jbrwk --> Running
+[2Krun-ssd--1-lh68c --> Running
+[2Krun-ssd--1-n6g64 --> Running
+[2Krun-ssd--1-tph8l --> Running
+Execution started!
+.....................................................[2K5 minutes of execution ...
+...........................................................[2K10 minutes of execution ...
+..........................................................[2K15 minutes of execution ...
+...........................................................[2K20 minutes of execution ...
+...........................................................[2K25 minutes of execution ...
+..........................................................[2K30 minutes of execution ...
+...........................................................[2K35 minutes of execution ...
+....................
+run-ssd - Active (active=23, succeeded=1, failed=0)
+[2Krun-ssd--1-z4n6j --> Succeeded
+......
+run-ssd - Active (active=22, succeeded=2, failed=0)
+[2Krun-ssd--1-mzbpq --> Succeeded
+.....
+run-ssd - Active (active=17, succeeded=7, failed=0)
+[2Krun-ssd--1-29cpq --> Succeeded
+[2Krun-ssd--1-djc94 --> Succeeded
+[2Krun-ssd--1-tph8l --> Succeeded
+[2Krun-ssd--1-wt7dd --> Succeeded
+[2Krun-ssd--1-zjbkz --> Succeeded
+.
+run-ssd - Active (active=2, succeeded=22, failed=0)
+[2Krun-ssd--1-2qvjx --> Succeeded
+[2Krun-ssd--1-477tc --> Succeeded
+[2Krun-ssd--1-5tmkm --> Succeeded
+[2Krun-ssd--1-7pvt2 --> Succeeded
+[2Krun-ssd--1-8dgvk --> Succeeded
+[2Krun-ssd--1-9lzhc --> Succeeded
+[2Krun-ssd--1-c4889 --> Succeeded
+[2Krun-ssd--1-dmtgp --> Succeeded
+[2Krun-ssd--1-ft6fc --> Succeeded
+[2Krun-ssd--1-hhm9h --> Succeeded
+[2Krun-ssd--1-jbrwk --> Succeeded
+[2Krun-ssd--1-n6g64 --> Succeeded
+[2Krun-ssd--1-pkxwz --> Succeeded
+[2Krun-ssd--1-tfhdx --> Succeeded
+[2Krun-ssd--1-x9kjn --> Succeeded
+.
+run-ssd - Active (active=1, succeeded=23, failed=0)
+[2Krun-ssd--1-x7m56 --> Succeeded
+...
+run-ssd - Finished (active=0, succeeded=24, failed=0)
+-----
+2021-12-10 11:10:25.769595
+-----
+Collecting artifacts ...
+Saving dgxa100 definition ...
+Saving OpenShift version ...
+Saving run_ssd Jobs ...
+Saving the image SHA
+Found container status in pod/run-ssd--1-29cpq:
+- image-registry.openshift-image-registry.svc:5000/default/mlperf:ssd_0.7
+- image-registry.openshift-image-registry.svc:5000/default/mlperf@sha256:f25899ceed2b50832ba52bd7d56efa73cd19255a15c1d9f60ba55c34e646a63b
+Thanos: stop time: 1639150360.871
+Saving DCGM_FI_DEV_SM_CLOCK metrics ...
+Saving DCGM_FI_DEV_MEM_CLOCK metrics ...
+Saving DCGM_FI_DEV_MEMORY_TEMP metrics ...
+Saving DCGM_FI_DEV_GPU_TEMP metrics ...
+Saving DCGM_FI_DEV_POWER_USAGE metrics ...
+Saving DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION metrics ...
+Saving DCGM_FI_DEV_PCIE_REPLAY_COUNTER metrics ...
+Saving DCGM_FI_DEV_MEM_COPY_UTIL metrics ...
+Saving DCGM_FI_DEV_ENC_UTIL metrics ...
+Saving DCGM_FI_DEV_DEC_UTIL metrics ...
+Saving DCGM_FI_DEV_XID_ERRORS metrics ...
+Saving DCGM_FI_DEV_FB_FREE metrics ...
+Saving DCGM_FI_DEV_FB_USED metrics ...
+Saving DCGM_FI_DEV_NVLINK_BANDWIDTH_TOTAL metrics ...
+Saving DCGM_FI_DEV_VGPU_LICENSE_STATUS metrics ...
+Saving DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS metrics ...
+Saving DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS metrics ...
+Saving DCGM_FI_DEV_ROW_REMAP_FAILURE metrics ...
+Saving DCGM_FI_PROF_GR_ENGINE_ACTIVE metrics ...
+Saving DCGM_FI_PROF_PIPE_TENSOR_ACTIVE metrics ...
+Saving DCGM_FI_PROF_DRAM_ACTIVE metrics ...
+Saving DCGM_FI_PROF_PCIE_TX_BYTES metrics ...
+Saving DCGM_FI_PROF_PCIE_RX_BYTES metrics ...
+-----
+run-ssd--1-29cpq --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-29cpq.log
+run-ssd--1-2qvjx --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-2qvjx.log
+run-ssd--1-477tc --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-477tc.log
+run-ssd--1-5tmkm --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-5tmkm.log
+run-ssd--1-7pvt2 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-7pvt2.log
+run-ssd--1-8dgvk --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-8dgvk.log
+run-ssd--1-9lzhc --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-9lzhc.log
+run-ssd--1-c4889 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-c4889.log
+run-ssd--1-djc94 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-djc94.log
+run-ssd--1-dmtgp --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-dmtgp.log
+run-ssd--1-ft6fc --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-ft6fc.log
+run-ssd--1-hhm9h --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-hhm9h.log
+run-ssd--1-jbrwk --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-jbrwk.log
+run-ssd--1-lh68c --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-lh68c.log
+run-ssd--1-mzbpq --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-mzbpq.log
+run-ssd--1-n6g64 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-n6g64.log
+run-ssd--1-pkxwz --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-pkxwz.log
+run-ssd--1-tfhdx --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-tfhdx.log
+run-ssd--1-tph8l --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-tph8l.log
+run-ssd--1-wt7dd --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-wt7dd.log
+run-ssd--1-x7m56 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-x7m56.log
+run-ssd--1-x9kjn --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-x9kjn.log
+run-ssd--1-z4n6j --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-z4n6j.log
+run-ssd--1-zjbkz --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8/run-ssd--1-zjbkz.log
+-----
+2021-12-10 11:10:43.157377
+Artifacts files saved into /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211210_1552.e1c8

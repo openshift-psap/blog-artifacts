@@ -1,0 +1,13 @@
+node_name=dgxa100
+flavor=20211209
+benchmark=ssd
+cores=8
+execution_mode=fast
+threshold=0.1
+run=2
+mig_strategy=single
+gpu_type=7g.40gb
+gpu_count=5
+pod_count=2
+opts=no-sync
+

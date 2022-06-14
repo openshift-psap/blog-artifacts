@@ -1,0 +1,2 @@
+image: image-registry.openshift-image-registry.svc:5000/default/mlperf:maskrcnn_1.1
+image_id: image-registry.openshift-image-registry.svc:5000/default/mlperf@sha256:e76de0858de0458c8cd43ec2bb1a92c099892dfe222d7aedb0ee19547d5b083d

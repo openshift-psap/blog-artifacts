@@ -1,0 +1,11 @@
+node_name=dgxa100
+flavor=20211209
+benchmark=ssd
+cores=8
+run=1
+execution_mode=run
+threshold=0.23
+expe=dgx-benchmark
+gpu_type=full
+gpu_count=1
+pod_count=6

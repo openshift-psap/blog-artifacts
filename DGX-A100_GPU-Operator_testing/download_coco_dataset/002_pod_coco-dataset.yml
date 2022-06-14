@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: coco-dataset-downloader
+ namespace: default
+spec:
+  restartPolicy: Never
+  containers:
+  - name: coco-dataset-downloader
+    image: registry.access.redhat.com/ubi8/ubi
+    command: [bash, /mnt/entrypoint/entrypoint.sh]
+    env:
+    - name: STORAGE_DIR
+      value: /storage
+    volumeMounts:
+    - name: entrypoint-cm
+      mountPath: /mnt/entrypoint/entrypoint.sh
+      readOnly: true
+      subPath: entrypoint.sh
+    - name: storage
+      mountPath: /storage/
+  volumes:
+  - name: storage
+    persistentVolumeClaim:
+      claimName: benchmarking-coco-dataset
+  - name: entrypoint-cm
+    configMap:
+      defaultMode: 0777
+      name: coco-dataset-downloader

@@ -1,0 +1,80 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: run-mlperf-mig-3g-20gb
+  namespace: default
+  labels:
+    app: run-mlperf
+spec:
+  parallelism: 4
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: run-mlperf
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: cnt
+        image: "image-registry.openshift-image-registry.svc:5000/default/mlperf:ssd_0.7"
+        command:
+        - /bin/bash
+        - ./my_run_and_time.sh
+        env:
+        - name: NVIDIA_DRIVER_CAPABILITIES
+          value: "compute,utility"
+        - name: NVIDIA_REQUIRE_CUDA
+          value: "cuda>=5.0"
+        - name: DGX_SYSTEM
+          value: CUSTOM
+
+        - name: EXECUTION_MODE
+          value: "fast"
+        - name: SSD_THRESHOLD
+          value: "0.1"
+        - name: DGXSOCKETCORES
+          value: "8"
+        - name: RUN_DESCR
+          value: "GPU: 1 x 2g.10gb,3g.20gb x 4 Pods"
+        - name: SYNC_IDENTIFIER
+          value: "2021-12-17_17-30-42"
+        - name: SYNC_COUNTER
+          value: "8"
+        - name: NO_SYNC
+          value: "n"
+        - name: GPU_COUNT
+          value: "1"
+        - name: GPU_RES_TYPE
+          value: "nvidia.com/mig-3g.20gb"
+        - name: GPU_TYPE
+          value: "2g.10gb,3g.20gb"
+        - name: BENCHMARK
+          value: "ssd"
+
+        securityContext:
+          privileged: true
+        resources:
+          limits:
+            nvidia.com/mig-3g.20gb: "1"
+          requests:
+            nvidia.com/mig-3g.20gb: "1"
+        volumeMounts:
+        - mountPath: /dev/shm
+          name: dshm
+        - mountPath: /data/coco2017
+          name: mlperf-data
+        - name: config-volume
+          mountPath: /workspace/single_stage_detector/my_run_and_time.sh
+          readOnly: false
+          subPath: my_run_and_time.sh
+      volumes:
+      - name: mlperf-data
+        persistentVolumeClaim:
+          claimName: benchmarking-coco-dataset
+      - name: dshm
+        emptyDir:
+          medium: Memory
+      - name: config-volume
+        configMap:
+          defaultMode: 0777
+          name: custom-config-script

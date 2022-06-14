@@ -1,0 +1,795 @@
+8<--8<--8<--8<--
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 7g.40gb     Device  0: (UUID: MIG-62f7dc39-4870-51c0-9b21-86def482903a)
+8<--8<--8<--8<--
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
++ NB_GPUS=1
++ [[ 1 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ awk '{ printf $6"\n"}'
+++ cut '-d)' -f1
++ ALL_GPUS=MIG-62f7dc39-4870-51c0-9b21-86def482903a
++ MIG_MODE=1
++ [[ 7g.40gb == \f\u\l\l ]]
+Found 1 MIG instances: MIG-62f7dc39-4870-51c0-9b21-86def482903a
++ echo 'Found 1 MIG instances: MIG-62f7dc39-4870-51c0-9b21-86def482903a'
++ [[ 1 == 0 ]]
++ [[ 1 != 1 ]]
+++ date +%s
++ start=1639755233
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-17 03:33:53 PM'
+STARTING TIMING RUN AT 2021-12-17 03:33:53 PM GPU: 1 x 7g.40gb x 8 Pods
++ echo 'STARTING TIMING RUN AT 2021-12-17 03:33:53 PM GPU: 1 x 7g.40gb x 8 Pods'
++ set -x
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ [[ ssd == \m\a\s\k\r\c\n\n ]]
++ DGXNSOCKET=1
++ DGXSOCKETCORES=8
++ [[ 1 == \1 ]]
++ DGXNGPU=1
++ echo 'Running in parallel mode.'
+Running in parallel mode.
++ declare -a CMD
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
+Patching 'bind_launch.py' to err-exit on failure ...
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
++ sed 's/process.wait()$/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ [[ ssd == \s\s\d ]]
++ echo 'Setting up the SSD benchmark...'
+Setting up the SSD benchmark...
++ EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'
++ NUMEPOCHS=80
++ ARGS=(train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs "${NUMEPOCHS}" --warmup-factor 0 --no-save --threshold=${SSD_THRESHOLD} --data ${DATASET_DIR} ${EXTRA_PARAMS})
+Running in FAST mode
++ [[ fast == \f\a\s\t ]]
++ echo 'Running in FAST mode'
++ ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)
++ [[ fast == \d\r\y ]]
++ trap 'date; echo failed; exit 1' ERR
++ [[ n != \y ]]
++ SYNC_DIR=/data/coco2017/sync
++ mkdir -p /data/coco2017/sync
++ for sync_f in "$SYNC_DIR/"*
++ [[ /data/coco2017/sync/2021-12-17_16-32-42 != \/\d\a\t\a\/\c\o\c\o\2\0\1\7\/\s\y\n\c\/\2\0\2\1\-\1\2\-\1\7\_\1\6\-\3\2\-\4\2 ]]
++ set +x
+Fri Dec 17 15:33:53 UTC 2021 Waiting for all the 8 Pods to start ...
+Adding run-mlperf--1-db7pn to the sync file ...
+run-mlperf--1-db7pn Found 5 Pods, waiting to have 8 ...
+     1	run-mlperf--1-lg9lr
+     2	run-mlperf--1-4w4z8
+     3	run-mlperf--1-vhwqh
+     4	run-mlperf--1-wbpms
+     5	run-mlperf--1-db7pn
+Fri Dec 17 15:33:58 UTC 2021 All the 8 Pods are running, launch the GPU workload.
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 7g.40gb     Device  0: (UUID: MIG-62f7dc39-4870-51c0-9b21-86def482903a)
++ [[ 1 == 1 ]]
++ [[ 1 != 1 ]]
++ dest=/tmp/benchmark_all.log
++ [[ 1 == 1 ]]
+Running on the MIG GPU
++ echo 'Running on the MIG GPU'
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
++ tee -a /tmp/benchmark_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639755240116, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639755240289, "event_type": "POINT_IN_TIME", "key": "seed", "value": 4285540171, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+0 Using seed = 4285540171
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+:::MLLOG {"namespace": "", "time_ms": 1639755242467, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242467, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 114, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0125, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+:::MLLOG {"namespace": "", "time_ms": 1639755266578, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639755266578, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+:::MLLOG {"namespace": "", "time_ms": 1639755268290, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639755268291, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+Done (t=0.18s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639755268688, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639755268689, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755268691, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.058, Average Loss: 0.022, avg. samples / sec: 4.40
+Iteration:     20, Loss function: 21.037, Average Loss: 0.447, avg. samples / sec: 795.00
+Iteration:     40, Loss function: 20.636, Average Loss: 0.848, avg. samples / sec: 832.05
+Iteration:     60, Loss function: 20.342, Average Loss: 1.238, avg. samples / sec: 931.48
+Iteration:     80, Loss function: 19.534, Average Loss: 1.609, avg. samples / sec: 871.06
+Iteration:    100, Loss function: 14.304, Average Loss: 1.921, avg. samples / sec: 947.27
+Iteration:    120, Loss function: 11.042, Average Loss: 2.121, avg. samples / sec: 911.69
+Iteration:    140, Loss function: 9.667, Average Loss: 2.277, avg. samples / sec: 914.21
+Iteration:    160, Loss function: 9.326, Average Loss: 2.417, avg. samples / sec: 941.34
+Iteration:    180, Loss function: 9.024, Average Loss: 2.548, avg. samples / sec: 925.74
+Iteration:    200, Loss function: 8.614, Average Loss: 2.673, avg. samples / sec: 922.35
+Iteration:    220, Loss function: 8.596, Average Loss: 2.795, avg. samples / sec: 888.42
+Iteration:    240, Loss function: 8.577, Average Loss: 2.913, avg. samples / sec: 910.06
+Iteration:    260, Loss function: 8.751, Average Loss: 3.025, avg. samples / sec: 920.33
+Iteration:    280, Loss function: 8.333, Average Loss: 3.135, avg. samples / sec: 933.81
+Iteration:    300, Loss function: 8.252, Average Loss: 3.239, avg. samples / sec: 965.28
+Iteration:    320, Loss function: 8.412, Average Loss: 3.340, avg. samples / sec: 949.90
+Iteration:    340, Loss function: 8.069, Average Loss: 3.436, avg. samples / sec: 985.81
+Iteration:    360, Loss function: 8.244, Average Loss: 3.530, avg. samples / sec: 966.86
+Iteration:    380, Loss function: 7.956, Average Loss: 3.619, avg. samples / sec: 924.09
+Iteration:    400, Loss function: 7.953, Average Loss: 3.706, avg. samples / sec: 716.45
+Iteration:    420, Loss function: 7.510, Average Loss: 3.788, avg. samples / sec: 953.00
+Iteration:    440, Loss function: 7.741, Average Loss: 3.866, avg. samples / sec: 897.72
+Iteration:    460, Loss function: 7.744, Average Loss: 3.942, avg. samples / sec: 945.21
+Iteration:    480, Loss function: 7.419, Average Loss: 4.017, avg. samples / sec: 976.80
+Iteration:    500, Loss function: 7.514, Average Loss: 4.087, avg. samples / sec: 980.66
+Iteration:    520, Loss function: 7.652, Average Loss: 4.157, avg. samples / sec: 942.35
+Iteration:    540, Loss function: 7.549, Average Loss: 4.223, avg. samples / sec: 912.85
+Iteration:    560, Loss function: 7.041, Average Loss: 4.285, avg. samples / sec: 957.00
+Iteration:    580, Loss function: 7.108, Average Loss: 4.345, avg. samples / sec: 968.46
+Iteration:    600, Loss function: 7.283, Average Loss: 4.404, avg. samples / sec: 970.54
+Iteration:    620, Loss function: 7.027, Average Loss: 4.460, avg. samples / sec: 941.98
+Iteration:    640, Loss function: 6.817, Average Loss: 4.514, avg. samples / sec: 973.65
+Iteration:    660, Loss function: 7.147, Average Loss: 4.567, avg. samples / sec: 966.89
+Iteration:    680, Loss function: 7.502, Average Loss: 4.621, avg. samples / sec: 929.55
+Iteration:    700, Loss function: 6.804, Average Loss: 4.669, avg. samples / sec: 953.87
+Iteration:    720, Loss function: 6.800, Average Loss: 4.716, avg. samples / sec: 985.27
+Iteration:    740, Loss function: 6.935, Average Loss: 4.762, avg. samples / sec: 939.65
+Iteration:    760, Loss function: 7.072, Average Loss: 4.806, avg. samples / sec: 946.18
+Iteration:    780, Loss function: 6.854, Average Loss: 4.848, avg. samples / sec: 909.27
+Iteration:    800, Loss function: 7.167, Average Loss: 4.887, avg. samples / sec: 987.68
+Iteration:    820, Loss function: 6.876, Average Loss: 4.925, avg. samples / sec: 913.12
+Iteration:    840, Loss function: 6.784, Average Loss: 4.961, avg. samples / sec: 917.65
+Iteration:    860, Loss function: 6.987, Average Loss: 4.996, avg. samples / sec: 922.33
+Iteration:    880, Loss function: 6.568, Average Loss: 5.029, avg. samples / sec: 942.46
+Iteration:    900, Loss function: 6.669, Average Loss: 5.060, avg. samples / sec: 949.51
+Iteration:    920, Loss function: 6.532, Average Loss: 5.089, avg. samples / sec: 931.44
+Iteration:    940, Loss function: 6.496, Average Loss: 5.118, avg. samples / sec: 835.49
+Iteration:    960, Loss function: 6.179, Average Loss: 5.146, avg. samples / sec: 909.83
+Iteration:    980, Loss function: 6.313, Average Loss: 5.173, avg. samples / sec: 957.99
+Iteration:   1000, Loss function: 6.522, Average Loss: 5.199, avg. samples / sec: 979.32
+Iteration:   1020, Loss function: 6.342, Average Loss: 5.223, avg. samples / sec: 976.88
+:::MLLOG {"namespace": "", "time_ms": 1639755395255, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639755395256, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 1029}}
+Iteration:   1040, Loss function: 6.639, Average Loss: 5.247, avg. samples / sec: 965.04
+Iteration:   1060, Loss function: 6.267, Average Loss: 5.271, avg. samples / sec: 972.46
+Iteration:   1080, Loss function: 6.336, Average Loss: 5.292, avg. samples / sec: 983.14
+Iteration:   1100, Loss function: 6.059, Average Loss: 5.312, avg. samples / sec: 920.81
+Iteration:   1120, Loss function: 6.093, Average Loss: 5.332, avg. samples / sec: 883.51
+Iteration:   1140, Loss function: 6.609, Average Loss: 5.351, avg. samples / sec: 878.08
+Iteration:   1160, Loss function: 6.094, Average Loss: 5.368, avg. samples / sec: 970.33
+Iteration:   1180, Loss function: 6.178, Average Loss: 5.385, avg. samples / sec: 924.06
+Iteration:   1200, Loss function: 6.269, Average Loss: 5.401, avg. samples / sec: 876.43
+Iteration:   1220, Loss function: 6.201, Average Loss: 5.417, avg. samples / sec: 925.83
+Iteration:   1240, Loss function: 6.218, Average Loss: 5.430, avg. samples / sec: 902.96
+Iteration:   1260, Loss function: 5.939, Average Loss: 5.443, avg. samples / sec: 938.85
+Iteration:   1280, Loss function: 6.053, Average Loss: 5.456, avg. samples / sec: 962.10
+Iteration:   1300, Loss function: 6.088, Average Loss: 5.470, avg. samples / sec: 965.49
+Iteration:   1320, Loss function: 6.084, Average Loss: 5.482, avg. samples / sec: 943.78
+Iteration:   1340, Loss function: 5.743, Average Loss: 5.492, avg. samples / sec: 971.58
+Iteration:   1360, Loss function: 5.932, Average Loss: 5.503, avg. samples / sec: 958.73
+Iteration:   1380, Loss function: 6.137, Average Loss: 5.514, avg. samples / sec: 949.94
+Iteration:   1400, Loss function: 6.063, Average Loss: 5.523, avg. samples / sec: 972.09
+Iteration:   1420, Loss function: 5.726, Average Loss: 5.531, avg. samples / sec: 958.69
+Iteration:   1440, Loss function: 6.271, Average Loss: 5.539, avg. samples / sec: 986.05
+Iteration:   1460, Loss function: 6.324, Average Loss: 5.547, avg. samples / sec: 978.45
+Iteration:   1480, Loss function: 6.037, Average Loss: 5.555, avg. samples / sec: 964.94
+Iteration:   1500, Loss function: 5.975, Average Loss: 5.563, avg. samples / sec: 973.24
+Iteration:   1520, Loss function: 6.038, Average Loss: 5.570, avg. samples / sec: 964.54
+Iteration:   1540, Loss function: 6.128, Average Loss: 5.574, avg. samples / sec: 975.08
+Iteration:   1560, Loss function: 5.673, Average Loss: 5.579, avg. samples / sec: 987.73
+Iteration:   1580, Loss function: 5.695, Average Loss: 5.584, avg. samples / sec: 975.76
+Iteration:   1600, Loss function: 6.136, Average Loss: 5.591, avg. samples / sec: 930.74
+Iteration:   1620, Loss function: 5.756, Average Loss: 5.596, avg. samples / sec: 959.53
+Iteration:   1640, Loss function: 5.994, Average Loss: 5.600, avg. samples / sec: 943.35
+Iteration:   1660, Loss function: 5.935, Average Loss: 5.604, avg. samples / sec: 978.20
+Iteration:   1680, Loss function: 5.745, Average Loss: 5.607, avg. samples / sec: 968.57
+Iteration:   1700, Loss function: 5.377, Average Loss: 5.611, avg. samples / sec: 987.33
+Iteration:   1720, Loss function: 5.644, Average Loss: 5.613, avg. samples / sec: 923.05
+Iteration:   1740, Loss function: 5.749, Average Loss: 5.615, avg. samples / sec: 963.53
+Iteration:   1760, Loss function: 5.611, Average Loss: 5.617, avg. samples / sec: 977.65
+Iteration:   1780, Loss function: 5.625, Average Loss: 5.619, avg. samples / sec: 952.06
+Iteration:   1800, Loss function: 5.656, Average Loss: 5.622, avg. samples / sec: 977.62
+Iteration:   1820, Loss function: 5.934, Average Loss: 5.624, avg. samples / sec: 915.70
+Iteration:   1840, Loss function: 5.837, Average Loss: 5.626, avg. samples / sec: 966.68
+Iteration:   1860, Loss function: 5.732, Average Loss: 5.626, avg. samples / sec: 958.46
+Iteration:   1880, Loss function: 5.986, Average Loss: 5.628, avg. samples / sec: 981.93
+Iteration:   1900, Loss function: 5.738, Average Loss: 5.629, avg. samples / sec: 893.67
+Iteration:   1920, Loss function: 5.608, Average Loss: 5.629, avg. samples / sec: 950.29
+Iteration:   1940, Loss function: 5.817, Average Loss: 5.629, avg. samples / sec: 951.28
+Iteration:   1960, Loss function: 5.747, Average Loss: 5.629, avg. samples / sec: 938.60
+Iteration:   1980, Loss function: 5.767, Average Loss: 5.628, avg. samples / sec: 874.78
+Iteration:   2000, Loss function: 5.428, Average Loss: 5.627, avg. samples / sec: 967.59
+Iteration:   2020, Loss function: 5.668, Average Loss: 5.626, avg. samples / sec: 946.02
+Iteration:   2040, Loss function: 5.623, Average Loss: 5.626, avg. samples / sec: 936.98
+:::MLLOG {"namespace": "", "time_ms": 1639755518745, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639755518747, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 2058}}
+Iteration:   2060, Loss function: 5.543, Average Loss: 5.624, avg. samples / sec: 975.05
+Iteration:   2080, Loss function: 5.005, Average Loss: 5.621, avg. samples / sec: 962.56
+Iteration:   2100, Loss function: 5.367, Average Loss: 5.619, avg. samples / sec: 884.18
+Iteration:   2120, Loss function: 5.534, Average Loss: 5.617, avg. samples / sec: 916.22
+Iteration:   2140, Loss function: 5.474, Average Loss: 5.613, avg. samples / sec: 916.57
+Iteration:   2160, Loss function: 5.145, Average Loss: 5.610, avg. samples / sec: 966.62
+Iteration:   2180, Loss function: 5.350, Average Loss: 5.608, avg. samples / sec: 903.11
+Iteration:   2200, Loss function: 5.477, Average Loss: 5.605, avg. samples / sec: 927.90
+Iteration:   2220, Loss function: 5.528, Average Loss: 5.603, avg. samples / sec: 974.47
+Iteration:   2240, Loss function: 5.347, Average Loss: 5.601, avg. samples / sec: 967.55
+Iteration:   2260, Loss function: 5.331, Average Loss: 5.599, avg. samples / sec: 973.36
+Iteration:   2280, Loss function: 5.218, Average Loss: 5.596, avg. samples / sec: 946.03
+Iteration:   2300, Loss function: 5.123, Average Loss: 5.593, avg. samples / sec: 983.83
+Iteration:   2320, Loss function: 5.264, Average Loss: 5.590, avg. samples / sec: 984.81
+Iteration:   2340, Loss function: 5.519, Average Loss: 5.587, avg. samples / sec: 965.91
+Iteration:   2360, Loss function: 5.337, Average Loss: 5.584, avg. samples / sec: 899.26
+Iteration:   2380, Loss function: 5.352, Average Loss: 5.580, avg. samples / sec: 890.30
+Iteration:   2400, Loss function: 5.529, Average Loss: 5.576, avg. samples / sec: 940.47
+Iteration:   2420, Loss function: 5.528, Average Loss: 5.572, avg. samples / sec: 914.59
+Iteration:   2440, Loss function: 5.418, Average Loss: 5.570, avg. samples / sec: 935.91
+Iteration:   2460, Loss function: 5.019, Average Loss: 5.565, avg. samples / sec: 927.75
+Iteration:   2480, Loss function: 5.336, Average Loss: 5.562, avg. samples / sec: 938.32
+Iteration:   2500, Loss function: 5.499, Average Loss: 5.557, avg. samples / sec: 861.31
+Iteration:   2520, Loss function: 5.265, Average Loss: 5.553, avg. samples / sec: 972.87
+Iteration:   2540, Loss function: 5.432, Average Loss: 5.551, avg. samples / sec: 929.18
+Iteration:   2560, Loss function: 5.343, Average Loss: 5.547, avg. samples / sec: 969.36
+Iteration:   2580, Loss function: 5.147, Average Loss: 5.543, avg. samples / sec: 973.66
+Iteration:   2600, Loss function: 5.390, Average Loss: 5.540, avg. samples / sec: 977.06
+Iteration:   2620, Loss function: 5.318, Average Loss: 5.534, avg. samples / sec: 941.96
+Iteration:   2640, Loss function: 5.134, Average Loss: 5.531, avg. samples / sec: 948.17
+Iteration:   2660, Loss function: 5.278, Average Loss: 5.527, avg. samples / sec: 903.56
+Iteration:   2680, Loss function: 5.071, Average Loss: 5.523, avg. samples / sec: 961.46
+Iteration:   2700, Loss function: 5.221, Average Loss: 5.519, avg. samples / sec: 926.81
+Iteration:   2720, Loss function: 5.259, Average Loss: 5.515, avg. samples / sec: 918.73
+Iteration:   2740, Loss function: 4.986, Average Loss: 5.510, avg. samples / sec: 962.62
+Iteration:   2760, Loss function: 4.809, Average Loss: 5.505, avg. samples / sec: 985.47
+Iteration:   2780, Loss function: 5.520, Average Loss: 5.501, avg. samples / sec: 895.34
+Iteration:   2800, Loss function: 5.089, Average Loss: 5.497, avg. samples / sec: 917.55
+Iteration:   2820, Loss function: 5.439, Average Loss: 5.493, avg. samples / sec: 975.02
+Iteration:   2840, Loss function: 5.301, Average Loss: 5.489, avg. samples / sec: 975.63
+Iteration:   2860, Loss function: 5.034, Average Loss: 5.484, avg. samples / sec: 965.26
+Iteration:   2880, Loss function: 5.235, Average Loss: 5.479, avg. samples / sec: 974.73
+Iteration:   2900, Loss function: 5.089, Average Loss: 5.475, avg. samples / sec: 963.94
+Iteration:   2920, Loss function: 5.201, Average Loss: 5.470, avg. samples / sec: 906.57
+Iteration:   2940, Loss function: 5.126, Average Loss: 5.466, avg. samples / sec: 925.03
+Iteration:   2960, Loss function: 5.448, Average Loss: 5.461, avg. samples / sec: 944.87
+Iteration:   2980, Loss function: 5.259, Average Loss: 5.458, avg. samples / sec: 907.91
+Iteration:   3000, Loss function: 5.397, Average Loss: 5.452, avg. samples / sec: 863.75
+Iteration:   3020, Loss function: 5.263, Average Loss: 5.446, avg. samples / sec: 968.43
+Iteration:   3040, Loss function: 5.424, Average Loss: 5.441, avg. samples / sec: 961.45
+Iteration:   3060, Loss function: 5.026, Average Loss: 5.435, avg. samples / sec: 891.62
+Iteration:   3080, Loss function: 4.961, Average Loss: 5.430, avg. samples / sec: 927.71
+:::MLLOG {"namespace": "", "time_ms": 1639755643716, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639755643729, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 3086}}
+Iteration:   3100, Loss function: 5.126, Average Loss: 5.425, avg. samples / sec: 887.76
+Iteration:   3120, Loss function: 4.880, Average Loss: 5.420, avg. samples / sec: 976.58
+Iteration:   3140, Loss function: 5.070, Average Loss: 5.416, avg. samples / sec: 953.80
+Iteration:   3160, Loss function: 5.615, Average Loss: 5.410, avg. samples / sec: 924.85
+Iteration:   3180, Loss function: 4.958, Average Loss: 5.405, avg. samples / sec: 918.98
+Iteration:   3200, Loss function: 5.242, Average Loss: 5.401, avg. samples / sec: 930.04
+Iteration:   3220, Loss function: 5.265, Average Loss: 5.396, avg. samples / sec: 961.92
+Iteration:   3240, Loss function: 5.089, Average Loss: 5.392, avg. samples / sec: 957.05
+Iteration:   3260, Loss function: 5.106, Average Loss: 5.386, avg. samples / sec: 985.86
+Iteration:   3280, Loss function: 4.799, Average Loss: 5.381, avg. samples / sec: 899.79
+Iteration:   3300, Loss function: 4.790, Average Loss: 5.376, avg. samples / sec: 887.40
+Iteration:   3320, Loss function: 4.905, Average Loss: 5.372, avg. samples / sec: 902.50
+Iteration:   3340, Loss function: 5.128, Average Loss: 5.368, avg. samples / sec: 888.30
+Iteration:   3360, Loss function: 5.203, Average Loss: 5.362, avg. samples / sec: 946.02
+Iteration:   3380, Loss function: 5.378, Average Loss: 5.356, avg. samples / sec: 981.84
+Iteration:   3400, Loss function: 4.815, Average Loss: 5.351, avg. samples / sec: 957.60
+Iteration:   3420, Loss function: 5.153, Average Loss: 5.346, avg. samples / sec: 962.06
+Iteration:   3440, Loss function: 4.972, Average Loss: 5.342, avg. samples / sec: 916.67
+Iteration:   3460, Loss function: 5.332, Average Loss: 5.337, avg. samples / sec: 957.36
+Iteration:   3480, Loss function: 5.051, Average Loss: 5.332, avg. samples / sec: 941.86
+Iteration:   3500, Loss function: 5.210, Average Loss: 5.327, avg. samples / sec: 957.97
+Iteration:   3520, Loss function: 4.810, Average Loss: 5.324, avg. samples / sec: 911.90
+Iteration:   3540, Loss function: 5.057, Average Loss: 5.319, avg. samples / sec: 973.84
+Iteration:   3560, Loss function: 4.883, Average Loss: 5.315, avg. samples / sec: 922.36
+Iteration:   3580, Loss function: 5.102, Average Loss: 5.311, avg. samples / sec: 930.56
+Iteration:   3600, Loss function: 5.176, Average Loss: 5.305, avg. samples / sec: 882.09
+Iteration:   3620, Loss function: 4.625, Average Loss: 5.300, avg. samples / sec: 938.29
+Iteration:   3640, Loss function: 4.903, Average Loss: 5.294, avg. samples / sec: 918.19
+Iteration:   3660, Loss function: 5.027, Average Loss: 5.289, avg. samples / sec: 957.43
+Iteration:   3680, Loss function: 5.161, Average Loss: 5.283, avg. samples / sec: 917.90
+Iteration:   3700, Loss function: 5.106, Average Loss: 5.278, avg. samples / sec: 847.72
+Iteration:   3720, Loss function: 5.002, Average Loss: 5.272, avg. samples / sec: 908.03
+Iteration:   3740, Loss function: 5.190, Average Loss: 5.268, avg. samples / sec: 983.84
+Iteration:   3760, Loss function: 5.068, Average Loss: 5.264, avg. samples / sec: 956.59
+Iteration:   3780, Loss function: 5.029, Average Loss: 5.259, avg. samples / sec: 907.55
+Iteration:   3800, Loss function: 5.213, Average Loss: 5.255, avg. samples / sec: 922.64
+Iteration:   3820, Loss function: 5.216, Average Loss: 5.251, avg. samples / sec: 957.91
+Iteration:   3840, Loss function: 4.653, Average Loss: 5.246, avg. samples / sec: 943.76
+Iteration:   3860, Loss function: 4.707, Average Loss: 5.239, avg. samples / sec: 920.88
+Iteration:   3880, Loss function: 5.018, Average Loss: 5.234, avg. samples / sec: 957.78
+Iteration:   3900, Loss function: 5.003, Average Loss: 5.229, avg. samples / sec: 934.53
+Iteration:   3920, Loss function: 5.133, Average Loss: 5.223, avg. samples / sec: 937.88
+Iteration:   3940, Loss function: 5.010, Average Loss: 5.218, avg. samples / sec: 985.93
+Iteration:   3960, Loss function: 4.807, Average Loss: 5.214, avg. samples / sec: 940.79
+Iteration:   3980, Loss function: 4.851, Average Loss: 5.210, avg. samples / sec: 935.88
+Iteration:   4000, Loss function: 5.279, Average Loss: 5.207, avg. samples / sec: 964.04
+Iteration:   4020, Loss function: 5.135, Average Loss: 5.203, avg. samples / sec: 873.18
+Iteration:   4040, Loss function: 5.025, Average Loss: 5.200, avg. samples / sec: 967.78
+Iteration:   4060, Loss function: 5.235, Average Loss: 5.196, avg. samples / sec: 978.68
+Iteration:   4080, Loss function: 4.941, Average Loss: 5.191, avg. samples / sec: 972.90
+Iteration:   4100, Loss function: 5.055, Average Loss: 5.188, avg. samples / sec: 963.75
+:::MLLOG {"namespace": "", "time_ms": 1639755768843, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639755768845, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 4115}}
+Iteration:   4120, Loss function: 4.940, Average Loss: 5.183, avg. samples / sec: 990.01
+Iteration:   4140, Loss function: 5.087, Average Loss: 5.178, avg. samples / sec: 984.61
+Iteration:   4160, Loss function: 4.982, Average Loss: 5.172, avg. samples / sec: 954.69
+Iteration:   4180, Loss function: 4.882, Average Loss: 5.166, avg. samples / sec: 963.95
+Iteration:   4200, Loss function: 4.911, Average Loss: 5.162, avg. samples / sec: 993.81
+Iteration:   4220, Loss function: 4.804, Average Loss: 5.157, avg. samples / sec: 958.71
+Iteration:   4240, Loss function: 4.859, Average Loss: 5.152, avg. samples / sec: 974.58
+Iteration:   4260, Loss function: 4.974, Average Loss: 5.147, avg. samples / sec: 960.20
+Iteration:   4280, Loss function: 4.969, Average Loss: 5.141, avg. samples / sec: 976.07
+Iteration:   4300, Loss function: 4.757, Average Loss: 5.135, avg. samples / sec: 973.51
+Iteration:   4320, Loss function: 4.811, Average Loss: 5.129, avg. samples / sec: 957.47
+Iteration:   4340, Loss function: 4.776, Average Loss: 5.125, avg. samples / sec: 976.46
+Iteration:   4360, Loss function: 4.945, Average Loss: 5.120, avg. samples / sec: 975.08
+Iteration:   4380, Loss function: 5.156, Average Loss: 5.116, avg. samples / sec: 988.86
+Iteration:   4400, Loss function: 5.032, Average Loss: 5.113, avg. samples / sec: 915.98
+Iteration:   4420, Loss function: 4.873, Average Loss: 5.108, avg. samples / sec: 978.27
+Iteration:   4440, Loss function: 4.733, Average Loss: 5.102, avg. samples / sec: 931.54
+Iteration:   4460, Loss function: 5.015, Average Loss: 5.098, avg. samples / sec: 944.48
+Iteration:   4480, Loss function: 5.066, Average Loss: 5.094, avg. samples / sec: 879.10
+Iteration:   4500, Loss function: 4.884, Average Loss: 5.090, avg. samples / sec: 944.24
+Iteration:   4520, Loss function: 4.682, Average Loss: 5.086, avg. samples / sec: 904.63
+Iteration:   4540, Loss function: 5.207, Average Loss: 5.082, avg. samples / sec: 923.02
+Iteration:   4560, Loss function: 4.751, Average Loss: 5.079, avg. samples / sec: 962.94
+Iteration:   4580, Loss function: 4.750, Average Loss: 5.076, avg. samples / sec: 993.62
+Iteration:   4600, Loss function: 4.854, Average Loss: 5.072, avg. samples / sec: 974.16
+Iteration:   4620, Loss function: 4.841, Average Loss: 5.068, avg. samples / sec: 967.86
+Iteration:   4640, Loss function: 4.703, Average Loss: 5.063, avg. samples / sec: 987.60
+Iteration:   4660, Loss function: 4.710, Average Loss: 5.060, avg. samples / sec: 981.52
+Iteration:   4680, Loss function: 5.375, Average Loss: 5.056, avg. samples / sec: 962.31
+Iteration:   4700, Loss function: 4.587, Average Loss: 5.052, avg. samples / sec: 993.00
+Iteration:   4720, Loss function: 4.984, Average Loss: 5.048, avg. samples / sec: 958.10
+Iteration:   4740, Loss function: 4.894, Average Loss: 5.044, avg. samples / sec: 973.38
+Iteration:   4760, Loss function: 4.808, Average Loss: 5.041, avg. samples / sec: 973.81
+Iteration:   4780, Loss function: 5.155, Average Loss: 5.036, avg. samples / sec: 991.73
+Iteration:   4800, Loss function: 4.895, Average Loss: 5.033, avg. samples / sec: 931.50
+Iteration:   4820, Loss function: 4.793, Average Loss: 5.029, avg. samples / sec: 974.10
+Iteration:   4840, Loss function: 5.090, Average Loss: 5.025, avg. samples / sec: 982.59
+Iteration:   4860, Loss function: 4.569, Average Loss: 5.021, avg. samples / sec: 958.75
+Iteration:   4880, Loss function: 5.088, Average Loss: 5.016, avg. samples / sec: 910.95
+Iteration:   4900, Loss function: 4.508, Average Loss: 5.013, avg. samples / sec: 853.02
+Iteration:   4920, Loss function: 4.982, Average Loss: 5.009, avg. samples / sec: 927.87
+Iteration:   4940, Loss function: 4.749, Average Loss: 5.004, avg. samples / sec: 929.14
+Iteration:   4960, Loss function: 4.672, Average Loss: 5.001, avg. samples / sec: 959.20
+Iteration:   4980, Loss function: 4.501, Average Loss: 4.997, avg. samples / sec: 953.07
+Iteration:   5000, Loss function: 4.844, Average Loss: 4.994, avg. samples / sec: 943.02
+Iteration:   5020, Loss function: 5.080, Average Loss: 4.991, avg. samples / sec: 929.53
+Iteration:   5040, Loss function: 4.853, Average Loss: 4.989, avg. samples / sec: 911.00
+Iteration:   5060, Loss function: 4.855, Average Loss: 4.986, avg. samples / sec: 936.64
+Iteration:   5080, Loss function: 4.650, Average Loss: 4.982, avg. samples / sec: 979.30
+Iteration:   5100, Loss function: 4.805, Average Loss: 4.979, avg. samples / sec: 957.21
+Iteration:   5120, Loss function: 4.652, Average Loss: 4.976, avg. samples / sec: 994.53
+Iteration:   5140, Loss function: 4.800, Average Loss: 4.972, avg. samples / sec: 994.21
+:::MLLOG {"namespace": "", "time_ms": 1639755891522, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+Predicting Ended, total time: 27.67 s
+:::MLLOG {"namespace": "", "time_ms": 1639755919285, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639755919362, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755919362, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 5144}}
+Loading and preparing results...
+DONE (t=0.92s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   5160, Loss function: 4.857, Average Loss: 4.968, avg. samples / sec: 74.70
+Iteration:   5180, Loss function: 4.951, Average Loss: 4.963, avg. samples / sec: 800.70
+DONE (t=5.30s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.10804
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.22222
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.09481
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.19574
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.13904
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.20626
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.21783
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.21783
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.10804 AP goal: 0.10000
+Iteration:   5200, Loss function: 4.603, Average Loss: 4.959, avg. samples / sec: 952.75
+:::MLLOG {"namespace": "", "time_ms": 1639755926940, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755926940, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.10804432706401183, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755926940, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755927131, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
++ [[ fast == \d\r\y ]]
+++ date
+Fri Dec 17 15:45:28 UTC 2021: done waiting for 1 executions
++ echo 'Fri Dec 17 15:45:28 UTC 2021: done waiting for 1 executions'
++ ls /tmp/benchmark_all.log
+/tmp/benchmark_all.log
++ grep . /tmp/benchmark_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639755240116, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639755240289, "event_type": "POINT_IN_TIME", "key": "seed", "value": 4285540171, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+0 Using seed = 4285540171
+:::MLLOG {"namespace": "", "time_ms": 1639755242467, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242467, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 114, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0125, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639755242472, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+:::MLLOG {"namespace": "", "time_ms": 1639755266578, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639755266578, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+:::MLLOG {"namespace": "", "time_ms": 1639755268290, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639755268291, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+Done (t=0.18s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639755268688, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639755268689, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755268691, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.058, Average Loss: 0.022, avg. samples / sec: 4.40
+Iteration:     20, Loss function: 21.037, Average Loss: 0.447, avg. samples / sec: 795.00
+Iteration:     40, Loss function: 20.636, Average Loss: 0.848, avg. samples / sec: 832.05
+Iteration:     60, Loss function: 20.342, Average Loss: 1.238, avg. samples / sec: 931.48
+Iteration:     80, Loss function: 19.534, Average Loss: 1.609, avg. samples / sec: 871.06
+Iteration:    100, Loss function: 14.304, Average Loss: 1.921, avg. samples / sec: 947.27
+Iteration:    120, Loss function: 11.042, Average Loss: 2.121, avg. samples / sec: 911.69
+Iteration:    140, Loss function: 9.667, Average Loss: 2.277, avg. samples / sec: 914.21
+Iteration:    160, Loss function: 9.326, Average Loss: 2.417, avg. samples / sec: 941.34
+Iteration:    180, Loss function: 9.024, Average Loss: 2.548, avg. samples / sec: 925.74
+Iteration:    200, Loss function: 8.614, Average Loss: 2.673, avg. samples / sec: 922.35
+Iteration:    220, Loss function: 8.596, Average Loss: 2.795, avg. samples / sec: 888.42
+Iteration:    240, Loss function: 8.577, Average Loss: 2.913, avg. samples / sec: 910.06
+Iteration:    260, Loss function: 8.751, Average Loss: 3.025, avg. samples / sec: 920.33
+Iteration:    280, Loss function: 8.333, Average Loss: 3.135, avg. samples / sec: 933.81
+Iteration:    300, Loss function: 8.252, Average Loss: 3.239, avg. samples / sec: 965.28
+Iteration:    320, Loss function: 8.412, Average Loss: 3.340, avg. samples / sec: 949.90
+Iteration:    340, Loss function: 8.069, Average Loss: 3.436, avg. samples / sec: 985.81
+Iteration:    360, Loss function: 8.244, Average Loss: 3.530, avg. samples / sec: 966.86
+Iteration:    380, Loss function: 7.956, Average Loss: 3.619, avg. samples / sec: 924.09
+Iteration:    400, Loss function: 7.953, Average Loss: 3.706, avg. samples / sec: 716.45
+Iteration:    420, Loss function: 7.510, Average Loss: 3.788, avg. samples / sec: 953.00
+Iteration:    440, Loss function: 7.741, Average Loss: 3.866, avg. samples / sec: 897.72
+Iteration:    460, Loss function: 7.744, Average Loss: 3.942, avg. samples / sec: 945.21
+Iteration:    480, Loss function: 7.419, Average Loss: 4.017, avg. samples / sec: 976.80
+Iteration:    500, Loss function: 7.514, Average Loss: 4.087, avg. samples / sec: 980.66
+Iteration:    520, Loss function: 7.652, Average Loss: 4.157, avg. samples / sec: 942.35
+Iteration:    540, Loss function: 7.549, Average Loss: 4.223, avg. samples / sec: 912.85
+Iteration:    560, Loss function: 7.041, Average Loss: 4.285, avg. samples / sec: 957.00
+Iteration:    580, Loss function: 7.108, Average Loss: 4.345, avg. samples / sec: 968.46
+Iteration:    600, Loss function: 7.283, Average Loss: 4.404, avg. samples / sec: 970.54
+Iteration:    620, Loss function: 7.027, Average Loss: 4.460, avg. samples / sec: 941.98
+Iteration:    640, Loss function: 6.817, Average Loss: 4.514, avg. samples / sec: 973.65
+Iteration:    660, Loss function: 7.147, Average Loss: 4.567, avg. samples / sec: 966.89
+Iteration:    680, Loss function: 7.502, Average Loss: 4.621, avg. samples / sec: 929.55
+Iteration:    700, Loss function: 6.804, Average Loss: 4.669, avg. samples / sec: 953.87
+Iteration:    720, Loss function: 6.800, Average Loss: 4.716, avg. samples / sec: 985.27
+Iteration:    740, Loss function: 6.935, Average Loss: 4.762, avg. samples / sec: 939.65
+Iteration:    760, Loss function: 7.072, Average Loss: 4.806, avg. samples / sec: 946.18
+Iteration:    780, Loss function: 6.854, Average Loss: 4.848, avg. samples / sec: 909.27
+Iteration:    800, Loss function: 7.167, Average Loss: 4.887, avg. samples / sec: 987.68
+Iteration:    820, Loss function: 6.876, Average Loss: 4.925, avg. samples / sec: 913.12
+Iteration:    840, Loss function: 6.784, Average Loss: 4.961, avg. samples / sec: 917.65
+Iteration:    860, Loss function: 6.987, Average Loss: 4.996, avg. samples / sec: 922.33
+Iteration:    880, Loss function: 6.568, Average Loss: 5.029, avg. samples / sec: 942.46
+Iteration:    900, Loss function: 6.669, Average Loss: 5.060, avg. samples / sec: 949.51
+Iteration:    920, Loss function: 6.532, Average Loss: 5.089, avg. samples / sec: 931.44
+Iteration:    940, Loss function: 6.496, Average Loss: 5.118, avg. samples / sec: 835.49
+Iteration:    960, Loss function: 6.179, Average Loss: 5.146, avg. samples / sec: 909.83
+Iteration:    980, Loss function: 6.313, Average Loss: 5.173, avg. samples / sec: 957.99
+Iteration:   1000, Loss function: 6.522, Average Loss: 5.199, avg. samples / sec: 979.32
+Iteration:   1020, Loss function: 6.342, Average Loss: 5.223, avg. samples / sec: 976.88
+:::MLLOG {"namespace": "", "time_ms": 1639755395255, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639755395256, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 1029}}
+Iteration:   1040, Loss function: 6.639, Average Loss: 5.247, avg. samples / sec: 965.04
+Iteration:   1060, Loss function: 6.267, Average Loss: 5.271, avg. samples / sec: 972.46
+Iteration:   1080, Loss function: 6.336, Average Loss: 5.292, avg. samples / sec: 983.14
+Iteration:   1100, Loss function: 6.059, Average Loss: 5.312, avg. samples / sec: 920.81
+Iteration:   1120, Loss function: 6.093, Average Loss: 5.332, avg. samples / sec: 883.51
+Iteration:   1140, Loss function: 6.609, Average Loss: 5.351, avg. samples / sec: 878.08
+Iteration:   1160, Loss function: 6.094, Average Loss: 5.368, avg. samples / sec: 970.33
+Iteration:   1180, Loss function: 6.178, Average Loss: 5.385, avg. samples / sec: 924.06
+Iteration:   1200, Loss function: 6.269, Average Loss: 5.401, avg. samples / sec: 876.43
+Iteration:   1220, Loss function: 6.201, Average Loss: 5.417, avg. samples / sec: 925.83
+Iteration:   1240, Loss function: 6.218, Average Loss: 5.430, avg. samples / sec: 902.96
+Iteration:   1260, Loss function: 5.939, Average Loss: 5.443, avg. samples / sec: 938.85
+Iteration:   1280, Loss function: 6.053, Average Loss: 5.456, avg. samples / sec: 962.10
+Iteration:   1300, Loss function: 6.088, Average Loss: 5.470, avg. samples / sec: 965.49
+Iteration:   1320, Loss function: 6.084, Average Loss: 5.482, avg. samples / sec: 943.78
+Iteration:   1340, Loss function: 5.743, Average Loss: 5.492, avg. samples / sec: 971.58
+Iteration:   1360, Loss function: 5.932, Average Loss: 5.503, avg. samples / sec: 958.73
+Iteration:   1380, Loss function: 6.137, Average Loss: 5.514, avg. samples / sec: 949.94
+Iteration:   1400, Loss function: 6.063, Average Loss: 5.523, avg. samples / sec: 972.09
+Iteration:   1420, Loss function: 5.726, Average Loss: 5.531, avg. samples / sec: 958.69
+Iteration:   1440, Loss function: 6.271, Average Loss: 5.539, avg. samples / sec: 986.05
+Iteration:   1460, Loss function: 6.324, Average Loss: 5.547, avg. samples / sec: 978.45
+Iteration:   1480, Loss function: 6.037, Average Loss: 5.555, avg. samples / sec: 964.94
+Iteration:   1500, Loss function: 5.975, Average Loss: 5.563, avg. samples / sec: 973.24
+Iteration:   1520, Loss function: 6.038, Average Loss: 5.570, avg. samples / sec: 964.54
+Iteration:   1540, Loss function: 6.128, Average Loss: 5.574, avg. samples / sec: 975.08
+Iteration:   1560, Loss function: 5.673, Average Loss: 5.579, avg. samples / sec: 987.73
+Iteration:   1580, Loss function: 5.695, Average Loss: 5.584, avg. samples / sec: 975.76
+Iteration:   1600, Loss function: 6.136, Average Loss: 5.591, avg. samples / sec: 930.74
+Iteration:   1620, Loss function: 5.756, Average Loss: 5.596, avg. samples / sec: 959.53
+Iteration:   1640, Loss function: 5.994, Average Loss: 5.600, avg. samples / sec: 943.35
+Iteration:   1660, Loss function: 5.935, Average Loss: 5.604, avg. samples / sec: 978.20
+Iteration:   1680, Loss function: 5.745, Average Loss: 5.607, avg. samples / sec: 968.57
+Iteration:   1700, Loss function: 5.377, Average Loss: 5.611, avg. samples / sec: 987.33
+Iteration:   1720, Loss function: 5.644, Average Loss: 5.613, avg. samples / sec: 923.05
+Iteration:   1740, Loss function: 5.749, Average Loss: 5.615, avg. samples / sec: 963.53
+Iteration:   1760, Loss function: 5.611, Average Loss: 5.617, avg. samples / sec: 977.65
+Iteration:   1780, Loss function: 5.625, Average Loss: 5.619, avg. samples / sec: 952.06
+Iteration:   1800, Loss function: 5.656, Average Loss: 5.622, avg. samples / sec: 977.62
+Iteration:   1820, Loss function: 5.934, Average Loss: 5.624, avg. samples / sec: 915.70
+Iteration:   1840, Loss function: 5.837, Average Loss: 5.626, avg. samples / sec: 966.68
+Iteration:   1860, Loss function: 5.732, Average Loss: 5.626, avg. samples / sec: 958.46
+Iteration:   1880, Loss function: 5.986, Average Loss: 5.628, avg. samples / sec: 981.93
+Iteration:   1900, Loss function: 5.738, Average Loss: 5.629, avg. samples / sec: 893.67
+Iteration:   1920, Loss function: 5.608, Average Loss: 5.629, avg. samples / sec: 950.29
+Iteration:   1940, Loss function: 5.817, Average Loss: 5.629, avg. samples / sec: 951.28
+Iteration:   1960, Loss function: 5.747, Average Loss: 5.629, avg. samples / sec: 938.60
+Iteration:   1980, Loss function: 5.767, Average Loss: 5.628, avg. samples / sec: 874.78
+Iteration:   2000, Loss function: 5.428, Average Loss: 5.627, avg. samples / sec: 967.59
+Iteration:   2020, Loss function: 5.668, Average Loss: 5.626, avg. samples / sec: 946.02
+Iteration:   2040, Loss function: 5.623, Average Loss: 5.626, avg. samples / sec: 936.98
+:::MLLOG {"namespace": "", "time_ms": 1639755518745, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639755518747, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 2058}}
+Iteration:   2060, Loss function: 5.543, Average Loss: 5.624, avg. samples / sec: 975.05
+Iteration:   2080, Loss function: 5.005, Average Loss: 5.621, avg. samples / sec: 962.56
+Iteration:   2100, Loss function: 5.367, Average Loss: 5.619, avg. samples / sec: 884.18
+Iteration:   2120, Loss function: 5.534, Average Loss: 5.617, avg. samples / sec: 916.22
+Iteration:   2140, Loss function: 5.474, Average Loss: 5.613, avg. samples / sec: 916.57
+Iteration:   2160, Loss function: 5.145, Average Loss: 5.610, avg. samples / sec: 966.62
+Iteration:   2180, Loss function: 5.350, Average Loss: 5.608, avg. samples / sec: 903.11
+Iteration:   2200, Loss function: 5.477, Average Loss: 5.605, avg. samples / sec: 927.90
+Iteration:   2220, Loss function: 5.528, Average Loss: 5.603, avg. samples / sec: 974.47
+Iteration:   2240, Loss function: 5.347, Average Loss: 5.601, avg. samples / sec: 967.55
+Iteration:   2260, Loss function: 5.331, Average Loss: 5.599, avg. samples / sec: 973.36
+Iteration:   2280, Loss function: 5.218, Average Loss: 5.596, avg. samples / sec: 946.03
+Iteration:   2300, Loss function: 5.123, Average Loss: 5.593, avg. samples / sec: 983.83
+Iteration:   2320, Loss function: 5.264, Average Loss: 5.590, avg. samples / sec: 984.81
+Iteration:   2340, Loss function: 5.519, Average Loss: 5.587, avg. samples / sec: 965.91
+Iteration:   2360, Loss function: 5.337, Average Loss: 5.584, avg. samples / sec: 899.26
+Iteration:   2380, Loss function: 5.352, Average Loss: 5.580, avg. samples / sec: 890.30
+Iteration:   2400, Loss function: 5.529, Average Loss: 5.576, avg. samples / sec: 940.47
+Iteration:   2420, Loss function: 5.528, Average Loss: 5.572, avg. samples / sec: 914.59
+Iteration:   2440, Loss function: 5.418, Average Loss: 5.570, avg. samples / sec: 935.91
+Iteration:   2460, Loss function: 5.019, Average Loss: 5.565, avg. samples / sec: 927.75
+Iteration:   2480, Loss function: 5.336, Average Loss: 5.562, avg. samples / sec: 938.32
+Iteration:   2500, Loss function: 5.499, Average Loss: 5.557, avg. samples / sec: 861.31
+Iteration:   2520, Loss function: 5.265, Average Loss: 5.553, avg. samples / sec: 972.87
+Iteration:   2540, Loss function: 5.432, Average Loss: 5.551, avg. samples / sec: 929.18
+Iteration:   2560, Loss function: 5.343, Average Loss: 5.547, avg. samples / sec: 969.36
+Iteration:   2580, Loss function: 5.147, Average Loss: 5.543, avg. samples / sec: 973.66
+Iteration:   2600, Loss function: 5.390, Average Loss: 5.540, avg. samples / sec: 977.06
+Iteration:   2620, Loss function: 5.318, Average Loss: 5.534, avg. samples / sec: 941.96
+Iteration:   2640, Loss function: 5.134, Average Loss: 5.531, avg. samples / sec: 948.17
+Iteration:   2660, Loss function: 5.278, Average Loss: 5.527, avg. samples / sec: 903.56
+Iteration:   2680, Loss function: 5.071, Average Loss: 5.523, avg. samples / sec: 961.46
+Iteration:   2700, Loss function: 5.221, Average Loss: 5.519, avg. samples / sec: 926.81
+Iteration:   2720, Loss function: 5.259, Average Loss: 5.515, avg. samples / sec: 918.73
+Iteration:   2740, Loss function: 4.986, Average Loss: 5.510, avg. samples / sec: 962.62
+Iteration:   2760, Loss function: 4.809, Average Loss: 5.505, avg. samples / sec: 985.47
+Iteration:   2780, Loss function: 5.520, Average Loss: 5.501, avg. samples / sec: 895.34
+Iteration:   2800, Loss function: 5.089, Average Loss: 5.497, avg. samples / sec: 917.55
+Iteration:   2820, Loss function: 5.439, Average Loss: 5.493, avg. samples / sec: 975.02
+Iteration:   2840, Loss function: 5.301, Average Loss: 5.489, avg. samples / sec: 975.63
+Iteration:   2860, Loss function: 5.034, Average Loss: 5.484, avg. samples / sec: 965.26
+Iteration:   2880, Loss function: 5.235, Average Loss: 5.479, avg. samples / sec: 974.73
+Iteration:   2900, Loss function: 5.089, Average Loss: 5.475, avg. samples / sec: 963.94
+Iteration:   2920, Loss function: 5.201, Average Loss: 5.470, avg. samples / sec: 906.57
+Iteration:   2940, Loss function: 5.126, Average Loss: 5.466, avg. samples / sec: 925.03
+Iteration:   2960, Loss function: 5.448, Average Loss: 5.461, avg. samples / sec: 944.87
+Iteration:   2980, Loss function: 5.259, Average Loss: 5.458, avg. samples / sec: 907.91
+Iteration:   3000, Loss function: 5.397, Average Loss: 5.452, avg. samples / sec: 863.75
+Iteration:   3020, Loss function: 5.263, Average Loss: 5.446, avg. samples / sec: 968.43
+Iteration:   3040, Loss function: 5.424, Average Loss: 5.441, avg. samples / sec: 961.45
+Iteration:   3060, Loss function: 5.026, Average Loss: 5.435, avg. samples / sec: 891.62
+Iteration:   3080, Loss function: 4.961, Average Loss: 5.430, avg. samples / sec: 927.71
+:::MLLOG {"namespace": "", "time_ms": 1639755643716, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639755643729, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 3086}}
+Iteration:   3100, Loss function: 5.126, Average Loss: 5.425, avg. samples / sec: 887.76
+Iteration:   3120, Loss function: 4.880, Average Loss: 5.420, avg. samples / sec: 976.58
+Iteration:   3140, Loss function: 5.070, Average Loss: 5.416, avg. samples / sec: 953.80
+Iteration:   3160, Loss function: 5.615, Average Loss: 5.410, avg. samples / sec: 924.85
+Iteration:   3180, Loss function: 4.958, Average Loss: 5.405, avg. samples / sec: 918.98
+Iteration:   3200, Loss function: 5.242, Average Loss: 5.401, avg. samples / sec: 930.04
+Iteration:   3220, Loss function: 5.265, Average Loss: 5.396, avg. samples / sec: 961.92
+Iteration:   3240, Loss function: 5.089, Average Loss: 5.392, avg. samples / sec: 957.05
+Iteration:   3260, Loss function: 5.106, Average Loss: 5.386, avg. samples / sec: 985.86
+Iteration:   3280, Loss function: 4.799, Average Loss: 5.381, avg. samples / sec: 899.79
+Iteration:   3300, Loss function: 4.790, Average Loss: 5.376, avg. samples / sec: 887.40
+Iteration:   3320, Loss function: 4.905, Average Loss: 5.372, avg. samples / sec: 902.50
+Iteration:   3340, Loss function: 5.128, Average Loss: 5.368, avg. samples / sec: 888.30
+Iteration:   3360, Loss function: 5.203, Average Loss: 5.362, avg. samples / sec: 946.02
+Iteration:   3380, Loss function: 5.378, Average Loss: 5.356, avg. samples / sec: 981.84
+Iteration:   3400, Loss function: 4.815, Average Loss: 5.351, avg. samples / sec: 957.60
+Iteration:   3420, Loss function: 5.153, Average Loss: 5.346, avg. samples / sec: 962.06
+Iteration:   3440, Loss function: 4.972, Average Loss: 5.342, avg. samples / sec: 916.67
+Iteration:   3460, Loss function: 5.332, Average Loss: 5.337, avg. samples / sec: 957.36
+Iteration:   3480, Loss function: 5.051, Average Loss: 5.332, avg. samples / sec: 941.86
+Iteration:   3500, Loss function: 5.210, Average Loss: 5.327, avg. samples / sec: 957.97
+Iteration:   3520, Loss function: 4.810, Average Loss: 5.324, avg. samples / sec: 911.90
+Iteration:   3540, Loss function: 5.057, Average Loss: 5.319, avg. samples / sec: 973.84
+Iteration:   3560, Loss function: 4.883, Average Loss: 5.315, avg. samples / sec: 922.36
+Iteration:   3580, Loss function: 5.102, Average Loss: 5.311, avg. samples / sec: 930.56
+Iteration:   3600, Loss function: 5.176, Average Loss: 5.305, avg. samples / sec: 882.09
+Iteration:   3620, Loss function: 4.625, Average Loss: 5.300, avg. samples / sec: 938.29
+Iteration:   3640, Loss function: 4.903, Average Loss: 5.294, avg. samples / sec: 918.19
+Iteration:   3660, Loss function: 5.027, Average Loss: 5.289, avg. samples / sec: 957.43
+Iteration:   3680, Loss function: 5.161, Average Loss: 5.283, avg. samples / sec: 917.90
+Iteration:   3700, Loss function: 5.106, Average Loss: 5.278, avg. samples / sec: 847.72
+Iteration:   3720, Loss function: 5.002, Average Loss: 5.272, avg. samples / sec: 908.03
+Iteration:   3740, Loss function: 5.190, Average Loss: 5.268, avg. samples / sec: 983.84
+Iteration:   3760, Loss function: 5.068, Average Loss: 5.264, avg. samples / sec: 956.59
+Iteration:   3780, Loss function: 5.029, Average Loss: 5.259, avg. samples / sec: 907.55
+Iteration:   3800, Loss function: 5.213, Average Loss: 5.255, avg. samples / sec: 922.64
+Iteration:   3820, Loss function: 5.216, Average Loss: 5.251, avg. samples / sec: 957.91
+Iteration:   3840, Loss function: 4.653, Average Loss: 5.246, avg. samples / sec: 943.76
+Iteration:   3860, Loss function: 4.707, Average Loss: 5.239, avg. samples / sec: 920.88
+Iteration:   3880, Loss function: 5.018, Average Loss: 5.234, avg. samples / sec: 957.78
+Iteration:   3900, Loss function: 5.003, Average Loss: 5.229, avg. samples / sec: 934.53
+Iteration:   3920, Loss function: 5.133, Average Loss: 5.223, avg. samples / sec: 937.88
+Iteration:   3940, Loss function: 5.010, Average Loss: 5.218, avg. samples / sec: 985.93
+Iteration:   3960, Loss function: 4.807, Average Loss: 5.214, avg. samples / sec: 940.79
+Iteration:   3980, Loss function: 4.851, Average Loss: 5.210, avg. samples / sec: 935.88
+Iteration:   4000, Loss function: 5.279, Average Loss: 5.207, avg. samples / sec: 964.04
+Iteration:   4020, Loss function: 5.135, Average Loss: 5.203, avg. samples / sec: 873.18
+Iteration:   4040, Loss function: 5.025, Average Loss: 5.200, avg. samples / sec: 967.78
+Iteration:   4060, Loss function: 5.235, Average Loss: 5.196, avg. samples / sec: 978.68
+Iteration:   4080, Loss function: 4.941, Average Loss: 5.191, avg. samples / sec: 972.90
+Iteration:   4100, Loss function: 5.055, Average Loss: 5.188, avg. samples / sec: 963.75
+:::MLLOG {"namespace": "", "time_ms": 1639755768843, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639755768845, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 4115}}
+Iteration:   4120, Loss function: 4.940, Average Loss: 5.183, avg. samples / sec: 990.01
+Iteration:   4140, Loss function: 5.087, Average Loss: 5.178, avg. samples / sec: 984.61
+Iteration:   4160, Loss function: 4.982, Average Loss: 5.172, avg. samples / sec: 954.69
+Iteration:   4180, Loss function: 4.882, Average Loss: 5.166, avg. samples / sec: 963.95
+Iteration:   4200, Loss function: 4.911, Average Loss: 5.162, avg. samples / sec: 993.81
+Iteration:   4220, Loss function: 4.804, Average Loss: 5.157, avg. samples / sec: 958.71
+Iteration:   4240, Loss function: 4.859, Average Loss: 5.152, avg. samples / sec: 974.58
+Iteration:   4260, Loss function: 4.974, Average Loss: 5.147, avg. samples / sec: 960.20
+Iteration:   4280, Loss function: 4.969, Average Loss: 5.141, avg. samples / sec: 976.07
+Iteration:   4300, Loss function: 4.757, Average Loss: 5.135, avg. samples / sec: 973.51
+Iteration:   4320, Loss function: 4.811, Average Loss: 5.129, avg. samples / sec: 957.47
+Iteration:   4340, Loss function: 4.776, Average Loss: 5.125, avg. samples / sec: 976.46
+Iteration:   4360, Loss function: 4.945, Average Loss: 5.120, avg. samples / sec: 975.08
+Iteration:   4380, Loss function: 5.156, Average Loss: 5.116, avg. samples / sec: 988.86
+Iteration:   4400, Loss function: 5.032, Average Loss: 5.113, avg. samples / sec: 915.98
+Iteration:   4420, Loss function: 4.873, Average Loss: 5.108, avg. samples / sec: 978.27
+Iteration:   4440, Loss function: 4.733, Average Loss: 5.102, avg. samples / sec: 931.54
+Iteration:   4460, Loss function: 5.015, Average Loss: 5.098, avg. samples / sec: 944.48
+Iteration:   4480, Loss function: 5.066, Average Loss: 5.094, avg. samples / sec: 879.10
+Iteration:   4500, Loss function: 4.884, Average Loss: 5.090, avg. samples / sec: 944.24
+Iteration:   4520, Loss function: 4.682, Average Loss: 5.086, avg. samples / sec: 904.63
+Iteration:   4540, Loss function: 5.207, Average Loss: 5.082, avg. samples / sec: 923.02
+Iteration:   4560, Loss function: 4.751, Average Loss: 5.079, avg. samples / sec: 962.94
+Iteration:   4580, Loss function: 4.750, Average Loss: 5.076, avg. samples / sec: 993.62
+Iteration:   4600, Loss function: 4.854, Average Loss: 5.072, avg. samples / sec: 974.16
+Iteration:   4620, Loss function: 4.841, Average Loss: 5.068, avg. samples / sec: 967.86
+Iteration:   4640, Loss function: 4.703, Average Loss: 5.063, avg. samples / sec: 987.60
+Iteration:   4660, Loss function: 4.710, Average Loss: 5.060, avg. samples / sec: 981.52
+Iteration:   4680, Loss function: 5.375, Average Loss: 5.056, avg. samples / sec: 962.31
+Iteration:   4700, Loss function: 4.587, Average Loss: 5.052, avg. samples / sec: 993.00
+Iteration:   4720, Loss function: 4.984, Average Loss: 5.048, avg. samples / sec: 958.10
+Iteration:   4740, Loss function: 4.894, Average Loss: 5.044, avg. samples / sec: 973.38
+Iteration:   4760, Loss function: 4.808, Average Loss: 5.041, avg. samples / sec: 973.81
+Iteration:   4780, Loss function: 5.155, Average Loss: 5.036, avg. samples / sec: 991.73
+Iteration:   4800, Loss function: 4.895, Average Loss: 5.033, avg. samples / sec: 931.50
+Iteration:   4820, Loss function: 4.793, Average Loss: 5.029, avg. samples / sec: 974.10
+Iteration:   4840, Loss function: 5.090, Average Loss: 5.025, avg. samples / sec: 982.59
+Iteration:   4860, Loss function: 4.569, Average Loss: 5.021, avg. samples / sec: 958.75
+Iteration:   4880, Loss function: 5.088, Average Loss: 5.016, avg. samples / sec: 910.95
+Iteration:   4900, Loss function: 4.508, Average Loss: 5.013, avg. samples / sec: 853.02
+Iteration:   4920, Loss function: 4.982, Average Loss: 5.009, avg. samples / sec: 927.87
+Iteration:   4940, Loss function: 4.749, Average Loss: 5.004, avg. samples / sec: 929.14
+Iteration:   4960, Loss function: 4.672, Average Loss: 5.001, avg. samples / sec: 959.20
+Iteration:   4980, Loss function: 4.501, Average Loss: 4.997, avg. samples / sec: 953.07
+Iteration:   5000, Loss function: 4.844, Average Loss: 4.994, avg. samples / sec: 943.02
+Iteration:   5020, Loss function: 5.080, Average Loss: 4.991, avg. samples / sec: 929.53
+Iteration:   5040, Loss function: 4.853, Average Loss: 4.989, avg. samples / sec: 911.00
+Iteration:   5060, Loss function: 4.855, Average Loss: 4.986, avg. samples / sec: 936.64
+Iteration:   5080, Loss function: 4.650, Average Loss: 4.982, avg. samples / sec: 979.30
+Iteration:   5100, Loss function: 4.805, Average Loss: 4.979, avg. samples / sec: 957.21
+Iteration:   5120, Loss function: 4.652, Average Loss: 4.976, avg. samples / sec: 994.53
+Iteration:   5140, Loss function: 4.800, Average Loss: 4.972, avg. samples / sec: 994.21
+:::MLLOG {"namespace": "", "time_ms": 1639755891522, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+Predicting Ended, total time: 27.67 s
+:::MLLOG {"namespace": "", "time_ms": 1639755919285, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639755919362, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755919362, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 5144}}
+Loading and preparing results...
+DONE (t=0.92s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   5160, Loss function: 4.857, Average Loss: 4.968, avg. samples / sec: 74.70
+Iteration:   5180, Loss function: 4.951, Average Loss: 4.963, avg. samples / sec: 800.70
+DONE (t=5.30s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.10804
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.22222
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.09481
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.19574
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.13904
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.20626
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.21783
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.21783
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.10804 AP goal: 0.10000
+Iteration:   5200, Loss function: 4.603, Average Loss: 4.959, avg. samples / sec: 952.75
+:::MLLOG {"namespace": "", "time_ms": 1639755926940, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755926940, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.10804432706401183, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755926940, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639755927131, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
+++ date +%s
++ end=1639755928
+++ date '+%Y-%m-%d %r'
++ end_fmt='2021-12-17 03:45:28 PM'
++ echo 'START TIMING RUN WAS 2021-12-17 03:33:53 PM'
+START TIMING RUN WAS 2021-12-17 03:33:53 PM
+ENDING TIMING RUN AT 2021-12-17 03:45:28 PM
++ echo 'ENDING TIMING RUN AT 2021-12-17 03:45:28 PM'
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 7g.40gb     Device  0: (UUID: MIG-62f7dc39-4870-51c0-9b21-86def482903a)
++ result=695
++ [[ ssd == \s\s\d ]]
++ result_name=SINGLE_STAGE_DETECTOR
+RESULT,SINGLE_STAGE_DETECTOR,,695,nvidia,2021-12-17 03:33:53 PM
++ echo 'RESULT,SINGLE_STAGE_DETECTOR,,695,nvidia,2021-12-17 03:33:53 PM'
++ echo 'ALL FINISHED GPU: 1 x 7g.40gb x 8 Pods'
+ALL FINISHED GPU: 1 x 7g.40gb x 8 Pods

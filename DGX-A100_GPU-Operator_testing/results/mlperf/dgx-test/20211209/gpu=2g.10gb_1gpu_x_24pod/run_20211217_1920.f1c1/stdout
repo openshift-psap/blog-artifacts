@@ -1,0 +1,211 @@
+2021-12-17 19:20:28.325121
+Saving artifacts files into /home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1
+Deleting the old Job, if any ...
+- run-mlperf
+Deleting the old job Pods, if any ...
+Deleting 1 Pods: run-mlperf--1-vcfwh
+Done with the Pods.
+Apply mixed MIG strategy ...
+Node dgxa100 already labeled with MIG label 'all-2g.10gb', nothing to do.
+Deleting the old ConfigMap, if any ...
+Existed.
+Creating the new ConfigMap ...
+Including my_run_and_time.sh ...
+Saving the ConfigMap in /home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1 ...
+Waiting for MIG reconfiguration of the node ...
+MIG Manager state is success, good.
+MIG strategy is mixed, good.
+MIG label is all-2g.10gb, good.
+24 nvidia.com/mig-2g.10gb, good.
+Launching 24 Pods ...
+Running 24 Pods in parallel
+Requesting 1 nvidia.com/mig-2g.10gb per Pod
+Creating the new 'nvidia.com/mig-2g.10gb' Job ...
+
+Job 'nvidia.com/mig-2g.10gb' for GPU: 1 x 2g.10gb x 24 Pods created!
+=====
+Thanos: Preparing  ...
+Thanos: Checking if user-monitoring is enabled ...
+Thanos: Fetching the monitoring secret token ...
+Thanos: Fetching the route URL ...
+-----
+2021-12-17 19:20:42.600979
+Waiting for run-mlperf to complete its execution ...
+
+run-mlperf - Active (active=24, succeeded=0, failed=0)
+[2Krun-mlperf--1-2lpws --> Pending
+[2Krun-mlperf--1-2trkb --> Pending
+[2Krun-mlperf--1-5n9cg --> Pending
+[2Krun-mlperf--1-8cwsf --> Pending
+[2Krun-mlperf--1-cz9mk --> Pending
+[2Krun-mlperf--1-ddbfr --> Pending
+[2Krun-mlperf--1-f5td4 --> Pending
+[2Krun-mlperf--1-fbqms --> Pending
+[2Krun-mlperf--1-g8xmt --> Pending
+[2Krun-mlperf--1-gvfzv --> Pending
+[2Krun-mlperf--1-hfmj2 --> Pending
+[2Krun-mlperf--1-hxljp --> Pending
+[2Krun-mlperf--1-kbwb5 --> Pending
+[2Krun-mlperf--1-kwxx4 --> Pending
+[2Krun-mlperf--1-lb9mj --> Pending
+[2Krun-mlperf--1-nfj8k --> Pending
+[2Krun-mlperf--1-pgt2r --> Pending
+[2Krun-mlperf--1-pvnvk --> Pending
+[2Krun-mlperf--1-rrqzl --> Pending
+[2Krun-mlperf--1-sbgrm --> Pending
+[2Krun-mlperf--1-v6sgt --> Pending
+[2Krun-mlperf--1-wbcdz --> Pending
+[2Krun-mlperf--1-xz9mq --> Pending
+[2Krun-mlperf--1-z8mn2 --> Pending
+x[2KThanos: start time: 1639765250.913
+[2Krun-mlperf--1-2trkb --> Running
+[2Krun-mlperf--1-8cwsf --> Running
+[2Krun-mlperf--1-cz9mk --> Running
+[2Krun-mlperf--1-f5td4 --> Running
+[2Krun-mlperf--1-g8xmt --> Running
+[2Krun-mlperf--1-gvfzv --> Running
+[2Krun-mlperf--1-hfmj2 --> Running
+[2Krun-mlperf--1-hxljp --> Running
+[2Krun-mlperf--1-kbwb5 --> Running
+[2Krun-mlperf--1-v6sgt --> Running
+x[2Krun-mlperf--1-2lpws --> Running
+[2Krun-mlperf--1-5n9cg --> Running
+[2Krun-mlperf--1-ddbfr --> Running
+[2Krun-mlperf--1-fbqms --> Running
+[2Krun-mlperf--1-kwxx4 --> Running
+[2Krun-mlperf--1-lb9mj --> Running
+[2Krun-mlperf--1-nfj8k --> Running
+[2Krun-mlperf--1-pgt2r --> Running
+[2Krun-mlperf--1-pvnvk --> Running
+[2Krun-mlperf--1-rrqzl --> Running
+[2Krun-mlperf--1-sbgrm --> Running
+[2Krun-mlperf--1-wbcdz --> Running
+[2Krun-mlperf--1-xz9mq --> Running
+[2Krun-mlperf--1-z8mn2 --> Running
+Execution started!
+..........................................[2K5 minutes of execution ...
+..............................................[2K10 minutes of execution ...
+..............................................[2K15 minutes of execution ...
+..............................................[2K20 minutes of execution ...
+..............................................[2K25 minutes of execution ...
+..............................................[2K30 minutes of execution ...
+..............................................[2K35 minutes of execution ...
+................
+run-mlperf - Active (active=23, succeeded=1, failed=0)
+[2Krun-mlperf--1-v6sgt --> Succeeded
+.....
+run-mlperf - Active (active=22, succeeded=2, failed=0)
+[2Krun-mlperf--1-wbcdz --> Succeeded
+...
+run-mlperf - Active (active=19, succeeded=5, failed=0)
+[2Krun-mlperf--1-kbwb5 --> Succeeded
+[2Krun-mlperf--1-kwxx4 --> Succeeded
+[2Krun-mlperf--1-pgt2r --> Succeeded
+.
+run-mlperf - Active (active=4, succeeded=20, failed=0)
+[2Krun-mlperf--1-2lpws --> Succeeded
+[2Krun-mlperf--1-2trkb --> Succeeded
+[2Krun-mlperf--1-5n9cg --> Succeeded
+[2Krun-mlperf--1-8cwsf --> Succeeded
+[2Krun-mlperf--1-cz9mk --> Succeeded
+[2Krun-mlperf--1-ddbfr --> Succeeded
+[2Krun-mlperf--1-f5td4 --> Succeeded
+[2Krun-mlperf--1-fbqms --> Succeeded
+[2Krun-mlperf--1-g8xmt --> Succeeded
+[2Krun-mlperf--1-gvfzv --> Succeeded
+[2Krun-mlperf--1-hfmj2 --> Succeeded
+[2Krun-mlperf--1-lb9mj --> Succeeded
+[2Krun-mlperf--1-nfj8k --> Succeeded
+[2Krun-mlperf--1-pvnvk --> Succeeded
+[2Krun-mlperf--1-sbgrm --> Succeeded
+[2Krun-mlperf--1-xz9mq --> Succeeded
+[2Krun-mlperf--1-z8mn2 --> Succeeded
+.
+run-mlperf - Finished (active=0, succeeded=24, failed=0)
+-----
+2021-12-17 19:58:22.166377
+-----
+Collecting artifacts ...
+Saving dgxa100 definition ...
+Saving OpenShift version ...
+Saving run-mlperf Jobs ...
+Saving the image SHA
+Found container status in pod/run-mlperf--1-2lpws:
+- image-registry.openshift-image-registry.svc:5000/default/mlperf:ssd_0.7
+- image-registry.openshift-image-registry.svc:5000/default/mlperf@sha256:f25899ceed2b50832ba52bd7d56efa73cd19255a15c1d9f60ba55c34e646a63b
+Thanos: stop time: 1639767505.609
+Saving DCGM_FI_DEV_SM_CLOCK metrics ...
+Saving DCGM_FI_DEV_MEM_CLOCK metrics ...
+Saving DCGM_FI_DEV_MEMORY_TEMP metrics ...
+Saving DCGM_FI_DEV_GPU_TEMP metrics ...
+Saving DCGM_FI_DEV_POWER_USAGE metrics ...
+Saving DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION metrics ...
+Saving DCGM_FI_DEV_PCIE_REPLAY_COUNTER metrics ...
+Saving DCGM_FI_DEV_MEM_COPY_UTIL metrics ...
+Saving DCGM_FI_DEV_ENC_UTIL metrics ...
+Saving DCGM_FI_DEV_DEC_UTIL metrics ...
+Saving DCGM_FI_DEV_XID_ERRORS metrics ...
+Saving DCGM_FI_DEV_FB_FREE metrics ...
+Saving DCGM_FI_DEV_FB_USED metrics ...
+Saving DCGM_FI_DEV_NVLINK_BANDWIDTH_TOTAL metrics ...
+Saving DCGM_FI_DEV_VGPU_LICENSE_STATUS metrics ...
+Saving DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS metrics ...
+Saving DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS metrics ...
+Saving DCGM_FI_DEV_ROW_REMAP_FAILURE metrics ...
+Saving DCGM_FI_PROF_GR_ENGINE_ACTIVE metrics ...
+Saving DCGM_FI_PROF_PIPE_TENSOR_ACTIVE metrics ...
+Saving DCGM_FI_PROF_DRAM_ACTIVE metrics ...
+Saving DCGM_FI_PROF_PCIE_TX_BYTES metrics ...
+Saving DCGM_FI_PROF_PCIE_RX_BYTES metrics ...
+-----
+run-mlperf--1-2lpws --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-2lpws.log
+run-mlperf--1-2trkb --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-2trkb.log
+run-mlperf--1-5n9cg --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-5n9cg.log
+run-mlperf--1-8cwsf --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-8cwsf.log
+run-mlperf--1-cz9mk --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-cz9mk.log
+run-mlperf--1-ddbfr --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-ddbfr.log
+run-mlperf--1-f5td4 --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-f5td4.log
+run-mlperf--1-fbqms --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-fbqms.log
+run-mlperf--1-g8xmt --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-g8xmt.log
+run-mlperf--1-gvfzv --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-gvfzv.log
+run-mlperf--1-hfmj2 --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-hfmj2.log
+run-mlperf--1-hxljp --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-hxljp.log
+run-mlperf--1-kbwb5 --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-kbwb5.log
+run-mlperf--1-kwxx4 --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-kwxx4.log
+run-mlperf--1-lb9mj --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-lb9mj.log
+run-mlperf--1-nfj8k --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-nfj8k.log
+run-mlperf--1-pgt2r --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-pgt2r.log
+run-mlperf--1-pvnvk --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-pvnvk.log
+run-mlperf--1-rrqzl --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-rrqzl.log
+run-mlperf--1-sbgrm --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-sbgrm.log
+run-mlperf--1-v6sgt --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-v6sgt.log
+run-mlperf--1-wbcdz --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-wbcdz.log
+run-mlperf--1-xz9mq --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-xz9mq.log
+run-mlperf--1-z8mn2 --> Succeeded
+/home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1/run-mlperf--1-z8mn2.log
+-----
+2021-12-17 19:59:09.776599
+Artifacts files saved into /home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb_1gpu_x_24pod/run_20211217_1920.f1c1

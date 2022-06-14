@@ -1,0 +1,89 @@
+api_version: v1
+binary_data: null
+data: {my_run_and_time.sh: "#!/bin/bash\n\n# base file at https://github.com/mlcommons/training_results_v0.7/blob/master/NVIDIA/benchmarks/ssd/implementations/pytorch/run_and_time.sh\n\
+    \n# Copyright (c) 2018-2019, NVIDIA CORPORATION. All rights reserved.\n#\n# Licensed\
+    \ under the Apache License, Version 2.0 (the \"License\");\n# you may not use\
+    \ this file except in compliance with the License.\n# You may obtain a copy of\
+    \ the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless\
+    \ required by applicable law or agreed to in writing, software\n# distributed\
+    \ under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES\
+    \ OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for\
+    \ the specific language governing permissions and\n# limitations under the License.\n\
+    \n# runs benchmark and reports time to convergence\n# to use the script:\n#  \
+    \ run_and_time.sh\nexport NCCL_DEBUG=INFO\n\nset -e\nset -x\nset -o pipefail\n\
+    set -o nounset\n\nnvidia-smi -L\n\nNB_GPUS=$(nvidia-smi -L | grep \"UUID: MIG-\"\
+    \ | wc -l || true)\nif [[ \"$NB_GPUS\" == 0 ]]; then\n    # Full GPUs\n    ALL_GPUS=$(nvidia-smi\
+    \ -L | grep \"UUID: GPU\" | cut -d\" \" -f6 | cut -d')' -f1)\n    NB_GPUS=$(nvidia-smi\
+    \ -L | grep \"UUID: GPU\" | wc -l)\n    MIG_MODE=0\n\n    if [[ \"$GPU_TYPE\"\
+    \ != \"full\" ]]; then\n        echo \"FATAL: Expected MIG GPUs, got full GPUs\
+    \ ...\"\n        exit 1\n    fi\n\n    echo \"No MIG GPU available, using the\
+    \ full GPUs ($ALL_GPUS).\"\nelse\n    # MIG GPUs\n    ALL_GPUS=$(nvidia-smi -L\
+    \ | grep \"UUID: MIG-\" | awk '{ printf $6\"\\n\"}' | cut -d')' -f1)\n    MIG_MODE=1\n\
+    \n    if [[ \"$GPU_TYPE\" == \"full\" ]]; then\n        echo \"FATAL: Expected\
+    \ full GPUs, got MIG GPUs ...\"\n        exit 1\n    fi\n\n    echo \"Found $NB_GPUS\
+    \ MIG instances: $ALL_GPUS\"\nfi\n\nif [[ $NB_GPUS != $GPU_COUNT ]]; then\n  \
+    \  echo \"FATAL: Expected $GPU_COUNT GPUs, got $NB_GPUS\"\n    exit 1\nfi\n\n\
+    SSD_THRESHOLD=${SSD_THRESHOLD:-0.23}\n\n# start timing\nstart=$(date +%s)\nstart_fmt=$(date\
+    \ +%Y-%m-%d\\ %r)\necho \"STARTING TIMING RUN AT $start_fmt $RUN_DESCR\"\n\n#\
+    \ run benchmark\nset -x\nNUMEPOCHS=${NUMEPOCHS:-80}\n\necho \"running benchmark\"\
+    \n\nexport DATASET_DIR=\"/data/coco2017\"\nexport TORCH_HOME=\"${DATASET_DIR}/torchvision\"\
+    \n\n# prepare dataset according to download_dataset.sh\n\nif [ ! -f ${DATASET_DIR}/annotations/bbox_only_instances_val2017.json\
+    \ ]; then\n    echo \"Prepare instances_val2017.json ...\"\n    ./prepare-json.py\
+    \ --keep-keys \\\n        \"${DATASET_DIR}/annotations/instances_val2017.json\"\
+    \ \\\n        \"${DATASET_DIR}/annotations/bbox_only_instances_val2017.json\"\n\
+    fi\n\nif [ ! -f ${DATASET_DIR}/annotations/bbox_only_instances_train2017.json\
+    \ ]; then\n    echo \"Prepare instances_train2017.json ...\"\n    ./prepare-json.py\
+    \ \\\n        \"${DATASET_DIR}/annotations/instances_train2017.json\" \\\n   \
+    \     \"${DATASET_DIR}/annotations/bbox_only_instances_train2017.json\"\nfi\n\n\
+    # prepare the DGXA100-specific configuration (config_DGXA100.sh)\n\nEXTRA_PARAMS='--batch-size=114\
+    \ --warmup=650 --lr=3.2e-3 --wd=1.3e-4'\n\nDGXNSOCKET=1\nDGXSOCKETCORES=${DGXSOCKETCORES:-16}\n\
+    \nif [[ $MIG_MODE == \"1\" ]]; then\n   DGXNGPU=1\n   echo \"Running in parallel\
+    \ mode.\"\n\nelse\n    DGXNGPU=$NB_GPUS\n    echo \"Running in multi-gpu mode.\"\
+    \nfi\n\n# run training\n\ndeclare -a CMD\necho \"Patching 'bind_launch.py' to\
+    \ err-exit on failure ...\"\nsed 's/process.wait()/if process.wait(): sys.exit(1)/'\
+    \ -i bind_launch.py\n\nCMD=('python' '-u' '-m' 'bind_launch' \"--nsockets_per_node=${DGXNSOCKET}\"\
+    \ \\\n               \"--ncores_per_socket=${DGXSOCKETCORES}\" \"--nproc_per_node=${DGXNGPU}\"\
+    \ )\n\ndeclare -a ARGS\nARGS=(train.py\n  --use-fp16\n  --nhwc\n  --pad-input\n\
+    \  --jit\n  --delay-allreduce\n  --opt-loss\n  --epochs \"${NUMEPOCHS}\"\n  --warmup-factor\
+    \ 0\n  --no-save\n  --threshold=${SSD_THRESHOLD}\n  --data ${DATASET_DIR}\n  ${EXTRA_PARAMS})\n\
+    \n\nif [[ \"$EXECUTION_MODE\" == \"fast\" ]]; then\n    echo \"Running in FAST\
+    \ mode\"\n    ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80\
+    \ 85)\nelif [[ \"$EXECUTION_MODE\" == \"dry\" ]]; then\n    echo \"Running in\
+    \ DRY mode\"\n    CMD[0]=\"echo\"\nfi\n\ntrap \"date; echo failed; exit 1\" ERR\n\
+    \nif [[ \"$NO_SYNC\" != \"y\" ]]; then\n    SYNC_DIR=$DATASET_DIR/sync\n\n   \
+    \ mkdir -p \"$SYNC_DIR\"\n\n    for sync_f in \"$SYNC_DIR/\"*; do\n        if\
+    \ [[ \"$sync_f\" != \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\" ]]; then\n        \
+    \    rm -f \"$sync_f\"\n        fi\n    done\n\n    set +x\n    echo \"$(date)\
+    \ Waiting for all the $SYNC_COUNTER Pods to start ...\"\n    touch \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\
+    \n\n    while true; do\n        if ! grep --silent $HOSTNAME \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\
+    ; then\n            echo \"Adding $HOSTNAME to the sync file ...\"\n         \
+    \   echo $HOSTNAME >> \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\n        fi\n\n \
+    \       cnt=$(cat \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\" | wc -l)\n        [[\
+    \ $cnt == \"$SYNC_COUNTER\" ]] && break\n        echo \"$HOSTNAME Found $cnt Pods,\
+    \ waiting to have $SYNC_COUNTER ...\"\n        nl \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\
+    \n        sleep 5\n    done\n    echo \"$(date) All the $SYNC_COUNTER Pods are\
+    \ running, launch the GPU workload.\"\n    set -x\nelse\n    echo \"Pod startup\
+    \ synchronization disabled, do not wait for $SYNC_COUNTER Pods ...\"\nfi\n\nnvidia-smi\
+    \ -L\n\nif [[ $MIG_MODE == 1 && $NB_GPUS != 1 ]]; then\n    declare -a pids\n\n\
+    \    for gpu in $(echo \"$ALL_GPUS\"); do\n        export NVIDIA_VISIBLE_DEVICES=$gpu\n\
+    \        export CUDA_VISIBLE_DEVICES=$gpu\n\n        dest=/tmp/ssd_$(echo $gpu\
+    \ | sed 's|/|_|g').log\n\n        # run training\n        \"${CMD[@]}\" \"${ARGS[@]}\"\
+    \ >\"$dest\" 2>\"$dest.stderr\" &\n        pids+=($!)\n        echo \"Running\
+    \ on $gpu ===> $dest: PID $!\"\n    done\n    echo \"$(date): waiting for parallel\
+    \ $NB_GPUS executions: ${pids[@]}\"\n    for pid in ${pids[@]};\n    do\n    \
+    \    wait $pid;\n    done\nelse\n    dest=/tmp/ssd_all.log\n    if [[ $MIG_MODE\
+    \ == 1 ]]; then\n        echo \"Running on the MIG GPU\"\n    else\n        echo\
+    \ \"Running on all the $NB_GPUS GPUs \"\n    fi\n\n    \"${CMD[@]}\" \"${ARGS[@]}\"\
+    \ | tee -a \"$dest\"\nfi\n\nif [[ \"$EXECUTION_MODE\" == \"dry\" ]]; then\n  \
+    \  sleep 2m\nfi\n\necho \"$(date): done waiting for $NB_GPUS executions\"\n\n\
+    ls /tmp/ssd*\ngrep . /tmp/ssd_*.log\n\n# end timing\nend=$(date +%s)\nend_fmt=$(date\
+    \ +%Y-%m-%d\\ %r)\necho \"START TIMING RUN WAS $start_fmt\"\necho \"ENDING TIMING\
+    \ RUN AT $end_fmt\"\n\nnvidia-smi -L\n\n# report result\nresult=$(($end - $start))\n\
+    result_name=\"SINGLE_STAGE_DETECTOR\"\n\necho \"RESULT,$result_name,,$result,nvidia,$start_fmt\"\
+    \necho \"ALL FINISHED $RUN_DESCR\"\n"}
+kind: ConfigMap
+metadata: {annotations: null, cluster_name: null, creation_timestamp: !!timestamp '2021-12-10
+    04:38:21+00:00', deletion_grace_period_seconds: null, deletion_timestamp: null,
+  finalizers: null, generate_name: null, generation: null, labels: null, name: custom-config-script,
+  namespace: default, owner_references: null, resource_version: '602959', self_link: null,
+  uid: 22c49807-6339-443f-b57f-225ab764f92e}

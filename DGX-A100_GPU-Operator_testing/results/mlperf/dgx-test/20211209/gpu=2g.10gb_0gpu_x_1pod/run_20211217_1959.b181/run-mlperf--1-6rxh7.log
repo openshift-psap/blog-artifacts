@@ -1,0 +1,91 @@
+8<--8<--8<--8<--
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+  MIG 1g.5gb      Device  0: (UUID: MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2)
+  MIG 1g.5gb      Device  1: (UUID: MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28)
+  MIG 1g.5gb      Device  2: (UUID: MIG-4dcaea94-446a-522c-88e1-e8fb193ca789)
+  MIG 1g.5gb      Device  3: (UUID: MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61)
+  MIG 1g.5gb      Device  4: (UUID: MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7)
+  MIG 1g.5gb      Device  5: (UUID: MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a)
+  MIG 1g.5gb      Device  6: (UUID: MIG-42b3ba88-8dc5-5e51-9c89-76885370b661)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+  MIG 2g.10gb     Device  0: (UUID: MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e)
+  MIG 2g.10gb     Device  1: (UUID: MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95)
+  MIG 2g.10gb     Device  2: (UUID: MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 3g.20gb     Device  0: (UUID: MIG-2944fa25-4112-52cc-a727-1cf09ba63e98)
+  MIG 3g.20gb     Device  1: (UUID: MIG-4c7db5d8-f005-5927-803e-9ee984a56e15)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+  MIG 3g.20gb     Device  0: (UUID: MIG-b9e81bd3-7504-588b-b3e7-d7607ea5e8ba)
+  MIG 2g.10gb     Device  1: (UUID: MIG-1765bea3-82da-57d7-b4d7-21c06f58c24a)
+  MIG 1g.5gb      Device  2: (UUID: MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44)
+  MIG 1g.5gb      Device  3: (UUID: MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9)
+8<--8<--8<--8<--
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
++ NB_GPUS=16
++ [[ 16 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ awk '{ printf $6"\n"}'
+++ cut '-d)' -f1
++ ALL_GPUS='MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e
+MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95
+MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c
+MIG-2944fa25-4112-52cc-a727-1cf09ba63e98
+MIG-4c7db5d8-f005-5927-803e-9ee984a56e15
+MIG-b9e81bd3-7504-588b-b3e7-d7607ea5e8ba
+MIG-1765bea3-82da-57d7-b4d7-21c06f58c24a
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9'
++ MIG_MODE=1
++ [[ 2g.10gb == \f\u\l\l ]]
+Found 16 MIG instances: MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e
+MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95
+MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c
+MIG-2944fa25-4112-52cc-a727-1cf09ba63e98
+MIG-4c7db5d8-f005-5927-803e-9ee984a56e15
+MIG-b9e81bd3-7504-588b-b3e7-d7607ea5e8ba
+MIG-1765bea3-82da-57d7-b4d7-21c06f58c24a
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
++ echo 'Found 16 MIG instances: MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e
+MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95
+MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c
+MIG-2944fa25-4112-52cc-a727-1cf09ba63e98
+MIG-4c7db5d8-f005-5927-803e-9ee984a56e15
+MIG-b9e81bd3-7504-588b-b3e7-d7607ea5e8ba
+MIG-1765bea3-82da-57d7-b4d7-21c06f58c24a
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9'
++ [[ 0 == 0 ]]
++ echo '0 GPU requested. Exiting now.'
+0 GPU requested. Exiting now.
+ALL FINISHED
++ echo 'ALL FINISHED'
++ exit 0

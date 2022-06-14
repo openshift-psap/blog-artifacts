@@ -1,0 +1,156 @@
+api_version: v1
+binary_data: null
+data:
+  my_run_and_time.sh: "#!/bin/bash\n\n# base file at https://github.com/mlcommons/training_results_v0.7/blob/master/NVIDIA/benchmarks/ssd/implementations/pytorch/run_and_time.sh\n\
+    \n# Copyright (c) 2018-2019, NVIDIA CORPORATION. All rights reserved.\n#\n# Licensed\
+    \ under the Apache License, Version 2.0 (the \"License\");\n# you may not use\
+    \ this file except in compliance with the License.\n# You may obtain a copy of\
+    \ the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless\
+    \ required by applicable law or agreed to in writing, software\n# distributed\
+    \ under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES\
+    \ OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for\
+    \ the specific language governing permissions and\n# limitations under the License.\n\
+    \n# runs benchmark and reports time to convergence\n# to use the script:\n#  \
+    \ run_and_time.sh\n\nset -e\nset -o pipefail\nset -o nounset\n\ncat <<EOF > /dev/null\n\
+    Environments variables expected from the Pod Spec:\n\n- BENCHMARK=${BENCHMARK:-}\n\
+    \n  - \"ssd\"      Run the SSD benchmark\n  - \"maskrcnn\" Run the MaskRCNN benchmark\n\
+    \n- EXECUTION_MODE=${EXECUTION_MODE:-}\n\n  - \"fast\" Adds target-threshold evaluation\
+    \ points\n  - \"dry\"  Echo the command that would be executed\n  - \"run\"  Normal\
+    \ execution\n\n- DGXSOCKETCORES=${DGXSOCKETCORES:-}\n\n  Number of '--ncores_per_socket'\
+    \ passed to 'bind_launch'. Default: 16\n\n- RUN_DESCR=${RUN_DESCR:-}\n\n  Text\
+    \ description of the execution being executed.\n  Example: \"GPU: 1 x 1g.5gb x\
+    \ 56 Pods\"\n\n- SYNC_IDENTIFIER=${SYNC_IDENTIFIER:-}\n\n  Synchronization unique\
+    \ identifier, shared by all the Job Pods that should start synchronously.\n  Example:\
+    \ \"2021-12-09_13-55-56\"\n\n- SYNC_COUNTER=${SYNC_COUNTER:-}\n  Number of Pod\
+    \ expected to start synchronously.\n  Example: \"56\"\n\n- NO_SYNC=${NO_SYNC:-}\n\
+    \n  - 'y' if the Pod execution should NOT be synchronized\n  - 'n' if the Pod\
+    \ execution should be synchronized\n\n- GPU_COUNT=${GPU_COUNT:-}\n\n  Number of\
+    \ GPUs that should be received. The execution will fail if the number of GPUs\
+    \ actually received is different.\n  If GPU_COUNT is 0, the execution stops (successfully)\
+    \ after printing the list of available GPUs.\n\n- GPU_RES_TYPE=${GPU_RES_TYPE:-}\n\
+    \n  Value of the GPU resource type requested to Kubernetes\n  Example: \"nvidia.com/gpus\"\
+    \n  Example: \"nvidia.com/mig-1g.5gb\"\n\n- GPU_TYPE=${GPU_TYPE:-}\n\n  Type of\
+    \ the MIG resources being benchmarked\n  Example: \"full\"\n  Example: \"7g.40gb\"\
+    \n  Example: \"2g.10gb,3g.20gb\"\n\n\n- SSD_THRESHOLD=${SSD_THRESHOLD:-}\n\n \
+    \ Value of the '--threshold' parameter passed to SSD.\n\n\nEOF\n\necho \"8<--8<--8<--8<--\"\
+    \n\nnvidia-smi -L\n\necho \"8<--8<--8<--8<--\"\n\nset -x\n\nNB_GPUS=$(nvidia-smi\
+    \ -L | grep \"UUID: MIG-\" | wc -l || true)\nif [[ \"$NB_GPUS\" == 0 ]]; then\n\
+    \    # Full GPUs\n    ALL_GPUS=$(nvidia-smi -L | grep \"UUID: GPU\" | cut -d\"\
+    \ \" -f6 | cut -d')' -f1)\n    NB_GPUS=$(nvidia-smi -L | grep \"UUID: GPU\" |\
+    \ wc -l)\n    MIG_MODE=0\n\n    if [[ \"$GPU_TYPE\" != \"full\" ]]; then\n   \
+    \     echo \"FATAL: Expected MIG GPUs, got full GPUs ...\"\n        exit 1\n \
+    \   fi\n\n    echo \"No MIG GPU available, using the full GPUs ($ALL_GPUS).\"\n\
+    else\n    # MIG GPUs\n    ALL_GPUS=$(nvidia-smi -L | grep \"UUID: MIG-\" | awk\
+    \ '{ printf $6\"\\n\"}' | cut -d')' -f1)\n    MIG_MODE=1\n\n    if [[ \"$GPU_TYPE\"\
+    \ == \"full\" ]]; then\n        echo \"FATAL: Expected full GPUs, got MIG GPUs\
+    \ ...\"\n        exit 1\n    fi\n\n    echo \"Found $NB_GPUS MIG instances: $ALL_GPUS\"\
+    \nfi\n\nif [[ $GPU_COUNT == 0 ]]; then\n    echo \"0 GPU requested. Exiting now.\"\
+    \n    echo \"ALL FINISHED\"\n\n    exit 0\nelif [[ $NB_GPUS != $GPU_COUNT ]];\
+    \ then\n    echo \"FATAL: Expected $GPU_COUNT GPUs, got $NB_GPUS\"\n    exit 1\n\
+    fi\n\n# start timing\nstart=$(date +%s)\nstart_fmt=$(date +%Y-%m-%d\\ %r)\necho\
+    \ \"STARTING TIMING RUN AT $start_fmt $RUN_DESCR\"\n\n# run benchmark\nset -x\n\
+    \nexport NCCL_DEBUG=INFO\n\necho \"running benchmark\"\n\nexport DATASET_DIR=\"\
+    /data/coco2017\"\nexport TORCH_HOME=\"${DATASET_DIR}/torchvision\"\n\n# prepare\
+    \ dataset according to download_dataset.sh\n\nif [ ! -f ${DATASET_DIR}/annotations/bbox_only_instances_val2017.json\
+    \ ]; then\n    echo \"Prepare instances_val2017.json ...\"\n    ./prepare-json.py\
+    \ --keep-keys \\\n        \"${DATASET_DIR}/annotations/instances_val2017.json\"\
+    \ \\\n        \"${DATASET_DIR}/annotations/bbox_only_instances_val2017.json\"\n\
+    fi\n\nif [ ! -f ${DATASET_DIR}/annotations/bbox_only_instances_train2017.json\
+    \ ]; then\n    echo \"Prepare instances_train2017.json ...\"\n    ./prepare-json.py\
+    \ \\\n        \"${DATASET_DIR}/annotations/instances_train2017.json\" \\\n   \
+    \     \"${DATASET_DIR}/annotations/bbox_only_instances_train2017.json\"\nfi\n\n\
+    # setup the training\n\nif [[ \"${BENCHMARK:-}\" == \"maskrcnn\" ]]; then\n  \
+    \  echo \"Setting up the Mask RCNN benchmark...\"\n\n    NEXP=1\n\n    # DGX A100\
+    \ config\n    source config_DGXA100.sh\n\nfi\n\nDGXNSOCKET=1\nDGXSOCKETCORES=${DGXSOCKETCORES:-16}\n\
+    \nif [[ $MIG_MODE == \"1\" ]]; then\n   DGXNGPU=1\n   echo \"Running in parallel\
+    \ mode.\"\n\nelse\n    DGXNGPU=$NB_GPUS\n    echo \"Running in multi-gpu mode.\"\
+    \nfi\n\n\n\ndeclare -a CMD\nCMD=('python' '-u' '-m' 'bind_launch' \"--nsockets_per_node=${DGXNSOCKET}\"\
+    \ \\\n              \"--ncores_per_socket=${DGXSOCKETCORES}\" \"--nproc_per_node=${DGXNGPU}\"\
+    \ )\n\ndeclare -a ARGS\n\necho \"Patching 'bind_launch.py' to err-exit on failure\
+    \ ...\"\nsed 's/process.wait()$/if process.wait(): sys.exit(1)/' -i bind_launch.py\n\
+    \nif [[ \"${BENCHMARK:-}\" == \"ssd\" ]]; then\n    echo \"Setting up the SSD\
+    \ benchmark...\"\n\n    # prepare the DGXA100-specific configuration (config_DGXA100.sh)\n\
+    \    EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'\n\n\
+    \    NUMEPOCHS=${NUMEPOCHS:-80}\n\n    ARGS=(train.py\n          --use-fp16\n\
+    \          --nhwc\n          --pad-input\n          --jit\n          --delay-allreduce\n\
+    \          --opt-loss\n          --epochs \"${NUMEPOCHS}\"\n          --warmup-factor\
+    \ 0\n          --no-save\n          --threshold=${SSD_THRESHOLD}\n          --data\
+    \ ${DATASET_DIR}\n          ${EXTRA_PARAMS})\n\n    if [[ \"$EXECUTION_MODE\"\
+    \ == \"fast\" ]]; then\n        echo \"Running in FAST mode\"\n        ARGS+=(--evaluation\
+    \ 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)\n    fi\n\nelif [[ \"${BENCHMARK:-}\"\
+    \ == \"maskrcnn\" ]]; then\n    echo \"Setting up the Mask RCNN benchmark...\"\
+    \n\n    sed 's/torch.set_num_threads(1)$/import time, sys; time.sleep(int(sys.argv[1].split(\"\
+    =\")[-1]));torch.set_num_threads(1);/' -i tools/train_mlperf.py\n    #sed 's/fwd_graph.capture_/pass\
+    \ # cannot call fwd_graph.capture_/' -i function.py\n    #sed 's/bwd_graph.capture_/pass\
+    \ # cannot call bwd_graph.capture_/' -i function.py\n    sed 's/# terminating\
+    \ condition/if bbox_map == 0.0: logger.info(\"Target mAP is null, aborting ...\"\
+    ); finished = 2# terminating condition/' -i tools/train_mlperf.py\n    sed 's/#\
+    \ If notified, end./if finish_tensor.item() == 2: raise RuntimeError(\"Target\
+    \ mAP is null ...\")/' -i tools/train_mlperf.py\n    MODEL=\"$DATASET_DIR/models/R-50.pkl\"\
+    \n    if [[ -f \"$MODEL\" ]]; then\n        sum=$(cat $MODEL | md5sum)\n     \
+    \   if [[ \"$sum\" != \"6652b4a9c782d82bb3d42118be74d79b  -\" ]]; then\n     \
+    \       echo \"Wrong checksum, deleting the model ...\"\n            rm \"$MODEL\"\
+    \n        fi\n    fi\n    if [[ ! -f \"$MODEL\" ]]; then\n        mkdir -p $(dirname\
+    \ \"$MODEL\")\n        curl --silent https://dl.fbaipublicfiles.com/detectron2/ImageNetPretrained/MSRA/R-50.pkl\
+    \ > $MODEL\n    fi\n\n    ln -sf $DATASET_DIR /coco\n\n    # COCO_PKL=\"$DATASET_DIR/instances_train2017.json.pickled\"\
+    \n    # if [[ ! -f \"$COCO_PKL\" ]]; then\n    #     python3 pickle_coco_annotations.py\
+    \ \\\n    #             --root \"$DATASET_DIR\" \\\n    #             --ann \"\
+    $DATASET_DIR/annotations/instances_train2017.json\" \\\n    #             --pickle_output_file\
+    \ \"$COCO_PKL\"\n    # fi\n    # ln -s /data/coco2017/ /pkl_coco\n\n    ARGS=(tools/train_mlperf.py\n\
+    \          ${EXTRA_PARAMS}\n          --config-file 'configs/e2e_mask_rcnn_R_50_FPN_1x.yaml'\n\
+    \          DTYPE 'float16'\n          PATHS_CATALOG 'maskrcnn_benchmark/config/paths_catalog_dbcluster.py'\n\
+    \          MODEL.WEIGHT \"$MODEL\"\n          DISABLE_REDUCED_LOGGING True\n \
+    \         ${EXTRA_CONFIG}\n         )\n\nelse\n    echo \"FATAL: unknown benchmark:\
+    \ '${BENCHMARK:-}'\"\n    exit 1\nfi\n\nif [[ \"$EXECUTION_MODE\" == \"dry\" ]];\
+    \ then\n    echo \"Running in DRY mode\"\n    CMD[0]=\"echo\"\nfi\n\ntrap \"date;\
+    \ echo failed; exit 1\" ERR\n\nif [[ \"$NO_SYNC\" != \"y\" ]]; then\n    SYNC_DIR=$DATASET_DIR/sync\n\
+    \n    mkdir -p \"$SYNC_DIR\"\n\n    for sync_f in \"$SYNC_DIR/\"*; do\n      \
+    \  if [[ \"$sync_f\" != \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\" ]]; then\n    \
+    \        rm -f \"$sync_f\"\n        fi\n    done\n\n    set +x\n    echo \"$(date)\
+    \ Waiting for all the $SYNC_COUNTER Pods to start ...\"\n    touch \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\
+    \n\n    while true; do\n        if ! grep --silent $HOSTNAME \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\
+    ; then\n            echo \"Adding $HOSTNAME to the sync file ...\"\n         \
+    \   echo $HOSTNAME >> \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\n        fi\n\n \
+    \       cnt=$(cat \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\" | wc -l)\n        [[\
+    \ $cnt == \"$SYNC_COUNTER\" ]] && break\n        echo \"$HOSTNAME Found $cnt Pods,\
+    \ waiting to have $SYNC_COUNTER ...\"\n        nl \"$DATASET_DIR/sync/$SYNC_IDENTIFIER\"\
+    \n        sleep 5\n    done\n    echo \"$(date) All the $SYNC_COUNTER Pods are\
+    \ running, launch the GPU workload.\"\n    set -x\nelse\n    echo \"Pod startup\
+    \ synchronization disabled, do not wait for $SYNC_COUNTER Pods ...\"\nfi\n\nnvidia-smi\
+    \ -L\n\n# run the training\n\nif [[ $MIG_MODE == 1 && $NB_GPUS != 1 ]]; then\n\
+    \    declare -a pids\n\n    for gpu in $(echo \"$ALL_GPUS\"); do\n        export\
+    \ NVIDIA_VISIBLE_DEVICES=$gpu\n        export CUDA_VISIBLE_DEVICES=$gpu\n\n  \
+    \      dest=/tmp/benchmark_$(echo $gpu | sed 's|/|_|g').log\n\n        # run training\n\
+    \        \"${CMD[@]}\" \"${ARGS[@]}\" >\"$dest\" 2>\"$dest.stderr\" &\n      \
+    \  pids+=($!)\n        echo \"Running on $gpu ===> $dest: PID $!\"\n    done\n\
+    \    echo \"$(date): waiting for parallel $NB_GPUS executions: ${pids[@]}\"\n\
+    \    for pid in ${pids[@]};\n    do\n        wait $pid;\n    done\nelse\n    dest=/tmp/benchmark_all.log\n\
+    \    if [[ $MIG_MODE == 1 ]]; then\n        echo \"Running on the MIG GPU\"\n\
+    \    else\n        echo \"Running on all the $NB_GPUS GPUs \"\n    fi\n\n    \"\
+    ${CMD[@]}\" \"${ARGS[@]}\" | tee -a \"$dest\"\nfi\n\nif [[ \"$EXECUTION_MODE\"\
+    \ == \"dry\" ]]; then\n    echo \"Running in DRY mode, sleep 2min\"\n    sleep\
+    \ 2m\nfi\n\necho \"$(date): done waiting for $NB_GPUS executions\"\n\nls /tmp/benchmark_*\n\
+    grep . /tmp/benchmark_*.log\n\n# end timing\nend=$(date +%s)\nend_fmt=$(date +%Y-%m-%d\\\
+    \ %r)\necho \"START TIMING RUN WAS $start_fmt\"\necho \"ENDING TIMING RUN AT $end_fmt\"\
+    \n\nnvidia-smi -L\n\n# report result\nresult=$(($end - $start))\nif [[ \"${BENCHMARK:-}\"\
+    \ == \"ssd\" ]]; then\n    result_name=\"SINGLE_STAGE_DETECTOR\"\n\nelif [[ \"\
+    ${BENCHMARK:-}\" == \"maskrcnn\" ]]; then\n    result_name=\"OBJECT_DETECTION\"\
+    \n\nelse\n    result_name=\"(can't be reached)\"\nfi\n\necho \"RESULT,$result_name,,$result,nvidia,$start_fmt\"\
+    \necho \"ALL FINISHED $RUN_DESCR\"\n"
+kind: ConfigMap
+metadata:
+  annotations: null
+  cluster_name: null
+  creation_timestamp: 2021-12-16 13:49:46+00:00
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: null
+  labels: null
+  name: custom-config-script
+  namespace: default
+  owner_references: null
+  resource_version: '3873672'
+  self_link: null
+  uid: b0619fcc-463a-4de1-bb72-486e57d61924

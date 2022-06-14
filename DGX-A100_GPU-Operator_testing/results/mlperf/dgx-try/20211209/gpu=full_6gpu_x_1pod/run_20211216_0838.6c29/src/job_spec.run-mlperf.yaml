@@ -1,0 +1,80 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: run-mlperf
+  namespace: default
+  labels:
+    app: run-mlperf
+spec:
+  parallelism: 1
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: run-mlperf
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: cnt
+        image: "image-registry.openshift-image-registry.svc:5000/default/mlperf:maskrcnn_1.1_azure"
+        command:
+        - /bin/bash
+        - ./my_run_and_time.sh
+        env:
+        - name: NVIDIA_DRIVER_CAPABILITIES
+          value: "compute,utility"
+        - name: NVIDIA_REQUIRE_CUDA
+          value: "cuda>=5.0"
+        - name: DGX_SYSTEM
+          value: CUSTOM
+
+        - name: EXECUTION_MODE
+          value: "run"
+        - name: SSD_THRESHOLD
+          value: "None"
+        - name: DGXSOCKETCORES
+          value: "8"
+        - name: RUN_DESCR
+          value: "GPU: 6 x full x 1 Pods"
+        - name: SYNC_IDENTIFIER
+          value: "2021-12-16_08-38-24"
+        - name: SYNC_COUNTER
+          value: "1"
+        - name: NO_SYNC
+          value: "n"
+        - name: GPU_COUNT
+          value: "6"
+        - name: GPU_RES_TYPE
+          value: "nvidia.com/gpu"
+        - name: GPU_TYPE
+          value: "full"
+        - name: BENCHMARK
+          value: "maskrcnn"
+
+        securityContext:
+          privileged: true
+        resources:
+          limits:
+            nvidia.com/gpu: "6"
+          requests:
+            nvidia.com/gpu: "6"
+        volumeMounts:
+        - mountPath: /dev/shm
+          name: dshm
+        - mountPath: /data/coco2017
+          name: mlperf-data
+        - name: config-volume
+          mountPath: /workspace/object_detection/my_run_and_time.sh
+          readOnly: false
+          subPath: my_run_and_time.sh
+      volumes:
+      - name: mlperf-data
+        persistentVolumeClaim:
+          claimName: benchmarking-coco-dataset
+      - name: dshm
+        emptyDir:
+          medium: Memory
+      - name: config-volume
+        configMap:
+          defaultMode: 0777
+          name: custom-config-script

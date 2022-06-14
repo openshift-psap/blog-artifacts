@@ -1,0 +1,161 @@
+2021-12-09 12:30:31.887493
+Saving artifacts files into /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c
+Deleting the old Job, if any ...
+- run-ssd
+Deleting the old job Pods, if any ...
+Deleting 2 Pods: run-ssd--1-g8x9d run-ssd--1-lsglq
+Done with the Pods.
+Apply mixed MIG strategy ...
+Labeling node/dgxa100 with MIG label 'all-balanced' ...
+Deleting the old ConfigMap, if any ...
+Existed.
+Creating the new ConfigMap ...
+Including my_run_and_time.sh ...
+Saving the ConfigMap in /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c ...
+Waiting for MIG reconfiguration of the node ...
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state: pending
+MIG Manager state is success, good.
+MIG strategy is wrong: single ...
+MIG Manager state is success, good.
+MIG strategy is wrong: single ...
+MIG Manager state is success, good.
+MIG strategy is mixed, good.
+MIG label is all-balanced, good.
+Resource nvidia.com/mig-2g.10gb not known...
+8 nvidia.com/mig-3g.20gb, good.
+MIG Manager state is success, good.
+MIG strategy is mixed, good.
+MIG label is all-balanced, good.
+Resource nvidia.com/mig-2g.10gb not known...
+8 nvidia.com/mig-3g.20gb, good.
+MIG Manager state is success, good.
+MIG strategy is mixed, good.
+MIG label is all-balanced, good.
+8 nvidia.com/mig-2g.10gb, good.
+8 nvidia.com/mig-3g.20gb, good.
+Launching 44 Pods ...
+Running 4 Pods in parallel
+Requesting 1 nvidia.com/mig-2g.10gb per Pod
+Creating the new 'nvidia.com/mig-2g.10gb' Job ...
+
+Job 'nvidia.com/mig-2g.10gb' for GPU: 1 x 2g.10gb,3g.20gb x 4 Pods created!
+Running 4 Pods in parallel
+Requesting 1 nvidia.com/mig-3g.20gb per Pod
+Creating the new 'nvidia.com/mig-3g.20gb' Job ...
+
+Job 'nvidia.com/mig-3g.20gb' for GPU: 1 x 2g.10gb,3g.20gb x 4 Pods created!
+=====
+Thanos: Preparing  ...
+Thanos: Checking if user-monitoring is enabled ...
+Thanos: Fetching the monitoring secret token ...
+Thanos: Fetching the route URL ...
+-----
+2021-12-09 12:31:42.300084
+Waiting for run-ssd to complete its execution ...
+
+run-ssd-mig-2g-10gb - Active (active=4, succeeded=0, failed=0)
+
+run-ssd-mig-3g-20gb - Active (active=4, succeeded=0, failed=0)
+[2Krun-ssd-mig-2g-10gb--1-5z86n --> Pending
+[2Krun-ssd-mig-2g-10gb--1-6z6jg --> Pending
+[2Krun-ssd-mig-2g-10gb--1-77852 --> Pending
+[2Krun-ssd-mig-2g-10gb--1-hds46 --> Pending
+[2Krun-ssd-mig-3g-20gb--1-dqcx5 --> Pending
+[2Krun-ssd-mig-3g-20gb--1-hvdn7 --> Pending
+[2Krun-ssd-mig-3g-20gb--1-pvzvf --> Pending
+[2Krun-ssd-mig-3g-20gb--1-sjj5v --> Pending
+xx[2KThanos: start time: 1639071112.635
+[2Krun-ssd-mig-2g-10gb--1-5z86n --> Running
+[2Krun-ssd-mig-2g-10gb--1-6z6jg --> Running
+[2Krun-ssd-mig-2g-10gb--1-77852 --> Running
+[2Krun-ssd-mig-2g-10gb--1-hds46 --> Running
+[2Krun-ssd-mig-3g-20gb--1-dqcx5 --> Running
+[2Krun-ssd-mig-3g-20gb--1-hvdn7 --> Running
+[2Krun-ssd-mig-3g-20gb--1-pvzvf --> Running
+[2Krun-ssd-mig-3g-20gb--1-sjj5v --> Running
+Execution started!
+......................................................[2K5 minutes of execution ...
+...........................................................[2K10 minutes of execution ...
+...........................................................[2K15 minutes of execution ...
+...........................................................[2K20 minutes of execution ...
+..
+run-ssd-mig-3g-20gb - Active (active=3, succeeded=1, failed=0)
+[2Krun-ssd-mig-3g-20gb--1-dqcx5 --> Succeeded
+.
+run-ssd-mig-3g-20gb - Finished (active=0, succeeded=4, failed=0)
+[2Krun-ssd-mig-3g-20gb--1-hvdn7 --> Succeeded
+[2Krun-ssd-mig-3g-20gb--1-pvzvf --> Succeeded
+[2Krun-ssd-mig-3g-20gb--1-sjj5v --> Succeeded
+.........................................................[2K25 minutes of execution ...
+...........................................................[2K30 minutes of execution ...
+.........
+run-ssd-mig-2g-10gb - Active (active=3, succeeded=1, failed=0)
+[2Krun-ssd-mig-2g-10gb--1-hds46 --> Succeeded
+.
+run-ssd-mig-2g-10gb - Active (active=1, succeeded=3, failed=0)
+[2Krun-ssd-mig-2g-10gb--1-6z6jg --> Succeeded
+[2Krun-ssd-mig-2g-10gb--1-77852 --> Succeeded
+.
+run-ssd-mig-2g-10gb - Finished (active=0, succeeded=4, failed=0)
+-----
+2021-12-09 13:02:20.887184
+-----
+Collecting artifacts ...
+Saving dgxa100 definition ...
+Saving OpenShift version ...
+Saving run_ssd Jobs ...
+Saving the image SHA
+Found container status in pod/run-ssd-mig-2g-10gb--1-5z86n:
+- image-registry.openshift-image-registry.svc:5000/default/mlperf:ssd_0.7
+- image-registry.openshift-image-registry.svc:5000/default/mlperf@sha256:f25899ceed2b50832ba52bd7d56efa73cd19255a15c1d9f60ba55c34e646a63b
+Thanos: stop time: 1639071112.635
+Saving DCGM_FI_DEV_SM_CLOCK metrics ...
+Saving DCGM_FI_DEV_MEM_CLOCK metrics ...
+Saving DCGM_FI_DEV_MEMORY_TEMP metrics ...
+Saving DCGM_FI_DEV_GPU_TEMP metrics ...
+Saving DCGM_FI_DEV_POWER_USAGE metrics ...
+Saving DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION metrics ...
+Saving DCGM_FI_DEV_PCIE_REPLAY_COUNTER metrics ...
+Saving DCGM_FI_DEV_MEM_COPY_UTIL metrics ...
+Saving DCGM_FI_DEV_ENC_UTIL metrics ...
+Saving DCGM_FI_DEV_DEC_UTIL metrics ...
+Saving DCGM_FI_DEV_XID_ERRORS metrics ...
+Saving DCGM_FI_DEV_FB_FREE metrics ...
+Saving DCGM_FI_DEV_FB_USED metrics ...
+Saving DCGM_FI_DEV_NVLINK_BANDWIDTH_TOTAL metrics ...
+Saving DCGM_FI_DEV_VGPU_LICENSE_STATUS metrics ...
+Saving DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS metrics ...
+Saving DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS metrics ...
+Saving DCGM_FI_DEV_ROW_REMAP_FAILURE metrics ...
+Saving DCGM_FI_PROF_GR_ENGINE_ACTIVE metrics ...
+Saving DCGM_FI_PROF_PIPE_TENSOR_ACTIVE metrics ...
+Saving DCGM_FI_PROF_DRAM_ACTIVE metrics ...
+Saving DCGM_FI_PROF_PCIE_TX_BYTES metrics ...
+Saving DCGM_FI_PROF_PCIE_RX_BYTES metrics ...
+-----
+run-ssd-mig-2g-10gb--1-5z86n --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-2g-10gb--1-5z86n.log
+run-ssd-mig-2g-10gb--1-6z6jg --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-2g-10gb--1-6z6jg.log
+run-ssd-mig-2g-10gb--1-77852 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-2g-10gb--1-77852.log
+run-ssd-mig-2g-10gb--1-hds46 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-2g-10gb--1-hds46.log
+run-ssd-mig-3g-20gb--1-dqcx5 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-3g-20gb--1-dqcx5.log
+run-ssd-mig-3g-20gb--1-hvdn7 --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-3g-20gb--1-hvdn7.log
+run-ssd-mig-3g-20gb--1-pvzvf --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-3g-20gb--1-pvzvf.log
+run-ssd-mig-3g-20gb--1-sjj5v --> Succeeded
+/home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c/run-ssd-mig-3g-20gb--1-sjj5v.log
+-----
+2021-12-09 13:02:37.878887
+Artifacts files saved into /home/kevin/matrix-benchmark/results/mlperf/dgx-test/20211209/gpu=2g.10gb,3g.20gb_1gpu_x_4pod/run_20211209_1519.334c

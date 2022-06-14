@@ -1,0 +1,1910 @@
+8<--8<--8<--8<--
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+8<--8<--8<--8<--
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
+++ true
++ NB_GPUS=0
++ [[ 0 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ cut '-d ' -f6
+++ cut '-d)' -f1
++ ALL_GPUS='GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f'
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ wc -l
++ NB_GPUS=6
++ MIG_MODE=0
++ [[ full != \f\u\l\l ]]
+No MIG GPU available, using the full GPUs (GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).
++ echo 'No MIG GPU available, using the full GPUs (GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).'
++ [[ 6 == 0 ]]
++ [[ 6 != 6 ]]
+++ date +%s
++ start=1639608396
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-15 10:46:36 PM'
++ echo 'STARTING TIMING RUN AT 2021-12-15 10:46:36 PM GPU: 6 x full x 1 Pods'
+STARTING TIMING RUN AT 2021-12-15 10:46:36 PM GPU: 6 x full x 1 Pods
++ set -x
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ [[ maskrcnn == \m\a\s\k\r\c\n\n ]]
+Setting up the Mask RCNN benchmark...
++ echo 'Setting up the Mask RCNN benchmark...'
++ NEXP=1
++ source config_DGXA100.sh
+++ : False
+++ : True
+++ : True
+++ : 10
+++ : True
+++ : True
+++ : True
+++ : 1
+++ : True
+++ : 40000
+++ export BATCHSIZE=12
+++ BATCHSIZE=12
+++ export EXTRA_PARAMS=
+++ EXTRA_PARAMS=
+++ export 'EXTRA_CONFIG=SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm'
+++ EXTRA_CONFIG='SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm'
+++ export 'EXTRA_CONFIG=SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True'
+++ EXTRA_CONFIG='SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True'
+++ export DGXNNODES=1
+++ DGXNNODES=1
++++ sed 's/^config_//'
+++++ readlink -f config_DGXA100.sh
++++ sed 's/\.sh$//'
++++ basename /workspace/object_detection/config_DGXA100.sh
+++ export DGXSYSTEM=DGXA100
+++ DGXSYSTEM=DGXA100
+++ WALLTIME_MINUTES=100
+++ export WALLTIME=100
+++ WALLTIME=100
+++ export DGXNGPU=8
+++ DGXNGPU=8
+++ export DGXSOCKETCORES=48
+++ DGXSOCKETCORES=48
+++ export DGXNSOCKET=2
+++ DGXNSOCKET=2
+++ export DGXHT=1
+++ DGXHT=1
++ DGXNSOCKET=1
++ DGXSOCKETCORES=48
++ [[ 0 == \1 ]]
++ DGXNGPU=6
++ echo 'Running in multi-gpu mode.'
+Running in multi-gpu mode.
++ declare -a CMD
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
+Patching 'bind_launch.py' to err-exit on failure ...
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
++ sed 's/process.wait()$/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ [[ maskrcnn == \s\s\d ]]
++ [[ maskrcnn == \m\a\s\k\r\c\n\n ]]
++ echo 'Setting up the Mask RCNN benchmark...'
+Setting up the Mask RCNN benchmark...
++ sed 's/torch.set_num_threads(1)$/import time, sys; time.sleep(int(sys.argv[1].split("=")[-1]));torch.set_num_threads(1);/' -i tools/train_mlperf.py
++ MODEL=/data/coco2017/models/R-50.pkl
++ [[ -f /data/coco2017/models/R-50.pkl ]]
+++ cat /data/coco2017/models/R-50.pkl
+++ md5sum
++ sum='6652b4a9c782d82bb3d42118be74d79b  -'
++ [[ 6652b4a9c782d82bb3d42118be74d79b  - != \6\6\5\2\b\4\a\9\c\7\8\2\d\8\2\b\b\3\d\4\2\1\1\8\b\e\7\4\d\7\9\b\ \ \- ]]
++ [[ ! -f /data/coco2017/models/R-50.pkl ]]
++ ln -sf /data/coco2017 /coco
++ ARGS=(tools/train_mlperf.py ${EXTRA_PARAMS} --config-file 'configs/e2e_mask_rcnn_R_50_FPN_1x.yaml' DTYPE 'float16' PATHS_CATALOG 'maskrcnn_benchmark/config/paths_catalog_dbcluster.py' MODEL.WEIGHT "$MODEL" DISABLE_REDUCED_LOGGING True ${EXTRA_CONFIG})
++ [[ run == \d\r\y ]]
++ trap 'date; echo failed; exit 1' ERR
++ [[ n != \y ]]
++ SYNC_DIR=/data/coco2017/sync
++ mkdir -p /data/coco2017/sync
++ for sync_f in "$SYNC_DIR/"*
++ [[ /data/coco2017/sync/2021-12-15_21-58-09 != \/\d\a\t\a\/\c\o\c\o\2\0\1\7\/\s\y\n\c\/\2\0\2\1\-\1\2\-\1\5\_\2\3\-\4\6\-\1\6 ]]
++ rm -f /data/coco2017/sync/2021-12-15_21-58-09
++ set +x
+Wed Dec 15 22:46:36 UTC 2021 Waiting for all the 1 Pods to start ...
+Adding run-mlperf--1-t2482 to the sync file ...
+Wed Dec 15 22:46:36 UTC 2021 All the 1 Pods are running, launch the GPU workload.
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
++ [[ 0 == 1 ]]
++ dest=/tmp/benchmark_all.log
++ [[ 0 == 1 ]]
++ echo 'Running on all the 6 GPUs '
+Running on all the 6 GPUs 
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=48 --nproc_per_node=6 tools/train_mlperf.py --config-file configs/e2e_mask_rcnn_R_50_FPN_1x.yaml DTYPE float16 PATHS_CATALOG maskrcnn_benchmark/config/paths_catalog_dbcluster.py MODEL.WEIGHT /data/coco2017/models/R-50.pkl DISABLE_REDUCED_LOGGING True SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS '(12000,16000)' SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True
++ tee -a /tmp/benchmark_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639608399323, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639608400463, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639608401436, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639608402432, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639608403458, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639608404552, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+run-mlperf--1-t2482:61:61 [0] NCCL INFO Bootstrap : Using eth0:10.128.0.178<0>
+run-mlperf--1-t2482:61:61 [0] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-t2482:61:61 [0] NCCL INFO P2P plugin IBext
+run-mlperf--1-t2482:61:61 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.178<0>
+run-mlperf--1-t2482:61:61 [0] NCCL INFO Using network IBext
+NCCL version 2.11.4+cuda11.4
+run-mlperf--1-t2482:62:62 [1] NCCL INFO Bootstrap : Using eth0:10.128.0.178<0>
+run-mlperf--1-t2482:66:66 [5] NCCL INFO Bootstrap : Using eth0:10.128.0.178<0>
+run-mlperf--1-t2482:64:64 [3] NCCL INFO Bootstrap : Using eth0:10.128.0.178<0>
+run-mlperf--1-t2482:63:63 [2] NCCL INFO Bootstrap : Using eth0:10.128.0.178<0>
+run-mlperf--1-t2482:65:65 [4] NCCL INFO Bootstrap : Using eth0:10.128.0.178<0>
+run-mlperf--1-t2482:66:66 [5] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-t2482:62:62 [1] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-t2482:62:62 [1] NCCL INFO P2P plugin IBext
+run-mlperf--1-t2482:66:66 [5] NCCL INFO P2P plugin IBext
+run-mlperf--1-t2482:64:64 [3] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-t2482:64:64 [3] NCCL INFO P2P plugin IBext
+run-mlperf--1-t2482:63:63 [2] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-t2482:63:63 [2] NCCL INFO P2P plugin IBext
+run-mlperf--1-t2482:65:65 [4] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-t2482:65:65 [4] NCCL INFO P2P plugin IBext
+run-mlperf--1-t2482:62:62 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.178<0>
+run-mlperf--1-t2482:62:62 [1] NCCL INFO Using network IBext
+run-mlperf--1-t2482:66:66 [5] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.178<0>
+run-mlperf--1-t2482:66:66 [5] NCCL INFO Using network IBext
+run-mlperf--1-t2482:64:64 [3] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.178<0>
+run-mlperf--1-t2482:64:64 [3] NCCL INFO Using network IBext
+run-mlperf--1-t2482:63:63 [2] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.178<0>
+run-mlperf--1-t2482:63:63 [2] NCCL INFO Using network IBext
+run-mlperf--1-t2482:65:65 [4] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.178<0>
+run-mlperf--1-t2482:65:65 [4] NCCL INFO Using network IBext
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 2/-1/-1->1->0 [17] 2/-1/-1->1->0 [18] 2/-1/-1->1->0 [19] 2/-1/-1->1->0 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->0 [22] 2/-1/-1->1->0 [23] 2/-1/-1->1->0
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Trees [0] -1/-1/-1->5->4 [1] -1/-1/-1->5->4 [2] -1/-1/-1->5->4 [3] -1/-1/-1->5->4 [4] -1/-1/-1->5->4 [5] -1/-1/-1->5->4 [6] -1/-1/-1->5->4 [7] -1/-1/-1->5->4 [8] -1/-1/-1->5->4 [9] -1/-1/-1->5->4 [10] -1/-1/-1->5->4 [11] -1/-1/-1->5->4 [12] -1/-1/-1->5->4 [13] -1/-1/-1->5->4 [14] -1/-1/-1->5->4 [15] -1/-1/-1->5->4 [16] -1/-1/-1->5->4 [17] -1/-1/-1->5->4 [18] -1/-1/-1->5->4 [19] -1/-1/-1->5->4 [20] -1/-1/-1->5->4 [21] -1/-1/-1->5->4 [22] -1/-1/-1->5->4 [23] -1/-1/-1->5->4
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Setting affinity for GPU 5 to ff000000,00000000,00000000
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1 [16] 3/-1/-1->2->1 [17] 3/-1/-1->2->1 [18] 3/-1/-1->2->1 [19] 3/-1/-1->2->1 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] 3/-1/-1->2->1 [23] 3/-1/-1->2->1
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 5/-1/-1->4->3 [2] 5/-1/-1->4->3 [3] 5/-1/-1->4->3 [4] 5/-1/-1->4->3 [5] 5/-1/-1->4->3 [6] 5/-1/-1->4->3 [7] 5/-1/-1->4->3 [8] 5/-1/-1->4->3 [9] 5/-1/-1->4->3 [10] 5/-1/-1->4->3 [11] 5/-1/-1->4->3 [12] 5/-1/-1->4->3 [13] 5/-1/-1->4->3 [14] 5/-1/-1->4->3 [15] 5/-1/-1->4->3 [16] 5/-1/-1->4->3 [17] 5/-1/-1->4->3 [18] 5/-1/-1->4->3 [19] 5/-1/-1->4->3 [20] 5/-1/-1->4->3 [21] 5/-1/-1->4->3 [22] 5/-1/-1->4->3 [23] 5/-1/-1->4->3
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 4/-1/-1->3->2 [2] 4/-1/-1->3->2 [3] 4/-1/-1->3->2 [4] 4/-1/-1->3->2 [5] 4/-1/-1->3->2 [6] 4/-1/-1->3->2 [7] 4/-1/-1->3->2 [8] 4/-1/-1->3->2 [9] 4/-1/-1->3->2 [10] 4/-1/-1->3->2 [11] 4/-1/-1->3->2 [12] 4/-1/-1->3->2 [13] 4/-1/-1->3->2 [14] 4/-1/-1->3->2 [15] 4/-1/-1->3->2 [16] 4/-1/-1->3->2 [17] 4/-1/-1->3->2 [18] 4/-1/-1->3->2 [19] 4/-1/-1->3->2 [20] 4/-1/-1->3->2 [21] 4/-1/-1->3->2 [22] 4/-1/-1->3->2 [23] 4/-1/-1->3->2
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Setting affinity for GPU 4 to ff0000,00000000,00000000
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4   5
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] 1/-1/-1->0->-1 [19] 1/-1/-1->0->-1 [20] 1/-1/-1->0->-1 [21] 1/-1/-1->0->-1 [22] 1/-1/-1->0->-1 [23] 1/-1/-1->0->-1
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 00 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 00 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 00 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 00 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 00 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 00 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 01 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 01 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 01 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 01 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 01 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 01 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 02 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 02 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 02 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 02 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 02 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 02 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 03 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 03 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 03 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 03 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 03 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 03 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 04 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 04 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 04 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 04 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 04 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 04 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 05 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 05 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 05 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 05 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 05 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 05 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 06 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 06 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 06 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 06 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 06 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 06 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 07 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 07 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 07 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 07 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 07 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 07 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 08 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 08 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 08 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 08 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 08 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 08 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 09 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 09 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 09 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 09 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 09 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 09 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 10 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 10 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 10 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 10 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 10 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 10 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 11 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 11 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 11 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 11 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 11 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 11 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 12 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 12 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 12 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 12 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 12 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 12 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 13 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 13 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 13 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 13 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 13 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 13 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 14 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 14 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 14 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 14 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 14 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 14 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 15 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 15 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 15 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 15 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 15 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 15 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 16 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 16 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 16 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 16 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 16 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 16 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 17 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 17 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 17 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 17 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 17 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 17 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 18 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 18 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 18 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 18 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 18 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 18 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 19 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 19 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 19 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 19 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 19 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 19 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 20 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 20 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 20 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 20 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 20 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 20 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 21 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 21 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 21 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 21 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 21 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 21 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 22 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 22 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 22 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 22 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 22 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 22 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 23 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 23 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Channel 23 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 23 : 5[bd000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 23 : 4[b7000] -> 5[bd000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 23 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Connected all rings
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Connected all rings
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Connected all rings
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Connected all rings
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Connected all rings
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Connected all rings
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 00 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 01 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 02 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 03 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 04 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 05 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 06 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 07 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 08 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 09 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 10 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 11 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 12 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 13 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 14 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 15 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 16 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 17 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 18 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 19 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 20 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 21 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 22 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Channel 23 : 5[bd000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 00 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 00 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 00 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 00 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 01 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 01 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 01 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 01 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 02 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 02 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 02 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 02 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 03 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 03 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 03 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 03 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 04 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 04 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 04 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 04 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 05 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 05 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 05 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 05 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 06 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 06 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 06 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 06 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 07 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 07 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 07 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 07 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 08 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 08 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 08 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 08 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 09 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 09 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 09 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 09 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 10 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 10 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 10 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 10 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 11 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 11 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 11 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 11 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 12 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 12 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 12 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 12 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 13 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 13 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 13 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 13 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 14 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 14 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 14 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 14 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 15 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 15 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 15 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 15 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 16 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 16 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 16 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 16 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 17 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 17 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 17 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 17 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 18 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 18 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 18 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 18 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 19 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 19 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 19 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 19 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 20 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 20 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 20 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 20 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 21 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 21 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 21 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 21 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 22 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 22 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 22 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 22 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Channel 23 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Channel 23 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Channel 23 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Channel 23 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO Connected all trees
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 8/8/512
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO Connected all trees
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 8/8/512
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO Connected all trees
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 8/8/512
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO Connected all trees
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 8/8/512
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO Connected all trees
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 8/8/512
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO Connected all trees
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO threadThresholds 8/8/64 | 48/8/64 | 8/8/512
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-t2482:61:1631 [0] NCCL INFO comm 0x7fbbbc008fb0 rank 0 nranks 6 cudaDev 0 busId 47000 - Init COMPLETE
+run-mlperf--1-t2482:63:1645 [2] NCCL INFO comm 0x7fdf5c008fb0 rank 2 nranks 6 cudaDev 2 busId 87000 - Init COMPLETE
+run-mlperf--1-t2482:62:1642 [1] NCCL INFO comm 0x7f6448008fb0 rank 1 nranks 6 cudaDev 1 busId 4e000 - Init COMPLETE
+run-mlperf--1-t2482:66:1643 [5] NCCL INFO comm 0x7f8adc008fb0 rank 5 nranks 6 cudaDev 5 busId bd000 - Init COMPLETE
+run-mlperf--1-t2482:64:1644 [3] NCCL INFO comm 0x7f6a38008fb0 rank 3 nranks 6 cudaDev 3 busId 90000 - Init COMPLETE
+run-mlperf--1-t2482:61:61 [0] NCCL INFO Launch mode Parallel
+run-mlperf--1-t2482:65:1646 [4] NCCL INFO comm 0x7f8394008fb0 rank 4 nranks 6 cudaDev 4 busId b7000 - Init COMPLETE
+:::MLLOG {"namespace": "", "time_ms": 1639608410969, "event_type": "POINT_IN_TIME", "key": "seed", "value": 2661363200, "metadata": {"file": "tools/train_mlperf.py", "lineno": 469}}
+2021-12-15 22:46:50,975 maskrcnn_benchmark INFO: Using 6 GPUs
+2021-12-15 22:46:50,975 maskrcnn_benchmark INFO: Namespace(config_file='configs/e2e_mask_rcnn_R_50_FPN_1x.yaml', distributed=True, local_rank=0, opts=['DTYPE', 'float16', 'PATHS_CATALOG', 'maskrcnn_benchmark/config/paths_catalog_dbcluster.py', 'MODEL.WEIGHT', '/data/coco2017/models/R-50.pkl', 'DISABLE_REDUCED_LOGGING', 'True', 'SOLVER.BASE_LR', '0.12', 'SOLVER.WARMUP_FACTOR', '0.000192', 'SOLVER.WARMUP_ITERS', '625', 'SOLVER.WARMUP_METHOD', 'mlperf_linear', 'SOLVER.STEPS', '(12000,16000)', 'SOLVER.IMS_PER_BATCH', '96', 'TEST.IMS_PER_BATCH', '96', 'MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN', '12000', 'MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE', 'False', 'NHWC', 'True', 'MODEL.RESNETS.FIRST_TRANS_FUNC', 'FastBottleneckWithFixedBatchNorm', 'MODEL.RESNETS.TRANS_FUNC', 'FastBottleneckWithFixedBatchNorm', 'SOLVER.MAX_ITER', '40000', 'DATALOADER.DALI', 'False', 'DATALOADER.DALI_ON_GPU', 'False', 'DATALOADER.CACHE_EVAL_IMAGES', 'True', 'EVAL_SEGM_NUMPROCS', '10', 'USE_CUDA_GRAPH', 'True', 'EVAL_MASK_VIRTUAL_PASTE', 'True', 'MODEL.BACKBONE.INCLUDE_RPN_HEAD', 'True', 'DATALOADER.NUM_WORKERS', '1', 'PRECOMPUTE_RPN_CONSTANT_TENSORS', 'True', 'DATALOADER.HYBRID', 'True'], seed=2661363200)
+2021-12-15 22:46:50,975 maskrcnn_benchmark INFO: Worker 0: Setting seed 1702835017
+2021-12-15 22:46:50,975 maskrcnn_benchmark INFO: Collecting env info (might take some time)
+2021-12-15 22:46:56,921 maskrcnn_benchmark INFO: 
+PyTorch version: 1.10.0a0+3fd9dcf
+Is debug build: False
+CUDA used to build PyTorch: 11.4
+ROCM used to build PyTorch: N/A
+
+OS: Ubuntu 20.04.3 LTS (x86_64)
+GCC version: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Clang version: Could not collect
+CMake version: version 3.21.2
+Libc version: glibc-2.31
+
+Python version: 3.8.10 | packaged by conda-forge | (default, May 11 2021, 07:01:05)  [GCC 9.3.0] (64-bit runtime)
+Python platform: Linux-4.18.0-305.19.1.el8_4.x86_64-x86_64-with-glibc2.10
+Is CUDA available: True
+CUDA runtime version: 11.4.120
+GPU models and configuration: 
+GPU 0: NVIDIA A100-SXM4-40GB
+GPU 1: NVIDIA A100-SXM4-40GB
+GPU 2: NVIDIA A100-SXM4-40GB
+GPU 3: NVIDIA A100-SXM4-40GB
+GPU 4: NVIDIA A100-SXM4-40GB
+GPU 5: NVIDIA A100-SXM4-40GB
+
+Nvidia driver version: 470.82.01
+cuDNN version: Probably one of the following:
+/usr/lib/x86_64-linux-gnu/libcudnn.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_adv_infer.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_adv_train.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_cnn_infer.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_cnn_train.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so.8.2.4
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+
+Versions of relevant libraries:
+[pip3] numpy==1.21.2
+[pip3] nvidia-dlprof-pytorch-nvtx==1.5.0
+[pip3] pytorch-quantization==2.1.0
+[pip3] torch==1.10.0a0+3fd9dcf
+[pip3] torchtext==0.11.0a0
+[pip3] torchvision==0.11.0a0
+[conda] magma-cuda110             2.5.2                         5    local
+[conda] mkl                       2019.5                      281    conda-forge
+[conda] mkl-include               2019.5                      281    conda-forge
+[conda] numpy                     1.21.2           py38he2449b9_0    conda-forge
+[conda] nvidia-dlprof-pytorch-nvtx 1.5.0                    pypi_0    pypi
+[conda] pytorch-quantization      2.1.0                    pypi_0    pypi
+[conda] torch                     1.10.0a0+3fd9dcf          pypi_0    pypi
+[conda] torchtext                 0.11.0a0                 pypi_0    pypi
+[conda] torchvision               0.11.0a0                 pypi_0    pypi
+        Pillow (8.2.0)
+2021-12-15 22:46:56,921 maskrcnn_benchmark INFO: Loaded configuration file configs/e2e_mask_rcnn_R_50_FPN_1x.yaml
+2021-12-15 22:46:56,922 maskrcnn_benchmark INFO: 
+MODEL:
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  WEIGHT: "catalog://ImageNetPretrained/MSRA/R-50"
+  BACKBONE:
+    CONV_BODY: "R-50-FPN"
+    OUT_CHANNELS: 256
+  RPN:
+    USE_FPN: True
+    ANCHOR_STRIDE: (4, 8, 16, 32, 64)
+    PRE_NMS_TOP_N_TRAIN: 2000
+    PRE_NMS_TOP_N_TEST: 1000
+    POST_NMS_TOP_N_TEST: 1000
+    FPN_POST_NMS_TOP_N_TEST: 1000
+  ROI_HEADS:
+    USE_FPN: True
+  ROI_BOX_HEAD:
+    POOLER_RESOLUTION: 7
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    POOLER_SAMPLING_RATIO: 2
+    FEATURE_EXTRACTOR: "FPN2MLPFeatureExtractor"
+    PREDICTOR: "FPNPredictor"
+  ROI_MASK_HEAD:
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    FEATURE_EXTRACTOR: "MaskRCNNFPNFeatureExtractor"
+    PREDICTOR: "MaskRCNNC4Predictor"
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 2
+    RESOLUTION: 28
+    SHARE_BOX_FEATURE_EXTRACTOR: False
+  MASK_ON: True
+DATASETS:
+  TRAIN: ("coco_2017_train",)
+  TEST: ("coco_2017_val",)
+DATALOADER:
+  SIZE_DIVISIBILITY: 32
+SOLVER:
+  BASE_LR: 0.02
+  WEIGHT_DECAY: 0.0001
+  STEPS: (60000, 80000)
+  MAX_ITER: 90000
+
+2021-12-15 22:46:56,922 maskrcnn_benchmark INFO: Running with config:
+AMP_VERBOSE: False
+CUDA_GRAPH_NUM_SHAPES_PER_ORIENTATION: 1
+DATALOADER:
+  ALWAYS_PAD_TO_MAX: False
+  ASPECT_RATIO_GROUPING: True
+  CACHE_EVAL_IMAGES: True
+  DALI: False
+  DALI_ON_GPU: False
+  HYBRID: True
+  MAX_ANNOTATIONS_PER_IMAGE: 0
+  NUM_WORKERS: 1
+  SIZE_DIVISIBILITY: 32
+DATASETS:
+  TEST: ('coco_2017_val',)
+  TRAIN: ('coco_2017_train',)
+DISABLE_LOSS_LOGGING: False
+DISABLE_REDUCED_LOGGING: True
+DTYPE: float16
+DYNAMIC_LOSS_SCALE_WINDOW: 1000
+EVAL_MASK_VIRTUAL_PASTE: True
+EVAL_SEGM_NUMPROCS: 10
+FUSED_SGD_DEBUG_PRINTS: False
+INPUT:
+  MAX_SIZE_TEST: 1333
+  MAX_SIZE_TRAIN: 1333
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: (800,)
+  PIXEL_MEAN: [102.9801, 115.9465, 122.7717]
+  PIXEL_STD: [1.0, 1.0, 1.0]
+  TO_BGR255: True
+MLPERF:
+  MIN_BBOX_MAP: 0.377
+  MIN_SEGM_MAP: 0.339
+MODEL:
+  BACKBONE:
+    CONV_BODY: R-50-FPN
+    FREEZE_CONV_BODY_AT: 2
+    INCLUDE_RPN_HEAD: True
+    OUT_CHANNELS: 256
+    USE_GN: False
+  CLS_AGNOSTIC_BBOX_REG: False
+  DEVICE: cuda
+  FPN:
+    USE_GN: False
+    USE_RELU: False
+  GROUP_NORM:
+    DIM_PER_GP: -1
+    EPSILON: 1e-05
+    NUM_GROUPS: 32
+  KEYPOINT_ON: False
+  MASK_ON: True
+  META_ARCHITECTURE: GeneralizedRCNN
+  RESNETS:
+    FIRST_TRANS_FUNC: FastBottleneckWithFixedBatchNorm
+    NUM_GROUPS: 1
+    RES2_OUT_CHANNELS: 256
+    RES5_DILATION: 1
+    STEM_FUNC: StemWithFixedBatchNorm
+    STEM_OUT_CHANNELS: 64
+    STRIDE_IN_1X1: True
+    TRANS_FUNC: FastBottleneckWithFixedBatchNorm
+    WIDTH_PER_GROUP: 64
+  RETINANET:
+    ANCHOR_SIZES: (32, 64, 128, 256, 512)
+    ANCHOR_STRIDES: (8, 16, 32, 64, 128)
+    ASPECT_RATIOS: (0.5, 1.0, 2.0)
+    BBOX_REG_BETA: 0.11
+    BBOX_REG_WEIGHT: 4.0
+    BG_IOU_THRESHOLD: 0.4
+    FG_IOU_THRESHOLD: 0.5
+    INFERENCE_TH: 0.05
+    LOSS_ALPHA: 0.25
+    LOSS_GAMMA: 2.0
+    NMS_TH: 0.4
+    NUM_CLASSES: 81
+    NUM_CONVS: 4
+    OCTAVE: 2.0
+    PRE_NMS_TOP_N: 1000
+    PRIOR_PROB: 0.01
+    SCALES_PER_OCTAVE: 3
+    STRADDLE_THRESH: 0
+    USE_C5: True
+  RETINANET_ON: False
+  ROI_BOX_HEAD:
+    CONV_HEAD_DIM: 256
+    DILATION: 1
+    FEATURE_EXTRACTOR: FPN2MLPFeatureExtractor
+    MLP_HEAD_DIM: 1024
+    NUM_CLASSES: 81
+    NUM_STACKED_CONVS: 4
+    POOLER_RESOLUTION: 7
+    POOLER_SAMPLING_RATIO: 2
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    PREDICTOR: FPNPredictor
+    USE_GN: False
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 512
+    BBOX_REG_WEIGHTS: (10.0, 10.0, 5.0, 5.0)
+    BG_IOU_THRESHOLD: 0.5
+    DETECTIONS_PER_IMG: 100
+    FG_IOU_THRESHOLD: 0.5
+    NMS: 0.5
+    POSITIVE_FRACTION: 0.25
+    SCORE_THRESH: 0.05
+    USE_FPN: True
+  ROI_KEYPOINT_HEAD:
+    CONV_LAYERS: (512, 512, 512, 512, 512, 512, 512, 512)
+    FEATURE_EXTRACTOR: KeypointRCNNFeatureExtractor
+    MLP_HEAD_DIM: 1024
+    NUM_CLASSES: 17
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 0
+    POOLER_SCALES: (0.0625,)
+    PREDICTOR: KeypointRCNNPredictor
+    RESOLUTION: 14
+    SHARE_BOX_FEATURE_EXTRACTOR: True
+  ROI_MASK_HEAD:
+    CONV_LAYERS: (256, 256, 256, 256)
+    DILATION: 1
+    FEATURE_EXTRACTOR: MaskRCNNFPNFeatureExtractor
+    MLP_HEAD_DIM: 1024
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 2
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    POSTPROCESS_MASKS: False
+    POSTPROCESS_MASKS_THRESHOLD: 0.5
+    PREDICTOR: MaskRCNNC4Predictor
+    RESOLUTION: 28
+    SHARE_BOX_FEATURE_EXTRACTOR: False
+    USE_GN: False
+  RPN:
+    ANCHOR_SIZES: (32, 64, 128, 256, 512)
+    ANCHOR_STRIDE: (4, 8, 16, 32, 64)
+    ASPECT_RATIOS: (0.5, 1.0, 2.0)
+    BATCH_SIZE_PER_IMAGE: 256
+    BG_IOU_THRESHOLD: 0.3
+    FG_IOU_THRESHOLD: 0.7
+    FPN_POST_NMS_TOP_N_PER_IMAGE: False
+    FPN_POST_NMS_TOP_N_TEST: 1000
+    FPN_POST_NMS_TOP_N_TRAIN: 12000
+    MIN_SIZE: 0
+    NMS_THRESH: 0.7
+    POSITIVE_FRACTION: 0.5
+    POST_NMS_TOP_N_TEST: 1000
+    POST_NMS_TOP_N_TRAIN: 2000
+    PRE_NMS_TOP_N_TEST: 1000
+    PRE_NMS_TOP_N_TRAIN: 2000
+    RPN_HEAD: SingleConvRPNHead
+    STRADDLE_THRESH: 0
+    USE_FPN: True
+  RPN_ONLY: False
+  WEIGHT: /data/coco2017/models/R-50.pkl
+NHWC: True
+OUTPUT_DIR: .
+PATHS_CATALOG: maskrcnn_benchmark/config/paths_catalog_dbcluster.py
+PER_EPOCH_EVAL: True
+PRECOMPUTE_RPN_CONSTANT_TENSORS: True
+SAVE_CHECKPOINTS: False
+SOLVER:
+  BASE_LR: 0.12
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 2500
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  MAX_ITER: 40000
+  MOMENTUM: 0.9
+  STEPS: (12000, 16000)
+  WARMUP_FACTOR: 0.000192
+  WARMUP_ITERS: 625
+  WARMUP_METHOD: mlperf_linear
+  WEIGHT_DECAY: 0.0001
+  WEIGHT_DECAY_BIAS: 0
+SYNCFREE_ROI: True
+TEST:
+  DETECTIONS_PER_IMG: 100
+  EXPECTED_RESULTS: []
+  EXPECTED_RESULTS_SIGMA_TOL: 4
+  IMS_PER_BATCH: 96
+USE_CUDA_GRAPH: True
+:::MLLOG {"namespace": "", "time_ms": 1639608416923, "event_type": "POINT_IN_TIME", "key": "d_batch_size", "value": 16.0, "metadata": {"file": "tools/train_mlperf.py", "lineno": 509}}
+:::MLLOG {"namespace": "", "time_ms": 1639608416923, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 96, "metadata": {"file": "tools/train_mlperf.py", "lineno": 186}}
+:::MLLOG {"namespace": "", "time_ms": 1639608416923, "event_type": "POINT_IN_TIME", "key": "num_image_candidates", "value": 12000, "metadata": {"file": "tools/train_mlperf.py", "lineno": 187}}
+:::MLLOG {"namespace": "", "time_ms": 1639608416923, "event_type": "POINT_IN_TIME", "key": "gradient_accumulation_steps", "value": 1, "metadata": {"file": "tools/train_mlperf.py", "lineno": 188}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417262, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block1"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417270, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block1"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417271, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block2"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417280, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block2"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417282, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block3"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417290, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block3"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417295, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block4"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417304, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block4"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417312, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/rpn/rpn.py", "lineno": 44, "tensor": "RPNHead_conv"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417312, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/rpn/rpn.py", "lineno": 45, "tensor": "RPNHead_cls"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417312, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/rpn/rpn.py", "lineno": 46, "tensor": "RPNHead_bbox"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417432, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_feature_extractors.py", "lineno": 83, "tensor": "ROI_BOX_FEATURE_EXTRACTOR_fc6"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417443, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_feature_extractors.py", "lineno": 86, "tensor": "ROI_BOX_FEATURE_EXTRACTOR_fc7"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417445, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_predictors.py", "lineno": 50, "tensor": "ROI_BOX_PREDICTOR_cls"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417447, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_predictors.py", "lineno": 52, "tensor": "ROI_BOX_PREDICTOR_bbox"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417456, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn1"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417465, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn2"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417474, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn3"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417482, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn4"}}
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+:::MLLOG {"namespace": "", "time_ms": 1639608417487, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", "lineno": 42, "tensor": "ROI_MASK_PREDICTOR_fcn5"}}
+:::MLLOG {"namespace": "", "time_ms": 1639608417487, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", "lineno": 43, "tensor": "ROI_MASK_PREDICTOR_fcn_logits"}}
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 16), (False, 16)]
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 16), (False, 16)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 16), (False, 16)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 16), (False, 16)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 16), (False, 16)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 16), (False, 16)]
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+:::MLLOG {"namespace": "", "time_ms": 1639608589599, "event_type": "POINT_IN_TIME", "key": "opt_name", "value": "sgd_with_momentum", "metadata": {"file": "tools/train_mlperf.py", "lineno": 308}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589599, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.12, "metadata": {"file": "tools/train_mlperf.py", "lineno": 309}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589599, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 625, "metadata": {"file": "tools/train_mlperf.py", "lineno": 310}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589599, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0.000192, "metadata": {"file": "tools/train_mlperf.py", "lineno": 311}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589599, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_factor", "value": 0.1, "metadata": {"file": "tools/train_mlperf.py", "lineno": 312}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589600, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [12000, 16000], "metadata": {"file": "tools/train_mlperf.py", "lineno": 313}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589600, "event_type": "POINT_IN_TIME", "key": "min_image_size", "value": 800, "metadata": {"file": "tools/train_mlperf.py", "lineno": 314}}
+:::MLLOG {"namespace": "", "time_ms": 1639608589600, "event_type": "POINT_IN_TIME", "key": "max_image_size", "value": 1333, "metadata": {"file": "tools/train_mlperf.py", "lineno": 315}}
+model has 44347573 elements of size 2 bytes
+2021-12-15 22:49:49,606 maskrcnn_benchmark.utils.checkpoint INFO: Loading checkpoint from /data/coco2017/models/R-50.pkl
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: Remapping C2 weights
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: conv1_b                         mapped name: conv1.bias
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: conv1_w                         mapped name: conv1.weight
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: fc1000_b                        mapped name: fc1000.bias
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: fc1000_w                        mapped name: fc1000.weight
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch1_bn_beta          mapped name: layer1.0.downsample.1.biaseta
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch1_bn_gamma         mapped name: layer1.0.downsample.1.gamma
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch1_bn_running_mean  mapped name: layer1.0.downsample.1.running.mean
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch1_bn_running_var   mapped name: layer1.0.downsample.1.running.var
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch1_w                mapped name: layer1.0.downsample.0.weight
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2a_bn_beta         mapped name: layer1.0.bn1.biaseta
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2a_bn_gamma        mapped name: layer1.0.bn1.gamma
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2a_bn_running_mean mapped name: layer1.0.bn1.running.mean
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2a_bn_running_var  mapped name: layer1.0.bn1.running.var
+2021-12-15 22:49:49,646 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2a_w               mapped name: layer1.0.conv1.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2b_bn_beta         mapped name: layer1.0.bn2.biaseta
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2b_bn_gamma        mapped name: layer1.0.bn2.gamma
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2b_bn_running_mean mapped name: layer1.0.bn2.running.mean
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2b_bn_running_var  mapped name: layer1.0.bn2.running.var
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2b_w               mapped name: layer1.0.conv2.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2c_bn_beta         mapped name: layer1.0.bn3.biaseta
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2c_bn_gamma        mapped name: layer1.0.bn3.gamma
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2c_bn_running_mean mapped name: layer1.0.bn3.running.mean
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2c_bn_running_var  mapped name: layer1.0.bn3.running.var
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_0_branch2c_w               mapped name: layer1.0.conv3.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2a_bn_beta         mapped name: layer1.1.bn1.biaseta
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2a_bn_gamma        mapped name: layer1.1.bn1.gamma
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2a_bn_running_mean mapped name: layer1.1.bn1.running.mean
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2a_bn_running_var  mapped name: layer1.1.bn1.running.var
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2a_w               mapped name: layer1.1.conv1.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2b_bn_beta         mapped name: layer1.1.bn2.biaseta
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2b_bn_gamma        mapped name: layer1.1.bn2.gamma
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2b_bn_running_mean mapped name: layer1.1.bn2.running.mean
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2b_bn_running_var  mapped name: layer1.1.bn2.running.var
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2b_w               mapped name: layer1.1.conv2.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2c_bn_beta         mapped name: layer1.1.bn3.biaseta
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2c_bn_gamma        mapped name: layer1.1.bn3.gamma
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2c_bn_running_mean mapped name: layer1.1.bn3.running.mean
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2c_bn_running_var  mapped name: layer1.1.bn3.running.var
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_1_branch2c_w               mapped name: layer1.1.conv3.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2a_bn_beta         mapped name: layer1.2.bn1.biaseta
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2a_bn_gamma        mapped name: layer1.2.bn1.gamma
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2a_bn_running_mean mapped name: layer1.2.bn1.running.mean
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2a_bn_running_var  mapped name: layer1.2.bn1.running.var
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2a_w               mapped name: layer1.2.conv1.weight
+2021-12-15 22:49:49,647 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2b_bn_beta         mapped name: layer1.2.bn2.biaseta
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2b_bn_gamma        mapped name: layer1.2.bn2.gamma
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2b_bn_running_mean mapped name: layer1.2.bn2.running.mean
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2b_bn_running_var  mapped name: layer1.2.bn2.running.var
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2b_w               mapped name: layer1.2.conv2.weight
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2c_bn_beta         mapped name: layer1.2.bn3.biaseta
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2c_bn_gamma        mapped name: layer1.2.bn3.gamma
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2c_bn_running_mean mapped name: layer1.2.bn3.running.mean
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2c_bn_running_var  mapped name: layer1.2.bn3.running.var
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res2_2_branch2c_w               mapped name: layer1.2.conv3.weight
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch1_bn_beta          mapped name: layer2.0.downsample.1.biaseta
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch1_bn_gamma         mapped name: layer2.0.downsample.1.gamma
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch1_bn_running_mean  mapped name: layer2.0.downsample.1.running.mean
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch1_bn_running_var   mapped name: layer2.0.downsample.1.running.var
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch1_w                mapped name: layer2.0.downsample.0.weight
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2a_bn_beta         mapped name: layer2.0.bn1.biaseta
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2a_bn_gamma        mapped name: layer2.0.bn1.gamma
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2a_bn_running_mean mapped name: layer2.0.bn1.running.mean
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2a_bn_running_var  mapped name: layer2.0.bn1.running.var
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2a_w               mapped name: layer2.0.conv1.weight
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2b_bn_beta         mapped name: layer2.0.bn2.biaseta
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2b_bn_gamma        mapped name: layer2.0.bn2.gamma
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2b_bn_running_mean mapped name: layer2.0.bn2.running.mean
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2b_bn_running_var  mapped name: layer2.0.bn2.running.var
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2b_w               mapped name: layer2.0.conv2.weight
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2c_bn_beta         mapped name: layer2.0.bn3.biaseta
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2c_bn_gamma        mapped name: layer2.0.bn3.gamma
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2c_bn_running_mean mapped name: layer2.0.bn3.running.mean
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2c_bn_running_var  mapped name: layer2.0.bn3.running.var
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_0_branch2c_w               mapped name: layer2.0.conv3.weight
+2021-12-15 22:49:49,648 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2a_bn_beta         mapped name: layer2.1.bn1.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2a_bn_gamma        mapped name: layer2.1.bn1.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2a_bn_running_mean mapped name: layer2.1.bn1.running.mean
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2a_bn_running_var  mapped name: layer2.1.bn1.running.var
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2a_w               mapped name: layer2.1.conv1.weight
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2b_bn_beta         mapped name: layer2.1.bn2.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2b_bn_gamma        mapped name: layer2.1.bn2.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2b_bn_running_mean mapped name: layer2.1.bn2.running.mean
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2b_bn_running_var  mapped name: layer2.1.bn2.running.var
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2b_w               mapped name: layer2.1.conv2.weight
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2c_bn_beta         mapped name: layer2.1.bn3.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2c_bn_gamma        mapped name: layer2.1.bn3.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2c_bn_running_mean mapped name: layer2.1.bn3.running.mean
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2c_bn_running_var  mapped name: layer2.1.bn3.running.var
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_1_branch2c_w               mapped name: layer2.1.conv3.weight
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2a_bn_beta         mapped name: layer2.2.bn1.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2a_bn_gamma        mapped name: layer2.2.bn1.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2a_bn_running_mean mapped name: layer2.2.bn1.running.mean
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2a_bn_running_var  mapped name: layer2.2.bn1.running.var
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2a_w               mapped name: layer2.2.conv1.weight
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2b_bn_beta         mapped name: layer2.2.bn2.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2b_bn_gamma        mapped name: layer2.2.bn2.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2b_bn_running_mean mapped name: layer2.2.bn2.running.mean
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2b_bn_running_var  mapped name: layer2.2.bn2.running.var
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2b_w               mapped name: layer2.2.conv2.weight
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2c_bn_beta         mapped name: layer2.2.bn3.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2c_bn_gamma        mapped name: layer2.2.bn3.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2c_bn_running_mean mapped name: layer2.2.bn3.running.mean
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2c_bn_running_var  mapped name: layer2.2.bn3.running.var
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_2_branch2c_w               mapped name: layer2.2.conv3.weight
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2a_bn_beta         mapped name: layer2.3.bn1.biaseta
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2a_bn_gamma        mapped name: layer2.3.bn1.gamma
+2021-12-15 22:49:49,649 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2a_bn_running_mean mapped name: layer2.3.bn1.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2a_bn_running_var  mapped name: layer2.3.bn1.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2a_w               mapped name: layer2.3.conv1.weight
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2b_bn_beta         mapped name: layer2.3.bn2.biaseta
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2b_bn_gamma        mapped name: layer2.3.bn2.gamma
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2b_bn_running_mean mapped name: layer2.3.bn2.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2b_bn_running_var  mapped name: layer2.3.bn2.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2b_w               mapped name: layer2.3.conv2.weight
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2c_bn_beta         mapped name: layer2.3.bn3.biaseta
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2c_bn_gamma        mapped name: layer2.3.bn3.gamma
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2c_bn_running_mean mapped name: layer2.3.bn3.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2c_bn_running_var  mapped name: layer2.3.bn3.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res3_3_branch2c_w               mapped name: layer2.3.conv3.weight
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch1_bn_beta          mapped name: layer3.0.downsample.1.biaseta
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch1_bn_gamma         mapped name: layer3.0.downsample.1.gamma
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch1_bn_running_mean  mapped name: layer3.0.downsample.1.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch1_bn_running_var   mapped name: layer3.0.downsample.1.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch1_w                mapped name: layer3.0.downsample.0.weight
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2a_bn_beta         mapped name: layer3.0.bn1.biaseta
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2a_bn_gamma        mapped name: layer3.0.bn1.gamma
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2a_bn_running_mean mapped name: layer3.0.bn1.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2a_bn_running_var  mapped name: layer3.0.bn1.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2a_w               mapped name: layer3.0.conv1.weight
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2b_bn_beta         mapped name: layer3.0.bn2.biaseta
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2b_bn_gamma        mapped name: layer3.0.bn2.gamma
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2b_bn_running_mean mapped name: layer3.0.bn2.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2b_bn_running_var  mapped name: layer3.0.bn2.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2b_w               mapped name: layer3.0.conv2.weight
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2c_bn_beta         mapped name: layer3.0.bn3.biaseta
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2c_bn_gamma        mapped name: layer3.0.bn3.gamma
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2c_bn_running_mean mapped name: layer3.0.bn3.running.mean
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2c_bn_running_var  mapped name: layer3.0.bn3.running.var
+2021-12-15 22:49:49,650 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_0_branch2c_w               mapped name: layer3.0.conv3.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2a_bn_beta         mapped name: layer3.1.bn1.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2a_bn_gamma        mapped name: layer3.1.bn1.gamma
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2a_bn_running_mean mapped name: layer3.1.bn1.running.mean
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2a_bn_running_var  mapped name: layer3.1.bn1.running.var
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2a_w               mapped name: layer3.1.conv1.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2b_bn_beta         mapped name: layer3.1.bn2.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2b_bn_gamma        mapped name: layer3.1.bn2.gamma
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2b_bn_running_mean mapped name: layer3.1.bn2.running.mean
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2b_bn_running_var  mapped name: layer3.1.bn2.running.var
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2b_w               mapped name: layer3.1.conv2.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2c_bn_beta         mapped name: layer3.1.bn3.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2c_bn_gamma        mapped name: layer3.1.bn3.gamma
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2c_bn_running_mean mapped name: layer3.1.bn3.running.mean
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2c_bn_running_var  mapped name: layer3.1.bn3.running.var
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_1_branch2c_w               mapped name: layer3.1.conv3.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2a_bn_beta         mapped name: layer3.2.bn1.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2a_bn_gamma        mapped name: layer3.2.bn1.gamma
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2a_bn_running_mean mapped name: layer3.2.bn1.running.mean
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2a_bn_running_var  mapped name: layer3.2.bn1.running.var
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2a_w               mapped name: layer3.2.conv1.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2b_bn_beta         mapped name: layer3.2.bn2.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2b_bn_gamma        mapped name: layer3.2.bn2.gamma
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2b_bn_running_mean mapped name: layer3.2.bn2.running.mean
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2b_bn_running_var  mapped name: layer3.2.bn2.running.var
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2b_w               mapped name: layer3.2.conv2.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2c_bn_beta         mapped name: layer3.2.bn3.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2c_bn_gamma        mapped name: layer3.2.bn3.gamma
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2c_bn_running_mean mapped name: layer3.2.bn3.running.mean
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2c_bn_running_var  mapped name: layer3.2.bn3.running.var
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_2_branch2c_w               mapped name: layer3.2.conv3.weight
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2a_bn_beta         mapped name: layer3.3.bn1.biaseta
+2021-12-15 22:49:49,651 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2a_bn_gamma        mapped name: layer3.3.bn1.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2a_bn_running_mean mapped name: layer3.3.bn1.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2a_bn_running_var  mapped name: layer3.3.bn1.running.var
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2a_w               mapped name: layer3.3.conv1.weight
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2b_bn_beta         mapped name: layer3.3.bn2.biaseta
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2b_bn_gamma        mapped name: layer3.3.bn2.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2b_bn_running_mean mapped name: layer3.3.bn2.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2b_bn_running_var  mapped name: layer3.3.bn2.running.var
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2b_w               mapped name: layer3.3.conv2.weight
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2c_bn_beta         mapped name: layer3.3.bn3.biaseta
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2c_bn_gamma        mapped name: layer3.3.bn3.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2c_bn_running_mean mapped name: layer3.3.bn3.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2c_bn_running_var  mapped name: layer3.3.bn3.running.var
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_3_branch2c_w               mapped name: layer3.3.conv3.weight
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2a_bn_beta         mapped name: layer3.4.bn1.biaseta
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2a_bn_gamma        mapped name: layer3.4.bn1.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2a_bn_running_mean mapped name: layer3.4.bn1.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2a_bn_running_var  mapped name: layer3.4.bn1.running.var
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2a_w               mapped name: layer3.4.conv1.weight
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2b_bn_beta         mapped name: layer3.4.bn2.biaseta
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2b_bn_gamma        mapped name: layer3.4.bn2.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2b_bn_running_mean mapped name: layer3.4.bn2.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2b_bn_running_var  mapped name: layer3.4.bn2.running.var
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2b_w               mapped name: layer3.4.conv2.weight
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2c_bn_beta         mapped name: layer3.4.bn3.biaseta
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2c_bn_gamma        mapped name: layer3.4.bn3.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2c_bn_running_mean mapped name: layer3.4.bn3.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2c_bn_running_var  mapped name: layer3.4.bn3.running.var
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_4_branch2c_w               mapped name: layer3.4.conv3.weight
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2a_bn_beta         mapped name: layer3.5.bn1.biaseta
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2a_bn_gamma        mapped name: layer3.5.bn1.gamma
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2a_bn_running_mean mapped name: layer3.5.bn1.running.mean
+2021-12-15 22:49:49,652 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2a_bn_running_var  mapped name: layer3.5.bn1.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2a_w               mapped name: layer3.5.conv1.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2b_bn_beta         mapped name: layer3.5.bn2.biaseta
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2b_bn_gamma        mapped name: layer3.5.bn2.gamma
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2b_bn_running_mean mapped name: layer3.5.bn2.running.mean
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2b_bn_running_var  mapped name: layer3.5.bn2.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2b_w               mapped name: layer3.5.conv2.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2c_bn_beta         mapped name: layer3.5.bn3.biaseta
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2c_bn_gamma        mapped name: layer3.5.bn3.gamma
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2c_bn_running_mean mapped name: layer3.5.bn3.running.mean
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2c_bn_running_var  mapped name: layer3.5.bn3.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res4_5_branch2c_w               mapped name: layer3.5.conv3.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch1_bn_beta          mapped name: layer4.0.downsample.1.biaseta
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch1_bn_gamma         mapped name: layer4.0.downsample.1.gamma
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch1_bn_running_mean  mapped name: layer4.0.downsample.1.running.mean
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch1_bn_running_var   mapped name: layer4.0.downsample.1.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch1_w                mapped name: layer4.0.downsample.0.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2a_bn_beta         mapped name: layer4.0.bn1.biaseta
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2a_bn_gamma        mapped name: layer4.0.bn1.gamma
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2a_bn_running_mean mapped name: layer4.0.bn1.running.mean
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2a_bn_running_var  mapped name: layer4.0.bn1.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2a_w               mapped name: layer4.0.conv1.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2b_bn_beta         mapped name: layer4.0.bn2.biaseta
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2b_bn_gamma        mapped name: layer4.0.bn2.gamma
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2b_bn_running_mean mapped name: layer4.0.bn2.running.mean
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2b_bn_running_var  mapped name: layer4.0.bn2.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2b_w               mapped name: layer4.0.conv2.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2c_bn_beta         mapped name: layer4.0.bn3.biaseta
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2c_bn_gamma        mapped name: layer4.0.bn3.gamma
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2c_bn_running_mean mapped name: layer4.0.bn3.running.mean
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2c_bn_running_var  mapped name: layer4.0.bn3.running.var
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_0_branch2c_w               mapped name: layer4.0.conv3.weight
+2021-12-15 22:49:49,653 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2a_bn_beta         mapped name: layer4.1.bn1.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2a_bn_gamma        mapped name: layer4.1.bn1.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2a_bn_running_mean mapped name: layer4.1.bn1.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2a_bn_running_var  mapped name: layer4.1.bn1.running.var
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2a_w               mapped name: layer4.1.conv1.weight
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2b_bn_beta         mapped name: layer4.1.bn2.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2b_bn_gamma        mapped name: layer4.1.bn2.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2b_bn_running_mean mapped name: layer4.1.bn2.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2b_bn_running_var  mapped name: layer4.1.bn2.running.var
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2b_w               mapped name: layer4.1.conv2.weight
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2c_bn_beta         mapped name: layer4.1.bn3.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2c_bn_gamma        mapped name: layer4.1.bn3.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2c_bn_running_mean mapped name: layer4.1.bn3.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2c_bn_running_var  mapped name: layer4.1.bn3.running.var
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_1_branch2c_w               mapped name: layer4.1.conv3.weight
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2a_bn_beta         mapped name: layer4.2.bn1.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2a_bn_gamma        mapped name: layer4.2.bn1.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2a_bn_running_mean mapped name: layer4.2.bn1.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2a_bn_running_var  mapped name: layer4.2.bn1.running.var
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2a_w               mapped name: layer4.2.conv1.weight
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2b_bn_beta         mapped name: layer4.2.bn2.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2b_bn_gamma        mapped name: layer4.2.bn2.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2b_bn_running_mean mapped name: layer4.2.bn2.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2b_bn_running_var  mapped name: layer4.2.bn2.running.var
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2b_w               mapped name: layer4.2.conv2.weight
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2c_bn_beta         mapped name: layer4.2.bn3.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2c_bn_gamma        mapped name: layer4.2.bn3.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2c_bn_running_mean mapped name: layer4.2.bn3.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2c_bn_running_var  mapped name: layer4.2.bn3.running.var
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res5_2_branch2c_w               mapped name: layer4.2.conv3.weight
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res_conv1_bn_beta               mapped name: bn1.biaseta
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res_conv1_bn_gamma              mapped name: bn1.gamma
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res_conv1_bn_running_mean       mapped name: bn1.running.mean
+2021-12-15 22:49:49,654 maskrcnn_benchmark.utils.c2_model_loading INFO: C2 name: res_conv1_bn_running_var        mapped name: bn1.running.var
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.0.conv1.weight              loaded from layer1.0.conv1.weight              of shape (64, 64, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.0.conv2.weight              loaded from layer1.0.conv2.weight              of shape (64, 64, 3, 3)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.0.conv3.weight              loaded from layer1.0.conv3.weight              of shape (256, 64, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.0.downsample.0.weight       loaded from layer1.0.downsample.0.weight       of shape (256, 64, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.1.conv1.weight              loaded from layer1.1.conv1.weight              of shape (64, 256, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.1.conv2.weight              loaded from layer1.1.conv2.weight              of shape (64, 64, 3, 3)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.1.conv3.weight              loaded from layer1.1.conv3.weight              of shape (256, 64, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.2.conv1.weight              loaded from layer1.2.conv1.weight              of shape (64, 256, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.2.conv2.weight              loaded from layer1.2.conv2.weight              of shape (64, 64, 3, 3)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer1.2.conv3.weight              loaded from layer1.2.conv3.weight              of shape (256, 64, 1, 1)
+2021-12-15 22:49:49,667 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.0.conv1.weight              loaded from layer2.0.conv1.weight              of shape (128, 256, 1, 1)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.0.conv2.weight              loaded from layer2.0.conv2.weight              of shape (128, 128, 3, 3)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.0.conv3.weight              loaded from layer2.0.conv3.weight              of shape (512, 128, 1, 1)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.0.downsample.0.weight       loaded from layer2.0.downsample.0.weight       of shape (512, 256, 1, 1)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.1.conv1.weight              loaded from layer2.1.conv1.weight              of shape (128, 512, 1, 1)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.1.conv2.weight              loaded from layer2.1.conv2.weight              of shape (128, 128, 3, 3)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.1.conv3.weight              loaded from layer2.1.conv3.weight              of shape (512, 128, 1, 1)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.2.conv1.weight              loaded from layer2.2.conv1.weight              of shape (128, 512, 1, 1)
+2021-12-15 22:49:49,668 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.2.conv2.weight              loaded from layer2.2.conv2.weight              of shape (128, 128, 3, 3)
+2021-12-15 22:49:49,669 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.2.conv3.weight              loaded from layer2.2.conv3.weight              of shape (512, 128, 1, 1)
+2021-12-15 22:49:49,669 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.3.conv1.weight              loaded from layer2.3.conv1.weight              of shape (128, 512, 1, 1)
+2021-12-15 22:49:49,669 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.3.conv2.weight              loaded from layer2.3.conv2.weight              of shape (128, 128, 3, 3)
+2021-12-15 22:49:49,669 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer2.3.conv3.weight              loaded from layer2.3.conv3.weight              of shape (512, 128, 1, 1)
+2021-12-15 22:49:49,669 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.0.conv1.weight              loaded from layer3.0.conv1.weight              of shape (256, 512, 1, 1)
+2021-12-15 22:49:49,670 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.0.conv2.weight              loaded from layer3.0.conv2.weight              of shape (256, 256, 3, 3)
+2021-12-15 22:49:49,670 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.0.conv3.weight              loaded from layer3.0.conv3.weight              of shape (1024, 256, 1, 1)
+2021-12-15 22:49:49,670 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.0.downsample.0.weight       loaded from layer3.0.downsample.0.weight       of shape (1024, 512, 1, 1)
+2021-12-15 22:49:49,670 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.1.conv1.weight              loaded from layer3.1.conv1.weight              of shape (256, 1024, 1, 1)
+2021-12-15 22:49:49,671 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.1.conv2.weight              loaded from layer3.1.conv2.weight              of shape (256, 256, 3, 3)
+2021-12-15 22:49:49,671 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.1.conv3.weight              loaded from layer3.1.conv3.weight              of shape (1024, 256, 1, 1)
+2021-12-15 22:49:49,671 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.2.conv1.weight              loaded from layer3.2.conv1.weight              of shape (256, 1024, 1, 1)
+2021-12-15 22:49:49,672 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.2.conv2.weight              loaded from layer3.2.conv2.weight              of shape (256, 256, 3, 3)
+2021-12-15 22:49:49,672 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.2.conv3.weight              loaded from layer3.2.conv3.weight              of shape (1024, 256, 1, 1)
+2021-12-15 22:49:49,672 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.3.conv1.weight              loaded from layer3.3.conv1.weight              of shape (256, 1024, 1, 1)
+2021-12-15 22:49:49,673 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.3.conv2.weight              loaded from layer3.3.conv2.weight              of shape (256, 256, 3, 3)
+2021-12-15 22:49:49,673 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.3.conv3.weight              loaded from layer3.3.conv3.weight              of shape (1024, 256, 1, 1)
+2021-12-15 22:49:49,673 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.4.conv1.weight              loaded from layer3.4.conv1.weight              of shape (256, 1024, 1, 1)
+2021-12-15 22:49:49,674 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.4.conv2.weight              loaded from layer3.4.conv2.weight              of shape (256, 256, 3, 3)
+2021-12-15 22:49:49,674 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.4.conv3.weight              loaded from layer3.4.conv3.weight              of shape (1024, 256, 1, 1)
+2021-12-15 22:49:49,674 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.5.conv1.weight              loaded from layer3.5.conv1.weight              of shape (256, 1024, 1, 1)
+2021-12-15 22:49:49,675 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.5.conv2.weight              loaded from layer3.5.conv2.weight              of shape (256, 256, 3, 3)
+2021-12-15 22:49:49,675 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer3.5.conv3.weight              loaded from layer3.5.conv3.weight              of shape (1024, 256, 1, 1)
+2021-12-15 22:49:49,675 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.0.conv1.weight              loaded from layer4.0.conv1.weight              of shape (512, 1024, 1, 1)
+2021-12-15 22:49:49,678 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.0.conv2.weight              loaded from layer4.0.conv2.weight              of shape (512, 512, 3, 3)
+2021-12-15 22:49:49,678 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.0.conv3.weight              loaded from layer4.0.conv3.weight              of shape (2048, 512, 1, 1)
+2021-12-15 22:49:49,678 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.0.downsample.0.weight       loaded from layer4.0.downsample.0.weight       of shape (2048, 1024, 1, 1)
+2021-12-15 22:49:49,678 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.1.conv1.weight              loaded from layer4.1.conv1.weight              of shape (512, 2048, 1, 1)
+2021-12-15 22:49:49,681 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.1.conv2.weight              loaded from layer4.1.conv2.weight              of shape (512, 512, 3, 3)
+2021-12-15 22:49:49,681 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.1.conv3.weight              loaded from layer4.1.conv3.weight              of shape (2048, 512, 1, 1)
+2021-12-15 22:49:49,681 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.2.conv1.weight              loaded from layer4.2.conv1.weight              of shape (512, 2048, 1, 1)
+2021-12-15 22:49:49,684 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.2.conv2.weight              loaded from layer4.2.conv2.weight              of shape (512, 512, 3, 3)
+2021-12-15 22:49:49,684 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.layer4.2.conv3.weight              loaded from layer4.2.conv3.weight              of shape (2048, 512, 1, 1)
+2021-12-15 22:49:49,684 maskrcnn_benchmark.utils.model_serialization INFO: module.graphable.model_segment.backbone.body.stem._base_stem.conv1.weight       loaded from conv1.weight                       of shape (64, 3, 7, 7)
+:::MLLOG {"namespace": "", "time_ms": 1639608589715, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 348}}
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+model has 44347573 elements of size 2 bytes
+model has 44347573 elements of size 2 bytes
+Graphing
+
+model has 44347573 elements of size 2 bytes
+Graphing
+
+Graphing
+
+Graphing
+
+model has 44347573 elements of size 2 bytes
+Graphing
+
+Graphing
+
+Graphing
+
+model has 44347573 elements of size 2 bytes
+:::MLLOG {"namespace": "", "time_ms": 1639608595935, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 350}}
+2021-12-15 22:49:55,936 maskrcnn_benchmark.data.build WARNING: When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=6.32s)
+creating index...
+Done (t=6.44s)
+creating index...
+Done (t=6.52s)
+creating index...
+Done (t=6.61s)
+creating index...
+Done (t=6.57s)
+creating index...
+Done (t=6.87s)
+creating index...
+index created!
+index created!
+index created!
+index created!
+index created!
+index created!
+shapes=None
+passthrough=True
+shapes=None
+passthrough=True
+shapes=None
+passthrough=True
+shapes=None
+passthrough=True
+shapes=None
+passthrough=True
+:::MLLOG {"namespace": "", "time_ms": 1639608606533, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 40000, "metadata": {"file": "tools/train_mlperf.py", "lineno": 362}}
+2021-12-15 22:50:06,535 maskrcnn_benchmark.trainer INFO: Start training
+shapes=None
+passthrough=True
+:::MLLOG {"namespace": "", "time_ms": 1639608608806, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 164, "first_epoch_num": 1, "epoch_count": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639608608806, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 165, "epoch_num": 1}}
+2021-12-15 22:50:19,375 maskrcnn_benchmark.trainer INFO: eta: 2:50:56  iter: 50  time: 0.1808 (0.2567)  data: 0.0003 (0.0512)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.009600  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608619375, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.25673354625701905, "data": 0.051181187629699705, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 373.92853952904636}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 50}}
+:::MLLOG {"namespace": "", "time_ms": 1639608619375, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 373.92853952904636, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:50:28,545 maskrcnn_benchmark.trainer INFO: eta: 2:26:20  iter: 100  time: 0.1822 (0.2201)  data: 0.0003 (0.0285)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.019200  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608628545, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.22006680965423583, "data": 0.02845742702484131, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 436.23116157694614}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 100}}
+:::MLLOG {"namespace": "", "time_ms": 1639608628545, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 436.23116157694614, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:50:37,704 maskrcnn_benchmark.trainer INFO: eta: 2:17:59  iter: 150  time: 0.1812 (0.2078)  data: 0.0003 (0.0209)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.028800  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608637705, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.20777536551157633, "data": 0.02087551434834798, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 462.0374497411307}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 150}}
+:::MLLOG {"namespace": "", "time_ms": 1639608637705, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 462.0374497411307, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:50:46,864 maskrcnn_benchmark.trainer INFO: eta: 2:13:44  iter: 200  time: 0.1832 (0.2016)  data: 0.0003 (0.0171)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.038400  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608646864, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.2016286075115204, "data": 0.01714492917060852, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 476.12291323548857}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639608646864, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 476.12291323548857, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:50:56,044 maskrcnn_benchmark.trainer INFO: eta: 2:11:11  iter: 250  time: 0.1816 (0.1980)  data: 0.0004 (0.0148)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.048000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608656044, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.19802225303649904, "data": 0.014832117080688477, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 484.79399930019724}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 250}}
+:::MLLOG {"namespace": "", "time_ms": 1639608656044, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 484.79399930019724, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:51:05,175 maskrcnn_benchmark.trainer INFO: eta: 2:09:19  iter: 300  time: 0.1824 (0.1955)  data: 0.0003 (0.0133)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.057600  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608665175, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.19545533974965412, "data": 0.013284204006195068, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 491.16079470103034}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 300}}
+:::MLLOG {"namespace": "", "time_ms": 1639608665176, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 491.16079470103034, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:51:14,310 maskrcnn_benchmark.trainer INFO: eta: 2:07:57  iter: 350  time: 0.1808 (0.1936)  data: 0.0003 (0.0122)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.067200  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608674310, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.19363342012677873, "data": 0.012161709921700613, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 495.78218438297154}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 350}}
+:::MLLOG {"namespace": "", "time_ms": 1639608674311, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 495.78218438297154, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:51:23,579 maskrcnn_benchmark.trainer INFO: eta: 2:07:06  iter: 400  time: 0.1803 (0.1926)  data: 0.0003 (0.0113)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.076800  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608683579, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.19260094821453094, "data": 0.011334999203681946, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 498.4399136657895}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 400}}
+:::MLLOG {"namespace": "", "time_ms": 1639608683580, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 498.4399136657895, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:51:32,722 maskrcnn_benchmark.trainer INFO: eta: 2:06:14  iter: 450  time: 0.1819 (0.1915)  data: 0.0003 (0.0107)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.086400  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608692722, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1915184948179457, "data": 0.010701075130038791, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 501.2570722804396}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 450}}
+:::MLLOG {"namespace": "", "time_ms": 1639608692723, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 501.2570722804396, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:51:41,858 maskrcnn_benchmark.trainer INFO: eta: 2:05:30  iter: 500  time: 0.1827 (0.1906)  data: 0.0003 (0.0102)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.096000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608701859, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.19063909006118773, "data": 0.010198171615600587, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 503.56933601176826}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 500}}
+:::MLLOG {"namespace": "", "time_ms": 1639608701859, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 503.56933601176826, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:51:51,016 maskrcnn_benchmark.trainer INFO: eta: 2:04:53  iter: 550  time: 0.1812 (0.1900)  data: 0.0003 (0.0098)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.105600  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608711016, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18995860273187812, "data": 0.009766101403669878, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 505.3732688037384}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 550}}
+:::MLLOG {"namespace": "", "time_ms": 1639608711017, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 505.3732688037384, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:52:00,202 maskrcnn_benchmark.trainer INFO: eta: 2:04:23  iter: 600  time: 0.1821 (0.1894)  data: 0.0003 (0.0094)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.115200  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608720203, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1894386645158132, "data": 0.009444456100463867, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 506.7603292356746}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 600}}
+:::MLLOG {"namespace": "", "time_ms": 1639608720203, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 506.7603292356746, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:52:09,393 maskrcnn_benchmark.trainer INFO: eta: 2:03:57  iter: 650  time: 0.1818 (0.1890)  data: 0.0003 (0.0092)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608729393, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18900579782632682, "data": 0.009165840148925781, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 507.92092678666}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 650}}
+:::MLLOG {"namespace": "", "time_ms": 1639608729394, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 507.92092678666, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:52:18,578 maskrcnn_benchmark.trainer INFO: eta: 2:03:33  iter: 700  time: 0.1829 (0.1886)  data: 0.0003 (0.0089)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608738579, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18862712587629046, "data": 0.008914947850363595, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 508.9405861114631}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 700}}
+:::MLLOG {"namespace": "", "time_ms": 1639608738579, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 508.9405861114631, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:52:27,754 maskrcnn_benchmark.trainer INFO: eta: 2:03:10  iter: 750  time: 0.1816 (0.1883)  data: 0.0003 (0.0087)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608747754, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1882857716878255, "data": 0.00870815881093343, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 509.86327399802843}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 750}}
+:::MLLOG {"namespace": "", "time_ms": 1639608747754, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 509.86327399802843, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+2021-12-15 22:52:36,941 maskrcnn_benchmark.trainer INFO: eta: 2:02:49  iter: 800  time: 0.1819 (0.1880)  data: 0.0003 (0.0085)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608756941, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18800129622220993, "data": 0.00854193389415741, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 510.6347771481952}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 800}}
+:::MLLOG {"namespace": "", "time_ms": 1639608756941, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 510.6347771481952, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:52:46,269 maskrcnn_benchmark.trainer INFO: eta: 2:02:36  iter: 850  time: 0.1814 (0.1879)  data: 0.0004 (0.0084)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608766270, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18791742408976836, "data": 0.008392432717715993, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 510.86268591113026}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 850}}
+:::MLLOG {"namespace": "", "time_ms": 1639608766270, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 510.86268591113026, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:52:55,451 maskrcnn_benchmark.trainer INFO: eta: 2:02:18  iter: 900  time: 0.1810 (0.1877)  data: 0.0004 (0.0083)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608775451, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1876790428161621, "data": 0.008260961903466119, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 511.5115601587718}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 900}}
+:::MLLOG {"namespace": "", "time_ms": 1639608775452, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 511.5115601587718, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:53:04,656 maskrcnn_benchmark.trainer INFO: eta: 2:02:01  iter: 950  time: 0.1839 (0.1875)  data: 0.0003 (0.0081)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608784657, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18749099028737923, "data": 0.008138165724904913, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 512.024603704182}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 950}}
+:::MLLOG {"namespace": "", "time_ms": 1639608784657, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 512.024603704182, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:53:13,854 maskrcnn_benchmark.trainer INFO: eta: 2:01:45  iter: 1000  time: 0.1836 (0.1873)  data: 0.0004 (0.0080)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608793854, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18731463813781737, "data": 0.008034462928771973, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 512.5066623430022}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 1000}}
+:::MLLOG {"namespace": "", "time_ms": 1639608793855, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 512.5066623430022, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+2021-12-15 22:53:23,063 maskrcnn_benchmark.trainer INFO: eta: 2:01:30  iter: 1050  time: 0.1823 (0.1872)  data: 0.0004 (0.0079)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608803063, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1871646715345837, "data": 0.007922437077476864, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 512.9173107984827}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 1050}}
+:::MLLOG {"namespace": "", "time_ms": 1639608803064, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 512.9173107984827, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:53:32,251 maskrcnn_benchmark.trainer INFO: eta: 2:01:14  iter: 1100  time: 0.1833 (0.1870)  data: 0.0003 (0.0078)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608812251, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1870098538832231, "data": 0.007832288525321267, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 513.341933628516}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 1100}}
+:::MLLOG {"namespace": "", "time_ms": 1639608812252, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 513.341933628516, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:53:41,420 maskrcnn_benchmark.trainer INFO: eta: 2:00:59  iter: 1150  time: 0.1821 (0.1869)  data: 0.0003 (0.0077)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608821420, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.1868514289026675, "data": 0.007749535726464313, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 513.7771788194738}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 1150}}
+:::MLLOG {"namespace": "", "time_ms": 1639608821420, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 513.7771788194738, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+2021-12-15 22:53:50,596 maskrcnn_benchmark.trainer INFO: eta: 2:00:44  iter: 1200  time: 0.1839 (0.1867)  data: 0.0003 (0.0077)  loss: 11.3352 (72.2974)  loss_classifier: 5.0106 (63.6240)  loss_box_reg: 0.0481 (1.4428)  loss_mask: 2.2182 (3.8088)  loss_objectness: 0.6930 (1.5085)  loss_rpn_box_reg: 0.3775 (1.9132)  lr: 0.120000  max mem: 13644
+:::MLLOG {"namespace": "", "time_ms": 1639608830596, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"time": 0.18671265641848248, "data": 0.007671653230985006, "loss": 72.29738211631775, "loss_classifier": 63.624034530841385, "loss_box_reg": 1.4428228269366978, "loss_mask": 3.808825291120089, "loss_objectness": 1.508543348656251, "loss_rpn_box_reg": 1.9131545562010546, "throughput": 514.1590390360761}, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 296, "step": 1200}}
+:::MLLOG {"namespace": "", "time_ms": 1639608830596, "event_type": "POINT_IN_TIME", "key": "throughput", "value": 514.1590390360761, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", "lineno": 299}}
+:::MLLOG {"namespace": "", "time_ms": 1639608834619, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 112, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639608834619, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 113, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639608834619, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 114, "epoch_num": 1}}
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+loading annotations into memory...
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+loading annotations into memory...
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+loading annotations into memory...
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+loading annotations into memory...
+When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+2021-12-15 22:53:54,929 maskrcnn_benchmark.data.build WARNING: When using more than one image per GPU you may encounter an out-of-memory (OOM) error if your GPU does not have sufficient memory. If this happens, you can reduce SOLVER.IMS_PER_BATCH (for training) or TEST.IMS_PER_BATCH (for inference). For training, you must also adjust the learning rate and schedule length according to the linear scaling rule. See for example: https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.25s)
+creating index...
+index created!
+shapes=None
+passthrough=True
+Done (t=0.27s)
+creating index...
+index created!
+shapes=None
+passthrough=True
+Done (t=0.26s)
+creating index...
+Done (t=0.26s)
+creating index...
+Done (t=0.27s)
+creating index...
+Done (t=0.27s)
+creating index...
+index created!
+index created!
+index created!
+shapes=None
+passthrough=True
+shapes=None
+passthrough=True
+shapes=None
+passthrough=True
+index created!
+shapes=None
+passthrough=True
+creating index...
+creating index...
+creating index...
+creating index...
+creating index...
+creating index...
+  0%|          | 0/53 [00:00<?, ?it/s]  0%|          | 0/53 [00:00<?, ?it/s]  0%|          | 0/53 [00:00<?, ?it/s]:::MLLOG {"namespace": "", "time_ms": 1639608838254, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 1, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", "lineno": 77}}
+2021-12-15 22:53:58,256 maskrcnn_benchmark.inference INFO: Start evaluation on coco_2017_val dataset(5000 images).
+  0%|          | 0/53 [00:00<?, ?it/s]  0%|          | 0/53 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 383, in train
+    success = do_train(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", line 312, in do_train
+    early_exit = per_iter_end_callback_fn(iteration=iteration-1)
+  File "tools/train_mlperf.py", line 119, in mlperf_test_early_exit
+    tester(model=model, distributed=distributed)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", line 82, in test
+    result = inference(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 80, in inference
+    predictions = compute_on_dataset(model, data_loader, device)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 26, in compute_on_dataset
+    output = model(images)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 82, in forward
+    x, result, detector_losses = self.roi_heads(features, proposals, targets, syncfree=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/roi_heads.py", line 39, in forward
+    x, detections, loss_mask = self.mask(mask_features, detections, targets, syncfree)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/mask_head.py", line 95, in forward
+    mask_logits = self.predictor(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", line 49, in forward
+    x = F.relu(self.mask_head_fcn5(x))
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 57, in forward
+    return super(ConvTranspose2d_NHWC, self).forward(x)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 255, in forward
+    result = conv2d_transpose_NHWC_impl.apply(
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 165, in forward
+    return NHWC.cudnn_convolution_transpose_nhwc(x, w,
+RuntimeError: CUDNN_STATUS_NOT_SUPPORTED. This error may appear if you passed in a non-contiguous input.
+  0%|          | 0/53 [00:00<?, ?it/s]  0%|          | 0/53 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 383, in train
+    success = do_train(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", line 312, in do_train
+    early_exit = per_iter_end_callback_fn(iteration=iteration-1)
+  File "tools/train_mlperf.py", line 119, in mlperf_test_early_exit
+    tester(model=model, distributed=distributed)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", line 82, in test
+    result = inference(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 80, in inference
+    predictions = compute_on_dataset(model, data_loader, device)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 26, in compute_on_dataset
+    output = model(images)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 82, in forward
+    x, result, detector_losses = self.roi_heads(features, proposals, targets, syncfree=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/roi_heads.py", line 39, in forward
+    x, detections, loss_mask = self.mask(mask_features, detections, targets, syncfree)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/mask_head.py", line 95, in forward
+    mask_logits = self.predictor(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", line 49, in forward
+    x = F.relu(self.mask_head_fcn5(x))
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 57, in forward
+    return super(ConvTranspose2d_NHWC, self).forward(x)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 255, in forward
+    result = conv2d_transpose_NHWC_impl.apply(
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 165, in forward
+    return NHWC.cudnn_convolution_transpose_nhwc(x, w,
+RuntimeError: CUDNN_STATUS_NOT_SUPPORTED. This error may appear if you passed in a non-contiguous input.
+  0%|          | 0/53 [00:00<?, ?it/s]  0%|          | 0/53 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 383, in train
+    success = do_train(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", line 312, in do_train
+    early_exit = per_iter_end_callback_fn(iteration=iteration-1)
+  File "tools/train_mlperf.py", line 119, in mlperf_test_early_exit
+    tester(model=model, distributed=distributed)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", line 82, in test
+    result = inference(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 80, in inference
+    predictions = compute_on_dataset(model, data_loader, device)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 26, in compute_on_dataset
+    output = model(images)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 82, in forward
+    x, result, detector_losses = self.roi_heads(features, proposals, targets, syncfree=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/roi_heads.py", line 39, in forward
+    x, detections, loss_mask = self.mask(mask_features, detections, targets, syncfree)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/mask_head.py", line 95, in forward
+    mask_logits = self.predictor(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", line 49, in forward
+    x = F.relu(self.mask_head_fcn5(x))
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 57, in forward
+    return super(ConvTranspose2d_NHWC, self).forward(x)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 255, in forward
+    result = conv2d_transpose_NHWC_impl.apply(
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 165, in forward
+    return NHWC.cudnn_convolution_transpose_nhwc(x, w,
+RuntimeError: CUDNN_STATUS_NOT_SUPPORTED. This error may appear if you passed in a non-contiguous input.
+  0%|          | 0/53 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 383, in train
+    success = do_train(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", line 312, in do_train
+    early_exit = per_iter_end_callback_fn(iteration=iteration-1)
+  File "tools/train_mlperf.py", line 119, in mlperf_test_early_exit
+    tester(model=model, distributed=distributed)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", line 82, in test
+    result = inference(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 80, in inference
+    predictions = compute_on_dataset(model, data_loader, device)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 26, in compute_on_dataset
+    output = model(images)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 82, in forward
+    x, result, detector_losses = self.roi_heads(features, proposals, targets, syncfree=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/roi_heads.py", line 39, in forward
+    x, detections, loss_mask = self.mask(mask_features, detections, targets, syncfree)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/mask_head.py", line 95, in forward
+    mask_logits = self.predictor(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", line 49, in forward
+    x = F.relu(self.mask_head_fcn5(x))
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 57, in forward
+    return super(ConvTranspose2d_NHWC, self).forward(x)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 255, in forward
+    result = conv2d_transpose_NHWC_impl.apply(
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 165, in forward
+    return NHWC.cudnn_convolution_transpose_nhwc(x, w,
+RuntimeError: CUDNN_STATUS_NOT_SUPPORTED. This error may appear if you passed in a non-contiguous input.
+  0%|          | 0/53 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 383, in train
+    success = do_train(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", line 312, in do_train
+    early_exit = per_iter_end_callback_fn(iteration=iteration-1)
+  File "tools/train_mlperf.py", line 119, in mlperf_test_early_exit
+    tester(model=model, distributed=distributed)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", line 82, in test
+    result = inference(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 80, in inference
+    predictions = compute_on_dataset(model, data_loader, device)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 26, in compute_on_dataset
+    output = model(images)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 82, in forward
+    x, result, detector_losses = self.roi_heads(features, proposals, targets, syncfree=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/roi_heads.py", line 39, in forward
+    x, detections, loss_mask = self.mask(mask_features, detections, targets, syncfree)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/mask_head.py", line 95, in forward
+    mask_logits = self.predictor(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", line 49, in forward
+    x = F.relu(self.mask_head_fcn5(x))
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 57, in forward
+    return super(ConvTranspose2d_NHWC, self).forward(x)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 255, in forward
+    result = conv2d_transpose_NHWC_impl.apply(
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 165, in forward
+    return NHWC.cudnn_convolution_transpose_nhwc(x, w,
+RuntimeError: CUDNN_STATUS_NOT_SUPPORTED. This error may appear if you passed in a non-contiguous input.
+  0%|          | 0/53 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 383, in train
+    success = do_train(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/trainer.py", line 312, in do_train
+    early_exit = per_iter_end_callback_fn(iteration=iteration-1)
+  File "tools/train_mlperf.py", line 119, in mlperf_test_early_exit
+    tester(model=model, distributed=distributed)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/tester.py", line 82, in test
+    result = inference(
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 80, in inference
+    predictions = compute_on_dataset(model, data_loader, device)
+  File "/workspace/object_detection/maskrcnn_benchmark/engine/inference.py", line 26, in compute_on_dataset
+    output = model(images)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 82, in forward
+    x, result, detector_losses = self.roi_heads(features, proposals, targets, syncfree=True)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/roi_heads.py", line 39, in forward
+    x, detections, loss_mask = self.mask(mask_features, detections, targets, syncfree)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/mask_head.py", line 95, in forward
+    mask_logits = self.predictor(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", line 49, in forward
+    x = F.relu(self.mask_head_fcn5(x))
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 57, in forward
+    return super(ConvTranspose2d_NHWC, self).forward(x)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 255, in forward
+    result = conv2d_transpose_NHWC_impl.apply(
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/conv.py", line 165, in forward
+    return NHWC.cudnn_convolution_transpose_nhwc(x, w,
+RuntimeError: CUDNN_STATUS_NOT_SUPPORTED. This error may appear if you passed in a non-contiguous input.
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:61:1628 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:62:1632 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:65:1636 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:64:1634 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:66:1633 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-t2482:63:1635 [0] p2p_plugin.c:141 NCCL WARN NET/IB : Got async event : GID table change
+Exception ignored in: <function Pool.__del__ at 0x7f5aec0475e0>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/opt/conda/lib/python3.8/multiprocessing/queues.py", line 368, in put
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 200, in send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 368, in _send
+OSError: [Errno 9] Bad file descriptor
+Exception ignored in: <function Pool.__del__ at 0x7fb2703ceee0>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/opt/conda/lib/python3.8/multiprocessing/queues.py", line 368, in put
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 200, in send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 368, in _send
+OSError: [Errno 9] Bad file descriptor
+Exception ignored in: <function Pool.__del__ at 0x7f817c041c10>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/opt/conda/lib/python3.8/multiprocessing/queues.py", line 368, in put
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 200, in send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 368, in _send
+OSError: [Errno 9] Bad file descriptor
+Exception ignored in: <function Pool.__del__ at 0x7f60cc0465e0>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/opt/conda/lib/python3.8/multiprocessing/queues.py", line 368, in put
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 200, in send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 368, in _send
+OSError: [Errno 9] Bad file descriptor
+Exception ignored in: <function Pool.__del__ at 0x7f7a2c0460d0>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/opt/conda/lib/python3.8/multiprocessing/queues.py", line 368, in put
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 200, in send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 368, in _send
+OSError: [Errno 9] Bad file descriptor
+Exception ignored in: <function Pool.__del__ at 0x7fd5f40465e0>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/opt/conda/lib/python3.8/multiprocessing/queues.py", line 368, in put
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 200, in send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/opt/conda/lib/python3.8/multiprocessing/connection.py", line 368, in _send
+OSError: [Errno 9] Bad file descriptor
+++ date
+Wed Dec 15 22:54:11 UTC 2021
+++ echo failed
+failed
+++ exit 1
