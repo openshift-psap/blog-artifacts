@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 381, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 978, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 309, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f870c8c5dc0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kevin/openshift/matrix_benchmark/exec/mlperf/run_ssd.py", line 805, in <module>
+    sys.exit(main())
+  File "/home/kevin/openshift/matrix_benchmark/exec/mlperf/run_ssd.py", line 797, in main
+    is_successful = await_completion(opts)
+  File "/home/kevin/openshift/matrix_benchmark/exec/mlperf/run_ssd.py", line 385, in await_completion
+    jobs = batchv1.list_namespaced_job(namespace=NAMESPACE,
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/api/batch_v1_api.py", line 791, in list_namespaced_job
+    return self.list_namespaced_job_with_http_info(namespace, **kwargs)  # noqa: E501
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/api/batch_v1_api.py", line 902, in list_namespaced_job_with_http_info
+    return self.api_client.call_api(
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/api_client.py", line 348, in call_api
+    return self.__call_api(resource_path, method,
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/api_client.py", line 180, in __call_api
+    response_data = self.request(
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/rest.py", line 239, in GET
+    return self.request("GET", url,
+  File "/home/kevin/.local/lib/python3.9/site-packages/kubernetes/client/rest.py", line 212, in request
+    r = self.pool_manager.request(method, url,
+  File "/usr/lib/python3.9/site-packages/urllib3/request.py", line 75, in request
+    return self.request_encode_url(
+  File "/usr/lib/python3.9/site-packages/urllib3/request.py", line 97, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/poolmanager.py", line 336, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 754, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 754, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 754, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.dgxa100.egallen.com', port=6443): Max retries exceeded with url: /apis/batch/v1/namespaces/default/jobs?labelSelector=app%3Drun-mlperf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f870c8c5dc0>: Failed to establish a new connection: [Errno 111] Connection refused'))

@@ -1,0 +1,1306 @@
++ test -f /etc/shinit_v2
++ source /etc/shinit_v2
++++ sed -n 's/^NVRM.*Kernel Module *\([^() ]*\).*$/\1/p' /proc/driver/nvidia/version
++++ sed 's/^$/unknown/'
+++ NV_DRIVER_VERS=470.82.01
+++ export _CUDA_COMPAT_PATH=/usr/local/cuda/compat
+++ _CUDA_COMPAT_PATH=/usr/local/cuda/compat
++++ hostname
+++ _CUDA_COMPAT_CHECKFILE=/usr/local/cuda/compat/.470.82.01.run-ssd--1-qmgrt.checked
+++ _CUDA_COMPAT_REALLIB=/usr/local/cuda/compat/lib.real
+++ _CUDA_COMPAT_SYMLINK=/usr/local/cuda/compat/lib
+++ '[' -n 470.82.01 -a -e /dev/nvidiactl -a '!' -e /usr/local/cuda/compat/.470.82.01.run-ssd--1-qmgrt.checked ']'
+++ touch /usr/local/cuda/compat/.470.82.01.run-ssd--1-qmgrt.checked
+++ rm -f /usr/local/cuda/compat/lib
+++ TIMEOUT=35
++++ LD_LIBRARY_PATH=/usr/local/cuda/compat/lib.real
++++ timeout -s KILL 35 /usr/local/bin/cudaCheck
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ '[' 'CUDA Driver UNAVAILABLE (cuInit(0) returned 100)' = 'CUDA Driver OK' ']'
+++ unset _CUDA_COMPAT_CHECKFILE
+++ unset _CUDA_COMPAT_REALLIB
+++ unset _CUDA_COMPAT_SYMLINK
++ '[' -z '' ']'
++ return
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ set -e
++ set -x
++ set -o pipefail
++ set -o nounset
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
+++ true
++ NB_GPUS=0
++ [[ 0 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ cut '-d ' -f6
+++ cut '-d)' -f1
++ ALL_GPUS='GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108'
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ wc -l
++ NB_GPUS=5
++ MIG_MODE=0
++ [[ full != \f\u\l\l ]]
++ echo 'No MIG GPU available, using the full GPUs (GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108).'
+No MIG GPU available, using the full GPUs (GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108).
++ [[ 5 != 5 ]]
++ SSD_THRESHOLD=0.1
+++ date +%s
++ start=1639066554
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-09 04:15:54 PM'
++ echo 'STARTING TIMING RUN AT 2021-12-09 04:15:54 PM GPU: 5 x full x 2 Pods'
+STARTING TIMING RUN AT 2021-12-09 04:15:54 PM GPU: 5 x full x 2 Pods
++ set -x
++ NUMEPOCHS=80
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'
++ DGXNSOCKET=1
++ DGXSOCKETCORES=8
++ [[ 0 == \1 ]]
++ DGXNGPU=5
++ echo 'Running in multi-gpu mode.'
+Running in multi-gpu mode.
++ declare -a CMD
+Patching 'bind_launch.py' to err-exit on failure ...
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
++ sed 's/process.wait()/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ ARGS=(train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs "${NUMEPOCHS}" --warmup-factor 0 --no-save --threshold=${SSD_THRESHOLD} --data ${DATASET_DIR} ${EXTRA_PARAMS})
++ [[ fast == \f\a\s\t ]]
++ echo 'Running in FAST mode'
+Running in FAST mode
++ ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)
++ trap 'date; echo failed; exit 1' ERR
++ [[ y != \y ]]
++ echo 'Pod startup synchronization disabled, do not wait for 2 Pods ...'
+Pod startup synchronization disabled, do not wait for 2 Pods ...
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
++ [[ 0 == 1 ]]
++ dest=/tmp/ssd_all.log
+Running on all the 5 GPUs 
++ [[ 0 == 1 ]]
++ echo 'Running on all the 5 GPUs '
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=5 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
++ tee -a /tmp/ssd_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639066556193, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556196, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556288, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556295, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556385, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066557862, "event_type": "POINT_IN_TIME", "key": "seed", "value": 4066718680, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO Using network IB
+NCCL version 2.7.5+cuda11.0
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO Using network IB
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO Using network IB
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO Using network IB
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO Using network IB
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] 2/-1/-1->1->0|0->1->2/-1/-1 [3] 2/-1/-1->1->0|0->1->2/-1/-1 [4] 2/-1/-1->1->0|0->1->2/-1/-1 [5] 2/-1/-1->1->0|0->1->2/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] 2/-1/-1->1->0|0->1->2/-1/-1 [9] 2/-1/-1->1->0|0->1->2/-1/-1 [10] 2/-1/-1->1->0|0->1->2/-1/-1 [11] 2/-1/-1->1->0|0->1->2/-1/-1 [12] 2/-1/-1->1->0|0->1->2/-1/-1 [13] 2/-1/-1->1->0|0->1->2/-1/-1 [14] 2/-1/-1->1->0|0->1->2/-1/-1 [15] 2/-1/-1->1->0|0->1->2/-1/-1 [16] 2/-1/-1->1->0|0->1->2/-1/-1 [17] 2/-1/-1->1->0|0->1->2/-1/-1 [18] 2/-1/-1->1->0|0->1->2/-1/-1 [19] 2/-1/-1->1->0|0->1->2/-1/-1 [20] 2/-1/-1->1->0|0->1->2/-1/-1 [21] 2/-1/-1->1->0|0->1->2/-1/-1 [22] 2/-1/-1->1->0|0->1->2/-1/-1 [23] 2/-1/-1->1->0|0->1->2/-1/-1
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Trees [0] 3/-1/-1->2->1|1->2->3/-1/-1 [1] 3/-1/-1->2->1|1->2->3/-1/-1 [2] 3/-1/-1->2->1|1->2->3/-1/-1 [3] 3/-1/-1->2->1|1->2->3/-1/-1 [4] 3/-1/-1->2->1|1->2->3/-1/-1 [5] 3/-1/-1->2->1|1->2->3/-1/-1 [6] 3/-1/-1->2->1|1->2->3/-1/-1 [7] 3/-1/-1->2->1|1->2->3/-1/-1 [8] 3/-1/-1->2->1|1->2->3/-1/-1 [9] 3/-1/-1->2->1|1->2->3/-1/-1 [10] 3/-1/-1->2->1|1->2->3/-1/-1 [11] 3/-1/-1->2->1|1->2->3/-1/-1 [12] 3/-1/-1->2->1|1->2->3/-1/-1 [13] 3/-1/-1->2->1|1->2->3/-1/-1 [14] 3/-1/-1->2->1|1->2->3/-1/-1 [15] 3/-1/-1->2->1|1->2->3/-1/-1 [16] 3/-1/-1->2->1|1->2->3/-1/-1 [17] 3/-1/-1->2->1|1->2->3/-1/-1 [18] 3/-1/-1->2->1|1->2->3/-1/-1 [19] 3/-1/-1->2->1|1->2->3/-1/-1 [20] 3/-1/-1->2->1|1->2->3/-1/-1 [21] 3/-1/-1->2->1|1->2->3/-1/-1 [22] 3/-1/-1->2->1|1->2->3/-1/-1 [23] 3/-1/-1->2->1|1->2->3/-1/-1
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Trees [0] 4/-1/-1->3->2|2->3->4/-1/-1 [1] 4/-1/-1->3->2|2->3->4/-1/-1 [2] 4/-1/-1->3->2|2->3->4/-1/-1 [3] 4/-1/-1->3->2|2->3->4/-1/-1 [4] 4/-1/-1->3->2|2->3->4/-1/-1 [5] 4/-1/-1->3->2|2->3->4/-1/-1 [6] 4/-1/-1->3->2|2->3->4/-1/-1 [7] 4/-1/-1->3->2|2->3->4/-1/-1 [8] 4/-1/-1->3->2|2->3->4/-1/-1 [9] 4/-1/-1->3->2|2->3->4/-1/-1 [10] 4/-1/-1->3->2|2->3->4/-1/-1 [11] 4/-1/-1->3->2|2->3->4/-1/-1 [12] 4/-1/-1->3->2|2->3->4/-1/-1 [13] 4/-1/-1->3->2|2->3->4/-1/-1 [14] 4/-1/-1->3->2|2->3->4/-1/-1 [15] 4/-1/-1->3->2|2->3->4/-1/-1 [16] 4/-1/-1->3->2|2->3->4/-1/-1 [17] 4/-1/-1->3->2|2->3->4/-1/-1 [18] 4/-1/-1->3->2|2->3->4/-1/-1 [19] 4/-1/-1->3->2|2->3->4/-1/-1 [20] 4/-1/-1->3->2|2->3->4/-1/-1 [21] 4/-1/-1->3->2|2->3->4/-1/-1 [22] 4/-1/-1->3->2|2->3->4/-1/-1 [23] 4/-1/-1->3->2|2->3->4/-1/-1
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 1/-1/-1->0->-1|-1->0->1/-1/-1 [3] 1/-1/-1->0->-1|-1->0->1/-1/-1 [4] 1/-1/-1->0->-1|-1->0->1/-1/-1 [5] 1/-1/-1->0->-1|-1->0->1/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 1/-1/-1->0->-1|-1->0->1/-1/-1 [9] 1/-1/-1->0->-1|-1->0->1/-1/-1 [10] 1/-1/-1->0->-1|-1->0->1/-1/-1 [11] 1/-1/-1->0->-1|-1->0->1/-1/-1 [12] 1/-1/-1->0->-1|-1->0->1/-1/-1 [13] 1/-1/-1->0->-1|-1->0->1/-1/-1 [14] 1/-1/-1->0->-1|-1->0->1/-1/-1 [15] 1/-1/-1->0->-1|-1->0->1/-1/-1 [16] 1/-1/-1->0->-1|-1->0->1/-1/-1 [17] 1/-1/-1->0->-1|-1->0->1/-1/-1 [18] 1/-1/-1->0->-1|-1->0->1/-1/-1 [19] 1/-1/-1->0->-1|-1->0->1/-1/-1 [20] 1/-1/-1->0->-1|-1->0->1/-1/-1 [21] 1/-1/-1->0->-1|-1->0->1/-1/-1 [22] 1/-1/-1->0->-1|-1->0->1/-1/-1 [23] 1/-1/-1->0->-1|-1->0->1/-1/-1
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Trees [0] -1/-1/-1->4->3|3->4->-1/-1/-1 [1] -1/-1/-1->4->3|3->4->-1/-1/-1 [2] -1/-1/-1->4->3|3->4->-1/-1/-1 [3] -1/-1/-1->4->3|3->4->-1/-1/-1 [4] -1/-1/-1->4->3|3->4->-1/-1/-1 [5] -1/-1/-1->4->3|3->4->-1/-1/-1 [6] -1/-1/-1->4->3|3->4->-1/-1/-1 [7] -1/-1/-1->4->3|3->4->-1/-1/-1 [8] -1/-1/-1->4->3|3->4->-1/-1/-1 [9] -1/-1/-1->4->3|3->4->-1/-1/-1 [10] -1/-1/-1->4->3|3->4->-1/-1/-1 [11] -1/-1/-1->4->3|3->4->-1/-1/-1 [12] -1/-1/-1->4->3|3->4->-1/-1/-1 [13] -1/-1/-1->4->3|3->4->-1/-1/-1 [14] -1/-1/-1->4->3|3->4->-1/-1/-1 [15] -1/-1/-1->4->3|3->4->-1/-1/-1 [16] -1/-1/-1->4->3|3->4->-1/-1/-1 [17] -1/-1/-1->4->3|3->4->-1/-1/-1 [18] -1/-1/-1->4->3|3->4->-1/-1/-1 [19] -1/-1/-1->4->3|3->4->-1/-1/-1 [20] -1/-1/-1->4->3|3->4->-1/-1/-1 [21] -1/-1/-1->4->3|3->4->-1/-1/-1 [22] -1/-1/-1->4->3|3->4->-1/-1/-1 [23] -1/-1/-1->4->3|3->4->-1/-1/-1
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 00 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 00 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 00 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 00 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 00 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 00 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 00 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 01 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 01 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 01 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 01 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 01 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 01 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 01 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 02 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 02 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 02 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 02 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 02 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 02 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 02 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 03 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 03 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 03 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 03 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 03 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 03 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 03 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 04 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 04 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 04 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 04 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 04 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 04 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 04 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 05 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 05 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 05 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 05 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 05 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 05 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 05 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 06 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 06 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 06 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 06 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 06 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 06 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 06 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 07 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 07 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 07 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 07 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 07 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 07 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 07 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 08 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 08 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 08 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 08 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 08 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 08 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 08 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 09 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 09 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 09 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 09 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 09 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 09 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 09 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 10 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 10 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 10 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 10 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 10 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 10 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 10 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 11 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 11 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 11 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 11 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 11 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 11 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 11 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 12 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 12 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 12 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 12 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 12 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 12 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 12 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 13 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 13 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 13 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 13 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 13 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 13 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 13 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 14 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 14 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 14 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 14 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 14 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 14 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 14 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 15 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 15 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 15 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 15 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 15 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 15 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 15 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 16 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 16 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 16 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 16 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 16 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 16 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 16 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 17 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 17 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 17 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 17 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 17 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 17 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 17 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 18 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 18 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 18 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 18 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 18 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 18 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 18 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 19 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 19 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 19 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 19 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 19 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 19 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 19 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 20 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 20 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 20 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 20 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 20 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 20 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 20 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 21 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 21 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 21 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 21 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 21 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 21 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 21 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 22 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 22 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 22 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 22 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 22 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 22 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 22 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 23 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 23 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 23 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 23 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 23 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 23 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 23 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO comm 0x7fab08006880 rank 4 nranks 5 cudaDev 4 busId b7000 - Init COMPLETE
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO comm 0x7f9da4006880 rank 0 nranks 5 cudaDev 0 busId 47000 - Init COMPLETE
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO Launch mode Parallel
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO comm 0x7f29ac006880 rank 1 nranks 5 cudaDev 1 busId 4e000 - Init COMPLETE
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO comm 0x7f98b4006880 rank 2 nranks 5 cudaDev 2 busId 87000 - Init COMPLETE
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO comm 0x7fa22c006880 rank 3 nranks 5 cudaDev 3 busId 90000 - Init COMPLETE
+0 Using seed = 4066718680
+1 Using seed = 4066718681
+2 Using seed = 4066718682
+4 Using seed = 4066718684
+3 Using seed = 4066718683
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+:::MLLOG {"namespace": "", "time_ms": 1639066561754, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561755, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 570, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+Delaying allreduces to the end of backward()
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0575, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+:::MLLOG {"namespace": "", "time_ms": 1639066584745, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639066584761, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+loading annotations into memory...
+:::MLLOG {"namespace": "", "time_ms": 1639066586667, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639066586669, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.18s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.14s)
+creating index...
+Done (t=0.17s)
+creating index...
+Done (t=0.13s)
+creating index...
+Done (t=0.13s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639066586966, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639066586966, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066586967, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.715, Average Loss: 0.023, avg. samples / sec: 22.89
+Iteration:     20, Loss function: 20.832, Average Loss: 0.446, avg. samples / sec: 4683.86
+Iteration:     40, Loss function: 20.233, Average Loss: 0.842, avg. samples / sec: 5125.26
+Iteration:     60, Loss function: 11.700, Average Loss: 1.148, avg. samples / sec: 5376.14
+Iteration:     80, Loss function: 10.874, Average Loss: 1.366, avg. samples / sec: 3542.36
+Iteration:    100, Loss function: 9.861, Average Loss: 1.536, avg. samples / sec: 5500.22
+Iteration:    120, Loss function: 9.505, Average Loss: 1.694, avg. samples / sec: 5440.59
+Iteration:    140, Loss function: 8.893, Average Loss: 1.838, avg. samples / sec: 5419.49
+Iteration:    160, Loss function: 8.505, Average Loss: 1.973, avg. samples / sec: 5531.73
+Iteration:    180, Loss function: 8.646, Average Loss: 2.103, avg. samples / sec: 5463.18
+Iteration:    200, Loss function: 9.068, Average Loss: 2.234, avg. samples / sec: 5505.34
+:::MLLOG {"namespace": "", "time_ms": 1639066610102, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639066610103, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 206}}
+Iteration:    220, Loss function: 8.060, Average Loss: 2.357, avg. samples / sec: 5538.42
+Iteration:    240, Loss function: 8.139, Average Loss: 2.470, avg. samples / sec: 5548.49
+Iteration:    260, Loss function: 7.891, Average Loss: 2.578, avg. samples / sec: 5558.20
+Iteration:    280, Loss function: 7.465, Average Loss: 2.680, avg. samples / sec: 5567.95
+Iteration:    300, Loss function: 7.890, Average Loss: 2.780, avg. samples / sec: 5504.13
+Iteration:    320, Loss function: 7.350, Average Loss: 2.876, avg. samples / sec: 5669.47
+Iteration:    340, Loss function: 7.654, Average Loss: 2.968, avg. samples / sec: 5647.63
+Iteration:    360, Loss function: 7.459, Average Loss: 3.055, avg. samples / sec: 5651.12
+Iteration:    380, Loss function: 6.906, Average Loss: 3.136, avg. samples / sec: 5552.29
+Iteration:    400, Loss function: 7.161, Average Loss: 3.215, avg. samples / sec: 5709.90
+:::MLLOG {"namespace": "", "time_ms": 1639066631040, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639066631041, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 412}}
+Iteration:    420, Loss function: 6.703, Average Loss: 3.290, avg. samples / sec: 5662.93
+Iteration:    440, Loss function: 6.575, Average Loss: 3.360, avg. samples / sec: 5650.30
+Iteration:    460, Loss function: 6.827, Average Loss: 3.432, avg. samples / sec: 5701.67
+Iteration:    480, Loss function: 6.468, Average Loss: 3.496, avg. samples / sec: 5638.83
+Iteration:    500, Loss function: 6.508, Average Loss: 3.558, avg. samples / sec: 5710.40
+Iteration:    520, Loss function: 6.784, Average Loss: 3.621, avg. samples / sec: 5697.90
+Iteration:    540, Loss function: 6.542, Average Loss: 3.679, avg. samples / sec: 5672.92
+Iteration:    560, Loss function: 6.614, Average Loss: 3.733, avg. samples / sec: 5666.58
+Iteration:    580, Loss function: 6.393, Average Loss: 3.785, avg. samples / sec: 5711.93
+Iteration:    600, Loss function: 6.112, Average Loss: 3.834, avg. samples / sec: 5638.34
+:::MLLOG {"namespace": "", "time_ms": 1639066651763, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639066651765, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 618}}
+Iteration:    620, Loss function: 5.965, Average Loss: 3.885, avg. samples / sec: 5608.61
+Iteration:    640, Loss function: 6.131, Average Loss: 3.930, avg. samples / sec: 5702.75
+Iteration:    660, Loss function: 5.682, Average Loss: 3.970, avg. samples / sec: 5717.92
+Iteration:    680, Loss function: 5.982, Average Loss: 4.012, avg. samples / sec: 4049.96
+Iteration:    700, Loss function: 5.777, Average Loss: 4.052, avg. samples / sec: 5730.22
+Iteration:    720, Loss function: 5.804, Average Loss: 4.089, avg. samples / sec: 5747.27
+Iteration:    740, Loss function: 6.019, Average Loss: 4.125, avg. samples / sec: 5660.87
+Iteration:    760, Loss function: 6.068, Average Loss: 4.157, avg. samples / sec: 5771.60
+Iteration:    780, Loss function: 5.790, Average Loss: 4.188, avg. samples / sec: 5651.92
+Iteration:    800, Loss function: 5.804, Average Loss: 4.218, avg. samples / sec: 5664.30
+Iteration:    820, Loss function: 5.782, Average Loss: 4.247, avg. samples / sec: 5701.66
+:::MLLOG {"namespace": "", "time_ms": 1639066673042, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639066673043, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 823}}
+Iteration:    840, Loss function: 5.446, Average Loss: 4.275, avg. samples / sec: 5666.60
+Iteration:    860, Loss function: 5.430, Average Loss: 4.301, avg. samples / sec: 5799.95
+Iteration:    880, Loss function: 5.456, Average Loss: 4.323, avg. samples / sec: 5745.58
+Iteration:    900, Loss function: 5.402, Average Loss: 4.345, avg. samples / sec: 5740.34
+Iteration:    920, Loss function: 5.697, Average Loss: 4.368, avg. samples / sec: 5759.24
+Iteration:    940, Loss function: 5.204, Average Loss: 4.388, avg. samples / sec: 5793.85
+Iteration:    960, Loss function: 5.313, Average Loss: 4.407, avg. samples / sec: 5769.33
+Iteration:    980, Loss function: 5.676, Average Loss: 4.425, avg. samples / sec: 5808.15
+Iteration:   1000, Loss function: 5.306, Average Loss: 4.442, avg. samples / sec: 5728.53
+Iteration:   1020, Loss function: 5.387, Average Loss: 4.460, avg. samples / sec: 5767.31
+:::MLLOG {"namespace": "", "time_ms": 1639066693445, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+averaging bn running means and vars
+Predicting Ended, total time: 6.03 s
+:::MLLOG {"namespace": "", "time_ms": 1639066699519, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639066699569, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066699569, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 1029}}
+Loading and preparing results...
+DONE (t=0.68s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   1040, Loss function: 5.103, Average Loss: 4.474, avg. samples / sec: 1403.96
+Iteration:   1060, Loss function: 5.151, Average Loss: 4.488, avg. samples / sec: 5573.72
+DONE (t=3.07s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.07386
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.15290
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.06500
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.14401
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.10738
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.15528
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.16380
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.16380
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.07386 AP goal: 0.10000
+Iteration:   1080, Loss function: 5.294, Average Loss: 4.502, avg. samples / sec: 5717.20
+:::MLLOG {"namespace": "", "time_ms": 1639066704814, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066704815, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.07385705544132169, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066704815, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+Iteration:   1100, Loss function: 5.064, Average Loss: 4.514, avg. samples / sec: 5689.75
+Iteration:   1120, Loss function: 4.975, Average Loss: 4.525, avg. samples / sec: 5756.84
+Iteration:   1140, Loss function: 5.294, Average Loss: 4.537, avg. samples / sec: 5778.20
+Iteration:   1160, Loss function: 5.135, Average Loss: 4.549, avg. samples / sec: 5750.69
+Iteration:   1180, Loss function: 5.158, Average Loss: 4.561, avg. samples / sec: 5717.09
+Iteration:   1200, Loss function: 5.006, Average Loss: 4.570, avg. samples / sec: 5725.88
+Iteration:   1220, Loss function: 5.143, Average Loss: 4.579, avg. samples / sec: 5732.60
+:::MLLOG {"namespace": "", "time_ms": 1639066720123, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639066720124, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 7, "current_iter_num": 1235}}
+Iteration:   1240, Loss function: 5.163, Average Loss: 4.587, avg. samples / sec: 5733.69
+Iteration:   1260, Loss function: 5.187, Average Loss: 4.595, avg. samples / sec: 5798.70
+Iteration:   1280, Loss function: 4.914, Average Loss: 4.603, avg. samples / sec: 5744.98
+Iteration:   1300, Loss function: 5.037, Average Loss: 4.609, avg. samples / sec: 5778.58
+Iteration:   1320, Loss function: 4.931, Average Loss: 4.616, avg. samples / sec: 5686.21
+Iteration:   1340, Loss function: 4.906, Average Loss: 4.622, avg. samples / sec: 5758.73
+Iteration:   1360, Loss function: 5.154, Average Loss: 4.627, avg. samples / sec: 5705.02
+Iteration:   1380, Loss function: 5.153, Average Loss: 4.634, avg. samples / sec: 5724.11
+
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:   1400, Loss function: 4.801, Average Loss: 4.639, avg. samples / sec: 5760.67
+Iteration:   1420, Loss function: 4.900, Average Loss: 4.644, avg. samples / sec: 5740.15
+Iteration:   1440, Loss function: 4.686, Average Loss: 4.647, avg. samples / sec: 5755.26
+:::MLLOG {"namespace": "", "time_ms": 1639066740599, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 7}}
+:::MLLOG {"namespace": "", "time_ms": 1639066740600, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 8, "current_iter_num": 1441}}
+Iteration:   1460, Loss function: 4.856, Average Loss: 4.650, avg. samples / sec: 5777.70
+Iteration:   1480, Loss function: 4.654, Average Loss: 4.652, avg. samples / sec: 5748.12
+Iteration:   1500, Loss function: 4.571, Average Loss: 4.656, avg. samples / sec: 5762.89
+Iteration:   1520, Loss function: 4.756, Average Loss: 4.658, avg. samples / sec: 5724.60
+Iteration:   1540, Loss function: 4.875, Average Loss: 4.659, avg. samples / sec: 5795.93
+Iteration:   1560, Loss function: 4.678, Average Loss: 4.661, avg. samples / sec: 5723.76
+Iteration:   1580, Loss function: 4.998, Average Loss: 4.663, avg. samples / sec: 5775.56
+Iteration:   1600, Loss function: 4.932, Average Loss: 4.667, avg. samples / sec: 5742.92
+Iteration:   1620, Loss function: 4.869, Average Loss: 4.668, avg. samples / sec: 5751.32
+Iteration:   1640, Loss function: 4.495, Average Loss: 4.669, avg. samples / sec: 5737.19
+:::MLLOG {"namespace": "", "time_ms": 1639066760873, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 8}}
+:::MLLOG {"namespace": "", "time_ms": 1639066760875, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 9, "current_iter_num": 1646}}
+Iteration:   1660, Loss function: 4.857, Average Loss: 4.669, avg. samples / sec: 5759.44
+Iteration:   1680, Loss function: 4.549, Average Loss: 4.669, avg. samples / sec: 5695.79
+Iteration:   1700, Loss function: 4.704, Average Loss: 4.669, avg. samples / sec: 5725.27
+Iteration:   1720, Loss function: 4.674, Average Loss: 4.670, avg. samples / sec: 5761.28
+Iteration:   1740, Loss function: 4.573, Average Loss: 4.669, avg. samples / sec: 5662.85
+Iteration:   1760, Loss function: 4.416, Average Loss: 4.669, avg. samples / sec: 5744.04
+Iteration:   1780, Loss function: 4.509, Average Loss: 4.668, avg. samples / sec: 5730.05
+Iteration:   1800, Loss function: 4.458, Average Loss: 4.668, avg. samples / sec: 5669.56
+Iteration:   1820, Loss function: 4.550, Average Loss: 4.667, avg. samples / sec: 5760.20
+
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:   1840, Loss function: 4.554, Average Loss: 4.667, avg. samples / sec: 5754.21
+
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+:::MLLOG {"namespace": "", "time_ms": 1639066781374, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 9}}
+:::MLLOG {"namespace": "", "time_ms": 1639066781375, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 10, "current_iter_num": 1852}}
+Iteration:   1860, Loss function: 4.708, Average Loss: 4.667, avg. samples / sec: 5771.95
+Iteration:   1880, Loss function: 4.237, Average Loss: 4.664, avg. samples / sec: 5712.36
+Iteration:   1900, Loss function: 4.425, Average Loss: 4.662, avg. samples / sec: 5698.61
+Iteration:   1920, Loss function: 4.489, Average Loss: 4.660, avg. samples / sec: 5709.20
+Iteration:   1940, Loss function: 4.759, Average Loss: 4.659, avg. samples / sec: 5747.10
+Iteration:   1960, Loss function: 4.492, Average Loss: 4.658, avg. samples / sec: 5712.65
+Iteration:   1980, Loss function: 4.691, Average Loss: 4.655, avg. samples / sec: 5760.68
+Iteration:   2000, Loss function: 4.371, Average Loss: 4.654, avg. samples / sec: 5744.61
+Iteration:   2020, Loss function: 4.662, Average Loss: 4.652, avg. samples / sec: 5706.90
+Iteration:   2040, Loss function: 4.883, Average Loss: 4.651, avg. samples / sec: 5736.22
+:::MLLOG {"namespace": "", "time_ms": 1639066801866, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 10}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.76 s
+:::MLLOG {"namespace": "", "time_ms": 1639066807643, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639066807701, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 11, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066807702, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 11, "current_iter_num": 2058}}
+Loading and preparing results...
+Iteration:   2060, Loss function: 4.584, Average Loss: 4.649, avg. samples / sec: 1461.64
+DONE (t=0.68s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   2080, Loss function: 4.476, Average Loss: 4.645, avg. samples / sec: 5690.32
+DONE (t=2.94s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11695
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.23044
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.10937
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.19831
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.14485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.21249
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.22495
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.22495
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.11695 AP goal: 0.10000
+Iteration:   2100, Loss function: 4.509, Average Loss: 4.642, avg. samples / sec: 5727.28
+:::MLLOG {"namespace": "", "time_ms": 1639066811969, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639066811970, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.11694802160541938, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639066811970, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639066812166, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
++ [[ fast == \d\r\y ]]
+++ date
++ echo 'Thu Dec  9 16:20:14 UTC 2021: done waiting for 5 executions'
+Thu Dec  9 16:20:14 UTC 2021: done waiting for 5 executions
++ ls /tmp/ssd_all.log
+/tmp/ssd_all.log
++ grep . /tmp/ssd_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639066556193, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556196, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556288, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556295, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066556385, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639066557862, "event_type": "POINT_IN_TIME", "key": "seed", "value": 4066718680, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO Using network IB
+NCCL version 2.7.5+cuda11.0
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:42:42 [3] NCCL INFO Using network IB
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:41:41 [2] NCCL INFO Using network IB
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:43:43 [4] NCCL INFO Using network IB
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.52<0>
+run-ssd--1-qmgrt:40:40 [1] NCCL INFO Using network IB
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] 2/-1/-1->1->0|0->1->2/-1/-1 [3] 2/-1/-1->1->0|0->1->2/-1/-1 [4] 2/-1/-1->1->0|0->1->2/-1/-1 [5] 2/-1/-1->1->0|0->1->2/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] 2/-1/-1->1->0|0->1->2/-1/-1 [9] 2/-1/-1->1->0|0->1->2/-1/-1 [10] 2/-1/-1->1->0|0->1->2/-1/-1 [11] 2/-1/-1->1->0|0->1->2/-1/-1 [12] 2/-1/-1->1->0|0->1->2/-1/-1 [13] 2/-1/-1->1->0|0->1->2/-1/-1 [14] 2/-1/-1->1->0|0->1->2/-1/-1 [15] 2/-1/-1->1->0|0->1->2/-1/-1 [16] 2/-1/-1->1->0|0->1->2/-1/-1 [17] 2/-1/-1->1->0|0->1->2/-1/-1 [18] 2/-1/-1->1->0|0->1->2/-1/-1 [19] 2/-1/-1->1->0|0->1->2/-1/-1 [20] 2/-1/-1->1->0|0->1->2/-1/-1 [21] 2/-1/-1->1->0|0->1->2/-1/-1 [22] 2/-1/-1->1->0|0->1->2/-1/-1 [23] 2/-1/-1->1->0|0->1->2/-1/-1
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Trees [0] 3/-1/-1->2->1|1->2->3/-1/-1 [1] 3/-1/-1->2->1|1->2->3/-1/-1 [2] 3/-1/-1->2->1|1->2->3/-1/-1 [3] 3/-1/-1->2->1|1->2->3/-1/-1 [4] 3/-1/-1->2->1|1->2->3/-1/-1 [5] 3/-1/-1->2->1|1->2->3/-1/-1 [6] 3/-1/-1->2->1|1->2->3/-1/-1 [7] 3/-1/-1->2->1|1->2->3/-1/-1 [8] 3/-1/-1->2->1|1->2->3/-1/-1 [9] 3/-1/-1->2->1|1->2->3/-1/-1 [10] 3/-1/-1->2->1|1->2->3/-1/-1 [11] 3/-1/-1->2->1|1->2->3/-1/-1 [12] 3/-1/-1->2->1|1->2->3/-1/-1 [13] 3/-1/-1->2->1|1->2->3/-1/-1 [14] 3/-1/-1->2->1|1->2->3/-1/-1 [15] 3/-1/-1->2->1|1->2->3/-1/-1 [16] 3/-1/-1->2->1|1->2->3/-1/-1 [17] 3/-1/-1->2->1|1->2->3/-1/-1 [18] 3/-1/-1->2->1|1->2->3/-1/-1 [19] 3/-1/-1->2->1|1->2->3/-1/-1 [20] 3/-1/-1->2->1|1->2->3/-1/-1 [21] 3/-1/-1->2->1|1->2->3/-1/-1 [22] 3/-1/-1->2->1|1->2->3/-1/-1 [23] 3/-1/-1->2->1|1->2->3/-1/-1
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Trees [0] 4/-1/-1->3->2|2->3->4/-1/-1 [1] 4/-1/-1->3->2|2->3->4/-1/-1 [2] 4/-1/-1->3->2|2->3->4/-1/-1 [3] 4/-1/-1->3->2|2->3->4/-1/-1 [4] 4/-1/-1->3->2|2->3->4/-1/-1 [5] 4/-1/-1->3->2|2->3->4/-1/-1 [6] 4/-1/-1->3->2|2->3->4/-1/-1 [7] 4/-1/-1->3->2|2->3->4/-1/-1 [8] 4/-1/-1->3->2|2->3->4/-1/-1 [9] 4/-1/-1->3->2|2->3->4/-1/-1 [10] 4/-1/-1->3->2|2->3->4/-1/-1 [11] 4/-1/-1->3->2|2->3->4/-1/-1 [12] 4/-1/-1->3->2|2->3->4/-1/-1 [13] 4/-1/-1->3->2|2->3->4/-1/-1 [14] 4/-1/-1->3->2|2->3->4/-1/-1 [15] 4/-1/-1->3->2|2->3->4/-1/-1 [16] 4/-1/-1->3->2|2->3->4/-1/-1 [17] 4/-1/-1->3->2|2->3->4/-1/-1 [18] 4/-1/-1->3->2|2->3->4/-1/-1 [19] 4/-1/-1->3->2|2->3->4/-1/-1 [20] 4/-1/-1->3->2|2->3->4/-1/-1 [21] 4/-1/-1->3->2|2->3->4/-1/-1 [22] 4/-1/-1->3->2|2->3->4/-1/-1 [23] 4/-1/-1->3->2|2->3->4/-1/-1
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 1/-1/-1->0->-1|-1->0->1/-1/-1 [3] 1/-1/-1->0->-1|-1->0->1/-1/-1 [4] 1/-1/-1->0->-1|-1->0->1/-1/-1 [5] 1/-1/-1->0->-1|-1->0->1/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 1/-1/-1->0->-1|-1->0->1/-1/-1 [9] 1/-1/-1->0->-1|-1->0->1/-1/-1 [10] 1/-1/-1->0->-1|-1->0->1/-1/-1 [11] 1/-1/-1->0->-1|-1->0->1/-1/-1 [12] 1/-1/-1->0->-1|-1->0->1/-1/-1 [13] 1/-1/-1->0->-1|-1->0->1/-1/-1 [14] 1/-1/-1->0->-1|-1->0->1/-1/-1 [15] 1/-1/-1->0->-1|-1->0->1/-1/-1 [16] 1/-1/-1->0->-1|-1->0->1/-1/-1 [17] 1/-1/-1->0->-1|-1->0->1/-1/-1 [18] 1/-1/-1->0->-1|-1->0->1/-1/-1 [19] 1/-1/-1->0->-1|-1->0->1/-1/-1 [20] 1/-1/-1->0->-1|-1->0->1/-1/-1 [21] 1/-1/-1->0->-1|-1->0->1/-1/-1 [22] 1/-1/-1->0->-1|-1->0->1/-1/-1 [23] 1/-1/-1->0->-1|-1->0->1/-1/-1
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Trees [0] -1/-1/-1->4->3|3->4->-1/-1/-1 [1] -1/-1/-1->4->3|3->4->-1/-1/-1 [2] -1/-1/-1->4->3|3->4->-1/-1/-1 [3] -1/-1/-1->4->3|3->4->-1/-1/-1 [4] -1/-1/-1->4->3|3->4->-1/-1/-1 [5] -1/-1/-1->4->3|3->4->-1/-1/-1 [6] -1/-1/-1->4->3|3->4->-1/-1/-1 [7] -1/-1/-1->4->3|3->4->-1/-1/-1 [8] -1/-1/-1->4->3|3->4->-1/-1/-1 [9] -1/-1/-1->4->3|3->4->-1/-1/-1 [10] -1/-1/-1->4->3|3->4->-1/-1/-1 [11] -1/-1/-1->4->3|3->4->-1/-1/-1 [12] -1/-1/-1->4->3|3->4->-1/-1/-1 [13] -1/-1/-1->4->3|3->4->-1/-1/-1 [14] -1/-1/-1->4->3|3->4->-1/-1/-1 [15] -1/-1/-1->4->3|3->4->-1/-1/-1 [16] -1/-1/-1->4->3|3->4->-1/-1/-1 [17] -1/-1/-1->4->3|3->4->-1/-1/-1 [18] -1/-1/-1->4->3|3->4->-1/-1/-1 [19] -1/-1/-1->4->3|3->4->-1/-1/-1 [20] -1/-1/-1->4->3|3->4->-1/-1/-1 [21] -1/-1/-1->4->3|3->4->-1/-1/-1 [22] -1/-1/-1->4->3|3->4->-1/-1/-1 [23] -1/-1/-1->4->3|3->4->-1/-1/-1
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 00 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 00 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 00 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 00 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 00 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 00 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 00 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 01 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 01 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 01 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 01 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 01 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 01 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 01 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 02 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 02 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 02 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 02 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 02 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 02 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 02 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 03 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 03 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 03 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 03 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 03 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 03 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 03 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 04 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 04 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 04 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 04 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 04 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 04 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 04 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 05 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 05 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 05 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 05 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 05 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 05 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 05 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 06 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 06 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 06 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 06 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 06 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 06 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 06 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 07 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 07 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 07 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 07 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 07 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 07 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 07 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 08 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 08 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 08 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 08 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 08 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 08 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 08 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 09 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 09 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 09 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 09 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 09 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 09 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 09 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 10 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 10 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 10 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 10 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 10 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 10 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 10 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 11 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 11 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 11 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 11 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 11 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 11 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 11 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 12 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 12 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 12 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 12 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 12 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 12 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 12 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 13 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 13 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 13 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 13 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 13 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 13 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 13 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 14 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 14 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 14 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 14 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 14 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 14 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 14 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 15 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 15 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 15 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 15 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 15 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 15 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 15 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 16 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 16 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 16 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 16 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 16 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 16 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 16 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 17 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 17 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 17 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 17 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 17 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 17 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 17 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 18 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 18 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 18 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 18 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 18 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 18 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 18 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 19 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 19 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 19 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 19 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 19 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 19 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 19 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 20 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 20 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 20 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 20 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 20 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 20 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 20 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 21 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 21 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 21 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 21 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 21 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 21 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 21 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 22 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 22 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 22 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 22 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 22 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 22 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 22 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO Channel 23 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 23 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 23 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 23 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO Channel 23 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO Channel 23 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO Channel 23 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:43:105 [4] NCCL INFO comm 0x7fab08006880 rank 4 nranks 5 cudaDev 4 busId b7000 - Init COMPLETE
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:39:93 [0] NCCL INFO comm 0x7f9da4006880 rank 0 nranks 5 cudaDev 0 busId 47000 - Init COMPLETE
+run-ssd--1-qmgrt:39:39 [0] NCCL INFO Launch mode Parallel
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:40:104 [1] NCCL INFO comm 0x7f29ac006880 rank 1 nranks 5 cudaDev 1 busId 4e000 - Init COMPLETE
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-qmgrt:41:103 [2] NCCL INFO comm 0x7f98b4006880 rank 2 nranks 5 cudaDev 2 busId 87000 - Init COMPLETE
+run-ssd--1-qmgrt:42:102 [3] NCCL INFO comm 0x7fa22c006880 rank 3 nranks 5 cudaDev 3 busId 90000 - Init COMPLETE
+0 Using seed = 4066718680
+1 Using seed = 4066718681
+2 Using seed = 4066718682
+4 Using seed = 4066718684
+3 Using seed = 4066718683
+:::MLLOG {"namespace": "", "time_ms": 1639066561754, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561755, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 570, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+Delaying allreduces to the end of backward()
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0575, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639066561764, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+:::MLLOG {"namespace": "", "time_ms": 1639066584745, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639066584761, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+loading annotations into memory...
+:::MLLOG {"namespace": "", "time_ms": 1639066586667, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639066586669, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.18s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.14s)
+creating index...
+Done (t=0.17s)
+creating index...
+Done (t=0.13s)
+creating index...
+Done (t=0.13s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639066586966, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639066586966, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066586967, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.715, Average Loss: 0.023, avg. samples / sec: 22.89
+Iteration:     20, Loss function: 20.832, Average Loss: 0.446, avg. samples / sec: 4683.86
+Iteration:     40, Loss function: 20.233, Average Loss: 0.842, avg. samples / sec: 5125.26
+Iteration:     60, Loss function: 11.700, Average Loss: 1.148, avg. samples / sec: 5376.14
+Iteration:     80, Loss function: 10.874, Average Loss: 1.366, avg. samples / sec: 3542.36
+Iteration:    100, Loss function: 9.861, Average Loss: 1.536, avg. samples / sec: 5500.22
+Iteration:    120, Loss function: 9.505, Average Loss: 1.694, avg. samples / sec: 5440.59
+Iteration:    140, Loss function: 8.893, Average Loss: 1.838, avg. samples / sec: 5419.49
+Iteration:    160, Loss function: 8.505, Average Loss: 1.973, avg. samples / sec: 5531.73
+Iteration:    180, Loss function: 8.646, Average Loss: 2.103, avg. samples / sec: 5463.18
+Iteration:    200, Loss function: 9.068, Average Loss: 2.234, avg. samples / sec: 5505.34
+:::MLLOG {"namespace": "", "time_ms": 1639066610102, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639066610103, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 206}}
+Iteration:    220, Loss function: 8.060, Average Loss: 2.357, avg. samples / sec: 5538.42
+Iteration:    240, Loss function: 8.139, Average Loss: 2.470, avg. samples / sec: 5548.49
+Iteration:    260, Loss function: 7.891, Average Loss: 2.578, avg. samples / sec: 5558.20
+Iteration:    280, Loss function: 7.465, Average Loss: 2.680, avg. samples / sec: 5567.95
+Iteration:    300, Loss function: 7.890, Average Loss: 2.780, avg. samples / sec: 5504.13
+Iteration:    320, Loss function: 7.350, Average Loss: 2.876, avg. samples / sec: 5669.47
+Iteration:    340, Loss function: 7.654, Average Loss: 2.968, avg. samples / sec: 5647.63
+Iteration:    360, Loss function: 7.459, Average Loss: 3.055, avg. samples / sec: 5651.12
+Iteration:    380, Loss function: 6.906, Average Loss: 3.136, avg. samples / sec: 5552.29
+Iteration:    400, Loss function: 7.161, Average Loss: 3.215, avg. samples / sec: 5709.90
+:::MLLOG {"namespace": "", "time_ms": 1639066631040, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639066631041, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 412}}
+Iteration:    420, Loss function: 6.703, Average Loss: 3.290, avg. samples / sec: 5662.93
+Iteration:    440, Loss function: 6.575, Average Loss: 3.360, avg. samples / sec: 5650.30
+Iteration:    460, Loss function: 6.827, Average Loss: 3.432, avg. samples / sec: 5701.67
+Iteration:    480, Loss function: 6.468, Average Loss: 3.496, avg. samples / sec: 5638.83
+Iteration:    500, Loss function: 6.508, Average Loss: 3.558, avg. samples / sec: 5710.40
+Iteration:    520, Loss function: 6.784, Average Loss: 3.621, avg. samples / sec: 5697.90
+Iteration:    540, Loss function: 6.542, Average Loss: 3.679, avg. samples / sec: 5672.92
+Iteration:    560, Loss function: 6.614, Average Loss: 3.733, avg. samples / sec: 5666.58
+Iteration:    580, Loss function: 6.393, Average Loss: 3.785, avg. samples / sec: 5711.93
+Iteration:    600, Loss function: 6.112, Average Loss: 3.834, avg. samples / sec: 5638.34
+:::MLLOG {"namespace": "", "time_ms": 1639066651763, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639066651765, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 618}}
+Iteration:    620, Loss function: 5.965, Average Loss: 3.885, avg. samples / sec: 5608.61
+Iteration:    640, Loss function: 6.131, Average Loss: 3.930, avg. samples / sec: 5702.75
+Iteration:    660, Loss function: 5.682, Average Loss: 3.970, avg. samples / sec: 5717.92
+Iteration:    680, Loss function: 5.982, Average Loss: 4.012, avg. samples / sec: 4049.96
+Iteration:    700, Loss function: 5.777, Average Loss: 4.052, avg. samples / sec: 5730.22
+Iteration:    720, Loss function: 5.804, Average Loss: 4.089, avg. samples / sec: 5747.27
+Iteration:    740, Loss function: 6.019, Average Loss: 4.125, avg. samples / sec: 5660.87
+Iteration:    760, Loss function: 6.068, Average Loss: 4.157, avg. samples / sec: 5771.60
+Iteration:    780, Loss function: 5.790, Average Loss: 4.188, avg. samples / sec: 5651.92
+Iteration:    800, Loss function: 5.804, Average Loss: 4.218, avg. samples / sec: 5664.30
+Iteration:    820, Loss function: 5.782, Average Loss: 4.247, avg. samples / sec: 5701.66
+:::MLLOG {"namespace": "", "time_ms": 1639066673042, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639066673043, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 823}}
+Iteration:    840, Loss function: 5.446, Average Loss: 4.275, avg. samples / sec: 5666.60
+Iteration:    860, Loss function: 5.430, Average Loss: 4.301, avg. samples / sec: 5799.95
+Iteration:    880, Loss function: 5.456, Average Loss: 4.323, avg. samples / sec: 5745.58
+Iteration:    900, Loss function: 5.402, Average Loss: 4.345, avg. samples / sec: 5740.34
+Iteration:    920, Loss function: 5.697, Average Loss: 4.368, avg. samples / sec: 5759.24
+Iteration:    940, Loss function: 5.204, Average Loss: 4.388, avg. samples / sec: 5793.85
+Iteration:    960, Loss function: 5.313, Average Loss: 4.407, avg. samples / sec: 5769.33
+Iteration:    980, Loss function: 5.676, Average Loss: 4.425, avg. samples / sec: 5808.15
+Iteration:   1000, Loss function: 5.306, Average Loss: 4.442, avg. samples / sec: 5728.53
+Iteration:   1020, Loss function: 5.387, Average Loss: 4.460, avg. samples / sec: 5767.31
+:::MLLOG {"namespace": "", "time_ms": 1639066693445, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+averaging bn running means and vars
+Predicting Ended, total time: 6.03 s
+:::MLLOG {"namespace": "", "time_ms": 1639066699519, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639066699569, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066699569, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 1029}}
+Loading and preparing results...
+DONE (t=0.68s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   1040, Loss function: 5.103, Average Loss: 4.474, avg. samples / sec: 1403.96
+Iteration:   1060, Loss function: 5.151, Average Loss: 4.488, avg. samples / sec: 5573.72
+DONE (t=3.07s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.07386
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.15290
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.06500
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.14401
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.10738
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.15528
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.16380
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.16380
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.07386 AP goal: 0.10000
+Iteration:   1080, Loss function: 5.294, Average Loss: 4.502, avg. samples / sec: 5717.20
+:::MLLOG {"namespace": "", "time_ms": 1639066704814, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066704815, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.07385705544132169, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066704815, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+Iteration:   1100, Loss function: 5.064, Average Loss: 4.514, avg. samples / sec: 5689.75
+Iteration:   1120, Loss function: 4.975, Average Loss: 4.525, avg. samples / sec: 5756.84
+Iteration:   1140, Loss function: 5.294, Average Loss: 4.537, avg. samples / sec: 5778.20
+Iteration:   1160, Loss function: 5.135, Average Loss: 4.549, avg. samples / sec: 5750.69
+Iteration:   1180, Loss function: 5.158, Average Loss: 4.561, avg. samples / sec: 5717.09
+Iteration:   1200, Loss function: 5.006, Average Loss: 4.570, avg. samples / sec: 5725.88
+Iteration:   1220, Loss function: 5.143, Average Loss: 4.579, avg. samples / sec: 5732.60
+:::MLLOG {"namespace": "", "time_ms": 1639066720123, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639066720124, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 7, "current_iter_num": 1235}}
+Iteration:   1240, Loss function: 5.163, Average Loss: 4.587, avg. samples / sec: 5733.69
+Iteration:   1260, Loss function: 5.187, Average Loss: 4.595, avg. samples / sec: 5798.70
+Iteration:   1280, Loss function: 4.914, Average Loss: 4.603, avg. samples / sec: 5744.98
+Iteration:   1300, Loss function: 5.037, Average Loss: 4.609, avg. samples / sec: 5778.58
+Iteration:   1320, Loss function: 4.931, Average Loss: 4.616, avg. samples / sec: 5686.21
+Iteration:   1340, Loss function: 4.906, Average Loss: 4.622, avg. samples / sec: 5758.73
+Iteration:   1360, Loss function: 5.154, Average Loss: 4.627, avg. samples / sec: 5705.02
+Iteration:   1380, Loss function: 5.153, Average Loss: 4.634, avg. samples / sec: 5724.11
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:   1400, Loss function: 4.801, Average Loss: 4.639, avg. samples / sec: 5760.67
+Iteration:   1420, Loss function: 4.900, Average Loss: 4.644, avg. samples / sec: 5740.15
+Iteration:   1440, Loss function: 4.686, Average Loss: 4.647, avg. samples / sec: 5755.26
+:::MLLOG {"namespace": "", "time_ms": 1639066740599, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 7}}
+:::MLLOG {"namespace": "", "time_ms": 1639066740600, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 8, "current_iter_num": 1441}}
+Iteration:   1460, Loss function: 4.856, Average Loss: 4.650, avg. samples / sec: 5777.70
+Iteration:   1480, Loss function: 4.654, Average Loss: 4.652, avg. samples / sec: 5748.12
+Iteration:   1500, Loss function: 4.571, Average Loss: 4.656, avg. samples / sec: 5762.89
+Iteration:   1520, Loss function: 4.756, Average Loss: 4.658, avg. samples / sec: 5724.60
+Iteration:   1540, Loss function: 4.875, Average Loss: 4.659, avg. samples / sec: 5795.93
+Iteration:   1560, Loss function: 4.678, Average Loss: 4.661, avg. samples / sec: 5723.76
+Iteration:   1580, Loss function: 4.998, Average Loss: 4.663, avg. samples / sec: 5775.56
+Iteration:   1600, Loss function: 4.932, Average Loss: 4.667, avg. samples / sec: 5742.92
+Iteration:   1620, Loss function: 4.869, Average Loss: 4.668, avg. samples / sec: 5751.32
+Iteration:   1640, Loss function: 4.495, Average Loss: 4.669, avg. samples / sec: 5737.19
+:::MLLOG {"namespace": "", "time_ms": 1639066760873, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 8}}
+:::MLLOG {"namespace": "", "time_ms": 1639066760875, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 9, "current_iter_num": 1646}}
+Iteration:   1660, Loss function: 4.857, Average Loss: 4.669, avg. samples / sec: 5759.44
+Iteration:   1680, Loss function: 4.549, Average Loss: 4.669, avg. samples / sec: 5695.79
+Iteration:   1700, Loss function: 4.704, Average Loss: 4.669, avg. samples / sec: 5725.27
+Iteration:   1720, Loss function: 4.674, Average Loss: 4.670, avg. samples / sec: 5761.28
+Iteration:   1740, Loss function: 4.573, Average Loss: 4.669, avg. samples / sec: 5662.85
+Iteration:   1760, Loss function: 4.416, Average Loss: 4.669, avg. samples / sec: 5744.04
+Iteration:   1780, Loss function: 4.509, Average Loss: 4.668, avg. samples / sec: 5730.05
+Iteration:   1800, Loss function: 4.458, Average Loss: 4.668, avg. samples / sec: 5669.56
+Iteration:   1820, Loss function: 4.550, Average Loss: 4.667, avg. samples / sec: 5760.20
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:   1840, Loss function: 4.554, Average Loss: 4.667, avg. samples / sec: 5754.21
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:39:91 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:41:99 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:43:98 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:40:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-qmgrt:42:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+:::MLLOG {"namespace": "", "time_ms": 1639066781374, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 9}}
+:::MLLOG {"namespace": "", "time_ms": 1639066781375, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 10, "current_iter_num": 1852}}
+Iteration:   1860, Loss function: 4.708, Average Loss: 4.667, avg. samples / sec: 5771.95
+Iteration:   1880, Loss function: 4.237, Average Loss: 4.664, avg. samples / sec: 5712.36
+Iteration:   1900, Loss function: 4.425, Average Loss: 4.662, avg. samples / sec: 5698.61
+Iteration:   1920, Loss function: 4.489, Average Loss: 4.660, avg. samples / sec: 5709.20
+Iteration:   1940, Loss function: 4.759, Average Loss: 4.659, avg. samples / sec: 5747.10
+Iteration:   1960, Loss function: 4.492, Average Loss: 4.658, avg. samples / sec: 5712.65
+Iteration:   1980, Loss function: 4.691, Average Loss: 4.655, avg. samples / sec: 5760.68
+Iteration:   2000, Loss function: 4.371, Average Loss: 4.654, avg. samples / sec: 5744.61
+Iteration:   2020, Loss function: 4.662, Average Loss: 4.652, avg. samples / sec: 5706.90
+Iteration:   2040, Loss function: 4.883, Average Loss: 4.651, avg. samples / sec: 5736.22
+:::MLLOG {"namespace": "", "time_ms": 1639066801866, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 10}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.76 s
+:::MLLOG {"namespace": "", "time_ms": 1639066807643, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639066807701, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 11, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639066807702, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 11, "current_iter_num": 2058}}
+Loading and preparing results...
+Iteration:   2060, Loss function: 4.584, Average Loss: 4.649, avg. samples / sec: 1461.64
+DONE (t=0.68s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   2080, Loss function: 4.476, Average Loss: 4.645, avg. samples / sec: 5690.32
+DONE (t=2.94s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11695
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.23044
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.10937
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.19831
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.14485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.21249
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.22495
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.22495
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.11695 AP goal: 0.10000
+Iteration:   2100, Loss function: 4.509, Average Loss: 4.642, avg. samples / sec: 5727.28
+:::MLLOG {"namespace": "", "time_ms": 1639066811969, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639066811970, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.11694802160541938, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639066811970, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639066812166, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
+++ date +%s
++ end=1639066814
+++ date '+%Y-%m-%d %r'
++ end_fmt='2021-12-09 04:20:14 PM'
++ echo 'START TIMING RUN WAS 2021-12-09 04:15:54 PM'
+START TIMING RUN WAS 2021-12-09 04:15:54 PM
+ENDING TIMING RUN AT 2021-12-09 04:20:14 PM
++ echo 'ENDING TIMING RUN AT 2021-12-09 04:20:14 PM'
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
++ result=260
++ result_name=SINGLE_STAGE_DETECTOR
++ echo 'RESULT,SINGLE_STAGE_DETECTOR,,260,nvidia,2021-12-09 04:15:54 PM'
+RESULT,SINGLE_STAGE_DETECTOR,,260,nvidia,2021-12-09 04:15:54 PM
+ALL FINISHED GPU: 5 x full x 2 Pods
++ echo 'ALL FINISHED GPU: 5 x full x 2 Pods'

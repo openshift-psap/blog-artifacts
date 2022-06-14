@@ -1,0 +1,1876 @@
++ test -f /etc/shinit_v2
++ source /etc/shinit_v2
++++ sed -n 's/^NVRM.*Kernel Module *\([^() ]*\).*$/\1/p' /proc/driver/nvidia/version
++++ sed 's/^$/unknown/'
+++ NV_DRIVER_VERS=470.82.01
+++ export _CUDA_COMPAT_PATH=/usr/local/cuda/compat
+++ _CUDA_COMPAT_PATH=/usr/local/cuda/compat
++++ hostname
+++ _CUDA_COMPAT_CHECKFILE=/usr/local/cuda/compat/.470.82.01.run-ssd--1-5ntfz.checked
+++ _CUDA_COMPAT_REALLIB=/usr/local/cuda/compat/lib.real
+++ _CUDA_COMPAT_SYMLINK=/usr/local/cuda/compat/lib
+++ '[' -n 470.82.01 -a -e /dev/nvidiactl -a '!' -e /usr/local/cuda/compat/.470.82.01.run-ssd--1-5ntfz.checked ']'
+++ touch /usr/local/cuda/compat/.470.82.01.run-ssd--1-5ntfz.checked
+++ rm -f /usr/local/cuda/compat/lib
+++ TIMEOUT=35
++++ LD_LIBRARY_PATH=/usr/local/cuda/compat/lib.real
++++ timeout -s KILL 35 /usr/local/bin/cudaCheck
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ '[' 'CUDA Driver UNAVAILABLE (cuInit(0) returned 100)' = 'CUDA Driver OK' ']'
+++ unset _CUDA_COMPAT_CHECKFILE
+++ unset _CUDA_COMPAT_REALLIB
+++ unset _CUDA_COMPAT_SYMLINK
++ '[' -z '' ']'
++ return
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ set -e
++ set -x
++ set -o pipefail
++ set -o nounset
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
+++ true
++ NB_GPUS=0
++ [[ 0 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ cut '-d ' -f6
+++ cut '-d)' -f1
++ ALL_GPUS='GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab
+GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908
+GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f'
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ wc -l
++ NB_GPUS=8
++ MIG_MODE=0
++ [[ full != \f\u\l\l ]]
++ echo 'No MIG GPU available, using the full GPUs (GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab
+GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908
+GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).'
+No MIG GPU available, using the full GPUs (GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab
+GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908
+GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).
++ [[ 8 != 8 ]]
++ SSD_THRESHOLD=0.1
+++ date +%s
++ start=1639065325
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-09 03:55:25 PM'
++ echo 'STARTING TIMING RUN AT 2021-12-09 03:55:25 PM GPU: 8 x full x 1 Pods'
+STARTING TIMING RUN AT 2021-12-09 03:55:25 PM GPU: 8 x full x 1 Pods
++ set -x
++ NUMEPOCHS=80
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'
++ DGXNSOCKET=1
++ DGXSOCKETCORES=8
++ [[ 0 == \1 ]]
++ DGXNGPU=8
++ echo 'Running in multi-gpu mode.'
+Running in multi-gpu mode.
++ declare -a CMD
+Patching 'bind_launch.py' to err-exit on failure ...
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
++ sed 's/process.wait()/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ ARGS=(train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs "${NUMEPOCHS}" --warmup-factor 0 --no-save --threshold=${SSD_THRESHOLD} --data ${DATASET_DIR} ${EXTRA_PARAMS})
++ [[ fast == \f\a\s\t ]]
++ echo 'Running in FAST mode'
+Running in FAST mode
++ ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)
++ trap 'date; echo failed; exit 1' ERR
++ [[ n != \y ]]
++ SYNC_DIR=/data/coco2017/sync
++ mkdir -p /data/coco2017/sync
++ for sync_f in "$SYNC_DIR/"*
++ [[ /data/coco2017/sync/2021-12-09_09-26-00 != \/\d\a\t\a\/\c\o\c\o\2\0\1\7\/\s\y\n\c\/\2\0\2\1\-\1\2\-\0\9\_\1\0\-\5\5\-\0\7 ]]
++ rm -f /data/coco2017/sync/2021-12-09_09-26-00
++ set +x
+Thu Dec  9 15:55:25 UTC 2021 Waiting for all the 1 Pods to start ...
+Adding run-ssd--1-5ntfz to the sync file ...
+Thu Dec  9 15:55:25 UTC 2021 All the 1 Pods are running, launch the GPU workload.
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
++ [[ 0 == 1 ]]
++ dest=/tmp/ssd_all.log
++ [[ 0 == 1 ]]
+Running on all the 8 GPUs 
++ echo 'Running on all the 8 GPUs '
++ tee -a /tmp/ssd_all.log
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=8 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+:::MLLOG {"namespace": "", "time_ms": 1639065327901, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327901, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327906, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327918, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327925, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065328002, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065328008, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065328104, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065330205, "event_type": "POINT_IN_TIME", "key": "seed", "value": 712801145, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO Using network IB
+NCCL version 2.7.5+cuda11.0
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO Using network IB
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO Using network IB
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO Using network IB
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO Using network IB
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO Using network IB
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO Using network IB
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO Using network IB
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Trees [0] -1/-1/-1->7->6|6->7->-1/-1/-1 [1] -1/-1/-1->7->6|6->7->-1/-1/-1 [2] -1/-1/-1->7->6|6->7->-1/-1/-1 [3] -1/-1/-1->7->6|6->7->-1/-1/-1 [4] -1/-1/-1->7->6|6->7->-1/-1/-1 [5] -1/-1/-1->7->6|6->7->-1/-1/-1 [6] -1/-1/-1->7->6|6->7->-1/-1/-1 [7] -1/-1/-1->7->6|6->7->-1/-1/-1 [8] -1/-1/-1->7->6|6->7->-1/-1/-1 [9] -1/-1/-1->7->6|6->7->-1/-1/-1 [10] -1/-1/-1->7->6|6->7->-1/-1/-1 [11] -1/-1/-1->7->6|6->7->-1/-1/-1 [12] -1/-1/-1->7->6|6->7->-1/-1/-1 [13] -1/-1/-1->7->6|6->7->-1/-1/-1 [14] -1/-1/-1->7->6|6->7->-1/-1/-1 [15] -1/-1/-1->7->6|6->7->-1/-1/-1 [16] -1/-1/-1->7->6|6->7->-1/-1/-1 [17] -1/-1/-1->7->6|6->7->-1/-1/-1 [18] -1/-1/-1->7->6|6->7->-1/-1/-1 [19] -1/-1/-1->7->6|6->7->-1/-1/-1 [20] -1/-1/-1->7->6|6->7->-1/-1/-1 [21] -1/-1/-1->7->6|6->7->-1/-1/-1 [22] -1/-1/-1->7->6|6->7->-1/-1/-1 [23] -1/-1/-1->7->6|6->7->-1/-1/-1
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] 2/-1/-1->1->0|0->1->2/-1/-1 [3] 2/-1/-1->1->0|0->1->2/-1/-1 [4] 2/-1/-1->1->0|0->1->2/-1/-1 [5] 2/-1/-1->1->0|0->1->2/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] 2/-1/-1->1->0|0->1->2/-1/-1 [9] 2/-1/-1->1->0|0->1->2/-1/-1 [10] 2/-1/-1->1->0|0->1->2/-1/-1 [11] 2/-1/-1->1->0|0->1->2/-1/-1 [12] 2/-1/-1->1->0|0->1->2/-1/-1 [13] 2/-1/-1->1->0|0->1->2/-1/-1 [14] 2/-1/-1->1->0|0->1->2/-1/-1 [15] 2/-1/-1->1->0|0->1->2/-1/-1 [16] 2/-1/-1->1->0|0->1->2/-1/-1 [17] 2/-1/-1->1->0|0->1->2/-1/-1 [18] 2/-1/-1->1->0|0->1->2/-1/-1 [19] 2/-1/-1->1->0|0->1->2/-1/-1 [20] 2/-1/-1->1->0|0->1->2/-1/-1 [21] 2/-1/-1->1->0|0->1->2/-1/-1 [22] 2/-1/-1->1->0|0->1->2/-1/-1 [23] 2/-1/-1->1->0|0->1->2/-1/-1
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Trees [0] 3/-1/-1->2->1|1->2->3/-1/-1 [1] 3/-1/-1->2->1|1->2->3/-1/-1 [2] 3/-1/-1->2->1|1->2->3/-1/-1 [3] 3/-1/-1->2->1|1->2->3/-1/-1 [4] 3/-1/-1->2->1|1->2->3/-1/-1 [5] 3/-1/-1->2->1|1->2->3/-1/-1 [6] 3/-1/-1->2->1|1->2->3/-1/-1 [7] 3/-1/-1->2->1|1->2->3/-1/-1 [8] 3/-1/-1->2->1|1->2->3/-1/-1 [9] 3/-1/-1->2->1|1->2->3/-1/-1 [10] 3/-1/-1->2->1|1->2->3/-1/-1 [11] 3/-1/-1->2->1|1->2->3/-1/-1 [12] 3/-1/-1->2->1|1->2->3/-1/-1 [13] 3/-1/-1->2->1|1->2->3/-1/-1 [14] 3/-1/-1->2->1|1->2->3/-1/-1 [15] 3/-1/-1->2->1|1->2->3/-1/-1 [16] 3/-1/-1->2->1|1->2->3/-1/-1 [17] 3/-1/-1->2->1|1->2->3/-1/-1 [18] 3/-1/-1->2->1|1->2->3/-1/-1 [19] 3/-1/-1->2->1|1->2->3/-1/-1 [20] 3/-1/-1->2->1|1->2->3/-1/-1 [21] 3/-1/-1->2->1|1->2->3/-1/-1 [22] 3/-1/-1->2->1|1->2->3/-1/-1 [23] 3/-1/-1->2->1|1->2->3/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Trees [0] 6/-1/-1->5->4|4->5->6/-1/-1 [1] 6/-1/-1->5->4|4->5->6/-1/-1 [2] 6/-1/-1->5->4|4->5->6/-1/-1 [3] 6/-1/-1->5->4|4->5->6/-1/-1 [4] 6/-1/-1->5->4|4->5->6/-1/-1 [5] 6/-1/-1->5->4|4->5->6/-1/-1 [6] 6/-1/-1->5->4|4->5->6/-1/-1 [7] 6/-1/-1->5->4|4->5->6/-1/-1 [8] 6/-1/-1->5->4|4->5->6/-1/-1 [9] 6/-1/-1->5->4|4->5->6/-1/-1 [10] 6/-1/-1->5->4|4->5->6/-1/-1 [11] 6/-1/-1->5->4|4->5->6/-1/-1 [12] 6/-1/-1->5->4|4->5->6/-1/-1 [13] 6/-1/-1->5->4|4->5->6/-1/-1 [14] 6/-1/-1->5->4|4->5->6/-1/-1 [15] 6/-1/-1->5->4|4->5->6/-1/-1 [16] 6/-1/-1->5->4|4->5->6/-1/-1 [17] 6/-1/-1->5->4|4->5->6/-1/-1 [18] 6/-1/-1->5->4|4->5->6/-1/-1 [19] 6/-1/-1->5->4|4->5->6/-1/-1 [20] 6/-1/-1->5->4|4->5->6/-1/-1 [21] 6/-1/-1->5->4|4->5->6/-1/-1 [22] 6/-1/-1->5->4|4->5->6/-1/-1 [23] 6/-1/-1->5->4|4->5->6/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Trees [0] 5/-1/-1->4->3|3->4->5/-1/-1 [1] 5/-1/-1->4->3|3->4->5/-1/-1 [2] 5/-1/-1->4->3|3->4->5/-1/-1 [3] 5/-1/-1->4->3|3->4->5/-1/-1 [4] 5/-1/-1->4->3|3->4->5/-1/-1 [5] 5/-1/-1->4->3|3->4->5/-1/-1 [6] 5/-1/-1->4->3|3->4->5/-1/-1 [7] 5/-1/-1->4->3|3->4->5/-1/-1 [8] 5/-1/-1->4->3|3->4->5/-1/-1 [9] 5/-1/-1->4->3|3->4->5/-1/-1 [10] 5/-1/-1->4->3|3->4->5/-1/-1 [11] 5/-1/-1->4->3|3->4->5/-1/-1 [12] 5/-1/-1->4->3|3->4->5/-1/-1 [13] 5/-1/-1->4->3|3->4->5/-1/-1 [14] 5/-1/-1->4->3|3->4->5/-1/-1 [15] 5/-1/-1->4->3|3->4->5/-1/-1 [16] 5/-1/-1->4->3|3->4->5/-1/-1 [17] 5/-1/-1->4->3|3->4->5/-1/-1 [18] 5/-1/-1->4->3|3->4->5/-1/-1 [19] 5/-1/-1->4->3|3->4->5/-1/-1 [20] 5/-1/-1->4->3|3->4->5/-1/-1 [21] 5/-1/-1->4->3|3->4->5/-1/-1 [22] 5/-1/-1->4->3|3->4->5/-1/-1 [23] 5/-1/-1->4->3|3->4->5/-1/-1
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Trees [0] 4/-1/-1->3->2|2->3->4/-1/-1 [1] 4/-1/-1->3->2|2->3->4/-1/-1 [2] 4/-1/-1->3->2|2->3->4/-1/-1 [3] 4/-1/-1->3->2|2->3->4/-1/-1 [4] 4/-1/-1->3->2|2->3->4/-1/-1 [5] 4/-1/-1->3->2|2->3->4/-1/-1 [6] 4/-1/-1->3->2|2->3->4/-1/-1 [7] 4/-1/-1->3->2|2->3->4/-1/-1 [8] 4/-1/-1->3->2|2->3->4/-1/-1 [9] 4/-1/-1->3->2|2->3->4/-1/-1 [10] 4/-1/-1->3->2|2->3->4/-1/-1 [11] 4/-1/-1->3->2|2->3->4/-1/-1 [12] 4/-1/-1->3->2|2->3->4/-1/-1 [13] 4/-1/-1->3->2|2->3->4/-1/-1 [14] 4/-1/-1->3->2|2->3->4/-1/-1 [15] 4/-1/-1->3->2|2->3->4/-1/-1 [16] 4/-1/-1->3->2|2->3->4/-1/-1 [17] 4/-1/-1->3->2|2->3->4/-1/-1 [18] 4/-1/-1->3->2|2->3->4/-1/-1 [19] 4/-1/-1->3->2|2->3->4/-1/-1 [20] 4/-1/-1->3->2|2->3->4/-1/-1 [21] 4/-1/-1->3->2|2->3->4/-1/-1 [22] 4/-1/-1->3->2|2->3->4/-1/-1 [23] 4/-1/-1->3->2|2->3->4/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Trees [0] 7/-1/-1->6->5|5->6->7/-1/-1 [1] 7/-1/-1->6->5|5->6->7/-1/-1 [2] 7/-1/-1->6->5|5->6->7/-1/-1 [3] 7/-1/-1->6->5|5->6->7/-1/-1 [4] 7/-1/-1->6->5|5->6->7/-1/-1 [5] 7/-1/-1->6->5|5->6->7/-1/-1 [6] 7/-1/-1->6->5|5->6->7/-1/-1 [7] 7/-1/-1->6->5|5->6->7/-1/-1 [8] 7/-1/-1->6->5|5->6->7/-1/-1 [9] 7/-1/-1->6->5|5->6->7/-1/-1 [10] 7/-1/-1->6->5|5->6->7/-1/-1 [11] 7/-1/-1->6->5|5->6->7/-1/-1 [12] 7/-1/-1->6->5|5->6->7/-1/-1 [13] 7/-1/-1->6->5|5->6->7/-1/-1 [14] 7/-1/-1->6->5|5->6->7/-1/-1 [15] 7/-1/-1->6->5|5->6->7/-1/-1 [16] 7/-1/-1->6->5|5->6->7/-1/-1 [17] 7/-1/-1->6->5|5->6->7/-1/-1 [18] 7/-1/-1->6->5|5->6->7/-1/-1 [19] 7/-1/-1->6->5|5->6->7/-1/-1 [20] 7/-1/-1->6->5|5->6->7/-1/-1 [21] 7/-1/-1->6->5|5->6->7/-1/-1 [22] 7/-1/-1->6->5|5->6->7/-1/-1 [23] 7/-1/-1->6->5|5->6->7/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 1/-1/-1->0->-1|-1->0->1/-1/-1 [3] 1/-1/-1->0->-1|-1->0->1/-1/-1 [4] 1/-1/-1->0->-1|-1->0->1/-1/-1 [5] 1/-1/-1->0->-1|-1->0->1/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 1/-1/-1->0->-1|-1->0->1/-1/-1 [9] 1/-1/-1->0->-1|-1->0->1/-1/-1 [10] 1/-1/-1->0->-1|-1->0->1/-1/-1 [11] 1/-1/-1->0->-1|-1->0->1/-1/-1 [12] 1/-1/-1->0->-1|-1->0->1/-1/-1 [13] 1/-1/-1->0->-1|-1->0->1/-1/-1 [14] 1/-1/-1->0->-1|-1->0->1/-1/-1 [15] 1/-1/-1->0->-1|-1->0->1/-1/-1 [16] 1/-1/-1->0->-1|-1->0->1/-1/-1 [17] 1/-1/-1->0->-1|-1->0->1/-1/-1 [18] 1/-1/-1->0->-1|-1->0->1/-1/-1 [19] 1/-1/-1->0->-1|-1->0->1/-1/-1 [20] 1/-1/-1->0->-1|-1->0->1/-1/-1 [21] 1/-1/-1->0->-1|-1->0->1/-1/-1 [22] 1/-1/-1->0->-1|-1->0->1/-1/-1 [23] 1/-1/-1->0->-1|-1->0->1/-1/-1
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 00 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 00 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 00 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 00 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 00 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 00 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 00 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 00 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 00 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 00 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 00 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 00 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 00 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 00 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 00 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 01 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 01 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 01 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 01 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 01 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 01 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 01 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 01 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 01 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 01 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 01 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 01 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 01 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 01 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 01 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 02 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 02 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 02 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 02 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 02 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 02 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 02 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 02 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 02 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 02 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 02 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 02 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 02 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 02 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 02 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 03 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 03 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 03 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 03 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 03 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 03 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 03 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 03 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 03 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 03 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 03 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 03 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 03 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 03 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 03 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 04 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 04 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 04 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 04 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 04 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 04 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 04 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 04 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 04 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 04 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 04 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 04 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 04 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 04 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 04 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 05 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 05 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 05 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 05 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 05 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 05 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 05 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 05 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 05 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 05 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 05 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 05 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 05 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 05 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 05 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 06 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 06 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 06 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 06 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 06 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 06 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 06 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 06 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 06 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 06 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 06 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 06 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 06 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 06 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 06 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 07 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 07 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 07 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 07 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 07 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 07 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 07 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 07 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 07 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 07 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 07 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 07 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 07 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 07 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 07 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 08 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 08 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 08 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 08 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 08 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 08 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 08 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 08 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 08 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 08 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 08 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 08 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 08 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 08 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 08 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 09 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 09 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 09 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 09 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 09 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 09 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 09 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 09 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 09 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 09 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 09 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 09 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 09 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 09 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 09 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 10 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 10 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 10 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 10 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 10 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 10 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 10 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 10 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 10 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 10 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 10 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 10 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 10 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 10 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 10 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 11 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 11 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 11 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 11 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 11 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 11 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 11 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 11 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 11 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 11 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 11 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 11 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 11 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 11 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 11 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 12 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 12 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 12 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 12 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 12 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 12 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 12 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 12 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 12 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 12 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 12 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 12 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 12 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 12 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 12 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 13 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 13 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 13 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 13 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 13 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 13 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 13 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 13 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 13 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 13 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 13 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 13 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 13 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 13 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 13 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 14 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 14 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 14 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 14 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 14 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 14 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 14 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 14 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 14 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 14 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 14 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 14 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 14 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 14 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 14 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 15 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 15 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 15 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 15 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 15 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 15 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 15 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 15 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 15 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 15 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 15 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 15 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 15 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 15 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 15 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 16 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 16 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 16 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 16 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 16 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 16 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 16 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 16 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 16 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 16 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 16 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 16 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 16 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 16 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 16 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 17 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 17 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 17 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 17 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 17 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 17 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 17 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 17 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 17 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 17 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 17 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 17 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 17 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 17 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 17 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 18 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 18 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 18 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 18 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 18 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 18 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 18 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 18 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 18 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 18 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 18 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 18 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 18 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 18 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 18 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 19 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 19 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 19 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 19 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 19 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 19 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 19 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 19 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 19 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 19 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 19 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 19 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 19 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 19 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 19 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 20 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 20 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 20 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 20 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 20 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 20 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 20 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 20 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 20 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 20 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 20 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 20 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 20 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 20 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 20 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 21 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 21 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 21 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 21 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 21 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 21 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 21 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 21 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 21 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 21 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 21 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 21 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 21 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 21 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 21 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 22 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 22 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 22 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 22 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 22 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 22 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 22 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 22 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 22 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 22 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 22 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 22 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 22 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 22 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 22 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 23 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 23 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 23 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 23 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 23 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 23 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 23 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 23 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 23 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 23 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 23 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 23 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 23 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 23 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 23 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO comm 0x7f08d0006880 rank 7 nranks 8 cudaDev 7 busId bd000 - Init COMPLETE
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO comm 0x7ff10c006880 rank 0 nranks 8 cudaDev 0 busId 7000 - Init COMPLETE
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO Launch mode Parallel
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO comm 0x7f56fc006880 rank 2 nranks 8 cudaDev 2 busId 47000 - Init COMPLETE
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO comm 0x7fb0a8006880 rank 3 nranks 8 cudaDev 3 busId 4e000 - Init COMPLETE
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO comm 0x7fbc44006880 rank 1 nranks 8 cudaDev 1 busId f000 - Init COMPLETE
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO comm 0x7f0314006880 rank 5 nranks 8 cudaDev 5 busId 90000 - Init COMPLETE
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO comm 0x7f9f2c006880 rank 4 nranks 8 cudaDev 4 busId 87000 - Init COMPLETE
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+0 Using seed = 712801145
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO comm 0x7f9a64006880 rank 6 nranks 8 cudaDev 6 busId b7000 - Init COMPLETE
+3 Using seed = 712801148
+2 Using seed = 712801147
+1 Using seed = 712801146
+7 Using seed = 712801152
+5 Using seed = 712801150
+6 Using seed = 712801151
+4 Using seed = 712801149
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+:::MLLOG {"namespace": "", "time_ms": 1639065336522, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336522, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 912, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+Delaying allreduces to the end of backward()
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.09, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336533, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336533, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+:::MLLOG {"namespace": "", "time_ms": 1639065360252, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639065360259, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+loading annotations into memory...
+:::MLLOG {"namespace": "", "time_ms": 1639065363256, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639065363257, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.21s)
+creating index...
+Done (t=0.20s)
+creating index...
+Done (t=0.24s)
+creating index...
+Done (t=0.21s)
+creating index...
+Done (t=0.23s)
+creating index...
+Done (t=0.18s)
+creating index...
+Done (t=0.20s)
+creating index...
+Done (t=0.20s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639065363596, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639065363596, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065363598, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.724, Average Loss: 0.023, avg. samples / sec: 34.23
+Iteration:     20, Loss function: 20.713, Average Loss: 0.443, avg. samples / sec: 5754.84
+Iteration:     40, Loss function: 17.824, Average Loss: 0.828, avg. samples / sec: 6380.28
+Iteration:     60, Loss function: 13.117, Average Loss: 1.095, avg. samples / sec: 6681.14
+Iteration:     80, Loss function: 10.358, Average Loss: 1.293, avg. samples / sec: 6525.31
+Iteration:    100, Loss function: 9.587, Average Loss: 1.466, avg. samples / sec: 6765.89
+Iteration:    120, Loss function: 9.241, Average Loss: 1.622, avg. samples / sec: 6541.22
+:::MLLOG {"namespace": "", "time_ms": 1639065381736, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639065381738, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 129}}
+Iteration:    140, Loss function: 9.006, Average Loss: 1.768, avg. samples / sec: 6856.63
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    160, Loss function: 8.454, Average Loss: 1.905, avg. samples / sec: 7050.99
+Iteration:    180, Loss function: 8.213, Average Loss: 2.036, avg. samples / sec: 6958.63
+Iteration:    200, Loss function: 7.937, Average Loss: 2.157, avg. samples / sec: 6584.62
+Iteration:    220, Loss function: 8.235, Average Loss: 2.272, avg. samples / sec: 7121.94
+Iteration:    240, Loss function: 8.161, Average Loss: 2.399, avg. samples / sec: 6490.72
+:::MLLOG {"namespace": "", "time_ms": 1639065398886, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639065398888, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 258}}
+Iteration:    260, Loss function: 7.592, Average Loss: 2.507, avg. samples / sec: 7174.65
+Iteration:    280, Loss function: 7.190, Average Loss: 2.606, avg. samples / sec: 7119.24
+Iteration:    300, Loss function: 7.422, Average Loss: 2.702, avg. samples / sec: 7049.10
+Iteration:    320, Loss function: 7.110, Average Loss: 2.792, avg. samples / sec: 6894.41
+Iteration:    340, Loss function: 7.266, Average Loss: 2.882, avg. samples / sec: 7221.00
+Iteration:    360, Loss function: 7.055, Average Loss: 2.966, avg. samples / sec: 6976.92
+Iteration:    380, Loss function: 6.888, Average Loss: 3.045, avg. samples / sec: 7223.65
+:::MLLOG {"namespace": "", "time_ms": 1639065415379, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639065415380, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 386}}
+Iteration:    400, Loss function: 6.762, Average Loss: 3.123, avg. samples / sec: 7245.13
+Iteration:    420, Loss function: 6.817, Average Loss: 3.194, avg. samples / sec: 6770.16
+Iteration:    440, Loss function: 6.663, Average Loss: 3.265, avg. samples / sec: 7219.16
+Iteration:    460, Loss function: 6.827, Average Loss: 3.329, avg. samples / sec: 5194.05
+Iteration:    480, Loss function: 6.431, Average Loss: 3.392, avg. samples / sec: 7153.35
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    500, Loss function: 6.428, Average Loss: 3.456, avg. samples / sec: 7204.08
+:::MLLOG {"namespace": "", "time_ms": 1639065432971, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639065432973, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 515}}
+Iteration:    520, Loss function: 6.473, Average Loss: 3.514, avg. samples / sec: 7022.75
+Iteration:    540, Loss function: 6.716, Average Loss: 3.572, avg. samples / sec: 7053.51
+Iteration:    560, Loss function: 6.271, Average Loss: 3.627, avg. samples / sec: 7096.75
+Iteration:    580, Loss function: 5.905, Average Loss: 3.675, avg. samples / sec: 7060.75
+Iteration:    600, Loss function: 6.038, Average Loss: 3.722, avg. samples / sec: 7156.57
+Iteration:    620, Loss function: 6.219, Average Loss: 3.769, avg. samples / sec: 7212.98
+Iteration:    640, Loss function: 6.013, Average Loss: 3.811, avg. samples / sec: 7143.61
+:::MLLOG {"namespace": "", "time_ms": 1639065449295, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.10 s
+:::MLLOG {"namespace": "", "time_ms": 1639065454467, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639065454535, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065454535, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 643}}
+Loading and preparing results...
+DONE (t=0.64s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:    660, Loss function: 5.981, Average Loss: 3.851, avg. samples / sec: 2332.45
+DONE (t=4.03s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.04315
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.09481
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.03475
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.09844
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.07493
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.10639
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11138
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.11138
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.04315 AP goal: 0.10000
+Iteration:    680, Loss function: 5.873, Average Loss: 3.888, avg. samples / sec: 6735.66
+:::MLLOG {"namespace": "", "time_ms": 1639065459576, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065459577, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.043151150256233055, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065459577, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+Iteration:    700, Loss function: 5.595, Average Loss: 3.924, avg. samples / sec: 7215.75
+Iteration:    720, Loss function: 5.447, Average Loss: 3.961, avg. samples / sec: 7259.02
+Iteration:    740, Loss function: 5.510, Average Loss: 3.992, avg. samples / sec: 7150.93
+Iteration:    760, Loss function: 5.563, Average Loss: 4.023, avg. samples / sec: 7271.35
+:::MLLOG {"namespace": "", "time_ms": 1639065471127, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639065471128, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 7, "current_iter_num": 772}}
+Iteration:    780, Loss function: 5.624, Average Loss: 4.053, avg. samples / sec: 7090.43
+Iteration:    800, Loss function: 5.843, Average Loss: 4.078, avg. samples / sec: 6797.57
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    820, Loss function: 5.261, Average Loss: 4.103, avg. samples / sec: 7331.25
+Iteration:    840, Loss function: 5.356, Average Loss: 4.129, avg. samples / sec: 7167.44
+Iteration:    860, Loss function: 5.271, Average Loss: 4.151, avg. samples / sec: 7234.85
+Iteration:    880, Loss function: 5.375, Average Loss: 4.172, avg. samples / sec: 7223.04
+Iteration:    900, Loss function: 5.123, Average Loss: 4.193, avg. samples / sec: 6321.02
+:::MLLOG {"namespace": "", "time_ms": 1639065487929, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 7}}
+:::MLLOG {"namespace": "", "time_ms": 1639065487931, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 8, "current_iter_num": 901}}
+Iteration:    920, Loss function: 5.081, Average Loss: 4.211, avg. samples / sec: 7196.98
+Iteration:    940, Loss function: 4.894, Average Loss: 4.227, avg. samples / sec: 7180.76
+Iteration:    960, Loss function: 4.883, Average Loss: 4.245, avg. samples / sec: 7093.64
+Iteration:    980, Loss function: 5.055, Average Loss: 4.261, avg. samples / sec: 7155.58
+Iteration:   1000, Loss function: 4.897, Average Loss: 4.275, avg. samples / sec: 7268.77
+Iteration:   1020, Loss function: 5.123, Average Loss: 4.291, avg. samples / sec: 7080.68
+:::MLLOG {"namespace": "", "time_ms": 1639065504250, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 8}}
+:::MLLOG {"namespace": "", "time_ms": 1639065504253, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 9, "current_iter_num": 1029}}
+Iteration:   1040, Loss function: 4.841, Average Loss: 4.305, avg. samples / sec: 7107.41
+Iteration:   1060, Loss function: 4.873, Average Loss: 4.316, avg. samples / sec: 7256.66
+Iteration:   1080, Loss function: 4.646, Average Loss: 4.328, avg. samples / sec: 7245.20
+Iteration:   1100, Loss function: 4.628, Average Loss: 4.340, avg. samples / sec: 7237.52
+Iteration:   1120, Loss function: 4.865, Average Loss: 4.350, avg. samples / sec: 7179.77
+Iteration:   1140, Loss function: 4.990, Average Loss: 4.361, avg. samples / sec: 7109.56
+:::MLLOG {"namespace": "", "time_ms": 1639065520572, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 9}}
+:::MLLOG {"namespace": "", "time_ms": 1639065520573, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 10, "current_iter_num": 1158}}
+Iteration:   1160, Loss function: 4.942, Average Loss: 4.369, avg. samples / sec: 7201.19
+Iteration:   1180, Loss function: 4.434, Average Loss: 4.378, avg. samples / sec: 7200.38
+Iteration:   1200, Loss function: 4.874, Average Loss: 4.386, avg. samples / sec: 7185.83
+Iteration:   1220, Loss function: 4.859, Average Loss: 4.395, avg. samples / sec: 7266.88
+Iteration:   1240, Loss function: 4.745, Average Loss: 4.402, avg. samples / sec: 7296.01
+Iteration:   1260, Loss function: 4.770, Average Loss: 4.409, avg. samples / sec: 7074.05
+Iteration:   1280, Loss function: 4.508, Average Loss: 4.415, avg. samples / sec: 7288.95
+:::MLLOG {"namespace": "", "time_ms": 1639065536702, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 10}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.62 s
+:::MLLOG {"namespace": "", "time_ms": 1639065542366, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639065542434, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 11, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065542435, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 11, "current_iter_num": 1286}}
+Loading and preparing results...
+DONE (t=1.12s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   1300, Loss function: 4.648, Average Loss: 4.420, avg. samples / sec: 2258.11
+Iteration:   1320, Loss function: 5.085, Average Loss: 4.426, avg. samples / sec: 6642.31
+DONE (t=5.22s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11302
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.22564
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.10481
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.20332
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.14332
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.21301
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.22461
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.22461
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.11302 AP goal: 0.10000
+Iteration:   1340, Loss function: 4.886, Average Loss: 4.430, avg. samples / sec: 6828.78
+:::MLLOG {"namespace": "", "time_ms": 1639065549590, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639065549590, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.11301752674809644, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639065549591, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639065549978, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
++ [[ fast == \d\r\y ]]
+++ date
++ echo 'Thu Dec  9 15:59:12 UTC 2021: done waiting for 8 executions'
+Thu Dec  9 15:59:12 UTC 2021: done waiting for 8 executions
++ ls /tmp/ssd_all.log
+/tmp/ssd_all.log
++ grep . /tmp/ssd_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639065327901, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327901, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327906, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327918, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065327925, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065328002, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065328008, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065328104, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639065330205, "event_type": "POINT_IN_TIME", "key": "seed", "value": 712801145, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO Using network IB
+NCCL version 2.7.5+cuda11.0
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:50:50 [2] NCCL INFO Using network IB
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:49:49 [1] NCCL INFO Using network IB
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:53:53 [5] NCCL INFO Using network IB
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:51:51 [3] NCCL INFO Using network IB
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:55:55 [7] NCCL INFO Using network IB
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.35<0>
+run-ssd--1-5ntfz:54:54 [6] NCCL INFO Using network IB
+run-ssd--1-5ntfz:52:52 [4] NCCL INFO Using network IB
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Trees [0] -1/-1/-1->7->6|6->7->-1/-1/-1 [1] -1/-1/-1->7->6|6->7->-1/-1/-1 [2] -1/-1/-1->7->6|6->7->-1/-1/-1 [3] -1/-1/-1->7->6|6->7->-1/-1/-1 [4] -1/-1/-1->7->6|6->7->-1/-1/-1 [5] -1/-1/-1->7->6|6->7->-1/-1/-1 [6] -1/-1/-1->7->6|6->7->-1/-1/-1 [7] -1/-1/-1->7->6|6->7->-1/-1/-1 [8] -1/-1/-1->7->6|6->7->-1/-1/-1 [9] -1/-1/-1->7->6|6->7->-1/-1/-1 [10] -1/-1/-1->7->6|6->7->-1/-1/-1 [11] -1/-1/-1->7->6|6->7->-1/-1/-1 [12] -1/-1/-1->7->6|6->7->-1/-1/-1 [13] -1/-1/-1->7->6|6->7->-1/-1/-1 [14] -1/-1/-1->7->6|6->7->-1/-1/-1 [15] -1/-1/-1->7->6|6->7->-1/-1/-1 [16] -1/-1/-1->7->6|6->7->-1/-1/-1 [17] -1/-1/-1->7->6|6->7->-1/-1/-1 [18] -1/-1/-1->7->6|6->7->-1/-1/-1 [19] -1/-1/-1->7->6|6->7->-1/-1/-1 [20] -1/-1/-1->7->6|6->7->-1/-1/-1 [21] -1/-1/-1->7->6|6->7->-1/-1/-1 [22] -1/-1/-1->7->6|6->7->-1/-1/-1 [23] -1/-1/-1->7->6|6->7->-1/-1/-1
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] 2/-1/-1->1->0|0->1->2/-1/-1 [3] 2/-1/-1->1->0|0->1->2/-1/-1 [4] 2/-1/-1->1->0|0->1->2/-1/-1 [5] 2/-1/-1->1->0|0->1->2/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] 2/-1/-1->1->0|0->1->2/-1/-1 [9] 2/-1/-1->1->0|0->1->2/-1/-1 [10] 2/-1/-1->1->0|0->1->2/-1/-1 [11] 2/-1/-1->1->0|0->1->2/-1/-1 [12] 2/-1/-1->1->0|0->1->2/-1/-1 [13] 2/-1/-1->1->0|0->1->2/-1/-1 [14] 2/-1/-1->1->0|0->1->2/-1/-1 [15] 2/-1/-1->1->0|0->1->2/-1/-1 [16] 2/-1/-1->1->0|0->1->2/-1/-1 [17] 2/-1/-1->1->0|0->1->2/-1/-1 [18] 2/-1/-1->1->0|0->1->2/-1/-1 [19] 2/-1/-1->1->0|0->1->2/-1/-1 [20] 2/-1/-1->1->0|0->1->2/-1/-1 [21] 2/-1/-1->1->0|0->1->2/-1/-1 [22] 2/-1/-1->1->0|0->1->2/-1/-1 [23] 2/-1/-1->1->0|0->1->2/-1/-1
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Trees [0] 3/-1/-1->2->1|1->2->3/-1/-1 [1] 3/-1/-1->2->1|1->2->3/-1/-1 [2] 3/-1/-1->2->1|1->2->3/-1/-1 [3] 3/-1/-1->2->1|1->2->3/-1/-1 [4] 3/-1/-1->2->1|1->2->3/-1/-1 [5] 3/-1/-1->2->1|1->2->3/-1/-1 [6] 3/-1/-1->2->1|1->2->3/-1/-1 [7] 3/-1/-1->2->1|1->2->3/-1/-1 [8] 3/-1/-1->2->1|1->2->3/-1/-1 [9] 3/-1/-1->2->1|1->2->3/-1/-1 [10] 3/-1/-1->2->1|1->2->3/-1/-1 [11] 3/-1/-1->2->1|1->2->3/-1/-1 [12] 3/-1/-1->2->1|1->2->3/-1/-1 [13] 3/-1/-1->2->1|1->2->3/-1/-1 [14] 3/-1/-1->2->1|1->2->3/-1/-1 [15] 3/-1/-1->2->1|1->2->3/-1/-1 [16] 3/-1/-1->2->1|1->2->3/-1/-1 [17] 3/-1/-1->2->1|1->2->3/-1/-1 [18] 3/-1/-1->2->1|1->2->3/-1/-1 [19] 3/-1/-1->2->1|1->2->3/-1/-1 [20] 3/-1/-1->2->1|1->2->3/-1/-1 [21] 3/-1/-1->2->1|1->2->3/-1/-1 [22] 3/-1/-1->2->1|1->2->3/-1/-1 [23] 3/-1/-1->2->1|1->2->3/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Trees [0] 6/-1/-1->5->4|4->5->6/-1/-1 [1] 6/-1/-1->5->4|4->5->6/-1/-1 [2] 6/-1/-1->5->4|4->5->6/-1/-1 [3] 6/-1/-1->5->4|4->5->6/-1/-1 [4] 6/-1/-1->5->4|4->5->6/-1/-1 [5] 6/-1/-1->5->4|4->5->6/-1/-1 [6] 6/-1/-1->5->4|4->5->6/-1/-1 [7] 6/-1/-1->5->4|4->5->6/-1/-1 [8] 6/-1/-1->5->4|4->5->6/-1/-1 [9] 6/-1/-1->5->4|4->5->6/-1/-1 [10] 6/-1/-1->5->4|4->5->6/-1/-1 [11] 6/-1/-1->5->4|4->5->6/-1/-1 [12] 6/-1/-1->5->4|4->5->6/-1/-1 [13] 6/-1/-1->5->4|4->5->6/-1/-1 [14] 6/-1/-1->5->4|4->5->6/-1/-1 [15] 6/-1/-1->5->4|4->5->6/-1/-1 [16] 6/-1/-1->5->4|4->5->6/-1/-1 [17] 6/-1/-1->5->4|4->5->6/-1/-1 [18] 6/-1/-1->5->4|4->5->6/-1/-1 [19] 6/-1/-1->5->4|4->5->6/-1/-1 [20] 6/-1/-1->5->4|4->5->6/-1/-1 [21] 6/-1/-1->5->4|4->5->6/-1/-1 [22] 6/-1/-1->5->4|4->5->6/-1/-1 [23] 6/-1/-1->5->4|4->5->6/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Trees [0] 5/-1/-1->4->3|3->4->5/-1/-1 [1] 5/-1/-1->4->3|3->4->5/-1/-1 [2] 5/-1/-1->4->3|3->4->5/-1/-1 [3] 5/-1/-1->4->3|3->4->5/-1/-1 [4] 5/-1/-1->4->3|3->4->5/-1/-1 [5] 5/-1/-1->4->3|3->4->5/-1/-1 [6] 5/-1/-1->4->3|3->4->5/-1/-1 [7] 5/-1/-1->4->3|3->4->5/-1/-1 [8] 5/-1/-1->4->3|3->4->5/-1/-1 [9] 5/-1/-1->4->3|3->4->5/-1/-1 [10] 5/-1/-1->4->3|3->4->5/-1/-1 [11] 5/-1/-1->4->3|3->4->5/-1/-1 [12] 5/-1/-1->4->3|3->4->5/-1/-1 [13] 5/-1/-1->4->3|3->4->5/-1/-1 [14] 5/-1/-1->4->3|3->4->5/-1/-1 [15] 5/-1/-1->4->3|3->4->5/-1/-1 [16] 5/-1/-1->4->3|3->4->5/-1/-1 [17] 5/-1/-1->4->3|3->4->5/-1/-1 [18] 5/-1/-1->4->3|3->4->5/-1/-1 [19] 5/-1/-1->4->3|3->4->5/-1/-1 [20] 5/-1/-1->4->3|3->4->5/-1/-1 [21] 5/-1/-1->4->3|3->4->5/-1/-1 [22] 5/-1/-1->4->3|3->4->5/-1/-1 [23] 5/-1/-1->4->3|3->4->5/-1/-1
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Trees [0] 4/-1/-1->3->2|2->3->4/-1/-1 [1] 4/-1/-1->3->2|2->3->4/-1/-1 [2] 4/-1/-1->3->2|2->3->4/-1/-1 [3] 4/-1/-1->3->2|2->3->4/-1/-1 [4] 4/-1/-1->3->2|2->3->4/-1/-1 [5] 4/-1/-1->3->2|2->3->4/-1/-1 [6] 4/-1/-1->3->2|2->3->4/-1/-1 [7] 4/-1/-1->3->2|2->3->4/-1/-1 [8] 4/-1/-1->3->2|2->3->4/-1/-1 [9] 4/-1/-1->3->2|2->3->4/-1/-1 [10] 4/-1/-1->3->2|2->3->4/-1/-1 [11] 4/-1/-1->3->2|2->3->4/-1/-1 [12] 4/-1/-1->3->2|2->3->4/-1/-1 [13] 4/-1/-1->3->2|2->3->4/-1/-1 [14] 4/-1/-1->3->2|2->3->4/-1/-1 [15] 4/-1/-1->3->2|2->3->4/-1/-1 [16] 4/-1/-1->3->2|2->3->4/-1/-1 [17] 4/-1/-1->3->2|2->3->4/-1/-1 [18] 4/-1/-1->3->2|2->3->4/-1/-1 [19] 4/-1/-1->3->2|2->3->4/-1/-1 [20] 4/-1/-1->3->2|2->3->4/-1/-1 [21] 4/-1/-1->3->2|2->3->4/-1/-1 [22] 4/-1/-1->3->2|2->3->4/-1/-1 [23] 4/-1/-1->3->2|2->3->4/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4   5   6   7
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Trees [0] 7/-1/-1->6->5|5->6->7/-1/-1 [1] 7/-1/-1->6->5|5->6->7/-1/-1 [2] 7/-1/-1->6->5|5->6->7/-1/-1 [3] 7/-1/-1->6->5|5->6->7/-1/-1 [4] 7/-1/-1->6->5|5->6->7/-1/-1 [5] 7/-1/-1->6->5|5->6->7/-1/-1 [6] 7/-1/-1->6->5|5->6->7/-1/-1 [7] 7/-1/-1->6->5|5->6->7/-1/-1 [8] 7/-1/-1->6->5|5->6->7/-1/-1 [9] 7/-1/-1->6->5|5->6->7/-1/-1 [10] 7/-1/-1->6->5|5->6->7/-1/-1 [11] 7/-1/-1->6->5|5->6->7/-1/-1 [12] 7/-1/-1->6->5|5->6->7/-1/-1 [13] 7/-1/-1->6->5|5->6->7/-1/-1 [14] 7/-1/-1->6->5|5->6->7/-1/-1 [15] 7/-1/-1->6->5|5->6->7/-1/-1 [16] 7/-1/-1->6->5|5->6->7/-1/-1 [17] 7/-1/-1->6->5|5->6->7/-1/-1 [18] 7/-1/-1->6->5|5->6->7/-1/-1 [19] 7/-1/-1->6->5|5->6->7/-1/-1 [20] 7/-1/-1->6->5|5->6->7/-1/-1 [21] 7/-1/-1->6->5|5->6->7/-1/-1 [22] 7/-1/-1->6->5|5->6->7/-1/-1 [23] 7/-1/-1->6->5|5->6->7/-1/-1
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 8/8/64
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 1/-1/-1->0->-1|-1->0->1/-1/-1 [3] 1/-1/-1->0->-1|-1->0->1/-1/-1 [4] 1/-1/-1->0->-1|-1->0->1/-1/-1 [5] 1/-1/-1->0->-1|-1->0->1/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 1/-1/-1->0->-1|-1->0->1/-1/-1 [9] 1/-1/-1->0->-1|-1->0->1/-1/-1 [10] 1/-1/-1->0->-1|-1->0->1/-1/-1 [11] 1/-1/-1->0->-1|-1->0->1/-1/-1 [12] 1/-1/-1->0->-1|-1->0->1/-1/-1 [13] 1/-1/-1->0->-1|-1->0->1/-1/-1 [14] 1/-1/-1->0->-1|-1->0->1/-1/-1 [15] 1/-1/-1->0->-1|-1->0->1/-1/-1 [16] 1/-1/-1->0->-1|-1->0->1/-1/-1 [17] 1/-1/-1->0->-1|-1->0->1/-1/-1 [18] 1/-1/-1->0->-1|-1->0->1/-1/-1 [19] 1/-1/-1->0->-1|-1->0->1/-1/-1 [20] 1/-1/-1->0->-1|-1->0->1/-1/-1 [21] 1/-1/-1->0->-1|-1->0->1/-1/-1 [22] 1/-1/-1->0->-1|-1->0->1/-1/-1 [23] 1/-1/-1->0->-1|-1->0->1/-1/-1
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 00 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 00 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 00 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 00 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 00 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 00 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 00 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 00 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 00 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 00 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 00 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 00 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 00 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 00 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 00 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 01 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 01 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 01 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 01 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 01 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 01 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 01 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 01 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 01 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 01 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 01 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 01 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 01 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 01 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 01 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 02 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 02 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 02 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 02 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 02 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 02 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 02 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 02 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 02 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 02 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 02 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 02 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 02 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 02 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 02 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 03 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 03 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 03 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 03 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 03 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 03 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 03 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 03 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 03 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 03 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 03 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 03 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 03 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 03 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 03 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 04 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 04 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 04 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 04 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 04 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 04 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 04 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 04 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 04 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 04 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 04 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 04 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 04 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 04 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 04 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 05 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 05 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 05 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 05 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 05 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 05 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 05 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 05 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 05 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 05 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 05 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 05 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 05 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 05 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 05 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 06 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 06 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 06 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 06 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 06 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 06 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 06 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 06 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 06 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 06 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 06 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 06 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 06 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 06 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 06 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 07 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 07 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 07 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 07 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 07 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 07 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 07 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 07 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 07 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 07 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 07 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 07 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 07 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 07 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 07 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 08 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 08 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 08 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 08 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 08 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 08 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 08 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 08 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 08 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 08 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 08 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 08 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 08 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 08 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 08 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 09 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 09 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 09 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 09 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 09 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 09 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 09 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 09 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 09 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 09 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 09 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 09 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 09 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 09 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 09 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 10 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 10 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 10 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 10 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 10 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 10 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 10 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 10 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 10 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 10 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 10 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 10 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 10 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 10 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 10 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 11 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 11 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 11 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 11 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 11 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 11 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 11 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 11 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 11 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 11 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 11 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 11 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 11 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 11 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 11 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 12 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 12 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 12 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 12 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 12 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 12 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 12 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 12 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 12 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 12 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 12 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 12 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 12 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 12 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 12 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 13 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 13 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 13 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 13 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 13 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 13 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 13 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 13 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 13 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 13 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 13 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 13 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 13 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 13 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 13 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 14 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 14 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 14 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 14 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 14 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 14 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 14 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 14 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 14 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 14 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 14 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 14 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 14 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 14 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 14 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 15 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 15 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 15 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 15 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 15 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 15 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 15 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 15 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 15 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 15 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 15 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 15 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 15 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 15 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 15 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 16 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 16 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 16 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 16 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 16 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 16 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 16 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 16 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 16 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 16 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 16 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 16 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 16 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 16 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 16 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 17 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 17 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 17 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 17 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 17 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 17 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 17 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 17 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 17 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 17 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 17 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 17 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 17 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 17 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 17 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 18 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 18 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 18 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 18 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 18 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 18 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 18 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 18 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 18 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 18 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 18 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 18 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 18 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 18 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 18 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 19 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 19 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 19 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 19 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 19 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 19 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 19 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 19 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 19 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 19 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 19 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 19 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 19 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 19 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 19 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 20 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 20 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 20 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 20 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 20 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 20 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 20 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 20 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 20 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 20 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 20 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 20 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 20 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 20 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 20 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 21 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 21 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 21 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 21 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 21 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 21 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 21 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 21 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 21 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 21 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 21 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 21 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 21 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 21 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 21 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 22 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 22 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 22 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 22 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 22 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 22 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 22 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 22 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 22 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 22 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 22 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 22 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 22 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 22 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 22 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 23 : 7[bd000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO Channel 23 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 23 : 2[47000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 23 : 3[4e000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 23 : 1[f000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 23 : 5[90000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 23 : 4[87000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 23 : 6[b7000] -> 7[bd000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO Channel 23 : 7[bd000] -> 6[b7000] via P2P/IPC/read
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO Channel 23 : 2[47000] -> 1[f000] via P2P/IPC/read
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO Channel 23 : 3[4e000] -> 2[47000] via P2P/IPC/read
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO Channel 23 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO Channel 23 : 5[90000] -> 4[87000] via P2P/IPC/read
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO Channel 23 : 4[87000] -> 3[4e000] via P2P/IPC/read
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO Channel 23 : 6[b7000] -> 5[90000] via P2P/IPC/read
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:55:151 [7] NCCL INFO comm 0x7f08d0006880 rank 7 nranks 8 cudaDev 7 busId bd000 - Init COMPLETE
+run-ssd--1-5ntfz:48:132 [0] NCCL INFO comm 0x7ff10c006880 rank 0 nranks 8 cudaDev 0 busId 7000 - Init COMPLETE
+run-ssd--1-5ntfz:48:48 [0] NCCL INFO Launch mode Parallel
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:50:147 [2] NCCL INFO comm 0x7f56fc006880 rank 2 nranks 8 cudaDev 2 busId 47000 - Init COMPLETE
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:51:150 [3] NCCL INFO comm 0x7fb0a8006880 rank 3 nranks 8 cudaDev 3 busId 4e000 - Init COMPLETE
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:49:148 [1] NCCL INFO comm 0x7fbc44006880 rank 1 nranks 8 cudaDev 1 busId f000 - Init COMPLETE
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:53:149 [5] NCCL INFO comm 0x7f0314006880 rank 5 nranks 8 cudaDev 5 busId 90000 - Init COMPLETE
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-ssd--1-5ntfz:52:152 [4] NCCL INFO comm 0x7f9f2c006880 rank 4 nranks 8 cudaDev 4 busId 87000 - Init COMPLETE
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+0 Using seed = 712801145
+run-ssd--1-5ntfz:54:153 [6] NCCL INFO comm 0x7f9a64006880 rank 6 nranks 8 cudaDev 6 busId b7000 - Init COMPLETE
+3 Using seed = 712801148
+2 Using seed = 712801147
+1 Using seed = 712801146
+7 Using seed = 712801152
+5 Using seed = 712801150
+6 Using seed = 712801151
+4 Using seed = 712801149
+:::MLLOG {"namespace": "", "time_ms": 1639065336522, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336522, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 912, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+Delaying allreduces to the end of backward()
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.09, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336532, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336533, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639065336533, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+:::MLLOG {"namespace": "", "time_ms": 1639065360252, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639065360259, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+loading annotations into memory...
+:::MLLOG {"namespace": "", "time_ms": 1639065363256, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639065363257, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.21s)
+creating index...
+Done (t=0.20s)
+creating index...
+Done (t=0.24s)
+creating index...
+Done (t=0.21s)
+creating index...
+Done (t=0.23s)
+creating index...
+Done (t=0.18s)
+creating index...
+Done (t=0.20s)
+creating index...
+Done (t=0.20s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639065363596, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639065363596, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065363598, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.724, Average Loss: 0.023, avg. samples / sec: 34.23
+Iteration:     20, Loss function: 20.713, Average Loss: 0.443, avg. samples / sec: 5754.84
+Iteration:     40, Loss function: 17.824, Average Loss: 0.828, avg. samples / sec: 6380.28
+Iteration:     60, Loss function: 13.117, Average Loss: 1.095, avg. samples / sec: 6681.14
+Iteration:     80, Loss function: 10.358, Average Loss: 1.293, avg. samples / sec: 6525.31
+Iteration:    100, Loss function: 9.587, Average Loss: 1.466, avg. samples / sec: 6765.89
+Iteration:    120, Loss function: 9.241, Average Loss: 1.622, avg. samples / sec: 6541.22
+:::MLLOG {"namespace": "", "time_ms": 1639065381736, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639065381738, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 129}}
+Iteration:    140, Loss function: 9.006, Average Loss: 1.768, avg. samples / sec: 6856.63
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    160, Loss function: 8.454, Average Loss: 1.905, avg. samples / sec: 7050.99
+Iteration:    180, Loss function: 8.213, Average Loss: 2.036, avg. samples / sec: 6958.63
+Iteration:    200, Loss function: 7.937, Average Loss: 2.157, avg. samples / sec: 6584.62
+Iteration:    220, Loss function: 8.235, Average Loss: 2.272, avg. samples / sec: 7121.94
+Iteration:    240, Loss function: 8.161, Average Loss: 2.399, avg. samples / sec: 6490.72
+:::MLLOG {"namespace": "", "time_ms": 1639065398886, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639065398888, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 258}}
+Iteration:    260, Loss function: 7.592, Average Loss: 2.507, avg. samples / sec: 7174.65
+Iteration:    280, Loss function: 7.190, Average Loss: 2.606, avg. samples / sec: 7119.24
+Iteration:    300, Loss function: 7.422, Average Loss: 2.702, avg. samples / sec: 7049.10
+Iteration:    320, Loss function: 7.110, Average Loss: 2.792, avg. samples / sec: 6894.41
+Iteration:    340, Loss function: 7.266, Average Loss: 2.882, avg. samples / sec: 7221.00
+Iteration:    360, Loss function: 7.055, Average Loss: 2.966, avg. samples / sec: 6976.92
+Iteration:    380, Loss function: 6.888, Average Loss: 3.045, avg. samples / sec: 7223.65
+:::MLLOG {"namespace": "", "time_ms": 1639065415379, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639065415380, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 386}}
+Iteration:    400, Loss function: 6.762, Average Loss: 3.123, avg. samples / sec: 7245.13
+Iteration:    420, Loss function: 6.817, Average Loss: 3.194, avg. samples / sec: 6770.16
+Iteration:    440, Loss function: 6.663, Average Loss: 3.265, avg. samples / sec: 7219.16
+Iteration:    460, Loss function: 6.827, Average Loss: 3.329, avg. samples / sec: 5194.05
+Iteration:    480, Loss function: 6.431, Average Loss: 3.392, avg. samples / sec: 7153.35
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    500, Loss function: 6.428, Average Loss: 3.456, avg. samples / sec: 7204.08
+:::MLLOG {"namespace": "", "time_ms": 1639065432971, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639065432973, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 515}}
+Iteration:    520, Loss function: 6.473, Average Loss: 3.514, avg. samples / sec: 7022.75
+Iteration:    540, Loss function: 6.716, Average Loss: 3.572, avg. samples / sec: 7053.51
+Iteration:    560, Loss function: 6.271, Average Loss: 3.627, avg. samples / sec: 7096.75
+Iteration:    580, Loss function: 5.905, Average Loss: 3.675, avg. samples / sec: 7060.75
+Iteration:    600, Loss function: 6.038, Average Loss: 3.722, avg. samples / sec: 7156.57
+Iteration:    620, Loss function: 6.219, Average Loss: 3.769, avg. samples / sec: 7212.98
+Iteration:    640, Loss function: 6.013, Average Loss: 3.811, avg. samples / sec: 7143.61
+:::MLLOG {"namespace": "", "time_ms": 1639065449295, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.10 s
+:::MLLOG {"namespace": "", "time_ms": 1639065454467, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639065454535, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065454535, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 643}}
+Loading and preparing results...
+DONE (t=0.64s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:    660, Loss function: 5.981, Average Loss: 3.851, avg. samples / sec: 2332.45
+DONE (t=4.03s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.04315
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.09481
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.03475
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.09844
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.07493
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.10639
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11138
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.11138
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.04315 AP goal: 0.10000
+Iteration:    680, Loss function: 5.873, Average Loss: 3.888, avg. samples / sec: 6735.66
+:::MLLOG {"namespace": "", "time_ms": 1639065459576, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065459577, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.043151150256233055, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065459577, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+Iteration:    700, Loss function: 5.595, Average Loss: 3.924, avg. samples / sec: 7215.75
+Iteration:    720, Loss function: 5.447, Average Loss: 3.961, avg. samples / sec: 7259.02
+Iteration:    740, Loss function: 5.510, Average Loss: 3.992, avg. samples / sec: 7150.93
+Iteration:    760, Loss function: 5.563, Average Loss: 4.023, avg. samples / sec: 7271.35
+:::MLLOG {"namespace": "", "time_ms": 1639065471127, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639065471128, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 7, "current_iter_num": 772}}
+Iteration:    780, Loss function: 5.624, Average Loss: 4.053, avg. samples / sec: 7090.43
+Iteration:    800, Loss function: 5.843, Average Loss: 4.078, avg. samples / sec: 6797.57
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:55:146 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:53:137 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:54:144 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:48:130 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:50:138 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:49:136 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:52:145 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-ssd--1-5ntfz:51:143 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    820, Loss function: 5.261, Average Loss: 4.103, avg. samples / sec: 7331.25
+Iteration:    840, Loss function: 5.356, Average Loss: 4.129, avg. samples / sec: 7167.44
+Iteration:    860, Loss function: 5.271, Average Loss: 4.151, avg. samples / sec: 7234.85
+Iteration:    880, Loss function: 5.375, Average Loss: 4.172, avg. samples / sec: 7223.04
+Iteration:    900, Loss function: 5.123, Average Loss: 4.193, avg. samples / sec: 6321.02
+:::MLLOG {"namespace": "", "time_ms": 1639065487929, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 7}}
+:::MLLOG {"namespace": "", "time_ms": 1639065487931, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 8, "current_iter_num": 901}}
+Iteration:    920, Loss function: 5.081, Average Loss: 4.211, avg. samples / sec: 7196.98
+Iteration:    940, Loss function: 4.894, Average Loss: 4.227, avg. samples / sec: 7180.76
+Iteration:    960, Loss function: 4.883, Average Loss: 4.245, avg. samples / sec: 7093.64
+Iteration:    980, Loss function: 5.055, Average Loss: 4.261, avg. samples / sec: 7155.58
+Iteration:   1000, Loss function: 4.897, Average Loss: 4.275, avg. samples / sec: 7268.77
+Iteration:   1020, Loss function: 5.123, Average Loss: 4.291, avg. samples / sec: 7080.68
+:::MLLOG {"namespace": "", "time_ms": 1639065504250, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 8}}
+:::MLLOG {"namespace": "", "time_ms": 1639065504253, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 9, "current_iter_num": 1029}}
+Iteration:   1040, Loss function: 4.841, Average Loss: 4.305, avg. samples / sec: 7107.41
+Iteration:   1060, Loss function: 4.873, Average Loss: 4.316, avg. samples / sec: 7256.66
+Iteration:   1080, Loss function: 4.646, Average Loss: 4.328, avg. samples / sec: 7245.20
+Iteration:   1100, Loss function: 4.628, Average Loss: 4.340, avg. samples / sec: 7237.52
+Iteration:   1120, Loss function: 4.865, Average Loss: 4.350, avg. samples / sec: 7179.77
+Iteration:   1140, Loss function: 4.990, Average Loss: 4.361, avg. samples / sec: 7109.56
+:::MLLOG {"namespace": "", "time_ms": 1639065520572, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 9}}
+:::MLLOG {"namespace": "", "time_ms": 1639065520573, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 10, "current_iter_num": 1158}}
+Iteration:   1160, Loss function: 4.942, Average Loss: 4.369, avg. samples / sec: 7201.19
+Iteration:   1180, Loss function: 4.434, Average Loss: 4.378, avg. samples / sec: 7200.38
+Iteration:   1200, Loss function: 4.874, Average Loss: 4.386, avg. samples / sec: 7185.83
+Iteration:   1220, Loss function: 4.859, Average Loss: 4.395, avg. samples / sec: 7266.88
+Iteration:   1240, Loss function: 4.745, Average Loss: 4.402, avg. samples / sec: 7296.01
+Iteration:   1260, Loss function: 4.770, Average Loss: 4.409, avg. samples / sec: 7074.05
+Iteration:   1280, Loss function: 4.508, Average Loss: 4.415, avg. samples / sec: 7288.95
+:::MLLOG {"namespace": "", "time_ms": 1639065536702, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 10}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.62 s
+:::MLLOG {"namespace": "", "time_ms": 1639065542366, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639065542434, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 11, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639065542435, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 11, "current_iter_num": 1286}}
+Loading and preparing results...
+DONE (t=1.12s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   1300, Loss function: 4.648, Average Loss: 4.420, avg. samples / sec: 2258.11
+Iteration:   1320, Loss function: 5.085, Average Loss: 4.426, avg. samples / sec: 6642.31
+DONE (t=5.22s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.11302
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.22564
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.10481
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.20332
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.14332
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.21301
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.22461
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.22461
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.11302 AP goal: 0.10000
+Iteration:   1340, Loss function: 4.886, Average Loss: 4.430, avg. samples / sec: 6828.78
+:::MLLOG {"namespace": "", "time_ms": 1639065549590, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639065549590, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.11301752674809644, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639065549591, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639065549978, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
+++ date +%s
++ end=1639065552
+++ date '+%Y-%m-%d %r'
++ end_fmt='2021-12-09 03:59:12 PM'
+START TIMING RUN WAS 2021-12-09 03:55:25 PM
+ENDING TIMING RUN AT 2021-12-09 03:59:12 PM
++ echo 'START TIMING RUN WAS 2021-12-09 03:55:25 PM'
++ echo 'ENDING TIMING RUN AT 2021-12-09 03:59:12 PM'
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
++ result=227
++ result_name=SINGLE_STAGE_DETECTOR
++ echo 'RESULT,SINGLE_STAGE_DETECTOR,,227,nvidia,2021-12-09 03:55:25 PM'
+RESULT,SINGLE_STAGE_DETECTOR,,227,nvidia,2021-12-09 03:55:25 PM
+ALL FINISHED GPU: 8 x full x 1 Pods
++ echo 'ALL FINISHED GPU: 8 x full x 1 Pods'

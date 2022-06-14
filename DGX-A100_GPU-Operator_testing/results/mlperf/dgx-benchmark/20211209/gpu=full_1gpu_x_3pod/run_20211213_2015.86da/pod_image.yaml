@@ -1,0 +1,2 @@
+image: image-registry.openshift-image-registry.svc:5000/default/mlperf:ssd_0.7
+image_id: image-registry.openshift-image-registry.svc:5000/default/mlperf@sha256:f25899ceed2b50832ba52bd7d56efa73cd19255a15c1d9f60ba55c34e646a63b

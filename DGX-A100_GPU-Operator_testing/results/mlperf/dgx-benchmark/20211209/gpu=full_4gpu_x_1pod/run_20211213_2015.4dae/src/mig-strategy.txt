@@ -1,0 +1,1 @@
+ClusterPolicy.spec.mig.strategy=mixed

@@ -1,0 +1,44 @@
+apiVersion: config.openshift.io/v1
+kind: ClusterVersion
+metadata: {creationTimestamp: '2021-12-08T18:13:14Z', generation: 1, name: version,
+  resourceVersion: '381910', uid: c072b35b-04bf-4488-93ae-9a93877c864b}
+spec: {channel: stable-4.9, clusterID: 38d836e6-b8bd-4a4d-83df-245d3765fd32}
+status:
+  availableUpdates:
+  - channels: [candidate-4.9, fast-4.9, stable-4.9]
+    image: quay.io/openshift-release-dev/ocp-release@sha256:c91c0faf7ae3c480724a935b3dab7e5f49aae19d195b12f3a4ae38f8440ea96b
+    url: https://access.redhat.com/errata/RHBA-2021:4712
+    version: 4.9.8
+  - channels: [candidate-4.9, fast-4.9, stable-4.9]
+    image: quay.io/openshift-release-dev/ocp-release@sha256:dc6d4d8b2f9264c0037ed0222285f19512f112cc85a355b14a66bd6b910a4940
+    url: https://access.redhat.com/errata/RHBA-2021:4834
+    version: 4.9.9
+  - channels: [candidate-4.9, fast-4.9, stable-4.9]
+    image: quay.io/openshift-release-dev/ocp-release@sha256:386f4e08c48d01e0c73d294a88bb64fac3284d1d16a5b8938deb3b8699825a88
+    url: https://access.redhat.com/errata/RHBA-2021:4005
+    version: 4.9.5
+  - channels: [candidate-4.9, fast-4.9, stable-4.9]
+    image: quay.io/openshift-release-dev/ocp-release@sha256:c9f58ccb8a9085df4eeb23e21ca201d4c7d39bc434786d58a55381e13215a199
+    url: https://access.redhat.com/errata/RHBA-2021:4119
+    version: 4.9.6
+  - channels: [candidate-4.9, fast-4.9, stable-4.9]
+    image: quay.io/openshift-release-dev/ocp-release@sha256:5c55be02e32e688ec5a404858a08cf533ba15b50b6f0e028089635b47db5866e
+    url: https://access.redhat.com/errata/RHBA-2021:4579
+    version: 4.9.7
+  conditions:
+  - {lastTransitionTime: '2021-12-08T18:48:29Z', message: Done applying 4.9.4, status: 'True',
+    type: Available}
+  - {lastTransitionTime: '2021-12-08T18:48:29Z', status: 'False', type: Failing}
+  - {lastTransitionTime: '2021-12-08T18:48:29Z', message: Cluster version is 4.9.4,
+    status: 'False', type: Progressing}
+  - {lastTransitionTime: '2021-12-08T18:13:14Z', status: 'True', type: RetrievedUpdates}
+  desired:
+    channels: [candidate-4.9, fast-4.9, stable-4.9]
+    image: quay.io/openshift-release-dev/ocp-release@sha256:3d5800990dee7cd4727d3fe238a97e2d2976d3808fc925ada29c559a47e2e1ef
+    url: https://access.redhat.com/errata/RHBA-2021:3935
+    version: 4.9.4
+  history:
+  - {completionTime: '2021-12-08T18:48:29Z', image: 'quay.io/openshift-release-dev/ocp-release@sha256:3d5800990dee7cd4727d3fe238a97e2d2976d3808fc925ada29c559a47e2e1ef',
+    startedTime: '2021-12-08T18:13:14Z', state: Completed, verified: false, version: 4.9.4}
+  observedGeneration: 1
+  versionHash: ZsJ65pTdT3I=

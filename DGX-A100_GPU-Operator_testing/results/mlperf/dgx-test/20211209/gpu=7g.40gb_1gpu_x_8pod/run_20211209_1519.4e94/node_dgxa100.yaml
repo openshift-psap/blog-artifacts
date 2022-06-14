@@ -1,0 +1,104 @@
+api_version: v1
+kind: Node
+metadata:
+  annotations: {machineconfiguration.openshift.io/controlPlaneTopology: SingleReplica,
+    machineconfiguration.openshift.io/currentConfig: rendered-master-5a6debb4fcedd1d69312c4b90742c57e,
+    machineconfiguration.openshift.io/desiredConfig: rendered-master-5a6debb4fcedd1d69312c4b90742c57e,
+    machineconfiguration.openshift.io/reason: '', machineconfiguration.openshift.io/ssh: accessed,
+    machineconfiguration.openshift.io/state: Done, nfd.node.kubernetes.io/extended-resources: '',
+    nfd.node.kubernetes.io/feature-labels: 'cpu-cpuid.ADX,cpu-cpuid.AESNI,cpu-cpuid.AVX,cpu-cpuid.AVX2,cpu-cpuid.CLZERO,cpu-cpuid.CPBOOST,cpu-cpuid.FMA3,cpu-cpuid.IBS,cpu-cpuid.IBSBRNTRGT,cpu-cpuid.IBSFETCHSAM,cpu-cpuid.IBSFFV,cpu-cpuid.IBSOPCNT,cpu-cpuid.IBSOPCNTEXT,cpu-cpuid.IBSOPSAM,cpu-cpuid.IBSRDWROPCNT,cpu-cpuid.IBSRIPINVALIDCHK,cpu-cpuid.INT_WBINVD,cpu-cpuid.MCAOVERFLOW,cpu-cpuid.MCOMMIT,cpu-cpuid.MSRIRC,cpu-cpuid.RDPRU,cpu-cpuid.SHA,cpu-cpuid.SSE4A,cpu-cpuid.SUCCOR,cpu-cpuid.WBNOINVD,cpu-hardware_multithreading,cpu-rdt.RDTCMT,cpu-rdt.RDTL3CA,cpu-rdt.RDTMBM,cpu-rdt.RDTMON,custom-rdma.available,custom-rdma.capable,iommu-enabled,kernel-config.NO_HZ,kernel-config.NO_HZ_FULL,kernel-selinux.enabled,kernel-version.full,kernel-version.major,kernel-version.minor,kernel-version.revision,memory-numa,nvidia.com/cuda.driver.major,nvidia.com/cuda.driver.minor,nvidia.com/cuda.driver.rev,nvidia.com/cuda.runtime.major,nvidia.com/cuda.runtime.minor,nvidia.com/gfd.timestamp,nvidia.com/gpu.compute.major,nvidia.com/gpu.compute.minor,nvidia.com/gpu.count,nvidia.com/gpu.engines.copy,nvidia.com/gpu.engines.decoder,nvidia.com/gpu.engines.encoder,nvidia.com/gpu.engines.jpeg,nvidia.com/gpu.engines.ofa,nvidia.com/gpu.family,nvidia.com/gpu.machine,nvidia.com/gpu.memory,nvidia.com/gpu.multiprocessors,nvidia.com/gpu.product,nvidia.com/gpu.slices.ci,nvidia.com/gpu.slices.gi,nvidia.com/mig.strategy,pci-10de.present,pci-10de.sriov.capable,pci-15b3.present,pci-1a03.present,pci-8086.present,storage-nonrotationaldisk,system-os_release.ID,system-os_release.OPENSHIFT_VERSION,system-os_release.OSTREE_VERSION,system-os_release.RHEL_VERSION,system-os_release.VERSION_ID,system-os_release.VERSION_ID.major,system-os_release.VERSION_ID.minor',
+    nfd.node.kubernetes.io/master.version: '1.16', nfd.node.kubernetes.io/worker.version: '1.16',
+    volumes.kubernetes.io/controller-managed-attach-detach: 'true'}
+  cluster_name: null
+  creation_timestamp: 2021-12-08 18:28:57+00:00
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: null
+  labels: {beta.kubernetes.io/arch: amd64, beta.kubernetes.io/os: linux, feature.node.kubernetes.io/cpu-cpuid.ADX: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.AESNI: 'true', feature.node.kubernetes.io/cpu-cpuid.AVX: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.AVX2: 'true', feature.node.kubernetes.io/cpu-cpuid.CLZERO: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.CPBOOST: 'true', feature.node.kubernetes.io/cpu-cpuid.FMA3: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.IBS: 'true', feature.node.kubernetes.io/cpu-cpuid.IBSBRNTRGT: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.IBSFETCHSAM: 'true', feature.node.kubernetes.io/cpu-cpuid.IBSFFV: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.IBSOPCNT: 'true', feature.node.kubernetes.io/cpu-cpuid.IBSOPCNTEXT: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.IBSOPSAM: 'true', feature.node.kubernetes.io/cpu-cpuid.IBSRDWROPCNT: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.IBSRIPINVALIDCHK: 'true', feature.node.kubernetes.io/cpu-cpuid.INT_WBINVD: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.MCAOVERFLOW: 'true', feature.node.kubernetes.io/cpu-cpuid.MCOMMIT: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.MSRIRC: 'true', feature.node.kubernetes.io/cpu-cpuid.RDPRU: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.SHA: 'true', feature.node.kubernetes.io/cpu-cpuid.SSE4A: 'true',
+    feature.node.kubernetes.io/cpu-cpuid.SUCCOR: 'true', feature.node.kubernetes.io/cpu-cpuid.WBNOINVD: 'true',
+    feature.node.kubernetes.io/cpu-hardware_multithreading: 'true', feature.node.kubernetes.io/cpu-rdt.RDTCMT: 'true',
+    feature.node.kubernetes.io/cpu-rdt.RDTL3CA: 'true', feature.node.kubernetes.io/cpu-rdt.RDTMBM: 'true',
+    feature.node.kubernetes.io/cpu-rdt.RDTMON: 'true', feature.node.kubernetes.io/custom-rdma.available: 'true',
+    feature.node.kubernetes.io/custom-rdma.capable: 'true', feature.node.kubernetes.io/iommu-enabled: 'true',
+    feature.node.kubernetes.io/kernel-config.NO_HZ: 'true', feature.node.kubernetes.io/kernel-config.NO_HZ_FULL: 'true',
+    feature.node.kubernetes.io/kernel-selinux.enabled: 'true', feature.node.kubernetes.io/kernel-version.full: 4.18.0-305.19.1.el8_4.x86_64,
+    feature.node.kubernetes.io/kernel-version.major: '4', feature.node.kubernetes.io/kernel-version.minor: '18',
+    feature.node.kubernetes.io/kernel-version.revision: '0', feature.node.kubernetes.io/memory-numa: 'true',
+    feature.node.kubernetes.io/pci-10de.present: 'true', feature.node.kubernetes.io/pci-10de.sriov.capable: 'true',
+    feature.node.kubernetes.io/pci-15b3.present: 'true', feature.node.kubernetes.io/pci-1a03.present: 'true',
+    feature.node.kubernetes.io/pci-8086.present: 'true', feature.node.kubernetes.io/storage-nonrotationaldisk: 'true',
+    feature.node.kubernetes.io/system-os_release.ID: rhcos, feature.node.kubernetes.io/system-os_release.OPENSHIFT_VERSION: '4.9',
+    feature.node.kubernetes.io/system-os_release.OSTREE_VERSION: 49.84.202110142155-0,
+    feature.node.kubernetes.io/system-os_release.RHEL_VERSION: '8.4', feature.node.kubernetes.io/system-os_release.VERSION_ID: '4.9',
+    feature.node.kubernetes.io/system-os_release.VERSION_ID.major: '4', feature.node.kubernetes.io/system-os_release.VERSION_ID.minor: '9',
+    kubernetes.io/arch: amd64, kubernetes.io/hostname: dgxa100, kubernetes.io/os: linux,
+    node-role.kubernetes.io/master: '', node-role.kubernetes.io/worker: '', node.openshift.io/os_id: rhcos,
+    nvidia.com/cuda.driver.major: '470', nvidia.com/cuda.driver.minor: '82', nvidia.com/cuda.driver.rev: '01',
+    nvidia.com/cuda.runtime.major: '11', nvidia.com/cuda.runtime.minor: '4', nvidia.com/gfd.timestamp: '1639068270',
+    nvidia.com/gpu.compute.major: '8', nvidia.com/gpu.compute.minor: '0', nvidia.com/gpu.count: '8',
+    nvidia.com/gpu.deploy.container-toolkit: 'true', nvidia.com/gpu.deploy.dcgm: 'true',
+    nvidia.com/gpu.deploy.dcgm-exporter: 'true', nvidia.com/gpu.deploy.device-plugin: 'true',
+    nvidia.com/gpu.deploy.driver: 'true', nvidia.com/gpu.deploy.gpu-feature-discovery: 'true',
+    nvidia.com/gpu.deploy.mig-manager: 'true', nvidia.com/gpu.deploy.node-status-exporter: 'true',
+    nvidia.com/gpu.deploy.operator-validator: 'true', nvidia.com/gpu.engines.copy: '7',
+    nvidia.com/gpu.engines.decoder: '5', nvidia.com/gpu.engines.encoder: '0', nvidia.com/gpu.engines.jpeg: '1',
+    nvidia.com/gpu.engines.ofa: '1', nvidia.com/gpu.family: ampere, nvidia.com/gpu.machine: DGXA100-920-23687-2530-000,
+    nvidia.com/gpu.memory: '40448', nvidia.com/gpu.multiprocessors: '98', nvidia.com/gpu.present: 'true',
+    nvidia.com/gpu.product: NVIDIA-A100-SXM4-40GB-MIG-7g.40gb, nvidia.com/gpu.slices.ci: '7',
+    nvidia.com/gpu.slices.gi: '7', nvidia.com/mig.config: all-7g.40gb, nvidia.com/mig.config.state: success,
+    nvidia.com/mig.strategy: single}
+  name: dgxa100
+  namespace: null
+  owner_references: null
+  resource_version: '346219'
+  self_link: null
+  uid: ec0381f4-a290-48b7-a5fc-26e1a9b0d3f8
+spec: {config_source: null, external_id: null, pod_cid_rs: null, pod_cidr: null, provider_id: null,
+  taints: null, unschedulable: null}
+status:
+  addresses:
+  - {address: 192.168.125.130, type: InternalIP}
+  - {address: dgxa100, type: Hostname}
+  allocatable: {cpu: 255500m, ephemeral-storage: '1727851483143', hugepages-1Gi: '0',
+    hugepages-2Mi: '0', memory: 1055483968Ki, nvidia.com/gpu: '8', nvidia.com/mig-1g.5gb: '0',
+    nvidia.com/mig-7g.40gb: '0', pods: '250'}
+  capacity: {cpu: '256', ephemeral-storage: 1874838852Ki, hugepages-1Gi: '0', hugepages-2Mi: '0',
+    memory: 1056634944Ki, nvidia.com/gpu: '8', nvidia.com/mig-1g.5gb: '0', nvidia.com/mig-7g.40gb: '0',
+    pods: '250'}
+  conditions:
+  - {last_heartbeat_time: !!timestamp '2021-12-09 16:53:50+00:00', last_transition_time: !!timestamp '2021-12-08
+      18:28:57+00:00', message: kubelet has sufficient memory available, reason: KubeletHasSufficientMemory,
+    status: 'False', type: MemoryPressure}
+  - {last_heartbeat_time: !!timestamp '2021-12-09 16:53:50+00:00', last_transition_time: !!timestamp '2021-12-08
+      18:28:57+00:00', message: kubelet has no disk pressure, reason: KubeletHasNoDiskPressure,
+    status: 'False', type: DiskPressure}
+  - {last_heartbeat_time: !!timestamp '2021-12-09 16:53:50+00:00', last_transition_time: !!timestamp '2021-12-08
+      18:28:57+00:00', message: kubelet has sufficient PID available, reason: KubeletHasSufficientPID,
+    status: 'False', type: PIDPressure}
+  - {last_heartbeat_time: !!timestamp '2021-12-09 16:53:50+00:00', last_transition_time: !!timestamp '2021-12-08
+      18:37:51+00:00', message: kubelet is posting ready status, reason: KubeletReady,
+    status: 'True', type: Ready}
+  config: null
+  daemon_endpoints:
+    kubelet_endpoint: {port: 10250}
+  node_info: {architecture: amd64, boot_id: 1c13afec-2fc2-4c35-bbfa-5003de71ccfb,
+    container_runtime_version: 'cri-o://1.22.0-74.rhaos4.9.gitd745cab.el8', kernel_version: 4.18.0-305.19.1.el8_4.x86_64,
+    kube_proxy_version: v1.22.0-rc.0+ef241fd, kubelet_version: v1.22.0-rc.0+ef241fd,
+    machine_id: f8c7ea879cce40409d265504062cb043, operating_system: linux, os_image: Red
+      Hat Enterprise Linux CoreOS 49.84.202110142155-0 (Ootpa), system_uuid: 51cbe235-ff5c-03ca-1000-1565d28003c0}
+  phase: null
+  volumes_attached: null
+  volumes_in_use: null

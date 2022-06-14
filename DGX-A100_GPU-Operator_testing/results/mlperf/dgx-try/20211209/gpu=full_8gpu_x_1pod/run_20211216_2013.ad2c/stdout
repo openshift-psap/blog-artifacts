@@ -1,0 +1,7 @@
+2021-12-16 20:13:11.009827
+Saving artifacts files into /home/kevin/openshift/matrix_benchmark/results/mlperf/dgx-try/20211209/gpu=full_8gpu_x_1pod/run_20211216_2013.ad2c
+Deleting the old Job, if any ...
+- run-mlperf
+Deleting the old job Pods, if any ...
+Deleting 1 Pods: run-mlperf--1-q5w86
+Deleting 1 Pods: run-mlperf--1-q5w86

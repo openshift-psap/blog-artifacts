@@ -1,0 +1,1 @@
+node/dgxa100: metadata.labels: nvidia.com/mig.config: all-2g.10gb

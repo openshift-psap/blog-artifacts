@@ -1,0 +1,373 @@
+api_version: null
+kind: null
+metadata:
+  annotations: null
+  cluster_name: null
+  creation_timestamp: 2021-12-09 22:08:36+00:00
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: 1
+  labels: {app: run-ssd}
+  managed_fields:
+  - api_version: batch/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:backoffLimit: {}
+        f:completionMode: {}
+        f:parallelism: {}
+        f:suspend: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:containers:
+              k:{"name":"mlperf-ssd"}:
+                .: {}
+                f:command: {}
+                f:env:
+                  .: {}
+                  k:{"name":"DGXSOCKETCORES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DGX_SYSTEM"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"EXECUTION_MODE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GPU_COUNT"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GPU_RES_TYPE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GPU_TYPE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NO_SYNC"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NVIDIA_DRIVER_CAPABILITIES"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"NVIDIA_REQUIRE_CUDA"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"RUN_DESCR"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SSD_THRESHOLD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SYNC_COUNTER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"SYNC_IDENTIFIER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:nvidia.com/gpu: {}
+                  f:requests:
+                    .: {}
+                    f:nvidia.com/gpu: {}
+                f:securityContext:
+                  .: {}
+                  f:privileged: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/data/coco2017"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/dev/shm"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/workspace/single_stage_detector/my_run_and_time.sh"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"config-volume"}:
+                .: {}
+                f:configMap:
+                  .: {}
+                  f:defaultMode: {}
+                  f:name: {}
+                f:name: {}
+              k:{"name":"dshm"}:
+                .: {}
+                f:emptyDir:
+                  .: {}
+                  f:medium: {}
+                f:name: {}
+              k:{"name":"mlperf-data"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: 2021-12-09 22:08:36+00:00
+  - api_version: batch/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:status:
+        f:completionTime: {}
+        f:conditions: {}
+        f:startTime: {}
+        f:succeeded: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: 2021-12-09 22:26:42+00:00
+  name: run-ssd
+  namespace: default
+  owner_references: null
+  resource_version: '470600'
+  self_link: null
+  uid: 6b182ad7-8032-4921-90b1-475be223e117
+spec:
+  active_deadline_seconds: null
+  backoff_limit: 0
+  completions: null
+  manual_selector: null
+  parallelism: 1
+  selector:
+    match_expressions: null
+    match_labels: {controller-uid: 6b182ad7-8032-4921-90b1-475be223e117}
+  template:
+    metadata:
+      annotations: null
+      cluster_name: null
+      creation_timestamp: null
+      deletion_grace_period_seconds: null
+      deletion_timestamp: null
+      finalizers: null
+      generate_name: null
+      generation: null
+      labels: {app: run-ssd, controller-uid: 6b182ad7-8032-4921-90b1-475be223e117,
+        job-name: run-ssd}
+      managed_fields: null
+      name: null
+      namespace: null
+      owner_references: null
+      resource_version: null
+      self_link: null
+      uid: null
+    spec:
+      active_deadline_seconds: null
+      affinity: null
+      automount_service_account_token: null
+      containers:
+      - args: null
+        command: [/bin/bash, -x, ./my_run_and_time.sh]
+        env:
+        - {name: NVIDIA_DRIVER_CAPABILITIES, value: 'compute,utility', value_from: null}
+        - {name: NVIDIA_REQUIRE_CUDA, value: cuda>=5.0, value_from: null}
+        - {name: DGX_SYSTEM, value: CUSTOM, value_from: null}
+        - {name: EXECUTION_MODE, value: run, value_from: null}
+        - {name: SSD_THRESHOLD, value: '0.23', value_from: null}
+        - {name: DGXSOCKETCORES, value: '8', value_from: null}
+        - {name: RUN_DESCR, value: 'GPU: 5 x full x 1 Pods', value_from: null}
+        - {name: SYNC_IDENTIFIER, value: 2021-12-09_17-08-26, value_from: null}
+        - {name: SYNC_COUNTER, value: '1', value_from: null}
+        - {name: NO_SYNC, value: n, value_from: null}
+        - {name: GPU_COUNT, value: '5', value_from: null}
+        - {name: GPU_RES_TYPE, value: nvidia.com/gpu, value_from: null}
+        - {name: GPU_TYPE, value: full, value_from: null}
+        env_from: null
+        image: image-registry.openshift-image-registry.svc:5000/default/mlperf:ssd_0.7
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe: null
+        name: mlperf-ssd
+        ports: null
+        readiness_probe: null
+        resources:
+          limits: {nvidia.com/gpu: '5'}
+          requests: {nvidia.com/gpu: '5'}
+        security_context: {allow_privilege_escalation: null, capabilities: null, privileged: true,
+          proc_mount: null, read_only_root_filesystem: null, run_as_group: null, run_as_non_root: null,
+          run_as_user: null, se_linux_options: null, windows_options: null}
+        startup_probe: null
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: File
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - {mount_path: /dev/shm, mount_propagation: null, name: dshm, read_only: null,
+          sub_path: null, sub_path_expr: null}
+        - {mount_path: /data/coco2017, mount_propagation: null, name: mlperf-data,
+          read_only: null, sub_path: null, sub_path_expr: null}
+        - {mount_path: /workspace/single_stage_detector/my_run_and_time.sh, mount_propagation: null,
+          name: config-volume, read_only: null, sub_path: my_run_and_time.sh, sub_path_expr: null}
+        working_dir: null
+      dns_config: null
+      dns_policy: ClusterFirst
+      enable_service_links: null
+      ephemeral_containers: null
+      host_aliases: null
+      host_ipc: null
+      host_network: null
+      host_pid: null
+      hostname: null
+      image_pull_secrets: null
+      init_containers: null
+      node_name: null
+      node_selector: null
+      overhead: null
+      preemption_policy: null
+      priority: null
+      priority_class_name: null
+      readiness_gates: null
+      restart_policy: Never
+      runtime_class_name: null
+      scheduler_name: default-scheduler
+      security_context: {fs_group: null, run_as_group: null, run_as_non_root: null,
+        run_as_user: null, se_linux_options: null, supplemental_groups: null, sysctls: null,
+        windows_options: null}
+      service_account: null
+      service_account_name: null
+      share_process_namespace: null
+      subdomain: null
+      termination_grace_period_seconds: 30
+      tolerations: null
+      topology_spread_constraints: null
+      volumes:
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        iscsi: null
+        name: mlperf-data
+        nfs: null
+        persistent_volume_claim: {claim_name: benchmarking-coco-dataset, read_only: null}
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: {medium: Memory, size_limit: null}
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        iscsi: null
+        name: dshm
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: {default_mode: 511, items: null, name: custom-config-script, optional: null}
+        csi: null
+        downward_api: null
+        empty_dir: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        iscsi: null
+        name: config-volume
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+  ttl_seconds_after_finished: null
+status:
+  active: null
+  completion_time: 2021-12-09 22:26:42+00:00
+  conditions:
+  - {last_probe_time: !!timestamp '2021-12-09 22:26:42+00:00', last_transition_time: !!timestamp '2021-12-09
+      22:26:42+00:00', message: null, reason: null, status: 'True', type: Complete}
+  failed: null
+  start_time: 2021-12-09 22:08:36+00:00
+  succeeded: 1

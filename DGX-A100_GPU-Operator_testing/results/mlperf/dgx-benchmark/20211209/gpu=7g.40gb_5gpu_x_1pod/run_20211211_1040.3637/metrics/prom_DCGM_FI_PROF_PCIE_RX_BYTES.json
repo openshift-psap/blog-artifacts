@@ -1,0 +1,1 @@
+{"resultType": "matrix", "result": [], "__metric_name": "DCGM_FI_PROF_PCIE_RX_BYTES", "__metric_descr": "The number of bytes of active pcie rx data including both header and payload."}

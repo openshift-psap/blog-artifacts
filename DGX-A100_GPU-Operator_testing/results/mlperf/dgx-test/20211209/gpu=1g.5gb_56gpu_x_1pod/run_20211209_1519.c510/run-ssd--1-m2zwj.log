@@ -1,0 +1,1130 @@
++ test -f /etc/shinit_v2
++ source /etc/shinit_v2
++++ sed -n 's/^NVRM.*Kernel Module *\([^() ]*\).*$/\1/p' /proc/driver/nvidia/version
++++ sed 's/^$/unknown/'
+++ NV_DRIVER_VERS=470.82.01
+++ export _CUDA_COMPAT_PATH=/usr/local/cuda/compat
+++ _CUDA_COMPAT_PATH=/usr/local/cuda/compat
++++ hostname
+++ _CUDA_COMPAT_CHECKFILE=/usr/local/cuda/compat/.470.82.01.run-ssd--1-m2zwj.checked
+++ _CUDA_COMPAT_REALLIB=/usr/local/cuda/compat/lib.real
+++ _CUDA_COMPAT_SYMLINK=/usr/local/cuda/compat/lib
+++ '[' -n 470.82.01 -a -e /dev/nvidiactl -a '!' -e /usr/local/cuda/compat/.470.82.01.run-ssd--1-m2zwj.checked ']'
+++ touch /usr/local/cuda/compat/.470.82.01.run-ssd--1-m2zwj.checked
+++ rm -f /usr/local/cuda/compat/lib
+++ TIMEOUT=35
++++ LD_LIBRARY_PATH=/usr/local/cuda/compat/lib.real
++++ timeout -s KILL 35 /usr/local/bin/cudaCheck
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ '[' 'CUDA Driver UNAVAILABLE (cuInit(0) returned 100)' = 'CUDA Driver OK' ']'
+++ unset _CUDA_COMPAT_CHECKFILE
+++ unset _CUDA_COMPAT_REALLIB
+++ unset _CUDA_COMPAT_SYMLINK
++ '[' -z '' ']'
++ return
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ set -e
++ set -x
++ set -o pipefail
++ set -o nounset
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+  MIG 1g.5gb      Device  0: (UUID: MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7)
+  MIG 1g.5gb      Device  1: (UUID: MIG-96c60802-3f91-5161-b276-ede4ea99358b)
+  MIG 1g.5gb      Device  2: (UUID: MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9)
+  MIG 1g.5gb      Device  3: (UUID: MIG-fe253a26-715c-544d-ac3e-89c05b2835a9)
+  MIG 1g.5gb      Device  4: (UUID: MIG-8628544c-7194-509c-bd8f-0dca22bb3553)
+  MIG 1g.5gb      Device  5: (UUID: MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7)
+  MIG 1g.5gb      Device  6: (UUID: MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+  MIG 1g.5gb      Device  0: (UUID: MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5)
+  MIG 1g.5gb      Device  1: (UUID: MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0)
+  MIG 1g.5gb      Device  2: (UUID: MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e)
+  MIG 1g.5gb      Device  3: (UUID: MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf)
+  MIG 1g.5gb      Device  4: (UUID: MIG-40ce6334-9026-568d-a873-f2e6f6344389)
+  MIG 1g.5gb      Device  5: (UUID: MIG-618164db-1a64-57ad-a65c-55601607e031)
+  MIG 1g.5gb      Device  6: (UUID: MIG-d1071b57-04ec-5e23-9de9-d8929672c018)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+  MIG 1g.5gb      Device  0: (UUID: MIG-05507a3d-427a-5810-ad53-19d4026fd000)
+  MIG 1g.5gb      Device  1: (UUID: MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0)
+  MIG 1g.5gb      Device  2: (UUID: MIG-669d602f-065a-5aa2-acdd-3326d9348161)
+  MIG 1g.5gb      Device  3: (UUID: MIG-6f014065-e781-51f3-828d-0fd187a3b4b0)
+  MIG 1g.5gb      Device  4: (UUID: MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0)
+  MIG 1g.5gb      Device  5: (UUID: MIG-2511ec86-148e-5835-9e8b-5878532adfc2)
+  MIG 1g.5gb      Device  6: (UUID: MIG-97ea5c49-bf81-5000-baf7-1139d263f88a)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+  MIG 1g.5gb      Device  0: (UUID: MIG-e82764a7-b4fc-5142-978d-375c018a5dd3)
+  MIG 1g.5gb      Device  1: (UUID: MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3)
+  MIG 1g.5gb      Device  2: (UUID: MIG-092c5593-ea4e-50df-b346-080505ca18af)
+  MIG 1g.5gb      Device  3: (UUID: MIG-2c223cd5-e901-5910-9822-f288c7cf690f)
+  MIG 1g.5gb      Device  4: (UUID: MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5)
+  MIG 1g.5gb      Device  5: (UUID: MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba)
+  MIG 1g.5gb      Device  6: (UUID: MIG-37e2ba84-7690-5903-8367-de15d7ea1d87)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+  MIG 1g.5gb      Device  0: (UUID: MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2)
+  MIG 1g.5gb      Device  1: (UUID: MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28)
+  MIG 1g.5gb      Device  2: (UUID: MIG-4dcaea94-446a-522c-88e1-e8fb193ca789)
+  MIG 1g.5gb      Device  3: (UUID: MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61)
+  MIG 1g.5gb      Device  4: (UUID: MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7)
+  MIG 1g.5gb      Device  5: (UUID: MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a)
+  MIG 1g.5gb      Device  6: (UUID: MIG-42b3ba88-8dc5-5e51-9c89-76885370b661)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+  MIG 1g.5gb      Device  0: (UUID: MIG-af01b9a9-0d91-5b86-a149-b543a81f6637)
+  MIG 1g.5gb      Device  1: (UUID: MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32)
+  MIG 1g.5gb      Device  2: (UUID: MIG-026cd61e-f999-5641-863b-d8cad81d764d)
+  MIG 1g.5gb      Device  3: (UUID: MIG-08165a8e-1baa-5f62-84a2-330b94023bb5)
+  MIG 1g.5gb      Device  4: (UUID: MIG-acf801a2-f276-5ba5-a818-30b621cc6817)
+  MIG 1g.5gb      Device  5: (UUID: MIG-92b41566-c266-5ea6-ac89-66e2a48c1653)
+  MIG 1g.5gb      Device  6: (UUID: MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 1g.5gb      Device  0: (UUID: MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b)
+  MIG 1g.5gb      Device  1: (UUID: MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb)
+  MIG 1g.5gb      Device  2: (UUID: MIG-c0831e0a-9f62-574a-b656-ea81894046d3)
+  MIG 1g.5gb      Device  3: (UUID: MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039)
+  MIG 1g.5gb      Device  4: (UUID: MIG-39d736c4-795d-5258-8c6c-931af6d993b8)
+  MIG 1g.5gb      Device  5: (UUID: MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5)
+  MIG 1g.5gb      Device  6: (UUID: MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+  MIG 1g.5gb      Device  0: (UUID: MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5)
+  MIG 1g.5gb      Device  1: (UUID: MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae)
+  MIG 1g.5gb      Device  2: (UUID: MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44)
+  MIG 1g.5gb      Device  3: (UUID: MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9)
+  MIG 1g.5gb      Device  4: (UUID: MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f)
+  MIG 1g.5gb      Device  5: (UUID: MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3)
+  MIG 1g.5gb      Device  6: (UUID: MIG-445c8aea-8d61-544a-9897-d24680bdb690)
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
++ NB_GPUS=56
++ [[ 56 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ awk '{ printf $6"\n"}'
+++ cut '-d)' -f1
++ ALL_GPUS='MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
+MIG-96c60802-3f91-5161-b276-ede4ea99358b
+MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
+MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
+MIG-8628544c-7194-509c-bd8f-0dca22bb3553
+MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
+MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
+MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
+MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
+MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
+MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
+MIG-40ce6334-9026-568d-a873-f2e6f6344389
+MIG-618164db-1a64-57ad-a65c-55601607e031
+MIG-d1071b57-04ec-5e23-9de9-d8929672c018
+MIG-05507a3d-427a-5810-ad53-19d4026fd000
+MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
+MIG-669d602f-065a-5aa2-acdd-3326d9348161
+MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
+MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
+MIG-2511ec86-148e-5835-9e8b-5878532adfc2
+MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
+MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
+MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
+MIG-092c5593-ea4e-50df-b346-080505ca18af
+MIG-2c223cd5-e901-5910-9822-f288c7cf690f
+MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
+MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
+MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
+MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
+MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
+MIG-026cd61e-f999-5641-863b-d8cad81d764d
+MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
+MIG-acf801a2-f276-5ba5-a818-30b621cc6817
+MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
+MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
+MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
+MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
+MIG-c0831e0a-9f62-574a-b656-ea81894046d3
+MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
+MIG-39d736c4-795d-5258-8c6c-931af6d993b8
+MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
+MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
+MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
+MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
+MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
+MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
+MIG-445c8aea-8d61-544a-9897-d24680bdb690'
++ MIG_MODE=1
++ [[ 1g.5gb == \f\u\l\l ]]
++ echo 'Found 56 MIG instances: MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
+MIG-96c60802-3f91-5161-b276-ede4ea99358b
+MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
+MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
+MIG-8628544c-7194-509c-bd8f-0dca22bb3553
+MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
+MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
+MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
+MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
+MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
+MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
+MIG-40ce6334-9026-568d-a873-f2e6f6344389
+MIG-618164db-1a64-57ad-a65c-55601607e031
+MIG-d1071b57-04ec-5e23-9de9-d8929672c018
+MIG-05507a3d-427a-5810-ad53-19d4026fd000
+MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
+MIG-669d602f-065a-5aa2-acdd-3326d9348161
+MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
+MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
+MIG-2511ec86-148e-5835-9e8b-5878532adfc2
+MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
+MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
+MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
+MIG-092c5593-ea4e-50df-b346-080505ca18af
+MIG-2c223cd5-e901-5910-9822-f288c7cf690f
+MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
+MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
+MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
+MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
+MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
+MIG-026cd61e-f999-5641-863b-d8cad81d764d
+MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
+MIG-acf801a2-f276-5ba5-a818-30b621cc6817
+MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
+MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
+MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
+MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
+MIG-c0831e0a-9f62-574a-b656-ea81894046d3
+MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
+MIG-39d736c4-795d-5258-8c6c-931af6d993b8
+MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
+MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
+MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
+MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
+MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
+MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
+MIG-445c8aea-8d61-544a-9897-d24680bdb690'
+Found 56 MIG instances: MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
+MIG-96c60802-3f91-5161-b276-ede4ea99358b
+MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
+MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
+MIG-8628544c-7194-509c-bd8f-0dca22bb3553
+MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
+MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
+MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
+MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
+MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
+MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
+MIG-40ce6334-9026-568d-a873-f2e6f6344389
+MIG-618164db-1a64-57ad-a65c-55601607e031
+MIG-d1071b57-04ec-5e23-9de9-d8929672c018
+MIG-05507a3d-427a-5810-ad53-19d4026fd000
+MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
+MIG-669d602f-065a-5aa2-acdd-3326d9348161
+MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
+MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
+MIG-2511ec86-148e-5835-9e8b-5878532adfc2
+MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
+MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
+MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
+MIG-092c5593-ea4e-50df-b346-080505ca18af
+MIG-2c223cd5-e901-5910-9822-f288c7cf690f
+MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
+MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
+MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
+MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
+MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
+MIG-026cd61e-f999-5641-863b-d8cad81d764d
+MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
+MIG-acf801a2-f276-5ba5-a818-30b621cc6817
+MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
+MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
+MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
+MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
+MIG-c0831e0a-9f62-574a-b656-ea81894046d3
+MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
+MIG-39d736c4-795d-5258-8c6c-931af6d993b8
+MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
+MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
+MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
+MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
+MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
+MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
+MIG-445c8aea-8d61-544a-9897-d24680bdb690
++ [[ 56 != 56 ]]
++ SSD_THRESHOLD=0.1
+++ date +%s
++ start=1639074581
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-09 06:29:41 PM'
++ echo 'STARTING TIMING RUN AT 2021-12-09 06:29:41 PM GPU: 56 x 1g.5gb x 1 Pods'
+STARTING TIMING RUN AT 2021-12-09 06:29:41 PM GPU: 56 x 1g.5gb x 1 Pods
++ set -x
++ NUMEPOCHS=80
++ echo 'running benchmark'
+running benchmark
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'
++ DGXNSOCKET=1
++ DGXSOCKETCORES=8
++ [[ 1 == \1 ]]
++ DGXNGPU=1
++ echo 'Running in parallel mode.'
+Running in parallel mode.
++ declare -a CMD
+Patching 'bind_launch.py' to err-exit on failure ...
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
++ sed 's/process.wait()/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ ARGS=(train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs "${NUMEPOCHS}" --warmup-factor 0 --no-save --threshold=${SSD_THRESHOLD} --data ${DATASET_DIR} ${EXTRA_PARAMS})
++ [[ fast == \f\a\s\t ]]
++ echo 'Running in FAST mode'
+Running in FAST mode
++ ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)
++ trap 'date; echo failed; exit 1' ERR
++ [[ n != \y ]]
++ SYNC_DIR=/data/coco2017/sync
++ mkdir -p /data/coco2017/sync
++ for sync_f in "$SYNC_DIR/"*
++ [[ /data/coco2017/sync/2021-12-09_13-15-55 != \/\d\a\t\a\/\c\o\c\o\2\0\1\7\/\s\y\n\c\/\2\0\2\1\-\1\2\-\0\9\_\1\3\-\2\7\-\5\5 ]]
++ rm -f /data/coco2017/sync/2021-12-09_13-15-55
++ set +x
+Thu Dec  9 18:29:41 UTC 2021 Waiting for all the 1 Pods to start ...
+Adding run-ssd--1-m2zwj to the sync file ...
+Thu Dec  9 18:29:41 UTC 2021 All the 1 Pods are running, launch the GPU workload.
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+  MIG 1g.5gb      Device  0: (UUID: MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7)
+  MIG 1g.5gb      Device  1: (UUID: MIG-96c60802-3f91-5161-b276-ede4ea99358b)
+  MIG 1g.5gb      Device  2: (UUID: MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9)
+  MIG 1g.5gb      Device  3: (UUID: MIG-fe253a26-715c-544d-ac3e-89c05b2835a9)
+  MIG 1g.5gb      Device  4: (UUID: MIG-8628544c-7194-509c-bd8f-0dca22bb3553)
+  MIG 1g.5gb      Device  5: (UUID: MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7)
+  MIG 1g.5gb      Device  6: (UUID: MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+  MIG 1g.5gb      Device  0: (UUID: MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5)
+  MIG 1g.5gb      Device  1: (UUID: MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0)
+  MIG 1g.5gb      Device  2: (UUID: MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e)
+  MIG 1g.5gb      Device  3: (UUID: MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf)
+  MIG 1g.5gb      Device  4: (UUID: MIG-40ce6334-9026-568d-a873-f2e6f6344389)
+  MIG 1g.5gb      Device  5: (UUID: MIG-618164db-1a64-57ad-a65c-55601607e031)
+  MIG 1g.5gb      Device  6: (UUID: MIG-d1071b57-04ec-5e23-9de9-d8929672c018)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+  MIG 1g.5gb      Device  0: (UUID: MIG-05507a3d-427a-5810-ad53-19d4026fd000)
+  MIG 1g.5gb      Device  1: (UUID: MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0)
+  MIG 1g.5gb      Device  2: (UUID: MIG-669d602f-065a-5aa2-acdd-3326d9348161)
+  MIG 1g.5gb      Device  3: (UUID: MIG-6f014065-e781-51f3-828d-0fd187a3b4b0)
+  MIG 1g.5gb      Device  4: (UUID: MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0)
+  MIG 1g.5gb      Device  5: (UUID: MIG-2511ec86-148e-5835-9e8b-5878532adfc2)
+  MIG 1g.5gb      Device  6: (UUID: MIG-97ea5c49-bf81-5000-baf7-1139d263f88a)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+  MIG 1g.5gb      Device  0: (UUID: MIG-e82764a7-b4fc-5142-978d-375c018a5dd3)
+  MIG 1g.5gb      Device  1: (UUID: MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3)
+  MIG 1g.5gb      Device  2: (UUID: MIG-092c5593-ea4e-50df-b346-080505ca18af)
+  MIG 1g.5gb      Device  3: (UUID: MIG-2c223cd5-e901-5910-9822-f288c7cf690f)
+  MIG 1g.5gb      Device  4: (UUID: MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5)
+  MIG 1g.5gb      Device  5: (UUID: MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba)
+  MIG 1g.5gb      Device  6: (UUID: MIG-37e2ba84-7690-5903-8367-de15d7ea1d87)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+  MIG 1g.5gb      Device  0: (UUID: MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2)
+  MIG 1g.5gb      Device  1: (UUID: MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28)
+  MIG 1g.5gb      Device  2: (UUID: MIG-4dcaea94-446a-522c-88e1-e8fb193ca789)
+  MIG 1g.5gb      Device  3: (UUID: MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61)
+  MIG 1g.5gb      Device  4: (UUID: MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7)
+  MIG 1g.5gb      Device  5: (UUID: MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a)
+  MIG 1g.5gb      Device  6: (UUID: MIG-42b3ba88-8dc5-5e51-9c89-76885370b661)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+  MIG 1g.5gb      Device  0: (UUID: MIG-af01b9a9-0d91-5b86-a149-b543a81f6637)
+  MIG 1g.5gb      Device  1: (UUID: MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32)
+  MIG 1g.5gb      Device  2: (UUID: MIG-026cd61e-f999-5641-863b-d8cad81d764d)
+  MIG 1g.5gb      Device  3: (UUID: MIG-08165a8e-1baa-5f62-84a2-330b94023bb5)
+  MIG 1g.5gb      Device  4: (UUID: MIG-acf801a2-f276-5ba5-a818-30b621cc6817)
+  MIG 1g.5gb      Device  5: (UUID: MIG-92b41566-c266-5ea6-ac89-66e2a48c1653)
+  MIG 1g.5gb      Device  6: (UUID: MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 1g.5gb      Device  0: (UUID: MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b)
+  MIG 1g.5gb      Device  1: (UUID: MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb)
+  MIG 1g.5gb      Device  2: (UUID: MIG-c0831e0a-9f62-574a-b656-ea81894046d3)
+  MIG 1g.5gb      Device  3: (UUID: MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039)
+  MIG 1g.5gb      Device  4: (UUID: MIG-39d736c4-795d-5258-8c6c-931af6d993b8)
+  MIG 1g.5gb      Device  5: (UUID: MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5)
+  MIG 1g.5gb      Device  6: (UUID: MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+  MIG 1g.5gb      Device  0: (UUID: MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5)
+  MIG 1g.5gb      Device  1: (UUID: MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae)
+  MIG 1g.5gb      Device  2: (UUID: MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44)
+  MIG 1g.5gb      Device  3: (UUID: MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9)
+  MIG 1g.5gb      Device  4: (UUID: MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f)
+  MIG 1g.5gb      Device  5: (UUID: MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3)
+  MIG 1g.5gb      Device  6: (UUID: MIG-445c8aea-8d61-544a-9897-d24680bdb690)
++ [[ 1 == 1 ]]
++ [[ 56 != 1 ]]
++ declare -a pids
+++ echo 'MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
+MIG-96c60802-3f91-5161-b276-ede4ea99358b
+MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
+MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
+MIG-8628544c-7194-509c-bd8f-0dca22bb3553
+MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
+MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
+MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
+MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
+MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
+MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
+MIG-40ce6334-9026-568d-a873-f2e6f6344389
+MIG-618164db-1a64-57ad-a65c-55601607e031
+MIG-d1071b57-04ec-5e23-9de9-d8929672c018
+MIG-05507a3d-427a-5810-ad53-19d4026fd000
+MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
+MIG-669d602f-065a-5aa2-acdd-3326d9348161
+MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
+MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
+MIG-2511ec86-148e-5835-9e8b-5878532adfc2
+MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
+MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
+MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
+MIG-092c5593-ea4e-50df-b346-080505ca18af
+MIG-2c223cd5-e901-5910-9822-f288c7cf690f
+MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
+MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
+MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
+MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
+MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
+MIG-026cd61e-f999-5641-863b-d8cad81d764d
+MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
+MIG-acf801a2-f276-5ba5-a818-30b621cc6817
+MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
+MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
+MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
+MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
+MIG-c0831e0a-9f62-574a-b656-ea81894046d3
+MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
+MIG-39d736c4-795d-5258-8c6c-931af6d993b8
+MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
+MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
+MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
+MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
+MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
+MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
+MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
+MIG-445c8aea-8d61-544a-9897-d24680bdb690'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
++ NVIDIA_VISIBLE_DEVICES=MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
++ export CUDA_VISIBLE_DEVICES=MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
++ CUDA_VISIBLE_DEVICES=MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
+++ echo MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7.log
++ pids+=($!)
++ echo 'Running on MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7 ===> /tmp/ssd_MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7.log: PID 44'
+Running on MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7 ===> /tmp/ssd_MIG-c953706d-d654-583f-99d4-4e9fa3b8a4c7.log: PID 44
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-96c60802-3f91-5161-b276-ede4ea99358b
++ NVIDIA_VISIBLE_DEVICES=MIG-96c60802-3f91-5161-b276-ede4ea99358b
++ export CUDA_VISIBLE_DEVICES=MIG-96c60802-3f91-5161-b276-ede4ea99358b
++ CUDA_VISIBLE_DEVICES=MIG-96c60802-3f91-5161-b276-ede4ea99358b
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-96c60802-3f91-5161-b276-ede4ea99358b
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-96c60802-3f91-5161-b276-ede4ea99358b.log
++ pids+=($!)
++ echo 'Running on MIG-96c60802-3f91-5161-b276-ede4ea99358b ===> /tmp/ssd_MIG-96c60802-3f91-5161-b276-ede4ea99358b.log: PID 48'
+Running on MIG-96c60802-3f91-5161-b276-ede4ea99358b ===> /tmp/ssd_MIG-96c60802-3f91-5161-b276-ede4ea99358b.log: PID 48
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
++ NVIDIA_VISIBLE_DEVICES=MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
++ export CUDA_VISIBLE_DEVICES=MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
++ CUDA_VISIBLE_DEVICES=MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9.log
++ pids+=($!)
++ echo 'Running on MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9 ===> /tmp/ssd_MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9.log: PID 52'
+Running on MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9 ===> /tmp/ssd_MIG-865f8c26-38bf-56d9-b9b8-3c0fef7fa7e9.log: PID 52
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
++ NVIDIA_VISIBLE_DEVICES=MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
++ export CUDA_VISIBLE_DEVICES=MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
++ CUDA_VISIBLE_DEVICES=MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-fe253a26-715c-544d-ac3e-89c05b2835a9
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-fe253a26-715c-544d-ac3e-89c05b2835a9.log
++ pids+=($!)
++ echo 'Running on MIG-fe253a26-715c-544d-ac3e-89c05b2835a9 ===> /tmp/ssd_MIG-fe253a26-715c-544d-ac3e-89c05b2835a9.log: PID 56'
+Running on MIG-fe253a26-715c-544d-ac3e-89c05b2835a9 ===> /tmp/ssd_MIG-fe253a26-715c-544d-ac3e-89c05b2835a9.log: PID 56
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-8628544c-7194-509c-bd8f-0dca22bb3553
++ NVIDIA_VISIBLE_DEVICES=MIG-8628544c-7194-509c-bd8f-0dca22bb3553
++ export CUDA_VISIBLE_DEVICES=MIG-8628544c-7194-509c-bd8f-0dca22bb3553
++ CUDA_VISIBLE_DEVICES=MIG-8628544c-7194-509c-bd8f-0dca22bb3553
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-8628544c-7194-509c-bd8f-0dca22bb3553
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-8628544c-7194-509c-bd8f-0dca22bb3553.log
++ pids+=($!)
++ echo 'Running on MIG-8628544c-7194-509c-bd8f-0dca22bb3553 ===> /tmp/ssd_MIG-8628544c-7194-509c-bd8f-0dca22bb3553.log: PID 60'
+Running on MIG-8628544c-7194-509c-bd8f-0dca22bb3553 ===> /tmp/ssd_MIG-8628544c-7194-509c-bd8f-0dca22bb3553.log: PID 60
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
++ NVIDIA_VISIBLE_DEVICES=MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
++ export CUDA_VISIBLE_DEVICES=MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
++ CUDA_VISIBLE_DEVICES=MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7.log
++ pids+=($!)
++ echo 'Running on MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7 ===> /tmp/ssd_MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7.log: PID 64'
+Running on MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7 ===> /tmp/ssd_MIG-6e84b3c4-d062-5159-8dea-3893a243f1a7.log: PID 64
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
++ NVIDIA_VISIBLE_DEVICES=MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
++ export CUDA_VISIBLE_DEVICES=MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
++ CUDA_VISIBLE_DEVICES=MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f.log
++ pids+=($!)
++ echo 'Running on MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f ===> /tmp/ssd_MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f.log: PID 68'
+Running on MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f ===> /tmp/ssd_MIG-5b056f8c-fc10-5b06-b738-017ceeb1e31f.log: PID 68
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
++ NVIDIA_VISIBLE_DEVICES=MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
++ export CUDA_VISIBLE_DEVICES=MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
++ CUDA_VISIBLE_DEVICES=MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5.log
++ pids+=($!)
++ echo 'Running on MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5 ===> /tmp/ssd_MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5.log: PID 72'
+Running on MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5 ===> /tmp/ssd_MIG-c64cb7ab-6b6c-5c88-9299-740f7fbae4b5.log: PID 72
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
++ NVIDIA_VISIBLE_DEVICES=MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
++ export CUDA_VISIBLE_DEVICES=MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
++ CUDA_VISIBLE_DEVICES=MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0.log
++ pids+=($!)
++ echo 'Running on MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0 ===> /tmp/ssd_MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0.log: PID 76'
+Running on MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0 ===> /tmp/ssd_MIG-2e5431dc-f3ff-559d-a96e-504fdecdc8b0.log: PID 76
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
++ NVIDIA_VISIBLE_DEVICES=MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
++ export CUDA_VISIBLE_DEVICES=MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
++ CUDA_VISIBLE_DEVICES=MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e.log
++ pids+=($!)
++ echo 'Running on MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e ===> /tmp/ssd_MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e.log: PID 80'
+Running on MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e ===> /tmp/ssd_MIG-b5daf604-bbcd-5d77-96dc-52f670f5c24e.log: PID 80
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
++ NVIDIA_VISIBLE_DEVICES=MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
++ export CUDA_VISIBLE_DEVICES=MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
++ CUDA_VISIBLE_DEVICES=MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf.log
++ pids+=($!)
++ echo 'Running on MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf ===> /tmp/ssd_MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf.log: PID 84'
+Running on MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf ===> /tmp/ssd_MIG-e001a012-0342-5647-8b4b-b7eacab9ecaf.log: PID 84
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-40ce6334-9026-568d-a873-f2e6f6344389
++ NVIDIA_VISIBLE_DEVICES=MIG-40ce6334-9026-568d-a873-f2e6f6344389
++ export CUDA_VISIBLE_DEVICES=MIG-40ce6334-9026-568d-a873-f2e6f6344389
++ CUDA_VISIBLE_DEVICES=MIG-40ce6334-9026-568d-a873-f2e6f6344389
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-40ce6334-9026-568d-a873-f2e6f6344389
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-40ce6334-9026-568d-a873-f2e6f6344389.log
++ pids+=($!)
++ echo 'Running on MIG-40ce6334-9026-568d-a873-f2e6f6344389 ===> /tmp/ssd_MIG-40ce6334-9026-568d-a873-f2e6f6344389.log: PID 88'
+Running on MIG-40ce6334-9026-568d-a873-f2e6f6344389 ===> /tmp/ssd_MIG-40ce6334-9026-568d-a873-f2e6f6344389.log: PID 88
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-618164db-1a64-57ad-a65c-55601607e031
++ NVIDIA_VISIBLE_DEVICES=MIG-618164db-1a64-57ad-a65c-55601607e031
++ export CUDA_VISIBLE_DEVICES=MIG-618164db-1a64-57ad-a65c-55601607e031
++ CUDA_VISIBLE_DEVICES=MIG-618164db-1a64-57ad-a65c-55601607e031
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-618164db-1a64-57ad-a65c-55601607e031
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-618164db-1a64-57ad-a65c-55601607e031.log
++ pids+=($!)
++ echo 'Running on MIG-618164db-1a64-57ad-a65c-55601607e031 ===> /tmp/ssd_MIG-618164db-1a64-57ad-a65c-55601607e031.log: PID 92'
+Running on MIG-618164db-1a64-57ad-a65c-55601607e031 ===> /tmp/ssd_MIG-618164db-1a64-57ad-a65c-55601607e031.log: PID 92
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-d1071b57-04ec-5e23-9de9-d8929672c018
++ NVIDIA_VISIBLE_DEVICES=MIG-d1071b57-04ec-5e23-9de9-d8929672c018
++ export CUDA_VISIBLE_DEVICES=MIG-d1071b57-04ec-5e23-9de9-d8929672c018
++ CUDA_VISIBLE_DEVICES=MIG-d1071b57-04ec-5e23-9de9-d8929672c018
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-d1071b57-04ec-5e23-9de9-d8929672c018
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-d1071b57-04ec-5e23-9de9-d8929672c018.log
++ pids+=($!)
++ echo 'Running on MIG-d1071b57-04ec-5e23-9de9-d8929672c018 ===> /tmp/ssd_MIG-d1071b57-04ec-5e23-9de9-d8929672c018.log: PID 96'
+Running on MIG-d1071b57-04ec-5e23-9de9-d8929672c018 ===> /tmp/ssd_MIG-d1071b57-04ec-5e23-9de9-d8929672c018.log: PID 96
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-05507a3d-427a-5810-ad53-19d4026fd000
++ NVIDIA_VISIBLE_DEVICES=MIG-05507a3d-427a-5810-ad53-19d4026fd000
++ export CUDA_VISIBLE_DEVICES=MIG-05507a3d-427a-5810-ad53-19d4026fd000
++ CUDA_VISIBLE_DEVICES=MIG-05507a3d-427a-5810-ad53-19d4026fd000
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-05507a3d-427a-5810-ad53-19d4026fd000
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-05507a3d-427a-5810-ad53-19d4026fd000.log
++ pids+=($!)
++ echo 'Running on MIG-05507a3d-427a-5810-ad53-19d4026fd000 ===> /tmp/ssd_MIG-05507a3d-427a-5810-ad53-19d4026fd000.log: PID 100'
+Running on MIG-05507a3d-427a-5810-ad53-19d4026fd000 ===> /tmp/ssd_MIG-05507a3d-427a-5810-ad53-19d4026fd000.log: PID 100
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
++ NVIDIA_VISIBLE_DEVICES=MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
++ export CUDA_VISIBLE_DEVICES=MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
++ CUDA_VISIBLE_DEVICES=MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0.log
++ pids+=($!)
++ echo 'Running on MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0 ===> /tmp/ssd_MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0.log: PID 104'
+Running on MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0 ===> /tmp/ssd_MIG-409c2bbc-a542-5601-95c9-0acdcf530ff0.log: PID 104
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-669d602f-065a-5aa2-acdd-3326d9348161
++ NVIDIA_VISIBLE_DEVICES=MIG-669d602f-065a-5aa2-acdd-3326d9348161
++ export CUDA_VISIBLE_DEVICES=MIG-669d602f-065a-5aa2-acdd-3326d9348161
++ CUDA_VISIBLE_DEVICES=MIG-669d602f-065a-5aa2-acdd-3326d9348161
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-669d602f-065a-5aa2-acdd-3326d9348161
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-669d602f-065a-5aa2-acdd-3326d9348161.log
++ pids+=($!)
++ echo 'Running on MIG-669d602f-065a-5aa2-acdd-3326d9348161 ===> /tmp/ssd_MIG-669d602f-065a-5aa2-acdd-3326d9348161.log: PID 108'
+Running on MIG-669d602f-065a-5aa2-acdd-3326d9348161 ===> /tmp/ssd_MIG-669d602f-065a-5aa2-acdd-3326d9348161.log: PID 108
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
++ NVIDIA_VISIBLE_DEVICES=MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
++ export CUDA_VISIBLE_DEVICES=MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
++ CUDA_VISIBLE_DEVICES=MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-6f014065-e781-51f3-828d-0fd187a3b4b0
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-6f014065-e781-51f3-828d-0fd187a3b4b0.log
++ pids+=($!)
++ echo 'Running on MIG-6f014065-e781-51f3-828d-0fd187a3b4b0 ===> /tmp/ssd_MIG-6f014065-e781-51f3-828d-0fd187a3b4b0.log: PID 114'
+Running on MIG-6f014065-e781-51f3-828d-0fd187a3b4b0 ===> /tmp/ssd_MIG-6f014065-e781-51f3-828d-0fd187a3b4b0.log: PID 114
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
++ NVIDIA_VISIBLE_DEVICES=MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
++ export CUDA_VISIBLE_DEVICES=MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
++ CUDA_VISIBLE_DEVICES=MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0.log
++ pids+=($!)
++ echo 'Running on MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0 ===> /tmp/ssd_MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0.log: PID 123'
+Running on MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0 ===> /tmp/ssd_MIG-2292fca7-d86d-5d8d-8a72-a106ea5e08e0.log: PID 123
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-2511ec86-148e-5835-9e8b-5878532adfc2
++ NVIDIA_VISIBLE_DEVICES=MIG-2511ec86-148e-5835-9e8b-5878532adfc2
++ export CUDA_VISIBLE_DEVICES=MIG-2511ec86-148e-5835-9e8b-5878532adfc2
++ CUDA_VISIBLE_DEVICES=MIG-2511ec86-148e-5835-9e8b-5878532adfc2
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-2511ec86-148e-5835-9e8b-5878532adfc2
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-2511ec86-148e-5835-9e8b-5878532adfc2.log
++ pids+=($!)
++ echo 'Running on MIG-2511ec86-148e-5835-9e8b-5878532adfc2 ===> /tmp/ssd_MIG-2511ec86-148e-5835-9e8b-5878532adfc2.log: PID 129'
+Running on MIG-2511ec86-148e-5835-9e8b-5878532adfc2 ===> /tmp/ssd_MIG-2511ec86-148e-5835-9e8b-5878532adfc2.log: PID 129
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
++ NVIDIA_VISIBLE_DEVICES=MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
++ export CUDA_VISIBLE_DEVICES=MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
++ CUDA_VISIBLE_DEVICES=MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-97ea5c49-bf81-5000-baf7-1139d263f88a
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-97ea5c49-bf81-5000-baf7-1139d263f88a.log
++ pids+=($!)
++ echo 'Running on MIG-97ea5c49-bf81-5000-baf7-1139d263f88a ===> /tmp/ssd_MIG-97ea5c49-bf81-5000-baf7-1139d263f88a.log: PID 136'
+Running on MIG-97ea5c49-bf81-5000-baf7-1139d263f88a ===> /tmp/ssd_MIG-97ea5c49-bf81-5000-baf7-1139d263f88a.log: PID 136
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
++ NVIDIA_VISIBLE_DEVICES=MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
++ export CUDA_VISIBLE_DEVICES=MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
++ CUDA_VISIBLE_DEVICES=MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-e82764a7-b4fc-5142-978d-375c018a5dd3
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-e82764a7-b4fc-5142-978d-375c018a5dd3.log
++ pids+=($!)
++ echo 'Running on MIG-e82764a7-b4fc-5142-978d-375c018a5dd3 ===> /tmp/ssd_MIG-e82764a7-b4fc-5142-978d-375c018a5dd3.log: PID 141'
+Running on MIG-e82764a7-b4fc-5142-978d-375c018a5dd3 ===> /tmp/ssd_MIG-e82764a7-b4fc-5142-978d-375c018a5dd3.log: PID 141
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
++ NVIDIA_VISIBLE_DEVICES=MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
++ export CUDA_VISIBLE_DEVICES=MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
++ CUDA_VISIBLE_DEVICES=MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3.log
++ pids+=($!)
++ echo 'Running on MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3 ===> /tmp/ssd_MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3.log: PID 146'
+Running on MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3 ===> /tmp/ssd_MIG-f81fb8a2-9789-5a40-90bb-deb15e2151f3.log: PID 146
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-092c5593-ea4e-50df-b346-080505ca18af
++ NVIDIA_VISIBLE_DEVICES=MIG-092c5593-ea4e-50df-b346-080505ca18af
++ export CUDA_VISIBLE_DEVICES=MIG-092c5593-ea4e-50df-b346-080505ca18af
++ CUDA_VISIBLE_DEVICES=MIG-092c5593-ea4e-50df-b346-080505ca18af
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-092c5593-ea4e-50df-b346-080505ca18af
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-092c5593-ea4e-50df-b346-080505ca18af.log
++ pids+=($!)
++ echo 'Running on MIG-092c5593-ea4e-50df-b346-080505ca18af ===> /tmp/ssd_MIG-092c5593-ea4e-50df-b346-080505ca18af.log: PID 150'
+Running on MIG-092c5593-ea4e-50df-b346-080505ca18af ===> /tmp/ssd_MIG-092c5593-ea4e-50df-b346-080505ca18af.log: PID 150
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-2c223cd5-e901-5910-9822-f288c7cf690f
++ NVIDIA_VISIBLE_DEVICES=MIG-2c223cd5-e901-5910-9822-f288c7cf690f
++ export CUDA_VISIBLE_DEVICES=MIG-2c223cd5-e901-5910-9822-f288c7cf690f
++ CUDA_VISIBLE_DEVICES=MIG-2c223cd5-e901-5910-9822-f288c7cf690f
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-2c223cd5-e901-5910-9822-f288c7cf690f
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-2c223cd5-e901-5910-9822-f288c7cf690f.log
++ pids+=($!)
++ echo 'Running on MIG-2c223cd5-e901-5910-9822-f288c7cf690f ===> /tmp/ssd_MIG-2c223cd5-e901-5910-9822-f288c7cf690f.log: PID 156'
+Running on MIG-2c223cd5-e901-5910-9822-f288c7cf690f ===> /tmp/ssd_MIG-2c223cd5-e901-5910-9822-f288c7cf690f.log: PID 156
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
++ NVIDIA_VISIBLE_DEVICES=MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
++ export CUDA_VISIBLE_DEVICES=MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
++ CUDA_VISIBLE_DEVICES=MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5.log
++ pids+=($!)
++ echo 'Running on MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5 ===> /tmp/ssd_MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5.log: PID 162'
+Running on MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5 ===> /tmp/ssd_MIG-f304b884-89eb-5677-9f3d-55df6b8e79a5.log: PID 162
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
++ NVIDIA_VISIBLE_DEVICES=MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
++ export CUDA_VISIBLE_DEVICES=MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
++ CUDA_VISIBLE_DEVICES=MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba.log
++ pids+=($!)
++ echo 'Running on MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba ===> /tmp/ssd_MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba.log: PID 169'
+Running on MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba ===> /tmp/ssd_MIG-903074ab-aa5f-5a76-84ce-a64b08cf98ba.log: PID 169
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
++ NVIDIA_VISIBLE_DEVICES=MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
++ export CUDA_VISIBLE_DEVICES=MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
++ CUDA_VISIBLE_DEVICES=MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-37e2ba84-7690-5903-8367-de15d7ea1d87
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-37e2ba84-7690-5903-8367-de15d7ea1d87.log
++ pids+=($!)
++ echo 'Running on MIG-37e2ba84-7690-5903-8367-de15d7ea1d87 ===> /tmp/ssd_MIG-37e2ba84-7690-5903-8367-de15d7ea1d87.log: PID 177'
+Running on MIG-37e2ba84-7690-5903-8367-de15d7ea1d87 ===> /tmp/ssd_MIG-37e2ba84-7690-5903-8367-de15d7ea1d87.log: PID 177
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
++ NVIDIA_VISIBLE_DEVICES=MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
++ export CUDA_VISIBLE_DEVICES=MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
++ CUDA_VISIBLE_DEVICES=MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+++ echo MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2.log
++ pids+=($!)
++ echo 'Running on MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2 ===> /tmp/ssd_MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2.log: PID 184'
+Running on MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2 ===> /tmp/ssd_MIG-1c5876e6-d3b9-524a-9eb4-664fcfbd4de2.log: PID 184
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
++ NVIDIA_VISIBLE_DEVICES=MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
++ export CUDA_VISIBLE_DEVICES=MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
++ CUDA_VISIBLE_DEVICES=MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28.log
++ pids+=($!)
++ echo 'Running on MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28 ===> /tmp/ssd_MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28.log: PID 189'
+Running on MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28 ===> /tmp/ssd_MIG-934fe587-ac95-5d75-bf9e-f40befeb9b28.log: PID 189
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
++ NVIDIA_VISIBLE_DEVICES=MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
++ export CUDA_VISIBLE_DEVICES=MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
++ CUDA_VISIBLE_DEVICES=MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-4dcaea94-446a-522c-88e1-e8fb193ca789
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-4dcaea94-446a-522c-88e1-e8fb193ca789.log
++ pids+=($!)
++ echo 'Running on MIG-4dcaea94-446a-522c-88e1-e8fb193ca789 ===> /tmp/ssd_MIG-4dcaea94-446a-522c-88e1-e8fb193ca789.log: PID 196'
+Running on MIG-4dcaea94-446a-522c-88e1-e8fb193ca789 ===> /tmp/ssd_MIG-4dcaea94-446a-522c-88e1-e8fb193ca789.log: PID 196
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
++ NVIDIA_VISIBLE_DEVICES=MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
++ export CUDA_VISIBLE_DEVICES=MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
++ CUDA_VISIBLE_DEVICES=MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61.log
++ pids+=($!)
+Running on MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61 ===> /tmp/ssd_MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61.log: PID 200
++ echo 'Running on MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61 ===> /tmp/ssd_MIG-dd39e743-ed46-5a4a-bf9b-2d33388a6b61.log: PID 200'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
++ NVIDIA_VISIBLE_DEVICES=MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
++ export CUDA_VISIBLE_DEVICES=MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
++ CUDA_VISIBLE_DEVICES=MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7.log
++ pids+=($!)
++ echo 'Running on MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7 ===> /tmp/ssd_MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7.log: PID 204'
+Running on MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7 ===> /tmp/ssd_MIG-144a6174-a7a4-5b1f-85d2-4088e307aaa7.log: PID 204
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
++ NVIDIA_VISIBLE_DEVICES=MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
++ export CUDA_VISIBLE_DEVICES=MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
++ CUDA_VISIBLE_DEVICES=MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a.log
++ pids+=($!)
+Running on MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a ===> /tmp/ssd_MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a.log: PID 210
++ echo 'Running on MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a ===> /tmp/ssd_MIG-f25c64a5-afbc-5311-bc04-6ba3b4212a2a.log: PID 210'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
++ NVIDIA_VISIBLE_DEVICES=MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
++ export CUDA_VISIBLE_DEVICES=MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
++ CUDA_VISIBLE_DEVICES=MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-42b3ba88-8dc5-5e51-9c89-76885370b661
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-42b3ba88-8dc5-5e51-9c89-76885370b661.log
++ pids+=($!)
++ echo 'Running on MIG-42b3ba88-8dc5-5e51-9c89-76885370b661 ===> /tmp/ssd_MIG-42b3ba88-8dc5-5e51-9c89-76885370b661.log: PID 214'
+Running on MIG-42b3ba88-8dc5-5e51-9c89-76885370b661 ===> /tmp/ssd_MIG-42b3ba88-8dc5-5e51-9c89-76885370b661.log: PID 214
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
++ NVIDIA_VISIBLE_DEVICES=MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
++ export CUDA_VISIBLE_DEVICES=MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
++ CUDA_VISIBLE_DEVICES=MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-af01b9a9-0d91-5b86-a149-b543a81f6637.log
++ pids+=($!)
+Running on MIG-af01b9a9-0d91-5b86-a149-b543a81f6637 ===> /tmp/ssd_MIG-af01b9a9-0d91-5b86-a149-b543a81f6637.log: PID 221
++ echo 'Running on MIG-af01b9a9-0d91-5b86-a149-b543a81f6637 ===> /tmp/ssd_MIG-af01b9a9-0d91-5b86-a149-b543a81f6637.log: PID 221'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
++ NVIDIA_VISIBLE_DEVICES=MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
++ export CUDA_VISIBLE_DEVICES=MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
++ CUDA_VISIBLE_DEVICES=MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32.log
++ pids+=($!)
++ echo 'Running on MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32 ===> /tmp/ssd_MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32.log: PID 226'
+Running on MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32 ===> /tmp/ssd_MIG-bdfed0d4-38f6-570d-b4e6-dddbd46dca32.log: PID 226
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-026cd61e-f999-5641-863b-d8cad81d764d
++ NVIDIA_VISIBLE_DEVICES=MIG-026cd61e-f999-5641-863b-d8cad81d764d
++ export CUDA_VISIBLE_DEVICES=MIG-026cd61e-f999-5641-863b-d8cad81d764d
++ CUDA_VISIBLE_DEVICES=MIG-026cd61e-f999-5641-863b-d8cad81d764d
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-026cd61e-f999-5641-863b-d8cad81d764d
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-026cd61e-f999-5641-863b-d8cad81d764d.log
++ pids+=($!)
++ echo 'Running on MIG-026cd61e-f999-5641-863b-d8cad81d764d ===> /tmp/ssd_MIG-026cd61e-f999-5641-863b-d8cad81d764d.log: PID 232'
+Running on MIG-026cd61e-f999-5641-863b-d8cad81d764d ===> /tmp/ssd_MIG-026cd61e-f999-5641-863b-d8cad81d764d.log: PID 232
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
++ NVIDIA_VISIBLE_DEVICES=MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
++ export CUDA_VISIBLE_DEVICES=MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
++ CUDA_VISIBLE_DEVICES=MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-08165a8e-1baa-5f62-84a2-330b94023bb5
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-08165a8e-1baa-5f62-84a2-330b94023bb5.log
++ pids+=($!)
++ echo 'Running on MIG-08165a8e-1baa-5f62-84a2-330b94023bb5 ===> /tmp/ssd_MIG-08165a8e-1baa-5f62-84a2-330b94023bb5.log: PID 236'
+Running on MIG-08165a8e-1baa-5f62-84a2-330b94023bb5 ===> /tmp/ssd_MIG-08165a8e-1baa-5f62-84a2-330b94023bb5.log: PID 236
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-acf801a2-f276-5ba5-a818-30b621cc6817
++ NVIDIA_VISIBLE_DEVICES=MIG-acf801a2-f276-5ba5-a818-30b621cc6817
++ export CUDA_VISIBLE_DEVICES=MIG-acf801a2-f276-5ba5-a818-30b621cc6817
++ CUDA_VISIBLE_DEVICES=MIG-acf801a2-f276-5ba5-a818-30b621cc6817
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-acf801a2-f276-5ba5-a818-30b621cc6817
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-acf801a2-f276-5ba5-a818-30b621cc6817.log
++ pids+=($!)
++ echo 'Running on MIG-acf801a2-f276-5ba5-a818-30b621cc6817 ===> /tmp/ssd_MIG-acf801a2-f276-5ba5-a818-30b621cc6817.log: PID 241'
+Running on MIG-acf801a2-f276-5ba5-a818-30b621cc6817 ===> /tmp/ssd_MIG-acf801a2-f276-5ba5-a818-30b621cc6817.log: PID 241
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
++ NVIDIA_VISIBLE_DEVICES=MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
++ export CUDA_VISIBLE_DEVICES=MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
++ CUDA_VISIBLE_DEVICES=MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-92b41566-c266-5ea6-ac89-66e2a48c1653
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-92b41566-c266-5ea6-ac89-66e2a48c1653.log
++ pids+=($!)
++ echo 'Running on MIG-92b41566-c266-5ea6-ac89-66e2a48c1653 ===> /tmp/ssd_MIG-92b41566-c266-5ea6-ac89-66e2a48c1653.log: PID 248'
+Running on MIG-92b41566-c266-5ea6-ac89-66e2a48c1653 ===> /tmp/ssd_MIG-92b41566-c266-5ea6-ac89-66e2a48c1653.log: PID 248
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
++ NVIDIA_VISIBLE_DEVICES=MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
++ export CUDA_VISIBLE_DEVICES=MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
++ CUDA_VISIBLE_DEVICES=MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d.log
++ pids+=($!)
+Running on MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d ===> /tmp/ssd_MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d.log: PID 252
++ echo 'Running on MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d ===> /tmp/ssd_MIG-66dc046d-6bfb-52a5-94b4-6ebb5de1a86d.log: PID 252'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
++ NVIDIA_VISIBLE_DEVICES=MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
++ export CUDA_VISIBLE_DEVICES=MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
++ CUDA_VISIBLE_DEVICES=MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b.log
++ pids+=($!)
++ echo 'Running on MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b ===> /tmp/ssd_MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b.log: PID 257'
+Running on MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b ===> /tmp/ssd_MIG-81aa729d-83ae-55a8-a35a-0b3351d4dc9b.log: PID 257
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
++ NVIDIA_VISIBLE_DEVICES=MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
++ export CUDA_VISIBLE_DEVICES=MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
++ CUDA_VISIBLE_DEVICES=MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb.log
++ pids+=($!)
++ echo 'Running on MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb ===> /tmp/ssd_MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb.log: PID 264'
+Running on MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb ===> /tmp/ssd_MIG-1cd9a379-f1dd-56a4-9921-711a4719dfdb.log: PID 264
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-c0831e0a-9f62-574a-b656-ea81894046d3
++ NVIDIA_VISIBLE_DEVICES=MIG-c0831e0a-9f62-574a-b656-ea81894046d3
++ export CUDA_VISIBLE_DEVICES=MIG-c0831e0a-9f62-574a-b656-ea81894046d3
++ CUDA_VISIBLE_DEVICES=MIG-c0831e0a-9f62-574a-b656-ea81894046d3
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-c0831e0a-9f62-574a-b656-ea81894046d3
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-c0831e0a-9f62-574a-b656-ea81894046d3.log
++ pids+=($!)
++ echo 'Running on MIG-c0831e0a-9f62-574a-b656-ea81894046d3 ===> /tmp/ssd_MIG-c0831e0a-9f62-574a-b656-ea81894046d3.log: PID 270'
+Running on MIG-c0831e0a-9f62-574a-b656-ea81894046d3 ===> /tmp/ssd_MIG-c0831e0a-9f62-574a-b656-ea81894046d3.log: PID 270
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
++ NVIDIA_VISIBLE_DEVICES=MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
++ export CUDA_VISIBLE_DEVICES=MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
++ CUDA_VISIBLE_DEVICES=MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039.log
++ pids+=($!)
+Running on MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039 ===> /tmp/ssd_MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039.log: PID 276
++ echo 'Running on MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039 ===> /tmp/ssd_MIG-8f9f4002-a2a6-52f5-bfe7-420f2eb8f039.log: PID 276'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-39d736c4-795d-5258-8c6c-931af6d993b8
++ NVIDIA_VISIBLE_DEVICES=MIG-39d736c4-795d-5258-8c6c-931af6d993b8
++ export CUDA_VISIBLE_DEVICES=MIG-39d736c4-795d-5258-8c6c-931af6d993b8
++ CUDA_VISIBLE_DEVICES=MIG-39d736c4-795d-5258-8c6c-931af6d993b8
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-39d736c4-795d-5258-8c6c-931af6d993b8
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-39d736c4-795d-5258-8c6c-931af6d993b8.log
++ pids+=($!)
++ echo 'Running on MIG-39d736c4-795d-5258-8c6c-931af6d993b8 ===> /tmp/ssd_MIG-39d736c4-795d-5258-8c6c-931af6d993b8.log: PID 284'
+Running on MIG-39d736c4-795d-5258-8c6c-931af6d993b8 ===> /tmp/ssd_MIG-39d736c4-795d-5258-8c6c-931af6d993b8.log: PID 284
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
++ NVIDIA_VISIBLE_DEVICES=MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
++ export CUDA_VISIBLE_DEVICES=MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
++ CUDA_VISIBLE_DEVICES=MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5.log
++ pids+=($!)
+Running on MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5 ===> /tmp/ssd_MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5.log: PID 292
++ echo 'Running on MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5 ===> /tmp/ssd_MIG-5fd030f3-1539-5854-a747-cd9e37a99ff5.log: PID 292'
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
++ NVIDIA_VISIBLE_DEVICES=MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
++ export CUDA_VISIBLE_DEVICES=MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
++ CUDA_VISIBLE_DEVICES=MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c.log
++ pids+=($!)
++ echo 'Running on MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c ===> /tmp/ssd_MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c.log: PID 299'
+Running on MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c ===> /tmp/ssd_MIG-afe794d9-adc6-54ec-80cd-745ae6a7fb6c.log: PID 299
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
++ NVIDIA_VISIBLE_DEVICES=MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
++ export CUDA_VISIBLE_DEVICES=MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
++ CUDA_VISIBLE_DEVICES=MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5.log
++ pids+=($!)
++ echo 'Running on MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5 ===> /tmp/ssd_MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5.log: PID 304'
+Running on MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5 ===> /tmp/ssd_MIG-cae457c1-b9e7-53cb-b5db-180c8d28b7a5.log: PID 304
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
++ NVIDIA_VISIBLE_DEVICES=MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
++ export CUDA_VISIBLE_DEVICES=MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
++ CUDA_VISIBLE_DEVICES=MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae.log
++ pids+=($!)
++ echo 'Running on MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae ===> /tmp/ssd_MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae.log: PID 313'
+Running on MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae ===> /tmp/ssd_MIG-987c3a63-5d4c-5bf6-9356-719f32b6ceae.log: PID 313
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
++ NVIDIA_VISIBLE_DEVICES=MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
++ export CUDA_VISIBLE_DEVICES=MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
++ CUDA_VISIBLE_DEVICES=MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44.log
++ pids+=($!)
++ echo 'Running on MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44 ===> /tmp/ssd_MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44.log: PID 319'
+Running on MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44 ===> /tmp/ssd_MIG-0b5ad859-df2d-5646-9b82-407a9ab33f44.log: PID 319
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
++ NVIDIA_VISIBLE_DEVICES=MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
++ export CUDA_VISIBLE_DEVICES=MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
++ CUDA_VISIBLE_DEVICES=MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9.log
++ pids+=($!)
++ echo 'Running on MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9 ===> /tmp/ssd_MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9.log: PID 325'
+Running on MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9 ===> /tmp/ssd_MIG-2bcdbd01-44e6-5f68-ae6f-77448d2529f9.log: PID 325
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
++ NVIDIA_VISIBLE_DEVICES=MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
++ export CUDA_VISIBLE_DEVICES=MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
++ CUDA_VISIBLE_DEVICES=MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f.log
++ pids+=($!)
++ echo 'Running on MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f ===> /tmp/ssd_MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f.log: PID 332'
+Running on MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f ===> /tmp/ssd_MIG-edc008bc-fb8d-5819-840d-c5b2e4a1422f.log: PID 332
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
++ NVIDIA_VISIBLE_DEVICES=MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
++ export CUDA_VISIBLE_DEVICES=MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
++ CUDA_VISIBLE_DEVICES=MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3.log
++ pids+=($!)
++ echo 'Running on MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3 ===> /tmp/ssd_MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3.log: PID 336'
+Running on MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3 ===> /tmp/ssd_MIG-4d9dcd28-3926-507d-87a7-44e3a809cca3.log: PID 336
++ for gpu in $(echo "$ALL_GPUS")
++ export NVIDIA_VISIBLE_DEVICES=MIG-445c8aea-8d61-544a-9897-d24680bdb690
++ NVIDIA_VISIBLE_DEVICES=MIG-445c8aea-8d61-544a-9897-d24680bdb690
++ export CUDA_VISIBLE_DEVICES=MIG-445c8aea-8d61-544a-9897-d24680bdb690
++ CUDA_VISIBLE_DEVICES=MIG-445c8aea-8d61-544a-9897-d24680bdb690
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ echo MIG-445c8aea-8d61-544a-9897-d24680bdb690
+++ sed 's|/|_|g'
++ dest=/tmp/ssd_MIG-445c8aea-8d61-544a-9897-d24680bdb690.log
++ pids+=($!)
++ echo 'Running on MIG-445c8aea-8d61-544a-9897-d24680bdb690 ===> /tmp/ssd_MIG-445c8aea-8d61-544a-9897-d24680bdb690.log: PID 342'
+Running on MIG-445c8aea-8d61-544a-9897-d24680bdb690 ===> /tmp/ssd_MIG-445c8aea-8d61-544a-9897-d24680bdb690.log: PID 342
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
+++ date
++ echo 'Thu Dec  9 18:29:41 UTC 2021: waiting for parallel 56 executions: 44' 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 114 123 129 136 141 146 150 156 162 169 177 184 189 196 200 204 210 214 221 226 232 236 241 248 252 257 264 270 276 284 292 299 304 313 319 325 332 336 342
+Thu Dec  9 18:29:41 UTC 2021: waiting for parallel 56 executions: 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 114 123 129 136 141 146 150 156 162 169 177 184 189 196 200 204 210 214 221 226 232 236 241 248 252 257 264 270 276 284 292 299 304 313 319 325 332 336 342
++ for pid in ${pids[@]}
++ wait 44
+++ date
+Thu Dec  9 18:30:53 UTC 2021
+++ echo failed
+++ exit 1
+failed

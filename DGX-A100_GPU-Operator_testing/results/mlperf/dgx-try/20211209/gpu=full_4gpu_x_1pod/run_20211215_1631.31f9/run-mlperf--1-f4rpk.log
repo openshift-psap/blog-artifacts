@@ -1,0 +1,123 @@
+8<--8<--8<--8<--
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+8<--8<--8<--8<--
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
+++ true
++ NB_GPUS=0
++ [[ 0 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ cut '-d ' -f6
+++ cut '-d)' -f1
++ ALL_GPUS='GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f'
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ wc -l
++ NB_GPUS=4
++ MIG_MODE=0
++ [[ full != \f\u\l\l ]]
++ echo 'No MIG GPU available, using the full GPUs (GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).'
+No MIG GPU available, using the full GPUs (GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).
++ [[ 4 == 0 ]]
++ [[ 4 != 4 ]]
+++ date +%s
++ start=1639582302
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-15 03:31:42 PM'
+STARTING TIMING RUN AT 2021-12-15 03:31:42 PM GPU: 4 x full x 1 Pods
++ echo 'STARTING TIMING RUN AT 2021-12-15 03:31:42 PM GPU: 4 x full x 1 Pods'
++ set -x
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ echo 'running benchmark'
+running benchmark
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ [[ maskrcnn == \m\a\s\k\r\c\n\n ]]
+Setting up the Mask RCNN benchmark...
++ echo 'Setting up the Mask RCNN benchmark...'
++ NEXP=1
++ source config_DGXA100.sh
+++ : False
+++ : True
+++ : True
+++ : 10
+++ : True
+++ : True
+++ : True
+++ : 1
+++ : True
+++ : 40000
+++ export BATCHSIZE=12
+++ BATCHSIZE=12
+++ export EXTRA_PARAMS=
+++ EXTRA_PARAMS=
+++ export 'EXTRA_CONFIG=SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm'
+++ EXTRA_CONFIG='SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm'
+++ export 'EXTRA_CONFIG=SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True'
+++ EXTRA_CONFIG='SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True'
+++ export DGXNNODES=1
+++ DGXNNODES=1
++++ sed 's/^config_//'
++++ sed 's/\.sh$//'
+++++ readlink -f config_DGXA100.sh
++++ basename /workspace/object_detection/config_DGXA100.sh
+++ export DGXSYSTEM=DGXA100
+++ DGXSYSTEM=DGXA100
+++ WALLTIME_MINUTES=100
+++ export WALLTIME=100
+++ WALLTIME=100
+++ export DGXNGPU=8
+++ DGXNGPU=8
+++ export DGXSOCKETCORES=48
+++ DGXSOCKETCORES=48
+++ export DGXNSOCKET=2
+++ DGXNSOCKET=2
+++ export DGXHT=1
+++ DGXHT=1
++ DGXNSOCKET=1
++ DGXSOCKETCORES=48
++ [[ 0 == \1 ]]
++ DGXNGPU=4
++ echo 'Running in multi-gpu mode.'
+Running in multi-gpu mode.
++ declare -a CMD
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
+Patching 'bind_launch.py' to err-exit on failure ...
++ sed 's/process.wait()$/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ [[ maskrcnn == \s\s\d ]]
++ [[ maskrcnn == \m\a\s\k\r\c\n\n ]]
++ echo 'Setting up the Mask RCNN benchmark...'
+Setting up the Mask RCNN benchmark...
++ sed 's/torch.set_num_threads(1)$/import time, sys; time.sleep(int(sys.argv[1].split("=")[-1]));torch.set_num_threads(1);/' -i tools/train_mlperf.py
++ MODEL=/data/coco2017/models/R-50.pkl
++ [[ -f /data/coco2017/models/R-50.pkl ]]
+++ cat /data/coco2017/models/R-50.pkl
+++ md5sum
++ sum='6652b4a9c782d82bb3d42118be74d79b  -'
++ [[ 6652b4a9c782d82bb3d42118be74d79b  - != \6\6\5\2\b\4\a\9\c\7\8\2\d\8\2\b\b\3\d\4\2\1\1\8\b\e\7\4\d\7\9\b\ \ \- ]]
++ [[ ! -f /data/coco2017/models/R-50.pkl ]]
++ COCO_PKL=/data/coco2017/instances_train2017.json.pickled
++ [[ ! -f /data/coco2017/instances_train2017.json.pickled ]]
++ python3 pickle_coco_annotations.py --root /data/coco2017 --ann /data/coco2017/annotations/instances_train2017.json --pickle_output_file /data/coco2017/instances_train2017.json.pickled
+python3: can't open file 'pickle_coco_annotations.py': [Errno 2] No such file or directory

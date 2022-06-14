@@ -1,0 +1,1284 @@
+8<--8<--8<--8<--
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+8<--8<--8<--8<--
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
+++ true
++ NB_GPUS=0
++ [[ 0 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ cut '-d ' -f6
+++ cut '-d)' -f1
++ ALL_GPUS='GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108'
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ wc -l
++ NB_GPUS=5
++ MIG_MODE=0
++ [[ full != \f\u\l\l ]]
+No MIG GPU available, using the full GPUs (GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108).
++ echo 'No MIG GPU available, using the full GPUs (GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b
+GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72
+GPU-c9297a60-5079-9a56-b935-51e08dc0f65e
+GPU-4fb17cd5-cad8-31a6-34d3-08434d926140
+GPU-55b69871-247e-9b99-a60a-7daca59a4108).'
++ [[ 5 == 0 ]]
++ [[ 5 != 5 ]]
+++ date +%s
++ start=1639753176
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-17 02:59:36 PM'
+STARTING TIMING RUN AT 2021-12-17 02:59:36 PM GPU: 5 x full x 2 Pods
++ echo 'STARTING TIMING RUN AT 2021-12-17 02:59:36 PM GPU: 5 x full x 2 Pods'
++ set -x
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ [[ ssd == \m\a\s\k\r\c\n\n ]]
++ DGXNSOCKET=1
++ DGXSOCKETCORES=8
++ [[ 0 == \1 ]]
++ DGXNGPU=5
+Running in multi-gpu mode.
++ echo 'Running in multi-gpu mode.'
++ declare -a CMD
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
+Patching 'bind_launch.py' to err-exit on failure ...
++ sed 's/process.wait()$/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ [[ ssd == \s\s\d ]]
++ echo 'Setting up the SSD benchmark...'
+Setting up the SSD benchmark...
++ EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'
++ NUMEPOCHS=80
++ ARGS=(train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs "${NUMEPOCHS}" --warmup-factor 0 --no-save --threshold=${SSD_THRESHOLD} --data ${DATASET_DIR} ${EXTRA_PARAMS})
++ [[ fast == \f\a\s\t ]]
++ echo 'Running in FAST mode'
+Running in FAST mode
++ ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)
++ [[ fast == \d\r\y ]]
++ trap 'date; echo failed; exit 1' ERR
++ [[ y != \y ]]
+Pod startup synchronization disabled, do not wait for 2 Pods ...
++ echo 'Pod startup synchronization disabled, do not wait for 2 Pods ...'
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
++ [[ 0 == 1 ]]
++ dest=/tmp/benchmark_all.log
++ [[ 0 == 1 ]]
++ echo 'Running on all the 5 GPUs '
+Running on all the 5 GPUs 
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=5 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
++ tee -a /tmp/benchmark_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639753178011, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178032, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178109, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178225, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178304, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753179654, "event_type": "POINT_IN_TIME", "key": "seed", "value": 1258070437, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO Using network IB
+NCCL version 2.7.5+cuda11.0
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Trees [0] 3/-1/-1->2->1|1->2->3/-1/-1 [1] 3/-1/-1->2->1|1->2->3/-1/-1 [2] 3/-1/-1->2->1|1->2->3/-1/-1 [3] 3/-1/-1->2->1|1->2->3/-1/-1 [4] 3/-1/-1->2->1|1->2->3/-1/-1 [5] 3/-1/-1->2->1|1->2->3/-1/-1 [6] 3/-1/-1->2->1|1->2->3/-1/-1 [7] 3/-1/-1->2->1|1->2->3/-1/-1 [8] 3/-1/-1->2->1|1->2->3/-1/-1 [9] 3/-1/-1->2->1|1->2->3/-1/-1 [10] 3/-1/-1->2->1|1->2->3/-1/-1 [11] 3/-1/-1->2->1|1->2->3/-1/-1 [12] 3/-1/-1->2->1|1->2->3/-1/-1 [13] 3/-1/-1->2->1|1->2->3/-1/-1 [14] 3/-1/-1->2->1|1->2->3/-1/-1 [15] 3/-1/-1->2->1|1->2->3/-1/-1 [16] 3/-1/-1->2->1|1->2->3/-1/-1 [17] 3/-1/-1->2->1|1->2->3/-1/-1 [18] 3/-1/-1->2->1|1->2->3/-1/-1 [19] 3/-1/-1->2->1|1->2->3/-1/-1 [20] 3/-1/-1->2->1|1->2->3/-1/-1 [21] 3/-1/-1->2->1|1->2->3/-1/-1 [22] 3/-1/-1->2->1|1->2->3/-1/-1 [23] 3/-1/-1->2->1|1->2->3/-1/-1
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Trees [0] 4/-1/-1->3->2|2->3->4/-1/-1 [1] 4/-1/-1->3->2|2->3->4/-1/-1 [2] 4/-1/-1->3->2|2->3->4/-1/-1 [3] 4/-1/-1->3->2|2->3->4/-1/-1 [4] 4/-1/-1->3->2|2->3->4/-1/-1 [5] 4/-1/-1->3->2|2->3->4/-1/-1 [6] 4/-1/-1->3->2|2->3->4/-1/-1 [7] 4/-1/-1->3->2|2->3->4/-1/-1 [8] 4/-1/-1->3->2|2->3->4/-1/-1 [9] 4/-1/-1->3->2|2->3->4/-1/-1 [10] 4/-1/-1->3->2|2->3->4/-1/-1 [11] 4/-1/-1->3->2|2->3->4/-1/-1 [12] 4/-1/-1->3->2|2->3->4/-1/-1 [13] 4/-1/-1->3->2|2->3->4/-1/-1 [14] 4/-1/-1->3->2|2->3->4/-1/-1 [15] 4/-1/-1->3->2|2->3->4/-1/-1 [16] 4/-1/-1->3->2|2->3->4/-1/-1 [17] 4/-1/-1->3->2|2->3->4/-1/-1 [18] 4/-1/-1->3->2|2->3->4/-1/-1 [19] 4/-1/-1->3->2|2->3->4/-1/-1 [20] 4/-1/-1->3->2|2->3->4/-1/-1 [21] 4/-1/-1->3->2|2->3->4/-1/-1 [22] 4/-1/-1->3->2|2->3->4/-1/-1 [23] 4/-1/-1->3->2|2->3->4/-1/-1
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Trees [0] -1/-1/-1->4->3|3->4->-1/-1/-1 [1] -1/-1/-1->4->3|3->4->-1/-1/-1 [2] -1/-1/-1->4->3|3->4->-1/-1/-1 [3] -1/-1/-1->4->3|3->4->-1/-1/-1 [4] -1/-1/-1->4->3|3->4->-1/-1/-1 [5] -1/-1/-1->4->3|3->4->-1/-1/-1 [6] -1/-1/-1->4->3|3->4->-1/-1/-1 [7] -1/-1/-1->4->3|3->4->-1/-1/-1 [8] -1/-1/-1->4->3|3->4->-1/-1/-1 [9] -1/-1/-1->4->3|3->4->-1/-1/-1 [10] -1/-1/-1->4->3|3->4->-1/-1/-1 [11] -1/-1/-1->4->3|3->4->-1/-1/-1 [12] -1/-1/-1->4->3|3->4->-1/-1/-1 [13] -1/-1/-1->4->3|3->4->-1/-1/-1 [14] -1/-1/-1->4->3|3->4->-1/-1/-1 [15] -1/-1/-1->4->3|3->4->-1/-1/-1 [16] -1/-1/-1->4->3|3->4->-1/-1/-1 [17] -1/-1/-1->4->3|3->4->-1/-1/-1 [18] -1/-1/-1->4->3|3->4->-1/-1/-1 [19] -1/-1/-1->4->3|3->4->-1/-1/-1 [20] -1/-1/-1->4->3|3->4->-1/-1/-1 [21] -1/-1/-1->4->3|3->4->-1/-1/-1 [22] -1/-1/-1->4->3|3->4->-1/-1/-1 [23] -1/-1/-1->4->3|3->4->-1/-1/-1
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 1/-1/-1->0->-1|-1->0->1/-1/-1 [3] 1/-1/-1->0->-1|-1->0->1/-1/-1 [4] 1/-1/-1->0->-1|-1->0->1/-1/-1 [5] 1/-1/-1->0->-1|-1->0->1/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 1/-1/-1->0->-1|-1->0->1/-1/-1 [9] 1/-1/-1->0->-1|-1->0->1/-1/-1 [10] 1/-1/-1->0->-1|-1->0->1/-1/-1 [11] 1/-1/-1->0->-1|-1->0->1/-1/-1 [12] 1/-1/-1->0->-1|-1->0->1/-1/-1 [13] 1/-1/-1->0->-1|-1->0->1/-1/-1 [14] 1/-1/-1->0->-1|-1->0->1/-1/-1 [15] 1/-1/-1->0->-1|-1->0->1/-1/-1 [16] 1/-1/-1->0->-1|-1->0->1/-1/-1 [17] 1/-1/-1->0->-1|-1->0->1/-1/-1 [18] 1/-1/-1->0->-1|-1->0->1/-1/-1 [19] 1/-1/-1->0->-1|-1->0->1/-1/-1 [20] 1/-1/-1->0->-1|-1->0->1/-1/-1 [21] 1/-1/-1->0->-1|-1->0->1/-1/-1 [22] 1/-1/-1->0->-1|-1->0->1/-1/-1 [23] 1/-1/-1->0->-1|-1->0->1/-1/-1
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] 2/-1/-1->1->0|0->1->2/-1/-1 [3] 2/-1/-1->1->0|0->1->2/-1/-1 [4] 2/-1/-1->1->0|0->1->2/-1/-1 [5] 2/-1/-1->1->0|0->1->2/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] 2/-1/-1->1->0|0->1->2/-1/-1 [9] 2/-1/-1->1->0|0->1->2/-1/-1 [10] 2/-1/-1->1->0|0->1->2/-1/-1 [11] 2/-1/-1->1->0|0->1->2/-1/-1 [12] 2/-1/-1->1->0|0->1->2/-1/-1 [13] 2/-1/-1->1->0|0->1->2/-1/-1 [14] 2/-1/-1->1->0|0->1->2/-1/-1 [15] 2/-1/-1->1->0|0->1->2/-1/-1 [16] 2/-1/-1->1->0|0->1->2/-1/-1 [17] 2/-1/-1->1->0|0->1->2/-1/-1 [18] 2/-1/-1->1->0|0->1->2/-1/-1 [19] 2/-1/-1->1->0|0->1->2/-1/-1 [20] 2/-1/-1->1->0|0->1->2/-1/-1 [21] 2/-1/-1->1->0|0->1->2/-1/-1 [22] 2/-1/-1->1->0|0->1->2/-1/-1 [23] 2/-1/-1->1->0|0->1->2/-1/-1
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 00 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 00 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 00 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 00 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 00 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 00 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 00 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 01 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 01 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 01 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 01 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 01 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 01 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 01 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 02 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 02 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 02 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 02 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 02 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 02 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 02 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 03 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 03 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 03 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 03 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 03 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 03 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 03 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 04 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 04 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 04 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 04 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 04 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 04 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 04 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 05 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 05 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 05 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 05 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 05 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 05 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 05 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 06 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 06 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 06 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 06 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 06 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 06 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 06 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 07 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 07 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 07 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 07 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 07 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 07 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 07 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 08 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 08 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 08 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 08 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 08 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 08 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 08 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 09 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 09 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 09 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 09 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 09 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 09 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 09 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 10 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 10 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 10 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 10 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 10 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 10 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 10 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 11 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 11 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 11 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 11 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 11 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 11 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 11 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 12 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 12 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 12 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 12 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 12 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 12 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 12 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 13 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 13 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 13 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 13 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 13 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 13 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 13 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 14 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 14 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 14 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 14 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 14 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 14 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 14 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 15 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 15 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 15 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 15 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 15 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 15 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 15 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 16 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 16 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 16 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 16 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 16 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 16 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 16 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 17 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 17 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 17 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 17 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 17 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 17 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 17 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 18 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 18 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 18 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 18 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 18 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 18 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 18 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 19 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 19 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 19 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 19 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 19 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 19 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 19 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 20 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 20 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 20 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 20 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 20 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 20 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 20 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 21 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 21 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 21 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 21 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 21 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 21 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 21 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 22 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 22 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 22 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 22 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 22 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 22 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 22 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 23 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 23 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 23 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 23 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 23 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 23 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 23 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO comm 0x7efdfc006880 rank 4 nranks 5 cudaDev 4 busId b7000 - Init COMPLETE
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO comm 0x7f1984006880 rank 0 nranks 5 cudaDev 0 busId 47000 - Init COMPLETE
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO Launch mode Parallel
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO comm 0x7fec0c006880 rank 3 nranks 5 cudaDev 3 busId 90000 - Init COMPLETE
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO comm 0x7efedc006880 rank 1 nranks 5 cudaDev 1 busId 4e000 - Init COMPLETE
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO comm 0x7fc764006880 rank 2 nranks 5 cudaDev 2 busId 87000 - Init COMPLETE
+0 Using seed = 1258070437
+1 Using seed = 1258070438
+3 Using seed = 1258070440
+4 Using seed = 1258070441
+2 Using seed = 1258070439
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+:::MLLOG {"namespace": "", "time_ms": 1639753183543, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183544, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 570, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+Delaying allreduces to the end of backward()
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0575, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183554, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+:::MLLOG {"namespace": "", "time_ms": 1639753206617, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639753206644, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+[/opt/dali/dali/operators/image/crop/bbox_crop.cc:348] WARNING: `ltrb` is deprecated. Please use `bbox_layout` to specify the format of the bounding box. E.g. For 2D bounding boxes, `ltrb=True`` is equivalent to `bbox_layout="xyXY"`, and `ltrb=False` is equivalent to `bbox_layout="xyWH"`
+loading annotations into memory...
+loading annotations into memory...
+:::MLLOG {"namespace": "", "time_ms": 1639753208602, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639753208603, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+Done (t=0.17s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.16s)
+creating index...
+Done (t=0.17s)
+creating index...
+Done (t=0.14s)
+creating index...
+Done (t=0.14s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639753208913, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639753208913, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753208914, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.639, Average Loss: 0.023, avg. samples / sec: 22.76
+Iteration:     20, Loss function: 20.793, Average Loss: 0.446, avg. samples / sec: 4607.88
+Iteration:     40, Loss function: 20.040, Average Loss: 0.841, avg. samples / sec: 5087.37
+Iteration:     60, Loss function: 11.700, Average Loss: 1.151, avg. samples / sec: 5292.17
+Iteration:     80, Loss function: 10.474, Average Loss: 1.350, avg. samples / sec: 5399.38
+Iteration:    100, Loss function: 9.886, Average Loss: 1.519, avg. samples / sec: 5364.36
+Iteration:    120, Loss function: 9.254, Average Loss: 1.675, avg. samples / sec: 3749.23
+Iteration:    140, Loss function: 9.339, Average Loss: 1.826, avg. samples / sec: 5431.63
+Iteration:    160, Loss function: 8.663, Average Loss: 1.965, avg. samples / sec: 5411.93
+Iteration:    180, Loss function: 8.486, Average Loss: 2.094, avg. samples / sec: 5499.13
+Iteration:    200, Loss function: 8.336, Average Loss: 2.221, avg. samples / sec: 5511.54
+:::MLLOG {"namespace": "", "time_ms": 1639753232002, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639753232003, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 206}}
+Iteration:    220, Loss function: 8.024, Average Loss: 2.338, avg. samples / sec: 5548.77
+Iteration:    240, Loss function: 8.054, Average Loss: 2.452, avg. samples / sec: 5586.74
+Iteration:    260, Loss function: 8.581, Average Loss: 2.564, avg. samples / sec: 5630.55
+Iteration:    280, Loss function: 7.649, Average Loss: 2.672, avg. samples / sec: 5650.76
+Iteration:    300, Loss function: 7.570, Average Loss: 2.770, avg. samples / sec: 5624.91
+
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    320, Loss function: 7.413, Average Loss: 2.865, avg. samples / sec: 5570.88
+Iteration:    340, Loss function: 7.297, Average Loss: 2.953, avg. samples / sec: 5620.58
+Iteration:    360, Loss function: 7.268, Average Loss: 3.037, avg. samples / sec: 5688.04
+Iteration:    380, Loss function: 8.352, Average Loss: 3.124, avg. samples / sec: 5668.92
+Iteration:    400, Loss function: 7.358, Average Loss: 3.221, avg. samples / sec: 5678.16
+:::MLLOG {"namespace": "", "time_ms": 1639753252859, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639753252860, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 412}}
+Iteration:    420, Loss function: 6.884, Average Loss: 3.297, avg. samples / sec: 5687.58
+Iteration:    440, Loss function: 6.582, Average Loss: 3.368, avg. samples / sec: 5745.63
+Iteration:    460, Loss function: 6.841, Average Loss: 3.437, avg. samples / sec: 5692.83
+Iteration:    480, Loss function: 6.181, Average Loss: 3.502, avg. samples / sec: 5724.57
+Iteration:    500, Loss function: 6.556, Average Loss: 3.564, avg. samples / sec: 5735.28
+Iteration:    520, Loss function: 6.692, Average Loss: 3.626, avg. samples / sec: 5702.88
+Iteration:    540, Loss function: 6.541, Average Loss: 3.684, avg. samples / sec: 5699.42
+Iteration:    560, Loss function: 6.686, Average Loss: 3.738, avg. samples / sec: 5756.49
+Iteration:    580, Loss function: 6.401, Average Loss: 3.792, avg. samples / sec: 5763.83
+Iteration:    600, Loss function: 6.093, Average Loss: 3.840, avg. samples / sec: 5779.39
+:::MLLOG {"namespace": "", "time_ms": 1639753273342, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639753273343, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 618}}
+Iteration:    620, Loss function: 6.055, Average Loss: 3.886, avg. samples / sec: 5766.12
+Iteration:    640, Loss function: 6.192, Average Loss: 3.930, avg. samples / sec: 5759.48
+Iteration:    660, Loss function: 5.753, Average Loss: 3.971, avg. samples / sec: 5714.81
+Iteration:    680, Loss function: 5.821, Average Loss: 4.013, avg. samples / sec: 5678.50
+Iteration:    700, Loss function: 5.717, Average Loss: 4.051, avg. samples / sec: 5768.49
+Iteration:    720, Loss function: 5.631, Average Loss: 4.087, avg. samples / sec: 5027.78
+Iteration:    740, Loss function: 6.105, Average Loss: 4.122, avg. samples / sec: 5207.71
+Iteration:    760, Loss function: 6.012, Average Loss: 4.156, avg. samples / sec: 5772.77
+Iteration:    780, Loss function: 5.791, Average Loss: 4.188, avg. samples / sec: 5729.03
+Iteration:    800, Loss function: 5.864, Average Loss: 4.219, avg. samples / sec: 5735.73
+Iteration:    820, Loss function: 5.751, Average Loss: 4.246, avg. samples / sec: 5733.33
+:::MLLOG {"namespace": "", "time_ms": 1639753294181, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639753294182, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 823}}
+Iteration:    840, Loss function: 5.241, Average Loss: 4.271, avg. samples / sec: 5757.84
+Iteration:    860, Loss function: 5.458, Average Loss: 4.295, avg. samples / sec: 5825.99
+Iteration:    880, Loss function: 5.589, Average Loss: 4.319, avg. samples / sec: 5783.93
+Iteration:    900, Loss function: 5.412, Average Loss: 4.341, avg. samples / sec: 5725.22
+Iteration:    920, Loss function: 5.546, Average Loss: 4.362, avg. samples / sec: 5751.28
+Iteration:    940, Loss function: 5.032, Average Loss: 4.382, avg. samples / sec: 5782.22
+Iteration:    960, Loss function: 5.427, Average Loss: 4.400, avg. samples / sec: 5792.02
+Iteration:    980, Loss function: 5.402, Average Loss: 4.420, avg. samples / sec: 5813.92
+Iteration:   1000, Loss function: 5.123, Average Loss: 4.437, avg. samples / sec: 5847.77
+Iteration:   1020, Loss function: 5.430, Average Loss: 4.452, avg. samples / sec: 5778.84
+:::MLLOG {"namespace": "", "time_ms": 1639753314481, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.72 s
+:::MLLOG {"namespace": "", "time_ms": 1639753320257, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639753320310, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753320310, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 1029}}
+Loading and preparing results...
+DONE (t=0.54s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   1040, Loss function: 5.171, Average Loss: 4.466, avg. samples / sec: 1460.93
+Iteration:   1060, Loss function: 5.116, Average Loss: 4.479, avg. samples / sec: 5678.74
+DONE (t=2.71s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.07521
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.16114
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.06154
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.15147
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.10920
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.15762
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.16572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.16572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.07521 AP goal: 0.10000
+Iteration:   1080, Loss function: 5.205, Average Loss: 4.493, avg. samples / sec: 5681.40
+:::MLLOG {"namespace": "", "time_ms": 1639753325512, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753325513, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.07520836170846806, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753325513, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+Iteration:   1100, Loss function: 5.192, Average Loss: 4.506, avg. samples / sec: 5819.98
+Iteration:   1120, Loss function: 4.904, Average Loss: 4.518, avg. samples / sec: 5769.87
+Iteration:   1140, Loss function: 5.057, Average Loss: 4.530, avg. samples / sec: 5745.34
+Iteration:   1160, Loss function: 5.260, Average Loss: 4.542, avg. samples / sec: 5785.88
+Iteration:   1180, Loss function: 5.105, Average Loss: 4.553, avg. samples / sec: 5765.50
+Iteration:   1200, Loss function: 4.996, Average Loss: 4.562, avg. samples / sec: 5788.04
+Iteration:   1220, Loss function: 5.201, Average Loss: 4.572, avg. samples / sec: 5817.79
+:::MLLOG {"namespace": "", "time_ms": 1639753340689, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639753340690, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 7, "current_iter_num": 1235}}
+Iteration:   1240, Loss function: 5.154, Average Loss: 4.580, avg. samples / sec: 5776.54
+Iteration:   1260, Loss function: 5.044, Average Loss: 4.587, avg. samples / sec: 5814.67
+Iteration:   1280, Loss function: 4.831, Average Loss: 4.594, avg. samples / sec: 4471.46
+Iteration:   1300, Loss function: 4.999, Average Loss: 4.601, avg. samples / sec: 5849.58
+Iteration:   1320, Loss function: 5.185, Average Loss: 4.608, avg. samples / sec: 5765.31
+Iteration:   1340, Loss function: 5.042, Average Loss: 4.615, avg. samples / sec: 5791.18
+Iteration:   1360, Loss function: 5.222, Average Loss: 4.620, avg. samples / sec: 5797.54
+Iteration:   1380, Loss function: 4.960, Average Loss: 4.625, avg. samples / sec: 5728.40
+Iteration:   1400, Loss function: 5.026, Average Loss: 4.631, avg. samples / sec: 5738.91
+Iteration:   1420, Loss function: 4.893, Average Loss: 4.634, avg. samples / sec: 5730.54
+Iteration:   1440, Loss function: 4.877, Average Loss: 4.639, avg. samples / sec: 5757.48
+:::MLLOG {"namespace": "", "time_ms": 1639753361638, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 7}}
+:::MLLOG {"namespace": "", "time_ms": 1639753361640, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 8, "current_iter_num": 1441}}
+Iteration:   1460, Loss function: 4.938, Average Loss: 4.642, avg. samples / sec: 5801.52
+Iteration:   1480, Loss function: 4.767, Average Loss: 4.645, avg. samples / sec: 5815.59
+Iteration:   1500, Loss function: 4.558, Average Loss: 4.650, avg. samples / sec: 5779.38
+Iteration:   1520, Loss function: 4.783, Average Loss: 4.652, avg. samples / sec: 5778.52
+Iteration:   1540, Loss function: 4.633, Average Loss: 4.652, avg. samples / sec: 5777.01
+Iteration:   1560, Loss function: 4.641, Average Loss: 4.655, avg. samples / sec: 5794.47
+Iteration:   1580, Loss function: 4.920, Average Loss: 4.655, avg. samples / sec: 5787.12
+Iteration:   1600, Loss function: 4.962, Average Loss: 4.657, avg. samples / sec: 5773.36
+Iteration:   1620, Loss function: 4.878, Average Loss: 4.659, avg. samples / sec: 5792.05
+Iteration:   1640, Loss function: 4.708, Average Loss: 4.662, avg. samples / sec: 5810.36
+:::MLLOG {"namespace": "", "time_ms": 1639753381795, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 8}}
+:::MLLOG {"namespace": "", "time_ms": 1639753381796, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 9, "current_iter_num": 1646}}
+Iteration:   1660, Loss function: 4.917, Average Loss: 4.662, avg. samples / sec: 5709.49
+Iteration:   1680, Loss function: 4.719, Average Loss: 4.661, avg. samples / sec: 5750.90
+Iteration:   1700, Loss function: 4.599, Average Loss: 4.660, avg. samples / sec: 5829.38
+Iteration:   1720, Loss function: 4.888, Average Loss: 4.660, avg. samples / sec: 5787.13
+Iteration:   1740, Loss function: 4.667, Average Loss: 4.661, avg. samples / sec: 5800.30
+Iteration:   1760, Loss function: 4.581, Average Loss: 4.661, avg. samples / sec: 5741.88
+Iteration:   1780, Loss function: 4.471, Average Loss: 4.660, avg. samples / sec: 5725.72
+Iteration:   1800, Loss function: 4.546, Average Loss: 4.660, avg. samples / sec: 5743.33
+Iteration:   1820, Loss function: 4.578, Average Loss: 4.660, avg. samples / sec: 5806.26
+Iteration:   1840, Loss function: 4.449, Average Loss: 4.660, avg. samples / sec: 5813.51
+:::MLLOG {"namespace": "", "time_ms": 1639753402132, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 9}}
+:::MLLOG {"namespace": "", "time_ms": 1639753402133, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 10, "current_iter_num": 1852}}
+Iteration:   1860, Loss function: 4.761, Average Loss: 4.659, avg. samples / sec: 5798.25
+Iteration:   1880, Loss function: 4.305, Average Loss: 4.657, avg. samples / sec: 5804.40
+Iteration:   1900, Loss function: 4.416, Average Loss: 4.656, avg. samples / sec: 5731.97
+Iteration:   1920, Loss function: 4.411, Average Loss: 4.654, avg. samples / sec: 5804.29
+Iteration:   1940, Loss function: 4.625, Average Loss: 4.652, avg. samples / sec: 5787.87
+Iteration:   1960, Loss function: 4.319, Average Loss: 4.650, avg. samples / sec: 5740.83
+Iteration:   1980, Loss function: 4.870, Average Loss: 4.650, avg. samples / sec: 5780.19
+Iteration:   2000, Loss function: 4.544, Average Loss: 4.648, avg. samples / sec: 5721.87
+Iteration:   2020, Loss function: 4.530, Average Loss: 4.646, avg. samples / sec: 5828.97
+Iteration:   2040, Loss function: 4.643, Average Loss: 4.645, avg. samples / sec: 5795.50
+:::MLLOG {"namespace": "", "time_ms": 1639753422446, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 10}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.85 s
+:::MLLOG {"namespace": "", "time_ms": 1639753428314, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639753428359, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 11, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753428359, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 11, "current_iter_num": 2058}}
+Loading and preparing results...
+Iteration:   2060, Loss function: 4.631, Average Loss: 4.641, avg. samples / sec: 1449.74
+DONE (t=0.75s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   2080, Loss function: 4.692, Average Loss: 4.638, avg. samples / sec: 5696.93
+DONE (t=3.28s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.12860
+Iteration:   2100, Loss function: 4.593, Average Loss: 4.634, avg. samples / sec: 5730.10
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.24901
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.12052
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.21472
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.15409
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.22568
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.23840
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.23840
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.12860 AP goal: 0.10000
+Iteration:   2120, Loss function: 4.512, Average Loss: 4.630, avg. samples / sec: 5814.64
+:::MLLOG {"namespace": "", "time_ms": 1639753434581, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639753434582, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.12860177935915298, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639753434582, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639753434784, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
++ [[ fast == \d\r\y ]]
+++ date
+Fri Dec 17 15:03:56 UTC 2021: done waiting for 5 executions
++ echo 'Fri Dec 17 15:03:56 UTC 2021: done waiting for 5 executions'
++ ls /tmp/benchmark_all.log
+/tmp/benchmark_all.log
++ grep . /tmp/benchmark_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639753178011, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178032, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178109, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178225, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753178304, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639753179654, "event_type": "POINT_IN_TIME", "key": "seed", "value": 1258070437, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO Using network IB
+NCCL version 2.7.5+cuda11.0
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO Bootstrap : Using [0]eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:45:45 [4] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:43:43 [2] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO NET/IB : Using [0]mlx5_7:1/RoCE [1]mlx5_0:1/RoCE ; OOB eth0:10.128.1.161<0>
+run-mlperf--1-n4dbj:44:44 [3] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:42:42 [1] NCCL INFO Using network IB
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Trees [0] 3/-1/-1->2->1|1->2->3/-1/-1 [1] 3/-1/-1->2->1|1->2->3/-1/-1 [2] 3/-1/-1->2->1|1->2->3/-1/-1 [3] 3/-1/-1->2->1|1->2->3/-1/-1 [4] 3/-1/-1->2->1|1->2->3/-1/-1 [5] 3/-1/-1->2->1|1->2->3/-1/-1 [6] 3/-1/-1->2->1|1->2->3/-1/-1 [7] 3/-1/-1->2->1|1->2->3/-1/-1 [8] 3/-1/-1->2->1|1->2->3/-1/-1 [9] 3/-1/-1->2->1|1->2->3/-1/-1 [10] 3/-1/-1->2->1|1->2->3/-1/-1 [11] 3/-1/-1->2->1|1->2->3/-1/-1 [12] 3/-1/-1->2->1|1->2->3/-1/-1 [13] 3/-1/-1->2->1|1->2->3/-1/-1 [14] 3/-1/-1->2->1|1->2->3/-1/-1 [15] 3/-1/-1->2->1|1->2->3/-1/-1 [16] 3/-1/-1->2->1|1->2->3/-1/-1 [17] 3/-1/-1->2->1|1->2->3/-1/-1 [18] 3/-1/-1->2->1|1->2->3/-1/-1 [19] 3/-1/-1->2->1|1->2->3/-1/-1 [20] 3/-1/-1->2->1|1->2->3/-1/-1 [21] 3/-1/-1->2->1|1->2->3/-1/-1 [22] 3/-1/-1->2->1|1->2->3/-1/-1 [23] 3/-1/-1->2->1|1->2->3/-1/-1
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 00/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 01/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 02/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 03/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 04/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 05/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 06/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 07/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 08/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 09/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 10/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 11/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 12/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 13/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Trees [0] 4/-1/-1->3->2|2->3->4/-1/-1 [1] 4/-1/-1->3->2|2->3->4/-1/-1 [2] 4/-1/-1->3->2|2->3->4/-1/-1 [3] 4/-1/-1->3->2|2->3->4/-1/-1 [4] 4/-1/-1->3->2|2->3->4/-1/-1 [5] 4/-1/-1->3->2|2->3->4/-1/-1 [6] 4/-1/-1->3->2|2->3->4/-1/-1 [7] 4/-1/-1->3->2|2->3->4/-1/-1 [8] 4/-1/-1->3->2|2->3->4/-1/-1 [9] 4/-1/-1->3->2|2->3->4/-1/-1 [10] 4/-1/-1->3->2|2->3->4/-1/-1 [11] 4/-1/-1->3->2|2->3->4/-1/-1 [12] 4/-1/-1->3->2|2->3->4/-1/-1 [13] 4/-1/-1->3->2|2->3->4/-1/-1 [14] 4/-1/-1->3->2|2->3->4/-1/-1 [15] 4/-1/-1->3->2|2->3->4/-1/-1 [16] 4/-1/-1->3->2|2->3->4/-1/-1 [17] 4/-1/-1->3->2|2->3->4/-1/-1 [18] 4/-1/-1->3->2|2->3->4/-1/-1 [19] 4/-1/-1->3->2|2->3->4/-1/-1 [20] 4/-1/-1->3->2|2->3->4/-1/-1 [21] 4/-1/-1->3->2|2->3->4/-1/-1 [22] 4/-1/-1->3->2|2->3->4/-1/-1 [23] 4/-1/-1->3->2|2->3->4/-1/-1
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 14/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 15/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 16/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 17/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 18/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 19/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 20/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 21/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 22/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 23/24 :    0   1   2   3   4
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Trees [0] -1/-1/-1->4->3|3->4->-1/-1/-1 [1] -1/-1/-1->4->3|3->4->-1/-1/-1 [2] -1/-1/-1->4->3|3->4->-1/-1/-1 [3] -1/-1/-1->4->3|3->4->-1/-1/-1 [4] -1/-1/-1->4->3|3->4->-1/-1/-1 [5] -1/-1/-1->4->3|3->4->-1/-1/-1 [6] -1/-1/-1->4->3|3->4->-1/-1/-1 [7] -1/-1/-1->4->3|3->4->-1/-1/-1 [8] -1/-1/-1->4->3|3->4->-1/-1/-1 [9] -1/-1/-1->4->3|3->4->-1/-1/-1 [10] -1/-1/-1->4->3|3->4->-1/-1/-1 [11] -1/-1/-1->4->3|3->4->-1/-1/-1 [12] -1/-1/-1->4->3|3->4->-1/-1/-1 [13] -1/-1/-1->4->3|3->4->-1/-1/-1 [14] -1/-1/-1->4->3|3->4->-1/-1/-1 [15] -1/-1/-1->4->3|3->4->-1/-1/-1 [16] -1/-1/-1->4->3|3->4->-1/-1/-1 [17] -1/-1/-1->4->3|3->4->-1/-1/-1 [18] -1/-1/-1->4->3|3->4->-1/-1/-1 [19] -1/-1/-1->4->3|3->4->-1/-1/-1 [20] -1/-1/-1->4->3|3->4->-1/-1/-1 [21] -1/-1/-1->4->3|3->4->-1/-1/-1 [22] -1/-1/-1->4->3|3->4->-1/-1/-1 [23] -1/-1/-1->4->3|3->4->-1/-1/-1
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1|-1->0->1/-1/-1 [1] 1/-1/-1->0->-1|-1->0->1/-1/-1 [2] 1/-1/-1->0->-1|-1->0->1/-1/-1 [3] 1/-1/-1->0->-1|-1->0->1/-1/-1 [4] 1/-1/-1->0->-1|-1->0->1/-1/-1 [5] 1/-1/-1->0->-1|-1->0->1/-1/-1 [6] 1/-1/-1->0->-1|-1->0->1/-1/-1 [7] 1/-1/-1->0->-1|-1->0->1/-1/-1 [8] 1/-1/-1->0->-1|-1->0->1/-1/-1 [9] 1/-1/-1->0->-1|-1->0->1/-1/-1 [10] 1/-1/-1->0->-1|-1->0->1/-1/-1 [11] 1/-1/-1->0->-1|-1->0->1/-1/-1 [12] 1/-1/-1->0->-1|-1->0->1/-1/-1 [13] 1/-1/-1->0->-1|-1->0->1/-1/-1 [14] 1/-1/-1->0->-1|-1->0->1/-1/-1 [15] 1/-1/-1->0->-1|-1->0->1/-1/-1 [16] 1/-1/-1->0->-1|-1->0->1/-1/-1 [17] 1/-1/-1->0->-1|-1->0->1/-1/-1 [18] 1/-1/-1->0->-1|-1->0->1/-1/-1 [19] 1/-1/-1->0->-1|-1->0->1/-1/-1 [20] 1/-1/-1->0->-1|-1->0->1/-1/-1 [21] 1/-1/-1->0->-1|-1->0->1/-1/-1 [22] 1/-1/-1->0->-1|-1->0->1/-1/-1 [23] 1/-1/-1->0->-1|-1->0->1/-1/-1
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO threadThresholds 8/8/64 | 40/8/64 | 8/8/64
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Trees [0] 2/-1/-1->1->0|0->1->2/-1/-1 [1] 2/-1/-1->1->0|0->1->2/-1/-1 [2] 2/-1/-1->1->0|0->1->2/-1/-1 [3] 2/-1/-1->1->0|0->1->2/-1/-1 [4] 2/-1/-1->1->0|0->1->2/-1/-1 [5] 2/-1/-1->1->0|0->1->2/-1/-1 [6] 2/-1/-1->1->0|0->1->2/-1/-1 [7] 2/-1/-1->1->0|0->1->2/-1/-1 [8] 2/-1/-1->1->0|0->1->2/-1/-1 [9] 2/-1/-1->1->0|0->1->2/-1/-1 [10] 2/-1/-1->1->0|0->1->2/-1/-1 [11] 2/-1/-1->1->0|0->1->2/-1/-1 [12] 2/-1/-1->1->0|0->1->2/-1/-1 [13] 2/-1/-1->1->0|0->1->2/-1/-1 [14] 2/-1/-1->1->0|0->1->2/-1/-1 [15] 2/-1/-1->1->0|0->1->2/-1/-1 [16] 2/-1/-1->1->0|0->1->2/-1/-1 [17] 2/-1/-1->1->0|0->1->2/-1/-1 [18] 2/-1/-1->1->0|0->1->2/-1/-1 [19] 2/-1/-1->1->0|0->1->2/-1/-1 [20] 2/-1/-1->1->0|0->1->2/-1/-1 [21] 2/-1/-1->1->0|0->1->2/-1/-1 [22] 2/-1/-1->1->0|0->1->2/-1/-1 [23] 2/-1/-1->1->0|0->1->2/-1/-1
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 00 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 00 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 00 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 00 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 00 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 00 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 00 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 00 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 01 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 01 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 01 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 01 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 01 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 01 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 01 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 01 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 02 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 02 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 02 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 02 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 02 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 02 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 02 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 02 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 03 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 03 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 03 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 03 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 03 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 03 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 03 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 03 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 04 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 04 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 04 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 04 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 04 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 04 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 04 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 04 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 05 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 05 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 05 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 05 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 05 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 05 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 05 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 05 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 06 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 06 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 06 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 06 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 06 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 06 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 06 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 06 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 07 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 07 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 07 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 07 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 07 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 07 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 07 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 07 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 08 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 08 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 08 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 08 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 08 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 08 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 08 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 08 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 09 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 09 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 09 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 09 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 09 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 09 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 09 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 09 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 10 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 10 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 10 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 10 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 10 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 10 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 10 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 10 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 11 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 11 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 11 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 11 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 11 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 11 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 11 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 11 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 12 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 12 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 12 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 12 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 12 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 12 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 12 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 12 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 13 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 13 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 13 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 13 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 13 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 13 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 13 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 13 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 14 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 14 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 14 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 14 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 14 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 14 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 14 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 14 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 15 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 15 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 15 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 15 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 15 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 15 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 15 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 15 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 16 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 16 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 16 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 16 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 16 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 16 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 16 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 16 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 17 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 17 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 17 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 17 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 17 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 17 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 17 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 17 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 18 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 18 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 18 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 18 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 18 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 18 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 18 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 18 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 19 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 19 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 19 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 19 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 19 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 19 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 19 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 19 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 20 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 20 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 20 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 20 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 20 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 20 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 20 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 20 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 21 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 21 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 21 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 21 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 21 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 21 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 21 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 21 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 22 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 22 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 22 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 22 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 22 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 22 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 22 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 22 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO Channel 23 : 0[47000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 23 : 3[90000] -> 4[b7000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 23 : 1[4e000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 23 : 2[87000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO Channel 23 : 4[b7000] -> 3[90000] via P2P/IPC/read
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO Channel 23 : 3[90000] -> 2[87000] via P2P/IPC/read
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO Channel 23 : 1[4e000] -> 0[47000] via P2P/IPC/read
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO Channel 23 : 2[87000] -> 1[4e000] via P2P/IPC/read
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:45:105 [4] NCCL INFO comm 0x7efdfc006880 rank 4 nranks 5 cudaDev 4 busId b7000 - Init COMPLETE
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:41:95 [0] NCCL INFO comm 0x7f1984006880 rank 0 nranks 5 cudaDev 0 busId 47000 - Init COMPLETE
+run-mlperf--1-n4dbj:41:41 [0] NCCL INFO Launch mode Parallel
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:44:107 [3] NCCL INFO comm 0x7fec0c006880 rank 3 nranks 5 cudaDev 3 busId 90000 - Init COMPLETE
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:42:106 [1] NCCL INFO comm 0x7efedc006880 rank 1 nranks 5 cudaDev 1 busId 4e000 - Init COMPLETE
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-n4dbj:43:104 [2] NCCL INFO comm 0x7fc764006880 rank 2 nranks 5 cudaDev 2 busId 87000 - Init COMPLETE
+0 Using seed = 1258070437
+1 Using seed = 1258070438
+3 Using seed = 1258070440
+4 Using seed = 1258070441
+2 Using seed = 1258070439
+:::MLLOG {"namespace": "", "time_ms": 1639753183543, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183544, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 570, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+Delaying allreduces to the end of backward()
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0575, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183553, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639753183554, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+:::MLLOG {"namespace": "", "time_ms": 1639753206617, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "train.py", "lineno": 267}}
+:::MLLOG {"namespace": "", "time_ms": 1639753206644, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "train.py", "lineno": 274}}
+loading annotations into memory...
+loading annotations into memory...
+:::MLLOG {"namespace": "", "time_ms": 1639753208602, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 117266, "metadata": {"file": "/workspace/single_stage_detector/data/build_pipeline.py", "lineno": 48}}
+epoch size is:  117266  images
+:::MLLOG {"namespace": "", "time_ms": 1639753208603, "event_type": "POINT_IN_TIME", "key": "max_samples", "value": 1, "metadata": {"file": "/workspace/single_stage_detector/utils.py", "lineno": 156}}
+loading annotations into memory...
+Done (t=0.17s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.16s)
+creating index...
+Done (t=0.17s)
+creating index...
+Done (t=0.14s)
+creating index...
+Done (t=0.14s)
+creating index...
+:::MLLOG {"namespace": "", "time_ms": 1639753208913, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 4952, "metadata": {"file": "/workspace/single_stage_detector/data/native_pipeline.py", "lineno": 97}}
+:::MLLOG {"namespace": "", "time_ms": 1639753208913, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 293, "first_epoch_num": 1, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753208914, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 1, "current_iter_num": 0}}
+Iteration:      0, Loss function: 22.639, Average Loss: 0.023, avg. samples / sec: 22.76
+Iteration:     20, Loss function: 20.793, Average Loss: 0.446, avg. samples / sec: 4607.88
+Iteration:     40, Loss function: 20.040, Average Loss: 0.841, avg. samples / sec: 5087.37
+Iteration:     60, Loss function: 11.700, Average Loss: 1.151, avg. samples / sec: 5292.17
+Iteration:     80, Loss function: 10.474, Average Loss: 1.350, avg. samples / sec: 5399.38
+Iteration:    100, Loss function: 9.886, Average Loss: 1.519, avg. samples / sec: 5364.36
+Iteration:    120, Loss function: 9.254, Average Loss: 1.675, avg. samples / sec: 3749.23
+Iteration:    140, Loss function: 9.339, Average Loss: 1.826, avg. samples / sec: 5431.63
+Iteration:    160, Loss function: 8.663, Average Loss: 1.965, avg. samples / sec: 5411.93
+Iteration:    180, Loss function: 8.486, Average Loss: 2.094, avg. samples / sec: 5499.13
+Iteration:    200, Loss function: 8.336, Average Loss: 2.221, avg. samples / sec: 5511.54
+:::MLLOG {"namespace": "", "time_ms": 1639753232002, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639753232003, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 2, "current_iter_num": 206}}
+Iteration:    220, Loss function: 8.024, Average Loss: 2.338, avg. samples / sec: 5548.77
+Iteration:    240, Loss function: 8.054, Average Loss: 2.452, avg. samples / sec: 5586.74
+Iteration:    260, Loss function: 8.581, Average Loss: 2.564, avg. samples / sec: 5630.55
+Iteration:    280, Loss function: 7.649, Average Loss: 2.672, avg. samples / sec: 5650.76
+Iteration:    300, Loss function: 7.570, Average Loss: 2.770, avg. samples / sec: 5624.91
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:45:101 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:43:100 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:42:102 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:41:93 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+run-mlperf--1-n4dbj:44:103 [0] transport/net_ib.cc:73 NCCL WARN NET/IB : Got async event : GID table change
+Iteration:    320, Loss function: 7.413, Average Loss: 2.865, avg. samples / sec: 5570.88
+Iteration:    340, Loss function: 7.297, Average Loss: 2.953, avg. samples / sec: 5620.58
+Iteration:    360, Loss function: 7.268, Average Loss: 3.037, avg. samples / sec: 5688.04
+Iteration:    380, Loss function: 8.352, Average Loss: 3.124, avg. samples / sec: 5668.92
+Iteration:    400, Loss function: 7.358, Average Loss: 3.221, avg. samples / sec: 5678.16
+:::MLLOG {"namespace": "", "time_ms": 1639753252859, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1639753252860, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 3, "current_iter_num": 412}}
+Iteration:    420, Loss function: 6.884, Average Loss: 3.297, avg. samples / sec: 5687.58
+Iteration:    440, Loss function: 6.582, Average Loss: 3.368, avg. samples / sec: 5745.63
+Iteration:    460, Loss function: 6.841, Average Loss: 3.437, avg. samples / sec: 5692.83
+Iteration:    480, Loss function: 6.181, Average Loss: 3.502, avg. samples / sec: 5724.57
+Iteration:    500, Loss function: 6.556, Average Loss: 3.564, avg. samples / sec: 5735.28
+Iteration:    520, Loss function: 6.692, Average Loss: 3.626, avg. samples / sec: 5702.88
+Iteration:    540, Loss function: 6.541, Average Loss: 3.684, avg. samples / sec: 5699.42
+Iteration:    560, Loss function: 6.686, Average Loss: 3.738, avg. samples / sec: 5756.49
+Iteration:    580, Loss function: 6.401, Average Loss: 3.792, avg. samples / sec: 5763.83
+Iteration:    600, Loss function: 6.093, Average Loss: 3.840, avg. samples / sec: 5779.39
+:::MLLOG {"namespace": "", "time_ms": 1639753273342, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1639753273343, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 4, "current_iter_num": 618}}
+Iteration:    620, Loss function: 6.055, Average Loss: 3.886, avg. samples / sec: 5766.12
+Iteration:    640, Loss function: 6.192, Average Loss: 3.930, avg. samples / sec: 5759.48
+Iteration:    660, Loss function: 5.753, Average Loss: 3.971, avg. samples / sec: 5714.81
+Iteration:    680, Loss function: 5.821, Average Loss: 4.013, avg. samples / sec: 5678.50
+Iteration:    700, Loss function: 5.717, Average Loss: 4.051, avg. samples / sec: 5768.49
+Iteration:    720, Loss function: 5.631, Average Loss: 4.087, avg. samples / sec: 5027.78
+Iteration:    740, Loss function: 6.105, Average Loss: 4.122, avg. samples / sec: 5207.71
+Iteration:    760, Loss function: 6.012, Average Loss: 4.156, avg. samples / sec: 5772.77
+Iteration:    780, Loss function: 5.791, Average Loss: 4.188, avg. samples / sec: 5729.03
+Iteration:    800, Loss function: 5.864, Average Loss: 4.219, avg. samples / sec: 5735.73
+Iteration:    820, Loss function: 5.751, Average Loss: 4.246, avg. samples / sec: 5733.33
+:::MLLOG {"namespace": "", "time_ms": 1639753294181, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 4}}
+:::MLLOG {"namespace": "", "time_ms": 1639753294182, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 5, "current_iter_num": 823}}
+Iteration:    840, Loss function: 5.241, Average Loss: 4.271, avg. samples / sec: 5757.84
+Iteration:    860, Loss function: 5.458, Average Loss: 4.295, avg. samples / sec: 5825.99
+Iteration:    880, Loss function: 5.589, Average Loss: 4.319, avg. samples / sec: 5783.93
+Iteration:    900, Loss function: 5.412, Average Loss: 4.341, avg. samples / sec: 5725.22
+Iteration:    920, Loss function: 5.546, Average Loss: 4.362, avg. samples / sec: 5751.28
+Iteration:    940, Loss function: 5.032, Average Loss: 4.382, avg. samples / sec: 5782.22
+Iteration:    960, Loss function: 5.427, Average Loss: 4.400, avg. samples / sec: 5792.02
+Iteration:    980, Loss function: 5.402, Average Loss: 4.420, avg. samples / sec: 5813.92
+Iteration:   1000, Loss function: 5.123, Average Loss: 4.437, avg. samples / sec: 5847.77
+Iteration:   1020, Loss function: 5.430, Average Loss: 4.452, avg. samples / sec: 5778.84
+:::MLLOG {"namespace": "", "time_ms": 1639753314481, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 5}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.72 s
+:::MLLOG {"namespace": "", "time_ms": 1639753320257, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1639753320310, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 6, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753320310, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 6, "current_iter_num": 1029}}
+Loading and preparing results...
+DONE (t=0.54s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   1040, Loss function: 5.171, Average Loss: 4.466, avg. samples / sec: 1460.93
+Iteration:   1060, Loss function: 5.116, Average Loss: 4.479, avg. samples / sec: 5678.74
+DONE (t=2.71s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.07521
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.16114
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.06154
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.15147
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.10920
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.15762
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.16572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.16572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.07521 AP goal: 0.10000
+Iteration:   1080, Loss function: 5.205, Average Loss: 4.493, avg. samples / sec: 5681.40
+:::MLLOG {"namespace": "", "time_ms": 1639753325512, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753325513, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.07520836170846806, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753325513, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 5}}
+Iteration:   1100, Loss function: 5.192, Average Loss: 4.506, avg. samples / sec: 5819.98
+Iteration:   1120, Loss function: 4.904, Average Loss: 4.518, avg. samples / sec: 5769.87
+Iteration:   1140, Loss function: 5.057, Average Loss: 4.530, avg. samples / sec: 5745.34
+Iteration:   1160, Loss function: 5.260, Average Loss: 4.542, avg. samples / sec: 5785.88
+Iteration:   1180, Loss function: 5.105, Average Loss: 4.553, avg. samples / sec: 5765.50
+Iteration:   1200, Loss function: 4.996, Average Loss: 4.562, avg. samples / sec: 5788.04
+Iteration:   1220, Loss function: 5.201, Average Loss: 4.572, avg. samples / sec: 5817.79
+:::MLLOG {"namespace": "", "time_ms": 1639753340689, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639753340690, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 7, "current_iter_num": 1235}}
+Iteration:   1240, Loss function: 5.154, Average Loss: 4.580, avg. samples / sec: 5776.54
+Iteration:   1260, Loss function: 5.044, Average Loss: 4.587, avg. samples / sec: 5814.67
+Iteration:   1280, Loss function: 4.831, Average Loss: 4.594, avg. samples / sec: 4471.46
+Iteration:   1300, Loss function: 4.999, Average Loss: 4.601, avg. samples / sec: 5849.58
+Iteration:   1320, Loss function: 5.185, Average Loss: 4.608, avg. samples / sec: 5765.31
+Iteration:   1340, Loss function: 5.042, Average Loss: 4.615, avg. samples / sec: 5791.18
+Iteration:   1360, Loss function: 5.222, Average Loss: 4.620, avg. samples / sec: 5797.54
+Iteration:   1380, Loss function: 4.960, Average Loss: 4.625, avg. samples / sec: 5728.40
+Iteration:   1400, Loss function: 5.026, Average Loss: 4.631, avg. samples / sec: 5738.91
+Iteration:   1420, Loss function: 4.893, Average Loss: 4.634, avg. samples / sec: 5730.54
+Iteration:   1440, Loss function: 4.877, Average Loss: 4.639, avg. samples / sec: 5757.48
+:::MLLOG {"namespace": "", "time_ms": 1639753361638, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 7}}
+:::MLLOG {"namespace": "", "time_ms": 1639753361640, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 8, "current_iter_num": 1441}}
+Iteration:   1460, Loss function: 4.938, Average Loss: 4.642, avg. samples / sec: 5801.52
+Iteration:   1480, Loss function: 4.767, Average Loss: 4.645, avg. samples / sec: 5815.59
+Iteration:   1500, Loss function: 4.558, Average Loss: 4.650, avg. samples / sec: 5779.38
+Iteration:   1520, Loss function: 4.783, Average Loss: 4.652, avg. samples / sec: 5778.52
+Iteration:   1540, Loss function: 4.633, Average Loss: 4.652, avg. samples / sec: 5777.01
+Iteration:   1560, Loss function: 4.641, Average Loss: 4.655, avg. samples / sec: 5794.47
+Iteration:   1580, Loss function: 4.920, Average Loss: 4.655, avg. samples / sec: 5787.12
+Iteration:   1600, Loss function: 4.962, Average Loss: 4.657, avg. samples / sec: 5773.36
+Iteration:   1620, Loss function: 4.878, Average Loss: 4.659, avg. samples / sec: 5792.05
+Iteration:   1640, Loss function: 4.708, Average Loss: 4.662, avg. samples / sec: 5810.36
+:::MLLOG {"namespace": "", "time_ms": 1639753381795, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 8}}
+:::MLLOG {"namespace": "", "time_ms": 1639753381796, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 9, "current_iter_num": 1646}}
+Iteration:   1660, Loss function: 4.917, Average Loss: 4.662, avg. samples / sec: 5709.49
+Iteration:   1680, Loss function: 4.719, Average Loss: 4.661, avg. samples / sec: 5750.90
+Iteration:   1700, Loss function: 4.599, Average Loss: 4.660, avg. samples / sec: 5829.38
+Iteration:   1720, Loss function: 4.888, Average Loss: 4.660, avg. samples / sec: 5787.13
+Iteration:   1740, Loss function: 4.667, Average Loss: 4.661, avg. samples / sec: 5800.30
+Iteration:   1760, Loss function: 4.581, Average Loss: 4.661, avg. samples / sec: 5741.88
+Iteration:   1780, Loss function: 4.471, Average Loss: 4.660, avg. samples / sec: 5725.72
+Iteration:   1800, Loss function: 4.546, Average Loss: 4.660, avg. samples / sec: 5743.33
+Iteration:   1820, Loss function: 4.578, Average Loss: 4.660, avg. samples / sec: 5806.26
+Iteration:   1840, Loss function: 4.449, Average Loss: 4.660, avg. samples / sec: 5813.51
+:::MLLOG {"namespace": "", "time_ms": 1639753402132, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 9}}
+:::MLLOG {"namespace": "", "time_ms": 1639753402133, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 10, "current_iter_num": 1852}}
+Iteration:   1860, Loss function: 4.761, Average Loss: 4.659, avg. samples / sec: 5798.25
+Iteration:   1880, Loss function: 4.305, Average Loss: 4.657, avg. samples / sec: 5804.40
+Iteration:   1900, Loss function: 4.416, Average Loss: 4.656, avg. samples / sec: 5731.97
+Iteration:   1920, Loss function: 4.411, Average Loss: 4.654, avg. samples / sec: 5804.29
+Iteration:   1940, Loss function: 4.625, Average Loss: 4.652, avg. samples / sec: 5787.87
+Iteration:   1960, Loss function: 4.319, Average Loss: 4.650, avg. samples / sec: 5740.83
+Iteration:   1980, Loss function: 4.870, Average Loss: 4.650, avg. samples / sec: 5780.19
+Iteration:   2000, Loss function: 4.544, Average Loss: 4.648, avg. samples / sec: 5721.87
+Iteration:   2020, Loss function: 4.530, Average Loss: 4.646, avg. samples / sec: 5828.97
+Iteration:   2040, Loss function: 4.643, Average Loss: 4.645, avg. samples / sec: 5795.50
+:::MLLOG {"namespace": "", "time_ms": 1639753422446, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "train.py", "lineno": 427, "epoch_num": 10}}
+averaging bn running means and vars
+Predicting Ended, total time: 5.85 s
+:::MLLOG {"namespace": "", "time_ms": 1639753428314, "event_type": "INTERVAL_END", "key": "block_stop", "value": null, "metadata": {"file": "train.py", "lineno": 331, "first_epoch_num": 6}}
+:::MLLOG {"namespace": "", "time_ms": 1639753428359, "event_type": "INTERVAL_START", "key": "block_start", "value": null, "metadata": {"file": "train.py", "lineno": 338, "first_epoch_num": 11, "epoch_count": 5}}
+:::MLLOG {"namespace": "", "time_ms": 1639753428359, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "train.py", "lineno": 348, "epoch_num": 11, "current_iter_num": 2058}}
+Loading and preparing results...
+Iteration:   2060, Loss function: 4.631, Average Loss: 4.641, avg. samples / sec: 1449.74
+DONE (t=0.75s)
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Iteration:   2080, Loss function: 4.692, Average Loss: 4.638, avg. samples / sec: 5696.93
+DONE (t=3.28s).
+Accumulating evaluation results...
+DONE (t=0.00s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.12860
+Iteration:   2100, Loss function: 4.593, Average Loss: 4.634, avg. samples / sec: 5730.10
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.24901
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.12052
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.21472
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.15409
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.22568
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.23840
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.23840
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.00000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.00000
+Current AP: 0.12860 AP goal: 0.10000
+Iteration:   2120, Loss function: 4.512, Average Loss: 4.630, avg. samples / sec: 5814.64
+:::MLLOG {"namespace": "", "time_ms": 1639753434581, "event_type": "INTERVAL_START", "key": "eval_start", "value": null, "metadata": {"file": "train.py", "lineno": 85, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639753434582, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.12860177935915298, "metadata": {"file": "train.py", "lineno": 88, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639753434582, "event_type": "INTERVAL_END", "key": "eval_stop", "value": null, "metadata": {"file": "train.py", "lineno": 89, "epoch_num": 10}}
+:::MLLOG {"namespace": "", "time_ms": 1639753434784, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "train.py", "lineno": 449, "status": "success"}}
+++ date +%s
++ end=1639753436
+++ date '+%Y-%m-%d %r'
++ end_fmt='2021-12-17 03:03:56 PM'
+START TIMING RUN WAS 2021-12-17 02:59:36 PM
++ echo 'START TIMING RUN WAS 2021-12-17 02:59:36 PM'
++ echo 'ENDING TIMING RUN AT 2021-12-17 03:03:56 PM'
++ nvidia-smi -L
+ENDING TIMING RUN AT 2021-12-17 03:03:56 PM
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
++ result=260
++ [[ ssd == \s\s\d ]]
++ result_name=SINGLE_STAGE_DETECTOR
+RESULT,SINGLE_STAGE_DETECTOR,,260,nvidia,2021-12-17 02:59:36 PM
++ echo 'RESULT,SINGLE_STAGE_DETECTOR,,260,nvidia,2021-12-17 02:59:36 PM'
++ echo 'ALL FINISHED GPU: 5 x full x 2 Pods'
+ALL FINISHED GPU: 5 x full x 2 Pods

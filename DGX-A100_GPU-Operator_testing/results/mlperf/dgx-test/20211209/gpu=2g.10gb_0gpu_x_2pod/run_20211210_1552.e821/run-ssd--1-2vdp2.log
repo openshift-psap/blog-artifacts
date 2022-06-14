@@ -1,0 +1,153 @@
++ test -f /etc/shinit_v2
++ source /etc/shinit_v2
++++ sed -n 's/^NVRM.*Kernel Module *\([^() ]*\).*$/\1/p' /proc/driver/nvidia/version
++++ sed 's/^$/unknown/'
+++ NV_DRIVER_VERS=470.82.01
+++ export _CUDA_COMPAT_PATH=/usr/local/cuda/compat
+++ _CUDA_COMPAT_PATH=/usr/local/cuda/compat
++++ hostname
+++ _CUDA_COMPAT_CHECKFILE=/usr/local/cuda/compat/.470.82.01.run-ssd--1-2vdp2.checked
+++ _CUDA_COMPAT_REALLIB=/usr/local/cuda/compat/lib.real
+++ _CUDA_COMPAT_SYMLINK=/usr/local/cuda/compat/lib
+++ '[' -n 470.82.01 -a -e /dev/nvidiactl -a '!' -e /usr/local/cuda/compat/.470.82.01.run-ssd--1-2vdp2.checked ']'
+++ touch /usr/local/cuda/compat/.470.82.01.run-ssd--1-2vdp2.checked
+++ rm -f /usr/local/cuda/compat/lib
+++ TIMEOUT=35
++++ LD_LIBRARY_PATH=/usr/local/cuda/compat/lib.real
++++ timeout -s KILL 35 /usr/local/bin/cudaCheck
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ '[' 'CUDA Driver UNAVAILABLE (cuInit(0) returned 100)' = 'CUDA Driver OK' ']'
+++ unset _CUDA_COMPAT_CHECKFILE
+++ unset _CUDA_COMPAT_REALLIB
+++ unset _CUDA_COMPAT_SYMLINK
++ '[' -z '' ']'
++ return
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ set -e
++ set -x
++ set -o pipefail
++ set -o nounset
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+  MIG 2g.10gb     Device  0: (UUID: MIG-89d05d6f-212a-5e57-8253-60f252e63667)
+  MIG 2g.10gb     Device  1: (UUID: MIG-56d4c7d7-797c-5ce8-a579-bcfb19a4d1f1)
+  MIG 2g.10gb     Device  2: (UUID: MIG-f7fcc8ba-34b5-573e-b4f3-71f624997288)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+  MIG 2g.10gb     Device  0: (UUID: MIG-03038366-f352-51a7-83a4-3b3a43744912)
+  MIG 2g.10gb     Device  1: (UUID: MIG-47302280-e35a-505b-880f-886d4b4260a1)
+  MIG 2g.10gb     Device  2: (UUID: MIG-3725f00f-ea29-50a3-bd07-e08f5b01f3b8)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-1ae21a3c-f40b-77a7-002f-4b0b52b05f5b)
+  MIG 2g.10gb     Device  0: (UUID: MIG-66ee90df-859a-5875-a31d-129ef2ae71db)
+  MIG 2g.10gb     Device  1: (UUID: MIG-0b62d1d0-1cc1-556d-90d7-df9c695133ea)
+  MIG 2g.10gb     Device  2: (UUID: MIG-34155c66-9d5a-5286-8dfe-04d8901072bf)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-eeb0f073-2f03-6035-72a3-7b1ac76c5a72)
+  MIG 2g.10gb     Device  0: (UUID: MIG-d0146f40-d527-5cf7-b686-12fa40555093)
+  MIG 2g.10gb     Device  1: (UUID: MIG-bc883dd7-516e-5b7c-9476-e8efa1c5616f)
+  MIG 2g.10gb     Device  2: (UUID: MIG-c4be375c-234a-5732-a19d-911d04cda8c0)
+GPU 4: NVIDIA A100-SXM4-40GB (UUID: GPU-c9297a60-5079-9a56-b935-51e08dc0f65e)
+  MIG 2g.10gb     Device  0: (UUID: MIG-74513b1e-14cd-5975-8207-1bfb2d5e9c36)
+  MIG 2g.10gb     Device  1: (UUID: MIG-7d2dee39-0203-5b2a-832d-12e5175d321f)
+  MIG 2g.10gb     Device  2: (UUID: MIG-51978471-f0f5-57a7-8d21-6d7eb61106e0)
+GPU 5: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+  MIG 2g.10gb     Device  0: (UUID: MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e)
+  MIG 2g.10gb     Device  1: (UUID: MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95)
+  MIG 2g.10gb     Device  2: (UUID: MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c)
+GPU 6: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+  MIG 2g.10gb     Device  0: (UUID: MIG-7eb1ef48-2696-5f97-9617-584bccffd046)
+  MIG 2g.10gb     Device  1: (UUID: MIG-8c8a56c5-2703-5237-bcc3-a51a5d897ea8)
+  MIG 2g.10gb     Device  2: (UUID: MIG-2393f4b6-9f65-51fe-a56e-7eab138a368a)
+GPU 7: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+  MIG 2g.10gb     Device  0: (UUID: MIG-88095807-c0f1-543b-9430-ee4ac687a18e)
+  MIG 2g.10gb     Device  1: (UUID: MIG-b88d6cd2-987c-51f2-a1a2-33ac4a330dfe)
+  MIG 2g.10gb     Device  2: (UUID: MIG-496ca377-45b5-53f0-96f5-35d0f05e0494)
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
++ NB_GPUS=24
++ [[ 24 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ awk '{ printf $6"\n"}'
+++ cut '-d)' -f1
++ ALL_GPUS='MIG-89d05d6f-212a-5e57-8253-60f252e63667
+MIG-56d4c7d7-797c-5ce8-a579-bcfb19a4d1f1
+MIG-f7fcc8ba-34b5-573e-b4f3-71f624997288
+MIG-03038366-f352-51a7-83a4-3b3a43744912
+MIG-47302280-e35a-505b-880f-886d4b4260a1
+MIG-3725f00f-ea29-50a3-bd07-e08f5b01f3b8
+MIG-66ee90df-859a-5875-a31d-129ef2ae71db
+MIG-0b62d1d0-1cc1-556d-90d7-df9c695133ea
+MIG-34155c66-9d5a-5286-8dfe-04d8901072bf
+MIG-d0146f40-d527-5cf7-b686-12fa40555093
+MIG-bc883dd7-516e-5b7c-9476-e8efa1c5616f
+MIG-c4be375c-234a-5732-a19d-911d04cda8c0
+MIG-74513b1e-14cd-5975-8207-1bfb2d5e9c36
+MIG-7d2dee39-0203-5b2a-832d-12e5175d321f
+MIG-51978471-f0f5-57a7-8d21-6d7eb61106e0
+MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e
+MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95
+MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c
+MIG-7eb1ef48-2696-5f97-9617-584bccffd046
+MIG-8c8a56c5-2703-5237-bcc3-a51a5d897ea8
+MIG-2393f4b6-9f65-51fe-a56e-7eab138a368a
+MIG-88095807-c0f1-543b-9430-ee4ac687a18e
+MIG-b88d6cd2-987c-51f2-a1a2-33ac4a330dfe
+MIG-496ca377-45b5-53f0-96f5-35d0f05e0494'
++ MIG_MODE=1
++ [[ 2g.10gb == \f\u\l\l ]]
+Found 24 MIG instances: MIG-89d05d6f-212a-5e57-8253-60f252e63667
+MIG-56d4c7d7-797c-5ce8-a579-bcfb19a4d1f1
+MIG-f7fcc8ba-34b5-573e-b4f3-71f624997288
+MIG-03038366-f352-51a7-83a4-3b3a43744912
+MIG-47302280-e35a-505b-880f-886d4b4260a1
+MIG-3725f00f-ea29-50a3-bd07-e08f5b01f3b8
+MIG-66ee90df-859a-5875-a31d-129ef2ae71db
+MIG-0b62d1d0-1cc1-556d-90d7-df9c695133ea
+MIG-34155c66-9d5a-5286-8dfe-04d8901072bf
+MIG-d0146f40-d527-5cf7-b686-12fa40555093
+MIG-bc883dd7-516e-5b7c-9476-e8efa1c5616f
+MIG-c4be375c-234a-5732-a19d-911d04cda8c0
+MIG-74513b1e-14cd-5975-8207-1bfb2d5e9c36
+MIG-7d2dee39-0203-5b2a-832d-12e5175d321f
+MIG-51978471-f0f5-57a7-8d21-6d7eb61106e0
+MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e
+MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95
+MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c
+MIG-7eb1ef48-2696-5f97-9617-584bccffd046
+MIG-8c8a56c5-2703-5237-bcc3-a51a5d897ea8
+MIG-2393f4b6-9f65-51fe-a56e-7eab138a368a
+MIG-88095807-c0f1-543b-9430-ee4ac687a18e
+MIG-b88d6cd2-987c-51f2-a1a2-33ac4a330dfe
+MIG-496ca377-45b5-53f0-96f5-35d0f05e0494
++ echo 'Found 24 MIG instances: MIG-89d05d6f-212a-5e57-8253-60f252e63667
+MIG-56d4c7d7-797c-5ce8-a579-bcfb19a4d1f1
+MIG-f7fcc8ba-34b5-573e-b4f3-71f624997288
+MIG-03038366-f352-51a7-83a4-3b3a43744912
+MIG-47302280-e35a-505b-880f-886d4b4260a1
+MIG-3725f00f-ea29-50a3-bd07-e08f5b01f3b8
+MIG-66ee90df-859a-5875-a31d-129ef2ae71db
+MIG-0b62d1d0-1cc1-556d-90d7-df9c695133ea
+MIG-34155c66-9d5a-5286-8dfe-04d8901072bf
+MIG-d0146f40-d527-5cf7-b686-12fa40555093
+MIG-bc883dd7-516e-5b7c-9476-e8efa1c5616f
+MIG-c4be375c-234a-5732-a19d-911d04cda8c0
+MIG-74513b1e-14cd-5975-8207-1bfb2d5e9c36
+MIG-7d2dee39-0203-5b2a-832d-12e5175d321f
+MIG-51978471-f0f5-57a7-8d21-6d7eb61106e0
+MIG-bd4c1a2b-57e1-5df5-ac76-30cd1423b65e
+MIG-82b0c2d6-8829-56e4-9c64-f7ba16ae6c95
+MIG-7bd5246b-d60f-5700-9106-8457dd4ca03c
+MIG-7eb1ef48-2696-5f97-9617-584bccffd046
+MIG-8c8a56c5-2703-5237-bcc3-a51a5d897ea8
+MIG-2393f4b6-9f65-51fe-a56e-7eab138a368a
+MIG-88095807-c0f1-543b-9430-ee4ac687a18e
+MIG-b88d6cd2-987c-51f2-a1a2-33ac4a330dfe
+MIG-496ca377-45b5-53f0-96f5-35d0f05e0494'
++ [[ 24 != 0 ]]
++ echo 'FATAL: Expected 0 GPUs, got 24'
+FATAL: Expected 0 GPUs, got 24
++ exit 1

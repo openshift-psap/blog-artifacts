@@ -1,0 +1,244 @@
++ test -f /etc/shinit_v2
++ source /etc/shinit_v2
++++ sed -n 's/^NVRM.*Kernel Module *\([^() ]*\).*$/\1/p' /proc/driver/nvidia/version
++++ sed 's/^$/unknown/'
+++ NV_DRIVER_VERS=470.82.01
+++ export _CUDA_COMPAT_PATH=/usr/local/cuda/compat
+++ _CUDA_COMPAT_PATH=/usr/local/cuda/compat
++++ hostname
+++ _CUDA_COMPAT_CHECKFILE=/usr/local/cuda/compat/.470.82.01.run-ssd--1-82fzl.checked
+++ _CUDA_COMPAT_REALLIB=/usr/local/cuda/compat/lib.real
+++ _CUDA_COMPAT_SYMLINK=/usr/local/cuda/compat/lib
+++ '[' -n 470.82.01 -a -e /dev/nvidiactl -a '!' -e /usr/local/cuda/compat/.470.82.01.run-ssd--1-82fzl.checked ']'
+++ touch /usr/local/cuda/compat/.470.82.01.run-ssd--1-82fzl.checked
+++ rm -f /usr/local/cuda/compat/lib
+++ TIMEOUT=35
++++ LD_LIBRARY_PATH=/usr/local/cuda/compat/lib.real
++++ timeout -s KILL 35 /usr/local/bin/cudaCheck
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ export '_CUDA_COMPAT_STATUS=CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ _CUDA_COMPAT_STATUS='CUDA Driver UNAVAILABLE (cuInit(0) returned 100)'
+++ '[' 'CUDA Driver UNAVAILABLE (cuInit(0) returned 100)' = 'CUDA Driver OK' ']'
+++ unset _CUDA_COMPAT_CHECKFILE
+++ unset _CUDA_COMPAT_REALLIB
+++ unset _CUDA_COMPAT_SYMLINK
++ '[' -z '' ']'
++ return
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ set -e
++ set -x
++ set -o pipefail
++ set -o nounset
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+  MIG 1g.5gb      Device  0: (UUID: MIG-af01b9a9-0d91-5b86-a149-b543a81f6637)
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
++ NB_GPUS=1
++ [[ 1 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ awk '{ printf $6"\n"}'
+++ cut '-d)' -f1
++ ALL_GPUS=MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
++ MIG_MODE=1
+Found 1 MIG instances: MIG-af01b9a9-0d91-5b86-a149-b543a81f6637
++ [[ 1g.5gb == \f\u\l\l ]]
++ echo 'Found 1 MIG instances: MIG-af01b9a9-0d91-5b86-a149-b543a81f6637'
++ [[ 1 != 1 ]]
++ SSD_THRESHOLD=0.1
+++ date +%s
++ start=1639076194
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-09 06:56:34 PM'
++ echo 'STARTING TIMING RUN AT 2021-12-09 06:56:34 PM GPU: 1 x 1g.5gb x 56 Pods'
+STARTING TIMING RUN AT 2021-12-09 06:56:34 PM GPU: 1 x 1g.5gb x 56 Pods
++ set -x
++ NUMEPOCHS=80
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ EXTRA_PARAMS='--batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4'
++ DGXNSOCKET=1
++ DGXSOCKETCORES=8
++ [[ 1 == \1 ]]
++ DGXNGPU=1
+Running in parallel mode.
++ echo 'Running in parallel mode.'
++ declare -a CMD
+Patching 'bind_launch.py' to err-exit on failure ...
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
++ sed 's/process.wait()/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ ARGS=(train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs "${NUMEPOCHS}" --warmup-factor 0 --no-save --threshold=${SSD_THRESHOLD} --data ${DATASET_DIR} ${EXTRA_PARAMS})
++ [[ fast == \f\a\s\t ]]
+Running in FAST mode
++ echo 'Running in FAST mode'
++ ARGS+=(--evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85)
++ trap 'date; echo failed; exit 1' ERR
++ [[ n != \y ]]
++ SYNC_DIR=/data/coco2017/sync
++ mkdir -p /data/coco2017/sync
++ for sync_f in "$SYNC_DIR/"*
++ [[ /data/coco2017/sync/2021-12-09_13-55-56 != \/\d\a\t\a\/\c\o\c\o\2\0\1\7\/\s\y\n\c\/\2\0\2\1\-\1\2\-\0\9\_\1\3\-\5\5\-\5\6 ]]
++ set +x
+Thu Dec  9 18:56:34 UTC 2021 Waiting for all the 56 Pods to start ...
+Adding run-ssd--1-82fzl to the sync file ...
+run-ssd--1-82fzl Found 16 Pods, waiting to have 56 ...
+     1	run-ssd--1-2d249
+     2	run-ssd--1-2rd4t
+     3	run-ssd--1-867h8
+     4	run-ssd--1-xrkxq
+     5	run-ssd--1-5vfg5
+     6	run-ssd--1-97mm4
+     7	run-ssd--1-7s4lw
+     8	run-ssd--1-kctzh
+     9	run-ssd--1-chq68
+    10	run-ssd--1-jnngv
+    11	run-ssd--1-dq9dq
+    12	run-ssd--1-sd5vp
+    13	run-ssd--1-gds4f
+    14	run-ssd--1-n42h2
+    15	run-ssd--1-d89hf
+    16	run-ssd--1-82fzl
+run-ssd--1-82fzl Found 19 Pods, waiting to have 56 ...
+     1	run-ssd--1-2d249
+     2	run-ssd--1-2rd4t
+     3	run-ssd--1-867h8
+     4	run-ssd--1-xrkxq
+     5	run-ssd--1-5vfg5
+     6	run-ssd--1-97mm4
+     7	run-ssd--1-7s4lw
+     8	run-ssd--1-kctzh
+     9	run-ssd--1-chq68
+    10	run-ssd--1-jnngv
+    11	run-ssd--1-dq9dq
+    12	run-ssd--1-sd5vp
+    13	run-ssd--1-gds4f
+    14	run-ssd--1-n42h2
+    15	run-ssd--1-d89hf
+    16	run-ssd--1-82fzl
+    17	run-ssd--1-778f5
+    18	run-ssd--1-bv7pq
+    19	run-ssd--1-4hpww
+run-ssd--1-82fzl Found 25 Pods, waiting to have 56 ...
+     1	run-ssd--1-2d249
+     2	run-ssd--1-2rd4t
+     3	run-ssd--1-867h8
+     4	run-ssd--1-xrkxq
+     5	run-ssd--1-5vfg5
+     6	run-ssd--1-97mm4
+     7	run-ssd--1-7s4lw
+     8	run-ssd--1-kctzh
+     9	run-ssd--1-chq68
+    10	run-ssd--1-jnngv
+    11	run-ssd--1-dq9dq
+    12	run-ssd--1-sd5vp
+    13	run-ssd--1-gds4f
+    14	run-ssd--1-n42h2
+    15	run-ssd--1-d89hf
+    16	run-ssd--1-82fzl
+    17	run-ssd--1-778f5
+    18	run-ssd--1-bv7pq
+    19	run-ssd--1-4hpww
+    20	run-ssd--1-2q848
+    21	run-ssd--1-m5hp7
+    22	run-ssd--1-lmsgn
+    23	run-ssd--1-hwrx2
+    24	run-ssd--1-wxhmd
+    25	run-ssd--1-knbvj
+run-ssd--1-82fzl Found 40 Pods, waiting to have 56 ...
+     1	run-ssd--1-2d249
+     2	run-ssd--1-2rd4t
+     3	run-ssd--1-867h8
+     4	run-ssd--1-xrkxq
+     5	run-ssd--1-5vfg5
+     6	run-ssd--1-97mm4
+     7	run-ssd--1-7s4lw
+     8	run-ssd--1-kctzh
+     9	run-ssd--1-chq68
+    10	run-ssd--1-jnngv
+    11	run-ssd--1-dq9dq
+    12	run-ssd--1-sd5vp
+    13	run-ssd--1-gds4f
+    14	run-ssd--1-n42h2
+    15	run-ssd--1-d89hf
+    16	run-ssd--1-82fzl
+    17	run-ssd--1-778f5
+    18	run-ssd--1-bv7pq
+    19	run-ssd--1-4hpww
+    20	run-ssd--1-2q848
+    21	run-ssd--1-m5hp7
+    22	run-ssd--1-lmsgn
+    23	run-ssd--1-hwrx2
+    24	run-ssd--1-wxhmd
+    25	run-ssd--1-knbvj
+    26	run-ssd--1-599m5
+    27	run-ssd--1-8gtps
+    28	run-ssd--1-4drst
+    29	run-ssd--1-5x9gd
+    30	run-ssd--1-bjgn2
+    31	run-ssd--1-9spqk
+    32	run-ssd--1-fgpvx
+    33	run-ssd--1-n2rdg
+    34	run-ssd--1-mml2d
+    35	run-ssd--1-gn8vr
+    36	run-ssd--1-w5glh
+    37	run-ssd--1-jf2sc
+    38	run-ssd--1-m54j9
+    39	run-ssd--1-wvw6q
+    40	run-ssd--1-stpgl
+Thu Dec  9 18:56:54 UTC 2021 All the 56 Pods are running, launch the GPU workload.
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4fb17cd5-cad8-31a6-34d3-08434d926140)
+  MIG 1g.5gb      Device  0: (UUID: MIG-af01b9a9-0d91-5b86-a149-b543a81f6637)
++ [[ 1 == 1 ]]
++ [[ 1 != 1 ]]
++ dest=/tmp/ssd_all.log
++ [[ 1 == 1 ]]
++ echo 'Running on the MIG GPU'
+Running on the MIG GPU
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=8 --nproc_per_node=1 train.py --use-fp16 --nhwc --pad-input --jit --delay-allreduce --opt-loss --epochs 80 --warmup-factor 0 --no-save --threshold=0.1 --data /data/coco2017 --batch-size=114 --warmup=650 --lr=3.2e-3 --wd=1.3e-4 --evaluation 5 10 15 20 25 30 35 40 50 55 60 65 70 75 80 85
++ tee -a /tmp/ssd_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639076222470, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "train.py", "lineno": 434}}
+:::MLLOG {"namespace": "", "time_ms": 1639076224193, "event_type": "POINT_IN_TIME", "key": "seed", "value": 1240004455, "metadata": {"file": "/workspace/single_stage_detector/mlperf_logger.py", "lineno": 92}}
+0 Using seed = 1240004455
+/opt/conda/lib/python3.6/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+:::MLLOG {"namespace": "", "time_ms": 1639076242196, "event_type": "POINT_IN_TIME", "key": "model_bn_span", "value": 114, "metadata": {"file": "train.py", "lineno": 170}}
+:::MLLOG {"namespace": "", "time_ms": 1639076242196, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 114, "metadata": {"file": "train.py", "lineno": 171}}
+Selected optimization level O2:  FP16 training with FP32 batchnorm and FP32 master weights.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O2
+cast_model_type        : torch.float16
+patch_torch_functions  : False
+keep_batchnorm_fp32    : True
+master_weights         : True
+loss_scale             : 128.0
+:::MLLOG {"namespace": "", "time_ms": 1639076242203, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.0125, "metadata": {"file": "train.py", "lineno": 199}}
+:::MLLOG {"namespace": "", "time_ms": 1639076242204, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_boundary_epochs", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 200}}
+:::MLLOG {"namespace": "", "time_ms": 1639076242204, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_decay_steps", "value": [44, 55], "metadata": {"file": "train.py", "lineno": 201}}
+:::MLLOG {"namespace": "", "time_ms": 1639076242205, "event_type": "POINT_IN_TIME", "key": "opt_weight_decay", "value": 0.00013, "metadata": {"file": "train.py", "lineno": 202}}
+:::MLLOG {"namespace": "", "time_ms": 1639076242205, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_steps", "value": 650, "metadata": {"file": "train.py", "lineno": 204}}
+:::MLLOG {"namespace": "", "time_ms": 1639076242205, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_warmup_factor", "value": 0, "metadata": {"file": "train.py", "lineno": 205}}
+epoch nbatch loss

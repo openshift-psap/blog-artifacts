@@ -1,0 +1,996 @@
+8<--8<--8<--8<--
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
+8<--8<--8<--8<--
+++ nvidia-smi -L
+++ grep 'UUID: MIG-'
+++ wc -l
+++ true
++ NB_GPUS=0
++ [[ 0 == 0 ]]
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ cut '-d ' -f6
+++ cut '-d)' -f1
++ ALL_GPUS='GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab
+GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f'
+++ nvidia-smi -L
+++ grep 'UUID: GPU'
+++ wc -l
++ NB_GPUS=4
++ MIG_MODE=0
++ [[ full != \f\u\l\l ]]
+No MIG GPU available, using the full GPUs (GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab
+GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).
++ echo 'No MIG GPU available, using the full GPUs (GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab
+GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908
+GPU-55b69871-247e-9b99-a60a-7daca59a4108
+GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f).'
++ [[ 4 == 0 ]]
++ [[ 4 != 4 ]]
+++ date +%s
++ start=1639597968
+++ date '+%Y-%m-%d %r'
++ start_fmt='2021-12-15 07:52:48 PM'
++ echo 'STARTING TIMING RUN AT 2021-12-15 07:52:48 PM GPU: 4 x full x 1 Pods'
+STARTING TIMING RUN AT 2021-12-15 07:52:48 PM GPU: 4 x full x 1 Pods
++ set -x
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
+running benchmark
++ echo 'running benchmark'
++ export DATASET_DIR=/data/coco2017
++ DATASET_DIR=/data/coco2017
+Setting up the Mask RCNN benchmark...
++ export TORCH_HOME=/data/coco2017/torchvision
++ TORCH_HOME=/data/coco2017/torchvision
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_val2017.json ']'
++ '[' '!' -f /data/coco2017/annotations/bbox_only_instances_train2017.json ']'
++ [[ maskrcnn == \m\a\s\k\r\c\n\n ]]
++ echo 'Setting up the Mask RCNN benchmark...'
++ NEXP=1
++ source config_DGXA100.sh
+++ : False
+++ : True
+++ : True
+++ : 10
+++ : True
+++ : True
+++ : True
+++ : 1
+++ : True
+++ : 40000
+++ export BATCHSIZE=12
+++ BATCHSIZE=12
+++ export EXTRA_PARAMS=
+++ EXTRA_PARAMS=
+++ export 'EXTRA_CONFIG=SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm'
+++ EXTRA_CONFIG='SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm'
+++ export 'EXTRA_CONFIG=SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True'
+++ EXTRA_CONFIG='SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS (12000,16000) SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True'
+++ export DGXNNODES=1
+++ DGXNNODES=1
++++ sed 's/^config_//'
++++ sed 's/\.sh$//'
+++++ readlink -f config_DGXA100.sh
++++ basename /workspace/object_detection/config_DGXA100.sh
+++ export DGXSYSTEM=DGXA100
+++ DGXSYSTEM=DGXA100
+++ WALLTIME_MINUTES=100
+++ export WALLTIME=100
+++ WALLTIME=100
+++ export DGXNGPU=8
+++ DGXNGPU=8
+++ export DGXSOCKETCORES=48
+++ DGXSOCKETCORES=48
+++ export DGXNSOCKET=2
+++ DGXNSOCKET=2
+++ export DGXHT=1
+++ DGXHT=1
++ DGXNSOCKET=1
++ DGXSOCKETCORES=48
++ [[ 0 == \1 ]]
++ DGXNGPU=4
++ echo 'Running in multi-gpu mode.'
+Running in multi-gpu mode.
++ declare -a CMD
++ CMD=('python' '-u' '-m' 'bind_launch' "--nsockets_per_node=${DGXNSOCKET}" "--ncores_per_socket=${DGXSOCKETCORES}" "--nproc_per_node=${DGXNGPU}")
++ declare -a ARGS
++ echo 'Patching '\''bind_launch.py'\'' to err-exit on failure ...'
+Patching 'bind_launch.py' to err-exit on failure ...
++ sed 's/process.wait()$/if process.wait(): sys.exit(1)/' -i bind_launch.py
++ [[ maskrcnn == \s\s\d ]]
++ [[ maskrcnn == \m\a\s\k\r\c\n\n ]]
+Setting up the Mask RCNN benchmark...
++ echo 'Setting up the Mask RCNN benchmark...'
++ sed 's/torch.set_num_threads(1)$/import time, sys; time.sleep(int(sys.argv[1].split("=")[-1]));torch.set_num_threads(1);/' -i tools/train_mlperf.py
++ MODEL=/data/coco2017/models/R-50.pkl
++ [[ -f /data/coco2017/models/R-50.pkl ]]
+++ cat /data/coco2017/models/R-50.pkl
+++ md5sum
++ sum='6652b4a9c782d82bb3d42118be74d79b  -'
++ [[ 6652b4a9c782d82bb3d42118be74d79b  - != \6\6\5\2\b\4\a\9\c\7\8\2\d\8\2\b\b\3\d\4\2\1\1\8\b\e\7\4\d\7\9\b\ \ \- ]]
++ [[ ! -f /data/coco2017/models/R-50.pkl ]]
++ ln -sf /data/coco2017 /coco
++ ARGS=(tools/train_mlperf.py ${EXTRA_PARAMS} --config-file 'configs/e2e_mask_rcnn_R_50_FPN_1x.yaml' DTYPE 'float16' PATHS_CATALOG 'maskrcnn_benchmark/config/paths_catalog_dbcluster.py' MODEL.WEIGHT "$MODEL" DISABLE_REDUCED_LOGGING True ${EXTRA_CONFIG})
++ [[ run == \d\r\y ]]
++ trap 'date; echo failed; exit 1' ERR
++ [[ n != \y ]]
++ SYNC_DIR=/data/coco2017/sync
++ mkdir -p /data/coco2017/sync
++ for sync_f in "$SYNC_DIR/"*
++ [[ /data/coco2017/sync/2021-12-15_19-52-19 != \/\d\a\t\a\/\c\o\c\o\2\0\1\7\/\s\y\n\c\/\2\0\2\1\-\1\2\-\1\5\_\2\0\-\5\2\-\2\6 ]]
++ rm -f /data/coco2017/sync/2021-12-15_19-52-19
++ set +x
+Wed Dec 15 19:52:48 UTC 2021 Waiting for all the 1 Pods to start ...
+Adding run-mlperf--1-f7wqj to the sync file ...
+Wed Dec 15 19:52:48 UTC 2021 All the 1 Pods are running, launch the GPU workload.
++ nvidia-smi -L
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-4dd97325-7fe6-abf1-d6a9-ba746fe0fdab)
+GPU 1: NVIDIA A100-SXM4-40GB (UUID: GPU-9e13f17f-a213-eb38-9a9c-0b2a540e4908)
+GPU 2: NVIDIA A100-SXM4-40GB (UUID: GPU-55b69871-247e-9b99-a60a-7daca59a4108)
+GPU 3: NVIDIA A100-SXM4-40GB (UUID: GPU-fccb396c-ecba-9822-6217-a790cd2c9d3f)
++ [[ 0 == 1 ]]
++ dest=/tmp/benchmark_all.log
+Running on all the 4 GPUs 
++ [[ 0 == 1 ]]
++ echo 'Running on all the 4 GPUs '
++ python -u -m bind_launch --nsockets_per_node=1 --ncores_per_socket=48 --nproc_per_node=4 tools/train_mlperf.py --config-file configs/e2e_mask_rcnn_R_50_FPN_1x.yaml DTYPE float16 PATHS_CATALOG maskrcnn_benchmark/config/paths_catalog_dbcluster.py MODEL.WEIGHT /data/coco2017/models/R-50.pkl DISABLE_REDUCED_LOGGING True SOLVER.BASE_LR 0.12 SOLVER.WARMUP_FACTOR 0.000192 SOLVER.WARMUP_ITERS 625 SOLVER.WARMUP_METHOD mlperf_linear SOLVER.STEPS '(12000,16000)' SOLVER.IMS_PER_BATCH 96 TEST.IMS_PER_BATCH 96 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 12000 MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE False NHWC True MODEL.RESNETS.FIRST_TRANS_FUNC FastBottleneckWithFixedBatchNorm MODEL.RESNETS.TRANS_FUNC FastBottleneckWithFixedBatchNorm SOLVER.MAX_ITER 40000 DATALOADER.DALI False DATALOADER.DALI_ON_GPU False DATALOADER.CACHE_EVAL_IMAGES True EVAL_SEGM_NUMPROCS 10 USE_CUDA_GRAPH True EVAL_MASK_VIRTUAL_PASTE True MODEL.BACKBONE.INCLUDE_RPN_HEAD True DATALOADER.NUM_WORKERS 1 PRECOMPUTE_RPN_CONSTANT_TENSORS True DATALOADER.HYBRID True
++ tee -a /tmp/benchmark_all.log
+:::MLLOG {"namespace": "", "time_ms": 1639597971088, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639597972072, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639597973042, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+:::MLLOG {"namespace": "", "time_ms": 1639597974108, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 411}}
+run-mlperf--1-f7wqj:60:60 [0] NCCL INFO Bootstrap : Using eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:60:60 [0] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-f7wqj:60:60 [0] NCCL INFO P2P plugin IBext
+run-mlperf--1-f7wqj:60:60 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:60:60 [0] NCCL INFO Using network IBext
+NCCL version 2.11.4+cuda11.4
+run-mlperf--1-f7wqj:63:63 [3] NCCL INFO Bootstrap : Using eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:62:62 [2] NCCL INFO Bootstrap : Using eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:61:61 [1] NCCL INFO Bootstrap : Using eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:63:63 [3] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-f7wqj:63:63 [3] NCCL INFO P2P plugin IBext
+run-mlperf--1-f7wqj:62:62 [2] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-f7wqj:62:62 [2] NCCL INFO P2P plugin IBext
+run-mlperf--1-f7wqj:61:61 [1] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+run-mlperf--1-f7wqj:61:61 [1] NCCL INFO P2P plugin IBext
+run-mlperf--1-f7wqj:63:63 [3] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:63:63 [3] NCCL INFO Using network IBext
+run-mlperf--1-f7wqj:62:62 [2] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:62:62 [2] NCCL INFO Using network IBext
+run-mlperf--1-f7wqj:61:61 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_7:1/RoCE ; OOB eth0:10.128.0.100<0>
+run-mlperf--1-f7wqj:61:61 [1] NCCL INFO Using network IBext
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 00/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 01/24 :    0   1   2   3
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1 [16] 3/-1/-1->2->1 [17] 3/-1/-1->2->1 [18] 3/-1/-1->2->1 [19] 3/-1/-1->2->1 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] 3/-1/-1->2->1 [23] 3/-1/-1->2->1
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 02/24 :    0   1   2   3
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 2/-1/-1->1->0 [17] 2/-1/-1->1->0 [18] 2/-1/-1->1->0 [19] 2/-1/-1->1->0 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->0 [22] 2/-1/-1->1->0 [23] 2/-1/-1->1->0
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 03/24 :    0   1   2   3
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2 [16] -1/-1/-1->3->2 [17] -1/-1/-1->3->2 [18] -1/-1/-1->3->2 [19] -1/-1/-1->3->2 [20] -1/-1/-1->3->2 [21] -1/-1/-1->3->2 [22] -1/-1/-1->3->2 [23] -1/-1/-1->3->2
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 04/24 :    0   1   2   3
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Setting affinity for GPU 2 to 0f0000,00000000,00000000
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 05/24 :    0   1   2   3
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Setting affinity for GPU 1 to f0000000,00000000
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 06/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 07/24 :    0   1   2   3
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Setting affinity for GPU 3 to fff00000,00000000,00000000
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 08/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 09/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 10/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 11/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 12/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 13/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 14/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 15/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 16/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 17/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 18/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 19/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 20/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 21/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 22/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 23/24 :    0   1   2   3
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] 1/-1/-1->0->-1 [19] 1/-1/-1->0->-1 [20] 1/-1/-1->0->-1 [21] 1/-1/-1->0->-1 [22] 1/-1/-1->0->-1 [23] 1/-1/-1->0->-1
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Setting affinity for GPU 0 to 0fff0000,00000000
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 00 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 00 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 00 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 00 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 01 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 01 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 01 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 01 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 02 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 02 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 02 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 02 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 03 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 03 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 03 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 03 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 04 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 04 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 04 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 04 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 05 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 05 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 05 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 05 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 06 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 06 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 06 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 06 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 07 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 07 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 07 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 07 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 08 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 08 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 08 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 08 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 09 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 09 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 09 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 09 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 10 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 10 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 10 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 10 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 11 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 11 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 11 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 11 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 12 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 12 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 12 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 12 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 13 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 13 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 13 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 13 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 14 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 14 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 14 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 14 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 15 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 15 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 15 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 15 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 16 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 16 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 16 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 16 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 17 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 17 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 17 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 17 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 18 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 18 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 18 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 18 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 19 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 19 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 19 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 19 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 20 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 20 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 20 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 20 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 21 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 21 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 21 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 21 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 22 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 22 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 22 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 22 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Channel 23 : 0[7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 23 : 3[bd000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 23 : 1[f000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 23 : 2[b7000] -> 3[bd000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Connected all rings
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Connected all rings
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Connected all rings
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Connected all rings
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 00 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 01 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 02 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 03 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 04 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 05 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 06 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 07 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 08 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 09 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 10 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 11 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 12 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 13 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 14 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 15 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 16 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 17 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 18 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 19 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 20 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 21 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 22 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Channel 23 : 3[bd000] -> 2[b7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 00 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 00 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 01 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 01 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 02 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 02 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 03 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 03 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 04 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 04 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 05 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 05 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 06 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 06 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 07 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 07 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 08 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 08 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 09 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 09 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 10 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 10 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 11 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 11 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 12 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 12 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 13 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 13 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 14 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 14 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 15 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 15 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 16 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 16 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 17 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 17 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 18 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 18 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 19 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 19 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 20 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 20 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 21 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 21 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 22 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 22 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Channel 23 : 1[f000] -> 0[7000] via P2P/IPC/read
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Channel 23 : 2[b7000] -> 1[f000] via P2P/IPC/read
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO Connected all trees
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 8/8/512
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO Connected all trees
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 8/8/512
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO Connected all trees
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 8/8/512
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO Connected all trees
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 8/8/512
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+run-mlperf--1-f7wqj:61:1117 [1] NCCL INFO comm 0x7f82e4008fb0 rank 1 nranks 4 cudaDev 1 busId f000 - Init COMPLETE
+run-mlperf--1-f7wqj:60:1108 [0] NCCL INFO comm 0x7f4300008fb0 rank 0 nranks 4 cudaDev 0 busId 7000 - Init COMPLETE
+run-mlperf--1-f7wqj:62:1116 [2] NCCL INFO comm 0x7fb670008fb0 rank 2 nranks 4 cudaDev 2 busId b7000 - Init COMPLETE
+run-mlperf--1-f7wqj:60:60 [0] NCCL INFO Launch mode Parallel
+run-mlperf--1-f7wqj:63:1115 [3] NCCL INFO comm 0x7f5488008fb0 rank 3 nranks 4 cudaDev 3 busId bd000 - Init COMPLETE
+:::MLLOG {"namespace": "", "time_ms": 1639597977807, "event_type": "POINT_IN_TIME", "key": "seed", "value": 4079838720, "metadata": {"file": "tools/train_mlperf.py", "lineno": 469}}
+2021-12-15 19:52:57,813 maskrcnn_benchmark INFO: Using 4 GPUs
+2021-12-15 19:52:57,813 maskrcnn_benchmark INFO: Namespace(config_file='configs/e2e_mask_rcnn_R_50_FPN_1x.yaml', distributed=True, local_rank=0, opts=['DTYPE', 'float16', 'PATHS_CATALOG', 'maskrcnn_benchmark/config/paths_catalog_dbcluster.py', 'MODEL.WEIGHT', '/data/coco2017/models/R-50.pkl', 'DISABLE_REDUCED_LOGGING', 'True', 'SOLVER.BASE_LR', '0.12', 'SOLVER.WARMUP_FACTOR', '0.000192', 'SOLVER.WARMUP_ITERS', '625', 'SOLVER.WARMUP_METHOD', 'mlperf_linear', 'SOLVER.STEPS', '(12000,16000)', 'SOLVER.IMS_PER_BATCH', '96', 'TEST.IMS_PER_BATCH', '96', 'MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN', '12000', 'MODEL.RPN.FPN_POST_NMS_TOP_N_PER_IMAGE', 'False', 'NHWC', 'True', 'MODEL.RESNETS.FIRST_TRANS_FUNC', 'FastBottleneckWithFixedBatchNorm', 'MODEL.RESNETS.TRANS_FUNC', 'FastBottleneckWithFixedBatchNorm', 'SOLVER.MAX_ITER', '40000', 'DATALOADER.DALI', 'False', 'DATALOADER.DALI_ON_GPU', 'False', 'DATALOADER.CACHE_EVAL_IMAGES', 'True', 'EVAL_SEGM_NUMPROCS', '10', 'USE_CUDA_GRAPH', 'True', 'EVAL_MASK_VIRTUAL_PASTE', 'True', 'MODEL.BACKBONE.INCLUDE_RPN_HEAD', 'True', 'DATALOADER.NUM_WORKERS', '1', 'PRECOMPUTE_RPN_CONSTANT_TENSORS', 'True', 'DATALOADER.HYBRID', 'True'], seed=4079838720)
+2021-12-15 19:52:57,813 maskrcnn_benchmark INFO: Worker 0: Setting seed 3263560808
+2021-12-15 19:52:57,814 maskrcnn_benchmark INFO: Collecting env info (might take some time)
+2021-12-15 19:53:02,221 maskrcnn_benchmark INFO: 
+PyTorch version: 1.10.0a0+3fd9dcf
+Is debug build: False
+CUDA used to build PyTorch: 11.4
+ROCM used to build PyTorch: N/A
+
+OS: Ubuntu 20.04.3 LTS (x86_64)
+GCC version: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Clang version: Could not collect
+CMake version: version 3.21.2
+Libc version: glibc-2.31
+
+Python version: 3.8.10 | packaged by conda-forge | (default, May 11 2021, 07:01:05)  [GCC 9.3.0] (64-bit runtime)
+Python platform: Linux-4.18.0-305.19.1.el8_4.x86_64-x86_64-with-glibc2.10
+Is CUDA available: True
+CUDA runtime version: 11.4.120
+GPU models and configuration: 
+GPU 0: NVIDIA A100-SXM4-40GB
+GPU 1: NVIDIA A100-SXM4-40GB
+GPU 2: NVIDIA A100-SXM4-40GB
+GPU 3: NVIDIA A100-SXM4-40GB
+
+Nvidia driver version: 470.82.01
+cuDNN version: Probably one of the following:
+/usr/lib/x86_64-linux-gnu/libcudnn.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_adv_infer.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_adv_train.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_cnn_infer.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_cnn_train.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so.8.2.4
+/usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so.8.2.4
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+
+Versions of relevant libraries:
+[pip3] numpy==1.21.2
+[pip3] nvidia-dlprof-pytorch-nvtx==1.5.0
+[pip3] pytorch-quantization==2.1.0
+[pip3] torch==1.10.0a0+3fd9dcf
+[pip3] torchtext==0.11.0a0
+[pip3] torchvision==0.11.0a0
+[conda] magma-cuda110             2.5.2                         5    local
+[conda] mkl                       2019.5                      281    conda-forge
+[conda] mkl-include               2019.5                      281    conda-forge
+[conda] numpy                     1.21.2           py38he2449b9_0    conda-forge
+[conda] nvidia-dlprof-pytorch-nvtx 1.5.0                    pypi_0    pypi
+[conda] pytorch-quantization      2.1.0                    pypi_0    pypi
+[conda] torch                     1.10.0a0+3fd9dcf          pypi_0    pypi
+[conda] torchtext                 0.11.0a0                 pypi_0    pypi
+[conda] torchvision               0.11.0a0                 pypi_0    pypi
+        Pillow (8.2.0)
+2021-12-15 19:53:02,221 maskrcnn_benchmark INFO: Loaded configuration file configs/e2e_mask_rcnn_R_50_FPN_1x.yaml
+2021-12-15 19:53:02,222 maskrcnn_benchmark INFO: 
+MODEL:
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  WEIGHT: "catalog://ImageNetPretrained/MSRA/R-50"
+  BACKBONE:
+    CONV_BODY: "R-50-FPN"
+    OUT_CHANNELS: 256
+  RPN:
+    USE_FPN: True
+    ANCHOR_STRIDE: (4, 8, 16, 32, 64)
+    PRE_NMS_TOP_N_TRAIN: 2000
+    PRE_NMS_TOP_N_TEST: 1000
+    POST_NMS_TOP_N_TEST: 1000
+    FPN_POST_NMS_TOP_N_TEST: 1000
+  ROI_HEADS:
+    USE_FPN: True
+  ROI_BOX_HEAD:
+    POOLER_RESOLUTION: 7
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    POOLER_SAMPLING_RATIO: 2
+    FEATURE_EXTRACTOR: "FPN2MLPFeatureExtractor"
+    PREDICTOR: "FPNPredictor"
+  ROI_MASK_HEAD:
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    FEATURE_EXTRACTOR: "MaskRCNNFPNFeatureExtractor"
+    PREDICTOR: "MaskRCNNC4Predictor"
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 2
+    RESOLUTION: 28
+    SHARE_BOX_FEATURE_EXTRACTOR: False
+  MASK_ON: True
+DATASETS:
+  TRAIN: ("coco_2017_train",)
+  TEST: ("coco_2017_val",)
+DATALOADER:
+  SIZE_DIVISIBILITY: 32
+SOLVER:
+  BASE_LR: 0.02
+  WEIGHT_DECAY: 0.0001
+  STEPS: (60000, 80000)
+  MAX_ITER: 90000
+
+2021-12-15 19:53:02,222 maskrcnn_benchmark INFO: Running with config:
+AMP_VERBOSE: False
+CUDA_GRAPH_NUM_SHAPES_PER_ORIENTATION: 1
+DATALOADER:
+  ALWAYS_PAD_TO_MAX: False
+  ASPECT_RATIO_GROUPING: True
+  CACHE_EVAL_IMAGES: True
+  DALI: False
+  DALI_ON_GPU: False
+  HYBRID: True
+  MAX_ANNOTATIONS_PER_IMAGE: 0
+  NUM_WORKERS: 1
+  SIZE_DIVISIBILITY: 32
+DATASETS:
+  TEST: ('coco_2017_val',)
+  TRAIN: ('coco_2017_train',)
+DISABLE_LOSS_LOGGING: False
+DISABLE_REDUCED_LOGGING: True
+DTYPE: float16
+DYNAMIC_LOSS_SCALE_WINDOW: 1000
+EVAL_MASK_VIRTUAL_PASTE: True
+EVAL_SEGM_NUMPROCS: 10
+FUSED_SGD_DEBUG_PRINTS: False
+INPUT:
+  MAX_SIZE_TEST: 1333
+  MAX_SIZE_TRAIN: 1333
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: (800,)
+  PIXEL_MEAN: [102.9801, 115.9465, 122.7717]
+  PIXEL_STD: [1.0, 1.0, 1.0]
+  TO_BGR255: True
+MLPERF:
+  MIN_BBOX_MAP: 0.377
+  MIN_SEGM_MAP: 0.339
+MODEL:
+  BACKBONE:
+    CONV_BODY: R-50-FPN
+    FREEZE_CONV_BODY_AT: 2
+    INCLUDE_RPN_HEAD: True
+    OUT_CHANNELS: 256
+    USE_GN: False
+  CLS_AGNOSTIC_BBOX_REG: False
+  DEVICE: cuda
+  FPN:
+    USE_GN: False
+    USE_RELU: False
+  GROUP_NORM:
+    DIM_PER_GP: -1
+    EPSILON: 1e-05
+    NUM_GROUPS: 32
+  KEYPOINT_ON: False
+  MASK_ON: True
+  META_ARCHITECTURE: GeneralizedRCNN
+  RESNETS:
+    FIRST_TRANS_FUNC: FastBottleneckWithFixedBatchNorm
+    NUM_GROUPS: 1
+    RES2_OUT_CHANNELS: 256
+    RES5_DILATION: 1
+    STEM_FUNC: StemWithFixedBatchNorm
+    STEM_OUT_CHANNELS: 64
+    STRIDE_IN_1X1: True
+    TRANS_FUNC: FastBottleneckWithFixedBatchNorm
+    WIDTH_PER_GROUP: 64
+  RETINANET:
+    ANCHOR_SIZES: (32, 64, 128, 256, 512)
+    ANCHOR_STRIDES: (8, 16, 32, 64, 128)
+    ASPECT_RATIOS: (0.5, 1.0, 2.0)
+    BBOX_REG_BETA: 0.11
+    BBOX_REG_WEIGHT: 4.0
+    BG_IOU_THRESHOLD: 0.4
+    FG_IOU_THRESHOLD: 0.5
+    INFERENCE_TH: 0.05
+    LOSS_ALPHA: 0.25
+    LOSS_GAMMA: 2.0
+    NMS_TH: 0.4
+    NUM_CLASSES: 81
+    NUM_CONVS: 4
+    OCTAVE: 2.0
+    PRE_NMS_TOP_N: 1000
+    PRIOR_PROB: 0.01
+    SCALES_PER_OCTAVE: 3
+    STRADDLE_THRESH: 0
+    USE_C5: True
+  RETINANET_ON: False
+  ROI_BOX_HEAD:
+    CONV_HEAD_DIM: 256
+    DILATION: 1
+    FEATURE_EXTRACTOR: FPN2MLPFeatureExtractor
+    MLP_HEAD_DIM: 1024
+    NUM_CLASSES: 81
+    NUM_STACKED_CONVS: 4
+    POOLER_RESOLUTION: 7
+    POOLER_SAMPLING_RATIO: 2
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    PREDICTOR: FPNPredictor
+    USE_GN: False
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 512
+    BBOX_REG_WEIGHTS: (10.0, 10.0, 5.0, 5.0)
+    BG_IOU_THRESHOLD: 0.5
+    DETECTIONS_PER_IMG: 100
+    FG_IOU_THRESHOLD: 0.5
+    NMS: 0.5
+    POSITIVE_FRACTION: 0.25
+    SCORE_THRESH: 0.05
+    USE_FPN: True
+  ROI_KEYPOINT_HEAD:
+    CONV_LAYERS: (512, 512, 512, 512, 512, 512, 512, 512)
+    FEATURE_EXTRACTOR: KeypointRCNNFeatureExtractor
+    MLP_HEAD_DIM: 1024
+    NUM_CLASSES: 17
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 0
+    POOLER_SCALES: (0.0625,)
+    PREDICTOR: KeypointRCNNPredictor
+    RESOLUTION: 14
+    SHARE_BOX_FEATURE_EXTRACTOR: True
+  ROI_MASK_HEAD:
+    CONV_LAYERS: (256, 256, 256, 256)
+    DILATION: 1
+    FEATURE_EXTRACTOR: MaskRCNNFPNFeatureExtractor
+    MLP_HEAD_DIM: 1024
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 2
+    POOLER_SCALES: (0.25, 0.125, 0.0625, 0.03125)
+    POSTPROCESS_MASKS: False
+    POSTPROCESS_MASKS_THRESHOLD: 0.5
+    PREDICTOR: MaskRCNNC4Predictor
+    RESOLUTION: 28
+    SHARE_BOX_FEATURE_EXTRACTOR: False
+    USE_GN: False
+  RPN:
+    ANCHOR_SIZES: (32, 64, 128, 256, 512)
+    ANCHOR_STRIDE: (4, 8, 16, 32, 64)
+    ASPECT_RATIOS: (0.5, 1.0, 2.0)
+    BATCH_SIZE_PER_IMAGE: 256
+    BG_IOU_THRESHOLD: 0.3
+    FG_IOU_THRESHOLD: 0.7
+    FPN_POST_NMS_TOP_N_PER_IMAGE: False
+    FPN_POST_NMS_TOP_N_TEST: 1000
+    FPN_POST_NMS_TOP_N_TRAIN: 12000
+    MIN_SIZE: 0
+    NMS_THRESH: 0.7
+    POSITIVE_FRACTION: 0.5
+    POST_NMS_TOP_N_TEST: 1000
+    POST_NMS_TOP_N_TRAIN: 2000
+    PRE_NMS_TOP_N_TEST: 1000
+    PRE_NMS_TOP_N_TRAIN: 2000
+    RPN_HEAD: SingleConvRPNHead
+    STRADDLE_THRESH: 0
+    USE_FPN: True
+  RPN_ONLY: False
+  WEIGHT: /data/coco2017/models/R-50.pkl
+NHWC: True
+OUTPUT_DIR: .
+PATHS_CATALOG: maskrcnn_benchmark/config/paths_catalog_dbcluster.py
+PER_EPOCH_EVAL: True
+PRECOMPUTE_RPN_CONSTANT_TENSORS: True
+SAVE_CHECKPOINTS: False
+SOLVER:
+  BASE_LR: 0.12
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 2500
+  GAMMA: 0.1
+  IMS_PER_BATCH: 96
+  MAX_ITER: 40000
+  MOMENTUM: 0.9
+  STEPS: (12000, 16000)
+  WARMUP_FACTOR: 0.000192
+  WARMUP_ITERS: 625
+  WARMUP_METHOD: mlperf_linear
+  WEIGHT_DECAY: 0.0001
+  WEIGHT_DECAY_BIAS: 0
+SYNCFREE_ROI: True
+TEST:
+  DETECTIONS_PER_IMG: 100
+  EXPECTED_RESULTS: []
+  EXPECTED_RESULTS_SIGMA_TOL: 4
+  IMS_PER_BATCH: 96
+USE_CUDA_GRAPH: True
+:::MLLOG {"namespace": "", "time_ms": 1639597982223, "event_type": "POINT_IN_TIME", "key": "d_batch_size", "value": 24.0, "metadata": {"file": "tools/train_mlperf.py", "lineno": 509}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982223, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 96, "metadata": {"file": "tools/train_mlperf.py", "lineno": 186}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982223, "event_type": "POINT_IN_TIME", "key": "num_image_candidates", "value": 12000, "metadata": {"file": "tools/train_mlperf.py", "lineno": 187}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982223, "event_type": "POINT_IN_TIME", "key": "gradient_accumulation_steps", "value": 1, "metadata": {"file": "tools/train_mlperf.py", "lineno": 188}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982562, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block1"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982569, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block1"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982571, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block2"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982578, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block2"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982580, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block3"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982587, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block3"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982592, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 44, "tensor": "FPN_inner_block4"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982599, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", "lineno": 47, "tensor": "FPN_layer_block4"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982607, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/rpn/rpn.py", "lineno": 44, "tensor": "RPNHead_conv"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982607, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/rpn/rpn.py", "lineno": 45, "tensor": "RPNHead_cls"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982607, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/rpn/rpn.py", "lineno": 46, "tensor": "RPNHead_bbox"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982727, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_feature_extractors.py", "lineno": 83, "tensor": "ROI_BOX_FEATURE_EXTRACTOR_fc6"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982739, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_feature_extractors.py", "lineno": 86, "tensor": "ROI_BOX_FEATURE_EXTRACTOR_fc7"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982741, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_predictors.py", "lineno": 50, "tensor": "ROI_BOX_PREDICTOR_cls"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982743, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/box_head/roi_box_predictors.py", "lineno": 52, "tensor": "ROI_BOX_PREDICTOR_bbox"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982753, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn1"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982762, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn2"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982769, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn3"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982777, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_feature_extractors.py", "lineno": 52, "tensor": "ROI_MASK_FEATURE_EXTRACTOR_fcn4"}}
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+:::MLLOG {"namespace": "", "time_ms": 1639597982781, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", "lineno": 42, "tensor": "ROI_MASK_PREDICTOR_fcn5"}}
+:::MLLOG {"namespace": "", "time_ms": 1639597982781, "event_type": "POINT_IN_TIME", "key": "weights_initialization", "value": null, "metadata": {"file": "/workspace/object_detection/maskrcnn_benchmark/modeling/roi_heads/mask_head/roi_mask_predictors.py", "lineno": 43, "tensor": "ROI_MASK_PREDICTOR_fcn_logits"}}
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 24), (False, 24)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 24), (False, 24)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 24), (False, 24)]
+/opt/conda/lib/python3.8/site-packages/torch/nn/modules/conv.py:1092: UserWarning: _ConvTransposeMixin is a deprecated internal class. Please consider using public APIs.
+  warnings.warn(
+[(800, 1344), (1344, 800)]
+USE_CUDA_GRAPH :: per_gpu_batch_sizes = [(True, 24), (False, 24)]
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 249, in train
+    model.graphable, pool_id = graph(model.graphable,
+  File "/workspace/object_detection/function.py", line 104, in graph
+    outputs  = func_or_module(*sample_args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 27, in forward
+    features = self.backbone(images_tensor)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", line 72, in forward
+    inner_top_down = interpolate_func(last_inner, scale_factor=2, mode="nearest")
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 112, in interpolate_nhwc
+    return UpSampleNearest2d.upsample_nearest2d(input, _output_size(2))
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 50, in upsample_nearest2d
+    return op(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 45, in forward
+    return UpSampleNearest2d_NHWC_Impl.apply(x,
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 26, in forward
+    y = NHWC.upsample_nearest2d_cuda(x, output_size)
+RuntimeError: captures_underway == 0INTERNAL ASSERT FAILED at "/opt/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp":1209, please report a bug to PyTorch. 
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+
+run-mlperf--1-f7wqj:60:60 [0] init.cc:1041 NCCL WARN Cuda failure 'operation not permitted when stream is capturing'
+terminate called after throwing an instance of 'c10::Error'
+  what():  NCCL error in: /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161, unhandled cuda error, NCCL version 21.1.4
+ncclUnhandledCudaError: Call to CUDA function failed.
+Exception raised from ncclCommAbort at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x6c (0x7f4404d0b63c in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xfa (0x7f4404cd6a28 in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #2: <unknown function> + 0x3c1e92e (0x7f44089b992e in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xac (0x7f440899a3fc in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xd (0x7f440899a5cd in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0x10f3211 (0x7f445a805211 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x1105810 (0x7f445a817810 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0xa71082 (0x7f445a183082 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0xa72043 (0x7f445a184043 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xf8b98 (0x55a4dcdfdb98 in /opt/conda/bin/python)
+frame #10: <unknown function> + 0xfa78b (0x55a4dcdff78b in /opt/conda/bin/python)
+frame #11: <unknown function> + 0xf8b4f (0x55a4dcdfdb4f in /opt/conda/bin/python)
+frame #12: <unknown function> + 0x1ef516 (0x55a4dcef4516 in /opt/conda/bin/python)
+frame #13: <unknown function> + 0x11c574 (0x55a4dce21574 in /opt/conda/bin/python)
+frame #14: _PyGC_CollectNoFail + 0x2b (0x55a4dcf5a5db in /opt/conda/bin/python)
+frame #15: PyImport_Cleanup + 0x371 (0x55a4dcf747b1 in /opt/conda/bin/python)
+frame #16: Py_FinalizeEx + 0x7a (0x55a4dcf74a9a in /opt/conda/bin/python)
+frame #17: Py_RunMain + 0x1b8 (0x55a4dcf795c8 in /opt/conda/bin/python)
+frame #18: Py_BytesMain + 0x39 (0x55a4dcf79939 in /opt/conda/bin/python)
+frame #19: __libc_start_main + 0xf3 (0x7f449c7360b3 in /usr/lib/x86_64-linux-gnu/libc.so.6)
+frame #20: <unknown function> + 0x1e8f39 (0x55a4dceedf39 in /opt/conda/bin/python)
+
+Graphing
+
+Graphing
+
+Graphing
+
+Graphing
+
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 249, in train
+    model.graphable, pool_id = graph(model.graphable,
+  File "/workspace/object_detection/function.py", line 104, in graph
+    outputs  = func_or_module(*sample_args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 27, in forward
+    features = self.backbone(images_tensor)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", line 72, in forward
+    inner_top_down = interpolate_func(last_inner, scale_factor=2, mode="nearest")
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 112, in interpolate_nhwc
+    return UpSampleNearest2d.upsample_nearest2d(input, _output_size(2))
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 50, in upsample_nearest2d
+    return op(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 45, in forward
+    return UpSampleNearest2d_NHWC_Impl.apply(x,
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 26, in forward
+    y = NHWC.upsample_nearest2d_cuda(x, output_size)
+RuntimeError: captures_underway == 0INTERNAL ASSERT FAILED at "/opt/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp":1209, please report a bug to PyTorch. 
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+
+run-mlperf--1-f7wqj:61:61 [1] init.cc:1041 NCCL WARN Cuda failure 'operation not permitted when stream is capturing'
+terminate called after throwing an instance of 'c10::Error'
+  what():  NCCL error in: /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161, unhandled cuda error, NCCL version 21.1.4
+ncclUnhandledCudaError: Call to CUDA function failed.
+Exception raised from ncclCommAbort at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x6c (0x7f84069fa63c in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xfa (0x7f84069c5a28 in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #2: <unknown function> + 0x3c1e92e (0x7f840a6a892e in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xac (0x7f840a6893fc in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xd (0x7f840a6895cd in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0x10f3211 (0x7f845c4f9211 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x1105810 (0x7f845c50b810 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0xa71082 (0x7f845be77082 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0xa72043 (0x7f845be78043 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xf8b98 (0x557f0077cb98 in /opt/conda/bin/python)
+frame #10: <unknown function> + 0xfa78b (0x557f0077e78b in /opt/conda/bin/python)
+frame #11: <unknown function> + 0xf8b4f (0x557f0077cb4f in /opt/conda/bin/python)
+frame #12: <unknown function> + 0x1ef516 (0x557f00873516 in /opt/conda/bin/python)
+frame #13: <unknown function> + 0x11c574 (0x557f007a0574 in /opt/conda/bin/python)
+frame #14: _PyGC_CollectNoFail + 0x2b (0x557f008d95db in /opt/conda/bin/python)
+frame #15: PyImport_Cleanup + 0x371 (0x557f008f37b1 in /opt/conda/bin/python)
+frame #16: Py_FinalizeEx + 0x7a (0x557f008f3a9a in /opt/conda/bin/python)
+frame #17: Py_RunMain + 0x1b8 (0x557f008f85c8 in /opt/conda/bin/python)
+frame #18: Py_BytesMain + 0x39 (0x557f008f8939 in /opt/conda/bin/python)
+frame #19: __libc_start_main + 0xf3 (0x7f849e4200b3 in /usr/lib/x86_64-linux-gnu/libc.so.6)
+frame #20: <unknown function> + 0x1e8f39 (0x557f0086cf39 in /opt/conda/bin/python)
+
+Graphing
+
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 249, in train
+    model.graphable, pool_id = graph(model.graphable,
+  File "/workspace/object_detection/function.py", line 104, in graph
+    outputs  = func_or_module(*sample_args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 27, in forward
+    features = self.backbone(images_tensor)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", line 72, in forward
+    inner_top_down = interpolate_func(last_inner, scale_factor=2, mode="nearest")
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 112, in interpolate_nhwc
+    return UpSampleNearest2d.upsample_nearest2d(input, _output_size(2))
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 50, in upsample_nearest2d
+    return op(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 45, in forward
+    return UpSampleNearest2d_NHWC_Impl.apply(x,
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 26, in forward
+    y = NHWC.upsample_nearest2d_cuda(x, output_size)
+RuntimeError: captures_underway == 0INTERNAL ASSERT FAILED at "/opt/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp":1209, please report a bug to PyTorch. 
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+
+run-mlperf--1-f7wqj:63:63 [3] init.cc:1041 NCCL WARN Cuda failure 'operation not permitted when stream is capturing'
+terminate called after throwing an instance of 'c10::Error'
+  what():  NCCL error in: /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161, unhandled cuda error, NCCL version 21.1.4
+ncclUnhandledCudaError: Call to CUDA function failed.
+Exception raised from ncclCommAbort at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x6c (0x7f55a0ab763c in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xfa (0x7f55a0a82a28 in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #2: <unknown function> + 0x3c1e92e (0x7f55a476592e in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xac (0x7f55a47463fc in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xd (0x7f55a47465cd in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0x10f3211 (0x7f55f65b6211 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x1105810 (0x7f55f65c8810 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0xa71082 (0x7f55f5f34082 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0xa72043 (0x7f55f5f35043 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xf8b98 (0x56224884ab98 in /opt/conda/bin/python)
+frame #10: <unknown function> + 0xfa78b (0x56224884c78b in /opt/conda/bin/python)
+frame #11: <unknown function> + 0xf8b4f (0x56224884ab4f in /opt/conda/bin/python)
+frame #12: <unknown function> + 0x1ef516 (0x562248941516 in /opt/conda/bin/python)
+frame #13: <unknown function> + 0x11c574 (0x56224886e574 in /opt/conda/bin/python)
+frame #14: _PyGC_CollectNoFail + 0x2b (0x5622489a75db in /opt/conda/bin/python)
+frame #15: PyImport_Cleanup + 0x371 (0x5622489c17b1 in /opt/conda/bin/python)
+frame #16: Py_FinalizeEx + 0x7a (0x5622489c1a9a in /opt/conda/bin/python)
+frame #17: Py_RunMain + 0x1b8 (0x5622489c65c8 in /opt/conda/bin/python)
+frame #18: Py_BytesMain + 0x39 (0x5622489c6939 in /opt/conda/bin/python)
+frame #19: __libc_start_main + 0xf3 (0x7f56384dd0b3 in /usr/lib/x86_64-linux-gnu/libc.so.6)
+frame #20: <unknown function> + 0x1e8f39 (0x56224893af39 in /opt/conda/bin/python)
+
+Graphing
+
+Traceback (most recent call last):
+  File "tools/train_mlperf.py", line 522, in <module>
+    main()
+  File "tools/train_mlperf.py", line 511, in main
+    model, success = train(cfg, rank, world_size, args.distributed, random_number_generator, seed=master_seed)
+  File "tools/train_mlperf.py", line 249, in train
+    model.graphable, pool_id = graph(model.graphable,
+  File "/workspace/object_detection/function.py", line 104, in graph
+    outputs  = func_or_module(*sample_args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/detector/generalized_rcnn.py", line 27, in forward
+    features = self.backbone(images_tensor)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/modeling/backbone/fpn.py", line 72, in forward
+    inner_top_down = interpolate_func(last_inner, scale_factor=2, mode="nearest")
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/misc.py", line 112, in interpolate_nhwc
+    return UpSampleNearest2d.upsample_nearest2d(input, _output_size(2))
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 50, in upsample_nearest2d
+    return op(x)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1056, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 45, in forward
+    return UpSampleNearest2d_NHWC_Impl.apply(x,
+  File "/workspace/object_detection/maskrcnn_benchmark/layers/nhwc/UpSampleNearest2d.py", line 26, in forward
+    y = NHWC.upsample_nearest2d_cuda(x, output_size)
+RuntimeError: captures_underway == 0INTERNAL ASSERT FAILED at "/opt/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp":1209, please report a bug to PyTorch. 
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+[W CUDAGraph.cpp:226] Warning: CUDA warning: operation not permitted when stream is capturing (function reset)
+
+run-mlperf--1-f7wqj:62:62 [2] init.cc:1041 NCCL WARN Cuda failure 'operation not permitted when stream is capturing'
+terminate called after throwing an instance of 'c10::Error'
+  what():  NCCL error in: /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161, unhandled cuda error, NCCL version 21.1.4
+ncclUnhandledCudaError: Call to CUDA function failed.
+Exception raised from ncclCommAbort at /opt/pytorch/pytorch/torch/csrc/distributed/c10d/NCCLUtils.hpp:161 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x6c (0x7fb794bbe63c in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xfa (0x7fb794b89a28 in /opt/conda/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #2: <unknown function> + 0x3c1e92e (0x7fb79886c92e in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xac (0x7fb79884d3fc in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: c10d::ProcessGroupNCCL::~ProcessGroupNCCL() + 0xd (0x7fb79884d5cd in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0x10f3211 (0x7fb7ea6bd211 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x1105810 (0x7fb7ea6cf810 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0xa71082 (0x7fb7ea03b082 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0xa72043 (0x7fb7ea03c043 in /opt/conda/lib/python3.8/site-packages/torch/lib/libtorch_python.so)
+frame #9: <unknown function> + 0xf8b98 (0x55eb703cbb98 in /opt/conda/bin/python)
+frame #10: <unknown function> + 0xfa78b (0x55eb703cd78b in /opt/conda/bin/python)
+frame #11: <unknown function> + 0xf8b4f (0x55eb703cbb4f in /opt/conda/bin/python)
+frame #12: <unknown function> + 0x1ef516 (0x55eb704c2516 in /opt/conda/bin/python)
+frame #13: <unknown function> + 0x11c574 (0x55eb703ef574 in /opt/conda/bin/python)
+frame #14: _PyGC_CollectNoFail + 0x2b (0x55eb705285db in /opt/conda/bin/python)
+frame #15: PyImport_Cleanup + 0x371 (0x55eb705427b1 in /opt/conda/bin/python)
+frame #16: Py_FinalizeEx + 0x7a (0x55eb70542a9a in /opt/conda/bin/python)
+frame #17: Py_RunMain + 0x1b8 (0x55eb705475c8 in /opt/conda/bin/python)
+frame #18: Py_BytesMain + 0x39 (0x55eb70547939 in /opt/conda/bin/python)
+frame #19: __libc_start_main + 0xf3 (0x7fb82c5e40b3 in /usr/lib/x86_64-linux-gnu/libc.so.6)
+frame #20: <unknown function> + 0x1e8f39 (0x55eb704bbf39 in /opt/conda/bin/python)
+
+++ date
+Wed Dec 15 19:55:56 UTC 2021
+++ echo failed
+failed
+++ exit 1
