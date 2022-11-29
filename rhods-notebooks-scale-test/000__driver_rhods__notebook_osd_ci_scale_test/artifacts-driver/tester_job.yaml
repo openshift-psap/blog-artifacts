@@ -1,0 +1,146 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: "2022-11-28T17:44:14Z"
+  generation: 1
+  labels:
+    deployment: ods-ci
+  name: ods-ci
+  namespace: notebooks-scale-test
+  resourceVersion: "80970"
+  uid: ac229e76-44db-4c79-9496-cf384155e7c3
+spec:
+  activeDeadlineSeconds: 18000
+  backoffLimit: 0
+  completionMode: Indexed
+  completions: 300
+  parallelism: 300
+  selector:
+    matchLabels:
+      controller-uid: ac229e76-44db-4c79-9496-cf384155e7c3
+  suspend: false
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        controller-uid: ac229e76-44db-4c79-9496-cf384155e7c3
+        job-name: ods-ci
+      name: ods-ci-loadtest
+    spec:
+      containers:
+      - command:
+        - bash
+        - /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/entrypoint.sh
+        env:
+        - name: RUN_ROBOT_TEST_CASE
+          value: notebook_ux_e2e_test.robot
+        - name: ARTIFACT_DIR
+          value: /mnt/shared-dir/ods-ci
+        - name: RUN_ROBOT_EXCLUDE_TAGS
+          value: None
+        - name: SLEEP_FACTOR
+          value: "3.0"
+        - name: NOTEBOOK_URL
+          value: http://nginx-nginx-notebooks-scale-test.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org/benchmark_entrypoint.ipynb
+        - name: NOTEBOOK_IMAGE_NAME
+          value: s2i-generic-data-science-notebook
+        - name: NOTEBOOK_IMAGE_NAME_DESCR
+          value: Standard Data Science
+        - name: USER_COUNT
+          value: "300"
+        - name: USER_INDEX_OFFSET
+          value: "0"
+        - name: REDIS_SERVER
+          value: redis.redis-notebooks-scale-test.svc
+        - name: DASHBOARD_PRODUCT_NAME
+          value: Red Hat OpenShift Data Science
+        - name: NOTEBOOK_SIZE_NAME
+          value: Tiny
+        - name: NOTEBOOK_BENCHMARK_NAME
+          value: pyperf_bm_go.py
+        - name: NOTEBOOK_BENCHMARK_REPEAT
+          value: "3"
+        - name: NOTEBOOK_BENCHMARK_NUMBER
+          value: "20"
+        image: image-registry.openshift-image-registry.svc:5000/notebooks-scale-test/scale-test:ods-ci
+        imagePullPolicy: Always
+        name: main
+        resources:
+          limits:
+            cpu: 200m
+            memory: 750M
+          requests:
+            cpu: 200m
+            memory: 750M
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /mnt/shared-dir
+          name: shared-dir
+        - mountPath: /mnt/ods-ci-test-variables
+          name: ods-ci-test-variables
+        - mountPath: /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint
+          name: rhods-notebook-ux-e2e-scale-test-entrypoint
+      - command:
+        - bash
+        - /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/artifacts-exporter.sh
+        env:
+        - name: ARTIFACTS_COLLECTED
+          value: no-screenshot-except-failed-and-zero
+        - name: ARTIFACT_DIR
+          value: /mnt/shared-dir/ods-ci
+        - name: BUCKET_DEST_DIR
+          value: ods-ci
+        - name: USER_COUNT
+          value: "300"
+        image: image-registry.openshift-image-registry.svc:5000/notebooks-scale-test/scale-test:artifacts-exporter
+        imagePullPolicy: IfNotPresent
+        name: artifacts-exporter
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /mnt/s3-config
+          name: s3cmd-config
+        - mountPath: /mnt/shared-dir
+          name: shared-dir
+        - mountPath: /mnt/ods-ci-test-variables
+          name: ods-ci-test-variables
+        - mountPath: /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint
+          name: rhods-notebook-ux-e2e-scale-test-entrypoint
+      dnsPolicy: ClusterFirst
+      restartPolicy: Never
+      schedulerName: default-scheduler
+      securityContext:
+        runAsUser: 1001
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - effect: NoSchedule
+        key: only-test-pods
+        operator: Exists
+      volumes:
+      - name: ods-ci-test-variables
+        secret:
+          defaultMode: 420
+          secretName: ods-ci-test-variables
+      - configMap:
+          defaultMode: 420
+          name: s3cmd-config
+        name: s3cmd-config
+      - configMap:
+          defaultMode: 420
+          name: rhods-notebook-ux-e2e-scale-test-entrypoint
+        name: rhods-notebook-ux-e2e-scale-test-entrypoint
+      - emptyDir: {}
+        name: shared-dir
+status:
+  completedIndexes: 0-299
+  completionTime: "2022-11-28T18:03:25Z"
+  conditions:
+  - lastProbeTime: "2022-11-28T18:03:25Z"
+    lastTransitionTime: "2022-11-28T18:03:25Z"
+    status: "True"
+    type: Complete
+  ready: 0
+  startTime: "2022-11-28T17:44:14Z"
+  succeeded: 300

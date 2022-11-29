@@ -1,0 +1,138 @@
++ SKIP_OC_LOGIN=false
++ SERVICE_ACCOUNT=
++ SA_NAMESPACE=default
++ SET_RHODS_URLS=false
++ TEST_CASE_FILE=tests/Tests
++ TEST_VARIABLES_FILE=test-variables.yml
++ TEST_VARIABLES=
++ TEST_ARTIFACT_DIR=test-output
++ EXTRA_ROBOT_ARGS=
++ SKIP_PIP_INSTALL=0
++ TEST_INCLUDE_TAG=
++ TEST_EXCLUDE_TAG=
++ EMAIL_REPORT=false
++ EMAIL_TO=
++ EMAIL_FROM=
++ EMAIL_SERVER=localhost
++ EMAIL_SERVER_USER=None
++ EMAIL_SERVER_PW=None
++ EMAIL_SERVER_SSL=false
++ EMAIL_SERVER_UNSECURE=false
++ '[' 13 -gt 0 ']'
++ case $1 in
++ shift
++ SKIP_PIP_INSTALL=1
++ '[' 12 -gt 0 ']'
++ case $1 in
++ shift
++ TEST_VARIABLES_FILE=/tmp/test-variables.yml
++ shift
++ '[' 10 -gt 0 ']'
++ case $1 in
++ shift
++ SKIP_OC_LOGIN=true
++ shift
++ '[' 8 -gt 0 ']'
++ case $1 in
++ shift
++ TEST_ARTIFACT_DIR=/mnt/shared-dir/ods-ci
++ shift
++ '[' 6 -gt 0 ']'
++ case $1 in
++ shift
++ TEST_CASE_FILE=notebook_ux_e2e_test.robot
++ shift
++ '[' 4 -gt 0 ']'
++ case $1 in
++ shift
++ TEST_EXCLUDE_TAG=' --exclude None'
++ shift
++ '[' 2 -gt 0 ']'
++ case $1 in
++ shift
++ EXTRA_ROBOT_ARGS=--exitonfailure
++ shift
++ '[' 0 -gt 0 ']'
++ false
++ echo /tmp/test-variables.yml
+/tmp/test-variables.yml
++ [[ ! -f /tmp/test-variables.yml ]]
+++ pwd
++ currentpath=/tmp/ods-ci
++ case "$(uname -s)" in
+++ uname -s
++ case "$(lsb_release --id --short)" in
+++ lsb_release --id --short
++ false
++ command -v yq
++ echo 'INFO: we found a yq executable'
+INFO: we found a yq executable
++ true
++ echo 'skipping OC login as per parameter --skip-oclogin'
+skipping OC login as per parameter --skip-oclogin
++ VENV_ROOT=/tmp/ods-ci/venv
++ [[ ! -d /tmp/ods-ci/venv ]]
++ source /tmp/ods-ci/venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ '[' -n /usr/bin/bash -o -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/tmp/ods-ci/venv
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/tmp/ods-ci/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ '[' 'x(venv) ' '!=' x ']'
+++ PS1='(venv) '
+++ export PS1
+++ '[' -n /usr/bin/bash -o -n '' ']'
+++ hash -r
++ [[ 1 -eq 0 ]]
++ [[ ! -d /mnt/shared-dir/ods-ci ]]
++ case "$(uname -s)" in
+++ uname -s
++++ date +%Y-%m-%d-%H-%M
+++ mktemp -d -p /mnt/shared-dir/ods-ci -t ods-ci-2022-11-28-17-49-XXXXXXXXXX
++ TEST_ARTIFACT_DIR=/mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-49-GLwzhy8g0f
++ ./venv/bin/robot --exclude None -d /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-49-GLwzhy8g0f -x xunit_test_result.xml -r test_report.html --variablefile /tmp/test-variables.yml --exclude TBC --exitonfailure notebook_ux_e2e_test.robot
+==============================================================================
+Notebook Ux E2E Test                                                          
+==============================================================================
+Open the Browser                                                      | PASS |
+------------------------------------------------------------------------------
+Login to RHODS Dashboard                                              | PASS |
+------------------------------------------------------------------------------
+Go to RHODS Dashboard                                                 | PASS |
+------------------------------------------------------------------------------
+Go to Jupyter Page                                                    | PASS |
+------------------------------------------------------------------------------
+Wait for the Notebook Spawn                                           | PASS |
+------------------------------------------------------------------------------
+Login to JupyterLab Page                                              | PASS |
+------------------------------------------------------------------------------
+Go to JupyterLab Page                                                 | PASS |
+------------------------------------------------------------------------------
+Load the Notebook                                                     | PASS |
+------------------------------------------------------------------------------
+Run the Notebook                                                      | PASS |
+------------------------------------------------------------------------------
+Notebook Ux E2E Test                                                  | PASS |
+9 tests, 9 passed, 0 failed
+==============================================================================
+Output:  /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-49-GLwzhy8g0f/output.xml
+XUnit:   /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-49-GLwzhy8g0f/xunit_test_result.xml
+Log:     /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-49-GLwzhy8g0f/log.html
+Report:  /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-49-GLwzhy8g0f/test_report.html
+++ echo 0
++ exit_status=0
++ echo 0
+0
++ false
++ exit 0

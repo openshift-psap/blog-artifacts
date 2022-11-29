@@ -1,0 +1,3 @@
+test_case=notebook_ux_e2e_test.robot
+exclude_tags=None
+user_count=300

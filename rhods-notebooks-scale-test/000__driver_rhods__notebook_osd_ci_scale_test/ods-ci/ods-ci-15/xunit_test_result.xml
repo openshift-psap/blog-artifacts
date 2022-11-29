@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Notebook Ux E2E Test" tests="9" errors="0" failures="0" skipped="0" time="219.096">
+<testcase classname="Notebook Ux E2E Test" name="Open the Browser" time="2.880">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Login to RHODS Dashboard" time="4.911">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Go to RHODS Dashboard" time="5.191">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Go to Jupyter Page" time="17.200">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Wait for the Notebook Spawn" time="39.496">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Login to JupyterLab Page" time="12.901">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Go to JupyterLab Page" time="13.307">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Load the Notebook" time="81.207">
+</testcase>
+<testcase classname="Notebook Ux E2E Test" name="Run the Notebook" time="35.583">
+</testcase>
+</testsuite>

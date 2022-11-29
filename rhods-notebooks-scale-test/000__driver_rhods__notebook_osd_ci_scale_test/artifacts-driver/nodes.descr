@@ -1,0 +1,1826 @@
+Name:               ip-10-0-132-11.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-132-11.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-02a950c37bf929394","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-01bd8eda187cb6c5d"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-xrzlp
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:42 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-132-11.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:40 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:22 +0000   Mon, 28 Nov 2022 16:37:42 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:22 +0000   Mon, 28 Nov 2022 16:37:42 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:22 +0000   Mon, 28 Nov 2022 16:37:42 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:22 +0000   Mon, 28 Nov 2022 16:38:13 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.132.11
+  Hostname:     ip-10-0-132-11.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-132-11.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec2774aa4aa8e535d9b375801945e145
+  System UUID:                            ec2774aa-4aa8-e535-d9b3-75801945e145
+  Boot ID:                                89af00f0-b0de-4015-9c24-f0b3110749e8
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-01bd8eda187cb6c5d
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-4nbw6          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-lcvf7                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-v9sqd                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-tk2jr                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-lwg9t            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-kt6rz                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-4dssd                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-f2qzh    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-jwgxr           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-zb8lf             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         96m
+  openshift-sdn                           sdn-tsqfp                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-132-11.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-132-11.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    96m                node-controller      Node ip-10-0-132-11.us-west-2.compute.internal event: Registered Node ip-10-0-132-11.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-132-11.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-135-48.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-135-48.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-067f2f3c7800d59ad","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0b9bf91e646864497"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-bkdbt
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:38:15 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-135-48.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:39 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:32 +0000   Mon, 28 Nov 2022 16:38:15 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:32 +0000   Mon, 28 Nov 2022 16:38:15 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:32 +0000   Mon, 28 Nov 2022 16:38:15 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:32 +0000   Mon, 28 Nov 2022 16:38:46 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.135.48
+  Hostname:     ip-10-0-135-48.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-135-48.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec24d5d943fd01d89890a165643b2c13
+  System UUID:                            ec24d5d9-43fd-01d8-9890-a165643b2c13
+  Boot ID:                                bdb8defa-e90a-4f2f-9c63-d65334b33514
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-0b9bf91e646864497
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-8rllb          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         95m
+  openshift-cluster-node-tuning-operator  tuned-9j6pl                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         95m
+  openshift-dns                           node-resolver-c72cn                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         95m
+  openshift-image-registry                node-ca-dpstz                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         95m
+  openshift-machine-config-operator       machine-config-daemon-78zc6            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         95m
+  openshift-monitoring                    node-exporter-p925t                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         95m
+  openshift-multus                        multus-additional-cni-plugins-49hwz    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         95m
+  openshift-multus                        multus-gm9g2                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         95m
+  openshift-multus                        network-metrics-daemon-568p6           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         95m
+  openshift-network-diagnostics           network-check-target-cls4r             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         95m
+  openshift-sdn                           sdn-l2x8g                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         95m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           95m (x8 over 95m)  kubelet              Node ip-10-0-135-48.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             95m (x8 over 95m)  kubelet              Node ip-10-0-135-48.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    95m                node-controller      Node ip-10-0-135-48.us-west-2.compute.internal event: Registered Node ip-10-0-135-48.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-135-48.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          94m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         94m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-143-123.us-west-2.compute.internal
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-143-123.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-06ecbd388e6b25aa2","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-051c5d9697c353f18"}
+                    machine.openshift.io/machine: openshift-machine-api/odsci-pr590-driver-15-khg5q-master-0
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:07:39 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-143-123.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:37 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:35 +0000   Mon, 28 Nov 2022 16:07:39 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:35 +0000   Mon, 28 Nov 2022 16:07:39 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:35 +0000   Mon, 28 Nov 2022 16:07:39 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:35 +0000   Mon, 28 Nov 2022 16:08:30 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.143.123
+  Hostname:     ip-10-0-143-123.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-143-123.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                                  ec2233cebbf4c6dec3f4fe1dc808d1f6
+  System UUID:                                 ec2233ce-bbf4-c6de-c3f4-fe1dc808d1f6
+  Boot ID:                                     f56c7451-ddb1-420d-a7ab-e8b9a9ce3040
+  Kernel Version:                              4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                                    Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                            linux
+  Architecture:                                amd64
+  Container Runtime Version:                   cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                             v1.24.6+5157800
+  Kube-Proxy Version:                          v1.24.6+5157800
+ProviderID:                                    aws:///us-west-2a/i-051c5d9697c353f18
+Non-terminated Pods:                           (38 in total)
+  Namespace                                    Name                                                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                    ----                                                                         ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver                          apiserver-b794b65df-pnsqt                                                    110m (1%)     0 (0%)      250Mi (0%)       0 (0%)         118m
+  openshift-authentication                     oauth-openshift-947484b85-v97jm                                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         103m
+  openshift-cloud-controller-manager-operator  cluster-cloud-controller-manager-operator-6ff4b4777c-c4g4c                   20m (0%)      0 (0%)      75Mi (0%)        0 (0%)         126m
+  openshift-cluster-csi-drivers                aws-ebs-csi-driver-controller-5f9df5b647-x965h                               110m (1%)     0 (0%)      400Mi (1%)       0 (0%)         124m
+  openshift-cluster-csi-drivers                aws-ebs-csi-driver-node-v2bpb                                                30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         124m
+  openshift-cluster-node-tuning-operator       tuned-trdl6                                                                  10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         123m
+  openshift-cluster-storage-operator           csi-snapshot-controller-cc95b8685-vmnsl                                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         125m
+  openshift-cluster-storage-operator           csi-snapshot-webhook-79d48f846b-k8trq                                        10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         125m
+  openshift-cluster-version                    cluster-version-operator-6d6c5cbfbb-8xlpz                                    20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-console                            console-6b9dd8859b-6vzlr                                                     10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         107m
+  openshift-controller-manager                 controller-manager-mqlh2                                                     100m (1%)     0 (0%)      100Mi (0%)       0 (0%)         110m
+  openshift-dns                                dns-default-n7nsf                                                            60m (0%)      0 (0%)      110Mi (0%)       0 (0%)         124m
+  openshift-dns                                node-resolver-9v42k                                                          5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         124m
+  openshift-etcd                               etcd-guard-ip-10-0-143-123.us-west-2.compute.internal                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         122m
+  openshift-etcd                               etcd-ip-10-0-143-123.us-west-2.compute.internal                              410m (5%)     0 (0%)      980Mi (3%)       0 (0%)         105m
+  openshift-image-registry                     node-ca-sll2m                                                                10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         118m
+  openshift-kube-apiserver                     kube-apiserver-guard-ip-10-0-143-123.us-west-2.compute.internal              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         121m
+  openshift-kube-apiserver                     kube-apiserver-ip-10-0-143-123.us-west-2.compute.internal                    290m (3%)     0 (0%)      1224Mi (4%)      0 (0%)         104m
+  openshift-kube-controller-manager            kube-controller-manager-guard-ip-10-0-143-123.us-west-2.compute.internal     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         121m
+  openshift-kube-controller-manager            kube-controller-manager-ip-10-0-143-123.us-west-2.compute.internal           80m (1%)      0 (0%)      500Mi (1%)       0 (0%)         109m
+  openshift-kube-scheduler                     openshift-kube-scheduler-guard-ip-10-0-143-123.us-west-2.compute.internal    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         121m
+  openshift-kube-scheduler                     openshift-kube-scheduler-ip-10-0-143-123.us-west-2.compute.internal          25m (0%)      0 (0%)      150Mi (0%)       0 (0%)         108m
+  openshift-machine-config-operator            machine-config-daemon-kfptj                                                  40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         125m
+  openshift-machine-config-operator            machine-config-server-n7h8r                                                  20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         123m
+  openshift-marketplace                        certified-operators-8kh8c                                                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         123m
+  openshift-marketplace                        redhat-operators-v49ch                                                       10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         123m
+  openshift-monitoring                         node-exporter-xhwlf                                                          9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         119m
+  openshift-multus                             multus-additional-cni-plugins-jndbs                                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         125m
+  openshift-multus                             multus-admission-controller-twlnj                                            20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         125m
+  openshift-multus                             multus-tqwxm                                                                 10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         125m
+  openshift-multus                             network-metrics-daemon-t49n5                                                 20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         125m
+  openshift-network-diagnostics                network-check-target-rb927                                                   10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         125m
+  openshift-network-operator                   network-operator-5499bf8b85-jbbqf                                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-oauth-apiserver                    apiserver-7f6746d49c-v6z82                                                   150m (2%)     0 (0%)      200Mi (0%)       0 (0%)         119m
+  openshift-operator-lifecycle-manager         packageserver-6bcb6b976f-5xfp5                                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         124m
+  openshift-sdn                                sdn-controller-shxzn                                                         20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         125m
+  openshift-sdn                                sdn-xdjrg                                                                    110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         125m
+  openshift-service-ca                         service-ca-66cfb699d9-5p2qt                                                  10m (0%)      0 (0%)      120Mi (0%)       0 (0%)         125m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests      Limits
+  --------                    --------      ------
+  cpu                         1829m (24%)   0 (0%)
+  memory                      5597Mi (18%)  0 (0%)
+  ephemeral-storage           0 (0%)        0 (0%)
+  hugepages-1Gi               0 (0%)        0 (0%)
+  hugepages-2Mi               0 (0%)        0 (0%)
+  attachable-volumes-aws-ebs  0             0
+Events:
+  Type     Reason                                            Age                  From                 Message
+  ----     ------                                            ----                 ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  123m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  123m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           126m (x8 over 126m)  kubelet              Node ip-10-0-143-123.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             126m (x8 over 126m)  kubelet              Node ip-10-0-143-123.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    126m                 node-controller      Node ip-10-0-143-123.us-west-2.compute.internal event: Registered Node ip-10-0-143-123.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          123m                 machineconfigdaemon  Setting node ip-10-0-143-123.us-west-2.compute.internal, currentConfig rendered-master-b4f21820b2ff85275e235ca8309c52e6 to Done
+  Normal   Uncordon                                          123m                 machineconfigdaemon  Update completed for config rendered-master-b4f21820b2ff85275e235ca8309c52e6 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         123m                 machineconfigdaemon  Config Drift Monitor started, watching against rendered-master-b4f21820b2ff85275e235ca8309c52e6
+  Normal   RegisteredNode                                    119m                 node-controller      Node ip-10-0-143-123.us-west-2.compute.internal event: Registered Node ip-10-0-143-123.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    113m                 node-controller      Node ip-10-0-143-123.us-west-2.compute.internal event: Registered Node ip-10-0-143-123.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    106m                 node-controller      Node ip-10-0-143-123.us-west-2.compute.internal event: Registered Node ip-10-0-143-123.us-west-2.compute.internal in Controller
+
+
+Name:               ip-10-0-144-112.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-144-112.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-059edc70d3aa58cdb","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-00d5c93691974fc10"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-4vcxl
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:38 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-144-112.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:36 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:37:38 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:37:38 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:37:38 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:38:09 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.144.112
+  Hostname:     ip-10-0-144-112.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-144-112.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec2b1424c942856495c1d2cf33a645d0
+  System UUID:                            ec2b1424-c942-8564-95c1-d2cf33a645d0
+  Boot ID:                                debfa9b6-80e0-4cad-8e3c-04b0bc73993f
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-00d5c93691974fc10
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-6fvjl          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-8scwg                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-6n7b6                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-lljd5                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-bgf8c            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-jftq9                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-9glhg                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-cbsgd    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-c77z2           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-sqf5f             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         96m
+  openshift-sdn                           sdn-f9sts                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-144-112.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-144-112.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    96m                node-controller      Node ip-10-0-144-112.us-west-2.compute.internal event: Registered Node ip-10-0-144-112.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-144-112.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-144-18.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-144-18.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0f2995c108957be01","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0c91b59686be4df41"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-s4m8x
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:48 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-144-18.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:36 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:48 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:48 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:48 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:38:19 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.144.18
+  Hostname:     ip-10-0-144-18.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-144-18.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec2503f93414156b3119b469452fabd0
+  System UUID:                            ec2503f9-3414-156b-3119-b469452fabd0
+  Boot ID:                                9cadb0cb-22e1-4983-8a3d-117ce3f10ece
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-0c91b59686be4df41
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-lkpjq          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         95m
+  openshift-cluster-node-tuning-operator  tuned-rvsdl                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         95m
+  openshift-dns                           node-resolver-lzqp8                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         95m
+  openshift-image-registry                node-ca-swjcd                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         95m
+  openshift-machine-config-operator       machine-config-daemon-nq4qd            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         95m
+  openshift-monitoring                    node-exporter-2g6ls                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         95m
+  openshift-multus                        multus-additional-cni-plugins-26xgj    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         95m
+  openshift-multus                        multus-t49zn                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         95m
+  openshift-multus                        network-metrics-daemon-d2mqd           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         95m
+  openshift-network-diagnostics           network-check-target-tnd6s             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         95m
+  openshift-sdn                           sdn-p6rbs                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         95m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           95m (x8 over 96m)  kubelet              Node ip-10-0-144-18.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             95m (x8 over 96m)  kubelet              Node ip-10-0-144-18.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    95m                node-controller      Node ip-10-0-144-18.us-west-2.compute.internal event: Registered Node ip-10-0-144-18.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-144-18.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-145-181.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-145-181.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0b04a50454c8077ac","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-038066012ad7fc4d4"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-twjt8
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:36 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-145-181.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:39 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:11 +0000   Mon, 28 Nov 2022 16:37:36 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:11 +0000   Mon, 28 Nov 2022 16:37:36 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:11 +0000   Mon, 28 Nov 2022 16:37:36 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:11 +0000   Mon, 28 Nov 2022 16:37:56 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.145.181
+  Hostname:     ip-10-0-145-181.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-145-181.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec24c67086be3bbf74e624719937e162
+  System UUID:                            ec24c670-86be-3bbf-74e6-24719937e162
+  Boot ID:                                6dafc35b-2902-4495-a1f6-6b7d1c7ce757
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-038066012ad7fc4d4
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-z5vvf          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-x488f                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-hbgrm                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-zrnfh                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-2mgp6            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-v9cd4                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-bmkzf    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-hlpkw                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-5jxk4           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-rbj2w             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         96m
+  openshift-sdn                           sdn-qbkl9                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-145-181.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-145-181.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    96m                node-controller      Node ip-10-0-145-181.us-west-2.compute.internal event: Registered Node ip-10-0-145-181.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-145-181.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-145-189.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-145-189.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0c775116d27070008","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-02a5fee705095e5ae"}
+                    machine.openshift.io/machine: openshift-machine-api/odsci-pr590-driver-15-khg5q-worker-us-west-2a-x5vqn
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:12:17 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-145-189.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:38 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:11:46 +0000   Mon, 28 Nov 2022 16:12:17 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:11:46 +0000   Mon, 28 Nov 2022 16:12:17 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:11:46 +0000   Mon, 28 Nov 2022 16:12:17 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:11:46 +0000   Mon, 28 Nov 2022 16:12:37 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.145.189
+  Hostname:     ip-10-0-145-189.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-145-189.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         4
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      16041336Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         3500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      14890360Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec235fde6f24519f46fa739c058635ef
+  System UUID:                            ec235fde-6f24-519f-46fa-739c058635ef
+  Boot ID:                                111526d6-c6c5-48fd-bab7-148009c417e6
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-02a5fee705095e5ae
+Non-terminated Pods:                      (24 in total)
+  Namespace                               Name                                                     CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                                     ------------  ----------  ---------------  -------------  ---
+  minio                                   minio-deployment-6769bcb574-7v7qs                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         94m
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-586rs                            30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         121m
+  openshift-cluster-node-tuning-operator  tuned-jx749                                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         121m
+  openshift-console                       downloads-5c76b655d6-r7sg4                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         111m
+  openshift-dns                           dns-default-6hnsz                                        60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         121m
+  openshift-dns                           node-resolver-dp2lt                                      5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         121m
+  openshift-image-registry                image-registry-6b859c4d8c-r275l                          100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         118m
+  openshift-image-registry                node-ca-wkx6h                                            10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         118m
+  openshift-ingress-canary                ingress-canary-k79r7                                     10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         118m
+  openshift-ingress                       router-default-f7b58cf9d-2tx5p                           100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         123m
+  openshift-machine-config-operator       machine-config-daemon-kzppw                              40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         121m
+  openshift-monitoring                    alertmanager-main-1                                      9m (0%)       0 (0%)      120Mi (0%)       0 (0%)         111m
+  openshift-monitoring                    kube-state-metrics-5d5bcd4c48-6sskx                      4m (0%)       0 (0%)      110Mi (0%)       0 (0%)         119m
+  openshift-monitoring                    node-exporter-7pv7r                                      9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         119m
+  openshift-monitoring                    openshift-state-metrics-74dfb98cfd-r5z9m                 3m (0%)       0 (0%)      72Mi (0%)        0 (0%)         119m
+  openshift-monitoring                    prometheus-adapter-7947b4646f-kcn4m                      1m (0%)       0 (0%)      40Mi (0%)        0 (0%)         118m
+  openshift-monitoring                    prometheus-k8s-0                                         75m (2%)      0 (0%)      1104Mi (7%)      0 (0%)         29m
+  openshift-monitoring                    prometheus-operator-admission-webhook-b64bb8f5f-r5jqr    5m (0%)       0 (0%)      30Mi (0%)        0 (0%)         124m
+  openshift-monitoring                    thanos-querier-86744f79d4-lhsb4                          15m (0%)      0 (0%)      92Mi (0%)        0 (0%)         119m
+  openshift-multus                        multus-additional-cni-plugins-vjxgd                      10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         121m
+  openshift-multus                        multus-mz7tl                                             10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         121m
+  openshift-multus                        network-metrics-daemon-57c96                             20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         121m
+  openshift-network-diagnostics           network-check-target-mwz9v                               10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         121m
+  openshift-sdn                           sdn-q4shp                                                110m (3%)     0 (0%)      220Mi (1%)       0 (0%)         121m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests      Limits
+  --------                    --------      ------
+  cpu                         656m (18%)    0 (0%)
+  memory                      3068Mi (21%)  0 (0%)
+  ephemeral-storage           0 (0%)        0 (0%)
+  hugepages-1Gi               0 (0%)        0 (0%)
+  hugepages-2Mi               0 (0%)        0 (0%)
+  attachable-volumes-aws-ebs  0             0
+Events:
+  Type     Reason                                            Age                  From                 Message
+  ----     ------                                            ----                 ----                 -------
+  Warning  listen tcp4 :32096: bind: address already in use  121m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Warning  listen tcp4 :31211: bind: address already in use  121m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Normal   Starting                                          121m                 kubelet              Starting kubelet.
+  Normal   NodeAllocatableEnforced                           121m                 kubelet              Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientPID                              121m (x2 over 121m)  kubelet              Node ip-10-0-145-189.us-west-2.compute.internal status is now: NodeHasSufficientPID
+  Normal   NodeHasNoDiskPressure                             121m (x2 over 121m)  kubelet              Node ip-10-0-145-189.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientMemory                           121m (x2 over 121m)  kubelet              Node ip-10-0-145-189.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   RegisteredNode                                    121m                 node-controller      Node ip-10-0-145-189.us-west-2.compute.internal event: Registered Node ip-10-0-145-189.us-west-2.compute.internal in Controller
+  Normal   NodeReady                                         121m                 kubelet              Node ip-10-0-145-189.us-west-2.compute.internal status is now: NodeReady
+  Normal   NodeDone                                          121m                 machineconfigdaemon  Setting node ip-10-0-145-189.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   ConfigDriftMonitorStarted                         121m                 machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+  Normal   Uncordon                                          121m                 machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   RegisteredNode                                    119m                 node-controller      Node ip-10-0-145-189.us-west-2.compute.internal event: Registered Node ip-10-0-145-189.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    113m                 node-controller      Node ip-10-0-145-189.us-west-2.compute.internal event: Registered Node ip-10-0-145-189.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    106m                 node-controller      Node ip-10-0-145-189.us-west-2.compute.internal event: Registered Node ip-10-0-145-189.us-west-2.compute.internal in Controller
+
+
+Name:               ip-10-0-147-135.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-147-135.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-044380424284c4c6a","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0daa462a7aed0c9f1"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-wz6sc
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:47 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-147-135.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:46 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:29 +0000   Mon, 28 Nov 2022 16:37:47 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:29 +0000   Mon, 28 Nov 2022 16:37:47 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:29 +0000   Mon, 28 Nov 2022 16:37:47 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:29 +0000   Mon, 28 Nov 2022 16:38:08 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.147.135
+  Hostname:     ip-10-0-147-135.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-147-135.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec2dda469f8fb09ea88183c5f7eecc24
+  System UUID:                            ec2dda46-9f8f-b09e-a881-83c5f7eecc24
+  Boot ID:                                c95689ce-376f-4423-8832-685cdbcf6d44
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-0daa462a7aed0c9f1
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-gz7zx          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-cjw9q                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-n9hnm                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-6c75x                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-2h7tp            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-kpxpp                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-qxqlw    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-v8trv                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-sc7jx           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-22b4d             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         95m
+  openshift-sdn                           sdn-42fbr                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-147-135.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-147-135.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    95m                node-controller      Node ip-10-0-147-135.us-west-2.compute.internal event: Registered Node ip-10-0-147-135.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-147-135.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-147-225.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-147-225.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0562885129057a4b4","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0b0ad8e09bcb96eae"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-5wmzj
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:41 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-147-225.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:45 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:15 +0000   Mon, 28 Nov 2022 16:37:41 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:15 +0000   Mon, 28 Nov 2022 16:37:41 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:15 +0000   Mon, 28 Nov 2022 16:37:41 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:15 +0000   Mon, 28 Nov 2022 16:38:02 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.147.225
+  Hostname:     ip-10-0-147-225.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-147-225.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec23cd5b8e97a1e58cc9ad6b78a96998
+  System UUID:                            ec23cd5b-8e97-a1e5-8cc9-ad6b78a96998
+  Boot ID:                                7fec8f43-e3b3-4282-990d-73657175a408
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-0b0ad8e09bcb96eae
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-pnp45          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-bxnxb                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-ccfmj                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-5dm6z                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-qsl4g            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-s5rbz                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-56rdk                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-nbz8x    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-8hhsq           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-lg88t             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         96m
+  openshift-sdn                           sdn-fchhb                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-147-225.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-147-225.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    96m                node-controller      Node ip-10-0-147-225.us-west-2.compute.internal event: Registered Node ip-10-0-147-225.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-147-225.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-148-137.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-148-137.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-085ae31a76ac85f08","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-08453dd97441dcb81"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-jmp7g
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:38:00 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-148-137.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:43 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:10 +0000   Mon, 28 Nov 2022 16:38:00 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:10 +0000   Mon, 28 Nov 2022 16:38:00 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:10 +0000   Mon, 28 Nov 2022 16:38:00 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:10 +0000   Mon, 28 Nov 2022 16:38:30 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.148.137
+  Hostname:     ip-10-0-148-137.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-148-137.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec24f4b554632c4332ecd5fb0a13a6ef
+  System UUID:                            ec24f4b5-5463-2c43-32ec-d5fb0a13a6ef
+  Boot ID:                                6fab6174-0f8b-4950-b564-f8c44b4a4413
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-08453dd97441dcb81
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-xqng4          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         95m
+  openshift-cluster-node-tuning-operator  tuned-k8vk7                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         95m
+  openshift-dns                           node-resolver-d8cc2                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         95m
+  openshift-image-registry                node-ca-6q8mq                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         95m
+  openshift-machine-config-operator       machine-config-daemon-ch99h            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         95m
+  openshift-monitoring                    node-exporter-wqs6x                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         95m
+  openshift-multus                        multus-additional-cni-plugins-27c84    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         95m
+  openshift-multus                        multus-hjlkx                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         95m
+  openshift-multus                        network-metrics-daemon-9h4kx           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         95m
+  openshift-network-diagnostics           network-check-target-fw96p             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         95m
+  openshift-sdn                           sdn-xmzlf                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         95m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           95m (x8 over 96m)  kubelet              Node ip-10-0-148-137.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             95m (x8 over 96m)  kubelet              Node ip-10-0-148-137.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    95m                node-controller      Node ip-10-0-148-137.us-west-2.compute.internal event: Registered Node ip-10-0-148-137.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-148-137.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-153-121.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-153-121.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0d183dafc51478f05","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0641f5d3ad6aa4446"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-hnmns
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:43 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-153-121.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:49 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:43 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:43 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:43 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:38:14 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.153.121
+  Hostname:     ip-10-0-153-121.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-153-121.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec269f4257f40ce875af3cac299316c9
+  System UUID:                            ec269f42-57f4-0ce8-75af-3cac299316c9
+  Boot ID:                                934fe4e5-0de8-4a89-8b28-3fb2d85a5df5
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-0641f5d3ad6aa4446
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-gt4sl          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-pfkrn                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-9pb4f                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-qdk97                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-t95gw            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-sg4vv                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-dz275    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-wvh6s                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-6ldgd           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-95h69             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         96m
+  openshift-sdn                           sdn-h4qs9                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-153-121.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-153-121.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    96m                node-controller      Node ip-10-0-153-121.us-west-2.compute.internal event: Registered Node ip-10-0-153-121.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-153-121.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-159-204.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2a
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-159-204.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    only-test-pods=yes
+                    topology.ebs.csi.aws.com/zone=us-west-2a
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2a
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0ffc31c824a1fae0a","ifaddr":{"ipv4":"10.0.128.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-028f9b459a800bc14"}
+                    machine.openshift.io/machine: openshift-machine-api/test-pods-kbnrd
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:37:44 +0000
+Taints:             only-test-pods=yes:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-159-204.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:49 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:44 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:44 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:37:44 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:27 +0000   Mon, 28 Nov 2022 16:38:14 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.159.204
+  Hostname:     ip-10-0-159-204.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-159-204.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec274ce727ed2ba7929569a205b69fab
+  System UUID:                            ec274ce7-27ed-2ba7-9295-69a205b69fab
+  Boot ID:                                e2ea16e8-da66-450b-af2e-43a7c34c628b
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2a/i-028f9b459a800bc14
+Non-terminated Pods:                      (11 in total)
+  Namespace                               Name                                   CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                   ------------  ----------  ---------------  -------------  ---
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-xt59w          30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         96m
+  openshift-cluster-node-tuning-operator  tuned-kjjbq                            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         96m
+  openshift-dns                           node-resolver-kpd5c                    5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         96m
+  openshift-image-registry                node-ca-hhmn9                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-machine-config-operator       machine-config-daemon-shbv2            40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         96m
+  openshift-monitoring                    node-exporter-f7ndz                    9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-additional-cni-plugins-nf4zq    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         96m
+  openshift-multus                        multus-tdn9d                           10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         96m
+  openshift-multus                        network-metrics-daemon-hqm48           20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         96m
+  openshift-network-diagnostics           network-check-target-zfxst             10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         96m
+  openshift-sdn                           sdn-pjkmf                              110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         96m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests    Limits
+  --------                    --------    ------
+  cpu                         264m (3%)   0 (0%)
+  memory                      808Mi (2%)  0 (0%)
+  ephemeral-storage           0 (0%)      0 (0%)
+  hugepages-1Gi               0 (0%)      0 (0%)
+  hugepages-2Mi               0 (0%)      0 (0%)
+  attachable-volumes-aws-ebs  0           0
+Events:
+  Type     Reason                                            Age                From                 Message
+  ----     ------                                            ----               ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  95m                kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           96m (x8 over 96m)  kubelet              Node ip-10-0-159-204.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             96m (x8 over 96m)  kubelet              Node ip-10-0-159-204.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    96m                node-controller      Node ip-10-0-159-204.us-west-2.compute.internal event: Registered Node ip-10-0-159-204.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          95m                machineconfigdaemon  Setting node ip-10-0-159-204.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   Uncordon                                          95m                machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         95m                machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+
+
+Name:               ip-10-0-169-156.us-west-2.compute.internal
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6a.xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2b
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-169-156.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.kubernetes.io/instance-type=m6a.xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-west-2b
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2b
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0dad11c4c92eee471","ifaddr":{"ipv4":"10.0.160.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-0f26c3e11392ea897"}
+                    machine.openshift.io/machine: openshift-machine-api/odsci-pr590-driver-15-khg5q-worker-us-west-2b-lg97p
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-a2353fa2ae1565788a7d368f870b2094
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:12:11 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-169-156.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:41 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:11:37 +0000   Mon, 28 Nov 2022 16:12:11 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:11:37 +0000   Mon, 28 Nov 2022 16:12:11 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:11:37 +0000   Mon, 28 Nov 2022 16:12:11 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:11:37 +0000   Mon, 28 Nov 2022 16:12:31 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.169.156
+  Hostname:     ip-10-0-169-156.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-169-156.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         4
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      16041336Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         3500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      14890360Ki
+  pods:                        250
+System Info:
+  Machine ID:                             ec2bca9c871cd23ea9af7e110817861d
+  System UUID:                            ec2bca9c-871c-d23e-a9af-7e110817861d
+  Boot ID:                                176b8c9d-ba8b-40d8-8196-7da8705cc435
+  Kernel Version:                         4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                        v1.24.6+5157800
+  Kube-Proxy Version:                     v1.24.6+5157800
+ProviderID:                               aws:///us-west-2b/i-0f26c3e11392ea897
+Non-terminated Pods:                      (25 in total)
+  Namespace                               Name                                                     CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                                     ------------  ----------  ---------------  -------------  ---
+  nginx-notebooks-scale-test              nginx-deployment-78494fd585-hvb7q                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         94m
+  openshift-cluster-csi-drivers           aws-ebs-csi-driver-node-2wj8d                            30m (0%)      0 (0%)      150Mi (1%)       0 (0%)         121m
+  openshift-cluster-node-tuning-operator  tuned-wbmt4                                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         121m
+  openshift-console                       downloads-5c76b655d6-pzhhv                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         111m
+  openshift-dns                           dns-default-hbllm                                        60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         121m
+  openshift-dns                           node-resolver-cdzv6                                      5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         121m
+  openshift-image-registry                image-registry-6b859c4d8c-2mg7h                          100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         118m
+  openshift-image-registry                node-ca-d6cdn                                            10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         118m
+  openshift-ingress-canary                ingress-canary-csw9k                                     10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         119m
+  openshift-ingress                       router-default-f7b58cf9d-tc6c6                           100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         123m
+  openshift-machine-config-operator       machine-config-daemon-dkfkx                              40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         121m
+  openshift-monitoring                    alertmanager-main-0                                      9m (0%)       0 (0%)      120Mi (0%)       0 (0%)         110m
+  openshift-monitoring                    node-exporter-n7mtr                                      9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         119m
+  openshift-monitoring                    prometheus-adapter-7947b4646f-zsxvt                      1m (0%)       0 (0%)      40Mi (0%)        0 (0%)         118m
+  openshift-monitoring                    prometheus-k8s-1                                         75m (2%)      0 (0%)      1104Mi (7%)      0 (0%)         29m
+  openshift-monitoring                    prometheus-operator-admission-webhook-b64bb8f5f-9hsdb    5m (0%)       0 (0%)      30Mi (0%)        0 (0%)         124m
+  openshift-monitoring                    telemeter-client-6889cf44c-lgkjj                         3m (0%)       0 (0%)      70Mi (0%)        0 (0%)         119m
+  openshift-monitoring                    thanos-querier-86744f79d4-r7m25                          15m (0%)      0 (0%)      92Mi (0%)        0 (0%)         119m
+  openshift-multus                        multus-additional-cni-plugins-7zxf4                      10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         121m
+  openshift-multus                        multus-tsbqr                                             10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         121m
+  openshift-multus                        network-metrics-daemon-8k9cs                             20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         121m
+  openshift-network-diagnostics           network-check-source-b5988947-wm52v                      10m (0%)      0 (0%)      40Mi (0%)        0 (0%)         125m
+  openshift-network-diagnostics           network-check-target-vbnb8                               10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         121m
+  openshift-sdn                           sdn-lrnlb                                                110m (3%)     0 (0%)      220Mi (1%)       0 (0%)         121m
+  redis-notebooks-scale-test              redis-deployment-64c4dd46cd-fv4dq                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         94m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests      Limits
+  --------                    --------      ------
+  cpu                         662m (18%)    0 (0%)
+  memory                      2996Mi (20%)  0 (0%)
+  ephemeral-storage           0 (0%)        0 (0%)
+  hugepages-1Gi               0 (0%)        0 (0%)
+  hugepages-2Mi               0 (0%)        0 (0%)
+  attachable-volumes-aws-ebs  0             0
+Events:
+  Type     Reason                                            Age                  From                 Message
+  ----     ------                                            ----                 ----                 -------
+  Warning  listen tcp4 :32096: bind: address already in use  121m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Warning  listen tcp4 :31211: bind: address already in use  121m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Normal   Starting                                          121m                 kubelet              Starting kubelet.
+  Normal   NodeAllocatableEnforced                           121m                 kubelet              Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientPID                              121m (x2 over 121m)  kubelet              Node ip-10-0-169-156.us-west-2.compute.internal status is now: NodeHasSufficientPID
+  Normal   NodeHasNoDiskPressure                             121m (x2 over 121m)  kubelet              Node ip-10-0-169-156.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientMemory                           121m (x2 over 121m)  kubelet              Node ip-10-0-169-156.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   RegisteredNode                                    121m                 node-controller      Node ip-10-0-169-156.us-west-2.compute.internal event: Registered Node ip-10-0-169-156.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          121m                 machineconfigdaemon  Setting node ip-10-0-169-156.us-west-2.compute.internal, currentConfig rendered-worker-a2353fa2ae1565788a7d368f870b2094 to Done
+  Normal   ConfigDriftMonitorStarted                         121m                 machineconfigdaemon  Config Drift Monitor started, watching against rendered-worker-a2353fa2ae1565788a7d368f870b2094
+  Normal   Uncordon                                          121m                 machineconfigdaemon  Update completed for config rendered-worker-a2353fa2ae1565788a7d368f870b2094 and node has been uncordoned
+  Normal   NodeReady                                         121m                 kubelet              Node ip-10-0-169-156.us-west-2.compute.internal status is now: NodeReady
+  Normal   RegisteredNode                                    119m                 node-controller      Node ip-10-0-169-156.us-west-2.compute.internal event: Registered Node ip-10-0-169-156.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    114m                 node-controller      Node ip-10-0-169-156.us-west-2.compute.internal event: Registered Node ip-10-0-169-156.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    106m                 node-controller      Node ip-10-0-169-156.us-west-2.compute.internal event: Registered Node ip-10-0-169-156.us-west-2.compute.internal in Controller
+
+
+Name:               ip-10-0-170-160.us-west-2.compute.internal
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2b
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-170-160.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-west-2b
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2b
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-087d56ea0706d1d51","ifaddr":{"ipv4":"10.0.160.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-07a6bbc17ac409022"}
+                    machine.openshift.io/machine: openshift-machine-api/odsci-pr590-driver-15-khg5q-master-1
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:07:43 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-170-160.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:45 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:17 +0000   Mon, 28 Nov 2022 16:07:43 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:17 +0000   Mon, 28 Nov 2022 16:07:43 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:17 +0000   Mon, 28 Nov 2022 16:07:43 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:17 +0000   Mon, 28 Nov 2022 16:08:24 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.170.160
+  Hostname:     ip-10-0-170-160.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-170-160.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                              ec2d82809ab764d210615f0ad8f739f0
+  System UUID:                             ec2d8280-9ab7-64d2-1061-5f0ad8f739f0
+  Boot ID:                                 e39f6e79-fb0b-45f4-b955-bb3c0eb8b5e8
+  Kernel Version:                          4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                                Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                        linux
+  Architecture:                            amd64
+  Container Runtime Version:               cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                         v1.24.6+5157800
+  Kube-Proxy Version:                      v1.24.6+5157800
+ProviderID:                                aws:///us-west-2b/i-07a6bbc17ac409022
+Non-terminated Pods:                       (39 in total)
+  Namespace                                Name                                                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                ----                                                                         ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver                      apiserver-b794b65df-xrmqv                                                    110m (1%)     0 (0%)      250Mi (0%)       0 (0%)         111m
+  openshift-authentication                 oauth-openshift-947484b85-jjxdr                                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         103m
+  openshift-cluster-csi-drivers            aws-ebs-csi-driver-controller-5f9df5b647-p8ch9                               110m (1%)     0 (0%)      400Mi (1%)       0 (0%)         124m
+  openshift-cluster-csi-drivers            aws-ebs-csi-driver-node-tc4zn                                                30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         124m
+  openshift-cluster-csi-drivers            aws-ebs-csi-driver-operator-5cb949c599-xlpqm                                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         125m
+  openshift-cluster-node-tuning-operator   tuned-lhg8c                                                                  10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         124m
+  openshift-cluster-samples-operator       cluster-samples-operator-b588d95bd-ndsd5                                     20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         122m
+  openshift-cluster-storage-operator       csi-snapshot-controller-cc95b8685-qj49w                                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         125m
+  openshift-cluster-storage-operator       csi-snapshot-webhook-79d48f846b-wwzps                                        10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         125m
+  openshift-console-operator               console-operator-7b68655f7c-zttft                                            10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         111m
+  openshift-controller-manager             controller-manager-wxvhp                                                     100m (1%)     0 (0%)      100Mi (0%)       0 (0%)         110m
+  openshift-dns                            dns-default-vvdn7                                                            60m (0%)      0 (0%)      110Mi (0%)       0 (0%)         124m
+  openshift-dns                            node-resolver-992n9                                                          5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         124m
+  openshift-etcd                           etcd-guard-ip-10-0-170-160.us-west-2.compute.internal                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         120m
+  openshift-etcd                           etcd-ip-10-0-170-160.us-west-2.compute.internal                              410m (5%)     0 (0%)      980Mi (3%)       0 (0%)         103m
+  openshift-image-registry                 node-ca-xfbtf                                                                10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         118m
+  openshift-kube-apiserver                 kube-apiserver-guard-ip-10-0-170-160.us-west-2.compute.internal              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         109m
+  openshift-kube-apiserver                 kube-apiserver-ip-10-0-170-160.us-west-2.compute.internal                    290m (3%)     0 (0%)      1224Mi (4%)      0 (0%)         110m
+  openshift-kube-controller-manager        kube-controller-manager-guard-ip-10-0-170-160.us-west-2.compute.internal     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         120m
+  openshift-kube-controller-manager        kube-controller-manager-ip-10-0-170-160.us-west-2.compute.internal           80m (1%)      0 (0%)      500Mi (1%)       0 (0%)         108m
+  openshift-kube-scheduler                 openshift-kube-scheduler-guard-ip-10-0-170-160.us-west-2.compute.internal    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         120m
+  openshift-kube-scheduler                 openshift-kube-scheduler-ip-10-0-170-160.us-west-2.compute.internal          25m (0%)      0 (0%)      150Mi (0%)       0 (0%)         118m
+  openshift-kube-storage-version-migrator  migrator-849695b8c8-6zfxq                                                    10m (0%)      0 (0%)      200Mi (0%)       0 (0%)         125m
+  openshift-machine-api                    machine-api-controllers-69cd78b58d-hw5vg                                     70m (0%)      0 (0%)      140Mi (0%)       0 (0%)         124m
+  openshift-machine-config-operator        machine-config-controller-57887dcc89-9xbns                                   40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         124m
+  openshift-machine-config-operator        machine-config-daemon-cgdws                                                  40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         125m
+  openshift-machine-config-operator        machine-config-server-tnvlq                                                  20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         124m
+  openshift-marketplace                    community-operators-wpvp7                                                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         123m
+  openshift-marketplace                    redhat-marketplace-xzd9q                                                     10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         123m
+  openshift-monitoring                     node-exporter-9kqwq                                                          9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         119m
+  openshift-monitoring                     prometheus-operator-7f7d4854f7-bd8h9                                         6m (0%)       0 (0%)      165Mi (0%)       0 (0%)         119m
+  openshift-multus                         multus-additional-cni-plugins-4qpxf                                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         125m
+  openshift-multus                         multus-admission-controller-k7cv8                                            20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         125m
+  openshift-multus                         multus-hx7wp                                                                 10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         125m
+  openshift-multus                         network-metrics-daemon-tqb4b                                                 20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         125m
+  openshift-network-diagnostics            network-check-target-pv8wv                                                   10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         125m
+  openshift-oauth-apiserver                apiserver-7f6746d49c-cdnfm                                                   150m (2%)     0 (0%)      200Mi (0%)       0 (0%)         119m
+  openshift-sdn                            sdn-controller-dbbjw                                                         20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         125m
+  openshift-sdn                            sdn-ffx6l                                                                    110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         125m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests      Limits
+  --------                    --------      ------
+  cpu                         1915m (25%)   0 (0%)
+  memory                      6007Mi (19%)  0 (0%)
+  ephemeral-storage           0 (0%)        0 (0%)
+  hugepages-1Gi               0 (0%)        0 (0%)
+  hugepages-2Mi               0 (0%)        0 (0%)
+  attachable-volumes-aws-ebs  0             0
+Events:
+  Type     Reason                                            Age                  From                 Message
+  ----     ------                                            ----                 ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  123m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  123m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           126m (x8 over 126m)  kubelet              Node ip-10-0-170-160.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             126m (x8 over 126m)  kubelet              Node ip-10-0-170-160.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    126m                 node-controller      Node ip-10-0-170-160.us-west-2.compute.internal event: Registered Node ip-10-0-170-160.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          123m                 machineconfigdaemon  Setting node ip-10-0-170-160.us-west-2.compute.internal, currentConfig rendered-master-b4f21820b2ff85275e235ca8309c52e6 to Done
+  Normal   Uncordon                                          123m                 machineconfigdaemon  Update completed for config rendered-master-b4f21820b2ff85275e235ca8309c52e6 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         123m                 machineconfigdaemon  Config Drift Monitor started, watching against rendered-master-b4f21820b2ff85275e235ca8309c52e6
+  Normal   RegisteredNode                                    119m                 node-controller      Node ip-10-0-170-160.us-west-2.compute.internal event: Registered Node ip-10-0-170-160.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    114m                 node-controller      Node ip-10-0-170-160.us-west-2.compute.internal event: Registered Node ip-10-0-170-160.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    106m                 node-controller      Node ip-10-0-170-160.us-west-2.compute.internal event: Registered Node ip-10-0-170-160.us-west-2.compute.internal in Controller
+
+
+Name:               ip-10-0-214-104.us-west-2.compute.internal
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=m6i.2xlarge
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-west-2
+                    failure-domain.beta.kubernetes.io/zone=us-west-2c
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-10-0-214-104.us-west-2.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/instance-type=m6i.2xlarge
+                    node.openshift.io/os_id=rhcos
+                    topology.ebs.csi.aws.com/zone=us-west-2c
+                    topology.kubernetes.io/region=us-west-2
+                    topology.kubernetes.io/zone=us-west-2c
+Annotations:        cloud.network.openshift.io/egress-ipconfig:
+                      [{"interface":"eni-0a031c0f26994ea9f","ifaddr":{"ipv4":"10.0.192.0/19"},"capacity":{"ipv4":14,"ipv6":15}}]
+                    csi.volume.kubernetes.io/nodeid: {"ebs.csi.aws.com":"i-042760c37bed412ea"}
+                    machine.openshift.io/machine: openshift-machine-api/odsci-pr590-driver-15-khg5q-master-2
+                    machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-b4f21820b2ff85275e235ca8309c52e6
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 28 Nov 2022 16:07:44 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-10-0-214-104.us-west-2.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 28 Nov 2022 18:13:44 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:07:44 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:07:44 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:07:44 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Nov 2022 18:10:19 +0000   Mon, 28 Nov 2022 16:08:24 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:   10.0.214.104
+  Hostname:     ip-10-0-214-104.us-west-2.compute.internal
+  InternalDNS:  ip-10-0-214-104.us-west-2.compute.internal
+Capacity:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         8
+  ephemeral-storage:           125293548Ki
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      32385536Ki
+  pods:                        250
+Allocatable:
+  attachable-volumes-aws-ebs:  39
+  cpu:                         7500m
+  ephemeral-storage:           115470533646
+  hugepages-1Gi:               0
+  hugepages-2Mi:               0
+  memory:                      31234560Ki
+  pods:                        250
+System Info:
+  Machine ID:                                       ec20b1650ebd740477377fd343cbcc8e
+  System UUID:                                      ec20b165-0ebd-7404-7737-7fd343cbcc8e
+  Boot ID:                                          be537cf7-5401-4382-92c9-cc84c7e78bb6
+  Kernel Version:                                   4.18.0-372.32.1.el8_6.x86_64
+  OS Image:                                         Red Hat Enterprise Linux CoreOS 411.86.202210311708-0 (Ootpa)
+  Operating System:                                 linux
+  Architecture:                                     amd64
+  Container Runtime Version:                        cri-o://1.24.3-5.rhaos4.11.gitc4567c0.el8
+  Kubelet Version:                                  v1.24.6+5157800
+  Kube-Proxy Version:                               v1.24.6+5157800
+ProviderID:                                         aws:///us-west-2c/i-042760c37bed412ea
+Non-terminated Pods:                                (59 in total)
+  Namespace                                         Name                                                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                         ----                                                                         ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver-operator                      openshift-apiserver-operator-6c9fc6469c-4xl5v                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-apiserver                               apiserver-b794b65df-fv9bj                                                    110m (1%)     0 (0%)      250Mi (0%)       0 (0%)         113m
+  openshift-authentication-operator                 authentication-operator-dbd5bd768-rxcrz                                      20m (0%)      0 (0%)      200Mi (0%)       0 (0%)         126m
+  openshift-authentication                          oauth-openshift-947484b85-qxxkh                                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         104m
+  openshift-cloud-credential-operator               cloud-credential-operator-584455c8f5-kwnnp                                   20m (0%)      0 (0%)      170Mi (0%)       0 (0%)         126m
+  openshift-cloud-credential-operator               pod-identity-webhook-54699c8765-sxstp                                        10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         119m
+  openshift-cloud-network-config-controller         cloud-network-config-controller-754d9dfd99-trlzw                             10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         125m
+  openshift-cluster-csi-drivers                     aws-ebs-csi-driver-node-r5rgw                                                30m (0%)      0 (0%)      150Mi (0%)       0 (0%)         124m
+  openshift-cluster-machine-approver                machine-approver-7b5bd86fbb-zfrtr                                            20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         126m
+  openshift-cluster-node-tuning-operator            cluster-node-tuning-operator-659594b5cf-lxqbr                                10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         126m
+  openshift-cluster-node-tuning-operator            tuned-gmg72                                                                  10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         124m
+  openshift-cluster-storage-operator                cluster-storage-operator-6f6b9c8df6-5v2zb                                    10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         126m
+  openshift-cluster-storage-operator                csi-snapshot-controller-operator-86d8fc9648-fkrdh                            10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         126m
+  openshift-config-operator                         openshift-config-operator-674f98f947-hj2p2                                   10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-console                                 console-6b9dd8859b-zkn9f                                                     10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         107m
+  openshift-controller-manager-operator             openshift-controller-manager-operator-7c4dc65c97-bslkd                       10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-controller-manager                      controller-manager-h2pwt                                                     100m (1%)     0 (0%)      100Mi (0%)       0 (0%)         110m
+  openshift-dns-operator                            dns-operator-6998f45999-gjg2c                                                20m (0%)      0 (0%)      69Mi (0%)        0 (0%)         126m
+  openshift-dns                                     dns-default-stptn                                                            60m (0%)      0 (0%)      110Mi (0%)       0 (0%)         124m
+  openshift-dns                                     node-resolver-nkc64                                                          5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         124m
+  openshift-etcd-operator                           etcd-operator-78974f57b9-wnpct                                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-etcd                                    etcd-guard-ip-10-0-214-104.us-west-2.compute.internal                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         119m
+  openshift-etcd                                    etcd-ip-10-0-214-104.us-west-2.compute.internal                              410m (5%)     0 (0%)      980Mi (3%)       0 (0%)         101m
+  openshift-image-registry                          cluster-image-registry-operator-759dbc577c-bm7hf                             10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-image-registry                          node-ca-t8r5t                                                                10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         118m
+  openshift-ingress-operator                        ingress-operator-7f998586cd-mhjcj                                            20m (0%)      0 (0%)      96Mi (0%)        0 (0%)         126m
+  openshift-insights                                insights-operator-7d78496b84-fd9mq                                           10m (0%)      0 (0%)      30Mi (0%)        0 (0%)         126m
+  openshift-kube-apiserver-operator                 kube-apiserver-operator-789b8c8bf6-4fxpk                                     10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-kube-apiserver                          kube-apiserver-guard-ip-10-0-214-104.us-west-2.compute.internal              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         108m
+  openshift-kube-apiserver                          kube-apiserver-ip-10-0-214-104.us-west-2.compute.internal                    290m (3%)     0 (0%)      1224Mi (4%)      0 (0%)         108m
+  openshift-kube-controller-manager-operator        kube-controller-manager-operator-66bc7cfd-n7jdf                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-kube-controller-manager                 kube-controller-manager-guard-ip-10-0-214-104.us-west-2.compute.internal     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         122m
+  openshift-kube-controller-manager                 kube-controller-manager-ip-10-0-214-104.us-west-2.compute.internal           80m (1%)      0 (0%)      500Mi (1%)       0 (0%)         106m
+  openshift-kube-scheduler-operator                 openshift-kube-scheduler-operator-7c65bc5d9b-pdhnr                           10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-kube-scheduler                          openshift-kube-scheduler-guard-ip-10-0-214-104.us-west-2.compute.internal    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         110m
+  openshift-kube-scheduler                          openshift-kube-scheduler-ip-10-0-214-104.us-west-2.compute.internal          25m (0%)      0 (0%)      150Mi (0%)       0 (0%)         110m
+  openshift-kube-storage-version-migrator-operator  kube-storage-version-migrator-operator-7d967f696d-pqhqx                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-machine-api                             cluster-autoscaler-operator-6f47946d44-9zzgg                                 30m (0%)      0 (0%)      70Mi (0%)        0 (0%)         126m
+  openshift-machine-api                             cluster-baremetal-operator-577565485c-mss5b                                  20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         126m
+  openshift-machine-api                             machine-api-operator-5df8cd445c-4xspq                                        20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         126m
+  openshift-machine-config-operator                 machine-config-daemon-cpgbx                                                  40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         125m
+  openshift-machine-config-operator                 machine-config-operator-54ccccf58d-bp5xc                                     20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-machine-config-operator                 machine-config-server-kwqqr                                                  20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         124m
+  openshift-marketplace                             marketplace-operator-857855d858-ptf4t                                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-monitoring                              cluster-monitoring-operator-db6c6d477-wg6tg                                  11m (0%)      0 (0%)      95Mi (0%)        0 (0%)         126m
+  openshift-monitoring                              node-exporter-c7m6r                                                          9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         119m
+  openshift-multus                                  multus-97qvl                                                                 10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         125m
+  openshift-multus                                  multus-additional-cni-plugins-zbz6p                                          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         125m
+  openshift-multus                                  multus-admission-controller-7gfh5                                            20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         125m
+  openshift-multus                                  network-metrics-daemon-tgcbz                                                 20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         125m
+  openshift-network-diagnostics                     network-check-target-s7tzj                                                   10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         125m
+  openshift-oauth-apiserver                         apiserver-7f6746d49c-qq7f8                                                   150m (2%)     0 (0%)      200Mi (0%)       0 (0%)         119m
+  openshift-operator-lifecycle-manager              catalog-operator-5655866444-jrllh                                            10m (0%)      0 (0%)      80Mi (0%)        0 (0%)         126m
+  openshift-operator-lifecycle-manager              olm-operator-86cd44d7b4-wg7t5                                                10m (0%)      0 (0%)      160Mi (0%)       0 (0%)         126m
+  openshift-operator-lifecycle-manager              package-server-manager-644454f859-fqdj5                                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         126m
+  openshift-operator-lifecycle-manager              packageserver-6bcb6b976f-dgxjz                                               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         124m
+  openshift-sdn                                     sdn-2g59p                                                                    110m (1%)     0 (0%)      220Mi (0%)       0 (0%)         125m
+  openshift-sdn                                     sdn-controller-bpw8j                                                         20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         125m
+  openshift-service-ca-operator                     service-ca-operator-6bf9d9448c-t8wg5                                         10m (0%)      0 (0%)      80Mi (0%)        0 (0%)         126m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource                    Requests      Limits
+  --------                    --------      ------
+  cpu                         2020m (26%)   0 (0%)
+  memory                      6757Mi (22%)  0 (0%)
+  ephemeral-storage           0 (0%)        0 (0%)
+  hugepages-1Gi               0 (0%)        0 (0%)
+  hugepages-2Mi               0 (0%)        0 (0%)
+  attachable-volumes-aws-ebs  0             0
+Events:
+  Type     Reason                                            Age                  From                 Message
+  ----     ------                                            ----                 ----                 -------
+  Warning  listen tcp4 :31211: bind: address already in use  123m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:http" (:31211/tcp4), skipping it
+  Warning  listen tcp4 :32096: bind: address already in use  123m                 kube-proxy           can't open port "nodePort for openshift-ingress/router-default:https" (:32096/tcp4), skipping it
+  Normal   NodeHasSufficientMemory                           126m (x8 over 126m)  kubelet              Node ip-10-0-214-104.us-west-2.compute.internal status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure                             126m (x8 over 126m)  kubelet              Node ip-10-0-214-104.us-west-2.compute.internal status is now: NodeHasNoDiskPressure
+  Normal   RegisteredNode                                    126m                 node-controller      Node ip-10-0-214-104.us-west-2.compute.internal event: Registered Node ip-10-0-214-104.us-west-2.compute.internal in Controller
+  Normal   NodeDone                                          123m                 machineconfigdaemon  Setting node ip-10-0-214-104.us-west-2.compute.internal, currentConfig rendered-master-b4f21820b2ff85275e235ca8309c52e6 to Done
+  Normal   Uncordon                                          123m                 machineconfigdaemon  Update completed for config rendered-master-b4f21820b2ff85275e235ca8309c52e6 and node has been uncordoned
+  Normal   ConfigDriftMonitorStarted                         123m                 machineconfigdaemon  Config Drift Monitor started, watching against rendered-master-b4f21820b2ff85275e235ca8309c52e6
+  Normal   RegisteredNode                                    119m                 node-controller      Node ip-10-0-214-104.us-west-2.compute.internal event: Registered Node ip-10-0-214-104.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    114m                 node-controller      Node ip-10-0-214-104.us-west-2.compute.internal event: Registered Node ip-10-0-214-104.us-west-2.compute.internal in Controller
+  Normal   RegisteredNode                                    106m                 node-controller      Node ip-10-0-214-104.us-west-2.compute.internal event: Registered Node ip-10-0-214-104.us-west-2.compute.internal in Controller

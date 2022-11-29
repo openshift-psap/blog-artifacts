@@ -1,0 +1,1 @@
+{"benchmark": "pyperf_bm_go", "repeat": 3, "number": 20, "measures": [8.066498117000265, 8.050251097, 8.057343630000105]}

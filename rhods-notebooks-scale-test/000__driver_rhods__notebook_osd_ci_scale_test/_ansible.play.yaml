@@ -1,0 +1,30 @@
+- connection: local
+  gather_facts: false
+  hosts: localhost
+  name: Run rhods_notebook_osd_ci_scale_test role
+  roles:
+  - rhods_notebook_osd_ci_scale_test
+  vars:
+    artifact_dir: /logs/artifacts/002_test_run
+    artifact_extra_logs_dir: /logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+    rhods_notebook_osd_ci_scale_test_artifacts_collected: no-screenshot-except-failed-and-zero
+    rhods_notebook_osd_ci_scale_test_artifacts_exporter_istag: scale-test:artifacts-exporter
+    rhods_notebook_osd_ci_scale_test_idp_name: RHODS_CI_LDAP
+    rhods_notebook_osd_ci_scale_test_namespace: notebooks-scale-test
+    rhods_notebook_osd_ci_scale_test_notebook_benchmark_name: pyperf_bm_go.py
+    rhods_notebook_osd_ci_scale_test_notebook_benchmark_number: 20
+    rhods_notebook_osd_ci_scale_test_notebook_benchmark_repeat: 3
+    rhods_notebook_osd_ci_scale_test_notebook_image_name: s2i-generic-data-science-notebook
+    rhods_notebook_osd_ci_scale_test_notebook_size_name: Tiny
+    rhods_notebook_osd_ci_scale_test_notebook_url: http://nginx-nginx-notebooks-scale-test.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org/benchmark_entrypoint.ipynb
+    rhods_notebook_osd_ci_scale_test_ods_ci_exclude_tags: None
+    rhods_notebook_osd_ci_scale_test_ods_ci_istag: scale-test:ods-ci
+    rhods_notebook_osd_ci_scale_test_ods_ci_test_case: notebook_ux_e2e_test.robot
+    rhods_notebook_osd_ci_scale_test_secret_properties_file: /var/run/psap-ods-secret-1/s3_ldap.passwords
+    rhods_notebook_osd_ci_scale_test_state_signal_redis_server: redis.redis-notebooks-scale-test.svc
+    rhods_notebook_osd_ci_scale_test_sut_cluster_kubeconfig: /tmp/secret/sutest_kubeconfig
+    rhods_notebook_osd_ci_scale_test_toleration_key: only-test-pods
+    rhods_notebook_osd_ci_scale_test_user_count: 300
+    rhods_notebook_osd_ci_scale_test_user_index_offset: 0
+    rhods_notebook_osd_ci_scale_test_user_sleep_factor: 3.0
+    rhods_notebook_osd_ci_scale_test_username_prefix: psapuser
