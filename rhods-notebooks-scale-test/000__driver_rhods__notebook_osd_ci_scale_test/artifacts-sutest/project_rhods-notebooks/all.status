@@ -1,0 +1,1507 @@
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/jupyter-nb-psapuser0-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser1-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser10-0    2/2     Running   0          19m
+pod/jupyter-nb-psapuser100-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser101-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser102-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser103-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser104-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser105-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser106-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser107-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser108-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser109-0   2/2     Running   0          14m
+pod/jupyter-nb-psapuser11-0    2/2     Running   0          19m
+pod/jupyter-nb-psapuser110-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser111-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser112-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser113-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser114-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser115-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser116-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser117-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser118-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser119-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser12-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser120-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser121-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser122-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser123-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser124-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser125-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser126-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser127-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser128-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser129-0   2/2     Running   0          13m
+pod/jupyter-nb-psapuser13-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser130-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser131-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser132-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser133-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser134-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser135-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser136-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser137-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser138-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser139-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser14-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser140-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser141-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser142-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser143-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser144-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser145-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser146-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser147-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser148-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser149-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser15-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser150-0   2/2     Running   0          12m
+pod/jupyter-nb-psapuser151-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser152-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser153-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser154-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser155-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser156-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser157-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser158-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser159-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser16-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser160-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser161-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser162-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser163-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser164-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser165-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser166-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser167-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser168-0   2/2     Running   0          11m
+pod/jupyter-nb-psapuser169-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser17-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser170-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser171-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser172-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser173-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser174-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser175-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser176-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser177-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser178-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser179-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser18-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser180-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser181-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser182-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser183-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser184-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser185-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser186-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser187-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser188-0   2/2     Running   0          10m
+pod/jupyter-nb-psapuser189-0   2/2     Running   0          9m59s
+pod/jupyter-nb-psapuser19-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser190-0   2/2     Running   0          9m58s
+pod/jupyter-nb-psapuser191-0   2/2     Running   0          9m57s
+pod/jupyter-nb-psapuser192-0   2/2     Running   0          9m55s
+pod/jupyter-nb-psapuser193-0   2/2     Running   0          9m56s
+pod/jupyter-nb-psapuser194-0   2/2     Running   0          9m35s
+pod/jupyter-nb-psapuser195-0   2/2     Running   0          9m45s
+pod/jupyter-nb-psapuser196-0   2/2     Running   0          9m38s
+pod/jupyter-nb-psapuser197-0   2/2     Running   0          9m38s
+pod/jupyter-nb-psapuser198-0   2/2     Running   0          9m36s
+pod/jupyter-nb-psapuser199-0   2/2     Running   0          9m34s
+pod/jupyter-nb-psapuser2-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser20-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser200-0   2/2     Running   0          9m31s
+pod/jupyter-nb-psapuser201-0   2/2     Running   0          9m24s
+pod/jupyter-nb-psapuser202-0   2/2     Running   0          9m20s
+pod/jupyter-nb-psapuser203-0   2/2     Running   0          9m12s
+pod/jupyter-nb-psapuser204-0   2/2     Running   0          9m15s
+pod/jupyter-nb-psapuser205-0   2/2     Running   0          9m8s
+pod/jupyter-nb-psapuser206-0   2/2     Running   0          9m12s
+pod/jupyter-nb-psapuser207-0   2/2     Running   0          9m9s
+pod/jupyter-nb-psapuser208-0   2/2     Running   0          9m
+pod/jupyter-nb-psapuser209-0   2/2     Running   0          8m55s
+pod/jupyter-nb-psapuser21-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser210-0   2/2     Running   0          8m59s
+pod/jupyter-nb-psapuser211-0   2/2     Running   0          8m59s
+pod/jupyter-nb-psapuser212-0   2/2     Running   0          8m55s
+pod/jupyter-nb-psapuser213-0   2/2     Running   0          8m53s
+pod/jupyter-nb-psapuser214-0   2/2     Running   0          8m50s
+pod/jupyter-nb-psapuser215-0   2/2     Running   0          8m42s
+pod/jupyter-nb-psapuser216-0   2/2     Running   0          8m41s
+pod/jupyter-nb-psapuser217-0   2/2     Running   0          8m34s
+pod/jupyter-nb-psapuser218-0   2/2     Running   0          8m36s
+pod/jupyter-nb-psapuser219-0   2/2     Running   0          8m32s
+pod/jupyter-nb-psapuser22-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser220-0   2/2     Running   0          8m29s
+pod/jupyter-nb-psapuser221-0   2/2     Running   0          8m24s
+pod/jupyter-nb-psapuser222-0   2/2     Running   0          8m8s
+pod/jupyter-nb-psapuser223-0   2/2     Running   0          8m23s
+pod/jupyter-nb-psapuser224-0   2/2     Running   0          8m21s
+pod/jupyter-nb-psapuser225-0   2/2     Running   0          8m11s
+pod/jupyter-nb-psapuser226-0   2/2     Running   0          8m7s
+pod/jupyter-nb-psapuser227-0   2/2     Running   0          8m8s
+pod/jupyter-nb-psapuser228-0   2/2     Running   0          8m4s
+pod/jupyter-nb-psapuser229-0   2/2     Running   0          8m1s
+pod/jupyter-nb-psapuser23-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser230-0   2/2     Running   0          8m1s
+pod/jupyter-nb-psapuser231-0   2/2     Running   0          7m54s
+pod/jupyter-nb-psapuser232-0   2/2     Running   0          7m54s
+pod/jupyter-nb-psapuser233-0   2/2     Running   0          7m49s
+pod/jupyter-nb-psapuser234-0   2/2     Running   0          7m38s
+pod/jupyter-nb-psapuser235-0   2/2     Running   0          7m40s
+pod/jupyter-nb-psapuser236-0   2/2     Running   0          7m32s
+pod/jupyter-nb-psapuser237-0   2/2     Running   0          7m38s
+pod/jupyter-nb-psapuser238-0   2/2     Running   0          7m37s
+pod/jupyter-nb-psapuser239-0   2/2     Running   0          7m32s
+pod/jupyter-nb-psapuser24-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser240-0   2/2     Running   0          7m29s
+pod/jupyter-nb-psapuser241-0   2/2     Running   0          7m28s
+pod/jupyter-nb-psapuser242-0   2/2     Running   0          7m8s
+pod/jupyter-nb-psapuser243-0   2/2     Running   0          7m20s
+pod/jupyter-nb-psapuser244-0   2/2     Running   0          7m14s
+pod/jupyter-nb-psapuser245-0   2/2     Running   0          7m13s
+pod/jupyter-nb-psapuser246-0   2/2     Running   0          7m13s
+pod/jupyter-nb-psapuser247-0   2/2     Running   0          7m8s
+pod/jupyter-nb-psapuser248-0   2/2     Running   0          7m7s
+pod/jupyter-nb-psapuser249-0   2/2     Running   0          7m2s
+pod/jupyter-nb-psapuser25-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser250-0   2/2     Running   0          7m
+pod/jupyter-nb-psapuser251-0   2/2     Running   0          6m51s
+pod/jupyter-nb-psapuser252-0   2/2     Running   0          6m50s
+pod/jupyter-nb-psapuser253-0   2/2     Running   0          6m46s
+pod/jupyter-nb-psapuser254-0   2/2     Running   0          6m34s
+pod/jupyter-nb-psapuser255-0   2/2     Running   0          6m29s
+pod/jupyter-nb-psapuser256-0   2/2     Running   0          6m44s
+pod/jupyter-nb-psapuser257-0   2/2     Running   0          6m41s
+pod/jupyter-nb-psapuser258-0   2/2     Running   0          6m41s
+pod/jupyter-nb-psapuser259-0   2/2     Running   0          6m29s
+pod/jupyter-nb-psapuser26-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser260-0   2/2     Running   0          6m29s
+pod/jupyter-nb-psapuser261-0   2/2     Running   0          6m23s
+pod/jupyter-nb-psapuser262-0   2/2     Running   0          6m26s
+pod/jupyter-nb-psapuser263-0   2/2     Running   0          6m19s
+pod/jupyter-nb-psapuser264-0   2/2     Running   0          6m15s
+pod/jupyter-nb-psapuser265-0   2/2     Running   0          6m12s
+pod/jupyter-nb-psapuser266-0   2/2     Running   0          6m11s
+pod/jupyter-nb-psapuser267-0   2/2     Running   0          6m8s
+pod/jupyter-nb-psapuser268-0   2/2     Running   0          6m5s
+pod/jupyter-nb-psapuser269-0   2/2     Running   0          6m4s
+pod/jupyter-nb-psapuser27-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser270-0   2/2     Running   0          5m54s
+pod/jupyter-nb-psapuser271-0   2/2     Running   0          5m57s
+pod/jupyter-nb-psapuser272-0   2/2     Running   0          5m52s
+pod/jupyter-nb-psapuser273-0   2/2     Running   0          5m48s
+pod/jupyter-nb-psapuser274-0   2/2     Running   0          5m46s
+pod/jupyter-nb-psapuser275-0   2/2     Running   0          5m44s
+pod/jupyter-nb-psapuser276-0   2/2     Running   0          5m44s
+pod/jupyter-nb-psapuser277-0   2/2     Running   0          5m28s
+pod/jupyter-nb-psapuser278-0   2/2     Running   0          5m33s
+pod/jupyter-nb-psapuser279-0   2/2     Running   0          5m33s
+pod/jupyter-nb-psapuser28-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser280-0   2/2     Running   0          5m19s
+pod/jupyter-nb-psapuser281-0   2/2     Running   0          5m25s
+pod/jupyter-nb-psapuser282-0   2/2     Running   0          5m23s
+pod/jupyter-nb-psapuser283-0   2/2     Running   0          5m19s
+pod/jupyter-nb-psapuser284-0   2/2     Running   0          5m10s
+pod/jupyter-nb-psapuser285-0   2/2     Running   0          5m15s
+pod/jupyter-nb-psapuser286-0   2/2     Running   0          5m11s
+pod/jupyter-nb-psapuser287-0   2/2     Running   0          5m5s
+pod/jupyter-nb-psapuser288-0   2/2     Running   0          4m48s
+pod/jupyter-nb-psapuser289-0   2/2     Running   0          5m2s
+pod/jupyter-nb-psapuser29-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser290-0   2/2     Running   0          4m54s
+pod/jupyter-nb-psapuser291-0   2/2     Running   0          4m55s
+pod/jupyter-nb-psapuser292-0   2/2     Running   0          4m47s
+pod/jupyter-nb-psapuser293-0   2/2     Running   0          4m44s
+pod/jupyter-nb-psapuser294-0   2/2     Running   0          4m42s
+pod/jupyter-nb-psapuser295-0   2/2     Running   0          4m42s
+pod/jupyter-nb-psapuser296-0   2/2     Running   0          4m38s
+pod/jupyter-nb-psapuser297-0   2/2     Running   0          4m38s
+pod/jupyter-nb-psapuser298-0   2/2     Running   0          4m34s
+pod/jupyter-nb-psapuser299-0   2/2     Running   0          4m26s
+pod/jupyter-nb-psapuser3-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser30-0    2/2     Running   0          18m
+pod/jupyter-nb-psapuser31-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser32-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser33-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser34-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser35-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser36-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser37-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser38-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser39-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser4-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser40-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser41-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser42-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser43-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser44-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser45-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser46-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser47-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser48-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser49-0    2/2     Running   0          17m
+pod/jupyter-nb-psapuser5-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser50-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser51-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser52-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser53-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser54-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser55-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser56-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser57-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser58-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser59-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser6-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser60-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser61-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser62-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser63-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser64-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser65-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser66-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser67-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser68-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser69-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser7-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser70-0    2/2     Running   0          16m
+pod/jupyter-nb-psapuser71-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser72-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser73-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser74-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser75-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser76-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser77-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser78-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser79-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser8-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser80-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser81-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser82-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser83-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser84-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser85-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser86-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser87-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser88-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser89-0    2/2     Running   0          15m
+pod/jupyter-nb-psapuser9-0     2/2     Running   0          19m
+pod/jupyter-nb-psapuser90-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser91-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser92-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser93-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser94-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser95-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser96-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser97-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser98-0    2/2     Running   0          14m
+pod/jupyter-nb-psapuser99-0    2/2     Running   0          14m
+
+NAME                                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/jupyter-nb-psapuser0         ClusterIP   172.30.247.207   <none>        80/TCP    52m
+service/jupyter-nb-psapuser0-tls     ClusterIP   172.30.131.22    <none>        443/TCP   52m
+service/jupyter-nb-psapuser1         ClusterIP   172.30.192.248   <none>        80/TCP    52m
+service/jupyter-nb-psapuser1-tls     ClusterIP   172.30.160.140   <none>        443/TCP   52m
+service/jupyter-nb-psapuser10        ClusterIP   172.30.223.226   <none>        80/TCP    52m
+service/jupyter-nb-psapuser10-tls    ClusterIP   172.30.211.144   <none>        443/TCP   52m
+service/jupyter-nb-psapuser100       ClusterIP   172.30.48.144    <none>        80/TCP    47m
+service/jupyter-nb-psapuser100-tls   ClusterIP   172.30.130.183   <none>        443/TCP   47m
+service/jupyter-nb-psapuser101       ClusterIP   172.30.228.128   <none>        80/TCP    47m
+service/jupyter-nb-psapuser101-tls   ClusterIP   172.30.250.195   <none>        443/TCP   47m
+service/jupyter-nb-psapuser102       ClusterIP   172.30.49.211    <none>        80/TCP    47m
+service/jupyter-nb-psapuser102-tls   ClusterIP   172.30.165.126   <none>        443/TCP   47m
+service/jupyter-nb-psapuser103       ClusterIP   172.30.225.16    <none>        80/TCP    47m
+service/jupyter-nb-psapuser103-tls   ClusterIP   172.30.197.120   <none>        443/TCP   47m
+service/jupyter-nb-psapuser104       ClusterIP   172.30.247.127   <none>        80/TCP    47m
+service/jupyter-nb-psapuser104-tls   ClusterIP   172.30.215.139   <none>        443/TCP   47m
+service/jupyter-nb-psapuser105       ClusterIP   172.30.88.164    <none>        80/TCP    47m
+service/jupyter-nb-psapuser105-tls   ClusterIP   172.30.214.188   <none>        443/TCP   47m
+service/jupyter-nb-psapuser106       ClusterIP   172.30.182.45    <none>        80/TCP    47m
+service/jupyter-nb-psapuser106-tls   ClusterIP   172.30.200.96    <none>        443/TCP   47m
+service/jupyter-nb-psapuser107       ClusterIP   172.30.14.108    <none>        80/TCP    47m
+service/jupyter-nb-psapuser107-tls   ClusterIP   172.30.210.227   <none>        443/TCP   47m
+service/jupyter-nb-psapuser108       ClusterIP   172.30.137.242   <none>        80/TCP    47m
+service/jupyter-nb-psapuser108-tls   ClusterIP   172.30.195.191   <none>        443/TCP   47m
+service/jupyter-nb-psapuser109       ClusterIP   172.30.224.82    <none>        80/TCP    47m
+service/jupyter-nb-psapuser109-tls   ClusterIP   172.30.15.48     <none>        443/TCP   47m
+service/jupyter-nb-psapuser11        ClusterIP   172.30.57.192    <none>        80/TCP    52m
+service/jupyter-nb-psapuser11-tls    ClusterIP   172.30.100.181   <none>        443/TCP   52m
+service/jupyter-nb-psapuser110       ClusterIP   172.30.101.74    <none>        80/TCP    47m
+service/jupyter-nb-psapuser110-tls   ClusterIP   172.30.239.79    <none>        443/TCP   47m
+service/jupyter-nb-psapuser111       ClusterIP   172.30.33.124    <none>        80/TCP    47m
+service/jupyter-nb-psapuser111-tls   ClusterIP   172.30.29.248    <none>        443/TCP   47m
+service/jupyter-nb-psapuser112       ClusterIP   172.30.184.210   <none>        80/TCP    46m
+service/jupyter-nb-psapuser112-tls   ClusterIP   172.30.59.179    <none>        443/TCP   47m
+service/jupyter-nb-psapuser113       ClusterIP   172.30.121.26    <none>        80/TCP    47m
+service/jupyter-nb-psapuser113-tls   ClusterIP   172.30.203.162   <none>        443/TCP   47m
+service/jupyter-nb-psapuser114       ClusterIP   172.30.136.229   <none>        80/TCP    47m
+service/jupyter-nb-psapuser114-tls   ClusterIP   172.30.82.102    <none>        443/TCP   47m
+service/jupyter-nb-psapuser115       ClusterIP   172.30.118.93    <none>        80/TCP    47m
+service/jupyter-nb-psapuser115-tls   ClusterIP   172.30.186.44    <none>        443/TCP   47m
+service/jupyter-nb-psapuser116       ClusterIP   172.30.38.180    <none>        80/TCP    46m
+service/jupyter-nb-psapuser116-tls   ClusterIP   172.30.177.17    <none>        443/TCP   47m
+service/jupyter-nb-psapuser117       ClusterIP   172.30.213.216   <none>        80/TCP    46m
+service/jupyter-nb-psapuser117-tls   ClusterIP   172.30.202.221   <none>        443/TCP   46m
+service/jupyter-nb-psapuser118       ClusterIP   172.30.2.79      <none>        80/TCP    46m
+service/jupyter-nb-psapuser118-tls   ClusterIP   172.30.219.201   <none>        443/TCP   46m
+service/jupyter-nb-psapuser119       ClusterIP   172.30.133.253   <none>        80/TCP    46m
+service/jupyter-nb-psapuser119-tls   ClusterIP   172.30.147.79    <none>        443/TCP   46m
+service/jupyter-nb-psapuser12        ClusterIP   172.30.86.201    <none>        80/TCP    52m
+service/jupyter-nb-psapuser12-tls    ClusterIP   172.30.171.253   <none>        443/TCP   52m
+service/jupyter-nb-psapuser120       ClusterIP   172.30.31.148    <none>        80/TCP    46m
+service/jupyter-nb-psapuser120-tls   ClusterIP   172.30.205.46    <none>        443/TCP   46m
+service/jupyter-nb-psapuser121       ClusterIP   172.30.229.209   <none>        80/TCP    46m
+service/jupyter-nb-psapuser121-tls   ClusterIP   172.30.46.204    <none>        443/TCP   46m
+service/jupyter-nb-psapuser122       ClusterIP   172.30.106.241   <none>        80/TCP    46m
+service/jupyter-nb-psapuser122-tls   ClusterIP   172.30.14.137    <none>        443/TCP   46m
+service/jupyter-nb-psapuser123       ClusterIP   172.30.77.144    <none>        80/TCP    46m
+service/jupyter-nb-psapuser123-tls   ClusterIP   172.30.86.2      <none>        443/TCP   46m
+service/jupyter-nb-psapuser124       ClusterIP   172.30.215.8     <none>        80/TCP    46m
+service/jupyter-nb-psapuser124-tls   ClusterIP   172.30.184.110   <none>        443/TCP   46m
+service/jupyter-nb-psapuser125       ClusterIP   172.30.60.72     <none>        80/TCP    46m
+service/jupyter-nb-psapuser125-tls   ClusterIP   172.30.66.225    <none>        443/TCP   46m
+service/jupyter-nb-psapuser126       ClusterIP   172.30.207.34    <none>        80/TCP    46m
+service/jupyter-nb-psapuser126-tls   ClusterIP   172.30.229.195   <none>        443/TCP   46m
+service/jupyter-nb-psapuser127       ClusterIP   172.30.133.179   <none>        80/TCP    46m
+service/jupyter-nb-psapuser127-tls   ClusterIP   172.30.222.187   <none>        443/TCP   46m
+service/jupyter-nb-psapuser128       ClusterIP   172.30.9.17      <none>        80/TCP    46m
+service/jupyter-nb-psapuser128-tls   ClusterIP   172.30.181.179   <none>        443/TCP   46m
+service/jupyter-nb-psapuser129       ClusterIP   172.30.62.1      <none>        80/TCP    46m
+service/jupyter-nb-psapuser129-tls   ClusterIP   172.30.186.183   <none>        443/TCP   46m
+service/jupyter-nb-psapuser13        ClusterIP   172.30.152.220   <none>        80/TCP    52m
+service/jupyter-nb-psapuser13-tls    ClusterIP   172.30.40.199    <none>        443/TCP   52m
+service/jupyter-nb-psapuser130       ClusterIP   172.30.224.77    <none>        80/TCP    46m
+service/jupyter-nb-psapuser130-tls   ClusterIP   172.30.28.60     <none>        443/TCP   46m
+service/jupyter-nb-psapuser131       ClusterIP   172.30.127.99    <none>        80/TCP    46m
+service/jupyter-nb-psapuser131-tls   ClusterIP   172.30.83.135    <none>        443/TCP   46m
+service/jupyter-nb-psapuser132       ClusterIP   172.30.53.117    <none>        80/TCP    46m
+service/jupyter-nb-psapuser132-tls   ClusterIP   172.30.190.56    <none>        443/TCP   46m
+service/jupyter-nb-psapuser133       ClusterIP   172.30.247.140   <none>        80/TCP    46m
+service/jupyter-nb-psapuser133-tls   ClusterIP   172.30.219.105   <none>        443/TCP   46m
+service/jupyter-nb-psapuser134       ClusterIP   172.30.133.209   <none>        80/TCP    46m
+service/jupyter-nb-psapuser134-tls   ClusterIP   172.30.63.97     <none>        443/TCP   46m
+service/jupyter-nb-psapuser135       ClusterIP   172.30.18.119    <none>        80/TCP    45m
+service/jupyter-nb-psapuser135-tls   ClusterIP   172.30.141.28    <none>        443/TCP   46m
+service/jupyter-nb-psapuser136       ClusterIP   172.30.236.1     <none>        80/TCP    45m
+service/jupyter-nb-psapuser136-tls   ClusterIP   172.30.171.137   <none>        443/TCP   46m
+service/jupyter-nb-psapuser137       ClusterIP   172.30.140.122   <none>        80/TCP    45m
+service/jupyter-nb-psapuser137-tls   ClusterIP   172.30.215.227   <none>        443/TCP   45m
+service/jupyter-nb-psapuser138       ClusterIP   172.30.185.5     <none>        80/TCP    45m
+service/jupyter-nb-psapuser138-tls   ClusterIP   172.30.188.129   <none>        443/TCP   45m
+service/jupyter-nb-psapuser139       ClusterIP   172.30.203.12    <none>        80/TCP    45m
+service/jupyter-nb-psapuser139-tls   ClusterIP   172.30.140.35    <none>        443/TCP   45m
+service/jupyter-nb-psapuser14        ClusterIP   172.30.165.28    <none>        80/TCP    52m
+service/jupyter-nb-psapuser14-tls    ClusterIP   172.30.40.41     <none>        443/TCP   52m
+service/jupyter-nb-psapuser140       ClusterIP   172.30.226.11    <none>        80/TCP    45m
+service/jupyter-nb-psapuser140-tls   ClusterIP   172.30.241.55    <none>        443/TCP   45m
+service/jupyter-nb-psapuser141       ClusterIP   172.30.137.155   <none>        80/TCP    45m
+service/jupyter-nb-psapuser141-tls   ClusterIP   172.30.189.3     <none>        443/TCP   45m
+service/jupyter-nb-psapuser142       ClusterIP   172.30.252.26    <none>        80/TCP    45m
+service/jupyter-nb-psapuser142-tls   ClusterIP   172.30.95.6      <none>        443/TCP   45m
+service/jupyter-nb-psapuser143       ClusterIP   172.30.80.74     <none>        80/TCP    45m
+service/jupyter-nb-psapuser143-tls   ClusterIP   172.30.54.128    <none>        443/TCP   45m
+service/jupyter-nb-psapuser144       ClusterIP   172.30.233.101   <none>        80/TCP    45m
+service/jupyter-nb-psapuser144-tls   ClusterIP   172.30.219.135   <none>        443/TCP   45m
+service/jupyter-nb-psapuser145       ClusterIP   172.30.29.87     <none>        80/TCP    45m
+service/jupyter-nb-psapuser145-tls   ClusterIP   172.30.152.193   <none>        443/TCP   45m
+service/jupyter-nb-psapuser146       ClusterIP   172.30.29.135    <none>        80/TCP    45m
+service/jupyter-nb-psapuser146-tls   ClusterIP   172.30.227.249   <none>        443/TCP   45m
+service/jupyter-nb-psapuser147       ClusterIP   172.30.154.184   <none>        80/TCP    45m
+service/jupyter-nb-psapuser147-tls   ClusterIP   172.30.137.119   <none>        443/TCP   45m
+service/jupyter-nb-psapuser148       ClusterIP   172.30.148.109   <none>        80/TCP    45m
+service/jupyter-nb-psapuser148-tls   ClusterIP   172.30.75.231    <none>        443/TCP   45m
+service/jupyter-nb-psapuser149       ClusterIP   172.30.202.164   <none>        80/TCP    45m
+service/jupyter-nb-psapuser149-tls   ClusterIP   172.30.75.81     <none>        443/TCP   45m
+service/jupyter-nb-psapuser15        ClusterIP   172.30.158.124   <none>        80/TCP    52m
+service/jupyter-nb-psapuser15-tls    ClusterIP   172.30.81.150    <none>        443/TCP   52m
+service/jupyter-nb-psapuser150       ClusterIP   172.30.224.32    <none>        80/TCP    45m
+service/jupyter-nb-psapuser150-tls   ClusterIP   172.30.246.125   <none>        443/TCP   45m
+service/jupyter-nb-psapuser151       ClusterIP   172.30.146.95    <none>        80/TCP    45m
+service/jupyter-nb-psapuser151-tls   ClusterIP   172.30.113.1     <none>        443/TCP   45m
+service/jupyter-nb-psapuser152       ClusterIP   172.30.166.34    <none>        80/TCP    45m
+service/jupyter-nb-psapuser152-tls   ClusterIP   172.30.129.239   <none>        443/TCP   45m
+service/jupyter-nb-psapuser153       ClusterIP   172.30.139.40    <none>        80/TCP    45m
+service/jupyter-nb-psapuser153-tls   ClusterIP   172.30.106.88    <none>        443/TCP   45m
+service/jupyter-nb-psapuser154       ClusterIP   172.30.150.110   <none>        80/TCP    45m
+service/jupyter-nb-psapuser154-tls   ClusterIP   172.30.93.53     <none>        443/TCP   45m
+service/jupyter-nb-psapuser155       ClusterIP   172.30.35.44     <none>        80/TCP    45m
+service/jupyter-nb-psapuser155-tls   ClusterIP   172.30.201.4     <none>        443/TCP   45m
+service/jupyter-nb-psapuser156       ClusterIP   172.30.140.221   <none>        80/TCP    44m
+service/jupyter-nb-psapuser156-tls   ClusterIP   172.30.53.235    <none>        443/TCP   44m
+service/jupyter-nb-psapuser157       ClusterIP   172.30.212.109   <none>        80/TCP    44m
+service/jupyter-nb-psapuser157-tls   ClusterIP   172.30.101.234   <none>        443/TCP   45m
+service/jupyter-nb-psapuser158       ClusterIP   172.30.224.81    <none>        80/TCP    44m
+service/jupyter-nb-psapuser158-tls   ClusterIP   172.30.58.151    <none>        443/TCP   44m
+service/jupyter-nb-psapuser159       ClusterIP   172.30.52.10     <none>        80/TCP    44m
+service/jupyter-nb-psapuser159-tls   ClusterIP   172.30.19.119    <none>        443/TCP   44m
+service/jupyter-nb-psapuser16        ClusterIP   172.30.108.0     <none>        80/TCP    51m
+service/jupyter-nb-psapuser16-tls    ClusterIP   172.30.180.31    <none>        443/TCP   52m
+service/jupyter-nb-psapuser160       ClusterIP   172.30.117.244   <none>        80/TCP    44m
+service/jupyter-nb-psapuser160-tls   ClusterIP   172.30.86.63     <none>        443/TCP   44m
+service/jupyter-nb-psapuser161       ClusterIP   172.30.105.56    <none>        80/TCP    44m
+service/jupyter-nb-psapuser161-tls   ClusterIP   172.30.45.155    <none>        443/TCP   44m
+service/jupyter-nb-psapuser162       ClusterIP   172.30.175.91    <none>        80/TCP    44m
+service/jupyter-nb-psapuser162-tls   ClusterIP   172.30.94.251    <none>        443/TCP   44m
+service/jupyter-nb-psapuser163       ClusterIP   172.30.139.191   <none>        80/TCP    44m
+service/jupyter-nb-psapuser163-tls   ClusterIP   172.30.146.68    <none>        443/TCP   44m
+service/jupyter-nb-psapuser164       ClusterIP   172.30.137.147   <none>        80/TCP    44m
+service/jupyter-nb-psapuser164-tls   ClusterIP   172.30.70.216    <none>        443/TCP   44m
+service/jupyter-nb-psapuser165       ClusterIP   172.30.70.122    <none>        80/TCP    44m
+service/jupyter-nb-psapuser165-tls   ClusterIP   172.30.226.198   <none>        443/TCP   44m
+service/jupyter-nb-psapuser166       ClusterIP   172.30.65.214    <none>        80/TCP    44m
+service/jupyter-nb-psapuser166-tls   ClusterIP   172.30.249.208   <none>        443/TCP   44m
+service/jupyter-nb-psapuser167       ClusterIP   172.30.92.241    <none>        80/TCP    44m
+service/jupyter-nb-psapuser167-tls   ClusterIP   172.30.173.49    <none>        443/TCP   44m
+service/jupyter-nb-psapuser168       ClusterIP   172.30.229.218   <none>        80/TCP    44m
+service/jupyter-nb-psapuser168-tls   ClusterIP   172.30.156.44    <none>        443/TCP   44m
+service/jupyter-nb-psapuser169       ClusterIP   172.30.30.93     <none>        80/TCP    44m
+service/jupyter-nb-psapuser169-tls   ClusterIP   172.30.16.95     <none>        443/TCP   44m
+service/jupyter-nb-psapuser17        ClusterIP   172.30.225.161   <none>        80/TCP    51m
+service/jupyter-nb-psapuser17-tls    ClusterIP   172.30.197.4     <none>        443/TCP   52m
+service/jupyter-nb-psapuser170       ClusterIP   172.30.67.203    <none>        80/TCP    44m
+service/jupyter-nb-psapuser170-tls   ClusterIP   172.30.149.5     <none>        443/TCP   44m
+service/jupyter-nb-psapuser171       ClusterIP   172.30.151.32    <none>        80/TCP    44m
+service/jupyter-nb-psapuser171-tls   ClusterIP   172.30.94.68     <none>        443/TCP   44m
+service/jupyter-nb-psapuser172       ClusterIP   172.30.172.30    <none>        80/TCP    44m
+service/jupyter-nb-psapuser172-tls   ClusterIP   172.30.177.48    <none>        443/TCP   44m
+service/jupyter-nb-psapuser173       ClusterIP   172.30.242.92    <none>        80/TCP    44m
+service/jupyter-nb-psapuser173-tls   ClusterIP   172.30.244.213   <none>        443/TCP   44m
+service/jupyter-nb-psapuser174       ClusterIP   172.30.252.174   <none>        80/TCP    44m
+service/jupyter-nb-psapuser174-tls   ClusterIP   172.30.95.156    <none>        443/TCP   44m
+service/jupyter-nb-psapuser175       ClusterIP   172.30.198.49    <none>        80/TCP    43m
+service/jupyter-nb-psapuser175-tls   ClusterIP   172.30.252.40    <none>        443/TCP   44m
+service/jupyter-nb-psapuser176       ClusterIP   172.30.175.129   <none>        80/TCP    43m
+service/jupyter-nb-psapuser176-tls   ClusterIP   172.30.61.168    <none>        443/TCP   44m
+service/jupyter-nb-psapuser177       ClusterIP   172.30.5.166     <none>        80/TCP    43m
+service/jupyter-nb-psapuser177-tls   ClusterIP   172.30.162.49    <none>        443/TCP   43m
+service/jupyter-nb-psapuser178       ClusterIP   172.30.163.135   <none>        80/TCP    43m
+service/jupyter-nb-psapuser178-tls   ClusterIP   172.30.249.242   <none>        443/TCP   43m
+service/jupyter-nb-psapuser179       ClusterIP   172.30.138.216   <none>        80/TCP    43m
+service/jupyter-nb-psapuser179-tls   ClusterIP   172.30.29.137    <none>        443/TCP   43m
+service/jupyter-nb-psapuser18        ClusterIP   172.30.44.28     <none>        80/TCP    51m
+service/jupyter-nb-psapuser18-tls    ClusterIP   172.30.133.232   <none>        443/TCP   51m
+service/jupyter-nb-psapuser180       ClusterIP   172.30.48.123    <none>        80/TCP    43m
+service/jupyter-nb-psapuser180-tls   ClusterIP   172.30.222.159   <none>        443/TCP   43m
+service/jupyter-nb-psapuser181       ClusterIP   172.30.202.166   <none>        80/TCP    43m
+service/jupyter-nb-psapuser181-tls   ClusterIP   172.30.170.17    <none>        443/TCP   43m
+service/jupyter-nb-psapuser182       ClusterIP   172.30.248.216   <none>        80/TCP    43m
+service/jupyter-nb-psapuser182-tls   ClusterIP   172.30.193.147   <none>        443/TCP   43m
+service/jupyter-nb-psapuser183       ClusterIP   172.30.18.247    <none>        80/TCP    43m
+service/jupyter-nb-psapuser183-tls   ClusterIP   172.30.177.188   <none>        443/TCP   43m
+service/jupyter-nb-psapuser184       ClusterIP   172.30.120.171   <none>        80/TCP    43m
+service/jupyter-nb-psapuser184-tls   ClusterIP   172.30.70.43     <none>        443/TCP   43m
+service/jupyter-nb-psapuser185       ClusterIP   172.30.74.157    <none>        80/TCP    43m
+service/jupyter-nb-psapuser185-tls   ClusterIP   172.30.74.236    <none>        443/TCP   43m
+service/jupyter-nb-psapuser186       ClusterIP   172.30.39.242    <none>        80/TCP    43m
+service/jupyter-nb-psapuser186-tls   ClusterIP   172.30.235.122   <none>        443/TCP   43m
+service/jupyter-nb-psapuser187       ClusterIP   172.30.63.41     <none>        80/TCP    43m
+service/jupyter-nb-psapuser187-tls   ClusterIP   172.30.182.37    <none>        443/TCP   43m
+service/jupyter-nb-psapuser188       ClusterIP   172.30.155.54    <none>        80/TCP    43m
+service/jupyter-nb-psapuser188-tls   ClusterIP   172.30.103.158   <none>        443/TCP   43m
+service/jupyter-nb-psapuser189       ClusterIP   172.30.179.209   <none>        80/TCP    43m
+service/jupyter-nb-psapuser189-tls   ClusterIP   172.30.251.147   <none>        443/TCP   43m
+service/jupyter-nb-psapuser19        ClusterIP   172.30.188.2     <none>        80/TCP    51m
+service/jupyter-nb-psapuser19-tls    ClusterIP   172.30.224.78    <none>        443/TCP   52m
+service/jupyter-nb-psapuser190       ClusterIP   172.30.54.248    <none>        80/TCP    43m
+service/jupyter-nb-psapuser190-tls   ClusterIP   172.30.105.85    <none>        443/TCP   43m
+service/jupyter-nb-psapuser191       ClusterIP   172.30.164.198   <none>        80/TCP    43m
+service/jupyter-nb-psapuser191-tls   ClusterIP   172.30.87.225    <none>        443/TCP   43m
+service/jupyter-nb-psapuser192       ClusterIP   172.30.89.46     <none>        80/TCP    43m
+service/jupyter-nb-psapuser192-tls   ClusterIP   172.30.186.178   <none>        443/TCP   43m
+service/jupyter-nb-psapuser193       ClusterIP   172.30.14.147    <none>        80/TCP    43m
+service/jupyter-nb-psapuser193-tls   ClusterIP   172.30.190.42    <none>        443/TCP   43m
+service/jupyter-nb-psapuser194       ClusterIP   172.30.197.166   <none>        80/TCP    43m
+service/jupyter-nb-psapuser194-tls   ClusterIP   172.30.180.1     <none>        443/TCP   43m
+service/jupyter-nb-psapuser195       ClusterIP   172.30.232.7     <none>        80/TCP    43m
+service/jupyter-nb-psapuser195-tls   ClusterIP   172.30.122.158   <none>        443/TCP   43m
+service/jupyter-nb-psapuser196       ClusterIP   172.30.151.1     <none>        80/TCP    42m
+service/jupyter-nb-psapuser196-tls   ClusterIP   172.30.240.178   <none>        443/TCP   43m
+service/jupyter-nb-psapuser197       ClusterIP   172.30.212.106   <none>        80/TCP    42m
+service/jupyter-nb-psapuser197-tls   ClusterIP   172.30.22.81     <none>        443/TCP   43m
+service/jupyter-nb-psapuser198       ClusterIP   172.30.202.20    <none>        80/TCP    42m
+service/jupyter-nb-psapuser198-tls   ClusterIP   172.30.81.242    <none>        443/TCP   42m
+service/jupyter-nb-psapuser199       ClusterIP   172.30.21.187    <none>        80/TCP    42m
+service/jupyter-nb-psapuser199-tls   ClusterIP   172.30.228.185   <none>        443/TCP   42m
+service/jupyter-nb-psapuser2         ClusterIP   172.30.50.71     <none>        80/TCP    52m
+service/jupyter-nb-psapuser2-tls     ClusterIP   172.30.40.47     <none>        443/TCP   52m
+service/jupyter-nb-psapuser20        ClusterIP   172.30.165.253   <none>        80/TCP    51m
+service/jupyter-nb-psapuser20-tls    ClusterIP   172.30.154.52    <none>        443/TCP   51m
+service/jupyter-nb-psapuser200       ClusterIP   172.30.246.253   <none>        80/TCP    42m
+service/jupyter-nb-psapuser200-tls   ClusterIP   172.30.197.202   <none>        443/TCP   42m
+service/jupyter-nb-psapuser201       ClusterIP   172.30.61.6      <none>        80/TCP    42m
+service/jupyter-nb-psapuser201-tls   ClusterIP   172.30.249.195   <none>        443/TCP   42m
+service/jupyter-nb-psapuser202       ClusterIP   172.30.181.13    <none>        80/TCP    42m
+service/jupyter-nb-psapuser202-tls   ClusterIP   172.30.4.55      <none>        443/TCP   42m
+service/jupyter-nb-psapuser203       ClusterIP   172.30.190.37    <none>        80/TCP    42m
+service/jupyter-nb-psapuser203-tls   ClusterIP   172.30.177.181   <none>        443/TCP   42m
+service/jupyter-nb-psapuser204       ClusterIP   172.30.179.15    <none>        80/TCP    42m
+service/jupyter-nb-psapuser204-tls   ClusterIP   172.30.36.157    <none>        443/TCP   42m
+service/jupyter-nb-psapuser205       ClusterIP   172.30.216.83    <none>        80/TCP    42m
+service/jupyter-nb-psapuser205-tls   ClusterIP   172.30.211.61    <none>        443/TCP   42m
+service/jupyter-nb-psapuser206       ClusterIP   172.30.124.100   <none>        80/TCP    42m
+service/jupyter-nb-psapuser206-tls   ClusterIP   172.30.74.20     <none>        443/TCP   42m
+service/jupyter-nb-psapuser207       ClusterIP   172.30.245.254   <none>        80/TCP    42m
+service/jupyter-nb-psapuser207-tls   ClusterIP   172.30.40.139    <none>        443/TCP   42m
+service/jupyter-nb-psapuser208       ClusterIP   172.30.64.135    <none>        80/TCP    42m
+service/jupyter-nb-psapuser208-tls   ClusterIP   172.30.200.126   <none>        443/TCP   42m
+service/jupyter-nb-psapuser209       ClusterIP   172.30.20.58     <none>        80/TCP    42m
+service/jupyter-nb-psapuser209-tls   ClusterIP   172.30.42.69     <none>        443/TCP   42m
+service/jupyter-nb-psapuser21        ClusterIP   172.30.231.58    <none>        80/TCP    51m
+service/jupyter-nb-psapuser21-tls    ClusterIP   172.30.177.136   <none>        443/TCP   51m
+service/jupyter-nb-psapuser210       ClusterIP   172.30.181.1     <none>        80/TCP    42m
+service/jupyter-nb-psapuser210-tls   ClusterIP   172.30.165.125   <none>        443/TCP   42m
+service/jupyter-nb-psapuser211       ClusterIP   172.30.187.72    <none>        80/TCP    42m
+service/jupyter-nb-psapuser211-tls   ClusterIP   172.30.69.170    <none>        443/TCP   42m
+service/jupyter-nb-psapuser212       ClusterIP   172.30.198.99    <none>        80/TCP    42m
+service/jupyter-nb-psapuser212-tls   ClusterIP   172.30.82.45     <none>        443/TCP   42m
+service/jupyter-nb-psapuser213       ClusterIP   172.30.5.115     <none>        80/TCP    42m
+service/jupyter-nb-psapuser213-tls   ClusterIP   172.30.109.142   <none>        443/TCP   42m
+service/jupyter-nb-psapuser214       ClusterIP   172.30.169.240   <none>        80/TCP    42m
+service/jupyter-nb-psapuser214-tls   ClusterIP   172.30.107.154   <none>        443/TCP   42m
+service/jupyter-nb-psapuser215       ClusterIP   172.30.224.68    <none>        80/TCP    42m
+service/jupyter-nb-psapuser215-tls   ClusterIP   172.30.103.121   <none>        443/TCP   42m
+service/jupyter-nb-psapuser216       ClusterIP   172.30.108.119   <none>        80/TCP    41m
+service/jupyter-nb-psapuser216-tls   ClusterIP   172.30.244.162   <none>        443/TCP   42m
+service/jupyter-nb-psapuser217       ClusterIP   172.30.19.62     <none>        80/TCP    41m
+service/jupyter-nb-psapuser217-tls   ClusterIP   172.30.69.245    <none>        443/TCP   41m
+service/jupyter-nb-psapuser218       ClusterIP   172.30.239.3     <none>        80/TCP    41m
+service/jupyter-nb-psapuser218-tls   ClusterIP   172.30.110.200   <none>        443/TCP   41m
+service/jupyter-nb-psapuser219       ClusterIP   172.30.105.66    <none>        80/TCP    41m
+service/jupyter-nb-psapuser219-tls   ClusterIP   172.30.158.50    <none>        443/TCP   41m
+service/jupyter-nb-psapuser22        ClusterIP   172.30.215.242   <none>        80/TCP    51m
+service/jupyter-nb-psapuser22-tls    ClusterIP   172.30.4.211     <none>        443/TCP   51m
+service/jupyter-nb-psapuser220       ClusterIP   172.30.118.32    <none>        80/TCP    41m
+service/jupyter-nb-psapuser220-tls   ClusterIP   172.30.124.168   <none>        443/TCP   41m
+service/jupyter-nb-psapuser221       ClusterIP   172.30.243.137   <none>        80/TCP    41m
+service/jupyter-nb-psapuser221-tls   ClusterIP   172.30.147.87    <none>        443/TCP   41m
+service/jupyter-nb-psapuser222       ClusterIP   172.30.209.89    <none>        80/TCP    41m
+service/jupyter-nb-psapuser222-tls   ClusterIP   172.30.12.158    <none>        443/TCP   41m
+service/jupyter-nb-psapuser223       ClusterIP   172.30.219.242   <none>        80/TCP    41m
+service/jupyter-nb-psapuser223-tls   ClusterIP   172.30.1.142     <none>        443/TCP   41m
+service/jupyter-nb-psapuser224       ClusterIP   172.30.141.80    <none>        80/TCP    41m
+service/jupyter-nb-psapuser224-tls   ClusterIP   172.30.218.62    <none>        443/TCP   41m
+service/jupyter-nb-psapuser225       ClusterIP   172.30.110.88    <none>        80/TCP    41m
+service/jupyter-nb-psapuser225-tls   ClusterIP   172.30.73.133    <none>        443/TCP   41m
+service/jupyter-nb-psapuser226       ClusterIP   172.30.153.157   <none>        80/TCP    41m
+service/jupyter-nb-psapuser226-tls   ClusterIP   172.30.53.7      <none>        443/TCP   41m
+service/jupyter-nb-psapuser227       ClusterIP   172.30.201.253   <none>        80/TCP    41m
+service/jupyter-nb-psapuser227-tls   ClusterIP   172.30.13.144    <none>        443/TCP   41m
+service/jupyter-nb-psapuser228       ClusterIP   172.30.165.92    <none>        80/TCP    41m
+service/jupyter-nb-psapuser228-tls   ClusterIP   172.30.92.192    <none>        443/TCP   41m
+service/jupyter-nb-psapuser229       ClusterIP   172.30.177.131   <none>        80/TCP    41m
+service/jupyter-nb-psapuser229-tls   ClusterIP   172.30.171.46    <none>        443/TCP   41m
+service/jupyter-nb-psapuser23        ClusterIP   172.30.248.64    <none>        80/TCP    51m
+service/jupyter-nb-psapuser23-tls    ClusterIP   172.30.123.17    <none>        443/TCP   51m
+service/jupyter-nb-psapuser230       ClusterIP   172.30.73.174    <none>        80/TCP    41m
+service/jupyter-nb-psapuser230-tls   ClusterIP   172.30.112.126   <none>        443/TCP   41m
+service/jupyter-nb-psapuser231       ClusterIP   172.30.173.101   <none>        80/TCP    41m
+service/jupyter-nb-psapuser231-tls   ClusterIP   172.30.116.59    <none>        443/TCP   41m
+service/jupyter-nb-psapuser232       ClusterIP   172.30.117.249   <none>        80/TCP    41m
+service/jupyter-nb-psapuser232-tls   ClusterIP   172.30.49.105    <none>        443/TCP   41m
+service/jupyter-nb-psapuser233       ClusterIP   172.30.40.200    <none>        80/TCP    41m
+service/jupyter-nb-psapuser233-tls   ClusterIP   172.30.35.229    <none>        443/TCP   41m
+service/jupyter-nb-psapuser234       ClusterIP   172.30.22.75     <none>        80/TCP    40m
+service/jupyter-nb-psapuser234-tls   ClusterIP   172.30.43.179    <none>        443/TCP   41m
+service/jupyter-nb-psapuser235       ClusterIP   172.30.18.228    <none>        80/TCP    40m
+service/jupyter-nb-psapuser235-tls   ClusterIP   172.30.181.117   <none>        443/TCP   41m
+service/jupyter-nb-psapuser236       ClusterIP   172.30.192.170   <none>        80/TCP    40m
+service/jupyter-nb-psapuser236-tls   ClusterIP   172.30.211.230   <none>        443/TCP   41m
+service/jupyter-nb-psapuser237       ClusterIP   172.30.221.7     <none>        80/TCP    40m
+service/jupyter-nb-psapuser237-tls   ClusterIP   172.30.111.40    <none>        443/TCP   41m
+service/jupyter-nb-psapuser238       ClusterIP   172.30.212.50    <none>        80/TCP    40m
+service/jupyter-nb-psapuser238-tls   ClusterIP   172.30.110.113   <none>        443/TCP   40m
+service/jupyter-nb-psapuser239       ClusterIP   172.30.119.169   <none>        80/TCP    40m
+service/jupyter-nb-psapuser239-tls   ClusterIP   172.30.133.112   <none>        443/TCP   40m
+service/jupyter-nb-psapuser24        ClusterIP   172.30.131.139   <none>        80/TCP    51m
+service/jupyter-nb-psapuser24-tls    ClusterIP   172.30.99.66     <none>        443/TCP   51m
+service/jupyter-nb-psapuser240       ClusterIP   172.30.141.222   <none>        80/TCP    40m
+service/jupyter-nb-psapuser240-tls   ClusterIP   172.30.193.105   <none>        443/TCP   40m
+service/jupyter-nb-psapuser241       ClusterIP   172.30.242.208   <none>        80/TCP    40m
+service/jupyter-nb-psapuser241-tls   ClusterIP   172.30.180.119   <none>        443/TCP   40m
+service/jupyter-nb-psapuser242       ClusterIP   172.30.31.110    <none>        80/TCP    40m
+service/jupyter-nb-psapuser242-tls   ClusterIP   172.30.31.133    <none>        443/TCP   40m
+service/jupyter-nb-psapuser243       ClusterIP   172.30.238.94    <none>        80/TCP    40m
+service/jupyter-nb-psapuser243-tls   ClusterIP   172.30.21.39     <none>        443/TCP   40m
+service/jupyter-nb-psapuser244       ClusterIP   172.30.96.198    <none>        80/TCP    40m
+service/jupyter-nb-psapuser244-tls   ClusterIP   172.30.242.215   <none>        443/TCP   40m
+service/jupyter-nb-psapuser245       ClusterIP   172.30.216.13    <none>        80/TCP    40m
+service/jupyter-nb-psapuser245-tls   ClusterIP   172.30.160.62    <none>        443/TCP   40m
+service/jupyter-nb-psapuser246       ClusterIP   172.30.155.188   <none>        80/TCP    40m
+service/jupyter-nb-psapuser246-tls   ClusterIP   172.30.8.192     <none>        443/TCP   40m
+service/jupyter-nb-psapuser247       ClusterIP   172.30.98.247    <none>        80/TCP    40m
+service/jupyter-nb-psapuser247-tls   ClusterIP   172.30.128.128   <none>        443/TCP   40m
+service/jupyter-nb-psapuser248       ClusterIP   172.30.221.222   <none>        80/TCP    40m
+service/jupyter-nb-psapuser248-tls   ClusterIP   172.30.103.74    <none>        443/TCP   40m
+service/jupyter-nb-psapuser249       ClusterIP   172.30.127.58    <none>        80/TCP    40m
+service/jupyter-nb-psapuser249-tls   ClusterIP   172.30.53.247    <none>        443/TCP   40m
+service/jupyter-nb-psapuser25        ClusterIP   172.30.40.157    <none>        80/TCP    51m
+service/jupyter-nb-psapuser25-tls    ClusterIP   172.30.20.72     <none>        443/TCP   51m
+service/jupyter-nb-psapuser250       ClusterIP   172.30.122.58    <none>        80/TCP    40m
+service/jupyter-nb-psapuser250-tls   ClusterIP   172.30.168.173   <none>        443/TCP   40m
+service/jupyter-nb-psapuser251       ClusterIP   172.30.73.2      <none>        80/TCP    40m
+service/jupyter-nb-psapuser251-tls   ClusterIP   172.30.163.93    <none>        443/TCP   40m
+service/jupyter-nb-psapuser252       ClusterIP   172.30.213.66    <none>        80/TCP    40m
+service/jupyter-nb-psapuser252-tls   ClusterIP   172.30.255.182   <none>        443/TCP   40m
+service/jupyter-nb-psapuser253       ClusterIP   172.30.161.56    <none>        80/TCP    40m
+service/jupyter-nb-psapuser253-tls   ClusterIP   172.30.235.192   <none>        443/TCP   40m
+service/jupyter-nb-psapuser254       ClusterIP   172.30.25.8      <none>        80/TCP    40m
+service/jupyter-nb-psapuser254-tls   ClusterIP   172.30.193.129   <none>        443/TCP   40m
+service/jupyter-nb-psapuser255       ClusterIP   172.30.151.29    <none>        80/TCP    40m
+service/jupyter-nb-psapuser255-tls   ClusterIP   172.30.176.18    <none>        443/TCP   40m
+service/jupyter-nb-psapuser256       ClusterIP   172.30.225.36    <none>        80/TCP    39m
+service/jupyter-nb-psapuser256-tls   ClusterIP   172.30.121.169   <none>        443/TCP   40m
+service/jupyter-nb-psapuser257       ClusterIP   172.30.204.147   <none>        80/TCP    39m
+service/jupyter-nb-psapuser257-tls   ClusterIP   172.30.56.105    <none>        443/TCP   40m
+service/jupyter-nb-psapuser258       ClusterIP   172.30.210.170   <none>        80/TCP    39m
+service/jupyter-nb-psapuser258-tls   ClusterIP   172.30.103.81    <none>        443/TCP   39m
+service/jupyter-nb-psapuser259       ClusterIP   172.30.198.154   <none>        80/TCP    39m
+service/jupyter-nb-psapuser259-tls   ClusterIP   172.30.129.237   <none>        443/TCP   39m
+service/jupyter-nb-psapuser26        ClusterIP   172.30.53.207    <none>        80/TCP    51m
+service/jupyter-nb-psapuser26-tls    ClusterIP   172.30.210.103   <none>        443/TCP   51m
+service/jupyter-nb-psapuser260       ClusterIP   172.30.124.214   <none>        80/TCP    39m
+service/jupyter-nb-psapuser260-tls   ClusterIP   172.30.168.87    <none>        443/TCP   39m
+service/jupyter-nb-psapuser261       ClusterIP   172.30.108.100   <none>        80/TCP    39m
+service/jupyter-nb-psapuser261-tls   ClusterIP   172.30.232.177   <none>        443/TCP   39m
+service/jupyter-nb-psapuser262       ClusterIP   172.30.174.159   <none>        80/TCP    39m
+service/jupyter-nb-psapuser262-tls   ClusterIP   172.30.188.29    <none>        443/TCP   39m
+service/jupyter-nb-psapuser263       ClusterIP   172.30.241.209   <none>        80/TCP    39m
+service/jupyter-nb-psapuser263-tls   ClusterIP   172.30.155.207   <none>        443/TCP   39m
+service/jupyter-nb-psapuser264       ClusterIP   172.30.40.108    <none>        80/TCP    39m
+service/jupyter-nb-psapuser264-tls   ClusterIP   172.30.45.183    <none>        443/TCP   39m
+service/jupyter-nb-psapuser265       ClusterIP   172.30.46.107    <none>        80/TCP    39m
+service/jupyter-nb-psapuser265-tls   ClusterIP   172.30.150.32    <none>        443/TCP   39m
+service/jupyter-nb-psapuser266       ClusterIP   172.30.25.151    <none>        80/TCP    39m
+service/jupyter-nb-psapuser266-tls   ClusterIP   172.30.252.161   <none>        443/TCP   39m
+service/jupyter-nb-psapuser267       ClusterIP   172.30.17.65     <none>        80/TCP    39m
+service/jupyter-nb-psapuser267-tls   ClusterIP   172.30.55.233    <none>        443/TCP   39m
+service/jupyter-nb-psapuser268       ClusterIP   172.30.231.152   <none>        80/TCP    39m
+service/jupyter-nb-psapuser268-tls   ClusterIP   172.30.159.19    <none>        443/TCP   39m
+service/jupyter-nb-psapuser269       ClusterIP   172.30.106.99    <none>        80/TCP    39m
+service/jupyter-nb-psapuser269-tls   ClusterIP   172.30.103.156   <none>        443/TCP   39m
+service/jupyter-nb-psapuser27        ClusterIP   172.30.230.57    <none>        80/TCP    51m
+service/jupyter-nb-psapuser27-tls    ClusterIP   172.30.215.94    <none>        443/TCP   51m
+service/jupyter-nb-psapuser270       ClusterIP   172.30.189.63    <none>        80/TCP    39m
+service/jupyter-nb-psapuser270-tls   ClusterIP   172.30.40.255    <none>        443/TCP   39m
+service/jupyter-nb-psapuser271       ClusterIP   172.30.112.132   <none>        80/TCP    39m
+service/jupyter-nb-psapuser271-tls   ClusterIP   172.30.174.170   <none>        443/TCP   39m
+service/jupyter-nb-psapuser272       ClusterIP   172.30.104.9     <none>        80/TCP    39m
+service/jupyter-nb-psapuser272-tls   ClusterIP   172.30.197.118   <none>        443/TCP   39m
+service/jupyter-nb-psapuser273       ClusterIP   172.30.153.171   <none>        80/TCP    38m
+service/jupyter-nb-psapuser273-tls   ClusterIP   172.30.18.23     <none>        443/TCP   38m
+service/jupyter-nb-psapuser274       ClusterIP   172.30.178.225   <none>        80/TCP    38m
+service/jupyter-nb-psapuser274-tls   ClusterIP   172.30.86.37     <none>        443/TCP   39m
+service/jupyter-nb-psapuser275       ClusterIP   172.30.128.255   <none>        80/TCP    38m
+service/jupyter-nb-psapuser275-tls   ClusterIP   172.30.238.91    <none>        443/TCP   39m
+service/jupyter-nb-psapuser276       ClusterIP   172.30.214.124   <none>        80/TCP    38m
+service/jupyter-nb-psapuser276-tls   ClusterIP   172.30.89.129    <none>        443/TCP   39m
+service/jupyter-nb-psapuser277       ClusterIP   172.30.130.140   <none>        80/TCP    38m
+service/jupyter-nb-psapuser277-tls   ClusterIP   172.30.215.126   <none>        443/TCP   39m
+service/jupyter-nb-psapuser278       ClusterIP   172.30.80.110    <none>        80/TCP    38m
+service/jupyter-nb-psapuser278-tls   ClusterIP   172.30.17.101    <none>        443/TCP   38m
+service/jupyter-nb-psapuser279       ClusterIP   172.30.246.98    <none>        80/TCP    38m
+service/jupyter-nb-psapuser279-tls   ClusterIP   172.30.232.115   <none>        443/TCP   38m
+service/jupyter-nb-psapuser28        ClusterIP   172.30.139.201   <none>        80/TCP    51m
+service/jupyter-nb-psapuser28-tls    ClusterIP   172.30.161.228   <none>        443/TCP   51m
+service/jupyter-nb-psapuser280       ClusterIP   172.30.186.104   <none>        80/TCP    38m
+service/jupyter-nb-psapuser280-tls   ClusterIP   172.30.12.10     <none>        443/TCP   38m
+service/jupyter-nb-psapuser281       ClusterIP   172.30.180.251   <none>        80/TCP    38m
+service/jupyter-nb-psapuser281-tls   ClusterIP   172.30.185.223   <none>        443/TCP   38m
+service/jupyter-nb-psapuser282       ClusterIP   172.30.34.160    <none>        80/TCP    38m
+service/jupyter-nb-psapuser282-tls   ClusterIP   172.30.124.204   <none>        443/TCP   38m
+service/jupyter-nb-psapuser283       ClusterIP   172.30.123.190   <none>        80/TCP    38m
+service/jupyter-nb-psapuser283-tls   ClusterIP   172.30.84.164    <none>        443/TCP   38m
+service/jupyter-nb-psapuser284       ClusterIP   172.30.221.30    <none>        80/TCP    38m
+service/jupyter-nb-psapuser284-tls   ClusterIP   172.30.104.247   <none>        443/TCP   38m
+service/jupyter-nb-psapuser285       ClusterIP   172.30.115.94    <none>        80/TCP    38m
+service/jupyter-nb-psapuser285-tls   ClusterIP   172.30.200.188   <none>        443/TCP   38m
+service/jupyter-nb-psapuser286       ClusterIP   172.30.197.36    <none>        80/TCP    38m
+service/jupyter-nb-psapuser286-tls   ClusterIP   172.30.52.197    <none>        443/TCP   38m
+service/jupyter-nb-psapuser287       ClusterIP   172.30.233.17    <none>        80/TCP    38m
+service/jupyter-nb-psapuser287-tls   ClusterIP   172.30.71.202    <none>        443/TCP   38m
+service/jupyter-nb-psapuser288       ClusterIP   172.30.190.110   <none>        80/TCP    38m
+service/jupyter-nb-psapuser288-tls   ClusterIP   172.30.231.12    <none>        443/TCP   38m
+service/jupyter-nb-psapuser289       ClusterIP   172.30.242.67    <none>        80/TCP    38m
+service/jupyter-nb-psapuser289-tls   ClusterIP   172.30.129.226   <none>        443/TCP   38m
+service/jupyter-nb-psapuser29        ClusterIP   172.30.146.235   <none>        80/TCP    51m
+service/jupyter-nb-psapuser29-tls    ClusterIP   172.30.132.138   <none>        443/TCP   51m
+service/jupyter-nb-psapuser290       ClusterIP   172.30.147.26    <none>        80/TCP    38m
+service/jupyter-nb-psapuser290-tls   ClusterIP   172.30.230.98    <none>        443/TCP   38m
+service/jupyter-nb-psapuser291       ClusterIP   172.30.92.208    <none>        80/TCP    38m
+service/jupyter-nb-psapuser291-tls   ClusterIP   172.30.18.50     <none>        443/TCP   38m
+service/jupyter-nb-psapuser292       ClusterIP   172.30.73.114    <none>        80/TCP    38m
+service/jupyter-nb-psapuser292-tls   ClusterIP   172.30.168.240   <none>        443/TCP   38m
+service/jupyter-nb-psapuser293       ClusterIP   172.30.43.89     <none>        80/TCP    38m
+service/jupyter-nb-psapuser293-tls   ClusterIP   172.30.127.244   <none>        443/TCP   38m
+service/jupyter-nb-psapuser294       ClusterIP   172.30.210.193   <none>        80/TCP    38m
+service/jupyter-nb-psapuser294-tls   ClusterIP   172.30.1.67      <none>        443/TCP   38m
+service/jupyter-nb-psapuser295       ClusterIP   172.30.183.149   <none>        80/TCP    37m
+service/jupyter-nb-psapuser295-tls   ClusterIP   172.30.135.180   <none>        443/TCP   38m
+service/jupyter-nb-psapuser296       ClusterIP   172.30.65.23     <none>        80/TCP    37m
+service/jupyter-nb-psapuser296-tls   ClusterIP   172.30.216.35    <none>        443/TCP   38m
+service/jupyter-nb-psapuser297       ClusterIP   172.30.186.205   <none>        80/TCP    37m
+service/jupyter-nb-psapuser297-tls   ClusterIP   172.30.192.108   <none>        443/TCP   38m
+service/jupyter-nb-psapuser298       ClusterIP   172.30.170.166   <none>        80/TCP    37m
+service/jupyter-nb-psapuser298-tls   ClusterIP   172.30.40.202    <none>        443/TCP   37m
+service/jupyter-nb-psapuser299       ClusterIP   172.30.92.203    <none>        80/TCP    37m
+service/jupyter-nb-psapuser299-tls   ClusterIP   172.30.119.46    <none>        443/TCP   37m
+service/jupyter-nb-psapuser3         ClusterIP   172.30.107.28    <none>        80/TCP    52m
+service/jupyter-nb-psapuser3-tls     ClusterIP   172.30.226.91    <none>        443/TCP   52m
+service/jupyter-nb-psapuser30        ClusterIP   172.30.152.182   <none>        80/TCP    51m
+service/jupyter-nb-psapuser30-tls    ClusterIP   172.30.227.139   <none>        443/TCP   51m
+service/jupyter-nb-psapuser31        ClusterIP   172.30.212.49    <none>        80/TCP    51m
+service/jupyter-nb-psapuser31-tls    ClusterIP   172.30.171.151   <none>        443/TCP   51m
+service/jupyter-nb-psapuser32        ClusterIP   172.30.135.64    <none>        80/TCP    51m
+service/jupyter-nb-psapuser32-tls    ClusterIP   172.30.66.0      <none>        443/TCP   51m
+service/jupyter-nb-psapuser33        ClusterIP   172.30.224.134   <none>        80/TCP    51m
+service/jupyter-nb-psapuser33-tls    ClusterIP   172.30.139.226   <none>        443/TCP   51m
+service/jupyter-nb-psapuser34        ClusterIP   172.30.56.98     <none>        80/TCP    51m
+service/jupyter-nb-psapuser34-tls    ClusterIP   172.30.159.91    <none>        443/TCP   51m
+service/jupyter-nb-psapuser35        ClusterIP   172.30.39.57     <none>        80/TCP    51m
+service/jupyter-nb-psapuser35-tls    ClusterIP   172.30.122.15    <none>        443/TCP   51m
+service/jupyter-nb-psapuser36        ClusterIP   172.30.164.51    <none>        80/TCP    51m
+service/jupyter-nb-psapuser36-tls    ClusterIP   172.30.247.235   <none>        443/TCP   51m
+service/jupyter-nb-psapuser37        ClusterIP   172.30.87.7      <none>        80/TCP    50m
+service/jupyter-nb-psapuser37-tls    ClusterIP   172.30.115.255   <none>        443/TCP   51m
+service/jupyter-nb-psapuser38        ClusterIP   172.30.60.253    <none>        80/TCP    50m
+service/jupyter-nb-psapuser38-tls    ClusterIP   172.30.221.34    <none>        443/TCP   51m
+service/jupyter-nb-psapuser39        ClusterIP   172.30.115.251   <none>        80/TCP    50m
+service/jupyter-nb-psapuser39-tls    ClusterIP   172.30.203.236   <none>        443/TCP   50m
+service/jupyter-nb-psapuser4         ClusterIP   172.30.14.220    <none>        80/TCP    52m
+service/jupyter-nb-psapuser4-tls     ClusterIP   172.30.96.64     <none>        443/TCP   52m
+service/jupyter-nb-psapuser40        ClusterIP   172.30.147.113   <none>        80/TCP    50m
+service/jupyter-nb-psapuser40-tls    ClusterIP   172.30.184.116   <none>        443/TCP   50m
+service/jupyter-nb-psapuser41        ClusterIP   172.30.223.65    <none>        80/TCP    50m
+service/jupyter-nb-psapuser41-tls    ClusterIP   172.30.129.92    <none>        443/TCP   50m
+service/jupyter-nb-psapuser42        ClusterIP   172.30.24.121    <none>        80/TCP    50m
+service/jupyter-nb-psapuser42-tls    ClusterIP   172.30.129.118   <none>        443/TCP   50m
+service/jupyter-nb-psapuser43        ClusterIP   172.30.107.241   <none>        80/TCP    50m
+service/jupyter-nb-psapuser43-tls    ClusterIP   172.30.210.187   <none>        443/TCP   50m
+service/jupyter-nb-psapuser44        ClusterIP   172.30.220.190   <none>        80/TCP    50m
+service/jupyter-nb-psapuser44-tls    ClusterIP   172.30.43.222    <none>        443/TCP   50m
+service/jupyter-nb-psapuser45        ClusterIP   172.30.247.216   <none>        80/TCP    50m
+service/jupyter-nb-psapuser45-tls    ClusterIP   172.30.48.240    <none>        443/TCP   50m
+service/jupyter-nb-psapuser46        ClusterIP   172.30.136.0     <none>        80/TCP    50m
+service/jupyter-nb-psapuser46-tls    ClusterIP   172.30.50.16     <none>        443/TCP   50m
+service/jupyter-nb-psapuser47        ClusterIP   172.30.76.162    <none>        80/TCP    50m
+service/jupyter-nb-psapuser47-tls    ClusterIP   172.30.15.186    <none>        443/TCP   50m
+service/jupyter-nb-psapuser48        ClusterIP   172.30.247.73    <none>        80/TCP    50m
+service/jupyter-nb-psapuser48-tls    ClusterIP   172.30.106.41    <none>        443/TCP   50m
+service/jupyter-nb-psapuser49        ClusterIP   172.30.227.216   <none>        80/TCP    50m
+service/jupyter-nb-psapuser49-tls    ClusterIP   172.30.95.41     <none>        443/TCP   50m
+service/jupyter-nb-psapuser5         ClusterIP   172.30.219.42    <none>        80/TCP    52m
+service/jupyter-nb-psapuser5-tls     ClusterIP   172.30.6.120     <none>        443/TCP   52m
+service/jupyter-nb-psapuser50        ClusterIP   172.30.230.245   <none>        80/TCP    50m
+service/jupyter-nb-psapuser50-tls    ClusterIP   172.30.163.104   <none>        443/TCP   50m
+service/jupyter-nb-psapuser51        ClusterIP   172.30.18.8      <none>        80/TCP    50m
+service/jupyter-nb-psapuser51-tls    ClusterIP   172.30.135.42    <none>        443/TCP   50m
+service/jupyter-nb-psapuser52        ClusterIP   172.30.191.99    <none>        80/TCP    50m
+service/jupyter-nb-psapuser52-tls    ClusterIP   172.30.168.118   <none>        443/TCP   50m
+service/jupyter-nb-psapuser53        ClusterIP   172.30.114.141   <none>        80/TCP    50m
+service/jupyter-nb-psapuser53-tls    ClusterIP   172.30.117.79    <none>        443/TCP   50m
+service/jupyter-nb-psapuser54        ClusterIP   172.30.47.11     <none>        80/TCP    50m
+service/jupyter-nb-psapuser54-tls    ClusterIP   172.30.255.189   <none>        443/TCP   50m
+service/jupyter-nb-psapuser55        ClusterIP   172.30.255.174   <none>        80/TCP    49m
+service/jupyter-nb-psapuser55-tls    ClusterIP   172.30.108.194   <none>        443/TCP   50m
+service/jupyter-nb-psapuser56        ClusterIP   172.30.201.81    <none>        80/TCP    49m
+service/jupyter-nb-psapuser56-tls    ClusterIP   172.30.25.226    <none>        443/TCP   50m
+service/jupyter-nb-psapuser57        ClusterIP   172.30.11.142    <none>        80/TCP    49m
+service/jupyter-nb-psapuser57-tls    ClusterIP   172.30.151.192   <none>        443/TCP   50m
+service/jupyter-nb-psapuser58        ClusterIP   172.30.208.136   <none>        80/TCP    49m
+service/jupyter-nb-psapuser58-tls    ClusterIP   172.30.89.54     <none>        443/TCP   50m
+service/jupyter-nb-psapuser59        ClusterIP   172.30.57.6      <none>        80/TCP    49m
+service/jupyter-nb-psapuser59-tls    ClusterIP   172.30.52.245    <none>        443/TCP   49m
+service/jupyter-nb-psapuser6         ClusterIP   172.30.149.27    <none>        80/TCP    52m
+service/jupyter-nb-psapuser6-tls     ClusterIP   172.30.152.39    <none>        443/TCP   52m
+service/jupyter-nb-psapuser60        ClusterIP   172.30.46.118    <none>        80/TCP    49m
+service/jupyter-nb-psapuser60-tls    ClusterIP   172.30.247.158   <none>        443/TCP   49m
+service/jupyter-nb-psapuser61        ClusterIP   172.30.81.19     <none>        80/TCP    49m
+service/jupyter-nb-psapuser61-tls    ClusterIP   172.30.149.35    <none>        443/TCP   49m
+service/jupyter-nb-psapuser62        ClusterIP   172.30.171.152   <none>        80/TCP    49m
+service/jupyter-nb-psapuser62-tls    ClusterIP   172.30.153.139   <none>        443/TCP   49m
+service/jupyter-nb-psapuser63        ClusterIP   172.30.204.210   <none>        80/TCP    49m
+service/jupyter-nb-psapuser63-tls    ClusterIP   172.30.43.243    <none>        443/TCP   49m
+service/jupyter-nb-psapuser64        ClusterIP   172.30.62.159    <none>        80/TCP    49m
+service/jupyter-nb-psapuser64-tls    ClusterIP   172.30.125.143   <none>        443/TCP   49m
+service/jupyter-nb-psapuser65        ClusterIP   172.30.187.244   <none>        80/TCP    49m
+service/jupyter-nb-psapuser65-tls    ClusterIP   172.30.223.80    <none>        443/TCP   49m
+service/jupyter-nb-psapuser66        ClusterIP   172.30.101.84    <none>        80/TCP    49m
+service/jupyter-nb-psapuser66-tls    ClusterIP   172.30.53.3      <none>        443/TCP   49m
+service/jupyter-nb-psapuser67        ClusterIP   172.30.198.143   <none>        80/TCP    49m
+service/jupyter-nb-psapuser67-tls    ClusterIP   172.30.66.51     <none>        443/TCP   49m
+service/jupyter-nb-psapuser68        ClusterIP   172.30.71.53     <none>        80/TCP    49m
+service/jupyter-nb-psapuser68-tls    ClusterIP   172.30.40.52     <none>        443/TCP   49m
+service/jupyter-nb-psapuser69        ClusterIP   172.30.176.6     <none>        80/TCP    49m
+service/jupyter-nb-psapuser69-tls    ClusterIP   172.30.102.0     <none>        443/TCP   49m
+service/jupyter-nb-psapuser7         ClusterIP   172.30.11.32     <none>        80/TCP    52m
+service/jupyter-nb-psapuser7-tls     ClusterIP   172.30.149.41    <none>        443/TCP   52m
+service/jupyter-nb-psapuser70        ClusterIP   172.30.95.193    <none>        80/TCP    49m
+service/jupyter-nb-psapuser70-tls    ClusterIP   172.30.192.88    <none>        443/TCP   49m
+service/jupyter-nb-psapuser71        ClusterIP   172.30.94.173    <none>        80/TCP    49m
+service/jupyter-nb-psapuser71-tls    ClusterIP   172.30.27.35     <none>        443/TCP   49m
+service/jupyter-nb-psapuser72        ClusterIP   172.30.132.28    <none>        80/TCP    49m
+service/jupyter-nb-psapuser72-tls    ClusterIP   172.30.134.132   <none>        443/TCP   49m
+service/jupyter-nb-psapuser73        ClusterIP   172.30.176.143   <none>        80/TCP    49m
+service/jupyter-nb-psapuser73-tls    ClusterIP   172.30.52.171    <none>        443/TCP   49m
+service/jupyter-nb-psapuser74        ClusterIP   172.30.224.31    <none>        80/TCP    49m
+service/jupyter-nb-psapuser74-tls    ClusterIP   172.30.251.32    <none>        443/TCP   49m
+service/jupyter-nb-psapuser75        ClusterIP   172.30.173.79    <none>        80/TCP    48m
+service/jupyter-nb-psapuser75-tls    ClusterIP   172.30.60.38     <none>        443/TCP   49m
+service/jupyter-nb-psapuser76        ClusterIP   172.30.133.175   <none>        80/TCP    48m
+service/jupyter-nb-psapuser76-tls    ClusterIP   172.30.152.208   <none>        443/TCP   49m
+service/jupyter-nb-psapuser77        ClusterIP   172.30.248.132   <none>        80/TCP    48m
+service/jupyter-nb-psapuser77-tls    ClusterIP   172.30.251.77    <none>        443/TCP   49m
+service/jupyter-nb-psapuser78        ClusterIP   172.30.56.232    <none>        80/TCP    48m
+service/jupyter-nb-psapuser78-tls    ClusterIP   172.30.143.12    <none>        443/TCP   48m
+service/jupyter-nb-psapuser79        ClusterIP   172.30.170.195   <none>        80/TCP    48m
+service/jupyter-nb-psapuser79-tls    ClusterIP   172.30.234.22    <none>        443/TCP   48m
+service/jupyter-nb-psapuser8         ClusterIP   172.30.182.215   <none>        80/TCP    52m
+service/jupyter-nb-psapuser8-tls     ClusterIP   172.30.87.205    <none>        443/TCP   52m
+service/jupyter-nb-psapuser80        ClusterIP   172.30.127.181   <none>        80/TCP    48m
+service/jupyter-nb-psapuser80-tls    ClusterIP   172.30.237.45    <none>        443/TCP   48m
+service/jupyter-nb-psapuser81        ClusterIP   172.30.73.188    <none>        80/TCP    48m
+service/jupyter-nb-psapuser81-tls    ClusterIP   172.30.7.25      <none>        443/TCP   48m
+service/jupyter-nb-psapuser82        ClusterIP   172.30.12.63     <none>        80/TCP    48m
+service/jupyter-nb-psapuser82-tls    ClusterIP   172.30.50.212    <none>        443/TCP   48m
+service/jupyter-nb-psapuser83        ClusterIP   172.30.27.102    <none>        80/TCP    48m
+service/jupyter-nb-psapuser83-tls    ClusterIP   172.30.160.175   <none>        443/TCP   48m
+service/jupyter-nb-psapuser84        ClusterIP   172.30.71.72     <none>        80/TCP    48m
+service/jupyter-nb-psapuser84-tls    ClusterIP   172.30.118.80    <none>        443/TCP   48m
+service/jupyter-nb-psapuser85        ClusterIP   172.30.155.128   <none>        80/TCP    48m
+service/jupyter-nb-psapuser85-tls    ClusterIP   172.30.2.9       <none>        443/TCP   48m
+service/jupyter-nb-psapuser86        ClusterIP   172.30.254.185   <none>        80/TCP    48m
+service/jupyter-nb-psapuser86-tls    ClusterIP   172.30.194.112   <none>        443/TCP   48m
+service/jupyter-nb-psapuser87        ClusterIP   172.30.176.43    <none>        80/TCP    48m
+service/jupyter-nb-psapuser87-tls    ClusterIP   172.30.86.216    <none>        443/TCP   48m
+service/jupyter-nb-psapuser88        ClusterIP   172.30.121.11    <none>        80/TCP    48m
+service/jupyter-nb-psapuser88-tls    ClusterIP   172.30.166.173   <none>        443/TCP   48m
+service/jupyter-nb-psapuser89        ClusterIP   172.30.61.159    <none>        80/TCP    48m
+service/jupyter-nb-psapuser89-tls    ClusterIP   172.30.25.255    <none>        443/TCP   48m
+service/jupyter-nb-psapuser9         ClusterIP   172.30.62.73     <none>        80/TCP    52m
+service/jupyter-nb-psapuser9-tls     ClusterIP   172.30.1.229     <none>        443/TCP   52m
+service/jupyter-nb-psapuser90        ClusterIP   172.30.210.189   <none>        80/TCP    48m
+service/jupyter-nb-psapuser90-tls    ClusterIP   172.30.12.185    <none>        443/TCP   48m
+service/jupyter-nb-psapuser91        ClusterIP   172.30.51.19     <none>        80/TCP    48m
+service/jupyter-nb-psapuser91-tls    ClusterIP   172.30.35.31     <none>        443/TCP   48m
+service/jupyter-nb-psapuser92        ClusterIP   172.30.155.80    <none>        80/TCP    48m
+service/jupyter-nb-psapuser92-tls    ClusterIP   172.30.202.174   <none>        443/TCP   48m
+service/jupyter-nb-psapuser93        ClusterIP   172.30.155.106   <none>        80/TCP    47m
+service/jupyter-nb-psapuser93-tls    ClusterIP   172.30.89.161    <none>        443/TCP   47m
+service/jupyter-nb-psapuser94        ClusterIP   172.30.153.180   <none>        80/TCP    48m
+service/jupyter-nb-psapuser94-tls    ClusterIP   172.30.8.236     <none>        443/TCP   48m
+service/jupyter-nb-psapuser95        ClusterIP   172.30.208.76    <none>        80/TCP    47m
+service/jupyter-nb-psapuser95-tls    ClusterIP   172.30.119.75    <none>        443/TCP   48m
+service/jupyter-nb-psapuser96        ClusterIP   172.30.253.190   <none>        80/TCP    47m
+service/jupyter-nb-psapuser96-tls    ClusterIP   172.30.139.227   <none>        443/TCP   48m
+service/jupyter-nb-psapuser97        ClusterIP   172.30.139.49    <none>        80/TCP    47m
+service/jupyter-nb-psapuser97-tls    ClusterIP   172.30.15.122    <none>        443/TCP   48m
+service/jupyter-nb-psapuser98        ClusterIP   172.30.250.42    <none>        80/TCP    47m
+service/jupyter-nb-psapuser98-tls    ClusterIP   172.30.19.243    <none>        443/TCP   47m
+service/jupyter-nb-psapuser99        ClusterIP   172.30.73.127    <none>        80/TCP    47m
+service/jupyter-nb-psapuser99-tls    ClusterIP   172.30.151.152   <none>        443/TCP   47m
+
+NAME                                      READY   AGE
+statefulset.apps/jupyter-nb-psapuser0     1/1     52m
+statefulset.apps/jupyter-nb-psapuser1     1/1     52m
+statefulset.apps/jupyter-nb-psapuser10    1/1     52m
+statefulset.apps/jupyter-nb-psapuser100   1/1     47m
+statefulset.apps/jupyter-nb-psapuser101   1/1     47m
+statefulset.apps/jupyter-nb-psapuser102   1/1     47m
+statefulset.apps/jupyter-nb-psapuser103   1/1     47m
+statefulset.apps/jupyter-nb-psapuser104   1/1     47m
+statefulset.apps/jupyter-nb-psapuser105   1/1     47m
+statefulset.apps/jupyter-nb-psapuser106   1/1     47m
+statefulset.apps/jupyter-nb-psapuser107   1/1     47m
+statefulset.apps/jupyter-nb-psapuser108   1/1     47m
+statefulset.apps/jupyter-nb-psapuser109   1/1     47m
+statefulset.apps/jupyter-nb-psapuser11    1/1     52m
+statefulset.apps/jupyter-nb-psapuser110   1/1     47m
+statefulset.apps/jupyter-nb-psapuser111   1/1     47m
+statefulset.apps/jupyter-nb-psapuser112   1/1     46m
+statefulset.apps/jupyter-nb-psapuser113   1/1     47m
+statefulset.apps/jupyter-nb-psapuser114   1/1     47m
+statefulset.apps/jupyter-nb-psapuser115   1/1     47m
+statefulset.apps/jupyter-nb-psapuser116   1/1     46m
+statefulset.apps/jupyter-nb-psapuser117   1/1     46m
+statefulset.apps/jupyter-nb-psapuser118   1/1     46m
+statefulset.apps/jupyter-nb-psapuser119   1/1     46m
+statefulset.apps/jupyter-nb-psapuser12    1/1     52m
+statefulset.apps/jupyter-nb-psapuser120   1/1     46m
+statefulset.apps/jupyter-nb-psapuser121   1/1     46m
+statefulset.apps/jupyter-nb-psapuser122   1/1     46m
+statefulset.apps/jupyter-nb-psapuser123   1/1     46m
+statefulset.apps/jupyter-nb-psapuser124   1/1     46m
+statefulset.apps/jupyter-nb-psapuser125   1/1     46m
+statefulset.apps/jupyter-nb-psapuser126   1/1     46m
+statefulset.apps/jupyter-nb-psapuser127   1/1     46m
+statefulset.apps/jupyter-nb-psapuser128   1/1     46m
+statefulset.apps/jupyter-nb-psapuser129   1/1     46m
+statefulset.apps/jupyter-nb-psapuser13    1/1     52m
+statefulset.apps/jupyter-nb-psapuser130   1/1     46m
+statefulset.apps/jupyter-nb-psapuser131   1/1     46m
+statefulset.apps/jupyter-nb-psapuser132   1/1     46m
+statefulset.apps/jupyter-nb-psapuser133   1/1     46m
+statefulset.apps/jupyter-nb-psapuser134   1/1     46m
+statefulset.apps/jupyter-nb-psapuser135   1/1     45m
+statefulset.apps/jupyter-nb-psapuser136   1/1     45m
+statefulset.apps/jupyter-nb-psapuser137   1/1     45m
+statefulset.apps/jupyter-nb-psapuser138   1/1     45m
+statefulset.apps/jupyter-nb-psapuser139   1/1     45m
+statefulset.apps/jupyter-nb-psapuser14    1/1     52m
+statefulset.apps/jupyter-nb-psapuser140   1/1     45m
+statefulset.apps/jupyter-nb-psapuser141   1/1     45m
+statefulset.apps/jupyter-nb-psapuser142   1/1     45m
+statefulset.apps/jupyter-nb-psapuser143   1/1     45m
+statefulset.apps/jupyter-nb-psapuser144   1/1     45m
+statefulset.apps/jupyter-nb-psapuser145   1/1     45m
+statefulset.apps/jupyter-nb-psapuser146   1/1     45m
+statefulset.apps/jupyter-nb-psapuser147   1/1     45m
+statefulset.apps/jupyter-nb-psapuser148   1/1     45m
+statefulset.apps/jupyter-nb-psapuser149   1/1     45m
+statefulset.apps/jupyter-nb-psapuser15    1/1     52m
+statefulset.apps/jupyter-nb-psapuser150   1/1     45m
+statefulset.apps/jupyter-nb-psapuser151   1/1     45m
+statefulset.apps/jupyter-nb-psapuser152   1/1     45m
+statefulset.apps/jupyter-nb-psapuser153   1/1     45m
+statefulset.apps/jupyter-nb-psapuser154   1/1     45m
+statefulset.apps/jupyter-nb-psapuser155   1/1     45m
+statefulset.apps/jupyter-nb-psapuser156   1/1     44m
+statefulset.apps/jupyter-nb-psapuser157   1/1     44m
+statefulset.apps/jupyter-nb-psapuser158   1/1     44m
+statefulset.apps/jupyter-nb-psapuser159   1/1     44m
+statefulset.apps/jupyter-nb-psapuser16    1/1     52m
+statefulset.apps/jupyter-nb-psapuser160   1/1     44m
+statefulset.apps/jupyter-nb-psapuser161   1/1     44m
+statefulset.apps/jupyter-nb-psapuser162   1/1     44m
+statefulset.apps/jupyter-nb-psapuser163   1/1     44m
+statefulset.apps/jupyter-nb-psapuser164   1/1     44m
+statefulset.apps/jupyter-nb-psapuser165   1/1     44m
+statefulset.apps/jupyter-nb-psapuser166   1/1     44m
+statefulset.apps/jupyter-nb-psapuser167   1/1     44m
+statefulset.apps/jupyter-nb-psapuser168   1/1     44m
+statefulset.apps/jupyter-nb-psapuser169   1/1     44m
+statefulset.apps/jupyter-nb-psapuser17    1/1     51m
+statefulset.apps/jupyter-nb-psapuser170   1/1     44m
+statefulset.apps/jupyter-nb-psapuser171   1/1     44m
+statefulset.apps/jupyter-nb-psapuser172   1/1     44m
+statefulset.apps/jupyter-nb-psapuser173   1/1     44m
+statefulset.apps/jupyter-nb-psapuser174   1/1     44m
+statefulset.apps/jupyter-nb-psapuser175   1/1     44m
+statefulset.apps/jupyter-nb-psapuser176   1/1     43m
+statefulset.apps/jupyter-nb-psapuser177   1/1     43m
+statefulset.apps/jupyter-nb-psapuser178   1/1     43m
+statefulset.apps/jupyter-nb-psapuser179   1/1     43m
+statefulset.apps/jupyter-nb-psapuser18    1/1     51m
+statefulset.apps/jupyter-nb-psapuser180   1/1     43m
+statefulset.apps/jupyter-nb-psapuser181   1/1     43m
+statefulset.apps/jupyter-nb-psapuser182   1/1     43m
+statefulset.apps/jupyter-nb-psapuser183   1/1     43m
+statefulset.apps/jupyter-nb-psapuser184   1/1     43m
+statefulset.apps/jupyter-nb-psapuser185   1/1     43m
+statefulset.apps/jupyter-nb-psapuser186   1/1     43m
+statefulset.apps/jupyter-nb-psapuser187   1/1     43m
+statefulset.apps/jupyter-nb-psapuser188   1/1     43m
+statefulset.apps/jupyter-nb-psapuser189   1/1     43m
+statefulset.apps/jupyter-nb-psapuser19    1/1     51m
+statefulset.apps/jupyter-nb-psapuser190   1/1     43m
+statefulset.apps/jupyter-nb-psapuser191   1/1     43m
+statefulset.apps/jupyter-nb-psapuser192   1/1     43m
+statefulset.apps/jupyter-nb-psapuser193   1/1     43m
+statefulset.apps/jupyter-nb-psapuser194   1/1     43m
+statefulset.apps/jupyter-nb-psapuser195   1/1     43m
+statefulset.apps/jupyter-nb-psapuser196   1/1     42m
+statefulset.apps/jupyter-nb-psapuser197   1/1     42m
+statefulset.apps/jupyter-nb-psapuser198   1/1     42m
+statefulset.apps/jupyter-nb-psapuser199   1/1     42m
+statefulset.apps/jupyter-nb-psapuser2     1/1     52m
+statefulset.apps/jupyter-nb-psapuser20    1/1     51m
+statefulset.apps/jupyter-nb-psapuser200   1/1     42m
+statefulset.apps/jupyter-nb-psapuser201   1/1     42m
+statefulset.apps/jupyter-nb-psapuser202   1/1     42m
+statefulset.apps/jupyter-nb-psapuser203   1/1     42m
+statefulset.apps/jupyter-nb-psapuser204   1/1     42m
+statefulset.apps/jupyter-nb-psapuser205   1/1     42m
+statefulset.apps/jupyter-nb-psapuser206   1/1     42m
+statefulset.apps/jupyter-nb-psapuser207   1/1     42m
+statefulset.apps/jupyter-nb-psapuser208   1/1     42m
+statefulset.apps/jupyter-nb-psapuser209   1/1     42m
+statefulset.apps/jupyter-nb-psapuser21    1/1     51m
+statefulset.apps/jupyter-nb-psapuser210   1/1     42m
+statefulset.apps/jupyter-nb-psapuser211   1/1     42m
+statefulset.apps/jupyter-nb-psapuser212   1/1     42m
+statefulset.apps/jupyter-nb-psapuser213   1/1     42m
+statefulset.apps/jupyter-nb-psapuser214   1/1     42m
+statefulset.apps/jupyter-nb-psapuser215   1/1     42m
+statefulset.apps/jupyter-nb-psapuser216   1/1     41m
+statefulset.apps/jupyter-nb-psapuser217   1/1     41m
+statefulset.apps/jupyter-nb-psapuser218   1/1     41m
+statefulset.apps/jupyter-nb-psapuser219   1/1     41m
+statefulset.apps/jupyter-nb-psapuser22    1/1     51m
+statefulset.apps/jupyter-nb-psapuser220   1/1     41m
+statefulset.apps/jupyter-nb-psapuser221   1/1     41m
+statefulset.apps/jupyter-nb-psapuser222   1/1     41m
+statefulset.apps/jupyter-nb-psapuser223   1/1     41m
+statefulset.apps/jupyter-nb-psapuser224   1/1     41m
+statefulset.apps/jupyter-nb-psapuser225   1/1     41m
+statefulset.apps/jupyter-nb-psapuser226   1/1     41m
+statefulset.apps/jupyter-nb-psapuser227   1/1     41m
+statefulset.apps/jupyter-nb-psapuser228   1/1     41m
+statefulset.apps/jupyter-nb-psapuser229   1/1     41m
+statefulset.apps/jupyter-nb-psapuser23    1/1     51m
+statefulset.apps/jupyter-nb-psapuser230   1/1     41m
+statefulset.apps/jupyter-nb-psapuser231   1/1     41m
+statefulset.apps/jupyter-nb-psapuser232   1/1     41m
+statefulset.apps/jupyter-nb-psapuser233   1/1     41m
+statefulset.apps/jupyter-nb-psapuser234   1/1     41m
+statefulset.apps/jupyter-nb-psapuser235   1/1     40m
+statefulset.apps/jupyter-nb-psapuser236   1/1     40m
+statefulset.apps/jupyter-nb-psapuser237   1/1     40m
+statefulset.apps/jupyter-nb-psapuser238   1/1     40m
+statefulset.apps/jupyter-nb-psapuser239   1/1     40m
+statefulset.apps/jupyter-nb-psapuser24    1/1     51m
+statefulset.apps/jupyter-nb-psapuser240   1/1     40m
+statefulset.apps/jupyter-nb-psapuser241   1/1     40m
+statefulset.apps/jupyter-nb-psapuser242   1/1     40m
+statefulset.apps/jupyter-nb-psapuser243   1/1     40m
+statefulset.apps/jupyter-nb-psapuser244   1/1     40m
+statefulset.apps/jupyter-nb-psapuser245   1/1     40m
+statefulset.apps/jupyter-nb-psapuser246   1/1     40m
+statefulset.apps/jupyter-nb-psapuser247   1/1     40m
+statefulset.apps/jupyter-nb-psapuser248   1/1     40m
+statefulset.apps/jupyter-nb-psapuser249   1/1     40m
+statefulset.apps/jupyter-nb-psapuser25    1/1     51m
+statefulset.apps/jupyter-nb-psapuser250   1/1     40m
+statefulset.apps/jupyter-nb-psapuser251   1/1     40m
+statefulset.apps/jupyter-nb-psapuser252   1/1     40m
+statefulset.apps/jupyter-nb-psapuser253   1/1     40m
+statefulset.apps/jupyter-nb-psapuser254   1/1     40m
+statefulset.apps/jupyter-nb-psapuser255   1/1     40m
+statefulset.apps/jupyter-nb-psapuser256   1/1     39m
+statefulset.apps/jupyter-nb-psapuser257   1/1     39m
+statefulset.apps/jupyter-nb-psapuser258   1/1     39m
+statefulset.apps/jupyter-nb-psapuser259   1/1     39m
+statefulset.apps/jupyter-nb-psapuser26    1/1     51m
+statefulset.apps/jupyter-nb-psapuser260   1/1     39m
+statefulset.apps/jupyter-nb-psapuser261   1/1     39m
+statefulset.apps/jupyter-nb-psapuser262   1/1     39m
+statefulset.apps/jupyter-nb-psapuser263   1/1     39m
+statefulset.apps/jupyter-nb-psapuser264   1/1     39m
+statefulset.apps/jupyter-nb-psapuser265   1/1     39m
+statefulset.apps/jupyter-nb-psapuser266   1/1     39m
+statefulset.apps/jupyter-nb-psapuser267   1/1     39m
+statefulset.apps/jupyter-nb-psapuser268   1/1     39m
+statefulset.apps/jupyter-nb-psapuser269   1/1     39m
+statefulset.apps/jupyter-nb-psapuser27    1/1     51m
+statefulset.apps/jupyter-nb-psapuser270   1/1     39m
+statefulset.apps/jupyter-nb-psapuser271   1/1     39m
+statefulset.apps/jupyter-nb-psapuser272   1/1     39m
+statefulset.apps/jupyter-nb-psapuser273   1/1     38m
+statefulset.apps/jupyter-nb-psapuser274   1/1     39m
+statefulset.apps/jupyter-nb-psapuser275   1/1     38m
+statefulset.apps/jupyter-nb-psapuser276   1/1     38m
+statefulset.apps/jupyter-nb-psapuser277   1/1     38m
+statefulset.apps/jupyter-nb-psapuser278   1/1     38m
+statefulset.apps/jupyter-nb-psapuser279   1/1     38m
+statefulset.apps/jupyter-nb-psapuser28    1/1     51m
+statefulset.apps/jupyter-nb-psapuser280   1/1     38m
+statefulset.apps/jupyter-nb-psapuser281   1/1     38m
+statefulset.apps/jupyter-nb-psapuser282   1/1     38m
+statefulset.apps/jupyter-nb-psapuser283   1/1     38m
+statefulset.apps/jupyter-nb-psapuser284   1/1     38m
+statefulset.apps/jupyter-nb-psapuser285   1/1     38m
+statefulset.apps/jupyter-nb-psapuser286   1/1     38m
+statefulset.apps/jupyter-nb-psapuser287   1/1     38m
+statefulset.apps/jupyter-nb-psapuser288   1/1     38m
+statefulset.apps/jupyter-nb-psapuser289   1/1     38m
+statefulset.apps/jupyter-nb-psapuser29    1/1     51m
+statefulset.apps/jupyter-nb-psapuser290   1/1     38m
+statefulset.apps/jupyter-nb-psapuser291   1/1     38m
+statefulset.apps/jupyter-nb-psapuser292   1/1     38m
+statefulset.apps/jupyter-nb-psapuser293   1/1     38m
+statefulset.apps/jupyter-nb-psapuser294   1/1     38m
+statefulset.apps/jupyter-nb-psapuser295   1/1     38m
+statefulset.apps/jupyter-nb-psapuser296   1/1     37m
+statefulset.apps/jupyter-nb-psapuser297   1/1     37m
+statefulset.apps/jupyter-nb-psapuser298   1/1     37m
+statefulset.apps/jupyter-nb-psapuser299   1/1     37m
+statefulset.apps/jupyter-nb-psapuser3     1/1     52m
+statefulset.apps/jupyter-nb-psapuser30    1/1     51m
+statefulset.apps/jupyter-nb-psapuser31    1/1     51m
+statefulset.apps/jupyter-nb-psapuser32    1/1     51m
+statefulset.apps/jupyter-nb-psapuser33    1/1     51m
+statefulset.apps/jupyter-nb-psapuser34    1/1     51m
+statefulset.apps/jupyter-nb-psapuser35    1/1     51m
+statefulset.apps/jupyter-nb-psapuser36    1/1     51m
+statefulset.apps/jupyter-nb-psapuser37    1/1     50m
+statefulset.apps/jupyter-nb-psapuser38    1/1     50m
+statefulset.apps/jupyter-nb-psapuser39    1/1     50m
+statefulset.apps/jupyter-nb-psapuser4     1/1     52m
+statefulset.apps/jupyter-nb-psapuser40    1/1     50m
+statefulset.apps/jupyter-nb-psapuser41    1/1     50m
+statefulset.apps/jupyter-nb-psapuser42    1/1     50m
+statefulset.apps/jupyter-nb-psapuser43    1/1     50m
+statefulset.apps/jupyter-nb-psapuser44    1/1     50m
+statefulset.apps/jupyter-nb-psapuser45    1/1     50m
+statefulset.apps/jupyter-nb-psapuser46    1/1     50m
+statefulset.apps/jupyter-nb-psapuser47    1/1     50m
+statefulset.apps/jupyter-nb-psapuser48    1/1     50m
+statefulset.apps/jupyter-nb-psapuser49    1/1     50m
+statefulset.apps/jupyter-nb-psapuser5     1/1     52m
+statefulset.apps/jupyter-nb-psapuser50    1/1     50m
+statefulset.apps/jupyter-nb-psapuser51    1/1     50m
+statefulset.apps/jupyter-nb-psapuser52    1/1     50m
+statefulset.apps/jupyter-nb-psapuser53    1/1     50m
+statefulset.apps/jupyter-nb-psapuser54    1/1     50m
+statefulset.apps/jupyter-nb-psapuser55    1/1     49m
+statefulset.apps/jupyter-nb-psapuser56    1/1     49m
+statefulset.apps/jupyter-nb-psapuser57    1/1     49m
+statefulset.apps/jupyter-nb-psapuser58    1/1     49m
+statefulset.apps/jupyter-nb-psapuser59    1/1     49m
+statefulset.apps/jupyter-nb-psapuser6     1/1     52m
+statefulset.apps/jupyter-nb-psapuser60    1/1     49m
+statefulset.apps/jupyter-nb-psapuser61    1/1     49m
+statefulset.apps/jupyter-nb-psapuser62    1/1     49m
+statefulset.apps/jupyter-nb-psapuser63    1/1     49m
+statefulset.apps/jupyter-nb-psapuser64    1/1     49m
+statefulset.apps/jupyter-nb-psapuser65    1/1     49m
+statefulset.apps/jupyter-nb-psapuser66    1/1     49m
+statefulset.apps/jupyter-nb-psapuser67    1/1     49m
+statefulset.apps/jupyter-nb-psapuser68    1/1     49m
+statefulset.apps/jupyter-nb-psapuser69    1/1     49m
+statefulset.apps/jupyter-nb-psapuser7     1/1     52m
+statefulset.apps/jupyter-nb-psapuser70    1/1     49m
+statefulset.apps/jupyter-nb-psapuser71    1/1     49m
+statefulset.apps/jupyter-nb-psapuser72    1/1     49m
+statefulset.apps/jupyter-nb-psapuser73    1/1     49m
+statefulset.apps/jupyter-nb-psapuser74    1/1     49m
+statefulset.apps/jupyter-nb-psapuser75    1/1     48m
+statefulset.apps/jupyter-nb-psapuser76    1/1     48m
+statefulset.apps/jupyter-nb-psapuser77    1/1     48m
+statefulset.apps/jupyter-nb-psapuser78    1/1     48m
+statefulset.apps/jupyter-nb-psapuser79    1/1     48m
+statefulset.apps/jupyter-nb-psapuser8     1/1     52m
+statefulset.apps/jupyter-nb-psapuser80    1/1     48m
+statefulset.apps/jupyter-nb-psapuser81    1/1     48m
+statefulset.apps/jupyter-nb-psapuser82    1/1     48m
+statefulset.apps/jupyter-nb-psapuser83    1/1     48m
+statefulset.apps/jupyter-nb-psapuser84    1/1     48m
+statefulset.apps/jupyter-nb-psapuser85    1/1     48m
+statefulset.apps/jupyter-nb-psapuser86    1/1     48m
+statefulset.apps/jupyter-nb-psapuser87    1/1     48m
+statefulset.apps/jupyter-nb-psapuser88    1/1     48m
+statefulset.apps/jupyter-nb-psapuser89    1/1     48m
+statefulset.apps/jupyter-nb-psapuser9     1/1     52m
+statefulset.apps/jupyter-nb-psapuser90    1/1     48m
+statefulset.apps/jupyter-nb-psapuser91    1/1     48m
+statefulset.apps/jupyter-nb-psapuser92    1/1     48m
+statefulset.apps/jupyter-nb-psapuser93    1/1     47m
+statefulset.apps/jupyter-nb-psapuser94    1/1     48m
+statefulset.apps/jupyter-nb-psapuser95    1/1     47m
+statefulset.apps/jupyter-nb-psapuser96    1/1     47m
+statefulset.apps/jupyter-nb-psapuser97    1/1     47m
+statefulset.apps/jupyter-nb-psapuser98    1/1     47m
+statefulset.apps/jupyter-nb-psapuser99    1/1     47m
+
+NAME                                              HOST/PORT                                                                                                     PATH   SERVICES                     PORT          TERMINATION          WILDCARD
+route.route.openshift.io/jupyter-nb-psapuser0     jupyter-nb-psapuser0-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser0-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser1     jupyter-nb-psapuser1-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser1-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser10    jupyter-nb-psapuser10-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser10-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser100   jupyter-nb-psapuser100-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser100-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser101   jupyter-nb-psapuser101-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser101-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser102   jupyter-nb-psapuser102-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser102-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser103   jupyter-nb-psapuser103-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser103-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser104   jupyter-nb-psapuser104-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser104-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser105   jupyter-nb-psapuser105-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser105-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser106   jupyter-nb-psapuser106-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser106-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser107   jupyter-nb-psapuser107-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser107-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser108   jupyter-nb-psapuser108-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser108-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser109   jupyter-nb-psapuser109-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser109-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser11    jupyter-nb-psapuser11-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser11-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser110   jupyter-nb-psapuser110-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser110-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser111   jupyter-nb-psapuser111-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser111-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser112   jupyter-nb-psapuser112-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser112-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser113   jupyter-nb-psapuser113-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser113-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser114   jupyter-nb-psapuser114-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser114-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser115   jupyter-nb-psapuser115-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser115-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser116   jupyter-nb-psapuser116-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser116-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser117   jupyter-nb-psapuser117-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser117-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser118   jupyter-nb-psapuser118-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser118-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser119   jupyter-nb-psapuser119-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser119-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser12    jupyter-nb-psapuser12-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser12-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser120   jupyter-nb-psapuser120-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser120-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser121   jupyter-nb-psapuser121-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser121-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser122   jupyter-nb-psapuser122-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser122-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser123   jupyter-nb-psapuser123-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser123-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser124   jupyter-nb-psapuser124-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser124-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser125   jupyter-nb-psapuser125-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser125-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser126   jupyter-nb-psapuser126-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser126-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser127   jupyter-nb-psapuser127-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser127-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser128   jupyter-nb-psapuser128-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser128-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser129   jupyter-nb-psapuser129-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser129-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser13    jupyter-nb-psapuser13-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser13-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser130   jupyter-nb-psapuser130-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser130-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser131   jupyter-nb-psapuser131-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser131-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser132   jupyter-nb-psapuser132-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser132-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser133   jupyter-nb-psapuser133-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser133-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser134   jupyter-nb-psapuser134-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser134-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser135   jupyter-nb-psapuser135-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser135-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser136   jupyter-nb-psapuser136-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser136-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser137   jupyter-nb-psapuser137-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser137-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser138   jupyter-nb-psapuser138-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser138-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser139   jupyter-nb-psapuser139-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser139-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser14    jupyter-nb-psapuser14-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser14-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser140   jupyter-nb-psapuser140-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser140-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser141   jupyter-nb-psapuser141-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser141-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser142   jupyter-nb-psapuser142-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser142-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser143   jupyter-nb-psapuser143-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser143-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser144   jupyter-nb-psapuser144-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser144-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser145   jupyter-nb-psapuser145-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser145-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser146   jupyter-nb-psapuser146-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser146-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser147   jupyter-nb-psapuser147-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser147-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser148   jupyter-nb-psapuser148-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser148-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser149   jupyter-nb-psapuser149-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser149-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser15    jupyter-nb-psapuser15-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser15-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser150   jupyter-nb-psapuser150-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser150-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser151   jupyter-nb-psapuser151-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser151-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser152   jupyter-nb-psapuser152-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser152-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser153   jupyter-nb-psapuser153-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser153-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser154   jupyter-nb-psapuser154-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser154-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser155   jupyter-nb-psapuser155-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser155-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser156   jupyter-nb-psapuser156-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser156-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser157   jupyter-nb-psapuser157-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser157-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser158   jupyter-nb-psapuser158-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser158-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser159   jupyter-nb-psapuser159-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser159-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser16    jupyter-nb-psapuser16-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser16-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser160   jupyter-nb-psapuser160-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser160-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser161   jupyter-nb-psapuser161-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser161-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser162   jupyter-nb-psapuser162-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser162-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser163   jupyter-nb-psapuser163-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser163-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser164   jupyter-nb-psapuser164-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser164-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser165   jupyter-nb-psapuser165-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser165-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser166   jupyter-nb-psapuser166-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser166-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser167   jupyter-nb-psapuser167-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser167-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser168   jupyter-nb-psapuser168-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser168-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser169   jupyter-nb-psapuser169-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser169-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser17    jupyter-nb-psapuser17-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser17-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser170   jupyter-nb-psapuser170-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser170-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser171   jupyter-nb-psapuser171-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser171-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser172   jupyter-nb-psapuser172-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser172-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser173   jupyter-nb-psapuser173-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser173-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser174   jupyter-nb-psapuser174-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser174-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser175   jupyter-nb-psapuser175-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser175-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser176   jupyter-nb-psapuser176-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser176-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser177   jupyter-nb-psapuser177-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser177-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser178   jupyter-nb-psapuser178-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser178-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser179   jupyter-nb-psapuser179-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser179-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser18    jupyter-nb-psapuser18-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser18-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser180   jupyter-nb-psapuser180-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser180-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser181   jupyter-nb-psapuser181-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser181-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser182   jupyter-nb-psapuser182-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser182-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser183   jupyter-nb-psapuser183-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser183-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser184   jupyter-nb-psapuser184-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser184-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser185   jupyter-nb-psapuser185-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser185-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser186   jupyter-nb-psapuser186-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser186-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser187   jupyter-nb-psapuser187-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser187-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser188   jupyter-nb-psapuser188-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser188-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser189   jupyter-nb-psapuser189-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser189-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser19    jupyter-nb-psapuser19-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser19-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser190   jupyter-nb-psapuser190-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser190-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser191   jupyter-nb-psapuser191-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser191-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser192   jupyter-nb-psapuser192-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser192-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser193   jupyter-nb-psapuser193-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser193-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser194   jupyter-nb-psapuser194-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser194-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser195   jupyter-nb-psapuser195-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser195-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser196   jupyter-nb-psapuser196-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser196-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser197   jupyter-nb-psapuser197-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser197-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser198   jupyter-nb-psapuser198-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser198-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser199   jupyter-nb-psapuser199-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser199-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser2     jupyter-nb-psapuser2-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser2-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser20    jupyter-nb-psapuser20-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser20-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser200   jupyter-nb-psapuser200-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser200-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser201   jupyter-nb-psapuser201-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser201-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser202   jupyter-nb-psapuser202-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser202-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser203   jupyter-nb-psapuser203-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser203-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser204   jupyter-nb-psapuser204-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser204-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser205   jupyter-nb-psapuser205-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser205-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser206   jupyter-nb-psapuser206-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser206-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser207   jupyter-nb-psapuser207-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser207-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser208   jupyter-nb-psapuser208-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser208-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser209   jupyter-nb-psapuser209-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser209-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser21    jupyter-nb-psapuser21-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser21-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser210   jupyter-nb-psapuser210-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser210-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser211   jupyter-nb-psapuser211-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser211-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser212   jupyter-nb-psapuser212-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser212-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser213   jupyter-nb-psapuser213-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser213-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser214   jupyter-nb-psapuser214-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser214-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser215   jupyter-nb-psapuser215-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser215-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser216   jupyter-nb-psapuser216-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser216-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser217   jupyter-nb-psapuser217-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser217-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser218   jupyter-nb-psapuser218-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser218-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser219   jupyter-nb-psapuser219-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser219-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser22    jupyter-nb-psapuser22-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser22-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser220   jupyter-nb-psapuser220-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser220-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser221   jupyter-nb-psapuser221-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser221-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser222   jupyter-nb-psapuser222-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser222-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser223   jupyter-nb-psapuser223-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser223-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser224   jupyter-nb-psapuser224-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser224-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser225   jupyter-nb-psapuser225-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser225-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser226   jupyter-nb-psapuser226-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser226-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser227   jupyter-nb-psapuser227-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser227-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser228   jupyter-nb-psapuser228-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser228-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser229   jupyter-nb-psapuser229-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser229-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser23    jupyter-nb-psapuser23-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser23-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser230   jupyter-nb-psapuser230-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser230-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser231   jupyter-nb-psapuser231-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser231-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser232   jupyter-nb-psapuser232-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser232-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser233   jupyter-nb-psapuser233-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser233-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser234   jupyter-nb-psapuser234-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser234-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser235   jupyter-nb-psapuser235-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser235-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser236   jupyter-nb-psapuser236-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser236-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser237   jupyter-nb-psapuser237-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser237-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser238   jupyter-nb-psapuser238-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser238-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser239   jupyter-nb-psapuser239-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser239-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser24    jupyter-nb-psapuser24-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser24-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser240   jupyter-nb-psapuser240-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser240-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser241   jupyter-nb-psapuser241-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser241-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser242   jupyter-nb-psapuser242-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser242-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser243   jupyter-nb-psapuser243-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser243-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser244   jupyter-nb-psapuser244-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser244-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser245   jupyter-nb-psapuser245-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser245-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser246   jupyter-nb-psapuser246-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser246-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser247   jupyter-nb-psapuser247-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser247-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser248   jupyter-nb-psapuser248-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser248-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser249   jupyter-nb-psapuser249-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser249-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser25    jupyter-nb-psapuser25-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser25-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser250   jupyter-nb-psapuser250-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser250-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser251   jupyter-nb-psapuser251-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser251-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser252   jupyter-nb-psapuser252-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser252-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser253   jupyter-nb-psapuser253-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser253-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser254   jupyter-nb-psapuser254-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser254-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser255   jupyter-nb-psapuser255-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser255-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser256   jupyter-nb-psapuser256-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser256-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser257   jupyter-nb-psapuser257-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser257-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser258   jupyter-nb-psapuser258-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser258-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser259   jupyter-nb-psapuser259-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser259-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser26    jupyter-nb-psapuser26-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser26-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser260   jupyter-nb-psapuser260-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser260-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser261   jupyter-nb-psapuser261-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser261-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser262   jupyter-nb-psapuser262-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser262-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser263   jupyter-nb-psapuser263-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser263-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser264   jupyter-nb-psapuser264-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser264-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser265   jupyter-nb-psapuser265-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser265-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser266   jupyter-nb-psapuser266-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser266-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser267   jupyter-nb-psapuser267-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser267-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser268   jupyter-nb-psapuser268-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser268-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser269   jupyter-nb-psapuser269-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser269-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser27    jupyter-nb-psapuser27-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser27-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser270   jupyter-nb-psapuser270-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser270-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser271   jupyter-nb-psapuser271-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser271-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser272   jupyter-nb-psapuser272-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser272-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser273   jupyter-nb-psapuser273-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser273-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser274   jupyter-nb-psapuser274-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser274-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser275   jupyter-nb-psapuser275-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser275-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser276   jupyter-nb-psapuser276-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser276-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser277   jupyter-nb-psapuser277-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser277-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser278   jupyter-nb-psapuser278-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser278-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser279   jupyter-nb-psapuser279-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser279-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser28    jupyter-nb-psapuser28-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser28-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser280   jupyter-nb-psapuser280-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser280-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser281   jupyter-nb-psapuser281-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser281-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser282   jupyter-nb-psapuser282-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser282-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser283   jupyter-nb-psapuser283-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser283-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser284   jupyter-nb-psapuser284-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser284-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser285   jupyter-nb-psapuser285-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser285-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser286   jupyter-nb-psapuser286-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser286-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser287   jupyter-nb-psapuser287-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser287-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser288   jupyter-nb-psapuser288-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser288-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser289   jupyter-nb-psapuser289-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser289-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser29    jupyter-nb-psapuser29-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser29-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser290   jupyter-nb-psapuser290-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser290-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser291   jupyter-nb-psapuser291-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser291-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser292   jupyter-nb-psapuser292-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser292-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser293   jupyter-nb-psapuser293-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser293-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser294   jupyter-nb-psapuser294-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser294-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser295   jupyter-nb-psapuser295-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser295-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser296   jupyter-nb-psapuser296-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser296-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser297   jupyter-nb-psapuser297-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser297-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser298   jupyter-nb-psapuser298-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser298-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser299   jupyter-nb-psapuser299-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org          jupyter-nb-psapuser299-tls   oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser3     jupyter-nb-psapuser3-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser3-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser30    jupyter-nb-psapuser30-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser30-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser31    jupyter-nb-psapuser31-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser31-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser32    jupyter-nb-psapuser32-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser32-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser33    jupyter-nb-psapuser33-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser33-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser34    jupyter-nb-psapuser34-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser34-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser35    jupyter-nb-psapuser35-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser35-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser36    jupyter-nb-psapuser36-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser36-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser37    jupyter-nb-psapuser37-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser37-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser38    jupyter-nb-psapuser38-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser38-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser39    jupyter-nb-psapuser39-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser39-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser4     jupyter-nb-psapuser4-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser4-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser40    jupyter-nb-psapuser40-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser40-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser41    jupyter-nb-psapuser41-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser41-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser42    jupyter-nb-psapuser42-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser42-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser43    jupyter-nb-psapuser43-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser43-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser44    jupyter-nb-psapuser44-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser44-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser45    jupyter-nb-psapuser45-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser45-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser46    jupyter-nb-psapuser46-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser46-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser47    jupyter-nb-psapuser47-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser47-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser48    jupyter-nb-psapuser48-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser48-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser49    jupyter-nb-psapuser49-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser49-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser5     jupyter-nb-psapuser5-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser5-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser50    jupyter-nb-psapuser50-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser50-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser51    jupyter-nb-psapuser51-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser51-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser52    jupyter-nb-psapuser52-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser52-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser53    jupyter-nb-psapuser53-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser53-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser54    jupyter-nb-psapuser54-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser54-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser55    jupyter-nb-psapuser55-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser55-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser56    jupyter-nb-psapuser56-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser56-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser57    jupyter-nb-psapuser57-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser57-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser58    jupyter-nb-psapuser58-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser58-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser59    jupyter-nb-psapuser59-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser59-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser6     jupyter-nb-psapuser6-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser6-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser60    jupyter-nb-psapuser60-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser60-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser61    jupyter-nb-psapuser61-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser61-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser62    jupyter-nb-psapuser62-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser62-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser63    jupyter-nb-psapuser63-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser63-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser64    jupyter-nb-psapuser64-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser64-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser65    jupyter-nb-psapuser65-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser65-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser66    jupyter-nb-psapuser66-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser66-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser67    jupyter-nb-psapuser67-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser67-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser68    jupyter-nb-psapuser68-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser68-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser69    jupyter-nb-psapuser69-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser69-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser7     jupyter-nb-psapuser7-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser7-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser70    jupyter-nb-psapuser70-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser70-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser71    jupyter-nb-psapuser71-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser71-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser72    jupyter-nb-psapuser72-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser72-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser73    jupyter-nb-psapuser73-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser73-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser74    jupyter-nb-psapuser74-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser74-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser75    jupyter-nb-psapuser75-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser75-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser76    jupyter-nb-psapuser76-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser76-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser77    jupyter-nb-psapuser77-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser77-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser78    jupyter-nb-psapuser78-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser78-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser79    jupyter-nb-psapuser79-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser79-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser8     jupyter-nb-psapuser8-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser8-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser80    jupyter-nb-psapuser80-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser80-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser81    jupyter-nb-psapuser81-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser81-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser82    jupyter-nb-psapuser82-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser82-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser83    jupyter-nb-psapuser83-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser83-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser84    jupyter-nb-psapuser84-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser84-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser85    jupyter-nb-psapuser85-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser85-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser86    jupyter-nb-psapuser86-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser86-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser87    jupyter-nb-psapuser87-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser87-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser88    jupyter-nb-psapuser88-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser88-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser89    jupyter-nb-psapuser89-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser89-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser9     jupyter-nb-psapuser9-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org            jupyter-nb-psapuser9-tls     oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser90    jupyter-nb-psapuser90-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser90-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser91    jupyter-nb-psapuser91-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser91-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser92    jupyter-nb-psapuser92-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser92-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser93    jupyter-nb-psapuser93-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser93-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser94    jupyter-nb-psapuser94-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser94-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser95    jupyter-nb-psapuser95-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser95-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser96    jupyter-nb-psapuser96-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser96-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser97    jupyter-nb-psapuser97-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser97-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser98    jupyter-nb-psapuser98-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser98-tls    oauth-proxy   reencrypt/Redirect   None
+route.route.openshift.io/jupyter-nb-psapuser99    jupyter-nb-psapuser99-rhods-notebooks.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org           jupyter-nb-psapuser99-tls    oauth-proxy   reencrypt/Redirect   None

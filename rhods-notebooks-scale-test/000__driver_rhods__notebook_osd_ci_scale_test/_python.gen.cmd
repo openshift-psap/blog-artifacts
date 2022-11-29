@@ -1,0 +1,23 @@
+./run_toolbox.py rhods notebook_osd_ci_scale_test \
+   --namespace='notebooks-scale-test' \
+   --artifacts_collected='no-screenshot-except-failed-and-zero' \
+   --idp_name='RHODS_CI_LDAP' \
+   --artifacts_exporter_istag='scale-test:artifacts-exporter' \
+   --ods_ci_istag='scale-test:ods-ci' \
+   --ods_ci_exclude_tags='None' \
+   --ods_ci_test_case='notebook_ux_e2e_test.robot' \
+   --notebook_benchmark_name='pyperf_bm_go.py' \
+   --notebook_benchmark_number='20' \
+   --notebook_benchmark_repeat='3' \
+   --notebook_image_name='s2i-generic-data-science-notebook' \
+   --notebook_size_name='Tiny' \
+   --user_sleep_factor='3.0' \
+   --secret_properties_file='/var/run/psap-ods-secret-1/s3_ldap.passwords' \
+   --state_signal_redis_server='redis.redis-notebooks-scale-test.svc' \
+   --toleration_key='only-test-pods' \
+   --user_count='300' \
+   --user_index_offset='0' \
+   --username_prefix='psapuser' \
+   --notebook_url='http://nginx-nginx-notebooks-scale-test.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org/benchmark_entrypoint.ipynb' \
+   --sut_cluster_kubeconfig='/tmp/secret/sutest_kubeconfig' \
+   --

@@ -1,0 +1,2186 @@
+2022-11-28 17:41:53,915 p=22052 u=psap-ci-runner n=ansible | ansible-playbook 2.9.27
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/opt/ci-artifacts/src/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /opt/venv/lib/python3.9/site-packages/ansible
+  executable location = /opt/venv/bin/ansible-playbook
+  python version = 3.9.14 (main, Nov  7 2022, 00:00:00) [GCC 11.3.1 20220421 (Red Hat 11.3.1-2)]
+2022-11-28 17:41:53,916 p=22052 u=psap-ci-runner n=ansible | Using /etc/ansible/ansible.cfg as config file
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'human_log', as we already have a stdout callback.
+2022-11-28 17:41:54,231 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | PLAYBOOK: tmpqi3p2fmi **********************************************************
+2022-11-28 17:41:54,232 p=22052 u=psap-ci-runner n=ansible | 1 plays in /opt/ci-artifacts/src/tmpqi3p2fmi
+2022-11-28 17:41:54,235 p=22052 u=psap-ci-runner n=ansible | PLAY [Run rhods_notebook_osd_ci_scale_test role] *******************************
+2022-11-28 17:41:54,245 p=22052 u=psap-ci-runner n=ansible | META: ran handlers
+2022-11-28 17:41:54,249 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,568 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,568 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,569 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,569 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,569 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:2
+2022-11-28 17:41:54,569 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Ensure that the secret properties file exists
+2022-11-28 17:41:54,572 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,603 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:6
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Ensure that the user count is set
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:41:54,604 p=22052 u=psap-ci-runner n=ansible | when: rhods_notebook_osd_ci_scale_test_user_count | int < 0
+2022-11-28 17:41:54,607 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,637 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,637 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,637 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,637 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,637 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:10
+2022-11-28 17:41:54,638 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Ensure that the IDP name is set
+2022-11-28 17:41:54,638 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:41:54,638 p=22052 u=psap-ci-runner n=ansible | when: not rhods_notebook_osd_ci_scale_test_idp_name
+2022-11-28 17:41:54,640 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,672 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,672 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,672 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,672 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,672 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:14
+2022-11-28 17:41:54,672 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Ensure that the username prefix is set
+2022-11-28 17:41:54,673 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:41:54,673 p=22052 u=psap-ci-runner n=ansible | when: not rhods_notebook_osd_ci_scale_test_username_prefix
+2022-11-28 17:41:54,676 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,709 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,709 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,709 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,709 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,709 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:18
+2022-11-28 17:41:54,709 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Define the test namespace
+2022-11-28 17:41:54,712 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,747 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,747 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,747 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,747 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,747 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:22
+2022-11-28 17:41:54,748 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Define the test environments
+2022-11-28 17:41:54,750 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,785 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,785 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,785 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:54,785 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:54,785 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:31
+2022-11-28 17:41:54,785 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Set system-under-test == driver-cluster if no system-under-test (SUT) is provided
+2022-11-28 17:41:54,788 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:35
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Fetch the notebook file (to validate the URL and store it)
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible | msg: OK (3312 bytes)
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible |   - status_code:	200
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible |   - checksum_dest:	None
+2022-11-28 17:41:55,359 p=22052 u=psap-ci-runner n=ansible |   - checksum_src:	9c22a74d18c9061958fe8182ae015f11c7d33d91
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - dest:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/notebook.raw
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - elapsed:	0
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - url:	http://nginx-nginx-notebooks-scale-test.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org/benchmark_entrypoint.ipynb
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - src:	/opt/ci-artifacts/src/~psap-ci-runner/.ansible/tmp/ansible-tmp-1669657314.8254964-22088-105199335806948/tmptgzsahl2
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - md5sum:	058c46fe03dd1dcb170a0a26c344fde1
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - mode:	0440
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - state:	file
+2022-11-28 17:41:55,360 p=22052 u=psap-ci-runner n=ansible |   - size:	3312
+2022-11-28 17:41:55,363 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:45
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Test the connectivity of the SUT cluster
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:55,920 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 17:41:55,923 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,399 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:48
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get RHODS dashboard address (SUT cluster)
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | <command> oc get route/rhods-dashboard -n redhat-ods-applications -ojsonpath={.spec.host}
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,400 p=22052 u=psap-ci-runner n=ansible | <stdout> rhods-dashboard-redhat-ods-applications.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 17:41:56,403 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,849 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:56,849 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,849 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,849 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:56,849 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:52
+2022-11-28 17:41:56,849 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get OCP console URL (SUT cluster)
+2022-11-28 17:41:56,850 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,850 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 17:41:56,850 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:56,850 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 17:41:56,853 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,088 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:57,088 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,088 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,088 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:57,088 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:56
+2022-11-28 17:41:57,089 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get OCP API URL (SUT cluster)
+2022-11-28 17:41:57,089 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,089 p=22052 u=psap-ci-runner n=ansible | <command> oc config view --minify -o jsonpath={.clusters[0].cluster.server}
+2022-11-28 17:41:57,089 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,089 p=22052 u=psap-ci-runner n=ansible | <stdout> https://api.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org:6443
+2022-11-28 17:41:57,092 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,686 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:57,686 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,686 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,686 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:57,686 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:60
+2022-11-28 17:41:57,686 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the RHODS version
+2022-11-28 17:41:57,687 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,687 p=22052 u=psap-ci-runner n=ansible | <command> oc get csv -n redhat-ods-operator -ojsonpath={.items[0].spec.version}
+2022-11-28 17:41:57,687 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:57,687 p=22052 u=psap-ci-runner n=ansible | <stdout> 1.19.0-19
+2022-11-28 17:41:57,690 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:58,869 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:65
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the Dashboard Product name (to distinguish RHODS from ODH)
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | <command> oc -c rhods-dashboard -n redhat-ods-applications rsh deploy/rhods-dashboard bash -c echo ${ODH_PRODUCT_NAME:-Open Data Hub}
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:58,870 p=22052 u=psap-ci-runner n=ansible | <stdout> Red Hat OpenShift Data Science
+2022-11-28 17:41:58,873 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,323 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:59,323 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:73
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the image name description
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | <command> oc get imagestream s2i-generic-data-science-notebook -n redhat-ods-applications -ojsonpath={.metadata.annotations.opendatahub\.io/notebook-image-name}
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,324 p=22052 u=psap-ci-runner n=ansible | <stdout> Standard Data Science
+2022-11-28 17:41:59,327 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,361 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:59,361 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,361 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:41:59,361 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:41:59,361 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:80
+2022-11-28 17:41:59,362 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Save the computed variables
+2022-11-28 17:41:59,364 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:45,434 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:45,434 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:45,434 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:45,434 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:45,435 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:85
+2022-11-28 17:43:45,435 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Terminate the notebooks
+2022-11-28 17:43:45,435 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:45,435 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; oc get notebooks -A -ojsonpath='{range .items[*]}{.metadata.name}{" -n "}{.metadata.namespace}{"\n"}{end}' | xargs --no-run-if-empty --replace bash -c "oc annotate notebook/{} --overwrite kubeflow-resource-stopped=stopped-by-ci-artifacts -oname" > /dev/null
+2022-11-28 17:43:45,435 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:45,437 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:48,853 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:48,853 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:48,853 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:48,853 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:96
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the ODS-CI sample var file
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | <command> oc debug istag/scale-test:ods-ci -n notebooks-scale-test -- cat test-variables.yml.model > /tmp/test-variables.yml.model
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | <stderr> Starting pod/scale-testods-ci-debug ...
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | <stderr> 
+2022-11-28 17:43:48,854 p=22052 u=psap-ci-runner n=ansible | <stderr> Removing debug pod ...
+2022-11-28 17:43:48,858 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:102
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Apply the ODS-CI template
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,430 p=22052 u=psap-ci-runner n=ansible | <command>
+set -o pipefail;
+set -e;
+
+OCP_CONSOLE_URL="https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org";
+OCP_API_URL="https://api.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org:6443";
+ODH_DASHBOARD_URL="https://rhods-dashboard-redhat-ods-applications.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org";
+
+TEST_USER_AUTH_TYPE="RHODS_CI_LDAP";
+TEST_USER_USERNAME="psapuser#{USER_INDEX}";
+
+export TEST_USER_PASSWORD="PASSWORD_WILL_BE_HERE";
+
+RHODS_VERSION="1.19.0-19";
+
+BROWSER_OPTIONS="add_argument('--ignore-certificate-errors');add_argument('window-size=1920,1024');add_argument('--disable-dev-shm-usage');add_argument('--no-sandbox')"
+
+TEST_VAR_SAFE=/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/test-variables_safe.yml
+TEST_VAR_FULL=/tmp/test-variables.yml
+
+cat /tmp/test-variables.yml.model |  yq -y .OCP_CONSOLE_URL=\"${OCP_CONSOLE_URL}\" |  yq -y .OCP_API_URL=\"${OCP_API_URL}\" |  yq -y .ODH_DASHBOARD_URL=\"${ODH_DASHBOARD_URL}\" |  yq -y .RHODS_VERSION=\"${RHODS_VERSION}\" |  yq -y .TEST_USER.AUTH_TYPE=\"${TEST_USER_AUTH_TYPE}\" |  yq -y .TEST_USER.USERNAME=\"${TEST_USER_USERNAME}\" |  yq -y .BROWSER.NAME=\"headlesschrome\" |  yq -y ".BROWSER.OPTIONS=\"$BROWSER_OPTIONS\""    > "$TEST_VAR_SAFE"
+
+cp "$TEST_VAR_SAFE" "$TEST_VAR_FULL"
+
+TEST_USER_PASSWORD="$(cat "/var/run/psap-ods-secret-1/s3_ldap.passwords" | grep '^user_password=' | cut -d= -f2)";
+
+yq -yi .TEST_USER.PASSWORD=\"${TEST_USER_PASSWORD}\" "$TEST_VAR_FULL"
+</command>
+2022-11-28 17:43:49,431 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,433 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,986 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:49,986 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,986 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,986 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:49,986 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:140
+2022-11-28 17:43:49,986 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Delete the ODS-CI secret, it it exists
+2022-11-28 17:43:49,987 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,987 p=22052 u=psap-ci-runner n=ansible | <command> oc delete secret ods-ci-test-variables -n notebooks-scale-test --ignore-not-found
+2022-11-28 17:43:49,987 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:49,987 p=22052 u=psap-ci-runner n=ansible | <stdout> secret "ods-ci-test-variables" deleted
+2022-11-28 17:43:49,990 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:146
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the ODS-CI secret
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | <command> oc create secret generic ods-ci-test-variables --from-file test-variables.yml=/tmp/test-variables.yml -n notebooks-scale-test
+2022-11-28 17:43:50,461 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,462 p=22052 u=psap-ci-runner n=ansible | <stdout> secret/ods-ci-test-variables created
+2022-11-28 17:43:50,464 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,793 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:152
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Delete the ODS-CI secret file
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible |   - path:	/tmp/test-variables.yml
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 17:43:50,794 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 17:43:50,795 p=22052 u=psap-ci-runner n=ansible |       - path:	/tmp/test-variables.yml
+2022-11-28 17:43:50,795 p=22052 u=psap-ci-runner n=ansible |       - state:	file
+2022-11-28 17:43:50,795 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 17:43:50,795 p=22052 u=psap-ci-runner n=ansible |       - path:	/tmp/test-variables.yml
+2022-11-28 17:43:50,795 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 17:43:50,795 p=22052 u=psap-ci-runner n=ansible |   - state:	absent
+2022-11-28 17:43:50,799 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:157
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the src artifacts directory
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/src/
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 17:43:51,036 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/src/
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |       - mode:	02755
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/src/
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |       - state:	directory
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |       - mode:	0755
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 17:43:51,037 p=22052 u=psap-ci-runner n=ansible |   - size:	6
+2022-11-28 17:43:51,041 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:163
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Instantiate the RHODS tester job template
+2022-11-28 17:43:51,600 p=22052 u=psap-ci-runner n=ansible |   - diff:	[]
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - dest:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/src/000_rhods_notebook_osd_ci_scale_test.yaml
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - src:	~psap-ci-runner/.ansible/tmp/ansible-tmp-1669657431.0836096-27952-53496927684492/source
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - md5sum:	a9beaff19afe0643b4c77d24f0504b89
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - checksum:	fda0803b26dd63b620386146a097439941eb50ba
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - mode:	0400
+2022-11-28 17:43:51,601 p=22052 u=psap-ci-runner n=ansible |   - state:	file
+2022-11-28 17:43:51,602 p=22052 u=psap-ci-runner n=ansible |   - size:	4035
+2022-11-28 17:43:51,605 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,152 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:52,152 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:169
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Delete the RHODS test entrypoint, if it exists
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | <command> oc delete cm/rhods-notebook-ux-e2e-scale-test-entrypoint -n notebooks-scale-test --ignore-not-found
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,153 p=22052 u=psap-ci-runner n=ansible | <stdout> configmap "rhods-notebook-ux-e2e-scale-test-entrypoint" deleted
+2022-11-28 17:43:52,156 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,782 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:175
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the RHODS test entrypoint
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | <command> oc create cm rhods-notebook-ux-e2e-scale-test-entrypoint --from-file=entrypoint.sh=roles/rhods_notebook_osd_ci_scale_test/files/entrypoint.sh --from-file=state-signal_barrier.py=roles/rhods_notebook_osd_ci_scale_test/files/state-signal_barrier.py --from-file=artifacts-exporter.sh=roles/rhods_notebook_osd_ci_scale_test/files/s3-artifacts-exporter.sh --from-file=roles/rhods_notebook_osd_ci_scale_test/files/ods-ci -n notebooks-scale-test
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:52,783 p=22052 u=psap-ci-runner n=ansible | <stdout> configmap/rhods-notebook-ux-e2e-scale-test-entrypoint created
+2022-11-28 17:43:52,786 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:57,515 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:57,515 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:57,515 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:184
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Empty the Minio S3 bucket
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | <command>
+oc -c mc -n minio rsh $(oc get pod -lapp=minio -n minio -oname)   mc --config-dir /tmp rm minio/mybucket/ --recursive --force --quiet >/dev/null;
+oc -c mc -n minio rsh $(oc get pod -lapp=minio -n minio -oname)   rm -rf /artifacts/to_export  > /dev/null
+oc -c mc -n minio rsh $(oc get pod -lapp=minio -n minio -oname)   mc --config-dir /tmp cp /etc/os-release minio/mybucket; # without it, cp may fail if the bucket is empty
+</command>
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | <stdout> `/etc/os-release` -> `minio/mybucket/os-release`
+2022-11-28 17:43:57,516 p=22052 u=psap-ci-runner n=ansible | <stdout> Total: 0 B, Transferred: 592 B, Speed: 109.05 KiB/s
+2022-11-28 17:43:57,519 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:194
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Delete the RHODS tester job, if it exists
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | <command> oc delete -f /logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/src/000_rhods_notebook_osd_ci_scale_test.yaml --ignore-not-found -n notebooks-scale-test
+2022-11-28 17:43:58,221 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,222 p=22052 u=psap-ci-runner n=ansible | <stdout> configmap "s3cmd-config" deleted
+2022-11-28 17:43:58,222 p=22052 u=psap-ci-runner n=ansible | <stdout> job.batch "ods-ci" deleted
+2022-11-28 17:43:58,224 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,864 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:202
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Name the namespace privileged
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | <command> oc adm policy add-scc-to-user privileged -z default -n notebooks-scale-test
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,865 p=22052 u=psap-ci-runner n=ansible | <stdout> clusterrole.rbac.authorization.k8s.io/system:openshift:scc:privileged added: "default"
+2022-11-28 17:43:58,868 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,908 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,908 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,908 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,908 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,909 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:215
+2022-11-28 17:43:58,909 p=22052 u=psap-ci-runner n=ansible | TASK: Cleanup the RHODS Prometheus database of the sutest cluster
+2022-11-28 17:43:58,934 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,974 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,974 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,974 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:58,974 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:58,975 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:2
+2022-11-28 17:43:58,975 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_dir is not defined
+2022-11-28 17:43:58,975 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:43:58,975 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:43:58,975 p=22052 u=psap-ci-runner n=ansible | when: artifact_dir is undefined
+2022-11-28 17:43:58,979 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,020 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:6
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_extra_logs_dir is not defined
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:43:59,021 p=22052 u=psap-ci-runner n=ansible | when: artifact_extra_logs_dir is undefined
+2022-11-28 17:43:59,024 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,257 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:59,257 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,257 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:10
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Create the artifact_extra_logs_dir directory
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |       - mode:	02755
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 17:43:59,258 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |       - mode:	0755
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 17:43:59,259 p=22052 u=psap-ci-runner n=ansible |   - size:	201
+2022-11-28 17:43:59,263 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,824 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:59,824 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,824 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,824 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:43:59,825 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:19
+2022-11-28 17:43:59,825 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fetch 'openshift_release' value and check dependencies
+2022-11-28 17:43:59,825 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,825 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; oc version -o json | jq --raw-output '.openshiftVersion'
+2022-11-28 17:43:59,825 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:43:59,825 p=22052 u=psap-ci-runner n=ansible | <stdout> 4.11.13
+2022-11-28 17:43:59,828 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,072 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,072 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,072 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:39
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get openshift major and minor version
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; echo "4.11.13" | tr '.' '\n' | head -2
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | <stdout> 4
+2022-11-28 17:44:00,073 p=22052 u=psap-ci-runner n=ansible | <stdout> 11
+2022-11-28 17:44:00,077 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,118 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,118 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,119 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,119 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,119 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:46
+2022-11-28 17:44:00,119 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 17:44:00,147 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,164 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,165 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,165 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,165 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,165 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:52
+2022-11-28 17:44:00,165 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift_release=4.11.13
+2022-11-28 17:44:00,169 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,183 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,184 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,184 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,184 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,184 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:57
+2022-11-28 17:44:00,184 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 17:44:00,184 p=22052 u=psap-ci-runner n=ansible | msg: openshift_release_major='4', openshift_release_minor='1'
+2022-11-28 17:44:00,187 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,650 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,650 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,650 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,650 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:00,650 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:61
+2022-11-28 17:44:00,651 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the address of the console (debug)
+2022-11-28 17:44:00,651 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,651 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 17:44:00,651 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:00,651 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 17:44:00,654 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,123 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,123 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,123 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,123 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,123 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:65
+2022-11-28 17:44:01,124 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the cluster username (debug)
+2022-11-28 17:44:01,124 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,124 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami
+2022-11-28 17:44:01,124 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,124 p=22052 u=psap-ci-runner n=ansible | <stdout> system:admin
+2022-11-28 17:44:01,127 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,140 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,140 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,140 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,140 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,140 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:2
+2022-11-28 17:44:01,141 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Reset prometheus database
+2022-11-28 17:44:01,141 p=22052 u=psap-ci-runner n=ansible |   - include:	reset.yml
+2022-11-28 17:44:01,149 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/cluster_prometheus_db/tasks/reset.yml for localhost
+2022-11-28 17:44:01,155 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,691 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,691 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,691 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,691 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,691 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:2
+2022-11-28 17:44:01,691 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Get Prometheus Pod name
+2022-11-28 17:44:01,692 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,692 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -ldeployment=prometheus -n redhat-ods-monitoring -oname
+2022-11-28 17:44:01,692 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,692 p=22052 u=psap-ci-runner n=ansible | <stdout> pod/prometheus-68c8948c99-dncb7
+2022-11-28 17:44:01,695 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,707 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:7
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Delete Prometheus Pod (openshift-monitoring only)
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:01,708 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_namespace == "openshift-monitoring"
+2022-11-28 17:44:01,712 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:03,178 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:11
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Delete Prometheus Pod and PVC (redhat-ods-monitoring only)
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | <command> oc delete pvc/prometheus-data pod/prometheus-68c8948c99-dncb7 -n redhat-ods-monitoring
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | <stdout> persistentvolumeclaim "prometheus-data" deleted
+2022-11-28 17:44:03,179 p=22052 u=psap-ci-runner n=ansible | <stdout> pod "prometheus-68c8948c99-dncb7" deleted
+2022-11-28 17:44:03,182 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,133 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:15
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Recreate Prometheus PVC (redhat-ods-monitoring only)
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | <command>
+set -o pipefail;
+cat << EOF | oc apply -f- -n redhat-ods-monitoring
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: gp2
+EOF
+</command>
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,134 p=22052 u=psap-ci-runner n=ansible | <stdout> persistentvolumeclaim/prometheus-data created
+2022-11-28 17:44:04,137 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,152 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,152 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:6
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Dump prometheus database
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:04,153 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_mode == "dump"
+2022-11-28 17:44:04,156 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,168 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,168 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,168 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,168 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,168 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:223
+2022-11-28 17:44:04,168 p=22052 u=psap-ci-runner n=ansible | TASK: Cleanup the Prometheus database of the sutest cluster
+2022-11-28 17:44:04,191 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,204 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,204 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,204 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,204 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,204 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:2
+2022-11-28 17:44:04,204 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_dir is not defined
+2022-11-28 17:44:04,205 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:04,205 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:04,205 p=22052 u=psap-ci-runner n=ansible | when: artifact_dir is undefined
+2022-11-28 17:44:04,207 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:6
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_extra_logs_dir is not defined
+2022-11-28 17:44:04,220 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:04,221 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:04,221 p=22052 u=psap-ci-runner n=ansible | when: artifact_extra_logs_dir is undefined
+2022-11-28 17:44:04,224 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,443 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,443 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,443 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,443 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,443 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:10
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Create the artifact_extra_logs_dir directory
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 17:44:04,444 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 17:44:04,445 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 17:44:04,445 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 17:44:04,445 p=22052 u=psap-ci-runner n=ansible |   - size:	201
+2022-11-28 17:44:04,448 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:19
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fetch 'openshift_release' value and check dependencies
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; oc version -o json | jq --raw-output '.openshiftVersion'
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:04,971 p=22052 u=psap-ci-runner n=ansible | <stdout> 4.11.13
+2022-11-28 17:44:04,974 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,189 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,189 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,189 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:39
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get openshift major and minor version
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; echo "4.11.13" | tr '.' '\n' | head -2
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | <stdout> 4
+2022-11-28 17:44:05,190 p=22052 u=psap-ci-runner n=ansible | <stdout> 11
+2022-11-28 17:44:05,193 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,208 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,209 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,209 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,209 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,209 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:46
+2022-11-28 17:44:05,209 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 17:44:05,214 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,229 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,229 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,229 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,229 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,229 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:52
+2022-11-28 17:44:05,229 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift_release=4.11.13
+2022-11-28 17:44:05,232 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:57
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 17:44:05,246 p=22052 u=psap-ci-runner n=ansible | msg: openshift_release_major='4', openshift_release_minor='1'
+2022-11-28 17:44:05,249 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:61
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the address of the console (debug)
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 17:44:05,700 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:05,701 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 17:44:05,703 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,152 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:06,152 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,152 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,152 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:06,152 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:65
+2022-11-28 17:44:06,153 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the cluster username (debug)
+2022-11-28 17:44:06,153 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,153 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami
+2022-11-28 17:44:06,153 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,153 p=22052 u=psap-ci-runner n=ansible | <stdout> system:admin
+2022-11-28 17:44:06,156 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,168 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:06,168 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,169 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,169 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:06,169 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:2
+2022-11-28 17:44:06,169 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Reset prometheus database
+2022-11-28 17:44:06,169 p=22052 u=psap-ci-runner n=ansible |   - include:	reset.yml
+2022-11-28 17:44:06,175 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/cluster_prometheus_db/tasks/reset.yml for localhost
+2022-11-28 17:44:06,179 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,795 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:06,795 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:2
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Get Prometheus Pod name
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -lapp.kubernetes.io/component=prometheus -n openshift-monitoring -oname
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | <stdout> pod/prometheus-k8s-0
+2022-11-28 17:44:06,796 p=22052 u=psap-ci-runner n=ansible | <stdout> pod/prometheus-k8s-1
+2022-11-28 17:44:06,800 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,076 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,076 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:7
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Delete Prometheus Pod (openshift-monitoring only)
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | <command> oc delete pod/prometheus-k8s-0 pod/prometheus-k8s-1 -n openshift-monitoring
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | <stdout> pod "prometheus-k8s-0" deleted
+2022-11-28 17:44:09,077 p=22052 u=psap-ci-runner n=ansible | <stdout> pod "prometheus-k8s-1" deleted
+2022-11-28 17:44:09,081 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,094 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,094 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,094 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,094 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,094 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:11
+2022-11-28 17:44:09,094 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Delete Prometheus Pod and PVC (redhat-ods-monitoring only)
+2022-11-28 17:44:09,095 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:09,095 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:09,095 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_namespace == "redhat-ods-monitoring"
+2022-11-28 17:44:09,098 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,113 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,113 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,113 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,113 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,113 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:15
+2022-11-28 17:44:09,113 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Recreate Prometheus PVC (redhat-ods-monitoring only)
+2022-11-28 17:44:09,114 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:09,114 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:09,114 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_namespace == "redhat-ods-monitoring"
+2022-11-28 17:44:09,117 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,131 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:6
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Dump prometheus database
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | when: capture_prom_db | bool
+2022-11-28 17:44:09,132 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_mode == "dump"
+2022-11-28 17:44:09,135 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,147 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,147 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,148 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,148 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,148 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:229
+2022-11-28 17:44:09,148 p=22052 u=psap-ci-runner n=ansible | TASK: Cleanup the Prometheus database of the driver cluster
+2022-11-28 17:44:09,162 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,173 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:2
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_dir is not defined
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:09,174 p=22052 u=psap-ci-runner n=ansible | when: artifact_dir is undefined
+2022-11-28 17:44:09,177 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,189 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,189 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,189 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,189 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,189 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:6
+2022-11-28 17:44:09,190 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_extra_logs_dir is not defined
+2022-11-28 17:44:09,190 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:09,190 p=22052 u=psap-ci-runner n=ansible | when: artifact_extra_logs_dir is undefined
+2022-11-28 17:44:09,192 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,413 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,413 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,413 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,413 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,413 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:10
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Create the artifact_extra_logs_dir directory
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 17:44:09,414 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 17:44:09,415 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 17:44:09,415 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 17:44:09,415 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 17:44:09,415 p=22052 u=psap-ci-runner n=ansible |   - size:	201
+2022-11-28 17:44:09,419 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:19
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fetch 'openshift_release' value and check dependencies
+2022-11-28 17:44:09,954 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,955 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; oc version -o json | jq --raw-output '.openshiftVersion'
+2022-11-28 17:44:09,955 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:09,955 p=22052 u=psap-ci-runner n=ansible | <stdout> 4.11.13
+2022-11-28 17:44:09,958 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,170 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,170 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,170 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,170 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:39
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get openshift major and minor version
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; echo "4.11.13" | tr '.' '\n' | head -2
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | <stdout> 4
+2022-11-28 17:44:10,171 p=22052 u=psap-ci-runner n=ansible | <stdout> 11
+2022-11-28 17:44:10,174 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,187 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,187 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,187 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,187 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,188 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:46
+2022-11-28 17:44:10,188 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 17:44:10,192 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,209 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,209 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,209 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,209 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,209 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:52
+2022-11-28 17:44:10,209 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift_release=4.11.13
+2022-11-28 17:44:10,212 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:57
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 17:44:10,225 p=22052 u=psap-ci-runner n=ansible | msg: openshift_release_major='4', openshift_release_minor='1'
+2022-11-28 17:44:10,229 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,704 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,704 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,704 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,704 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:10,704 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:61
+2022-11-28 17:44:10,705 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the address of the console (debug)
+2022-11-28 17:44:10,705 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,705 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 17:44:10,705 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:10,705 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 17:44:10,708 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,164 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:65
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the cluster username (debug)
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,165 p=22052 u=psap-ci-runner n=ansible | <stdout> system:admin
+2022-11-28 17:44:11,168 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:2
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Reset prometheus database
+2022-11-28 17:44:11,180 p=22052 u=psap-ci-runner n=ansible |   - include:	reset.yml
+2022-11-28 17:44:11,186 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/cluster_prometheus_db/tasks/reset.yml for localhost
+2022-11-28 17:44:11,190 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,796 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:11,796 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:2
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Get Prometheus Pod name
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -lapp.kubernetes.io/component=prometheus -n openshift-monitoring -oname
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | <stdout> pod/prometheus-k8s-0
+2022-11-28 17:44:11,797 p=22052 u=psap-ci-runner n=ansible | <stdout> pod/prometheus-k8s-1
+2022-11-28 17:44:11,800 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,793 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,793 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,793 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,793 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,793 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:7
+2022-11-28 17:44:13,794 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Delete Prometheus Pod (openshift-monitoring only)
+2022-11-28 17:44:13,794 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,794 p=22052 u=psap-ci-runner n=ansible | <command> oc delete pod/prometheus-k8s-0 pod/prometheus-k8s-1 -n openshift-monitoring
+2022-11-28 17:44:13,794 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,794 p=22052 u=psap-ci-runner n=ansible | <stdout> pod "prometheus-k8s-0" deleted
+2022-11-28 17:44:13,794 p=22052 u=psap-ci-runner n=ansible | <stdout> pod "prometheus-k8s-1" deleted
+2022-11-28 17:44:13,797 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,811 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,811 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,811 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,811 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,811 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:11
+2022-11-28 17:44:13,812 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Delete Prometheus Pod and PVC (redhat-ods-monitoring only)
+2022-11-28 17:44:13,812 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:13,812 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_namespace == "redhat-ods-monitoring"
+2022-11-28 17:44:13,816 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/reset.yml:15
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Recreate Prometheus PVC (redhat-ods-monitoring only)
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:13,828 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_namespace == "redhat-ods-monitoring"
+2022-11-28 17:44:13,831 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,843 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,843 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,843 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:13,843 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:13,844 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:6
+2022-11-28 17:44:13,844 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Dump prometheus database
+2022-11-28 17:44:13,844 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 17:44:13,844 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_mode == "dump"
+2022-11-28 17:44:13,847 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,406 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:238
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the RHODS test job
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | <command> oc create -f /logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/src/000_rhods_notebook_osd_ci_scale_test.yaml -n notebooks-scale-test
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | <stdout> configmap/s3cmd-config created
+2022-11-28 17:44:14,407 p=22052 u=psap-ci-runner n=ansible | <stdout> job.batch/ods-ci created
+2022-11-28 17:44:14,410 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,940 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Wait for the RHODS tester job to start
+2022-11-28 17:44:14,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,941 p=22052 u=psap-ci-runner n=ansible | <command> oc get jobs/ods-ci -ojsonpath={.status.startTime} -n notebooks-scale-test
+2022-11-28 17:44:14,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:14,941 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #1/12
+2022-11-28 17:44:14,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,482 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:20,482 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,482 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,482 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 17:44:20,483 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:244
+2022-11-28 17:44:20,483 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Wait for the RHODS tester job to start
+2022-11-28 17:44:20,483 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,483 p=22052 u=psap-ci-runner n=ansible | <command> oc get jobs/ods-ci -ojsonpath={.status.startTime} -n notebooks-scale-test
+2022-11-28 17:44:20,483 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,483 p=22052 u=psap-ci-runner n=ansible | <stdout> 2022-11-28T17:44:14Z
+2022-11-28 17:44:20,486 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Wait for the RHODS tester job to terminate
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | <command> oc get jobs/ods-ci -ojsonpath={.status.active} -n notebooks-scale-test
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #1/90
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 17:44:20,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:45:21,560 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #2/90
+2022-11-28 17:45:21,560 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 17:45:21,561 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:46:22,123 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #3/90
+2022-11-28 17:46:22,123 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 17:46:22,123 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:47:22,666 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #4/90
+2022-11-28 17:47:22,667 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 17:47:22,667 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:48:23,265 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #5/90
+2022-11-28 17:48:23,265 p=22052 u=psap-ci-runner n=ansible | <stdout> 295
+2022-11-28 17:48:23,265 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:49:23,770 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #6/90
+2022-11-28 17:49:23,770 p=22052 u=psap-ci-runner n=ansible | <stdout> 276
+2022-11-28 17:49:23,770 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:50:24,255 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #7/90
+2022-11-28 17:50:24,255 p=22052 u=psap-ci-runner n=ansible | <stdout> 260
+2022-11-28 17:50:24,255 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:51:24,809 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #8/90
+2022-11-28 17:51:24,810 p=22052 u=psap-ci-runner n=ansible | <stdout> 239
+2022-11-28 17:51:24,810 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:52:25,327 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #9/90
+2022-11-28 17:52:25,327 p=22052 u=psap-ci-runner n=ansible | <stdout> 218
+2022-11-28 17:52:25,327 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:53:25,874 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #10/90
+2022-11-28 17:53:25,874 p=22052 u=psap-ci-runner n=ansible | <stdout> 204
+2022-11-28 17:53:25,874 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:54:26,537 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #11/90
+2022-11-28 17:54:26,538 p=22052 u=psap-ci-runner n=ansible | <stdout> 180
+2022-11-28 17:54:26,538 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:55:27,013 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #12/90
+2022-11-28 17:55:27,013 p=22052 u=psap-ci-runner n=ansible | <stdout> 160
+2022-11-28 17:55:27,013 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:56:27,537 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #13/90
+2022-11-28 17:56:27,538 p=22052 u=psap-ci-runner n=ansible | <stdout> 143
+2022-11-28 17:56:27,538 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:57:28,068 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #14/90
+2022-11-28 17:57:28,068 p=22052 u=psap-ci-runner n=ansible | <stdout> 123
+2022-11-28 17:57:28,068 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:58:28,548 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #15/90
+2022-11-28 17:58:28,548 p=22052 u=psap-ci-runner n=ansible | <stdout> 100
+2022-11-28 17:58:28,548 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 17:59:29,046 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #16/90
+2022-11-28 17:59:29,046 p=22052 u=psap-ci-runner n=ansible | <stdout> 84
+2022-11-28 17:59:29,046 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:00:29,586 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #17/90
+2022-11-28 18:00:29,586 p=22052 u=psap-ci-runner n=ansible | <stdout> 62
+2022-11-28 18:00:29,586 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:01:30,133 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #18/90
+2022-11-28 18:01:30,133 p=22052 u=psap-ci-runner n=ansible | <stdout> 41
+2022-11-28 18:01:30,133 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:02:30,646 p=22052 u=psap-ci-runner n=ansible | ==> FAILED attempt #19/90
+2022-11-28 18:02:30,646 p=22052 u=psap-ci-runner n=ansible | <stdout> 19
+2022-11-28 18:02:30,647 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:252
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Wait for the RHODS tester job to terminate
+2022-11-28 18:03:31,173 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,174 p=22052 u=psap-ci-runner n=ansible | <command> oc get jobs/ods-ci -ojsonpath={.status.active} -n notebooks-scale-test
+2022-11-28 18:03:31,174 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,176 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:261
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Test if the Notebook Pods did not crash (reboot)
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,599 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; oc get pods -n redhat-ods-applications -ojsonpath='{.items[*].status.containerStatuses[*].restartCount}' | tr ' ' '\n' | python -c "import sys; print(sum(int(l) for l in sys.stdin))"
+2022-11-28 18:03:31,600 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,600 p=22052 u=psap-ci-runner n=ansible | <stdout> 0
+2022-11-28 18:03:31,602 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:270
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Capture the sutest cluster artifacts
+2022-11-28 18:03:31,608 p=22052 u=psap-ci-runner n=ansible |   - include:	artifacts_sutest.yml
+2022-11-28 18:03:31,616 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml for localhost
+2022-11-28 18:03:31,625 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,806 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:1
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the sutest artifacts directory
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 18:03:31,807 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |       - state:	directory
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:03:31,808 p=22052 u=psap-ci-runner n=ansible |   - size:	6
+2022-11-28 18:03:31,811 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,246 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:32,246 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:11
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the ODH Dashboard Config
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | <command> oc get odhdashboardconfig/odh-dashboard-config -oyaml -n redhat-ods-applications > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/odh-dashboard-config.yaml"
+2022-11-28 18:03:32,247 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,250 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:18
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the RHODS version
+2022-11-28 18:03:32,810 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,811 p=22052 u=psap-ci-runner n=ansible | <command> oc get csv -oname -n redhat-ods-operator | grep rhods-operator | cut -d/ -f2 | cut -d. -f2- > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/rhods.version"
+2022-11-28 18:03:32,811 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:32,813 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:25
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Store OpenShift YAML version
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | <command> oc version -oyaml > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/ocp_version.yml"
+2022-11-28 18:03:33,291 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,294 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,983 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:33,983 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,983 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,983 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:03:33,983 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:30
+2022-11-28 18:03:33,984 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Store the Cluster nodes
+2022-11-28 18:03:33,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,984 p=22052 u=psap-ci-runner n=ansible | <command> oc get nodes -oyaml > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/nodes.yaml"
+2022-11-28 18:03:33,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:03:33,986 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:35
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the description of the nodes
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,618 p=22052 u=psap-ci-runner n=ansible | <command> oc describe nodes > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/nodes.descr"
+2022-11-28 18:04:28,619 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,621 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,630 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,631 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,631 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,631 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,631 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:41
+2022-11-28 18:04:28,631 p=22052 u=psap-ci-runner n=ansible | TASK: Get the OpenShift Prometheus database
+2022-11-28 18:04:28,648 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,656 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,656 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,657 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,657 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,657 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:2
+2022-11-28 18:04:28,657 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_dir is not defined
+2022-11-28 18:04:28,657 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:28,657 p=22052 u=psap-ci-runner n=ansible | when: artifact_dir is undefined
+2022-11-28 18:04:28,660 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:6
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_extra_logs_dir is not defined
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:28,669 p=22052 u=psap-ci-runner n=ansible | when: artifact_extra_logs_dir is undefined
+2022-11-28 18:04:28,672 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,849 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,849 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:10
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Create the artifact_extra_logs_dir directory
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:04:28,850 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 18:04:28,851 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:04:28,851 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 18:04:28,851 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:04:28,851 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:04:28,851 p=22052 u=psap-ci-runner n=ansible |   - size:	225
+2022-11-28 18:04:28,853 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:19
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fetch 'openshift_release' value and check dependencies
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; oc version -o json | jq --raw-output '.openshiftVersion'
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,337 p=22052 u=psap-ci-runner n=ansible | <stdout> 4.11.13
+2022-11-28 18:04:29,340 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:39
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get openshift major and minor version
+2022-11-28 18:04:29,515 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,516 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; echo "4.11.13" | tr '.' '\n' | head -2
+2022-11-28 18:04:29,516 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,516 p=22052 u=psap-ci-runner n=ansible | <stdout> 4
+2022-11-28 18:04:29,516 p=22052 u=psap-ci-runner n=ansible | <stdout> 11
+2022-11-28 18:04:29,519 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,530 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,530 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,530 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,530 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,530 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:46
+2022-11-28 18:04:29,530 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 18:04:29,534 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,545 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,545 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,545 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,545 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,545 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:52
+2022-11-28 18:04:29,546 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift_release=4.11.13
+2022-11-28 18:04:29,548 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,558 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,558 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,558 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,559 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,559 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:57
+2022-11-28 18:04:29,559 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 18:04:29,559 p=22052 u=psap-ci-runner n=ansible | msg: openshift_release_major='4', openshift_release_minor='1'
+2022-11-28 18:04:29,561 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,983 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,983 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,983 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:61
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the address of the console (debug)
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:29,984 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 18:04:29,987 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:65
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the cluster username (debug)
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,406 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami
+2022-11-28 18:04:30,407 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,407 p=22052 u=psap-ci-runner n=ansible | <stdout> system:admin
+2022-11-28 18:04:30,409 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,418 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:2
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Reset prometheus database
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:30,419 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_mode == "reset"
+2022-11-28 18:04:30,422 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,430 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:30,431 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,431 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:30,431 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:30,431 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:6
+2022-11-28 18:04:30,431 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Dump prometheus database
+2022-11-28 18:04:30,431 p=22052 u=psap-ci-runner n=ansible |   - include:	dump.yml
+2022-11-28 18:04:30,436 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/cluster_prometheus_db/tasks/dump.yml for localhost
+2022-11-28 18:04:30,440 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/dump.yml:2
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Get Prometheus Pod name
+2022-11-28 18:04:31,012 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:31,013 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -l app.kubernetes.io/component=prometheus -n openshift-monitoring --sort-by=.metadata.creationTimestamp -ojsonpath={.items[0].metadata.name}
+2022-11-28 18:04:31,013 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:31,013 p=22052 u=psap-ci-runner n=ansible | <stdout> prometheus-k8s-0
+2022-11-28 18:04:31,015 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/dump.yml:12
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Extract Prometheus database from the Pod
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | msg: non-zero return code
+2022-11-28 18:04:41,217 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <command> oc exec -c prometheus -n "openshift-monitoring" "prometheus-k8s-0" -- tar cvzf - -C "/prometheus" . > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/prometheus_ocp.tar.gz"
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./queries.active
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./lock
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/00000000
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/00000001
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> tar: ./wal/00000001: file changed as we read it
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./chunks_head/
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> ./chunks_head/000001
+2022-11-28 18:04:41,218 p=22052 u=psap-ci-runner n=ansible | <stderr> command terminated with exit code 1
+2022-11-28 18:04:41,221 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,230 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,230 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,230 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,230 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,230 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest.yml:49
+2022-11-28 18:04:41,230 p=22052 u=psap-ci-runner n=ansible | TASK: Get the RHODS Prometheus database
+2022-11-28 18:04:41,259 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:2
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_dir is not defined
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:41,268 p=22052 u=psap-ci-runner n=ansible | when: artifact_dir is undefined
+2022-11-28 18:04:41,271 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,279 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,279 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,279 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,279 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,279 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:6
+2022-11-28 18:04:41,280 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_extra_logs_dir is not defined
+2022-11-28 18:04:41,280 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:41,280 p=22052 u=psap-ci-runner n=ansible | when: artifact_extra_logs_dir is undefined
+2022-11-28 18:04:41,282 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:10
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Create the artifact_extra_logs_dir directory
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:04:41,459 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:04:41,460 p=22052 u=psap-ci-runner n=ansible |   - size:	225
+2022-11-28 18:04:41,463 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:19
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fetch 'openshift_release' value and check dependencies
+2022-11-28 18:04:41,941 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,942 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; oc version -o json | jq --raw-output '.openshiftVersion'
+2022-11-28 18:04:41,942 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:41,942 p=22052 u=psap-ci-runner n=ansible | <stdout> 4.11.13
+2022-11-28 18:04:41,944 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,116 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,116 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,116 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,116 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,116 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:39
+2022-11-28 18:04:42,117 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get openshift major and minor version
+2022-11-28 18:04:42,117 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,117 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; echo "4.11.13" | tr '.' '\n' | head -2
+2022-11-28 18:04:42,117 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,117 p=22052 u=psap-ci-runner n=ansible | <stdout> 4
+2022-11-28 18:04:42,117 p=22052 u=psap-ci-runner n=ansible | <stdout> 11
+2022-11-28 18:04:42,120 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,132 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,132 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,132 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,132 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,132 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:46
+2022-11-28 18:04:42,132 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 18:04:42,137 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,148 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,148 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,148 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,148 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,148 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:52
+2022-11-28 18:04:42,148 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift_release=4.11.13
+2022-11-28 18:04:42,151 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,161 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,161 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,161 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,161 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,161 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:57
+2022-11-28 18:04:42,161 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 18:04:42,162 p=22052 u=psap-ci-runner n=ansible | msg: openshift_release_major='4', openshift_release_minor='1'
+2022-11-28 18:04:42,164 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:61
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the address of the console (debug)
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 18:04:42,577 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,578 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-sutest-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 18:04:42,580 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,996 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,996 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,996 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,996 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:42,996 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:65
+2022-11-28 18:04:42,997 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the cluster username (debug)
+2022-11-28 18:04:42,997 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,997 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami
+2022-11-28 18:04:42,997 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:42,997 p=22052 u=psap-ci-runner n=ansible | <stdout> system:admin
+2022-11-28 18:04:43,000 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:2
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Reset prometheus database
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:43,009 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_mode == "reset"
+2022-11-28 18:04:43,012 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,020 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:43,020 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,020 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,021 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:43,021 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:6
+2022-11-28 18:04:43,021 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Dump prometheus database
+2022-11-28 18:04:43,021 p=22052 u=psap-ci-runner n=ansible |   - include:	dump.yml
+2022-11-28 18:04:43,025 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/cluster_prometheus_db/tasks/dump.yml for localhost
+2022-11-28 18:04:43,029 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,519 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:43,519 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,519 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,519 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:43,520 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/dump.yml:2
+2022-11-28 18:04:43,520 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Get Prometheus Pod name
+2022-11-28 18:04:43,520 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,520 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -l deployment=prometheus -n redhat-ods-monitoring --sort-by=.metadata.creationTimestamp -ojsonpath={.items[0].metadata.name}
+2022-11-28 18:04:43,520 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:43,520 p=22052 u=psap-ci-runner n=ansible | <stdout> prometheus-68c8948c99-m6pvw
+2022-11-28 18:04:43,523 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,502 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/dump.yml:12
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Extract Prometheus database from the Pod
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | msg: non-zero return code
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | <command> oc exec -c prometheus -n "redhat-ods-monitoring" "prometheus-68c8948c99-m6pvw" -- tar cvzf - -C "/prometheus/data" . > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/prometheus_rhods.tar.gz"
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | <stderr> ./
+2022-11-28 18:04:45,503 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/00000000
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> tar: ./wal/00000000: file changed as we read it
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> ./chunks_head/
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> ./chunks_head/000001
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> ./lock
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> ./queries.active
+2022-11-28 18:04:45,504 p=22052 u=psap-ci-runner n=ansible | <stderr> command terminated with exit code 1
+2022-11-28 18:04:45,507 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:273
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Capture the information about the notebook projects
+2022-11-28 18:04:45,512 p=22052 u=psap-ci-runner n=ansible |   - include:	artifacts_sutest_project.yml
+2022-11-28 18:04:45,526 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml for localhost
+2022-11-28 18:04:45,538 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,547 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,548 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,548 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,548 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,548 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:1
+2022-11-28 18:04:45,548 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Set the artifact directory path for the shared project
+2022-11-28 18:04:45,550 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:5
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Check if the cluster has the notebook CRD
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | msg: non-zero return code
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | <command> oc get crd notebooks.kubeflow.org
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:45,969 p=22052 u=psap-ci-runner n=ansible | <stderr> Error from server (NotFound): customresourcedefinitions.apiextensions.k8s.io "notebooks.kubeflow.org" not found
+2022-11-28 18:04:45,974 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:11
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Count the notebooks in the rhods-notebooks namespace
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; oc get pods -oname -n rhods-notebooks | (grep "psapuser" || true) | wc -l
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:47,250 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 18:04:47,253 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,577 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:48,577 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,577 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:23
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Count the notebooks in the DSG namespaces
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; oc get pods -oname -lopendatahub.io/dashboard=true -A | (grep "psapuser" || true) | wc -l
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,578 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 18:04:48,582 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:40
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the sutest rhods-notebooks artifacts directory
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:04:48,760 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |       - state:	directory
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:04:48,761 p=22052 u=psap-ci-runner n=ansible |   - size:	6
+2022-11-28 18:04:48,764 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:46
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the state of the all the resources
+2022-11-28 18:04:51,126 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,127 p=22052 u=psap-ci-runner n=ansible | <command> oc get all -n rhods-notebooks > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks/all.status"
+2022-11-28 18:04:51,127 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,129 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,139 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:53
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the status of the notebook resources
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | when: notebook_namespace_pod_count_cmd.stdout != "0"
+2022-11-28 18:04:51,140 p=22052 u=psap-ci-runner n=ansible | when: has_notebooks_crd.rc == 0
+2022-11-28 18:04:51,143 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:61
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the status of the notebook Pods
+2022-11-28 18:04:51,914 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,915 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -owide -n rhods-notebooks > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks/notebook_pods.status"
+2022-11-28 18:04:51,915 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:04:51,917 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,637 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:21,637 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,637 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,638 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:21,638 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:68
+2022-11-28 18:06:21,638 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the description of the notebook Pods
+2022-11-28 18:06:21,638 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,638 p=22052 u=psap-ci-runner n=ansible | <command> oc describe pods -n rhods-notebooks > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks/notebook_pods.descr"
+2022-11-28 18:06:21,638 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,641 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:75
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the definition of the notebook resources
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | when: notebook_namespace_pod_count_cmd.stdout != "0"
+2022-11-28 18:06:21,652 p=22052 u=psap-ci-runner n=ansible | when: has_notebooks_crd.rc == 0
+2022-11-28 18:06:21,655 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:83
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the definition of the notebook Pods
+2022-11-28 18:06:23,416 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,417 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -oyaml -n rhods-notebooks > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_rhods-notebooks/notebook_pods.yaml"
+2022-11-28 18:06:23,417 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,419 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,430 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:90
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Terminate the notebooks
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | when: notebook_namespace_pod_count_cmd.stdout != "0"
+2022-11-28 18:06:23,431 p=22052 u=psap-ci-runner n=ansible | when: has_notebooks_crd.rc == 0
+2022-11-28 18:06:23,433 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,442 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,442 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,442 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,442 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,442 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:103
+2022-11-28 18:06:23,442 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Set the artifact directory path for the DSG projects
+2022-11-28 18:06:23,445 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,623 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,623 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,623 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:23,623 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:23,623 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:112
+2022-11-28 18:06:23,623 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the sutest DSG artifacts directory
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |       - state:	directory
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:06:23,624 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:06:23,625 p=22052 u=psap-ci-runner n=ansible |   - size:	6
+2022-11-28 18:06:23,627 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:26,754 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:26,754 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:118
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the state of the all the resources
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | <command> oc get all --show-labels -owide -A | grep "psapuser" > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg/all.status"
+2022-11-28 18:06:26,755 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:26,758 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:27,537 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:27,537 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:27,537 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:27,537 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:27,537 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:125
+2022-11-28 18:06:27,538 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the status of the notebook resources
+2022-11-28 18:06:27,538 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:27,538 p=22052 u=psap-ci-runner n=ansible | <command> oc get notebooks -owide -A | grep "psapuser" > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg/notebooks.status"
+2022-11-28 18:06:27,538 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:27,540 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:132
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the status of the notebook Pods
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:28,359 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -owide -lopendatahub.io/dashboard=true -A | grep "psapuser" > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg/notebook_pods.status"
+2022-11-28 18:06:28,360 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:06:28,362 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:55,892 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:139
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the description of the notebook Pods
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | <command> oc describe pods -lopendatahub.io/dashboard=true -A | grep "psapuser" > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg/notebook_pods.descr"
+2022-11-28 18:07:55,893 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:55,896 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:146
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the definition of the notebook resources
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | <command> oc get notebooks -oyaml -lopendatahub.io/dashboard=true -A > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg/notebooks.yaml"
+2022-11-28 18:07:57,393 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:57,396 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:59,182 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:07:59,182 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:59,182 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:59,182 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:07:59,182 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:153
+2022-11-28 18:07:59,183 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the definition of the notebook Pods
+2022-11-28 18:07:59,183 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:59,183 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -oyaml -lopendatahub.io/dashboard=true -A > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-sutest/project_dsg/notebook_pods.yaml"
+2022-11-28 18:07:59,183 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:07:59,185 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_sutest_project.yml:160
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Terminate the notebooks
+2022-11-28 18:09:45,684 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,685 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; oc get notebooks -A -ojsonpath='{range .items[*]}{.metadata.name}{" -n "}{.metadata.namespace}{"\n"}{end}' | xargs --no-run-if-empty --replace bash -c "oc annotate notebook/{} --overwrite kubeflow-resource-stopped=stopped-by-ci-artifacts -oname" > /dev/null
+2022-11-28 18:09:45,685 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,688 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,694 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:45,694 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,694 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,695 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:45,695 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:276
+2022-11-28 18:09:45,695 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Capture the driver cluster artifacts
+2022-11-28 18:09:45,695 p=22052 u=psap-ci-runner n=ansible |   - include:	artifacts_driver.yml
+2022-11-28 18:09:45,706 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml for localhost
+2022-11-28 18:09:45,723 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,932 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:45,932 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,932 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:45,932 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:45,932 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:1
+2022-11-28 18:09:45,932 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the driver artifacts directory
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |       - state:	directory
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:09:45,933 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 18:09:45,934 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:09:45,934 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:09:45,934 p=22052 u=psap-ci-runner n=ansible |   - size:	6
+2022-11-28 18:09:45,936 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:46,694 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:7
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the status of the tester Pods
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -ljob-name=ods-ci -n notebooks-scale-test > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_pods.status"
+2022-11-28 18:09:46,695 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:46,698 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:14
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the status of the tester Job
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:47,134 p=22052 u=psap-ci-runner n=ansible | <command> oc get job/ods-ci -n notebooks-scale-test > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_job.status"
+2022-11-28 18:09:47,135 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:47,137 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:48,473 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:48,474 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:48,474 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:48,474 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:48,474 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:21
+2022-11-28 18:09:48,474 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the names of the tester_pods
+2022-11-28 18:09:48,474 p=22052 u=psap-ci-runner n=ansible |   - censored:	the output has been hidden due to the fact that 'no_log: true' was specified for this result
+2022-11-28 18:09:48,477 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:48,687 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:30
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Create the test Pod logs directory
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_pod_logs
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:09:48,688 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_pod_logs
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |       - state:	absent
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_pod_logs
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |       - state:	directory
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - gid:	0
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - group:	root
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:09:48,689 p=22052 u=psap-ci-runner n=ansible |   - size:	6
+2022-11-28 18:09:48,692 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:58,197 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:12:58,198 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:58,198 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:58,198 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:12:58,198 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:36
+2022-11-28 18:12:58,198 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the logs of the tester Pod
+2022-11-28 18:12:58,198 p=22052 u=psap-ci-runner n=ansible |   - censored:	the output has been hidden due to the fact that 'no_log: true' was specified for this result
+2022-11-28 18:12:58,201 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:46
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the yaml of the tester Pods
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -ljob-name=ods-ci -oyaml -n notebooks-scale-test > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_pods.yaml"
+2022-11-28 18:12:59,907 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:12:59,912 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:00,398 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:00,398 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:00,398 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:00,398 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:00,398 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:53
+2022-11-28 18:13:00,398 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the yaml of the tester Job
+2022-11-28 18:13:00,399 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:00,399 p=22052 u=psap-ci-runner n=ansible | <command> oc get job/ods-ci -oyaml -n notebooks-scale-test > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_job.yaml"
+2022-11-28 18:13:00,399 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:00,401 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,010 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:04,010 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,010 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,010 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:04,010 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:60
+2022-11-28 18:13:04,011 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the events of the tester namespace
+2022-11-28 18:13:04,011 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,011 p=22052 u=psap-ci-runner n=ansible | <command> oc get ev -oyaml -n notebooks-scale-test > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/tester_events.yaml"
+2022-11-28 18:13:04,011 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,013 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,490 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:67
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get Minio Pod name
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | <command> oc get pod -lapp=minio -n minio -ojsonpath={.items[0].metadata.name}
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:04,491 p=22052 u=psap-ci-runner n=ansible | <stdout> minio-deployment-6769bcb574-7v7qs
+2022-11-28 18:13:04,494 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:14,751 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:14,751 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:14,751 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:14,751 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:14,751 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:72
+2022-11-28 18:13:14,752 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Export the data out of the S3 bucket
+2022-11-28 18:13:14,752 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:14,752 p=22052 u=psap-ci-runner n=ansible | <command> oc -n minio -c mc exec minio-deployment-6769bcb574-7v7qs -- bash -c mkdir -p /artifacts/to_export && mc --config-dir /tmp cp minio/mybucket/ /artifacts/to_export --recursive --quiet > /dev/null
+2022-11-28 18:13:14,752 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:14,754 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:41,838 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:41,838 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:41,838 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:41,838 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:41,838 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:79
+2022-11-28 18:13:41,838 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Extract the test artifacts from the Minio S3 container
+2022-11-28 18:13:41,839 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:41,839 p=22052 u=psap-ci-runner n=ansible | <command>
+set -o pipefail
+
+oc -n minio -c ubi8 exec "minio-deployment-6769bcb574-7v7qs"   -- tar czf - -C /artifacts/to_export/ .   | tar xzf - -C "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"
+
+rm -f "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/os-release"
+</command>
+2022-11-28 18:13:41,839 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:41,842 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:42,393 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:42,393 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:42,393 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:42,393 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:42,393 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:91
+2022-11-28 18:13:42,394 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Store the Cluster nodes
+2022-11-28 18:13:42,394 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:42,394 p=22052 u=psap-ci-runner n=ansible | <command> oc get nodes -oyaml > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/nodes.yaml"
+2022-11-28 18:13:42,394 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:42,397 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,397 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,397 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,397 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,398 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,398 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:96
+2022-11-28 18:13:52,398 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Get the description of the nodes
+2022-11-28 18:13:52,398 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,398 p=22052 u=psap-ci-runner n=ansible | <command> oc describe nodes > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/nodes.descr"
+2022-11-28 18:13:52,398 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,401 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,411 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,411 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,411 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,411 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,411 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts_driver.yml:102
+2022-11-28 18:13:52,411 p=22052 u=psap-ci-runner n=ansible | TASK: Get the Prometheus database
+2022-11-28 18:13:52,434 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,447 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:2
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_dir is not defined
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:13:52,455 p=22052 u=psap-ci-runner n=ansible | when: artifact_dir is undefined
+2022-11-28 18:13:52,458 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,468 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,468 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,468 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,468 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,469 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:6
+2022-11-28 18:13:52,469 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fail if artifact_extra_logs_dir is not defined
+2022-11-28 18:13:52,469 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:13:52,469 p=22052 u=psap-ci-runner n=ansible | when: artifact_extra_logs_dir is undefined
+2022-11-28 18:13:52,472 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:10
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Create the artifact_extra_logs_dir directory
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible |   - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible |   - diff
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible |     - before
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:13:52,726 p=22052 u=psap-ci-runner n=ansible |     - after
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |       - path:	/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - uid:	1019810000
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - gid:	1019810000
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - owner:	1019810000
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - group:	1019810000
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - mode:	0755
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - state:	directory
+2022-11-28 18:13:52,727 p=22052 u=psap-ci-runner n=ansible |   - size:	263
+2022-11-28 18:13:52,730 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,313 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,313 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,313 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,313 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,313 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:19
+2022-11-28 18:13:53,313 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Fetch 'openshift_release' value and check dependencies
+2022-11-28 18:13:53,314 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,314 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; oc version -o json | jq --raw-output '.openshiftVersion'
+2022-11-28 18:13:53,314 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,314 p=22052 u=psap-ci-runner n=ansible | <stdout> 4.11.13
+2022-11-28 18:13:53,317 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,535 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:39
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get openshift major and minor version
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | <command> set -eo pipefail; echo "4.11.13" | tr '.' '\n' | head -2
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | <stdout> 4
+2022-11-28 18:13:53,536 p=22052 u=psap-ci-runner n=ansible | <stdout> 11
+2022-11-28 18:13:53,539 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,550 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,551 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,551 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,551 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,551 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:46
+2022-11-28 18:13:53,551 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 18:13:53,555 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,565 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,565 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,565 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,565 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,565 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:52
+2022-11-28 18:13:53,565 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift_release=4.11.13
+2022-11-28 18:13:53,568 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,578 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,579 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,579 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:53,579 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:53,579 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:57
+2022-11-28 18:13:53,579 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Store openshift major and minor version
+2022-11-28 18:13:53,579 p=22052 u=psap-ci-runner n=ansible | msg: openshift_release_major='4', openshift_release_minor='1'
+2022-11-28 18:13:53,582 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:61
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the address of the console (debug)
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami --show-console
+2022-11-28 18:13:54,027 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,028 p=22052 u=psap-ci-runner n=ansible | <stdout> https://console-openshift-console.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org
+2022-11-28 18:13:54,030 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,465 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | roles/check_deps/tasks/main.yml:65
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | TASK: check_deps : Get the cluster username (debug)
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | <command> oc whoami
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,466 p=22052 u=psap-ci-runner n=ansible | <stdout> system:admin
+2022-11-28 18:13:54,470 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:2
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Reset prometheus database
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:13:54,484 p=22052 u=psap-ci-runner n=ansible | when: cluster_prometheus_db_mode == "reset"
+2022-11-28 18:13:54,487 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/main.yml:6
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Dump prometheus database
+2022-11-28 18:13:54,498 p=22052 u=psap-ci-runner n=ansible |   - include:	dump.yml
+2022-11-28 18:13:54,503 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/cluster_prometheus_db/tasks/dump.yml for localhost
+2022-11-28 18:13:54,507 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:55,100 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/dump.yml:2
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Get Prometheus Pod name
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | <command> oc get pods -l app.kubernetes.io/component=prometheus -n openshift-monitoring --sort-by=.metadata.creationTimestamp -ojsonpath={.items[0].metadata.name}
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:13:55,101 p=22052 u=psap-ci-runner n=ansible | <stdout> prometheus-k8s-0
+2022-11-28 18:13:55,104 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,322 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,322 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,322 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | roles/cluster_prometheus_db/tasks/dump.yml:12
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | TASK: cluster_prometheus_db : Extract Prometheus database from the Pod
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | msg: non-zero return code
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | <command> oc exec -c prometheus -n "openshift-monitoring" "prometheus-k8s-0" -- tar cvzf - -C "/prometheus" . > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts-driver/prometheus_ocp.tar.gz"
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | <stderr> ./
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | <stderr> ./queries.active
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | <stderr> ./lock
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/
+2022-11-28 18:14:01,323 p=22052 u=psap-ci-runner n=ansible | <stderr> ./wal/00000000
+2022-11-28 18:14:01,324 p=22052 u=psap-ci-runner n=ansible | <stderr> tar: ./wal/00000000: file changed as we read it
+2022-11-28 18:14:01,324 p=22052 u=psap-ci-runner n=ansible | <stderr> ./chunks_head/
+2022-11-28 18:14:01,324 p=22052 u=psap-ci-runner n=ansible | <stderr> ./chunks_head/000001
+2022-11-28 18:14:01,324 p=22052 u=psap-ci-runner n=ansible | <stderr> command terminated with exit code 1
+2022-11-28 18:14:01,327 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,332 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,332 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,333 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,333 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,333 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:279
+2022-11-28 18:14:01,333 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Capture the rest of the artifacts
+2022-11-28 18:14:01,333 p=22052 u=psap-ci-runner n=ansible |   - include:	artifacts.yml
+2022-11-28 18:14:01,342 p=22052 u=psap-ci-runner n=ansible | included: /opt/ci-artifacts/src/roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml for localhost
+2022-11-28 18:14:01,362 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,561 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:1
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Count successful tests
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; (cat "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/ods-ci/ods-ci-*/test.exit_code | grep '^0$' || true) | wc -l
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,562 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 18:14:01,565 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,760 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:8
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Count failed tests
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; (cat "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/ods-ci/ods-ci-*/test.exit_code | grep -v '^0$' || true) | wc -l
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:01,761 p=22052 u=psap-ci-runner n=ansible | <stdout> 0
+2022-11-28 18:14:01,766 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,159 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:02,159 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,159 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:14
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Count the number of workarounds required for Jira/RHODS-{{ bug_id }}
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | msg: All items completed
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | LOOP #0: bug_id = 5819
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; (ls "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/ods-ci/ods-ci-*/bug_5819*.png || true) | nl | tee "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/workarounds_rhods-5819.txt
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | <stderr> ls: cannot access '/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/ods-ci/ods-ci-*/bug_5819*.png': No such file or directory
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | LOOP #1: bug_id = 5912
+2022-11-28 18:14:02,160 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,161 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; (ls "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/ods-ci/ods-ci-*/bug_5912*.png || true) | nl | tee "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/workarounds_rhods-5912.txt
+2022-11-28 18:14:02,161 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:02,161 p=22052 u=psap-ci-runner n=ansible | <stderr> ls: cannot access '/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/ods-ci/ods-ci-*/bug_5912*.png': No such file or directory
+2022-11-28 18:14:02,163 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,072 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:27
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Show failed tests
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | <command>
+for f in "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/ods-ci/ods-ci-*/test.log; do
+  [[ "$(cat $(dirname "$f")/test.exit_code)" == 0 ]] && continue
+  echo -e "\n=== $f ==="
+  grep 'FAIL' $f | grep -v "^| FAIL|" | head -1
+  echo ""
+done > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/failed_tests
+</command>
+2022-11-28 18:14:03,073 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,076 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:37
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Save the success count and failed tests
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | <command> echo "300/300" > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/success_count"
+2022-11-28 18:14:03,271 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,274 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:44
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Generate MatrixBenchmark settings file
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,456 p=22052 u=psap-ci-runner n=ansible | <command>
+cat <<EOF > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/settings"
+test_case=notebook_ux_e2e_test.robot
+exclude_tags=None
+user_count=300
+EOF
+</command>
+2022-11-28 18:14:03,457 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,459 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:53
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Generate MatrixBenchmark exit code file
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | <command> (test -z "$(oc get jobs/ods-ci -ojsonpath={.status.failed} -n notebooks-scale-test)" && echo 0 || echo 1) > "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/exit_code"
+2022-11-28 18:14:03,942 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:03,945 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,130 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,130 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,130 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,130 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,130 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/artifacts.yml:58
+2022-11-28 18:14:04,131 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Save the artifacts version
+2022-11-28 18:14:04,131 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,131 p=22052 u=psap-ci-runner n=ansible | <command> echo "2022-11-17" >  "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test/artifacts_version"
+2022-11-28 18:14:04,131 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,133 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,143 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,144 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,144 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,144 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,144 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:282
+2022-11-28 18:14:04,144 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Show the artifacts directory
+2022-11-28 18:14:04,144 p=22052 u=psap-ci-runner n=ansible | msg: The test artifacts have been stored in /logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test
+2022-11-28 18:14:04,147 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,634 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:285
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Test if the RHODS test job crashed
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | <command> oc get jobs/ods-ci -ojsonpath={.status.failed} -n notebooks-scale-test
+2022-11-28 18:14:04,635 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,638 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,830 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,830 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,830 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,830 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,831 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:291
+2022-11-28 18:14:04,831 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Count how many jobs succeeded, fail in none succeeded
+2022-11-28 18:14:04,831 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,831 p=22052 u=psap-ci-runner n=ansible | <command> set -o pipefail; (cat "/logs/artifacts/002_test_run/000__driver_rhods__notebook_osd_ci_scale_test"/ods-ci/ods-ci-*/test.exit_code || true) | (grep '^0$' || true) | wc -l
+2022-11-28 18:14:04,831 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,831 p=22052 u=psap-ci-runner n=ansible | <stdout> 300
+2022-11-28 18:14:04,834 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,843 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,843 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,843 p=22052 u=psap-ci-runner n=ansible | 
+2022-11-28 18:14:04,843 p=22052 u=psap-ci-runner n=ansible | ---
+2022-11-28 18:14:04,843 p=22052 u=psap-ci-runner n=ansible | roles/rhods_notebook_osd_ci_scale_test/tasks/main.yml:300
+2022-11-28 18:14:04,843 p=22052 u=psap-ci-runner n=ansible | TASK: rhods_notebook_osd_ci_scale_test : Fail if the notebooks Pods had to restart
+2022-11-28 18:14:04,844 p=22052 u=psap-ci-runner n=ansible | ==> SKIPPED | Conditional result was False
+2022-11-28 18:14:04,844 p=22052 u=psap-ci-runner n=ansible | when: check_pod_restart_count_cmd.stdout != "0"
+2022-11-28 18:14:04,844 p=22052 u=psap-ci-runner n=ansible | META: ran handlers
+2022-11-28 18:14:04,844 p=22052 u=psap-ci-runner n=ansible | META: ran handlers
+2022-11-28 18:14:04,845 p=22052 u=psap-ci-runner n=ansible | PLAY RECAP *********************************************************************
+2022-11-28 18:14:04,845 p=22052 u=psap-ci-runner n=ansible | localhost                  : ok=150  changed=109  unreachable=0    failed=0    skipped=30   rescued=0    ignored=0   

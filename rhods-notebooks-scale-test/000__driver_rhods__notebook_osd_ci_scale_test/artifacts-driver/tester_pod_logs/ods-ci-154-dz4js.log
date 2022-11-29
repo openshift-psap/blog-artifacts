@@ -1,0 +1,239 @@
+[pod/ods-ci-154-dz4js/main] + JOB_COMPLETION_INDEX=154
+[pod/ods-ci-154-dz4js/main] + STATE_SIGNAL_BARRIER=/mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/state-signal_barrier.py
+[pod/ods-ci-154-dz4js/main] + STATE_SIGNAL_DELAY=-1
+[pod/ods-ci-154-dz4js/main] + [[ -z {ARTIFACT_DIR:-} ]]
+[pod/ods-ci-154-dz4js/main] + mkdir -p /mnt/shared-dir/ods-ci
+[pod/ods-ci-154-dz4js/main] + trap 'touch /mnt/shared-dir/ods-ci/test.exit_code' EXIT
+[pod/ods-ci-154-dz4js/main] ++ date
+[pod/ods-ci-154-dz4js/main] + echo 'pod_starting: Mon Nov 28 17:44:19 UTC 2022'
+[pod/ods-ci-154-dz4js/main] + USER_INDEX=154
+[pod/ods-ci-154-dz4js/main] + sed 's/#{USER_INDEX}/154/g' /mnt/ods-ci-test-variables/test-variables.yml
+[pod/ods-ci-154-dz4js/main] + cp /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/artifacts-exporter.sh /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/entrypoint.sh /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/notebook_dsg_e2e_test.robot /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/notebook_scale_test_common.resource /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/notebook_ux_e2e_test.robot /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/state-signal_barrier.py .
+[pod/ods-ci-154-dz4js/main] + python3 -m pip --no-cache-dir install state-signals==0.5.2 --user
+[pod/ods-ci-154-dz4js/main] Collecting state-signals==0.5.2
+[pod/ods-ci-154-dz4js/main]   Downloading https://files.pythonhosted.org/packages/96/1e/fdb72106ceff3d9fddaaaacb1fee5b4a89a5b9925c7a5f35bb7e64890ff9/state_signals-0.5.2-py3-none-any.whl
+[pod/ods-ci-154-dz4js/main] Collecting redis<4.0,>=3.5
+[pod/ods-ci-154-dz4js/main]   Downloading https://files.pythonhosted.org/packages/a7/7c/24fb0511df653cf1a5d938d8f5d19802a88cef255706fdda242ff97e91b7/redis-3.5.3-py2.py3-none-any.whl (72kB)
+[pod/ods-ci-154-dz4js/main] Installing collected packages: redis, state-signals
+[pod/ods-ci-154-dz4js/main] Successfully installed redis-3.5.3 state-signals-0.5.2
+[pod/ods-ci-154-dz4js/main] Running with user 154 / 300
+[pod/ods-ci-154-dz4js/main] + echo 'Running with user 154 / 300'
+[pod/ods-ci-154-dz4js/main] + [[ 154 == 0 ]]
+[pod/ods-ci-154-dz4js/main] ++ date
+[pod/ods-ci-154-dz4js/main] + echo 'statesignal_setup: Mon Nov 28 17:44:23 UTC 2022'
+[pod/ods-ci-154-dz4js/main] + python3 /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/state-signal_barrier.py redis.redis-notebooks-scale-test.svc
+[pod/ods-ci-154-dz4js/main] Connecting to the StateSignal barrier ...
+[pod/ods-ci-154-dz4js/main] Signal(publisher_id='rhods-test-73c83316-2b80-4772-921b-0a4b01fbe4d1', process_name='rhods-test', event='barrier', runner_host='ods-ci-0', sample_no=-1, tag='No tag specified', metadata=None)
+[pod/ods-ci-154-dz4js/main] Signal(publisher_id='rhods-test-73c83316-2b80-4772-921b-0a4b01fbe4d1', process_name='rhods-test', event='success', runner_host='ods-ci-0', sample_no=-1, tag='No tag specified', metadata=None)
+[pod/ods-ci-154-dz4js/main] ++ date
+[pod/ods-ci-154-dz4js/main] + echo 'statesignal_synchronizing: Mon Nov 28 17:44:38 UTC 2022'
+[pod/ods-ci-154-dz4js/main] ++ python3 -c 'print(154 * 3.0)'
+[pod/ods-ci-154-dz4js/main] + sleep_delay=462.0
+[pod/ods-ci-154-dz4js/main] + echo 'Waiting 462.0 seconds before starting (job index: 154, sleep factor: 3.0)'
+[pod/ods-ci-154-dz4js/main] Waiting 462.0 seconds before starting (job index: 154, sleep factor: 3.0)
+[pod/ods-ci-154-dz4js/main] + sleep 462.0
+[pod/ods-ci-154-dz4js/main] ++ date
+[pod/ods-ci-154-dz4js/main] + echo 'launch_delay: Mon Nov 28 17:52:20 UTC 2022'
+[pod/ods-ci-154-dz4js/main] + test_exit_code=0
+[pod/ods-ci-154-dz4js/main] + bash -x ./run_robot_test.sh --skip-pip-install --test-variables-file /tmp/test-variables.yml --skip-oclogin true --test-artifact-dir /mnt/shared-dir/ods-ci --test-case notebook_ux_e2e_test.robot --exclude None --extra-robot-args --exitonfailure
+[pod/ods-ci-154-dz4js/main] + tee /mnt/shared-dir/ods-ci/test.log
+[pod/ods-ci-154-dz4js/main] + SKIP_OC_LOGIN=false
+[pod/ods-ci-154-dz4js/main] + SERVICE_ACCOUNT=
+[pod/ods-ci-154-dz4js/main] + SA_NAMESPACE=default
+[pod/ods-ci-154-dz4js/main] + SET_RHODS_URLS=false
+[pod/ods-ci-154-dz4js/main] + TEST_CASE_FILE=tests/Tests
+[pod/ods-ci-154-dz4js/main] + TEST_VARIABLES_FILE=test-variables.yml
+[pod/ods-ci-154-dz4js/main] + TEST_VARIABLES=
+[pod/ods-ci-154-dz4js/main] + TEST_ARTIFACT_DIR=test-output
+[pod/ods-ci-154-dz4js/main] + EXTRA_ROBOT_ARGS=
+[pod/ods-ci-154-dz4js/main] + SKIP_PIP_INSTALL=0
+[pod/ods-ci-154-dz4js/main] + TEST_INCLUDE_TAG=
+[pod/ods-ci-154-dz4js/main] + TEST_EXCLUDE_TAG=
+[pod/ods-ci-154-dz4js/main] + EMAIL_REPORT=false
+[pod/ods-ci-154-dz4js/main] + EMAIL_TO=
+[pod/ods-ci-154-dz4js/main] + EMAIL_FROM=
+[pod/ods-ci-154-dz4js/main] + EMAIL_SERVER=localhost
+[pod/ods-ci-154-dz4js/main] + EMAIL_SERVER_USER=None
+[pod/ods-ci-154-dz4js/main] + EMAIL_SERVER_PW=None
+[pod/ods-ci-154-dz4js/main] + EMAIL_SERVER_SSL=false
+[pod/ods-ci-154-dz4js/main] + EMAIL_SERVER_UNSECURE=false
+[pod/ods-ci-154-dz4js/main] + '[' 13 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + SKIP_PIP_INSTALL=1
+[pod/ods-ci-154-dz4js/main] + '[' 12 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + TEST_VARIABLES_FILE=/tmp/test-variables.yml
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + '[' 10 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + SKIP_OC_LOGIN=true
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + '[' 8 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + TEST_ARTIFACT_DIR=/mnt/shared-dir/ods-ci
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + '[' 6 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + TEST_CASE_FILE=notebook_ux_e2e_test.robot
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + '[' 4 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + TEST_EXCLUDE_TAG=' --exclude None'
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + '[' 2 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + case $1 in
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + EXTRA_ROBOT_ARGS=--exitonfailure
+[pod/ods-ci-154-dz4js/main] + shift
+[pod/ods-ci-154-dz4js/main] + '[' 0 -gt 0 ']'
+[pod/ods-ci-154-dz4js/main] + false
+[pod/ods-ci-154-dz4js/main] + echo /tmp/test-variables.yml
+[pod/ods-ci-154-dz4js/main] /tmp/test-variables.yml
+[pod/ods-ci-154-dz4js/main] + [[ ! -f /tmp/test-variables.yml ]]
+[pod/ods-ci-154-dz4js/main] ++ pwd
+[pod/ods-ci-154-dz4js/main] + currentpath=/tmp/ods-ci
+[pod/ods-ci-154-dz4js/main] + case "$(uname -s)" in
+[pod/ods-ci-154-dz4js/main] ++ uname -s
+[pod/ods-ci-154-dz4js/main] + case "$(lsb_release --id --short)" in
+[pod/ods-ci-154-dz4js/main] ++ lsb_release --id --short
+[pod/ods-ci-154-dz4js/main] + false
+[pod/ods-ci-154-dz4js/main] + command -v yq
+[pod/ods-ci-154-dz4js/main] + echo 'INFO: we found a yq executable'
+[pod/ods-ci-154-dz4js/main] INFO: we found a yq executable
+[pod/ods-ci-154-dz4js/main] + true
+[pod/ods-ci-154-dz4js/main] + echo 'skipping OC login as per parameter --skip-oclogin'
+[pod/ods-ci-154-dz4js/main] skipping OC login as per parameter --skip-oclogin
+[pod/ods-ci-154-dz4js/main] + VENV_ROOT=/tmp/ods-ci/venv
+[pod/ods-ci-154-dz4js/main] + [[ ! -d /tmp/ods-ci/venv ]]
+[pod/ods-ci-154-dz4js/main] + source /tmp/ods-ci/venv/bin/activate
+[pod/ods-ci-154-dz4js/main] ++ deactivate nondestructive
+[pod/ods-ci-154-dz4js/main] ++ '[' -n '' ']'
+[pod/ods-ci-154-dz4js/main] ++ '[' -n '' ']'
+[pod/ods-ci-154-dz4js/main] ++ '[' -n /usr/bin/bash -o -n '' ']'
+[pod/ods-ci-154-dz4js/main] ++ hash -r
+[pod/ods-ci-154-dz4js/main] ++ '[' -n '' ']'
+[pod/ods-ci-154-dz4js/main] ++ unset VIRTUAL_ENV
+[pod/ods-ci-154-dz4js/main] ++ '[' '!' nondestructive = nondestructive ']'
+[pod/ods-ci-154-dz4js/main] ++ VIRTUAL_ENV=/tmp/ods-ci/venv
+[pod/ods-ci-154-dz4js/main] ++ export VIRTUAL_ENV
+[pod/ods-ci-154-dz4js/main] ++ _OLD_VIRTUAL_PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[pod/ods-ci-154-dz4js/main] ++ PATH=/tmp/ods-ci/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[pod/ods-ci-154-dz4js/main] ++ export PATH
+[pod/ods-ci-154-dz4js/main] ++ '[' -n '' ']'
+[pod/ods-ci-154-dz4js/main] ++ '[' -z '' ']'
+[pod/ods-ci-154-dz4js/main] ++ _OLD_VIRTUAL_PS1=
+[pod/ods-ci-154-dz4js/main] ++ '[' 'x(venv) ' '!=' x ']'
+[pod/ods-ci-154-dz4js/main] ++ PS1='(venv) '
+[pod/ods-ci-154-dz4js/main] ++ export PS1
+[pod/ods-ci-154-dz4js/main] ++ '[' -n /usr/bin/bash -o -n '' ']'
+[pod/ods-ci-154-dz4js/main] ++ hash -r
+[pod/ods-ci-154-dz4js/main] + [[ 1 -eq 0 ]]
+[pod/ods-ci-154-dz4js/main] + [[ ! -d /mnt/shared-dir/ods-ci ]]
+[pod/ods-ci-154-dz4js/main] + case "$(uname -s)" in
+[pod/ods-ci-154-dz4js/main] ++ uname -s
+[pod/ods-ci-154-dz4js/main] +++ date +%Y-%m-%d-%H-%M
+[pod/ods-ci-154-dz4js/main] ++ mktemp -d -p /mnt/shared-dir/ods-ci -t ods-ci-2022-11-28-17-52-XXXXXXXXXX
+[pod/ods-ci-154-dz4js/main] + TEST_ARTIFACT_DIR=/mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK
+[pod/ods-ci-154-dz4js/main] + ./venv/bin/robot --exclude None -d /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK -x xunit_test_result.xml -r test_report.html --variablefile /tmp/test-variables.yml --exclude TBC --exitonfailure notebook_ux_e2e_test.robot
+[pod/ods-ci-154-dz4js/main] ==============================================================================
+[pod/ods-ci-154-dz4js/main] Notebook Ux E2E Test                                                          
+[pod/ods-ci-154-dz4js/main] ==============================================================================
+[pod/ods-ci-154-dz4js/main] Open the Browser                                                      | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Login to RHODS Dashboard                                              | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Go to RHODS Dashboard                                                 | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Go to Jupyter Page                                                    | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Wait for the Notebook Spawn                                           | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Login to JupyterLab Page                                              | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Go to JupyterLab Page                                                 | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Load the Notebook                                                     | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Run the Notebook                                                      | PASS |
+[pod/ods-ci-154-dz4js/main] ------------------------------------------------------------------------------
+[pod/ods-ci-154-dz4js/main] Notebook Ux E2E Test                                                  | PASS |
+[pod/ods-ci-154-dz4js/main] 9 tests, 9 passed, 0 failed
+[pod/ods-ci-154-dz4js/main] ==============================================================================
+[pod/ods-ci-154-dz4js/main] Output:  /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/output.xml
+[pod/ods-ci-154-dz4js/main] XUnit:   /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/xunit_test_result.xml
+[pod/ods-ci-154-dz4js/main] Log:     /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/log.html
+[pod/ods-ci-154-dz4js/main] Report:  /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/test_report.html
+[pod/ods-ci-154-dz4js/main] ++ echo 0
+[pod/ods-ci-154-dz4js/main] + exit_status=0
+[pod/ods-ci-154-dz4js/main] + echo 0
+[pod/ods-ci-154-dz4js/main] 0
+[pod/ods-ci-154-dz4js/main] + false
+[pod/ods-ci-154-dz4js/main] + exit 0
+[pod/ods-ci-154-dz4js/main] + mv /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/benchmark_measures.json /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/browser_log_entries.yaml /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/final.html /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/final.url /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/final_screenshot.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/log.html /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/output.xml /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-1.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-10.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-11.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-12.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-13.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-14.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-15.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-16.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-17.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-18.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-19.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-2.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-20.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-21.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-22.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-23.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-24.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-25.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-26.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-27.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-28.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-29.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-3.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-30.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-31.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-32.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-33.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-34.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-35.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-36.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-37.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-38.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-39.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-4.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-40.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-41.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-5.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-6.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-7.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-8.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/selenium-screenshot-9.png /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/test_report.html /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK/xunit_test_result.xml /mnt/shared-dir/ods-ci
+[pod/ods-ci-154-dz4js/main] + [[ 0 != 0 ]]
+[pod/ods-ci-154-dz4js/main] + echo 0
+[pod/ods-ci-154-dz4js/main] Test finished with 0 errors.
+[pod/ods-ci-154-dz4js/main] + echo 'Test finished with 0 errors.'
+[pod/ods-ci-154-dz4js/main] ++ date
+[pod/ods-ci-154-dz4js/main] + echo 'test_execution: Mon Nov 28 17:56:03 UTC 2022'
+[pod/ods-ci-154-dz4js/main] + exit 0
+[pod/ods-ci-154-dz4js/main] + touch /mnt/shared-dir/ods-ci/test.exit_code
+[pod/ods-ci-154-dz4js/artifacts-exporter] + S3_BUCKET_NAME=mybucket
+[pod/ods-ci-154-dz4js/artifacts-exporter] Artifacts retention mode: no-screenshot-except-failed-and-zero
+[pod/ods-ci-154-dz4js/artifacts-exporter] + echo 'Artifacts retention mode: no-screenshot-except-failed-and-zero'
+[pod/ods-ci-154-dz4js/artifacts-exporter] + retcode=0
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ no-screenshot-except-failed-and-zero == \n\o\n\e ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + set +x
+[pod/ods-ci-154-dz4js/artifacts-exporter] Mon Nov 28 17:44:20 UTC 2022 Waiting for '/mnt/shared-dir/ods-ci/test.exit_code' to appear ...
+[pod/ods-ci-154-dz4js/artifacts-exporter] Mon Nov 28 17:56:05 UTC 2022 '/mnt/shared-dir/ods-ci/test.exit_code' appeared.
+[pod/ods-ci-154-dz4js/artifacts-exporter] ++ cat /mnt/shared-dir/ods-ci/test.exit_code
+[pod/ods-ci-154-dz4js/artifacts-exporter] + test_failed=0
+[pod/ods-ci-154-dz4js/artifacts-exporter] + delete_screenshots=0
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ no-screenshot-except-failed-and-zero == \n\o\-\s\c\r\e\e\n\s\h\o\t* ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + delete_screenshots=1
+[pod/ods-ci-154-dz4js/artifacts-exporter] + SKIP_FAILED_USER_COUNT_THRESHOLD=100
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ no-screenshot-except-failed-and-zero == no-screenshot-except-failed-and-zero ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ 300 -gt 100 ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + ARTIFACTS_COLLECTED=no-screenshot-except-zero
+[pod/ods-ci-154-dz4js/artifacts-exporter] More than 100 simulted users, cannot keep the failed artifacts. Switching to 'no-screenshot-except-zero'.
+[pod/ods-ci-154-dz4js/artifacts-exporter] + echo 'More than 100 simulted users, cannot keep the failed artifacts. Switching to '\''no-screenshot-except-zero'\''.'
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ no-screenshot-except-zero == *\-\z\e\r\o ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ 154 == 0 ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ no-screenshot-except-zero == *\-\f\a\i\l\e\d* ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ 1 == 1 ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + find /mnt/shared-dir/ods-ci -name 'selenium-screenshot-*.png' -delete
+[pod/ods-ci-154-dz4js/artifacts-exporter] + configure_s3
+[pod/ods-ci-154-dz4js/artifacts-exporter] + export S3_HOST_BASE=minio.minio.svc.cluster.local:9000
+[pod/ods-ci-154-dz4js/artifacts-exporter] + S3_HOST_BASE=minio.minio.svc.cluster.local:9000
+[pod/ods-ci-154-dz4js/artifacts-exporter] + export S3_HOST_BUCKET=minio.minio.svc.cluster.local:9000
+[pod/ods-ci-154-dz4js/artifacts-exporter] + S3_HOST_BUCKET=minio.minio.svc.cluster.local:9000
+[pod/ods-ci-154-dz4js/artifacts-exporter] + export S3_ACCESS_KEY=minio
+[pod/ods-ci-154-dz4js/artifacts-exporter] + S3_ACCESS_KEY=minio
+[pod/ods-ci-154-dz4js/artifacts-exporter] + export HOME=/tmp/s3cmd
+[pod/ods-ci-154-dz4js/artifacts-exporter] + HOME=/tmp/s3cmd
+[pod/ods-ci-154-dz4js/artifacts-exporter] + mkdir -p /tmp/s3cmd
+[pod/ods-ci-154-dz4js/artifacts-exporter] + [[ -f '' ]]
+[pod/ods-ci-154-dz4js/artifacts-exporter] + bash -ec 'eval $(yq e .TEST_USER.PASSWORD /mnt/ods-ci-test-variables/test-variables.yml | awk '\''{ print "export S3_SECRET_KEY=" $1 }'\''); cat /mnt/s3-config/s3cfg | envsubst > ~/.s3cfg'
+[pod/ods-ci-154-dz4js/artifacts-exporter] + find /mnt/shared-dir/ods-ci
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/progress_ts.yaml
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/test.log
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/benchmark_measures.json
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/browser_log_entries.yaml
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/final.html
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/final.url
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/final_screenshot.png
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/log.html
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/output.xml
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/test_report.html
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/xunit_test_result.xml
+[pod/ods-ci-154-dz4js/artifacts-exporter] /mnt/shared-dir/ods-ci/test.exit_code
+[pod/ods-ci-154-dz4js/artifacts-exporter] + s3cmd put /mnt/shared-dir/ods-ci/benchmark_measures.json /mnt/shared-dir/ods-ci/browser_log_entries.yaml /mnt/shared-dir/ods-ci/final.html /mnt/shared-dir/ods-ci/final.url /mnt/shared-dir/ods-ci/final_screenshot.png /mnt/shared-dir/ods-ci/log.html /mnt/shared-dir/ods-ci/ods-ci-2022-11-28-17-52-HMOab7CtvK /mnt/shared-dir/ods-ci/output.xml /mnt/shared-dir/ods-ci/progress_ts.yaml /mnt/shared-dir/ods-ci/test.exit_code /mnt/shared-dir/ods-ci/test.log /mnt/shared-dir/ods-ci/test_report.html /mnt/shared-dir/ods-ci/xunit_test_result.xml s3://mybucket/ods-ci/ods-ci-154/ --recursive --no-preserve --no-progress --stats --quiet
+[pod/ods-ci-154-dz4js/artifacts-exporter] + exit 0

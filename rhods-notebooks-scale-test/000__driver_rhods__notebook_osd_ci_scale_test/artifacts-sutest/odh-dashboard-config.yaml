@@ -1,0 +1,40 @@
+apiVersion: opendatahub.io/v1alpha
+kind: OdhDashboardConfig
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"opendatahub.io/v1alpha","kind":"OdhDashboardConfig","metadata":{"annotations":{},"creationTimestamp":"2022-11-28T16:34:40Z","generation":3,"name":"odh-dashboard-config","namespace":"redhat-ods-applications","resourceVersion":"69528","uid":"f78f0234-e2b5-4e22-bd72-d4c7e2eb924f"},"spec":{"dashboardConfig":{"disableBYONImageStream":false,"disableClusterManager":false,"disableISVBadges":false,"disableInfo":false,"disableSupport":false,"disableTracking":false,"enablement":true},"groupsConfig":{"adminGroups":"dedicated-admins","allowedGroups":"system:authenticated"},"notebookController":{"enabled":true,"notebookNamespace":"rhods-notebooks","notebookTolerationSettings":{"enabled":true,"key":"only-rhods-compute-pods"},"pvcSize":"5Gi"},"notebookSizes":[{"name":"Tiny","resources":{"limits":{"cpu":"1","memory":"4Gi"},"requests":{"cpu":"1","memory":"4Gi"}}}]}}
+  creationTimestamp: "2022-11-28T16:34:40Z"
+  generation: 4
+  name: odh-dashboard-config
+  namespace: redhat-ods-applications
+  resourceVersion: "69554"
+  uid: f78f0234-e2b5-4e22-bd72-d4c7e2eb924f
+spec:
+  dashboardConfig:
+    disableBYONImageStream: false
+    disableClusterManager: false
+    disableISVBadges: false
+    disableInfo: false
+    disableSupport: false
+    disableTracking: false
+    enablement: true
+  groupsConfig:
+    adminGroups: dedicated-admins
+    allowedGroups: system:authenticated
+  notebookController:
+    enabled: true
+    notebookNamespace: rhods-notebooks
+    notebookTolerationSettings:
+      enabled: true
+      key: only-rhods-compute-pods
+    pvcSize: 5Gi
+  notebookSizes:
+  - name: Tiny
+    resources:
+      limits:
+        cpu: "1"
+        memory: 4Gi
+      requests:
+        cpu: "1"
+        memory: 4Gi

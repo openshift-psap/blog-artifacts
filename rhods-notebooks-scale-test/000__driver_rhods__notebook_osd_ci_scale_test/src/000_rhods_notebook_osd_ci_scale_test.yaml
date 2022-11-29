@@ -1,0 +1,126 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: s3cmd-config
+data:
+  s3cfg: |
+    # Setup endpoint
+    host_base = $S3_HOST_BASE
+    host_bucket = $S3_HOST_BUCKET
+    bucket_location = us-east-1
+    use_https = False
+
+    # Setup access keys
+    access_key = $S3_ACCESS_KEY
+    secret_key = $S3_SECRET_KEY
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    deployment: ods-ci
+  name: ods-ci
+spec:
+  parallelism: 300
+  completions: 300
+  activeDeadlineSeconds: 18000
+  backoffLimit: 0
+  completionMode: Indexed
+  template:
+    metadata:
+      name: ods-ci-loadtest
+    spec:
+      securityContext:
+        runAsUser: 1001
+      containers:
+      - image: "image-registry.openshift-image-registry.svc:5000/notebooks-scale-test/scale-test:ods-ci"
+        imagePullPolicy: Always
+        name: main
+        command: ['bash', '/mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/entrypoint.sh']
+        env:
+        - name: RUN_ROBOT_TEST_CASE
+          value: "notebook_ux_e2e_test.robot"
+        - name: ARTIFACT_DIR
+          value: /mnt/shared-dir/ods-ci
+        - name: RUN_ROBOT_EXCLUDE_TAGS
+          value: "None"
+        - name: SLEEP_FACTOR
+          value: "3.0"
+        - name: NOTEBOOK_URL
+          value: "http://nginx-nginx-notebooks-scale-test.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org/benchmark_entrypoint.ipynb"
+        - name: NOTEBOOK_IMAGE_NAME
+          value: "s2i-generic-data-science-notebook"
+        - name: NOTEBOOK_IMAGE_NAME_DESCR
+          value: "Standard Data Science"
+        - name: USER_COUNT
+          value: "300"
+        - name: USER_INDEX_OFFSET
+          value: "0"
+        - name: REDIS_SERVER
+          value: "redis.redis-notebooks-scale-test.svc"
+        - name: DASHBOARD_PRODUCT_NAME
+          value: "Red Hat OpenShift Data Science"
+        - name: NOTEBOOK_SIZE_NAME
+          value: "Tiny"
+
+        - name: NOTEBOOK_BENCHMARK_NAME
+          value: "pyperf_bm_go.py"
+        - name: NOTEBOOK_BENCHMARK_REPEAT
+          value: "3"
+        - name: NOTEBOOK_BENCHMARK_NUMBER
+          value: "20"
+        volumeMounts:
+        - name: shared-dir
+          mountPath: /mnt/shared-dir
+        - name: ods-ci-test-variables
+          mountPath: /mnt/ods-ci-test-variables
+        - name: rhods-notebook-ux-e2e-scale-test-entrypoint
+          mountPath: /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint
+        resources:
+          # must match ODS_TESTPOD_MEMORY_SIZE_GI and ODS_TESTPOD_CPU_SIZE
+          # in testing/ods/common.sh
+          requests:
+            memory: 750M
+            cpu: 0.2
+          limits:
+            memory: 750M
+            cpu: 0.2
+      - image: "image-registry.openshift-image-registry.svc:5000/notebooks-scale-test/scale-test:artifacts-exporter"
+        name: artifacts-exporter
+        command: ['bash', '/mnt/rhods-notebook-ux-e2e-scale-test-entrypoint/artifacts-exporter.sh']
+        env:
+        - name: ARTIFACTS_COLLECTED
+          value: "no-screenshot-except-failed-and-zero"
+        - name: ARTIFACT_DIR
+          value: "/mnt/shared-dir/ods-ci"
+        - name: BUCKET_DEST_DIR
+          value: "ods-ci"
+        - name: USER_COUNT
+          value: "300"
+        volumeMounts:
+        - name: s3cmd-config
+          mountPath: /mnt/s3-config
+        - name: shared-dir
+          mountPath: /mnt/shared-dir
+        - name: ods-ci-test-variables
+          mountPath: /mnt/ods-ci-test-variables
+        - name: rhods-notebook-ux-e2e-scale-test-entrypoint
+          mountPath: /mnt/rhods-notebook-ux-e2e-scale-test-entrypoint
+      restartPolicy: Never
+      tolerations:
+      - effect: NoSchedule
+        key: only-test-pods
+        operator: Exists
+      volumes:
+      - name: ods-ci-test-variables
+        secret:
+          secretName: ods-ci-test-variables
+      - name: s3cmd-config
+        configMap:
+          name: s3cmd-config
+      - name: rhods-notebook-ux-e2e-scale-test-entrypoint
+        configMap:
+          name: rhods-notebook-ux-e2e-scale-test-entrypoint
+      - name: shared-dir
+        emptyDir: {}

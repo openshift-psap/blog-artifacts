@@ -1,0 +1,24 @@
+clientVersion:
+  buildDate: "2022-08-15T05:27:21Z"
+  compiler: gc
+  gitCommit: fcf512e2763f3b98bcc8e3fb087cd8cb80f8ca83
+  gitTreeState: clean
+  gitVersion: 4.11.0-202208150437.p0.gfcf512e.assembly.stream-fcf512e
+  goVersion: go1.18.4
+  major: ""
+  minor: ""
+  platform: linux/amd64
+kustomizeVersion: v4.5.4
+openshiftVersion: 4.11.13
+releaseClientVersion: 4.11.1
+serverVersion:
+  buildDate: "2022-10-11T13:02:03Z"
+  compiler: gc
+  gitCommit: eddac29feb4bb46b99fb570999324e582d761a66
+  gitTreeState: clean
+  gitVersion: v1.24.6+5157800
+  goVersion: go1.18.4
+  major: "1"
+  minor: "24"
+  platform: linux/amd64
+

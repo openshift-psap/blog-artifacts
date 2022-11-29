@@ -1,0 +1,152 @@
+<p><i>Click on the image to open the interactive full-size view of the plot.</i><br/>
+<i>In the interactive view, click in the legend to hide a line, double click to see only this line.</i></p>
+<p><a href='reports_index.html'>Back to the reports index.</a></p><hr>
+<p id='report:_error_report-txt'>
+<p>
+This report shows the list of users who failed the test, with a link to their execution report and the last screenshot taken by the Robot.
+</p>
+<h1>
+Error Report
+</h1>
+<ul>
+<li>
+PR 
+<a href='https://github.com/openshift-psap/ci-artifacts/pull/590' target='_blank'>
+openshift-psap/ci-artifacts #590
+</a>
+ 
+<b>
+RHODS: benchmark RHODS 1.19
+</b>
+</li>
+<ul>
+<li>
+PR body: 
+<code>
+/var rhods.catalog.image=quay.io/modh/qe-catalog-source<br>/var rhods.catalog.tag=v1190-19<br>/var tests.notebooks.users.count=300<br>/var clusters.create.ocp.control_plane.type=m6i.2xlarge<br>/var clusters.create.ocp.compute.type=m6i.2xlarge<br>/var tests.notebooks.users.sleep_factor=3.0
+</code>
+</li>
+</ul>
+<ul>
+<li>
+Trigger comment: 
+<code>
+/test ods-notebooks ocp
+</code>
+</li>
+</ul>
+<ul>
+<li>
+Trigger timestamp: 
+<code>
+2022-11-28 15:52:36
+</code>
+</li>
+</ul>
+<li>
+<a href='https://github.com/openshift-psap/ci-artifacts/compare/42ddccc4c022c919c6a28df8a71892d04c926375..58d05e0241019fedba1307b7412c5468cad08bfd' target='_blank'>
+Diff
+</a>
+ against 
+<a href='https://github.com/openshift-psap/ci-artifacts/tree/42ddccc4c022c919c6a28df8a71892d04c926375' target='_blank'>
+<code>
+main
+</code>
+</a>
+</li>
+<li>
+<a href='/source_url/not/found' target='_blank'>
+Results artifacts
+</a>
+</li>
+<ul>
+<li>
+<a href='/source_url/not/found/artifacts-sutest/odh-dashboard-config.yaml' target='_blank'>
+Dashboard configuration
+</a>
+</li>
+</ul>
+<li>
+Test configuration:
+</li>
+<ul>
+<li>
+<code>
+300
+</code>
+ users starting with a delay of 
+<code>
+3.0
+</code>
+ seconds
+</li>
+</ul>
+<li>
+<b>
+RHODS 
+</b>
+<b>
+<code>
+1.19.0-19
+</code>
+</b>
+ running on 
+OCP
+<code>
+ v4.11.13
+</code>
+</li>
+<ul>
+<li>
+Total of 55 nodes in the cluster
+</li>
+<li>
+3 
+<code>
+m6i.2xlarge
+</code>
+ master nodes
+</li>
+<li>
+2 
+<code>
+m6a.xlarge
+</code>
+ infra nodes
+</li>
+<li>
+50 
+<code>
+m6i.2xlarge
+</code>
+ rhods_compute nodes
+</li>
+<ul>
+<li>
+No auto-scaling
+</li>
+</ul>
+</ul>
+<li>
+300/300 users succeeded
+</li>
+<ul/>
+</ul>
+</ul>
+<h2>
+Reference run
+</h2>
+<ul>
+<li>
+<a href='/source_url/not/found/ods-ci/ods-ci-0/log.html' target='_blank'>
+ODS-CI logs
+</a>
+ (reference run)
+</li>
+</ul>
+<h2>
+Step Successes
+</h2>
+<p><a href='report_00_report:_error_report_files/fig_0.html' target='_blank' title='Click to access the full-size interactive version.'><img src='report_00_report:_error_report_files/fig_0.png'/></a></p>
+This plot shows the number of users who passed or failed each of the steps.
+</p>

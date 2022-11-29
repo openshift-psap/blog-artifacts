@@ -1,0 +1,151 @@
+secrets:
+  dir:
+    name: null
+    env_key: PSAP_ODS_SECRET_PATH
+  s3_ldap_password_file: s3_ldap.passwords
+  keep_cluster_password_file: get_cluster.password
+  addon_email_file: addon.email
+clusters:
+  create:
+    type: ocp
+    keep: false
+    name_prefix: odsci
+    sutest_already_exists:
+      hostname: null
+      username: null
+    ocm:
+      version: 4.10.15
+      region: us-west-2
+      workers:
+        type: m5.2xlarge
+        count: 2
+      compute:
+        type: m5.2xlarge
+    ocp:
+      base_domain: psap.aws.rhperfscale.org
+      version: 4.11.13
+      region: us-west-2
+      control_plane:
+        type: m6i.2xlarge
+      workers:
+        type: m6a.xlarge
+        count: 2
+      compute:
+        type: m6i.2xlarge
+  cleanup:
+    max_age: 4
+  sutest:
+    is_managed: false
+    managed:
+      is_rosa: false
+      is_ocm: false
+      env: staging
+      name: null
+    compute:
+      autoscaling:
+        enabled: false
+      machineset:
+        name: rhods-compute-pods
+        count: null
+        taint:
+          key: only-rhods-compute-pods
+          value: "yes"
+          effect: NoSchedule
+  driver:
+    compute:
+      machineset:
+        name: test-pods
+        count: null
+        taint:
+          key: only-test-pods
+          value: "yes"
+          effect: NoSchedule
+ldap:
+  idp_name: RHODS_CI_LDAP
+  users:
+    count: 1000
+    prefix: psapuser
+rhods:
+  deploy_from_catalog: true
+  catalog:
+    image: quay.io/modh/qe-catalog-source
+    tag: v1190-19
+  addon:
+    email: SET_AT_RUNTIME
+  notebooks:
+    customize:
+      enabled: true
+      pvc_size: 5Gi
+      notebook_size:
+        enabled: true
+        name: Tiny
+        cpu: 1
+        mem_gi: 4
+      remove_gpu_images: true
+  admin:
+    count: 2
+    roles:
+      - view
+      - odh-notebook-controller-notebooks-edit
+tests:
+  notebooks:
+    repeat: 2
+    users:
+      count: 300
+      start_offset: 0
+      sleep_factor: 3.0
+    flavor_to_run: user-level
+    namespace: notebooks-scale-test
+    imagestream_name: scale-test
+    artifacts_collected: no-screenshot-except-failed-and-zero
+    notebook:
+      size_name: Tiny
+      image_name: s2i-generic-data-science-notebook
+    ods_ci:
+      image:
+        repo: https://github.com/openshift-psap/ods-ci.git
+        ref: jh-at-scale.v221117
+      excluded_tags: None
+      test_case: notebook_ux_e2e_test.robot
+    test_pods:
+      size:
+        cpu: 0.2
+        mem_gi: 0.75
+    ipynb:
+      uploaded_directory: testing/ods/notebooks
+      notebook_filename: benchmark_entrypoint.ipynb
+    benchmark:
+      name: pyperf_bm_go.py
+      number: 20
+      repeat: 3
+    cleanup:
+      cleanup_driver_on_exit: true
+      skip_if_le_than_users: 5
+    notebook_performance:
+      use_rhods: true
+      tests:
+        - imagestream: s2i-generic-data-science-notebook
+          ipynb:
+            uploaded_directory: testing/ods/notebooks
+            notebook_filename: benchmark_entrypoint.ipynb
+          instance_types:
+            - m5.xlarge
+            - m6a.xlarge
+            - m6i.xlarge
+          benchmarks:
+            - name: pyperf_bm_go.py
+              number: 20
+              repeat: 5
+matbench:
+  preset: null
+  workload: rhods-notebooks-ux
+  config_file: notebooks_scale_test.yaml
+  download:
+    mode: prefer_cache
+    url: null
+    url_file: null
+    save_to_artifacts: false
+  ignore_exit_code: true
+PR_POSITIONAL_ARGS: ocp
+PR_POSITIONAL_ARG_1: ocp
+PR_POSITIONAL_ARG_0: ods-notebooks

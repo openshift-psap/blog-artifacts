@@ -1,0 +1,1 @@
+./run_toolbox.py from_config rhods notebook_osd_ci_scale_test --extra {notebook_url: 'http://nginx-nginx-notebooks-scale-test.apps.odsci-pr590-driver-1597257204015042560.psap.aws.rhperfscale.org/benchmark_entrypoint.ipynb', sut_cluster_kubeconfig: '/tmp/secret/sutest_kubeconfig'}
